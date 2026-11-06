@@ -7,6 +7,10 @@ Secțiunile de mai jos păstrează starea inițială a predării. Pipeline-ul no
 separate de cele vechi; nu promovează automat Elo sau un model calibrat.
 
 Pentru continuarea operațională citiți și [OPERATIONS.md](OPERATIONS.md).
+Evaluarea reală a surselor RO și limitele observate sunt în
+[PROVIDER_ALTERNATIVES.md](PROVIDER_ALTERNATIVES.md). PROPLINE_API_KEY este
+configurată; probele autentificate au acoperire parțială. Monitorul agregat
+nu reprezintă integrare de prețuri RO confirmate și nu deblochează value.
 Primul PR a fost integrat și publicat; corecțiile suplimentare unifică
 producția într-un singur writer și blochează istoricul vechi sau ambiguu.
 

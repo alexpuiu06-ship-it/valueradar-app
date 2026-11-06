@@ -273,3 +273,54 @@ test('Elo from a different data pipeline cannot be paired with current forecasts
   await expect(page.locator('#elo-match')).toBeDisabled();
   await expect(page.locator('#elo-compare')).toContainText('aceeași versiune');
 });
+
+test('RO panel displays real aggregate coverage as a historical unverified snapshot', async ({ page }) => {
+  const report = clone(read('ro_feed_status.json'));
+  report.generated_at = new Date(fixedNow - 60000).toISOString();
+  await page.route('**/ro_feed_status.json?*', route => route.fulfill({ json: report }));
+  await open(page); await ready(page);
+  await expect(page.locator('#ro-feed-status')).toContainText('Fotografie istorică');
+  await expect(page.locator('#ro-feed-status')).toContainText('120 secunde');
+  const rows = page.locator('#ro-feed-coverage tbody tr');
+  await expect(rows).toHaveCount(5);
+  for (let i = 0; i < report.leagues.length; i++) {
+    const row = report.leagues[i];
+    await expect(rows.nth(i)).toContainText(row.league);
+    for (const [index, book] of ['superbet_ro', 'netbet_ro'].entries()) {
+      const d = row.quality && row.quality.book_diagnostics[book];
+      await expect(rows.nth(i).locator('td').nth(index + 1)).toContainText(d ? `${d.complete_recent_markets} / ${d.matched_current_model_markets}` : '—');
+    }
+  }
+  await expect(page.locator('#ro-feed-module')).toContainText('nu oferte actuale confirmate');
+  await expect(page.locator('#ro-feed-module')).toContainText('Nu există pariuri value verificate');
+});
+
+test('expired RO snapshot is explicit and missing diagnostics do not block the app', async ({ page }) => {
+  const report = clone(read('ro_feed_status.json'));
+  report.generated_at = new Date(fixedNow - 25 * 3600000).toISOString();
+  await page.route('**/ro_feed_status.json?*', route => route.fulfill({ json: report }));
+  await open(page); await ready(page);
+  await expect(page.locator('#ro-feed-status')).toContainText('peste 24 de ore');
+  await page.route('**/ro_feed_status.json?*', route => route.abort('failed'));
+  await page.locator('#refresh').click();
+  await ready(page);
+  await expect(page.locator('#ro-feed-status')).toContainText('indisponibil');
+  await expect(page.locator('#ro-feed-coverage tbody tr')).toHaveCount(0);
+});
+
+test('RO coverage never trusts verified flags or inserts diagnostic HTML', async ({ page }) => {
+  const report = clone(read('ro_feed_status.json'));
+  report.generated_at = new Date(fixedNow - 60000).toISOString();
+  const q = report.leagues.find(row => row.quality).quality;
+  q.rejection_counts['<img src=x onerror="window.roInjected=true">'] = 1;
+  await page.route('**/ro_feed_status.json?*', route => route.fulfill({ json: report }));
+  await open(page); await ready(page);
+  await expect(page.locator('#ro-feed-coverage')).toContainText('<img');
+  await expect(page.locator('#ro-feed-coverage img')).toHaveCount(0);
+  expect(await page.evaluate(() => window.roInjected)).toBeUndefined();
+  report.verified_value = true;
+  await page.locator('#refresh').click();
+  await expect(page.locator('#ro-feed-status')).toContainText('invalid');
+  await expect(page.locator('#ro-feed-coverage tbody tr')).toHaveCount(0);
+  await expect(page.locator('#odds-list')).toContainText('Nu există pariuri value verificate');
+});

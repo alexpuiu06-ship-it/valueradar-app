@@ -8,6 +8,7 @@ import json
 import math
 import os
 from pathlib import Path
+import tempfile
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -19,6 +20,8 @@ API="https://api.prop-line.com/v1"
 BOOKS=("superbet_ro","netbet_ro")
 MAX_QUOTE_AGE_SECONDS=120
 REPORT=Path(__file__).resolve().parent/"work"/"ro_feed_preflight.json"
+QUALITY_COUNTS=("events_received","books_received","complete_recent_markets","matched_current_model_markets",
+                "book_diagnostics","rejection_counts","book_status_scope")
 
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
@@ -246,6 +249,39 @@ def run(authenticated=False,league="Premier League",output=REPORT,inspect_stale=
       "requested_max_delivery_age_seconds":request_max_age,"quality":report.get("quality"),"quota":report.get("daily_quota_headers",{})}
     print("RO_FEED_DIAGNOSTIC "+json.dumps(summary,ensure_ascii=False,allow_nan=False))
     return status
+
+
+def monitor(output=None):
+    """One bounded pass, no retry or raw-price archive; provider failures stay visible."""
+    report={"schema_version":1,"provider":"PropLine","max_quote_age_seconds":MAX_QUOTE_AGE_SECONDS,
+      "requested_books":list(BOOKS),"operator_prices_independently_verified":False,
+      "verified_value":False,"raw_odds_saved":False,"authenticated_requests":0,"leagues":[]}
+    with tempfile.TemporaryDirectory(prefix="valueradar-ro-") as folder:
+        for league in odds.SPORTS:
+            row={"league":league,"status":"diagnostic_error","received_at":None,"analysis_generated_at":None,
+              "requested_max_delivery_age_seconds":MAX_QUOTE_AGE_SECONDS,"quality":None,"quota":{}}
+            try:
+                path=Path(folder)/"report.json"
+                path.unlink(missing_ok=True)
+                run(authenticated=True,league=league,output=path)
+                result=json.loads(path.read_text())
+                for field in ("status","received_at","analysis_generated_at","requested_max_delivery_age_seconds"):
+                    if field in result:row[field]=result[field]
+                quality=result.get("quality")
+                if isinstance(quality,dict):row["quality"]={k:quality[k] for k in QUALITY_COUNTS if k in quality}
+                row["quota"]=result.get("daily_quota_headers",{})
+                if "error" in result:row["error"]=result["error"]
+                if report["authenticated_requests"] is not None:
+                    report["authenticated_requests"]+=result.get("authenticated_requests",0)
+            except Exception as exc:
+                # An internal error must not reuse a previous league's successful
+                # report or leak response/credential text through an exception.
+                row["error"]=type(exc).__name__
+                report["authenticated_requests"]=None
+            report["leagues"].append(row)
+    report["generated_at"]=datetime.now(timezone.utc).isoformat()
+    runner.write_json_atomic(output or runner.OUT/"ro_feed_status.json",report)
+    return report
 
 
 if __name__=="__main__":

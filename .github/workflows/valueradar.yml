@@ -12,6 +12,11 @@ on:
         type: boolean
         required: false
         default: false
+      probe_ro:
+        description: "Verifica diagnosticul agregat RO (maximum 5 cereri gratuite, fara recomandari)"
+        type: boolean
+        required: false
+        default: false
   push:
     branches: [main]
     paths:
@@ -26,6 +31,7 @@ on:
     - cron: "23 */4 * * *"
     - cron: "13 8,16 * * *"
     - cron: "41 5 * * 0"
+    - cron: "37 6 * * *"
 permissions:
   contents: read
 concurrency:
@@ -64,7 +70,9 @@ jobs:
         env:
           REFRESH_RESEARCH: ${{ github.event_name == 'push' || inputs.refresh_research || github.event.schedule == '41 5 * * 0' }}
           SCAN_ODDS: ${{ (github.event_name == 'workflow_dispatch' && inputs.scan_odds) || github.event.schedule == '13 8,16 * * *' }}
+          PROBE_RO: ${{ (github.event_name == 'workflow_dispatch' && inputs.probe_ro) || github.event.schedule == '37 6 * * *' }}
           ODDS_API_KEY: ${{ ((github.event_name == 'workflow_dispatch' && inputs.scan_odds) || github.event.schedule == '13 8,16 * * *') && secrets.ODDS_API_KEY || '' }}
+          PROPLINE_API_KEY: ${{ ((github.event_name == 'workflow_dispatch' && inputs.probe_ro) || github.event.schedule == '37 6 * * *') && secrets.PROPLINE_API_KEY || '' }}
           ODDS_REGION: uk
         run: python scripts/run_pipeline.py
       - name: Auditeaza observatiile si valideaza fisierele generate

@@ -49,6 +49,7 @@ ALIASES={
  # Observed provider spellings verified against the model fixture identity
  # and exact kickoff; these aliases affect odds matching only.
  "coventrycity":"coventry","hullcity":"hull","betis":"realbetis",
+ "paderborn07":"paderborn",
  "realbetisbalompie":"realbetis","realbetis":"realbetis",
  "athletic":"athleticbilbao","borussiamgladbach":"monchengladbach"
 }

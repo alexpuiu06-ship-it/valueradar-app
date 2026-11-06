@@ -101,6 +101,20 @@ class JournalAmbiguityTests(unittest.TestCase):
 
 
 class PipelineTests(unittest.TestCase):
+    def test_ro_probe_is_manual_or_daily_and_secret_is_not_in_other_runs(self):
+        text=(Path(__file__).resolve().parents[1]/".github/workflows/valueradar.yml").read_text()
+        self.assertIn('cron: "37 6 * * *"',text)
+        for name in ("PROBE_RO:","PROPLINE_API_KEY:"):
+            line=next(line for line in text.splitlines() if name in line)
+            self.assertIn("workflow_dispatch",line)
+            self.assertIn("inputs.probe_ro",line)
+            self.assertIn("37 6 * * *",line)
+        with patch.object(run_pipeline,"execute",return_value=0) as execute,patch.dict("os.environ",{"PROBE_RO":"false"}):
+            run_pipeline.main([])
+            self.assertFalse(execute.call_args.kwargs["probe_ro"])
+            run_pipeline.main(["--probe-ro"])
+            self.assertTrue(execute.call_args.kwargs["probe_ro"])
+
     def test_only_one_workflow_can_publish_repository_outputs(self):
         workflows=Path(__file__).resolve().parents[1]/".github"/"workflows"
         writers=[]
@@ -124,6 +138,7 @@ class PipelineTests(unittest.TestCase):
             load=stack.enter_context(patch.object(runner,"load_all",return_value=data))
             baseline=stack.enter_context(patch.object(runner,"run",return_value=0))
             scanner=stack.enter_context(patch.object(odds_scanner,"fetch_scan"))
+            monitor=stack.enter_context(patch.object(run_pipeline.ro_feed_probe,"monitor"))
             stack.enter_context(patch.object(odds_scanner,"close_watchlist"))
             stack.enter_context(patch.object(run_pipeline.performance,"run"))
             cal=stack.enter_context(patch.object(run_pipeline.calibration,"compare_1x2",return_value=comparison))
@@ -131,7 +146,8 @@ class PipelineTests(unittest.TestCase):
             elo=stack.enter_context(patch.object(run_pipeline.elo_challenger,"evaluate",return_value={}))
             stack.enter_context(patch.object(run_pipeline.elo_challenger,"market_diagnostic",return_value={}))
             stack.enter_context(patch.object(run_pipeline.subprocess,"run",return_value=SimpleNamespace(stdout="revision")))
-            self.assertEqual(run_pipeline.execute(research=True,run_at=NOW),0)
+            self.assertEqual(run_pipeline.execute(research=True,run_at=NOW,probe_ro=True),0)
+            monitor.assert_called_once_with(output=out/"ro_feed_status.json")
             load.assert_called_once_with(NOW)
             baseline.assert_called_once_with(imported=data,run_at=NOW)
             self.assertIs(cal.call_args.args[0],data[0])

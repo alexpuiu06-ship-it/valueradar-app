@@ -97,6 +97,42 @@ class OddsIdentityTests(unittest.TestCase):
                 current["bookmakers"][0]["markets"][0]["outcomes"][2]["name"] = other
                 self.assertIsNone(odds.parse_h2h(current["bookmakers"][0], current, NOW))
 
+    def test_observed_paderborn_selection_alias_matches_first_team_fixture(self):
+        current_fixture = fixture()
+        current_fixture.update(league="Bundesliga", home="SC Paderborn 07", away="Eintracht Frankfurt",
+                               time="15:30", kickoff_utc="2026-11-07T14:30:00+00:00")
+        current_event = event()
+        current_event.update(sport_key="soccer_germany_bundesliga", home_team="SC Paderborn 07",
+                             away_team="Eintracht Frankfurt", commence_time="2026-11-07T14:30:00Z")
+        outcomes = current_event["bookmakers"][0]["markets"][0]["outcomes"]
+        outcomes[0]["name"] = "Paderborn"
+        outcomes[2]["name"] = "Eintracht Frankfurt"
+        original = deepcopy(current_fixture)
+        self.assertIs(odds.match_event(current_event, [current_fixture], NOW), current_fixture)
+        self.assertIsNotNone(odds.parse_h2h(current_event["bookmakers"][0], current_event, NOW))
+        self.assertEqual(odds.canonical("Paderborn 07"), odds.canonical("SC Paderborn 07"))
+        self.assertEqual(current_fixture, original)
+        self.assertNotEqual(runner.norm("SC Paderborn 07"), runner.norm("Paderborn"))
+
+    def test_paderborn_alias_does_not_match_reserves_women_or_similar_clubs(self):
+        for other in ("SC Paderborn 07 II", "Paderborn U21", "SC Paderborn 07 Women", "Paderbornn"):
+            with self.subTest(other=other):
+                self.assertNotEqual(odds.canonical(other), odds.canonical("Paderborn"))
+                current = event()
+                current["home_team"] = "SC Paderborn 07"
+                current["bookmakers"][0]["markets"][0]["outcomes"][0]["name"] = other
+                self.assertIsNone(odds.parse_h2h(current["bookmakers"][0], current, NOW))
+
+    def test_observed_auxerre_paris_start_disagreement_remains_rejected(self):
+        current_fixture = {"league": "Ligue 1", "date": "2026-11-07", "time": "17:15",
+                           "kickoff_utc": "2026-11-07T16:15:00+00:00",
+                           "home": "AJ Auxerre", "away": "Paris FC"}
+        current_event = {"sport_key": "soccer_france_ligue_one", "home_team": "Auxerre",
+                         "away_team": "Paris", "commence_time": "2026-11-07T18:00:00Z"}
+        self.assertEqual(odds.canonical(current_event["home_team"]), odds.canonical(current_fixture["home"]))
+        self.assertEqual(odds.canonical(current_event["away_team"]), odds.canonical(current_fixture["away"]))
+        self.assertIsNone(odds.match_event(current_event, [current_fixture], NOW))
+
     def test_observed_aliases_do_not_match_reserves_or_similar_clubs(self):
         for other in ("Coventry United", "Coventry City U21", "Coventry City Women", "Coventry Cit"):
             with self.subTest(other=other):

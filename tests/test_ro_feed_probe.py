@@ -30,6 +30,66 @@ def response():
 
 
 class ProbeTests(unittest.TestCase):
+    def test_daily_monitor_is_five_serial_free_requests_and_only_aggregate_data(self):
+        from scripts.validate_outputs import validate_ro_monitor
+        with tempfile.TemporaryDirectory() as folder,patch.dict("os.environ",{"PROPLINE_API_KEY":"test-only"}):
+            out=Path(folder)
+            (out/"latest.json").write_text(json.dumps({"generated_at":NOW.isoformat(),"fixtures":[fixture()]}))
+            clock=MagicMock();clock.now.return_value=NOW
+            with patch.object(runner,"OUT",out),patch.object(probe,"datetime",clock),\
+                 patch.object(probe,"fetch",return_value=([response()],{"X-Daily-Remaining":"999"},None)) as network,redirect_stdout(io.StringIO()):
+                report=probe.monitor()
+            self.assertEqual(network.call_count,5)
+            self.assertEqual(report["authenticated_requests"],5)
+            self.assertEqual(len(report["leagues"]),5)
+            self.assertEqual(report,json.loads((out/"ro_feed_status.json").read_text()))
+            self.assertTrue(all("max_age=120" in call.args[0] for call in network.call_args_list))
+            validate_ro_monitor(report)
+            text=json.dumps(report)
+            for field in ('"price"','"outcomes"','"unmatched_fixture_samples"','"unsupported_selection_samples"','test-only'):
+                self.assertNotIn(field,text)
+
+    def test_monitor_without_key_makes_no_network_requests(self):
+        from scripts.validate_outputs import validate_ro_monitor
+        with tempfile.TemporaryDirectory() as folder,patch.dict("os.environ",{"PROPLINE_API_KEY":""}),\
+             patch.object(probe,"fetch") as network,redirect_stdout(io.StringIO()):
+            report=probe.monitor(Path(folder)/"monitor.json")
+        network.assert_not_called()
+        self.assertEqual(report["authenticated_requests"],0)
+        self.assertTrue(all(row["status"]=="needs_api_key" for row in report["leagues"]))
+        validate_ro_monitor(report)
+
+    def test_monitor_internal_failure_isolated_without_reusing_previous_league_or_leaking_error(self):
+        from scripts.validate_outputs import validate_ro_monitor
+        calls=[]
+        def run(**kwargs):
+            calls.append(kwargs["league"])
+            if len(calls)==2:raise ValueError("never-log-secret-or-response")
+            kwargs["output"].write_text(json.dumps({"status":"provider_error","error":"http_503","authenticated_requests":1}))
+            return 2
+        with tempfile.TemporaryDirectory() as folder,patch.object(probe,"run",side_effect=run):
+            report=probe.monitor(Path(folder)/"monitor.json")
+        self.assertEqual(len(calls),5)
+        self.assertEqual(report["leagues"][1]["status"],"diagnostic_error")
+        self.assertEqual(report["leagues"][1]["error"],"ValueError")
+        self.assertEqual(report["leagues"][2]["status"],"provider_error")
+        self.assertIsNone(report["authenticated_requests"])
+        self.assertNotIn("never-log",json.dumps(report))
+        validate_ro_monitor(report)
+
+    def test_public_monitor_contract_rejects_value_flags_prices_and_inconsistent_counts(self):
+        from scripts.validate_outputs import validate_ro_monitor
+        report=json.loads((Path(__file__).resolve().parents[1]/"docs/ro_feed_status.json").read_text())
+        validate_ro_monitor(report)
+        for field in ("verified_value","operator_prices_independently_verified","raw_odds_saved"):
+            bad=deepcopy(report);bad[field]=True
+            with self.assertRaises(ValueError):validate_ro_monitor(bad)
+        for field in ("price","outcomes","unsupported_selection_samples"):
+            bad=deepcopy(report);bad["leagues"][0]["quality"][field]=[]
+            with self.assertRaises(ValueError):validate_ro_monitor(bad)
+        bad=deepcopy(report);bad["leagues"][0]["quality"]["book_diagnostics"]["netbet_ro"]["matched_current_model_markets"]=100000
+        with self.assertRaises(ValueError):validate_ro_monitor(bad)
+
     def test_inspecting_older_delivery_never_relaxes_accepted_quote_age(self):
         with tempfile.TemporaryDirectory() as folder,patch.dict("os.environ",{"PROPLINE_API_KEY":"test-only"}):
             root=Path(folder)
