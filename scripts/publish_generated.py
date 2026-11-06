@@ -17,11 +17,12 @@ OUTPUTS = {
         "docs/odds_observations.json", "docs/odds_diagnostics.json",
         "docs/market_audit.json", "docs/model_lab.json", "docs/calibration_report.json",
         "docs/elo_challenger.json", "docs/ro_feed_status.json",
+        "docs/ro_feed_history.json", "docs/settlement_report.json", "docs/operations_report.json",
     ),
     "lab": ("docs/model_lab.json", "docs/calibration_report.json"),
     "elo": ("docs/elo_challenger.json",),
 }
-OPTIONAL_OUTPUTS = frozenset({"docs/ro_feed_status.json"})
+OPTIONAL_OUTPUTS = frozenset({"docs/ro_feed_status.json","docs/ro_feed_history.json","docs/settlement_report.json","docs/operations_report.json"})
 
 
 def git(*args, capture=True):

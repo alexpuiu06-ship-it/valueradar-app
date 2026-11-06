@@ -12,6 +12,12 @@
     <section class="panel" id="ro-feed-module"><h2>Probe de acoperire RO — Superbet și NetBet</h2>
       <div id="ro-feed-status" class="meta" role="status">Se încarcă diagnosticul RO…</div>
       <div id="ro-feed-coverage"></div>
+      <details id="ro-history-details"><summary>Istoricul monitorizării gratuite</summary>
+        <p id="ro-history-status" class="meta">Se încarcă probele înregistrate…</p>
+        <select id="ro-history-day" aria-label="Ziua probelor RO" disabled><option value="">Fără istoric</option></select>
+        <div id="ro-history-table"></div>
+        <p class="meta">Sunt păstrate doar probe observate, maximum 90 de zile. Celulele arată probe cu cel puțin o potrivire / probe înregistrate în ziua aleasă, nu procentul ofertelor acoperite. Aceleași meciuri pot apărea în probe diferite. Zilele fără probe rămân lipsă.</p>
+      </details>
       <p class="meta">Fotografii de diagnostic, fără cote afișate. Numerele arată verificări tehnice la momentul probei, nu oferte actuale confirmate la operator. Absența din răspunsul filtrat nu dovedește lipsa acoperirii furnizorului. Nu există pariuri value verificate.</p>
     </section>
     <section class="panel" id="manual-module"><h2>Compară manual o cotă de la o casă din România</h2>
@@ -28,18 +34,67 @@
     </section>
     <section class="panel"><h2>Evaluarea prețurilor și a avantajului estimat</h2><div id="market-review" class="meta">Se încarcă jurnalul cotelor…</div></section>`;
   el('message').insertAdjacentElement('afterend', panel);
-  let source = null, audit = null, checks = null, roCoverage = null, generation = 0;
+  let source = null, audit = null, checks = null, roCoverage = null, roHistory = null, historyRecords = [], selectedHistoryDay = '', generation = 0;
   const manualGames = new Map();
   async function safeRead(path) { try { return await VR.fetchJSON(path); } catch (_) { return null; } }
   async function reload() {
     const current = ++generation;
-    source = audit = checks = roCoverage = null;
-    renderOdds(); renderAudit(); renderRO();
-    const results = await Promise.all([safeRead('./odds_status.json'), safeRead('./market_audit.json'), safeRead('./odds_diagnostics.json'), safeRead('./ro_feed_status.json')]);
+    source = audit = checks = roCoverage = roHistory = null;
+    renderOdds(); renderAudit(); renderRO(); renderHistory();
+    const results = await Promise.all([safeRead('./odds_status.json'), safeRead('./market_audit.json'), safeRead('./odds_diagnostics.json'), safeRead('./ro_feed_status.json'), safeRead('./ro_feed_history.json')]);
     if (current !== generation) return;
-    [source, audit, checks, roCoverage] = results;
-    renderOdds(); renderAudit(); renderRO();
+    [source, audit, checks, roCoverage, roHistory] = results;
+    renderOdds(); renderAudit(); renderRO(); renderHistory();
   }
+  const historyLeagues = ['Premier League', 'La Liga', 'Serie A', 'Bundesliga', 'Ligue 1'];
+  const validCount = n => Number.isSafeInteger(n) && n >= 0;
+  function romaniaDay(stamp) {
+    const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Bucharest', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date(stamp));
+    return ['year', 'month', 'day'].map(key => parts.find(part => part.type === key).value).join('-');
+  }
+  function validHistoryRecord(record) {
+    if (!record || !Number.isFinite(VR.timestamp(record.observed_at)) || VR.freshness(record.observed_at, 24 * 90).future ||
+        record.day_ro !== romaniaDay(VR.timestamp(record.observed_at)) || record.max_quote_age_seconds !== 120 ||
+        !Array.isArray(record.leagues) || record.leagues.length !== 5 || new Set(record.leagues.map(row => row && row.league)).size !== 5) return false;
+    return record.leagues.every(row => row && historyLeagues.includes(row.league) && row.books && ['superbet_ro', 'netbet_ro'].every(book => {
+      const d = row.books[book];
+      return d && ((d.received === null && d.complete === null && d.matched === null) ||
+        validCount(d.received) && validCount(d.complete) && validCount(d.matched) && d.matched <= d.complete && d.complete <= d.received);
+    }));
+  }
+  function renderHistory() {
+    const status = el('ro-history-status'), select = el('ro-history-day'), table = el('ro-history-table'), report = roHistory;
+    const previousDay = selectedHistoryDay || select.value;
+    historyRecords = []; table.replaceChildren(); select.disabled = true;
+    const times = report && Array.isArray(report.records) ? report.records.map(r => r && VR.timestamp(r.observed_at)) : [];
+    const valid = report && report.schema_version === 1 && report.provider === 'PropLine' && report.retention_days === 90 && report.max_records === 512 &&
+      report.verified_value === false && report.operator_prices_independently_verified === false && report.raw_odds_saved === false &&
+      Array.isArray(report.records) && report.records.length <= 512 && report.records.every(validHistoryRecord) && new Set(times).size === times.length;
+    if (!valid) { select.innerHTML = '<option value="">Fără istoric verificabil</option>'; status.textContent = 'Istoricul probelor este indisponibil sau invalid. Acoperirea pe zile nu poate fi evaluată.'; return; }
+    historyRecords = report.records.filter(r => Date.now() - VR.timestamp(r.observed_at) <= 90 * 86400e3).sort((a, b) => VR.timestamp(a.observed_at) - VR.timestamp(b.observed_at));
+    const days = [...new Set(historyRecords.map(r => r.day_ro))].sort().reverse();
+    select.innerHTML = days.map(day => '<option value="' + esc(day) + '">' + esc(day) + ' (România)</option>').join('') || '<option value="">Fără probe în ultimele 90 de zile</option>';
+    select.disabled = days.length === 0;
+    if (days.includes(previousDay)) select.value = previousDay;
+    selectedHistoryDay = select.value;
+    status.textContent = historyRecords.length ? historyRecords.length + ' probe observate în ' + days.length + ' zile calendaristice din România. Ultima observație: ' + VR.dateTime(historyRecords.at(-1).observed_at) + '.' : 'Nu sunt probe înregistrate în ultimele 90 de zile. Istoricul se acumulează de la activare.';
+    renderHistoryDay();
+  }
+  function renderHistoryDay() {
+    const records = historyRecords.filter(r => r.day_ro === el('ro-history-day').value), table = el('ro-history-table');
+    if (!records.length) { table.replaceChildren(); return; }
+    const rows = historyLeagues.map(league => {
+      const cells = ['superbet_ro', 'netbet_ro'].map(book => {
+        const samples = records.map(r => r.leagues.find(row => row.league === league).books[book]);
+        const matched = samples.filter(d => d.matched !== null && d.matched > 0).length;
+        const unknown = samples.filter(d => d.matched === null).length;
+        return '<td>' + esc(matched + ' / ' + samples.length) + (unknown ? '<br><span class="meta">' + esc(unknown) + ' probe fără răspuns evaluabil</span>' : '') + '</td>';
+      }).join('');
+      return '<tr><td>' + esc(league) + '</td>' + cells + '</tr>';
+    }).join('');
+    table.innerHTML = '<div class="table-scroll"><table><thead><tr><th>Ligă</th><th>Superbet RO</th><th>NetBet RO</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
+  }
+  el('ro-history-day').addEventListener('change', () => { selectedHistoryDay = el('ro-history-day').value; renderHistoryDay(); });
   function renderRO() {
     const status = el('ro-feed-status'), table = el('ro-feed-coverage'), report = roCoverage;
     table.replaceChildren();

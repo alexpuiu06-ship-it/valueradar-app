@@ -10,6 +10,7 @@ from pathlib import Path
 
 import odds_scanner
 import runner
+import settlement
 
 OUT = Path(__file__).resolve().parent / "docs"
 
@@ -187,7 +188,9 @@ def selftest():
 def run():
     OUT.mkdir(parents=True, exist_ok=True)
     observations = read("odds_observations.json", [])
-    result = evaluate(observations, read("forecast_log.json", []))
+    latest=read("latest.json",{})
+    forecasts=settlement.eligible_forecasts(read("forecast_log.json",[]),read("settlement_report.json",{}),latest.get("generated_at"))
+    result = evaluate(observations, forecasts)
     # A cache refresh never advances the original observation timestamp.
     audit = odds_scanner.cross_book_consensus(observations)
     diagnostic = {

@@ -31,7 +31,8 @@ O rulare manuală are trei opțiuni, implicit dezactivate:
 - probe_ro: verifică diagnosticul de acoperire Superbet RO/NetBet RO, cel mult
   cinci cereri gratuite. Nu salvează prețuri și nu activează recomandări.
 
-Diagnosticul RO rulează separat zilnic la **06:37 UTC**, prin același writer
+Diagnosticul RO rulează separat zilnic la **08:37 ora României iarna / 09:37 vara
+(06:37 UTC)**, prin același writer
 de producție. PROPLINE_API_KEY este transmisă numai acestei probe sau unei
 rulări manuale care o cere explicit. Un răspuns parțial ori o eroare de furnizor
 produce un status vizibil, fără a bloca actualizarea modelului. Un raport cu
@@ -58,6 +59,22 @@ rulare pe ultima revizie este preferabilă suprascrierii jurnalului.
 
 ## Starea datelor
 
+Panoul „Monitorizare și decontarea estimărilor” asociază raportul cu exact
+aceeași analiză și versiune. Semnalează peste șase ore fără analiză nouă și
+peste 30 de ore fără probă RO. Acestea sunt avertizări de întârziere, nu dovezi
+că GitHub Actions a eșuat. Problemele rămân vizibile chiar dacă unele surse au
+răspuns. Panoul nu trimite e-mailuri sau alte notificări externe.
+
+Istoricul RO păstrează cel mult 512 probe în ultimele 90 de zile. Sunt salvate
+numai timestamp-uri, stări și numărători pe ligă/casă, fără cote, selecții sau
+răspunsuri brute. O rulare a modelului care recitește aceeași probă nu adaugă
+o observație și nu îi actualizează momentul. Modificarea unei probe deja
+înregistrate este refuzată; fișierul corupt nu este înlocuit cu un istoric gol.
+Zilele sunt grupate în fusul Europe/Bucharest; zilele lipsă rămân lipsă.
+Prima observație este ultima probă reală existentă la activare, nu o serie
+reconstituită retrospectiv. Numărul de probe cu potriviri nu reprezintă
+procentul întregii oferte acoperite; aceleași meciuri pot reapărea.
+
 „Ultima actualizare” arată când s-a executat analiza. Panoul „Starea datelor
 pe ligi și piețe” arată ultima partidă efectiv disponibilă și sursele lipsă.
 Aceste două momente au semnificații diferite.
@@ -74,6 +91,30 @@ fișierele publice. Verificarea minutului curent elimină meciurile începute,
 fără să închidă explicațiile și fără să șteargă o comparație încă valabilă.
 
 ## Dovezile prospective
+
+Politica de decontare `observed_results_v1` cere identitate exactă, moment de
+creare anterior startului și rezultat/statistici disponibile. Dacă ora
+rezultatului diferă cu peste 60 secunde de ora arhivată, decontarea este
+oprită. Se așteaptă cel puțin două ore după cel mai târziu start cunoscut;
+aceasta este o regulă operațională, nu confirmarea independentă a finalului.
+
+La decontare se adaugă valorile observate, amprenta lor, sursele și amprentele
+fișierelor sursă disponibile. Predicția și timestamp-ul inițial rămân intacte.
+O corecție ulterioară a rezultatului exclude scorul afectat și este raportată;
+decontarea inițială nu este rescrisă. Dovada arhivată validă rămâne evaluabilă
+dacă sursa lipsește într-o rulare ulterioară, în absența unui conflict cunoscut.
+
+Raportul separă estimările viitoare, ora necunoscută în arhiva veche, perioada
+minimă de verificare, rezultatele/statisticile lipsă și carantina. Lipsa datelor
+mai mult de 48 ore după perioada minimă de verificare este semnalată explicit.
+Numărătorile sunt estimări distincte per piață/versiune, cu numărul de meciuri
+afișat separat. Scorurile prospective și comparația cu piața folosesc aceeași
+eligibilitate de decontare. Niciun astfel de raport nu deblochează value sau ROI.
+
+Fișierele `settlement_report.json`, `ro_feed_history.json` și
+`operations_report.json` sunt generate și salvate de writer-ul unic.
+Contractele verifică numărătorile și asocierea cu analiza, iar publicarea
+compară și amprentele acestor fișiere servite public.
 
 Jurnalul păstrează prima estimare a fiecărei versiuni. Dublurile canonice,
 inclusiv aceeași echipă scrisă diferit, opresc salvarea înainte de orice

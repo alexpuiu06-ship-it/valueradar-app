@@ -18,6 +18,8 @@ import calibration
 import model_lab
 import elo_challenger
 import ro_feed_probe
+import settlement
+import monitoring
 
 
 def execute(research=False,scan_odds=False,imported=None,run_at=None,probe_ro=False):
@@ -32,11 +34,16 @@ def execute(research=False,scan_odds=False,imported=None,run_at=None,probe_ro=Fa
         odds_scanner.close_watchlist("no_scan_requested")
     performance.run()
     if probe_ro:
+        if (runner.OUT/"ro_feed_status.json").exists() and not (runner.OUT/"ro_feed_history.json").exists():
+            monitoring.update_ro_history(runner.OUT/"ro_feed_status.json",runner.OUT/"ro_feed_history.json")
         ro_feed_probe.monitor(output=runner.OUT/"ro_feed_status.json")
     if research:
         hist,fixtures,_=data
         observations=json.loads((runner.OUT/"odds_observations.json").read_text())
         forecasts=json.loads((runner.OUT/"forecast_log.json").read_text())
+        latest_for_audit=json.loads((runner.OUT/"latest.json").read_text())
+        audit=json.loads((runner.OUT/"settlement_report.json").read_text())
+        forecasts=settlement.eligible_forecasts(forecasts,audit,latest_for_audit.get("generated_at"))
         comparison=calibration.compare_1x2(hist,fixtures,as_of=at,observations=observations,forecasts=forecasts)
         runner.write_json_atomic(runner.OUT/"calibration_report.json",comparison)
         runner.write_json_atomic(runner.OUT/"model_lab.json",model_lab.experiment(hist,as_of=at))
@@ -48,8 +55,10 @@ def execute(research=False,scan_odds=False,imported=None,run_at=None,probe_ro=Fa
     revision=subprocess.run(["git","rev-parse","HEAD"],cwd=ROOT,text=True,capture_output=True,check=True).stdout.strip()
     latest["pipeline_execution"]={"source_commit":revision,"research_refreshed":research,
       "odds_scan_requested":scan_odds,"ro_probe_requested":probe_ro,"single_import":True,
+      "monitoring_schema_version":1,"settlement_policy_version":"observed_results_v1",
       "sources_sha256":hashlib.sha256(json.dumps(sources,separators=(",",":")).encode()).hexdigest()}
     runner.write_json_atomic(runner.OUT/"latest.json",latest)
+    monitoring.refresh()
     print("Coherent pipeline completed; research:",research,"odds scan:",scan_odds,"RO diagnostic:",probe_ro)
     return 0
 

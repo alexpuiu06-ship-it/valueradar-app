@@ -21,7 +21,7 @@ footer{margin-top:22px;padding-bottom:30px;font-size:12px;color:#667b84}
 </style></head><body><div class="wrap"><header>
 <div><h1>◉ ValueRadar</h1><div class="sub">Analiză statistică autonomă • v1.0 • Cele cinci ligi mari</div></div>
 <button id="refresh" type="button">Reîncarcă datele</button></header>
-<div class="notice"><b>Proiect experimental, nu sistem de pariuri validat.</b> Probabilitățile sunt estimări, nu certitudini. Nu avem acces la cotele actuale Superbet, Betano, Unibet, MrBit, NetBet și Casa Pariurilor; prin urmare <b>nu identificăm încă pariuri value reale</b>.</div>
+<div class="notice"><b>Proiect experimental, nu sistem de pariuri validat.</b> Probabilitățile sunt estimări, nu certitudini. Acoperirea cotelor RO este parțială și neverificată independent la operator. <b>Nu există pariuri value confirmate.</b></div>
 <div class="summary">
 <div class="panel"><span class="big" id="history">—</span><span class="meta">Meciuri istorice</span></div>
 <div class="panel"><span class="big" id="upcoming">—</span><span class="meta">Meciuri următoarele 30 zile</span></div>
@@ -30,6 +30,10 @@ footer{margin-top:22px;padding-bottom:30px;font-size:12px;color:#667b84}
 </div>
 <div class="panel" id="message" role="status" aria-live="polite">Aștept prima actualizare automată…</div>
 <section class="panel" id="data-health" style="margin-top:16px">Starea surselor va apărea după verificarea datelor.</section>
+<section class="panel" id="operations-monitor"><h2>Monitorizare și decontarea estimărilor</h2>
+<p id="operations-alerts" class="meta" role="status">Se verifică raportul operațional…</p>
+<div id="settlement-summary" class="meta">Raportul de decontare se încarcă.</div>
+<p class="meta">Decontarea compară estimările cu rezultate statistice observate. Nu confirmă regulile unui operator, un pariu value sau profitul.</p></section>
 <div class="controls">
 <select id="league" aria-label="Campionat"><option value="all">Toate ligile</option><option>Premier League</option><option>La Liga</option><option>Serie A</option><option>Bundesliga</option><option>Ligue 1</option></select>
 <select id="market" aria-label="Piață analizată"><option value="h2h">Rezultat final 1X2</option><option value="yellow">Cartonașe galbene</option><option value="corners">Cornere</option><option value="goals">Goluri</option><option value="fouls">Faulturi</option></select>

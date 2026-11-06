@@ -469,7 +469,10 @@ def write_json_atomic(path,value):
 def prospective_eligible(entry,played=None):
  created=timestamp(entry.get("created_at"))
  if not created:return False
- kickoff=fixture_kickoff(entry) or (fixture_kickoff(played) if played else None)
+ frozen=fixture_kickoff(entry)
+ actual=fixture_kickoff(played) if played else None
+ if frozen and actual and abs((frozen-actual).total_seconds())>60:return False
+ kickoff=frozen or actual
  if kickoff:return created<kickoff.astimezone(timezone.utc)
  # Legacy records without time: only creation before the earliest possible
  # kickoff on that fixed-offset date proves they preceded the match.
@@ -532,7 +535,7 @@ def comparison_allowed(prediction,at):
 def forecast_identity(entry):
  return (*key(entry),entry["market"],entry.get("line") if entry["market"]!="h2h" else None,entry.get("pipeline_version","legacy_unversioned"))
 
-def prospective(hist,fixtures,run_at):
+def prospective(hist,fixtures,run_at,source_report=()):
  """Append first forecasts, settle later. Never silently reset or truncate evidence."""
  path=OUT/"forecast_log.json"
  try:
@@ -566,35 +569,28 @@ def prospective(hist,fixtures,run_at):
      "method_version":gp.get("explanation",{}).get("method_version","unknown"),
      "historical_cutoff_exclusive":f["date"]}
    if logkey(entry) not in known:log.append(entry);known.add(logkey(entry))
- valid_outcomes,_=clean_history(hist,now)
+ from settlement import state,freeze_result,audit
+ valid_outcomes,outcome_integrity=clean_history(hist,now)
  outcomes={key(r):r for r in valid_outcomes}
  for r in log:
   if r.get("settled"):continue
   played=outcomes.get(key(r))
   if not played:continue
-  if not prospective_eligible(r,played):
-   r["evaluation_exclusion"]="creation_not_provably_before_kickoff"
-   continue
-  if r["market"]=="h2h":
-   if number(played.get("gh")) is None or number(played.get("ga")) is None:continue
-   r["actual_outcome"]="home" if played["gh"]>played["ga"] else "away" if played["gh"]<played["ga"] else "draw"
-  else:
-   h,a,_,_=MARKETS.get(r["market"],(None,None,None,None))
-   if h is None or number(played.get(h)) is None or number(played.get(a)) is None:continue
-   r["actual_total"]=played[h]+played[a]
-   r["actual_over"]=int(r["actual_total"]>r["line"])
-  r["settled"]=True;r["settled_at"]=run_at
+  status=state(r,played,now)
+  if status=="blocked_creation_evidence":r.setdefault("evaluation_exclusion","creation_not_provably_before_kickoff")
+  if status=="ready_to_settle":freeze_result(r,played,now,source_report)
  # Append order is part of the audit trail; retaining the full evidence avoids
  # outcome-dependent expiry of successful or unsuccessful predictions.
  if any(not valid_forecast_record(r) for r in log):raise ValueError("Generated forecast journal contains invalid probabilities or settlement data")
  write_json_atomic(path,log)
+ write_json_atomic(OUT/"settlement_report.json",audit(log,outcomes,now,outcome_integrity))
  scores={}
  for market in list(MARKETS)+["h2h"]:
   settled=[r for r in log if r.get("settled") and r["market"]==market]
   done=[];seen=set()
   for r in settled:
    k=logkey(r)
-   if k in seen or not prospective_eligible(r,outcomes.get(key(r))):continue
+   if k in seen or state(r,outcomes.get(key(r)),now)!="settled_with_evidence":continue
    seen.add(k);done.append(r)
   if market=="h2h":
    def error(r):
@@ -631,7 +627,7 @@ def run(imported=None,run_at=None):
     if not p["availability"]["comparison_allowed"]:p["quality"]="very_low"
   enriched.append({**m,"markets":markets,"market_rejections":{k:market_rejection(hist,m,k) for k,p in markets.items() if p is None}})
  stamp=max(at,datetime.now(timezone.utc)).isoformat()
- prospective_report,count=prospective(hist,enriched,stamp)
+ prospective_report,count=prospective(hist,enriched,stamp,report)
  audit={lg:{market:sum(r["league"]==lg and r.get(h) is not None and r.get(a) is not None for r in hist)
   for market,(h,a,_,_) in MARKETS.items()} for lg in LEAGUES}
  freshness={lg:{market:max((r["date"] for r in hist if r["league"]==lg and r.get(h) is not None and r.get(a) is not None),default=None)
