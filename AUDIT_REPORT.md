@@ -7,6 +7,16 @@ oricărei integrări în `main`.
 
 ## Continuare operațională
 
+Etapa alternativei gratuite OddsPapi a verificat cheia, cota contului,
+competițiile, piața exactă și câte un meci real din fiecare ligă. Nicio
+combinație din eșantion nu a trecut toate verificările; nu se deduce lipsa
+întregii oferte. `changedAt` nu este tratat ca timestamp de livrare. Diagnosticul
+respectă un buget explicit, nu salvează contul/cheia/cotele și nu este introdus
+în scannerul de producție. Raportul este în [ODDSPAPI_EVALUATION.md](ODDSPAPI_EVALUATION.md).
+Testarea locală curentă are **162 teste Python**; suita browser existentă are
+52 de cazuri. Aliasurile exacte Nottingham, Bilbao și Racing Santander
+rezolvă identități observate; numele generic Deportivo rămâne respins.
+
 Etapa feed RO verifică acum cheia PropLine reală și toate cele cinci ligi.
 Aliasurile exacte Coventry City, Betis, Hull City și Paderborn corectează
 identificări observate fără a schimba modelul. Duplicate canonice, selecții

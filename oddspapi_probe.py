@@ -6,6 +6,7 @@ import argparse
 import json
 import os
 from pathlib import Path
+import re
 import time
 import urllib.error
 import urllib.parse
@@ -23,6 +24,12 @@ TOURNAMENTS={"Premier League":(17,"england",("premier-league",)),
  "Bundesliga":(35,"germany",("bundesliga","1-bundesliga")),
  "Ligue 1":(34,"france",("ligue-1","ligue-1-mcdonalds"))}
 REPORT=Path(__file__).resolve().parent/"work"/"oddspapi_preflight.json"
+REASONS=frozenset({"invalid_account_schema","ambiguous_or_inactive_subscription","invalid_quota","invalid_entitlements",
+ "invalid_markets_catalog","ambiguous_full_time_1x2_catalog","invalid_1x2_catalog","invalid_1x2_outcome_catalog","duplicate_1x2_catalog",
+ "invalid_tournament_catalog","invalid_fixtures_schema","fixture_identity_or_start_changed","model_not_current_at_receipt",
+ "invalid_bookmaker_odds_schema","request_budget_exhausted","stale_analysis","requested_ro_books_not_in_account","quota_reserve_guard",
+ "unsupported_endpoint","response_size_limit","URLError","TimeoutError","ValueError","JSONDecodeError","UnicodeDecodeError",
+ "ConnectionResetError","ConnectionError","OSError"})
 
 
 class ProbeError(Exception):
@@ -233,7 +240,12 @@ def run(authenticated=False,league="Premier League",output=REPORT):
             complete=all(row.get("books") and all(d["complete_active_markets"] for d in row["books"].values()) for row in report["leagues"])
             report["status"]="diagnostic_only_freshness_unverified" if complete else "incomplete_quote_validation"
             if complete:status=0
-        except ProbeError as exc:report.update(status="probe_blocked",reason=str(exc))
+        except ProbeError as exc:
+            reason=str(exc)
+            # Central whitelist protects future fetch changes from accidentally
+            # logging a provider error body or credential-bearing request URL.
+            safe=reason in REASONS or re.fullmatch(r"http_[45][0-9]{2}",reason)
+            report.update(status="probe_blocked",reason=reason if safe else "provider_error")
         except Exception as exc:report.update(status="internal_error",reason=type(exc).__name__)
     report["finished_at"]=datetime.now(timezone.utc).isoformat()
     output.parent.mkdir(parents=True,exist_ok=True)

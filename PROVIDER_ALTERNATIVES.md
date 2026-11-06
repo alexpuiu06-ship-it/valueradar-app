@@ -15,6 +15,18 @@ Acestea sunt declarații publice ale furnizorilor, nu un audit independent al
 fiecărei cote. Termenii, disponibilitatea și prețurile se pot modifica.
 Sumele sunt în moneda furnizorului; nu sunt oferte ferme cu taxe/conversie.
 
+**Actualizare autentificată OddsPapi:** cheia este confirmată, cu acces declarat
+la Superbet RO/Betano RO. Proba unui meci din fiecare ligă nu a găsit un 1X2
+care să treacă toate verificările la ambele case. Au rămas 232/250 cereri.
+Vezi [raportul real și limitele eșantionului](ODDSPAPI_EVALUATION.md).
+
+**Reverificarea alternativei comerciale:** documentația Odds-API.io listează
+Solo £49/lună, iar pagina de tarife servită în USD listează $65/lună. Moneda
+și taxele se confirmă la checkout; nu considerăm automat aceste sume identice.
+Cheile gratuite noi sunt suspendate conform documentației. Termenii actuali
+cer clarificarea redistribuirii pentru un site public. Nu a fost efectuat
+checkout și nu avem o ofertă completă care să confirme costul total în buget.
+
 ## De ce pilotul PropLine este primul test
 
 Documentația identifică explicit bookmakerii superbet_ro și netbet_ro,
@@ -148,5 +160,7 @@ alese; nu promitem acoperirea continuă a tuturor ligilor din acea cotă.
   [MrBit RO](https://oddspapi.io/sportsbooks/mrbit-ro),
   [Casa Pariurilor RO](https://oddspapi.io/sportsbooks/casapariurilor-ro).
 - [Odds-API.io: tarife](https://odds-api.io/pricing),
-  [lista caselor](https://odds-api.io/sportsbooks).
+  [lista caselor](https://odds-api.io/sportsbooks),
+  [documentație și disponibilitatea cheilor](https://docs.odds-api.io/),
+  [termeni și taxe](https://odds-api.io/terms).
 - [The Odds API: bookmakeri și regiuni](https://the-odds-api.com/sports-odds-data/bookmaker-apis.html).

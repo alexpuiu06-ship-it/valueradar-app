@@ -183,6 +183,12 @@ class OddsPapiTests(unittest.TestCase):
         self.assertEqual(code,2);self.assertEqual(network.call_count,1)
         self.assertEqual(report["reason"],"http_401")
 
+    def test_unexpected_provider_error_text_cannot_leak_a_credential(self):
+        with tempfile.TemporaryDirectory() as folder:code,report,logged,network=self.run_probe(folder,error="https://test.invalid/?apiKey="+SECRET)
+        self.assertEqual(code,2);self.assertEqual(network.call_count,1)
+        self.assertEqual(report["reason"],"provider_error")
+        self.assertNotIn(SECRET,logged);self.assertNotIn(SECRET,json.dumps(report))
+
     def test_fetch_hides_query_credentials_and_exception_text_and_rejects_redirects(self):
         opener=MagicMock();opener.open.side_effect=URLError("https://test.invalid/?apiKey="+SECRET)
         with patch.object(probe.urllib.request,"build_opener",return_value=opener):

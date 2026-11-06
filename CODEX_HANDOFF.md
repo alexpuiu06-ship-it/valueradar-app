@@ -11,6 +11,8 @@ Evaluarea reală a surselor RO și limitele observate sunt în
 [PROVIDER_ALTERNATIVES.md](PROVIDER_ALTERNATIVES.md). PROPLINE_API_KEY este
 configurată; probele autentificate au acoperire parțială. Monitorul agregat
 nu reprezintă integrare de prețuri RO confirmate și nu deblochează value.
+ODDSPAPI_API_KEY este și ea configurată și testată. Proba gratuită, consumul
+și limitele sunt în [ODDSPAPI_EVALUATION.md](ODDSPAPI_EVALUATION.md).
 Primul PR a fost integrat și publicat; corecțiile suplimentare unifică
 producția într-un singur writer și blochează istoricul vechi sau ambiguu.
 
