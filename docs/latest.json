@@ -1,6 +1,6 @@
 {
   "version": "0.6",
-  "generated_at": "2026-11-06T16:47:55.955423+00:00",
+  "generated_at": "2026-11-06T16:53:47.294997+00:00",
   "history_rows": 3935,
   "fixture_rows": 1300,
   "source_success": 20,
@@ -365,59 +365,6 @@
       }
     },
     {
-      "league": "Bundesliga",
-      "date": "2026-11-06",
-      "home": "Hamburger SV",
-      "away": "Borussia Mönchengladbach",
-      "time": "20:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.3213,
-          "under": 0.6787,
-          "mean": 3.74,
-          "n_league": 72,
-          "n_home": 3,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.6188,
-          "under": 0.3812,
-          "mean": 10.64,
-          "n_league": 72,
-          "n_home": 3,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.61143,
-          "under": 0.38857,
-          "mean": 3.16,
-          "n_league": 684,
-          "n_home": 20,
-          "n_away": 38,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.46351,
-          "under": 0.53649,
-          "mean": 23.23,
-          "n_league": 72,
-          "n_home": 3,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
       "league": "Ligue 1",
       "date": "2026-11-06",
       "home": "Toulouse FC",
@@ -465,6 +412,59 @@
           "n_league": 81,
           "n_home": 4,
           "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-06",
+      "home": "Hamburger SV",
+      "away": "Borussia Mönchengladbach",
+      "time": "20:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.3213,
+          "under": 0.6787,
+          "mean": 3.74,
+          "n_league": 72,
+          "n_home": 3,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.6188,
+          "under": 0.3812,
+          "mean": 10.64,
+          "n_league": 72,
+          "n_home": 3,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.61143,
+          "under": 0.38857,
+          "mean": 3.16,
+          "n_league": 684,
+          "n_home": 20,
+          "n_away": 38,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.46351,
+          "under": 0.53649,
+          "mean": 23.23,
+          "n_league": 72,
+          "n_home": 3,
+          "n_away": 4,
           "small_sample": true,
           "status": "experimental"
         }
@@ -1107,6 +1107,112 @@
       }
     },
     {
+      "league": "Ligue 1",
+      "date": "2026-11-07",
+      "home": "AJ Auxerre",
+      "away": "Paris FC",
+      "time": "17:15",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.28784,
+          "under": 0.71216,
+          "mean": 3.57,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.47086,
+          "under": 0.52914,
+          "mean": 9.44,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.4673,
+          "under": 0.5327,
+          "mean": 2.56,
+          "n_league": 692,
+          "n_home": 38,
+          "n_away": 21,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.5744,
+          "under": 0.4256,
+          "mean": 24.8,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-11-07",
+      "home": "Paris Saint-Germain",
+      "away": "Estac Troyes",
+      "time": "20:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.27772,
+          "under": 0.72228,
+          "mean": 3.52,
+          "n_league": 81,
+          "n_home": 3,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.38574,
+          "under": 0.61426,
+          "mean": 8.8,
+          "n_league": 81,
+          "n_home": 3,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.51793,
+          "under": 0.48207,
+          "mean": 2.77,
+          "n_league": 692,
+          "n_home": 37,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.57499,
+          "under": 0.42501,
+          "mean": 24.81,
+          "n_league": 81,
+          "n_home": 3,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
       "league": "Bundesliga",
       "date": "2026-11-07",
       "home": "1. FSV Mainz 05",
@@ -1364,112 +1470,6 @@
           "under": 0.65331,
           "mean": 21.8,
           "n_league": 72,
-          "n_home": 3,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-11-07",
-      "home": "AJ Auxerre",
-      "away": "Paris FC",
-      "time": "17:15",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.28784,
-          "under": 0.71216,
-          "mean": 3.57,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.47086,
-          "under": 0.52914,
-          "mean": 9.44,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.4673,
-          "under": 0.5327,
-          "mean": 2.56,
-          "n_league": 692,
-          "n_home": 38,
-          "n_away": 21,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.5744,
-          "under": 0.4256,
-          "mean": 24.8,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-11-07",
-      "home": "Paris Saint-Germain",
-      "away": "Estac Troyes",
-      "time": "20:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.27772,
-          "under": 0.72228,
-          "mean": 3.52,
-          "n_league": 81,
-          "n_home": 3,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.38574,
-          "under": 0.61426,
-          "mean": 8.8,
-          "n_league": 81,
-          "n_home": 3,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.51793,
-          "under": 0.48207,
-          "mean": 2.77,
-          "n_league": 692,
-          "n_home": 37,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.57499,
-          "under": 0.42501,
-          "mean": 24.81,
-          "n_league": 81,
           "n_home": 3,
           "n_away": 4,
           "small_sample": true,
@@ -2273,165 +2273,6 @@
       }
     },
     {
-      "league": "Bundesliga",
-      "date": "2026-11-08",
-      "home": "1. FC Köln",
-      "away": "Bayer 04 Leverkusen",
-      "time": "15:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.34074,
-          "under": 0.65926,
-          "mean": 3.84,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.61976,
-          "under": 0.38024,
-          "mean": 10.65,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.65591,
-          "under": 0.34409,
-          "mean": 3.38,
-          "n_league": 684,
-          "n_home": 21,
-          "n_away": 38,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.41791,
-          "under": 0.58209,
-          "mean": 22.67,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Bundesliga",
-      "date": "2026-11-08",
-      "home": "SC Freiburg",
-      "away": "1. FC Union Berlin",
-      "time": "17:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.29512,
-          "under": 0.70488,
-          "mean": 3.59,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 3,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.57799,
-          "under": 0.42201,
-          "mean": 10.29,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 3,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.65566,
-          "under": 0.34434,
-          "mean": 3.38,
-          "n_league": 684,
-          "n_home": 38,
-          "n_away": 37,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.40655,
-          "under": 0.59345,
-          "mean": 22.54,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 3,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Bundesliga",
-      "date": "2026-11-08",
-      "home": "TSG Hoffenheim",
-      "away": "FC Schalke 04",
-      "time": "19:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.30312,
-          "under": 0.69688,
-          "mean": 3.64,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.61592,
-          "under": 0.38408,
-          "mean": 10.61,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.63189,
-          "under": 0.36811,
-          "mean": 3.26,
-          "n_league": 684,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.36305,
-          "under": 0.63695,
-          "mean": 22.01,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
       "league": "Ligue 1",
       "date": "2026-11-08",
       "home": "Stade Rennais FC",
@@ -2750,6 +2591,165 @@
       }
     },
     {
+      "league": "Bundesliga",
+      "date": "2026-11-08",
+      "home": "1. FC Köln",
+      "away": "Bayer 04 Leverkusen",
+      "time": "15:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.34074,
+          "under": 0.65926,
+          "mean": 3.84,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.61976,
+          "under": 0.38024,
+          "mean": 10.65,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.65591,
+          "under": 0.34409,
+          "mean": 3.38,
+          "n_league": 684,
+          "n_home": 21,
+          "n_away": 38,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.41791,
+          "under": 0.58209,
+          "mean": 22.67,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-08",
+      "home": "SC Freiburg",
+      "away": "1. FC Union Berlin",
+      "time": "17:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.29512,
+          "under": 0.70488,
+          "mean": 3.59,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 3,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.57799,
+          "under": 0.42201,
+          "mean": 10.29,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 3,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.65566,
+          "under": 0.34434,
+          "mean": 3.38,
+          "n_league": 684,
+          "n_home": 38,
+          "n_away": 37,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.40655,
+          "under": 0.59345,
+          "mean": 22.54,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 3,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-08",
+      "home": "TSG Hoffenheim",
+      "away": "FC Schalke 04",
+      "time": "19:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.30312,
+          "under": 0.69688,
+          "mean": 3.64,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.61592,
+          "under": 0.38408,
+          "mean": 10.61,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.63189,
+          "under": 0.36811,
+          "mean": 3.26,
+          "n_league": 684,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.36305,
+          "under": 0.63695,
+          "mean": 22.01,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
       "league": "La Liga",
       "date": "2026-11-20",
       "home": "Athletic Club",
@@ -2803,59 +2803,6 @@
       }
     },
     {
-      "league": "Bundesliga",
-      "date": "2026-11-20",
-      "home": "FC Bayern München",
-      "away": "1. FC Köln",
-      "time": "20:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.32022,
-          "under": 0.67978,
-          "mean": 3.73,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.61773,
-          "under": 0.38227,
-          "mean": 10.63,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.71899,
-          "under": 0.28101,
-          "mean": 3.73,
-          "n_league": 684,
-          "n_home": 38,
-          "n_away": 21,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.36952,
-          "under": 0.63048,
-          "mean": 22.09,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
       "league": "Ligue 1",
       "date": "2026-11-20",
       "home": "Estac Troyes",
@@ -2902,6 +2849,59 @@
           "mean": 25.44,
           "n_league": 81,
           "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-20",
+      "home": "FC Bayern München",
+      "away": "1. FC Köln",
+      "time": "20:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.32022,
+          "under": 0.67978,
+          "mean": 3.73,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.61773,
+          "under": 0.38227,
+          "mean": 10.63,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.71899,
+          "under": 0.28101,
+          "mean": 3.73,
+          "n_league": 684,
+          "n_home": 38,
+          "n_away": 21,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.36952,
+          "under": 0.63048,
+          "mean": 22.09,
+          "n_league": 72,
+          "n_home": 4,
           "n_away": 4,
           "small_sample": true,
           "status": "experimental"
@@ -3704,6 +3704,271 @@
       }
     },
     {
+      "league": "Ligue 1",
+      "date": "2026-11-21",
+      "home": "OGC Nice",
+      "away": "Paris Saint-Germain",
+      "time": "17:15",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.24205,
+          "under": 0.75795,
+          "mean": 3.33,
+          "n_league": 81,
+          "n_home": 5,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.38325,
+          "under": 0.61675,
+          "mean": 8.78,
+          "n_league": 81,
+          "n_home": 5,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.57287,
+          "under": 0.42713,
+          "mean": 3.02,
+          "n_league": 692,
+          "n_home": 39,
+          "n_away": 40,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.38456,
+          "under": 0.61544,
+          "mean": 22.18,
+          "n_league": 81,
+          "n_home": 5,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-11-21",
+      "home": "AS Monaco",
+      "away": "AJ Auxerre",
+      "time": "20:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.30111,
+          "under": 0.69889,
+          "mean": 3.64,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.47469,
+          "under": 0.52531,
+          "mean": 9.47,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.60555,
+          "under": 0.39445,
+          "mean": 3.17,
+          "n_league": 692,
+          "n_home": 38,
+          "n_away": 39,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.61343,
+          "under": 0.38657,
+          "mean": 25.37,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-11-21",
+      "home": "LOSC Lille",
+      "away": "Olympique Lyonnais",
+      "time": "20:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.218,
+          "under": 0.782,
+          "mean": 3.19,
+          "n_league": 81,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.41832,
+          "under": 0.58168,
+          "mean": 9.04,
+          "n_league": 81,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.47518,
+          "under": 0.52482,
+          "mean": 2.6,
+          "n_league": 692,
+          "n_home": 5,
+          "n_away": 38,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.61593,
+          "under": 0.38407,
+          "mean": 25.41,
+          "n_league": 81,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-11-21",
+      "home": "RC Lens",
+      "away": "Toulouse FC",
+      "time": "20:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.27674,
+          "under": 0.72326,
+          "mean": 3.51,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.36885,
+          "under": 0.63115,
+          "mean": 8.67,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.57943,
+          "under": 0.42057,
+          "mean": 3.05,
+          "n_league": 692,
+          "n_home": 4,
+          "n_away": 38,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.64477,
+          "under": 0.35523,
+          "mean": 25.85,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-11-21",
+      "home": "RC Strasbourg Alsace",
+      "away": "Stade Brestois 29",
+      "time": "20:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.21968,
+          "under": 0.78032,
+          "mean": 3.2,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.40937,
+          "under": 0.59063,
+          "mean": 8.98,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.57551,
+          "under": 0.42449,
+          "mean": 3.03,
+          "n_league": 692,
+          "n_home": 38,
+          "n_away": 39,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.60604,
+          "under": 0.39396,
+          "mean": 25.27,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
       "league": "Bundesliga",
       "date": "2026-11-21",
       "home": "1. FC Union Berlin",
@@ -4014,271 +4279,6 @@
           "under": 0.54655,
           "mean": 23.1,
           "n_league": 72,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-11-21",
-      "home": "OGC Nice",
-      "away": "Paris Saint-Germain",
-      "time": "17:15",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.24205,
-          "under": 0.75795,
-          "mean": 3.33,
-          "n_league": 81,
-          "n_home": 5,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.38325,
-          "under": 0.61675,
-          "mean": 8.78,
-          "n_league": 81,
-          "n_home": 5,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.57287,
-          "under": 0.42713,
-          "mean": 3.02,
-          "n_league": 692,
-          "n_home": 39,
-          "n_away": 40,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.38456,
-          "under": 0.61544,
-          "mean": 22.18,
-          "n_league": 81,
-          "n_home": 5,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-11-21",
-      "home": "AS Monaco",
-      "away": "AJ Auxerre",
-      "time": "20:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.30111,
-          "under": 0.69889,
-          "mean": 3.64,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.47469,
-          "under": 0.52531,
-          "mean": 9.47,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.60555,
-          "under": 0.39445,
-          "mean": 3.17,
-          "n_league": 692,
-          "n_home": 38,
-          "n_away": 39,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.61343,
-          "under": 0.38657,
-          "mean": 25.37,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-11-21",
-      "home": "LOSC Lille",
-      "away": "Olympique Lyonnais",
-      "time": "20:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.218,
-          "under": 0.782,
-          "mean": 3.19,
-          "n_league": 81,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.41832,
-          "under": 0.58168,
-          "mean": 9.04,
-          "n_league": 81,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.47518,
-          "under": 0.52482,
-          "mean": 2.6,
-          "n_league": 692,
-          "n_home": 5,
-          "n_away": 38,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.61593,
-          "under": 0.38407,
-          "mean": 25.41,
-          "n_league": 81,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-11-21",
-      "home": "RC Lens",
-      "away": "Toulouse FC",
-      "time": "20:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.27674,
-          "under": 0.72326,
-          "mean": 3.51,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.36885,
-          "under": 0.63115,
-          "mean": 8.67,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.57943,
-          "under": 0.42057,
-          "mean": 3.05,
-          "n_league": 692,
-          "n_home": 4,
-          "n_away": 38,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.64477,
-          "under": 0.35523,
-          "mean": 25.85,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-11-21",
-      "home": "RC Strasbourg Alsace",
-      "away": "Stade Brestois 29",
-      "time": "20:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.21968,
-          "under": 0.78032,
-          "mean": 3.2,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.40937,
-          "under": 0.59063,
-          "mean": 8.98,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.57551,
-          "under": 0.42449,
-          "mean": 3.03,
-          "n_league": 692,
-          "n_home": 38,
-          "n_away": 39,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.60604,
-          "under": 0.39396,
-          "mean": 25.27,
-          "n_league": 81,
           "n_home": 4,
           "n_away": 5,
           "small_sample": true,
@@ -4870,112 +4870,6 @@
       }
     },
     {
-      "league": "Bundesliga",
-      "date": "2026-11-22",
-      "home": "FC Augsburg",
-      "away": "1. FSV Mainz 05",
-      "time": "15:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.3128,
-          "under": 0.6872,
-          "mean": 3.69,
-          "n_league": 72,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.59672,
-          "under": 0.40328,
-          "mean": 10.45,
-          "n_league": 72,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.63048,
-          "under": 0.36952,
-          "mean": 3.25,
-          "n_league": 684,
-          "n_home": 39,
-          "n_away": 38,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.40869,
-          "under": 0.59131,
-          "mean": 22.56,
-          "n_league": 72,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Bundesliga",
-      "date": "2026-11-22",
-      "home": "SV Werder Bremen",
-      "away": "Hamburger SV",
-      "time": "17:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.25976,
-          "under": 0.74024,
-          "mean": 3.4,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.55579,
-          "under": 0.44421,
-          "mean": 10.11,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.6136,
-          "under": 0.3864,
-          "mean": 3.17,
-          "n_league": 684,
-          "n_home": 38,
-          "n_away": 22,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.45502,
-          "under": 0.54498,
-          "mean": 23.12,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
       "league": "Ligue 1",
       "date": "2026-11-22",
       "home": "Paris FC",
@@ -5128,6 +5022,112 @@
           "mean": 24.2,
           "n_league": 81,
           "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-22",
+      "home": "FC Augsburg",
+      "away": "1. FSV Mainz 05",
+      "time": "15:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.3128,
+          "under": 0.6872,
+          "mean": 3.69,
+          "n_league": 72,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.59672,
+          "under": 0.40328,
+          "mean": 10.45,
+          "n_league": 72,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.63048,
+          "under": 0.36952,
+          "mean": 3.25,
+          "n_league": 684,
+          "n_home": 39,
+          "n_away": 38,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.40869,
+          "under": 0.59131,
+          "mean": 22.56,
+          "n_league": 72,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-22",
+      "home": "SV Werder Bremen",
+      "away": "Hamburger SV",
+      "time": "17:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.25976,
+          "under": 0.74024,
+          "mean": 3.4,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.55579,
+          "under": 0.44421,
+          "mean": 10.11,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.6136,
+          "under": 0.3864,
+          "mean": 3.17,
+          "n_league": 684,
+          "n_home": 38,
+          "n_away": 22,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.45502,
+          "under": 0.54498,
+          "mean": 23.12,
+          "n_league": 72,
+          "n_home": 4,
           "n_away": 5,
           "small_sample": true,
           "status": "experimental"
@@ -5400,59 +5400,6 @@
       }
     },
     {
-      "league": "Bundesliga",
-      "date": "2026-11-27",
-      "home": "SV Werder Bremen",
-      "away": "Borussia Mönchengladbach",
-      "time": "20:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.28313,
-          "under": 0.71687,
-          "mean": 3.53,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.57905,
-          "under": 0.42095,
-          "mean": 10.3,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.62767,
-          "under": 0.37233,
-          "mean": 3.24,
-          "n_league": 684,
-          "n_home": 38,
-          "n_away": 38,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.41731,
-          "under": 0.58269,
-          "mean": 22.67,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
       "league": "Ligue 1",
       "date": "2026-11-27",
       "home": "Stade Brestois 29",
@@ -5498,6 +5445,59 @@
           "under": 0.41502,
           "mean": 24.96,
           "n_league": 81,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-27",
+      "home": "SV Werder Bremen",
+      "away": "Borussia Mönchengladbach",
+      "time": "20:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.28313,
+          "under": 0.71687,
+          "mean": 3.53,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.57905,
+          "under": 0.42095,
+          "mean": 10.3,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.62767,
+          "under": 0.37233,
+          "mean": 3.24,
+          "n_league": 684,
+          "n_home": 38,
+          "n_away": 38,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.41731,
+          "under": 0.58269,
+          "mean": 22.67,
+          "n_league": 72,
           "n_home": 4,
           "n_away": 4,
           "small_sample": true,
@@ -5824,271 +5824,6 @@
       }
     },
     {
-      "league": "Bundesliga",
-      "date": "2026-11-28",
-      "home": "1. FC Köln",
-      "away": "SV 07 Elversberg",
-      "time": "15:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.28509,
-          "under": 0.71491,
-          "mean": 3.54,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.65079,
-          "under": 0.34921,
-          "mean": 10.92,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.61717,
-          "under": 0.38283,
-          "mean": 3.19,
-          "n_league": 684,
-          "n_home": 21,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.44192,
-          "under": 0.55808,
-          "mean": 22.96,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Bundesliga",
-      "date": "2026-11-28",
-      "home": "1. FSV Mainz 05",
-      "away": "1. FC Union Berlin",
-      "time": "15:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.28862,
-          "under": 0.71138,
-          "mean": 3.56,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 3,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.58794,
-          "under": 0.41206,
-          "mean": 10.37,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 3,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.62886,
-          "under": 0.37114,
-          "mean": 3.24,
-          "n_league": 684,
-          "n_home": 38,
-          "n_away": 37,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.32931,
-          "under": 0.67069,
-          "mean": 21.59,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 3,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Bundesliga",
-      "date": "2026-11-28",
-      "home": "Hamburger SV",
-      "away": "FC Bayern München",
-      "time": "15:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.29475,
-          "under": 0.70525,
-          "mean": 3.59,
-          "n_league": 72,
-          "n_home": 3,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.63625,
-          "under": 0.36375,
-          "mean": 10.79,
-          "n_league": 72,
-          "n_home": 3,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.63113,
-          "under": 0.36887,
-          "mean": 3.25,
-          "n_league": 684,
-          "n_home": 20,
-          "n_away": 38,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.38206,
-          "under": 0.61794,
-          "mean": 22.24,
-          "n_league": 72,
-          "n_home": 3,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Bundesliga",
-      "date": "2026-11-28",
-      "home": "SC Paderborn 07",
-      "away": "FC Schalke 04",
-      "time": "15:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.2638,
-          "under": 0.7362,
-          "mean": 3.42,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.6093,
-          "under": 0.3907,
-          "mean": 10.55,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.56642,
-          "under": 0.43358,
-          "mean": 2.95,
-          "n_league": 684,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.37942,
-          "under": 0.62058,
-          "mean": 22.21,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Bundesliga",
-      "date": "2026-11-28",
-      "home": "VfB Stuttgart",
-      "away": "Eintracht Frankfurt",
-      "time": "18:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.34871,
-          "under": 0.65129,
-          "mean": 3.88,
-          "n_league": 72,
-          "n_home": 3,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.6247,
-          "under": 0.3753,
-          "mean": 10.69,
-          "n_league": 72,
-          "n_home": 3,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.66059,
-          "under": 0.33941,
-          "mean": 3.4,
-          "n_league": 684,
-          "n_home": 37,
-          "n_away": 38,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.37233,
-          "under": 0.62767,
-          "mean": 22.12,
-          "n_league": 72,
-          "n_home": 3,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
       "league": "Ligue 1",
       "date": "2026-11-28",
       "home": "Angers SCO",
@@ -6346,6 +6081,271 @@
           "under": 0.46927,
           "mean": 24.19,
           "n_league": 81,
+          "n_home": 3,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-28",
+      "home": "1. FC Köln",
+      "away": "SV 07 Elversberg",
+      "time": "15:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.28509,
+          "under": 0.71491,
+          "mean": 3.54,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.65079,
+          "under": 0.34921,
+          "mean": 10.92,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.61717,
+          "under": 0.38283,
+          "mean": 3.19,
+          "n_league": 684,
+          "n_home": 21,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.44192,
+          "under": 0.55808,
+          "mean": 22.96,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-28",
+      "home": "1. FSV Mainz 05",
+      "away": "1. FC Union Berlin",
+      "time": "15:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.28862,
+          "under": 0.71138,
+          "mean": 3.56,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 3,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.58794,
+          "under": 0.41206,
+          "mean": 10.37,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 3,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.62886,
+          "under": 0.37114,
+          "mean": 3.24,
+          "n_league": 684,
+          "n_home": 38,
+          "n_away": 37,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.32931,
+          "under": 0.67069,
+          "mean": 21.59,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 3,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-28",
+      "home": "Hamburger SV",
+      "away": "FC Bayern München",
+      "time": "15:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.29475,
+          "under": 0.70525,
+          "mean": 3.59,
+          "n_league": 72,
+          "n_home": 3,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.63625,
+          "under": 0.36375,
+          "mean": 10.79,
+          "n_league": 72,
+          "n_home": 3,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.63113,
+          "under": 0.36887,
+          "mean": 3.25,
+          "n_league": 684,
+          "n_home": 20,
+          "n_away": 38,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.38206,
+          "under": 0.61794,
+          "mean": 22.24,
+          "n_league": 72,
+          "n_home": 3,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-28",
+      "home": "SC Paderborn 07",
+      "away": "FC Schalke 04",
+      "time": "15:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.2638,
+          "under": 0.7362,
+          "mean": 3.42,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.6093,
+          "under": 0.3907,
+          "mean": 10.55,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.56642,
+          "under": 0.43358,
+          "mean": 2.95,
+          "n_league": 684,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.37942,
+          "under": 0.62058,
+          "mean": 22.21,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-28",
+      "home": "VfB Stuttgart",
+      "away": "Eintracht Frankfurt",
+      "time": "18:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.34871,
+          "under": 0.65129,
+          "mean": 3.88,
+          "n_league": 72,
+          "n_home": 3,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.6247,
+          "under": 0.3753,
+          "mean": 10.69,
+          "n_league": 72,
+          "n_home": 3,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.66059,
+          "under": 0.33941,
+          "mean": 3.4,
+          "n_league": 684,
+          "n_home": 37,
+          "n_away": 38,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.37233,
+          "under": 0.62767,
+          "mean": 22.12,
+          "n_league": 72,
           "n_home": 3,
           "n_away": 4,
           "small_sample": true,
@@ -7414,165 +7414,6 @@
       }
     },
     {
-      "league": "Bundesliga",
-      "date": "2026-11-29",
-      "home": "SC Freiburg",
-      "away": "RB Leipzig",
-      "time": "15:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.25486,
-          "under": 0.74514,
-          "mean": 3.37,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.62405,
-          "under": 0.37595,
-          "mean": 10.68,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.65779,
-          "under": 0.34221,
-          "mean": 3.39,
-          "n_league": 684,
-          "n_home": 38,
-          "n_away": 38,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.44468,
-          "under": 0.55532,
-          "mean": 23.0,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Bundesliga",
-      "date": "2026-11-29",
-      "home": "TSG Hoffenheim",
-      "away": "FC Augsburg",
-      "time": "17:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.34,
-          "under": 0.66,
-          "mean": 3.84,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 3,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.62065,
-          "under": 0.37935,
-          "mean": 10.65,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 3,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.68501,
-          "under": 0.31499,
-          "mean": 3.53,
-          "n_league": 684,
-          "n_home": 4,
-          "n_away": 37,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.43267,
-          "under": 0.56733,
-          "mean": 22.85,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 3,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Bundesliga",
-      "date": "2026-11-29",
-      "home": "Borussia Dortmund",
-      "away": "Bayer 04 Leverkusen",
-      "time": "19:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.30617,
-          "under": 0.69383,
-          "mean": 3.65,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.5774,
-          "under": 0.4226,
-          "mean": 10.29,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.65345,
-          "under": 0.34655,
-          "mean": 3.36,
-          "n_league": 684,
-          "n_home": 38,
-          "n_away": 38,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.40327,
-          "under": 0.59673,
-          "mean": 22.5,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
       "league": "Ligue 1",
       "date": "2026-11-29",
       "home": "AJ Auxerre",
@@ -7726,6 +7567,165 @@
           "n_league": 81,
           "n_home": 5,
           "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-29",
+      "home": "SC Freiburg",
+      "away": "RB Leipzig",
+      "time": "15:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.25486,
+          "under": 0.74514,
+          "mean": 3.37,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.62405,
+          "under": 0.37595,
+          "mean": 10.68,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.65779,
+          "under": 0.34221,
+          "mean": 3.39,
+          "n_league": 684,
+          "n_home": 38,
+          "n_away": 38,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.44468,
+          "under": 0.55532,
+          "mean": 23.0,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-29",
+      "home": "TSG Hoffenheim",
+      "away": "FC Augsburg",
+      "time": "17:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.34,
+          "under": 0.66,
+          "mean": 3.84,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 3,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.62065,
+          "under": 0.37935,
+          "mean": 10.65,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 3,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.68501,
+          "under": 0.31499,
+          "mean": 3.53,
+          "n_league": 684,
+          "n_home": 4,
+          "n_away": 37,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.43267,
+          "under": 0.56733,
+          "mean": 22.85,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 3,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-29",
+      "home": "Borussia Dortmund",
+      "away": "Bayer 04 Leverkusen",
+      "time": "19:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.30617,
+          "under": 0.69383,
+          "mean": 3.65,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.5774,
+          "under": 0.4226,
+          "mean": 10.29,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.65345,
+          "under": 0.34655,
+          "mean": 3.36,
+          "n_league": 684,
+          "n_home": 38,
+          "n_away": 38,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.40327,
+          "under": 0.59673,
+          "mean": 22.5,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
           "small_sample": true,
           "status": "experimental"
         }
@@ -8421,59 +8421,6 @@
       }
     },
     {
-      "league": "Bundesliga",
-      "date": "2026-12-04",
-      "home": "FC Bayern München",
-      "away": "SC Paderborn 07",
-      "time": "20:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.27113,
-          "under": 0.72887,
-          "mean": 3.46,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.61492,
-          "under": 0.38508,
-          "mean": 10.6,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.6828,
-          "under": 0.3172,
-          "mean": 3.52,
-          "n_league": 684,
-          "n_home": 38,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.36145,
-          "under": 0.63855,
-          "mean": 21.99,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
       "league": "Ligue 1",
       "date": "2026-12-04",
       "home": "Toulouse FC",
@@ -8521,6 +8468,59 @@
           "n_league": 81,
           "n_home": 4,
           "n_away": 6,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-12-04",
+      "home": "FC Bayern München",
+      "away": "SC Paderborn 07",
+      "time": "20:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.27113,
+          "under": 0.72887,
+          "mean": 3.46,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.61492,
+          "under": 0.38508,
+          "mean": 10.6,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.6828,
+          "under": 0.3172,
+          "mean": 3.52,
+          "n_league": 684,
+          "n_home": 38,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.36145,
+          "under": 0.63855,
+          "mean": 21.99,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
           "small_sample": true,
           "status": "experimental"
         }
@@ -9057,6 +9057,271 @@
       }
     },
     {
+      "league": "Ligue 1",
+      "date": "2026-12-05",
+      "home": "LOSC Lille",
+      "away": "AJ Auxerre",
+      "time": "17:15",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.23829,
+          "under": 0.76171,
+          "mean": 3.3,
+          "n_league": 81,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.45186,
+          "under": 0.54814,
+          "mean": 9.3,
+          "n_league": 81,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.55587,
+          "under": 0.44413,
+          "mean": 2.94,
+          "n_league": 692,
+          "n_home": 5,
+          "n_away": 39,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.62572,
+          "under": 0.37428,
+          "mean": 25.56,
+          "n_league": 81,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-12-05",
+      "home": "AS Monaco",
+      "away": "Angers SCO",
+      "time": "20:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.26822,
+          "under": 0.73178,
+          "mean": 3.47,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.44901,
+          "under": 0.55099,
+          "mean": 9.28,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.53382,
+          "under": 0.46618,
+          "mean": 2.84,
+          "n_league": 692,
+          "n_home": 38,
+          "n_away": 38,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.54726,
+          "under": 0.45274,
+          "mean": 24.42,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-12-05",
+      "home": "Paris FC",
+      "away": "Le Mans FC",
+      "time": "20:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.34414,
+          "under": 0.65586,
+          "mean": 3.86,
+          "n_league": 81,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.32189,
+          "under": 0.67811,
+          "mean": 8.31,
+          "n_league": 81,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.57853,
+          "under": 0.42147,
+          "mean": 3.04,
+          "n_league": 692,
+          "n_home": 22,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.59633,
+          "under": 0.40367,
+          "mean": 25.12,
+          "n_league": 81,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-12-05",
+      "home": "RC Lens",
+      "away": "Havre Athletic Club",
+      "time": "20:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.28869,
+          "under": 0.71131,
+          "mean": 3.57,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.43223,
+          "under": 0.56777,
+          "mean": 9.15,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.59977,
+          "under": 0.40023,
+          "mean": 3.14,
+          "n_league": 692,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.63314,
+          "under": 0.36686,
+          "mean": 25.67,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-12-05",
+      "home": "RC Strasbourg Alsace",
+      "away": "FC Lorient",
+      "time": "20:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.26241,
+          "under": 0.73759,
+          "mean": 3.44,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.39915,
+          "under": 0.60085,
+          "mean": 8.9,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.52407,
+          "under": 0.47593,
+          "mean": 2.8,
+          "n_league": 692,
+          "n_home": 38,
+          "n_away": 21,
+          "small_sample": false,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.54115,
+          "under": 0.45885,
+          "mean": 24.33,
+          "n_league": 81,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
       "league": "Bundesliga",
       "date": "2026-12-05",
       "home": "1. FC Union Berlin",
@@ -9367,271 +9632,6 @@
           "under": 0.61453,
           "mean": 22.28,
           "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-12-05",
-      "home": "LOSC Lille",
-      "away": "AJ Auxerre",
-      "time": "17:15",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.23829,
-          "under": 0.76171,
-          "mean": 3.3,
-          "n_league": 81,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.45186,
-          "under": 0.54814,
-          "mean": 9.3,
-          "n_league": 81,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.55587,
-          "under": 0.44413,
-          "mean": 2.94,
-          "n_league": 692,
-          "n_home": 5,
-          "n_away": 39,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.62572,
-          "under": 0.37428,
-          "mean": 25.56,
-          "n_league": 81,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-12-05",
-      "home": "AS Monaco",
-      "away": "Angers SCO",
-      "time": "20:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.26822,
-          "under": 0.73178,
-          "mean": 3.47,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.44901,
-          "under": 0.55099,
-          "mean": 9.28,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.53382,
-          "under": 0.46618,
-          "mean": 2.84,
-          "n_league": 692,
-          "n_home": 38,
-          "n_away": 38,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.54726,
-          "under": 0.45274,
-          "mean": 24.42,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-12-05",
-      "home": "Paris FC",
-      "away": "Le Mans FC",
-      "time": "20:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.34414,
-          "under": 0.65586,
-          "mean": 3.86,
-          "n_league": 81,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.32189,
-          "under": 0.67811,
-          "mean": 8.31,
-          "n_league": 81,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.57853,
-          "under": 0.42147,
-          "mean": 3.04,
-          "n_league": 692,
-          "n_home": 22,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.59633,
-          "under": 0.40367,
-          "mean": 25.12,
-          "n_league": 81,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-12-05",
-      "home": "RC Lens",
-      "away": "Havre Athletic Club",
-      "time": "20:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.28869,
-          "under": 0.71131,
-          "mean": 3.57,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.43223,
-          "under": 0.56777,
-          "mean": 9.15,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.59977,
-          "under": 0.40023,
-          "mean": 3.14,
-          "n_league": 692,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.63314,
-          "under": 0.36686,
-          "mean": 25.67,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-12-05",
-      "home": "RC Strasbourg Alsace",
-      "away": "FC Lorient",
-      "time": "20:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.26241,
-          "under": 0.73759,
-          "mean": 3.44,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.39915,
-          "under": 0.60085,
-          "mean": 8.9,
-          "n_league": 81,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.52407,
-          "under": 0.47593,
-          "mean": 2.8,
-          "n_league": 692,
-          "n_home": 38,
-          "n_away": 21,
-          "small_sample": false,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.54115,
-          "under": 0.45885,
-          "mean": 24.33,
-          "n_league": 81,
           "n_home": 4,
           "n_away": 4,
           "small_sample": true,
@@ -10541,112 +10541,6 @@
       }
     },
     {
-      "league": "Bundesliga",
-      "date": "2026-12-06",
-      "home": "FC Schalke 04",
-      "away": "Borussia Dortmund",
-      "time": "15:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.3271,
-          "under": 0.6729,
-          "mean": 3.77,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.54529,
-          "under": 0.45471,
-          "mean": 10.03,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.51889,
-          "under": 0.48111,
-          "mean": 2.75,
-          "n_league": 684,
-          "n_home": 4,
-          "n_away": 38,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.43535,
-          "under": 0.56465,
-          "mean": 22.89,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
-      "league": "Bundesliga",
-      "date": "2026-12-06",
-      "home": "SV 07 Elversberg",
-      "away": "VfB Stuttgart",
-      "time": "17:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.33574,
-          "under": 0.66426,
-          "mean": 3.81,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.69825,
-          "under": 0.30175,
-          "mean": 11.37,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.7274,
-          "under": 0.2726,
-          "mean": 3.78,
-          "n_league": 684,
-          "n_home": 4,
-          "n_away": 39,
-          "small_sample": true,
-          "status": "experimental"
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.4745,
-          "under": 0.5255,
-          "mean": 23.36,
-          "n_league": 72,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental"
-        }
-      }
-    },
-    {
       "league": "Ligue 1",
       "date": "2026-12-06",
       "home": "Estac Troyes",
@@ -10800,6 +10694,112 @@
           "n_league": 81,
           "n_home": 5,
           "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-12-06",
+      "home": "FC Schalke 04",
+      "away": "Borussia Dortmund",
+      "time": "15:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.3271,
+          "under": 0.6729,
+          "mean": 3.77,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.54529,
+          "under": 0.45471,
+          "mean": 10.03,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.51889,
+          "under": 0.48111,
+          "mean": 2.75,
+          "n_league": 684,
+          "n_home": 4,
+          "n_away": 38,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.43535,
+          "under": 0.56465,
+          "mean": 22.89,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental"
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-12-06",
+      "home": "SV 07 Elversberg",
+      "away": "VfB Stuttgart",
+      "time": "17:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.33574,
+          "under": 0.66426,
+          "mean": 3.81,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.69825,
+          "under": 0.30175,
+          "mean": 11.37,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.7274,
+          "under": 0.2726,
+          "mean": 3.78,
+          "n_league": 684,
+          "n_home": 4,
+          "n_away": 39,
+          "small_sample": true,
+          "status": "experimental"
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.4745,
+          "under": 0.5255,
+          "mean": 23.36,
+          "n_league": 72,
+          "n_home": 4,
+          "n_away": 5,
           "small_sample": true,
           "status": "experimental"
         }
