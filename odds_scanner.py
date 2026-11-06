@@ -5,8 +5,8 @@ NO mock data in production, NO automatic betting, NO unfounded ROI claims.
 Key comes ONLY from ODDS_API_KEY environment / GitHub Actions secret.
 """
 from __future__ import annotations
-import json, math, os, sys, urllib.request, urllib.error
-from collections import Counter
+import json, math, os, sys, statistics, urllib.request, urllib.error
+from collections import Counter, defaultdict
 from datetime import datetime, timezone, timedelta
 from difflib import SequenceMatcher
 from pathlib import Path
@@ -164,6 +164,69 @@ def build_observations(events,fixtures,league,now):
   offers+=oo
   books.update(v["bookmaker_id"] for v in oo)
  return offers,matches,books
+def cross_book_consensus(offers):
+ """Market plausibility audit; never infer a verified betting edge from these odds.
+
+ Each bookmaker contributes a complete no-vig 1X2 distribution.
+ Median across independent providers is a plausibility diagnostic, not truth.
+ """
+ byevent=defaultdict(lambda:defaultdict(dict))
+ for row in offers:
+  k=(row["league"],row["date"],runner.norm(row["home"]),runner.norm(row["away"]))
+  byevent[k][row["bookmaker_id"]][row["outcome"]]=row
+ flagged=[];diagnostics=[];reason_counts=Counter()
+ for event,books in byevent.items():
+  valid=[]
+  for bid,market in books.items():
+   if set(market)!={"home","draw","away"}:
+    reason_counts["incomplete_market"]+=1
+    continue
+   sum_implied=sum(1/r["odds"] for r in market.values())
+   if not .94<=sum_implied<=1.18:
+    reason_counts["extreme_bookmaker_margin"]+=1
+    continue
+   valid.append((bid,{k:(1/v["odds"])/sum_implied for k,v in market.items()},market))
+  if len(valid)<3:
+   reason_counts["insufficient_independent_books"]+=1
+   continue
+  median={k:statistics.median(probs[k] for bid,probs,market in valid)
+          for k in ("home","draw","away")}
+  den=sum(median.values())
+  median={k:v/den for k,v in median.items()}
+  each=[valid[0][2][k] for k in ("home","draw","away")]
+  model={r["outcome"]:r["model_probability"] for r in each}
+  drift=max(abs(model[k]-median[k]) for k in model)
+  spread=max(max(probs[k] for bid,probs,market in valid)-min(probs[k] for bid,probs,market in valid) for k in median)
+  if drift>=.10:
+   reason="model_market_disagreement"
+   reason_counts[reason]+=1
+  elif spread>=.12:
+   reason="books_disagree"
+   reason_counts[reason]+=1
+  elif any(r["model_low_sample"] for r in each):
+   reason="model_sample_insufficient"
+   reason_counts[reason]+=1
+  else:
+   reason="unverified_model_and_unverified_ro_prices"
+   reason_counts[reason]+=1
+  diagnostics.append({"league":event[0],"date":event[1],"home":each[0]["home"],
+    "away":each[0]["away"],"books":len(valid),
+    "max_model_consensus_gap_pp":round(drift*100,1),
+    "max_cross_book_spread_pp":round(spread*100,1),
+    "model_probabilities":model,
+    "market_consensus_no_vig":{k:round(v,5) for k,v in median.items()},
+    "reason":reason,"verified_value":False})
+  if reason=="model_market_disagreement":
+   flagged.append({"match":event[0]+" "+each[0]["home"]+" — "+each[0]["away"],
+    "gap_pp":round(drift*100,1)})
+ diagnostics.sort(key=lambda row:row["max_model_consensus_gap_pp"],reverse=True)
+ return {"status":"diagnostic_only_no_verified_value",
+  "reason_counts":dict(reason_counts),"market_events_evaluated":len(diagnostics),
+  "large_model_disagreements":len(flagged),
+  "largest_disagreements":flagged[:10],
+  "items":diagnostics[:100],
+  "recommendation":"NO BET: model not validated against accessible Romanian bookmakers."}
+
 def fetch_scan():
  OUT.mkdir(parents=True,exist_ok=True)
  key=os.getenv("ODDS_API_KEY","").strip()
@@ -221,15 +284,23 @@ def fetch_scan():
  prior.extend(newobs)
  prior=prior[-2200:]
  write_json("odds_observations.json",prior)
- watch=sorted([r for r in offers if r["estimated_ev"]>.02],key=lambda x:x["estimated_ev"],reverse=True)[:60]
+ consensus=cross_book_consensus(offers)
+ write_json("odds_diagnostics.json",{"generated_at":nowstamp,**consensus})
+ # Deliberate fail-closed policy. There is NO verified Romanian bookmaker,
+ # calibrated real-money edge or executable bet in this scanner.
+ watch=[]
  write_json("odds_watchlist.json",{"generated_at":nowstamp,
-  "provider":"The Odds API v4", "region":REGION,"live_ro_supported":False,
-  "status":"price_discrepancies_unverified",
-  "recommendation":"NO BET — model not validated and Romanian bookmaker prices not available.",
+  "provider":"The Odds API v4","region":REGION,"live_ro_supported":False,
+  "status":"no_verified_opportunities",
+  "recommendation":"NO BET — international odds only, model probability not validated.",
+  "diagnostic_events":consensus["market_events_evaluated"],
+  "blocked_large_model_disagreements":consensus["large_model_disagreements"],
   "items":watch})
  state="connected" if raw_events>0 and not errors else ("partial" if raw_events>0 else ("api_error" if errors else "no_events"))
  status(state,api_events=raw_events,matched_games=matched,books_responding=sorted(books),
   evaluated_prices=len(offers),watchlist_count=len(watch),
+  model_disagreements=consensus["large_model_disagreements"],
+  events_consensus_checked=consensus["market_events_evaluated"],
   new_observations=len(newobs),total_historical_observations=len(prior),
   spent_this_month=spent,provider_remaining=remaining,errors=errors,
   message="Real provider data; matched prices are NOT confirmed Romanian bookmaker quotes.")
@@ -255,6 +326,18 @@ def selftest():
  assert all(x["ready_to_bet"] is False for x in o)
  e["bookmakers"][0]["markets"][0]["outcomes"][0]["price"]=0
  assert parse_h2h(e["bookmakers"][0],e,now) is None
+ # A huge model discrepancy must never reach the betting watchlist.
+ synthetic=[]
+ for i in range(4):
+  bookid="independent"+str(i)
+  for side,price in (("home",10.0),("draw",4.0),("away",1.45)):
+   synthetic.append({"league":"Premier League","date":"2026-11-07",
+    "home":"Arsenal","away":"Chelsea","bookmaker_id":bookid,"outcome":side,
+    "odds":price,"model_probability":{"home":.50,"draw":.25,"away":.25}[side],
+    "model_low_sample":False})
+ check=cross_book_consensus(synthetic)
+ assert check["large_model_disagreements"]==1
+ assert check["items"][0]["verified_value"] is False
  print("Odds adapter self-tests passed.")
 if __name__=="__main__":
  sys.exit((selftest() or 0) if "--self-test" in sys.argv else fetch_scan())
