@@ -37,6 +37,20 @@
     "date": "2026-11-06",
     "home": "Hamburger SV",
     "away": "Borussia Mönchengladbach",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.47977,
+      "draw": 0.22999,
+      "away": 0.29024
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-06",
+    "home": "Hamburger SV",
+    "away": "Borussia Mönchengladbach",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.3213,
@@ -74,6 +88,20 @@
     "line": 2.5,
     "p_over": 0.51425,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-06",
+    "home": "Sevilla FC",
+    "away": "Deportivo Alavés",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.46546,
+      "draw": 0.25058,
+      "away": 0.28396
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -125,6 +153,20 @@
     "date": "2026-11-06",
     "home": "Toulouse FC",
     "away": "RC Strasbourg Alsace",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.41164,
+      "draw": 0.24492,
+      "away": 0.34343
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-06",
+    "home": "Toulouse FC",
+    "away": "RC Strasbourg Alsace",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.2864,
@@ -162,6 +204,20 @@
     "line": 2.5,
     "p_over": 0.49368,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-06",
+    "home": "Everton",
+    "away": "Coventry",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.45352,
+      "draw": 0.25631,
+      "away": 0.29016
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -213,6 +269,20 @@
     "date": "2026-11-06",
     "home": "Venezia",
     "away": "Udinese",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.33319,
+      "draw": 0.25605,
+      "away": 0.41076
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-06",
+    "home": "Venezia",
+    "away": "Udinese",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.18838,
@@ -250,6 +320,20 @@
     "line": 2.5,
     "p_over": 0.65577,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-07",
+    "home": "1. FSV Mainz 05",
+    "away": "FC Bayern München",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.30138,
+      "draw": 0.22233,
+      "away": 0.47628
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -301,6 +385,20 @@
     "date": "2026-11-07",
     "home": "Borussia Dortmund",
     "away": "SV 07 Elversberg",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.57032,
+      "draw": 0.2132,
+      "away": 0.21648
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-07",
+    "home": "Borussia Dortmund",
+    "away": "SV 07 Elversberg",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.2521,
@@ -338,6 +436,20 @@
     "line": 2.5,
     "p_over": 0.68964,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-07",
+    "home": "RB Leipzig",
+    "away": "FC Augsburg",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.59311,
+      "draw": 0.19702,
+      "away": 0.20986
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -389,6 +501,20 @@
     "date": "2026-11-07",
     "home": "SC Paderborn 07",
     "away": "Eintracht Frankfurt",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.47246,
+      "draw": 0.22856,
+      "away": 0.29898
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-07",
+    "home": "SC Paderborn 07",
+    "away": "Eintracht Frankfurt",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.26975,
@@ -426,6 +552,20 @@
     "line": 2.5,
     "p_over": 0.62587,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-07",
+    "home": "VfB Stuttgart",
+    "away": "SV Werder Bremen",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.49059,
+      "draw": 0.22601,
+      "away": 0.2834
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -477,6 +617,20 @@
     "date": "2026-11-07",
     "home": "CA Osasuna",
     "away": "Athletic Club",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.47367,
+      "draw": 0.25396,
+      "away": 0.27237
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-07",
+    "home": "CA Osasuna",
+    "away": "Athletic Club",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.46031,
@@ -514,6 +668,20 @@
     "line": 2.5,
     "p_over": 0.59383,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-07",
+    "home": "Málaga CF",
+    "away": "R. Racing Club",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.50391,
+      "draw": 0.22995,
+      "away": 0.26614
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -565,6 +733,20 @@
     "date": "2026-11-07",
     "home": "RCD Espanyol de Barcelona",
     "away": "RC Deportivo",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.4128,
+      "draw": 0.25777,
+      "away": 0.32943
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-07",
+    "home": "RCD Espanyol de Barcelona",
+    "away": "RC Deportivo",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.4696,
@@ -602,6 +784,20 @@
     "line": 2.5,
     "p_over": 0.50574,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-07",
+    "home": "Valencia CF",
+    "away": "Real Madrid",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.32931,
+      "draw": 0.25707,
+      "away": 0.41362
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -653,6 +849,20 @@
     "date": "2026-11-07",
     "home": "AJ Auxerre",
     "away": "Paris FC",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.42196,
+      "draw": 0.26402,
+      "away": 0.31402
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-07",
+    "home": "AJ Auxerre",
+    "away": "Paris FC",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.28784,
@@ -690,6 +900,20 @@
     "line": 2.5,
     "p_over": 0.51793,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-07",
+    "home": "Paris Saint-Germain",
+    "away": "Estac Troyes",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.53725,
+      "draw": 0.23691,
+      "away": 0.22584
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -741,6 +965,20 @@
     "date": "2026-11-07",
     "home": "Arsenal",
     "away": "Hull",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.52215,
+      "draw": 0.24772,
+      "away": 0.23012
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-07",
+    "home": "Arsenal",
+    "away": "Hull",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.42455,
@@ -778,6 +1016,20 @@
     "line": 2.5,
     "p_over": 0.549,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-07",
+    "home": "Fulham",
+    "away": "Newcastle",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.4409,
+      "draw": 0.246,
+      "away": 0.31309
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -829,6 +1081,20 @@
     "date": "2026-11-07",
     "home": "Leeds",
     "away": "Spurs",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44167,
+      "draw": 0.26202,
+      "away": 0.29631
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-07",
+    "home": "Leeds",
+    "away": "Spurs",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.41991,
@@ -866,6 +1132,20 @@
     "line": 2.5,
     "p_over": 0.43745,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-07",
+    "home": "Nott'm Forest",
+    "away": "Man City",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.32019,
+      "draw": 0.2734,
+      "away": 0.40641
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -917,6 +1197,20 @@
     "date": "2026-11-07",
     "home": "Cagliari",
     "away": "Frosinone",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.37308,
+      "draw": 0.25507,
+      "away": 0.37185
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-07",
+    "home": "Cagliari",
+    "away": "Frosinone",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.27178,
@@ -954,6 +1248,20 @@
     "line": 2.5,
     "p_over": 0.46548,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-07",
+    "home": "Parma",
+    "away": "Bologna",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.32026,
+      "draw": 0.26619,
+      "away": 0.41355
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -1005,6 +1313,20 @@
     "date": "2026-11-07",
     "home": "Roma",
     "away": "Sassuolo",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.52184,
+      "draw": 0.22631,
+      "away": 0.25185
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-07",
+    "home": "Roma",
+    "away": "Sassuolo",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.22521,
@@ -1042,6 +1364,20 @@
     "line": 2.5,
     "p_over": 0.55329,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-07",
+    "home": "Torino",
+    "away": "Lecce",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.40486,
+      "draw": 0.24735,
+      "away": 0.34778
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -1093,6 +1429,20 @@
     "date": "2026-11-08",
     "home": "1. FC Köln",
     "away": "Bayer 04 Leverkusen",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.43551,
+      "draw": 0.22576,
+      "away": 0.33873
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-08",
+    "home": "1. FC Köln",
+    "away": "Bayer 04 Leverkusen",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.34074,
@@ -1130,6 +1480,20 @@
     "line": 2.5,
     "p_over": 0.65566,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-08",
+    "home": "SC Freiburg",
+    "away": "1. FC Union Berlin",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.5753,
+      "draw": 0.20631,
+      "away": 0.21839
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -1181,6 +1545,20 @@
     "date": "2026-11-08",
     "home": "TSG Hoffenheim",
     "away": "FC Schalke 04",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.48366,
+      "draw": 0.22579,
+      "away": 0.29055
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-08",
+    "home": "TSG Hoffenheim",
+    "away": "FC Schalke 04",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.30312,
@@ -1218,6 +1596,20 @@
     "line": 2.5,
     "p_over": 0.586,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-08",
+    "home": "Atlético de Madrid",
+    "away": "FC Barcelona",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.41366,
+      "draw": 0.24034,
+      "away": 0.346
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -1269,6 +1661,20 @@
     "date": "2026-11-08",
     "home": "Celta",
     "away": "Levante UD",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.51102,
+      "draw": 0.24763,
+      "away": 0.24135
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-08",
+    "home": "Celta",
+    "away": "Levante UD",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.35791,
@@ -1306,6 +1712,20 @@
     "line": 2.5,
     "p_over": 0.5148,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-08",
+    "home": "Elche CF",
+    "away": "Real Betis",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.41146,
+      "draw": 0.25521,
+      "away": 0.33333
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -1357,6 +1777,20 @@
     "date": "2026-11-08",
     "home": "Real Sociedad",
     "away": "Rayo Vallecano",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.49381,
+      "draw": 0.23547,
+      "away": 0.27071
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-08",
+    "home": "Real Sociedad",
+    "away": "Rayo Vallecano",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.45941,
@@ -1394,6 +1828,20 @@
     "line": 2.5,
     "p_over": 0.49861,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-08",
+    "home": "Villarreal CF",
+    "away": "Getafe CF",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.55232,
+      "draw": 0.23862,
+      "away": 0.20906
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -1445,6 +1893,20 @@
     "date": "2026-11-08",
     "home": "Angers SCO",
     "away": "OGC Nice",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.40719,
+      "draw": 0.25546,
+      "away": 0.33734
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-08",
+    "home": "Angers SCO",
+    "away": "OGC Nice",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.26889,
@@ -1482,6 +1944,20 @@
     "line": 2.5,
     "p_over": 0.48979,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-08",
+    "home": "Havre Athletic Club",
+    "away": "FC Lorient",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.35128,
+      "draw": 0.26042,
+      "away": 0.38829
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -1533,6 +2009,20 @@
     "date": "2026-11-08",
     "home": "Le Mans FC",
     "away": "AS Monaco",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.41259,
+      "draw": 0.23993,
+      "away": 0.34747
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-08",
+    "home": "Le Mans FC",
+    "away": "AS Monaco",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.30736,
@@ -1570,6 +2060,20 @@
     "line": 2.5,
     "p_over": 0.57084,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-08",
+    "home": "RC Lens",
+    "away": "Olympique de Marseille",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44946,
+      "draw": 0.23936,
+      "away": 0.31118
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -1621,6 +2125,20 @@
     "date": "2026-11-08",
     "home": "Stade Brestois 29",
     "away": "Olympique Lyonnais",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.43519,
+      "draw": 0.24742,
+      "away": 0.31739
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-08",
+    "home": "Stade Brestois 29",
+    "away": "Olympique Lyonnais",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.28465,
@@ -1658,6 +2176,20 @@
     "line": 2.5,
     "p_over": 0.54105,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-08",
+    "home": "Stade Rennais FC",
+    "away": "LOSC Lille",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.47257,
+      "draw": 0.24287,
+      "away": 0.28456
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -1709,6 +2241,20 @@
     "date": "2026-11-08",
     "home": "Brighton",
     "away": "Brentford",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.53297,
+      "draw": 0.23476,
+      "away": 0.23227
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-08",
+    "home": "Brighton",
+    "away": "Brentford",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.41794,
@@ -1746,6 +2292,20 @@
     "line": 2.5,
     "p_over": 0.55037,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-08",
+    "home": "Crystal Palace",
+    "away": "Liverpool",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.35362,
+      "draw": 0.24819,
+      "away": 0.39819
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -1797,6 +2357,20 @@
     "date": "2026-11-08",
     "home": "Ipswich",
     "away": "Bournemouth",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.41882,
+      "draw": 0.24723,
+      "away": 0.33395
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-08",
+    "home": "Ipswich",
+    "away": "Bournemouth",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.38574,
@@ -1834,6 +2408,20 @@
     "line": 2.5,
     "p_over": 0.54519,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-08",
+    "home": "Man Utd",
+    "away": "Aston Villa",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.4381,
+      "draw": 0.24701,
+      "away": 0.31489
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -1885,6 +2473,20 @@
     "date": "2026-11-08",
     "home": "Sunderland",
     "away": "Chelsea",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.37774,
+      "draw": 0.26537,
+      "away": 0.3569
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-08",
+    "home": "Sunderland",
+    "away": "Chelsea",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.39805,
@@ -1922,6 +2524,20 @@
     "line": 2.5,
     "p_over": 0.50395,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-08",
+    "home": "Fiorentina",
+    "away": "Juventus",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.31581,
+      "draw": 0.25651,
+      "away": 0.42768
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -1973,6 +2589,20 @@
     "date": "2026-11-08",
     "home": "Genoa",
     "away": "Milan",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.35448,
+      "draw": 0.26201,
+      "away": 0.3835
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-08",
+    "home": "Genoa",
+    "away": "Milan",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.24486,
@@ -2010,6 +2640,20 @@
     "line": 2.5,
     "p_over": 0.613,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-08",
+    "home": "Internazionale",
+    "away": "Como",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.4195,
+      "draw": 0.23477,
+      "away": 0.34573
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -2061,6 +2705,20 @@
     "date": "2026-11-08",
     "home": "Monza",
     "away": "Atalanta",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44092,
+      "draw": 0.23572,
+      "away": 0.32336
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-08",
+    "home": "Monza",
+    "away": "Atalanta",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.2239,
@@ -2098,6 +2756,20 @@
     "line": 2.5,
     "p_over": 0.56107,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-08",
+    "home": "Napoli",
+    "away": "Lazio",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.32565,
+      "draw": 0.24441,
+      "away": 0.42994
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -2149,6 +2821,20 @@
     "date": "2026-11-20",
     "home": "FC Bayern München",
     "away": "1. FC Köln",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.6519,
+      "draw": 0.17785,
+      "away": 0.17025
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-20",
+    "home": "FC Bayern München",
+    "away": "1. FC Köln",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.32022,
@@ -2186,6 +2872,20 @@
     "line": 2.5,
     "p_over": 0.48716,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-20",
+    "home": "Athletic Club",
+    "away": "RCD Espanyol de Barcelona",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.47825,
+      "draw": 0.25458,
+      "away": 0.26717
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -2237,6 +2937,20 @@
     "date": "2026-11-20",
     "home": "Estac Troyes",
     "away": "Havre Athletic Club",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.4049,
+      "draw": 0.23804,
+      "away": 0.35705
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-20",
+    "home": "Estac Troyes",
+    "away": "Havre Athletic Club",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.30865,
@@ -2274,6 +2988,20 @@
     "line": 2.5,
     "p_over": 0.6066,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-21",
+    "home": "1. FC Union Berlin",
+    "away": "RB Leipzig",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.45504,
+      "draw": 0.23351,
+      "away": 0.31145
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -2325,6 +3053,20 @@
     "date": "2026-11-21",
     "home": "Bayer 04 Leverkusen",
     "away": "SC Paderborn 07",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.52426,
+      "draw": 0.22527,
+      "away": 0.25046
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-21",
+    "home": "Bayer 04 Leverkusen",
+    "away": "SC Paderborn 07",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.31674,
@@ -2362,6 +3104,20 @@
     "line": 2.5,
     "p_over": 0.60211,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-21",
+    "home": "Borussia Mönchengladbach",
+    "away": "Borussia Dortmund",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.38195,
+      "draw": 0.23785,
+      "away": 0.3802
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -2413,6 +3169,20 @@
     "date": "2026-11-21",
     "home": "Eintracht Frankfurt",
     "away": "TSG Hoffenheim",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.4833,
+      "draw": 0.22308,
+      "away": 0.29362
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-21",
+    "home": "Eintracht Frankfurt",
+    "away": "TSG Hoffenheim",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.29615,
@@ -2450,6 +3220,20 @@
     "line": 2.5,
     "p_over": 0.58949,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-21",
+    "home": "FC Schalke 04",
+    "away": "VfB Stuttgart",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.38819,
+      "draw": 0.24036,
+      "away": 0.37145
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -2501,6 +3285,20 @@
     "date": "2026-11-21",
     "home": "SV 07 Elversberg",
     "away": "SC Freiburg",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.50712,
+      "draw": 0.21579,
+      "away": 0.27708
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-21",
+    "home": "SV 07 Elversberg",
+    "away": "SC Freiburg",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.33407,
@@ -2538,6 +3336,20 @@
     "line": 2.5,
     "p_over": 0.52538,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-21",
+    "home": "Deportivo Alavés",
+    "away": "RC Deportivo",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44889,
+      "draw": 0.2501,
+      "away": 0.30101
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -2589,6 +3401,20 @@
     "date": "2026-11-21",
     "home": "Rayo Vallecano",
     "away": "Valencia CF",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.46426,
+      "draw": 0.24819,
+      "away": 0.28755
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-21",
+    "home": "Rayo Vallecano",
+    "away": "Valencia CF",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.45448,
@@ -2626,6 +3452,20 @@
     "line": 2.5,
     "p_over": 0.49672,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-21",
+    "home": "Real Madrid",
+    "away": "Celta",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.57921,
+      "draw": 0.23252,
+      "away": 0.18827
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -2677,6 +3517,20 @@
     "date": "2026-11-21",
     "home": "Sevilla FC",
     "away": "Real Betis",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.42446,
+      "draw": 0.25889,
+      "away": 0.31664
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-21",
+    "home": "Sevilla FC",
+    "away": "Real Betis",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.34206,
@@ -2714,6 +3568,20 @@
     "line": 2.5,
     "p_over": 0.60555,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-21",
+    "home": "AS Monaco",
+    "away": "AJ Auxerre",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.52368,
+      "draw": 0.22316,
+      "away": 0.25315
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -2765,6 +3633,20 @@
     "date": "2026-11-21",
     "home": "LOSC Lille",
     "away": "Olympique Lyonnais",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44937,
+      "draw": 0.25967,
+      "away": 0.29096
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-21",
+    "home": "LOSC Lille",
+    "away": "Olympique Lyonnais",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.218,
@@ -2802,6 +3684,20 @@
     "line": 2.5,
     "p_over": 0.57287,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-21",
+    "home": "OGC Nice",
+    "away": "Paris Saint-Germain",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.34243,
+      "draw": 0.24126,
+      "away": 0.41631
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -2853,6 +3749,20 @@
     "date": "2026-11-21",
     "home": "RC Lens",
     "away": "Toulouse FC",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44576,
+      "draw": 0.23797,
+      "away": 0.31627
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-21",
+    "home": "RC Lens",
+    "away": "Toulouse FC",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.27674,
@@ -2890,6 +3800,20 @@
     "line": 2.5,
     "p_over": 0.57551,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-21",
+    "home": "RC Strasbourg Alsace",
+    "away": "Stade Brestois 29",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.48205,
+      "draw": 0.2349,
+      "away": 0.28305
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -2941,6 +3865,20 @@
     "date": "2026-11-21",
     "home": "Aston Villa",
     "away": "Sunderland",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.48116,
+      "draw": 0.24115,
+      "away": 0.27769
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-21",
+    "home": "Aston Villa",
+    "away": "Sunderland",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.44036,
@@ -2978,6 +3916,20 @@
     "line": 2.5,
     "p_over": 0.51738,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-21",
+    "home": "Bournemouth",
+    "away": "Nott'm Forest",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44323,
+      "draw": 0.25232,
+      "away": 0.30445
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -3029,6 +3981,20 @@
     "date": "2026-11-21",
     "home": "Chelsea",
     "away": "Leeds",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.45626,
+      "draw": 0.25579,
+      "away": 0.28795
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-21",
+    "home": "Chelsea",
+    "away": "Leeds",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.44712,
@@ -3066,6 +4032,20 @@
     "line": 2.5,
     "p_over": 0.54002,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-21",
+    "home": "Coventry",
+    "away": "Crystal Palace",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.46098,
+      "draw": 0.24585,
+      "away": 0.29317
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -3117,6 +4097,20 @@
     "date": "2026-11-21",
     "home": "Man City",
     "away": "Fulham",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.51032,
+      "draw": 0.24607,
+      "away": 0.24361
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-21",
+    "home": "Man City",
+    "away": "Fulham",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.30086,
@@ -3154,6 +4148,20 @@
     "line": 2.5,
     "p_over": 0.45983,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-21",
+    "home": "Newcastle",
+    "away": "Arsenal",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.33588,
+      "draw": 0.2685,
+      "away": 0.39562
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -3205,6 +4213,20 @@
     "date": "2026-11-21",
     "home": "Spurs",
     "away": "Ipswich",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.42266,
+      "draw": 0.23896,
+      "away": 0.33838
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-21",
+    "home": "Spurs",
+    "away": "Ipswich",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.34112,
@@ -3242,6 +4264,20 @@
     "line": 2.5,
     "p_over": 0.45894,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-21",
+    "home": "Como",
+    "away": "Cagliari",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.47366,
+      "draw": 0.2614,
+      "away": 0.26494
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -3293,6 +4329,20 @@
     "date": "2026-11-21",
     "home": "Lazio",
     "away": "Lecce",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.46151,
+      "draw": 0.24515,
+      "away": 0.29334
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-21",
+    "home": "Lazio",
+    "away": "Lecce",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.22334,
@@ -3330,6 +4380,20 @@
     "line": 2.5,
     "p_over": 0.5246,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-21",
+    "home": "Napoli",
+    "away": "Torino",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.4462,
+      "draw": 0.25053,
+      "away": 0.30327
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -3381,6 +4445,20 @@
     "date": "2026-11-21",
     "home": "Parma",
     "away": "Roma",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.29346,
+      "draw": 0.25152,
+      "away": 0.45502
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-21",
+    "home": "Parma",
+    "away": "Roma",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.25471,
@@ -3418,6 +4496,20 @@
     "line": 2.5,
     "p_over": 0.63048,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-22",
+    "home": "FC Augsburg",
+    "away": "1. FSV Mainz 05",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.41136,
+      "draw": 0.23174,
+      "away": 0.3569
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -3469,6 +4561,20 @@
     "date": "2026-11-22",
     "home": "SV Werder Bremen",
     "away": "Hamburger SV",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.49928,
+      "draw": 0.22705,
+      "away": 0.27367
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-22",
+    "home": "SV Werder Bremen",
+    "away": "Hamburger SV",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.25976,
@@ -3506,6 +4612,20 @@
     "line": 2.5,
     "p_over": 0.4769,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-22",
+    "home": "CA Osasuna",
+    "away": "Málaga CF",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.50122,
+      "draw": 0.25315,
+      "away": 0.24562
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -3557,6 +4677,20 @@
     "date": "2026-11-22",
     "home": "FC Barcelona",
     "away": "Villarreal CF",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.5735,
+      "draw": 0.2159,
+      "away": 0.2106
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-22",
+    "home": "FC Barcelona",
+    "away": "Villarreal CF",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.47218,
@@ -3594,6 +4728,20 @@
     "line": 2.5,
     "p_over": 0.44667,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-22",
+    "home": "Getafe CF",
+    "away": "Atlético de Madrid",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.4059,
+      "draw": 0.27116,
+      "away": 0.32293
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -3645,6 +4793,20 @@
     "date": "2026-11-22",
     "home": "R. Racing Club",
     "away": "Real Sociedad",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.43139,
+      "draw": 0.22918,
+      "away": 0.33943
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-22",
+    "home": "R. Racing Club",
+    "away": "Real Sociedad",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.47756,
@@ -3682,6 +4844,20 @@
     "line": 2.5,
     "p_over": 0.61343,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-22",
+    "home": "FC Lorient",
+    "away": "Stade Rennais FC",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.48159,
+      "draw": 0.22779,
+      "away": 0.29062
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -3733,6 +4909,20 @@
     "date": "2026-11-22",
     "home": "Olympique de Marseille",
     "away": "Le Mans FC",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.53058,
+      "draw": 0.22147,
+      "away": 0.24794
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-22",
+    "home": "Olympique de Marseille",
+    "away": "Le Mans FC",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.30627,
@@ -3770,6 +4960,20 @@
     "line": 2.5,
     "p_over": 0.55279,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-22",
+    "home": "Paris FC",
+    "away": "Angers SCO",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.52401,
+      "draw": 0.23277,
+      "away": 0.24322
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -3821,6 +5025,20 @@
     "date": "2026-11-22",
     "home": "Hull",
     "away": "Brighton",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.38913,
+      "draw": 0.254,
+      "away": 0.35687
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-22",
+    "home": "Hull",
+    "away": "Brighton",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.26402,
@@ -3858,6 +5076,20 @@
     "line": 2.5,
     "p_over": 0.49357,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-22",
+    "home": "Liverpool",
+    "away": "Man Utd",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.4355,
+      "draw": 0.25813,
+      "away": 0.30636
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -3909,6 +5141,20 @@
     "date": "2026-11-22",
     "home": "Atalanta",
     "away": "Internazionale",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.36262,
+      "draw": 0.24296,
+      "away": 0.39442
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-22",
+    "home": "Atalanta",
+    "away": "Internazionale",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.18637,
@@ -3946,6 +5192,20 @@
     "line": 2.5,
     "p_over": 0.5416,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-22",
+    "home": "Bologna",
+    "away": "Udinese",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.37995,
+      "draw": 0.25039,
+      "away": 0.36966
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -3997,6 +5257,20 @@
     "date": "2026-11-22",
     "home": "Juventus",
     "away": "Venezia",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.50671,
+      "draw": 0.25153,
+      "away": 0.24176
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-22",
+    "home": "Juventus",
+    "away": "Venezia",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.24845,
@@ -4034,6 +5308,20 @@
     "line": 2.5,
     "p_over": 0.62045,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-22",
+    "home": "Milan",
+    "away": "Frosinone",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44588,
+      "draw": 0.23168,
+      "away": 0.32244
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -4085,6 +5373,20 @@
     "date": "2026-11-22",
     "home": "Sassuolo",
     "away": "Genoa",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.38864,
+      "draw": 0.24251,
+      "away": 0.36885
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-22",
+    "home": "Sassuolo",
+    "away": "Genoa",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.28368,
@@ -4122,6 +5424,20 @@
     "line": 2.5,
     "p_over": 0.58632,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-23",
+    "home": "Levante UD",
+    "away": "Elche CF",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44633,
+      "draw": 0.23816,
+      "away": 0.31551
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -4173,6 +5489,20 @@
     "date": "2026-11-23",
     "home": "Brentford",
     "away": "Everton",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.45881,
+      "draw": 0.25967,
+      "away": 0.28152
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-23",
+    "home": "Brentford",
+    "away": "Everton",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.38195,
@@ -4210,6 +5540,20 @@
     "line": 2.5,
     "p_over": 0.63563,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-23",
+    "home": "Monza",
+    "away": "Fiorentina",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.41829,
+      "draw": 0.23048,
+      "away": 0.35124
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -4261,6 +5605,20 @@
     "date": "2026-11-27",
     "home": "SV Werder Bremen",
     "away": "Borussia Mönchengladbach",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.48754,
+      "draw": 0.22608,
+      "away": 0.28638
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-27",
+    "home": "SV Werder Bremen",
+    "away": "Borussia Mönchengladbach",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.28313,
@@ -4298,6 +5656,20 @@
     "line": 2.5,
     "p_over": 0.53292,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-27",
+    "home": "Stade Brestois 29",
+    "away": "Paris FC",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44381,
+      "draw": 0.24761,
+      "away": 0.30858
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -4349,6 +5721,20 @@
     "date": "2026-11-27",
     "home": "Nott'm Forest",
     "away": "Chelsea",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.37996,
+      "draw": 0.2696,
+      "away": 0.35044
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-27",
+    "home": "Nott'm Forest",
+    "away": "Chelsea",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.37465,
@@ -4386,6 +5772,20 @@
     "line": 2.5,
     "p_over": 0.48989,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-27",
+    "home": "Venezia",
+    "away": "Bologna",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.29971,
+      "draw": 0.25834,
+      "away": 0.44195
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -4437,6 +5837,20 @@
     "date": "2026-11-28",
     "home": "1. FC Köln",
     "away": "SV 07 Elversberg",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.48097,
+      "draw": 0.22879,
+      "away": 0.29024
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-28",
+    "home": "1. FC Köln",
+    "away": "SV 07 Elversberg",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.28509,
@@ -4474,6 +5888,20 @@
     "line": 2.5,
     "p_over": 0.62886,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-28",
+    "home": "1. FSV Mainz 05",
+    "away": "1. FC Union Berlin",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.49099,
+      "draw": 0.22543,
+      "away": 0.28359
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -4525,6 +5953,20 @@
     "date": "2026-11-28",
     "home": "Hamburger SV",
     "away": "FC Bayern München",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.32113,
+      "draw": 0.22938,
+      "away": 0.44949
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-28",
+    "home": "Hamburger SV",
+    "away": "FC Bayern München",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.29475,
@@ -4562,6 +6004,20 @@
     "line": 2.5,
     "p_over": 0.56642,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-28",
+    "home": "SC Paderborn 07",
+    "away": "FC Schalke 04",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.46061,
+      "draw": 0.24066,
+      "away": 0.29873
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -4613,6 +6069,20 @@
     "date": "2026-11-28",
     "home": "VfB Stuttgart",
     "away": "Eintracht Frankfurt",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.50507,
+      "draw": 0.21792,
+      "away": 0.27701
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-28",
+    "home": "VfB Stuttgart",
+    "away": "Eintracht Frankfurt",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.34871,
@@ -4650,6 +6120,20 @@
     "line": 2.5,
     "p_over": 0.52365,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-28",
+    "home": "Angers SCO",
+    "away": "RC Lens",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.37773,
+      "draw": 0.25284,
+      "away": 0.36942
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -4701,6 +6185,20 @@
     "date": "2026-11-28",
     "home": "Havre Athletic Club",
     "away": "RC Strasbourg Alsace",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.36554,
+      "draw": 0.23952,
+      "away": 0.39494
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-28",
+    "home": "Havre Athletic Club",
+    "away": "RC Strasbourg Alsace",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.22802,
@@ -4738,6 +6236,20 @@
     "line": 2.5,
     "p_over": 0.53882,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-28",
+    "home": "Le Mans FC",
+    "away": "LOSC Lille",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.38979,
+      "draw": 0.24934,
+      "away": 0.36087
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -4789,6 +6301,20 @@
     "date": "2026-11-28",
     "home": "OGC Nice",
     "away": "Estac Troyes",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.46001,
+      "draw": 0.25184,
+      "away": 0.28815
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-28",
+    "home": "OGC Nice",
+    "away": "Estac Troyes",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.29324,
@@ -4826,6 +6352,20 @@
     "line": 2.5,
     "p_over": 0.5055,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-28",
+    "home": "Paris Saint-Germain",
+    "away": "FC Lorient",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.50442,
+      "draw": 0.24547,
+      "away": 0.2501
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -4877,6 +6417,20 @@
     "date": "2026-11-28",
     "home": "Ipswich",
     "away": "Aston Villa",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.42392,
+      "draw": 0.25731,
+      "away": 0.31877
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-28",
+    "home": "Ipswich",
+    "away": "Aston Villa",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.3915,
@@ -4914,6 +6468,20 @@
     "line": 2.5,
     "p_over": 0.48158,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-28",
+    "home": "Leeds",
+    "away": "Coventry",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.48606,
+      "draw": 0.25462,
+      "away": 0.25932
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -4965,6 +6533,20 @@
     "date": "2026-11-28",
     "home": "Man Utd",
     "away": "Brentford",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.43314,
+      "draw": 0.24593,
+      "away": 0.32093
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-28",
+    "home": "Man Utd",
+    "away": "Brentford",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.42232,
@@ -5002,6 +6584,20 @@
     "line": 2.5,
     "p_over": 0.56238,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-28",
+    "home": "Frosinone",
+    "away": "Parma",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.50028,
+      "draw": 0.23631,
+      "away": 0.26341
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -5053,6 +6649,20 @@
     "date": "2026-11-28",
     "home": "Internazionale",
     "away": "Genoa",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.49162,
+      "draw": 0.23606,
+      "away": 0.27232
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-28",
+    "home": "Internazionale",
+    "away": "Genoa",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.22607,
@@ -5090,6 +6700,20 @@
     "line": 2.5,
     "p_over": 0.56672,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-28",
+    "home": "Torino",
+    "away": "Lazio",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.28988,
+      "draw": 0.23949,
+      "away": 0.47063
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -5141,6 +6765,20 @@
     "date": "2026-11-29",
     "home": "Borussia Dortmund",
     "away": "Bayer 04 Leverkusen",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.52571,
+      "draw": 0.21604,
+      "away": 0.25825
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-29",
+    "home": "Borussia Dortmund",
+    "away": "Bayer 04 Leverkusen",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.30617,
@@ -5178,6 +6816,20 @@
     "line": 2.5,
     "p_over": 0.65779,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-29",
+    "home": "SC Freiburg",
+    "away": "RB Leipzig",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.52282,
+      "draw": 0.21576,
+      "away": 0.26142
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -5229,6 +6881,20 @@
     "date": "2026-11-29",
     "home": "TSG Hoffenheim",
     "away": "FC Augsburg",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.48762,
+      "draw": 0.21586,
+      "away": 0.29652
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-11-29",
+    "home": "TSG Hoffenheim",
+    "away": "FC Augsburg",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.34,
@@ -5266,6 +6932,20 @@
     "line": 2.5,
     "p_over": 0.50557,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-29",
+    "home": "Celta",
+    "away": "Villarreal CF",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44749,
+      "draw": 0.2544,
+      "away": 0.2981
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -5317,6 +6997,20 @@
     "date": "2026-11-29",
     "home": "Elche CF",
     "away": "Atlético de Madrid",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.37159,
+      "draw": 0.25533,
+      "away": 0.37308
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-29",
+    "home": "Elche CF",
+    "away": "Atlético de Madrid",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.38828,
@@ -5354,6 +7048,20 @@
     "line": 2.5,
     "p_over": 0.63651,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-29",
+    "home": "Levante UD",
+    "away": "R. Racing Club",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.55381,
+      "draw": 0.21386,
+      "away": 0.23234
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -5405,6 +7113,20 @@
     "date": "2026-11-29",
     "home": "Málaga CF",
     "away": "Athletic Club",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.42642,
+      "draw": 0.25039,
+      "away": 0.32319
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-29",
+    "home": "Málaga CF",
+    "away": "Athletic Club",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.43543,
@@ -5442,6 +7164,20 @@
     "line": 2.5,
     "p_over": 0.57357,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-29",
+    "home": "RC Deportivo",
+    "away": "FC Barcelona",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.34928,
+      "draw": 0.24309,
+      "away": 0.40763
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -5493,6 +7229,20 @@
     "date": "2026-11-29",
     "home": "RCD Espanyol de Barcelona",
     "away": "Getafe CF",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.46962,
+      "draw": 0.26923,
+      "away": 0.26116
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-29",
+    "home": "RCD Espanyol de Barcelona",
+    "away": "Getafe CF",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.49068,
@@ -5530,6 +7280,20 @@
     "line": 2.5,
     "p_over": 0.60063,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-29",
+    "home": "Real Betis",
+    "away": "Rayo Vallecano",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.52057,
+      "draw": 0.22608,
+      "away": 0.25336
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -5581,6 +7345,20 @@
     "date": "2026-11-29",
     "home": "Real Madrid",
     "away": "Deportivo Alavés",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.6035,
+      "draw": 0.21013,
+      "away": 0.18637
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-29",
+    "home": "Real Madrid",
+    "away": "Deportivo Alavés",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.39959,
@@ -5618,6 +7396,20 @@
     "line": 2.5,
     "p_over": 0.56853,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-29",
+    "home": "Real Sociedad",
+    "away": "Sevilla FC",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.46933,
+      "draw": 0.23929,
+      "away": 0.29138
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -5669,6 +7461,20 @@
     "date": "2026-11-29",
     "home": "Valencia CF",
     "away": "CA Osasuna",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.46584,
+      "draw": 0.24932,
+      "away": 0.28484
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-11-29",
+    "home": "Valencia CF",
+    "away": "CA Osasuna",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.42899,
@@ -5706,6 +7512,20 @@
     "line": 2.5,
     "p_over": 0.50861,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-29",
+    "home": "AJ Auxerre",
+    "away": "Olympique de Marseille",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.41178,
+      "draw": 0.25518,
+      "away": 0.33304
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -5757,6 +7577,20 @@
     "date": "2026-11-29",
     "home": "Olympique Lyonnais",
     "away": "AS Monaco",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.49771,
+      "draw": 0.23434,
+      "away": 0.26795
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-29",
+    "home": "Olympique Lyonnais",
+    "away": "AS Monaco",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.28467,
@@ -5794,6 +7628,20 @@
     "line": 2.5,
     "p_over": 0.59691,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-11-29",
+    "home": "Toulouse FC",
+    "away": "Stade Rennais FC",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.45914,
+      "draw": 0.23335,
+      "away": 0.30751
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -5845,6 +7693,20 @@
     "date": "2026-11-29",
     "home": "Arsenal",
     "away": "Man City",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44438,
+      "draw": 0.25737,
+      "away": 0.29825
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-29",
+    "home": "Arsenal",
+    "away": "Man City",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.4272,
@@ -5882,6 +7744,20 @@
     "line": 2.5,
     "p_over": 0.56788,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-29",
+    "home": "Brighton",
+    "away": "Newcastle",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.54649,
+      "draw": 0.22709,
+      "away": 0.22642
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -5933,6 +7809,20 @@
     "date": "2026-11-29",
     "home": "Crystal Palace",
     "away": "Hull",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.38956,
+      "draw": 0.25914,
+      "away": 0.3513
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-29",
+    "home": "Crystal Palace",
+    "away": "Hull",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.42274,
@@ -5970,6 +7860,20 @@
     "line": 2.5,
     "p_over": 0.54085,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-29",
+    "home": "Everton",
+    "away": "Liverpool",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.38407,
+      "draw": 0.25051,
+      "away": 0.36542
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -6021,6 +7925,20 @@
     "date": "2026-11-29",
     "home": "Fulham",
     "away": "Bournemouth",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.4244,
+      "draw": 0.2446,
+      "away": 0.331
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-29",
+    "home": "Fulham",
+    "away": "Bournemouth",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.36385,
@@ -6058,6 +7976,20 @@
     "line": 2.5,
     "p_over": 0.43547,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-11-29",
+    "home": "Sunderland",
+    "away": "Spurs",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.38311,
+      "draw": 0.27497,
+      "away": 0.34192
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -6109,6 +8041,20 @@
     "date": "2026-11-29",
     "home": "Como",
     "away": "Juventus",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.39742,
+      "draw": 0.27675,
+      "away": 0.32583
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-29",
+    "home": "Como",
+    "away": "Juventus",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.20706,
@@ -6146,6 +8092,20 @@
     "line": 2.5,
     "p_over": 0.61487,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-29",
+    "home": "Roma",
+    "away": "Monza",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.52492,
+      "draw": 0.22283,
+      "away": 0.25224
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -6197,6 +8157,20 @@
     "date": "2026-11-29",
     "home": "Sassuolo",
     "away": "Napoli",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.35385,
+      "draw": 0.23719,
+      "away": 0.40896
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-29",
+    "home": "Sassuolo",
+    "away": "Napoli",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.25546,
@@ -6234,6 +8208,20 @@
     "line": 2.5,
     "p_over": 0.55189,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-29",
+    "home": "Udinese",
+    "away": "Fiorentina",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.33381,
+      "draw": 0.24695,
+      "away": 0.41923
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -6285,6 +8273,20 @@
     "date": "2026-11-30",
     "home": "Cagliari",
     "away": "Milan",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.33951,
+      "draw": 0.2679,
+      "away": 0.39259
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-30",
+    "home": "Cagliari",
+    "away": "Milan",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.24598,
@@ -6322,6 +8324,20 @@
     "line": 2.5,
     "p_over": 0.56235,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-11-30",
+    "home": "Lecce",
+    "away": "Atalanta",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.36822,
+      "draw": 0.24595,
+      "away": 0.38583
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -6373,6 +8389,20 @@
     "date": "2026-12-01",
     "home": "Coventry",
     "away": "Ipswich",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.43668,
+      "draw": 0.23589,
+      "away": 0.32742
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-01",
+    "home": "Coventry",
+    "away": "Ipswich",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.33401,
@@ -6410,6 +8440,20 @@
     "line": 2.5,
     "p_over": 0.47777,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-02",
+    "home": "Aston Villa",
+    "away": "Everton",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.42649,
+      "draw": 0.26242,
+      "away": 0.31109
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -6461,6 +8505,20 @@
     "date": "2026-12-02",
     "home": "Bournemouth",
     "away": "Brighton",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.40592,
+      "draw": 0.25718,
+      "away": 0.33691
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-02",
+    "home": "Bournemouth",
+    "away": "Brighton",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.32067,
@@ -6498,6 +8556,20 @@
     "line": 2.5,
     "p_over": 0.4751,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-02",
+    "home": "Brentford",
+    "away": "Arsenal",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.39329,
+      "draw": 0.26497,
+      "away": 0.34174
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -6549,6 +8621,20 @@
     "date": "2026-12-02",
     "home": "Chelsea",
     "away": "Crystal Palace",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.49501,
+      "draw": 0.23867,
+      "away": 0.26632
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-02",
+    "home": "Chelsea",
+    "away": "Crystal Palace",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.37091,
@@ -6586,6 +8672,20 @@
     "line": 2.5,
     "p_over": 0.53361,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-02",
+    "home": "Hull",
+    "away": "Nott'm Forest",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.42733,
+      "draw": 0.25022,
+      "away": 0.32245
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -6637,6 +8737,20 @@
     "date": "2026-12-02",
     "home": "Liverpool",
     "away": "Sunderland",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.48652,
+      "draw": 0.24518,
+      "away": 0.2683
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-02",
+    "home": "Liverpool",
+    "away": "Sunderland",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.3945,
@@ -6674,6 +8788,20 @@
     "line": 2.5,
     "p_over": 0.50073,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-02",
+    "home": "Man City",
+    "away": "Leeds",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.50775,
+      "draw": 0.2471,
+      "away": 0.24515
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -6725,6 +8853,20 @@
     "date": "2026-12-02",
     "home": "Newcastle",
     "away": "Man Utd",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.40175,
+      "draw": 0.25985,
+      "away": 0.33841
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-02",
+    "home": "Newcastle",
+    "away": "Man Utd",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.48757,
@@ -6762,6 +8904,20 @@
     "line": 2.5,
     "p_over": 0.47363,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-03",
+    "home": "Spurs",
+    "away": "Fulham",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.41167,
+      "draw": 0.26441,
+      "away": 0.32392
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -6813,6 +8969,20 @@
     "date": "2026-12-04",
     "home": "FC Bayern München",
     "away": "SC Paderborn 07",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.61887,
+      "draw": 0.19189,
+      "away": 0.18923
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-12-04",
+    "home": "FC Bayern München",
+    "away": "SC Paderborn 07",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.27113,
@@ -6850,6 +9020,20 @@
     "line": 2.5,
     "p_over": 0.54757,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-12-04",
+    "home": "Toulouse FC",
+    "away": "Paris Saint-Germain",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.31489,
+      "draw": 0.24487,
+      "away": 0.44024
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -6901,6 +9085,20 @@
     "date": "2026-12-04",
     "home": "Bologna",
     "away": "Roma",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.31108,
+      "draw": 0.24253,
+      "away": 0.44639
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-12-04",
+    "home": "Bologna",
+    "away": "Roma",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.30676,
@@ -6938,6 +9136,20 @@
     "line": 2.5,
     "p_over": 0.59128,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-12-05",
+    "home": "1. FC Union Berlin",
+    "away": "Hamburger SV",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.4911,
+      "draw": 0.23225,
+      "away": 0.27665
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -6989,6 +9201,20 @@
     "date": "2026-12-05",
     "home": "Bayer 04 Leverkusen",
     "away": "Borussia Mönchengladbach",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.55628,
+      "draw": 0.21026,
+      "away": 0.23345
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-12-05",
+    "home": "Bayer 04 Leverkusen",
+    "away": "Borussia Mönchengladbach",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.34751,
@@ -7026,6 +9252,20 @@
     "line": 2.5,
     "p_over": 0.63972,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-12-05",
+    "home": "Eintracht Frankfurt",
+    "away": "SV Werder Bremen",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.46284,
+      "draw": 0.22662,
+      "away": 0.31054
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -7077,6 +9317,20 @@
     "date": "2026-12-05",
     "home": "FC Augsburg",
     "away": "1. FC Köln",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.48926,
+      "draw": 0.23039,
+      "away": 0.28035
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-12-05",
+    "home": "FC Augsburg",
+    "away": "1. FC Köln",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.29887,
@@ -7114,6 +9368,20 @@
     "line": 2.5,
     "p_over": 0.6661,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-12-05",
+    "home": "RB Leipzig",
+    "away": "1. FSV Mainz 05",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.54109,
+      "draw": 0.21129,
+      "away": 0.24762
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -7165,6 +9433,20 @@
     "date": "2026-12-05",
     "home": "SC Freiburg",
     "away": "TSG Hoffenheim",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.52573,
+      "draw": 0.21486,
+      "away": 0.25941
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-12-05",
+    "home": "SC Freiburg",
+    "away": "TSG Hoffenheim",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.27393,
@@ -7202,6 +9484,20 @@
     "line": 2.5,
     "p_over": 0.53382,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-12-05",
+    "home": "AS Monaco",
+    "away": "Angers SCO",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.52145,
+      "draw": 0.23686,
+      "away": 0.24169
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -7253,6 +9549,20 @@
     "date": "2026-12-05",
     "home": "LOSC Lille",
     "away": "AJ Auxerre",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.51329,
+      "draw": 0.23405,
+      "away": 0.25266
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-12-05",
+    "home": "LOSC Lille",
+    "away": "AJ Auxerre",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.23829,
@@ -7290,6 +9600,20 @@
     "line": 2.5,
     "p_over": 0.57853,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-12-05",
+    "home": "Paris FC",
+    "away": "Le Mans FC",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.50606,
+      "draw": 0.23094,
+      "away": 0.263
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -7341,6 +9665,20 @@
     "date": "2026-12-05",
     "home": "RC Lens",
     "away": "Havre Athletic Club",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.48902,
+      "draw": 0.2294,
+      "away": 0.28158
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-12-05",
+    "home": "RC Lens",
+    "away": "Havre Athletic Club",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.28869,
@@ -7378,6 +9716,20 @@
     "line": 2.5,
     "p_over": 0.52407,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-12-05",
+    "home": "RC Strasbourg Alsace",
+    "away": "FC Lorient",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.45343,
+      "draw": 0.24854,
+      "away": 0.29803
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -7429,6 +9781,20 @@
     "date": "2026-12-05",
     "home": "Aston Villa",
     "away": "Crystal Palace",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.48492,
+      "draw": 0.24454,
+      "away": 0.27054
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-05",
+    "home": "Aston Villa",
+    "away": "Crystal Palace",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.38462,
@@ -7466,6 +9832,20 @@
     "line": 2.5,
     "p_over": 0.47256,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-05",
+    "home": "Bournemouth",
+    "away": "Hull",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.45245,
+      "draw": 0.26107,
+      "away": 0.28648
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -7517,6 +9897,20 @@
     "date": "2026-12-05",
     "home": "Brentford",
     "away": "Man City",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.39665,
+      "draw": 0.25454,
+      "away": 0.34881
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-05",
+    "home": "Brentford",
+    "away": "Man City",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.4227,
@@ -7554,6 +9948,20 @@
     "line": 2.5,
     "p_over": 0.57546,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-05",
+    "home": "Chelsea",
+    "away": "Liverpool",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.41511,
+      "draw": 0.24238,
+      "away": 0.34251
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -7605,6 +10013,20 @@
     "date": "2026-12-05",
     "home": "Leeds",
     "away": "Ipswich",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.47483,
+      "draw": 0.23986,
+      "away": 0.28531
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-05",
+    "home": "Leeds",
+    "away": "Ipswich",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.38671,
@@ -7642,6 +10064,20 @@
     "line": 2.5,
     "p_over": 0.53302,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-05",
+    "home": "Man Utd",
+    "away": "Coventry",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.47534,
+      "draw": 0.24553,
+      "away": 0.27914
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -7693,6 +10129,20 @@
     "date": "2026-12-05",
     "home": "Nott'm Forest",
     "away": "Brighton",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.34903,
+      "draw": 0.26936,
+      "away": 0.38161
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-05",
+    "home": "Nott'm Forest",
+    "away": "Brighton",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.27207,
@@ -7730,6 +10180,20 @@
     "line": 2.5,
     "p_over": 0.56528,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-12-05",
+    "home": "Frosinone",
+    "away": "Internazionale",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44375,
+      "draw": 0.2425,
+      "away": 0.31375
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -7781,6 +10245,20 @@
     "date": "2026-12-05",
     "home": "Monza",
     "away": "Como",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.35616,
+      "draw": 0.23927,
+      "away": 0.40458
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-12-05",
+    "home": "Monza",
+    "away": "Como",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.21645,
@@ -7818,6 +10296,20 @@
     "line": 2.5,
     "p_over": 0.55157,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-12-05",
+    "home": "Napoli",
+    "away": "Lecce",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44577,
+      "draw": 0.24506,
+      "away": 0.30917
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -7869,6 +10361,20 @@
     "date": "2026-12-06",
     "home": "FC Schalke 04",
     "away": "Borussia Dortmund",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.36549,
+      "draw": 0.25534,
+      "away": 0.37917
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-12-06",
+    "home": "FC Schalke 04",
+    "away": "Borussia Dortmund",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.3271,
@@ -7906,6 +10412,20 @@
     "line": 2.5,
     "p_over": 0.7274,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Bundesliga",
+    "date": "2026-12-06",
+    "home": "SV 07 Elversberg",
+    "away": "VfB Stuttgart",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.46249,
+      "draw": 0.21076,
+      "away": 0.32675
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -7957,6 +10477,20 @@
     "date": "2026-12-06",
     "home": "Athletic Club",
     "away": "Real Madrid",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.4062,
+      "draw": 0.26085,
+      "away": 0.33295
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-12-06",
+    "home": "Athletic Club",
+    "away": "Real Madrid",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.47101,
@@ -7994,6 +10528,20 @@
     "line": 2.5,
     "p_over": 0.51949,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-12-06",
+    "home": "Atlético de Madrid",
+    "away": "Real Betis",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.52173,
+      "draw": 0.24087,
+      "away": 0.2374
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -8045,6 +10593,20 @@
     "date": "2026-12-06",
     "home": "CA Osasuna",
     "away": "Elche CF",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44868,
+      "draw": 0.25429,
+      "away": 0.29703
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-12-06",
+    "home": "CA Osasuna",
+    "away": "Elche CF",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.49706,
@@ -8082,6 +10644,20 @@
     "line": 2.5,
     "p_over": 0.50332,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-12-06",
+    "home": "Deportivo Alavés",
+    "away": "RCD Espanyol de Barcelona",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44922,
+      "draw": 0.25471,
+      "away": 0.29607
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -8133,6 +10709,20 @@
     "date": "2026-12-06",
     "home": "FC Barcelona",
     "away": "Celta",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.60845,
+      "draw": 0.21784,
+      "away": 0.17372
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-12-06",
+    "home": "FC Barcelona",
+    "away": "Celta",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.45193,
@@ -8170,6 +10760,20 @@
     "line": 2.5,
     "p_over": 0.4401,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-12-06",
+    "home": "Getafe CF",
+    "away": "Valencia CF",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.45053,
+      "draw": 0.26877,
+      "away": 0.2807
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -8221,6 +10825,20 @@
     "date": "2026-12-06",
     "home": "R. Racing Club",
     "away": "RC Deportivo",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.44499,
+      "draw": 0.24026,
+      "away": 0.31475
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-12-06",
+    "home": "R. Racing Club",
+    "away": "RC Deportivo",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.46216,
@@ -8258,6 +10876,20 @@
     "line": 2.5,
     "p_over": 0.5294,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-12-06",
+    "home": "Rayo Vallecano",
+    "away": "Levante UD",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.50456,
+      "draw": 0.24195,
+      "away": 0.25349
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -8309,6 +10941,20 @@
     "date": "2026-12-06",
     "home": "Sevilla FC",
     "away": "Málaga CF",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.47605,
+      "draw": 0.25606,
+      "away": 0.26788
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-12-06",
+    "home": "Sevilla FC",
+    "away": "Málaga CF",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.39344,
@@ -8346,6 +10992,20 @@
     "line": 2.5,
     "p_over": 0.62899,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "La Liga",
+    "date": "2026-12-06",
+    "home": "Villarreal CF",
+    "away": "Real Sociedad",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.48478,
+      "draw": 0.22618,
+      "away": 0.28904
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -8397,6 +11057,20 @@
     "date": "2026-12-06",
     "home": "Estac Troyes",
     "away": "Olympique Lyonnais",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.37477,
+      "draw": 0.25159,
+      "away": 0.37365
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-12-06",
+    "home": "Estac Troyes",
+    "away": "Olympique Lyonnais",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.28327,
@@ -8434,6 +11108,20 @@
     "line": 2.5,
     "p_over": 0.59769,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-12-06",
+    "home": "Olympique de Marseille",
+    "away": "OGC Nice",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.52386,
+      "draw": 0.22454,
+      "away": 0.25159
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -8485,6 +11173,20 @@
     "date": "2026-12-06",
     "home": "Stade Rennais FC",
     "away": "Stade Brestois 29",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.51578,
+      "draw": 0.23096,
+      "away": 0.25326
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Ligue 1",
+    "date": "2026-12-06",
+    "home": "Stade Rennais FC",
+    "away": "Stade Brestois 29",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.26052,
@@ -8522,6 +11224,20 @@
     "line": 2.5,
     "p_over": 0.46313,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-06",
+    "home": "Everton",
+    "away": "Fulham",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.42573,
+      "draw": 0.26584,
+      "away": 0.30843
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -8573,6 +11289,20 @@
     "date": "2026-12-06",
     "home": "Newcastle",
     "away": "Sunderland",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.45148,
+      "draw": 0.24958,
+      "away": 0.29894
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-06",
+    "home": "Newcastle",
+    "away": "Sunderland",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.44841,
@@ -8610,6 +11340,20 @@
     "line": 2.5,
     "p_over": 0.48232,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Premier League",
+    "date": "2026-12-06",
+    "home": "Spurs",
+    "away": "Arsenal",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.32856,
+      "draw": 0.26258,
+      "away": 0.40886
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -8661,6 +11405,20 @@
     "date": "2026-12-06",
     "home": "Genoa",
     "away": "Torino",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.4109,
+      "draw": 0.26141,
+      "away": 0.32769
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-12-06",
+    "home": "Genoa",
+    "away": "Torino",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.23681,
@@ -8698,6 +11456,20 @@
     "line": 2.5,
     "p_over": 0.5134,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-12-06",
+    "home": "Juventus",
+    "away": "Udinese",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.45157,
+      "draw": 0.25233,
+      "away": 0.2961
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {
@@ -8749,6 +11521,20 @@
     "date": "2026-12-06",
     "home": "Lazio",
     "away": "Atalanta",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.46747,
+      "draw": 0.24201,
+      "away": 0.29052
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-12-06",
+    "home": "Lazio",
+    "away": "Atalanta",
     "market": "yellow",
     "line": 4.5,
     "p_over": 0.24953,
@@ -8786,6 +11572,20 @@
     "line": 2.5,
     "p_over": 0.57272,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
+    "settled": false
+  },
+  {
+    "league": "Serie A",
+    "date": "2026-12-06",
+    "home": "Milan",
+    "away": "Parma",
+    "market": "h2h",
+    "probabilities": {
+      "home": 0.46498,
+      "draw": 0.23897,
+      "away": 0.29605
+    },
+    "created_at": "2026-11-06T17:31:04.635762+00:00",
     "settled": false
   },
   {

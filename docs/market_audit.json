@@ -1,0 +1,14 @@
+{
+  "status": "paper_only_not_validated",
+  "observations": 0,
+  "distinct_events": 0,
+  "initial_positive_ev_signals": 0,
+  "signals_settled": 0,
+  "hypothetical_roi": null,
+  "approx_95_roi_interval": null,
+  "mean_price_change_vs_last_seen": null,
+  "price_change_count": 0,
+  "model_is_verified": false,
+  "quotes_are_verified_romania": false,
+  "notice": "Paper results are not executable bets, the bookmaker may not be accessible in Romania, and these are not verified closing-line prices."
+}

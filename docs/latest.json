@@ -1,6 +1,6 @@
 {
   "version": "0.6",
-  "generated_at": "2026-11-06T17:25:12.894685+00:00",
+  "generated_at": "2026-11-06T17:31:04.635762+00:00",
   "history_rows": 3935,
   "fixture_rows": 1300,
   "source_success": 20,
@@ -392,9 +392,13 @@
     "fouls": {
       "n": 0,
       "brier": null
+    },
+    "h2h": {
+      "n": 0,
+      "brier": null
     }
   },
-  "prospective_predictions_recorded": 800,
+  "prospective_predictions_recorded": 1000,
   "fixtures": [
     {
       "league": "Premier League",
