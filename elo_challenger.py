@@ -44,6 +44,7 @@ def process(rows,params,upcoming=None):
  """Sequential ratings updated only after all matches of same date are predicted."""
  rows=sorted(rows,key=lambda r:r["date"])
  ratings={}
+ games_played=defaultdict(int)
  history={}
  prior_season=None
  for day,generator in groupby(rows,key=lambda r:r["date"]):
@@ -58,14 +59,16 @@ def process(rows,params,upcoming=None):
    distribution=probs(rh,ra,params)
    event=(m["league"],m["date"],home,away)
    history[event]={"p":distribution,"y":result(m["gh"],m["ga"]),
-    "rating_home":rh,"rating_away":ra,"games_home":sum(1 for x in rows if x["date"]<day and (runner.norm(x["home"])==home or runner.norm(x["away"])==home)),
-    "games_away":sum(1 for x in rows if x["date"]<day and (runner.norm(x["home"])==away or runner.norm(x["away"])==away))}
+    "rating_home":rh,"rating_away":ra,
+    "games_home":games_played[home],"games_away":games_played[away]}
    score=1. if m["gh"]>m["ga"] else .5 if m["gh"]==m["ga"] else 0.
    delta=params["k"]*(score-expected_points(distribution))
    pending.append((home,away,delta))
   for home,away,delta in pending:
    ratings[home]=ratings.get(home,BASE)+delta
    ratings[away]=ratings.get(away,BASE)-delta
+   games_played[home]+=1
+   games_played[away]+=1
  predictions={}
  for m in upcoming or []:
   home=runner.norm(m["home"]);away=runner.norm(m["away"])
