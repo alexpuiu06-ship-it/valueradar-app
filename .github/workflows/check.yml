@@ -1,0 +1,31 @@
+name: ValueRadar / teste de siguranta
+on:
+  push:
+    branches: [main]
+    paths:
+      - "runner.py"
+      - "odds_scanner.py"
+      - "performance.py"
+      - "docs/odds_ui.js"
+      - ".github/workflows/check.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verifica sintaxa Python
+        run: python -m py_compile runner.py odds_scanner.py performance.py
+      - name: Verifica sintaxa dashboardului
+        run: node --check docs/odds_ui.js
+      - name: Testeaza modelul si comparatia de cote fara API
+        run: |
+          python runner.py --self-test
+          python odds_scanner.py --self-test
+          python performance.py --self-test
