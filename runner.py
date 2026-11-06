@@ -107,11 +107,11 @@ def load_all():
  upcoming=[{**m,"time_ro":local_kickoff(m)} for k,m in fixture.items() if future_match(m,now) and k not in seen]
  # Exclude matches already kicked off (including today's).
  return sorted(result.values(),key=lambda x:x["date"]),sorted(upcoming,key=lambda x:x["date"]),sorted(report,key=lambda x:(x["league"],x["kind"]))
-def wmean(rows,col,date):
+def wmean(rows,col,date,half_life_days=185):
  sw=0.; sy=0.
  for m in rows:
   age=max(0,(date-datetime.fromisoformat(m["date"]).date()).days)
-  w=2**(-age/185)
+  w=2**(-age/half_life_days)
   sw+=w; sy+=w*m[col]
  return sy/max(.001,sw),sw
 def h2h_distribution(lamh,lama):
@@ -132,7 +132,7 @@ def h2h_distribution(lamh,lama):
  if z<=0:return None
  return {"home":round(ph/z,5),"draw":round(pd/z,5),"away":round(pa/z,5)}
 
-def pred(hist,match,market):
+def pred(hist,match,market,half_life_days=185,prior_weight=7,opponent_effect=True):
  homecol,awaycol,line,minimum=MARKETS[market]
  relevant=[m for m in hist if m["league"]==match["league"] and m["date"]<match["date"]
   and m.get(homecol) is not None and m.get(awaycol) is not None]
@@ -142,23 +142,23 @@ def pred(hist,match,market):
  away=[r for r in relevant if norm(r["away"])==awayid]
  if min(len(home),len(away))<3: return None
  date=datetime.fromisoformat(match["date"]).date()
- baseh,_=wmean(relevant,homecol,date); basea,_=wmean(relevant,awaycol,date)
+ baseh,_=wmean(relevant,homecol,date,HALF_LIFE_DAYS); basea,_=wmean(relevant,awaycol,date,HALF_LIFE_DAYS)
  if baseh<=0 or basea<=0: return None
- PRIOR_WEIGHT=7
- HALF_LIFE_DAYS=185
+ PRIOR_WEIGHT=prior_weight
+ HALF_LIFE_DAYS=half_life_days
  def shrunk(rows,col,avg):
-  m,n=wmean(rows,col,date)
+  m,n=wmean(rows,col,date,HALF_LIFE_DAYS)
   return (m*n+PRIOR_WEIGHT*avg)/(n+PRIOR_WEIGHT)
- home_attack_raw,home_effective=wmean(home,homecol,date)
- opposing_home_conceded_raw,opposing_effective=wmean(away,homecol,date)
- away_attack_raw,away_effective=wmean(away,awaycol,date)
- opposing_away_conceded_raw,opposing_away_effective=wmean(home,awaycol,date)
+ home_attack_raw,home_effective=wmean(home,homecol,date,HALF_LIFE_DAYS)
+ opposing_home_conceded_raw,opposing_effective=wmean(away,homecol,date,HALF_LIFE_DAYS)
+ away_attack_raw,away_effective=wmean(away,awaycol,date,HALF_LIFE_DAYS)
+ opposing_away_conceded_raw,opposing_away_effective=wmean(home,awaycol,date,HALF_LIFE_DAYS)
  h_attack=shrunk(home,homecol,baseh)
  h_conceded=shrunk(away,homecol,baseh)
  a_attack=shrunk(away,awaycol,basea)
  a_conceded=shrunk(home,awaycol,basea)
- lamh=max(.05,min(baseh*2.4,math.sqrt(h_attack*h_conceded)))
- lama=max(.05,min(basea*2.4,math.sqrt(a_attack*a_conceded)))
+ lamh=max(.05,min(baseh*2.4,math.sqrt(h_attack*h_conceded) if opponent_effect else h_attack))
+ lama=max(.05,min(basea*2.4,math.sqrt(a_attack*a_conceded) if opponent_effect else a_attack))
  mu=lamh+lama
  totals=[r[homecol]+r[awaycol] for r in relevant]
  avg=sum(totals)/len(totals)
@@ -166,7 +166,8 @@ def pred(hist,match,market):
  dispersion=max(1.,min(2.5,variance/max(.1,avg)))
  p=over_tail(mu,line,dispersion)
  explanation={
-   "method_version":"weighted_opponent_model_v1",
+   "method_version":"weighted_opponent_model_v1" if half_life_days==185 and prior_weight==7 and opponent_effect else "research_variant",
+   "opponent_effect":bool(opponent_effect),
    "status":"arithmetic_trace_not_causal_explanation",
    "source_families":["OpenFootball football.json (historic goals)",
                       "open-matchday (current season and event summaries)"],
@@ -389,6 +390,10 @@ def selftest():
  assert abs(explanation["predicted_home_mean"]+explanation["predicted_away_mean"]-
    explanation["predicted_total_mean"])<.0002
  assert explanation["historical_cutoff_exclusive"]=="2026-07-01"
+ alternative=pred(demo,{"league":"Ligue 1","date":"2026-07-01","home":"A","away":"B"},
+  "goals",half_life_days=90,prior_weight=15,opponent_effect=False)
+ assert alternative is not None and alternative["explanation"]["method_version"]=="research_variant"
+ assert alternative["explanation"]["prior_pseudogames"]==15
  print("Self-tests passed.")
 if __name__=="__main__":
  sys.exit((selftest() or 0) if "--self-test" in sys.argv else run())
