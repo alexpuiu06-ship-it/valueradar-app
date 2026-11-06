@@ -1,0 +1,16 @@
+{
+  "status": "needs_api_key",
+  "provider": "The Odds API v4",
+  "region": "uk",
+  "market": "h2h",
+  "bookmakers_ro_confirmed": false,
+  "bookmakers_ro_requested": [
+    "Superbet RO",
+    "Betano RO",
+    "Unibet RO",
+    "MrBit RO",
+    "NetBet RO",
+    "Casa Pariurilor"
+  ],
+  "message": "Scanner implementat. Necesită ODDS_API_KEY în GitHub Actions Secrets. Până atunci nu există cote automate."
+}
