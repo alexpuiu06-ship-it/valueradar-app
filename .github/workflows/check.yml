@@ -8,6 +8,7 @@ on:
       - "performance.py"
       - "docs/odds_ui.js"
       - "docs/model_lab_ui.js"
+      - "docs/elo_ui.js"
       - "model_lab.py"
       - ".github/workflows/check.yml"
   workflow_dispatch:
@@ -28,6 +29,7 @@ jobs:
         run: |
           node --check docs/odds_ui.js
           node --check docs/model_lab_ui.js
+          node --check docs/elo_ui.js
       - name: Testeaza modelul si comparatia de cote fara API
         run: |
           python runner.py --self-test
