@@ -144,9 +144,15 @@ def pred(hist,match,market):
  date=datetime.fromisoformat(match["date"]).date()
  baseh,_=wmean(relevant,homecol,date); basea,_=wmean(relevant,awaycol,date)
  if baseh<=0 or basea<=0: return None
+ PRIOR_WEIGHT=7
+ HALF_LIFE_DAYS=185
  def shrunk(rows,col,avg):
   m,n=wmean(rows,col,date)
-  return (m*n+7*avg)/(n+7)
+  return (m*n+PRIOR_WEIGHT*avg)/(n+PRIOR_WEIGHT)
+ home_attack_raw,home_effective=wmean(home,homecol,date)
+ opposing_home_conceded_raw,opposing_effective=wmean(away,homecol,date)
+ away_attack_raw,away_effective=wmean(away,awaycol,date)
+ opposing_away_conceded_raw,opposing_away_effective=wmean(home,awaycol,date)
  h_attack=shrunk(home,homecol,baseh)
  h_conceded=shrunk(away,homecol,baseh)
  a_attack=shrunk(away,awaycol,basea)
@@ -159,12 +165,45 @@ def pred(hist,match,market):
  variance=sum((v-avg)**2 for v in totals)/max(1,len(totals)-1)
  dispersion=max(1.,min(2.5,variance/max(.1,avg)))
  p=over_tail(mu,line,dispersion)
+ explanation={
+   "method_version":"weighted_opponent_model_v1",
+   "status":"arithmetic_trace_not_causal_explanation",
+   "source_families":["OpenFootball football.json (historic goals)",
+                      "open-matchday (current season and event summaries)"],
+   "historical_cutoff_exclusive":match["date"],
+   "half_life_days":HALF_LIFE_DAYS,"prior_pseudogames":PRIOR_WEIGHT,
+   "league_home_mean":round(baseh,4),"league_away_mean":round(basea,4),
+   "home_team_for_mean_raw":round(home_attack_raw,4),
+   "away_opponent_concedes_to_home_raw":round(opposing_home_conceded_raw,4),
+   "away_team_for_mean_raw":round(away_attack_raw,4),
+   "home_opponent_concedes_to_away_raw":round(opposing_away_conceded_raw,4),
+   "home_team_effective_matches":round(home_effective,2),
+   "away_team_effective_matches":round(away_effective,2),
+   "away_opponent_effective_matches":round(opposing_effective,2),
+   "home_opponent_effective_matches":round(opposing_away_effective,2),
+   "home_attack_shrunk":round(h_attack,4),
+   "opponent_home_conceded_shrunk":round(h_conceded,4),
+   "away_attack_shrunk":round(a_attack,4),
+   "opponent_away_conceded_shrunk":round(a_conceded,4),
+   "league_total_mean":round(baseh+basea,4),
+   "predicted_home_mean":round(lamh,4),
+   "predicted_away_mean":round(lama,4),
+   "predicted_total_mean":round(mu,4),
+   "home_shift_vs_league":round(lamh-baseh,4),
+   "away_shift_vs_league":round(lama-basea,4),
+   "dispersion":round(dispersion,4),
+   "count_distribution":"negative_binomial" if dispersion>1.07 else "poisson",
+   "missing_factors":["referee","confirmed_lineups","injuries","tactical_matchup",
+                     "independent_odds_validation"],
+   "warning":"Efectele sunt caracteristici ale formulei, nu cauze dovedite."
+ }
  return {"line":line,"over":round(p,5),"under":round(1-p,5),
   "mean":round(mu,2),"n_league":len(relevant),"n_home":len(home),
   "n_away":len(away),"small_sample":min(len(home),len(away))<8 or len(relevant)<100,
   "status":"experimental",
   "quality":"very_low" if min(len(home),len(away))<8 or len(relevant)<150 else "unverified",
-  "h2h":h2h_distribution(lamh,lama) if market=="goals" else None}
+  "h2h":h2h_distribution(lamh,lama) if market=="goals" else None,
+  "explanation":explanation}
 def over_tail(mu,line,dispersion=1):
  k=max(.5,mu/(dispersion-1)) if dispersion>1.07 else float("inf")
  term=(k/(k+mu))**k if math.isfinite(k) else math.exp(-mu)
@@ -312,7 +351,12 @@ def run():
   for market,(h,a,_,_) in MARKETS.items()} for lg in LEAGUES}
  freshness={lg:{market:max((r["date"] for r in hist if r["league"]==lg and r.get(h) is not None and r.get(a) is not None),default=None)
   for market,(h,a,_,_) in MARKETS.items()} for lg in LEAGUES}
- payload={"version":"0.6","generated_at":stamp,"history_rows":len(hist),
+ payload={"version":"0.9","generated_at":stamp,
+  "methodology":{"version":"weighted_opponent_model_v1",
+   "approach":"Time-decayed team and opponent rates, shrunk toward league means, with geometric combination.",
+   "prior_pseudogames":7,"half_life_days":185,
+   "limitations":"No referees, lineup, tactical events, or validated ROI.",
+   "details":"See ANALYSIS_METHODOLOGY.md"},"history_rows":len(hist),
   "fixture_rows":len(fixtures),"source_success":sum(r["ok"] for r in report),
   "source_total":len(report),"source_report":report,"data_audit":audit,
   "last_stat_date":freshness,
@@ -332,6 +376,19 @@ def selftest():
  assert local_kickoff({"date":"2026-11-06","time":"21:00"})=="22:00"
  assert not future_match({"date":"2026-11-05","time":"23:59"},datetime(2026,11,6,18,tzinfo=timezone.utc))
  assert pred([],{"league":"Ligue 1","date":"2026-11-10","home":"A","away":"B"},"goals") is None
+ # Explainability values are direct model intermediates and reconstruct the mean.
+ demo=[]
+ from datetime import date as date_cls
+ for i in range(120):
+  day=(date_cls(2026,1,1)+timedelta(days=i)).isoformat()
+  demo.append({"league":"Ligue 1","date":day,"home":"A","away":"B",
+               "gh":2.,"ga":1.})
+ check=pred(demo,{"league":"Ligue 1","date":"2026-07-01","home":"A","away":"B"},"goals")
+ assert check is not None
+ explanation=check["explanation"]
+ assert abs(explanation["predicted_home_mean"]+explanation["predicted_away_mean"]-
+   explanation["predicted_total_mean"])<.0002
+ assert explanation["historical_cutoff_exclusive"]=="2026-07-01"
  print("Self-tests passed.")
 if __name__=="__main__":
  sys.exit((selftest() or 0) if "--self-test" in sys.argv else run())
