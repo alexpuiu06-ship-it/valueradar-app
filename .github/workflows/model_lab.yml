@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "model_lab.py"
+      - "runner.py"
       - ".github/workflows/model_lab.yml"
   schedule:
     - cron: "41 5 * * 0"
