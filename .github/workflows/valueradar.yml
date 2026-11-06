@@ -5,10 +5,12 @@ on:
     branches: [main]
     paths:
       - "runner.py"
+      - "odds_scanner.py"
       - "docs/index.html"
       - ".github/workflows/valueradar.yml"
   schedule:
     - cron: "23 */4 * * *"
+    - cron: "13 8,16 * * *"
 permissions:
   contents: write
   pages: write
@@ -27,13 +29,21 @@ jobs:
           python-version: "3.12"
       - name: Verificare modele
         run: python runner.py --self-test
+      - name: Verifica integrarea de cote
+        run: python odds_scanner.py --self-test
       - name: Importa rezultate si calculeaza predictii
         run: python runner.py
+      - name: Interogheaza cotele reale (doar 2 ori pe zi sau manual)
+        if: ${{ github.event_name == 'workflow_dispatch' || github.event.schedule == '13 8,16 * * *' }}
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          ODDS_REGION: uk
+        run: python odds_scanner.py
       - name: Pastreaza jurnalul si analizele
         run: |
           git config user.name "valueradar-bot"
           git config user.email "valueradar-bot@users.noreply.github.com"
-          git add docs/latest.json docs/forecast_log.json
+          git add docs/*.json
           if ! git diff --cached --quiet; then
             git commit -m "Update experimental forecasts [skip ci]"
             git push
