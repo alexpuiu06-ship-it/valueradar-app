@@ -78,16 +78,20 @@ def process(rows,params,upcoming=None):
    "home":m["home"],"away":m["away"],"league":m["league"],"date":m["date"],
    "probabilities":{k:round(v,5) for k,v in out.items()},
    "rating_home":round(rh,1),"rating_away":round(ra,1),
+   "games_home":games_played[home],"games_away":games_played[away],
+   "low_sample":min(games_played[home],games_played[away])<8,
    "rating_difference_including_home_advantage":round(rh-ra+params["home_advantage"],1),
    "parameters":params,"status":"CHALLENGER_ONLY_not_a_betting_recommendation"}
  return history,predictions
 def evaluate(hist,fixtures):
  markets={}
  all_predictions={}
+ today=datetime.now(timezone.utc).date().isoformat()
+ horizon=(datetime.now(timezone.utc).date()+timedelta(days=30)).isoformat()
  configs={k:[] for k in CANDIDATES}
  for league in runner.LEAGUES:
   rows=sorted([r for r in hist if r["league"]==league and r.get("gh") is not None and r.get("ga") is not None],key=lambda r:r["date"])
-  upcoming=[f for f in fixtures if f["league"]==league]
+  upcoming=[f for f in fixtures if f["league"]==league and today<=f["date"]<=horizon]
   pred_by={}
   live_by={}
   for name,params in CANDIDATES.items():
@@ -149,6 +153,41 @@ def evaluate(hist,fixtures):
      "Team name matching is imperfect","Approximately normal interval assumes independent matches",
      "No historical odds were used for selection","No profit validation"],
    "live_research_only":all_predictions.get(winner,[])}
+def market_diagnostic(result,prior):
+ """Snapshot diagnostic only. It does NOT validate the model or a value edge."""
+ if not isinstance(prior,dict):return None
+ look={(x["league"],x["date"],x["home"],x["away"]):x for x in result.get("live_research_only",[])}
+ observations=[]
+ for entry in prior.get("items",[]):
+  event=(entry["league"],entry["date"],entry["home"],entry["away"])
+  elo=look.get(event)
+  if not elo:continue
+  market=entry.get("market_consensus_no_vig",{})
+  old=entry.get("model_probabilities",{})
+  if set(market)!={"home","draw","away"} or set(old)!={"home","draw","away"}:continue
+  old_gap=max(abs(old[k]-market[k]) for k in ("home","draw","away"))
+  new_gap=max(abs(elo["probabilities"][k]-market[k]) for k in ("home","draw","away"))
+  observations.append({"league":entry["league"],"date":entry["date"],
+    "home":entry["home"],"away":entry["away"],
+    "books":entry.get("books",0),
+    "poisson_largest_gap_pp":round(old_gap*100,2),
+    "elo_largest_gap_pp":round(new_gap*100,2),
+    "improvement_pp":round((old_gap-new_gap)*100,2),
+    "market_no_vig":market,"poisson":old,"elo":elo["probabilities"],
+    "rating_home":elo["rating_home"],"rating_away":elo["rating_away"],
+    "elo_low_sample":elo.get("low_sample",True)})
+ n=len(observations)
+ if not n:return {"n":0,"note":"No matching bookmaker consensus snapshots; not a source of truth."}
+ return {"n":n,"source":"Previously stored international bookmaker no-vig consensus snapshots",
+   "snapshot_timestamp":prior.get("data_timestamp") or prior.get("generated_at"),
+   "status":"descriptive_diagnostic_not_outcome_validation",
+   "mean_largest_gap_pp_current":round(sum(x["poisson_largest_gap_pp"] for x in observations)/n,2),
+   "mean_largest_gap_pp_elo":round(sum(x["elo_largest_gap_pp"] for x in observations)/n,2),
+   "large_10pp_current":sum(x["poisson_largest_gap_pp"]>=10 for x in observations),
+   "large_10pp_elo":sum(x["elo_largest_gap_pp"]>=10 for x in observations),
+   "events":sorted(observations,key=lambda x:x["poisson_largest_gap_pp"],reverse=True)[:100],
+   "warning":"The odds consensus is not objective ground truth; this is not a betting profitability test."}
+
 def selftest():
  config=CANDIDATES["elo_balanced"]
  p=probs(1500,1500,config)
@@ -163,12 +202,24 @@ def selftest():
  assert first["rating_home"]==BASE
  assert len(history)==3
  assert len(upcoming)==1
+ mocked={"live_research_only":[{
+   **list(upcoming.values())[0],"league":"Premier League",
+   "date":"2026-08-15","home":"Team A","away":"Team B"}]}
+ p=market_diagnostic(mocked,{"items":[{"league":"Premier League","date":"2026-08-15",
+   "home":"Team A","away":"Team B","books":4,
+   "market_consensus_no_vig":{"home":.45,"draw":.25,"away":.30},
+   "model_probabilities":{"home":.60,"draw":.25,"away":.15}}]})
+ assert p["n"]==1 and p["mean_largest_gap_pp_current"]==15
  print("Elo challenger tests passed.")
 def main():
  OUT.mkdir(parents=True,exist_ok=True)
  hist,fixtures,report=runner.load_all()
  if len(hist)<100:raise SystemExit("Insufficient historical data; old Elo report untouched.")
  out=evaluate(hist,fixtures)
+ try:
+  previously=json.loads((OUT/"odds_diagnostics.json").read_text(encoding="utf-8"))
+ except (OSError,ValueError):previously=None
+ out["market_diagnostic"]=market_diagnostic(out,previously)
  (OUT/"elo_challenger.json").write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding="utf-8")
  print("Elo holdout:",out["holdout"]["n"],"candidate",out["best_candidate"],"gain",out["holdout"]["logloss_gain_vs_current"])
 if __name__=="__main__":
