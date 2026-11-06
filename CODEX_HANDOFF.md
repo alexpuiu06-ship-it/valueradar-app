@@ -1,5 +1,11 @@
 # ValueRadar — context de predare către Codex (6 noiembrie 2026)
 
+**Continuare implementată:** consultați [AUDIT_REPORT.md](AUDIT_REPORT.md),
+[RESEARCH_PROTOCOL.md](RESEARCH_PROTOCOL.md) și metodologia actualizată.
+Secțiunile de mai jos păstrează starea inițială a predării. Pipeline-ul nou
+`validated_identity_v2` corectează identități/date și arhivează predicții
+separate de cele vechi; nu promovează automat Elo sau un model calibrat.
+
 ## Scopul proprietarului
 Utilizatorul nu programează. Dorește un **produs practic, sigur și ușor de folosit** pentru cele cinci ligi majore europene, care să compare estimări pentru 1X2, goluri, galbene, cornere și faulturi cu cote de la operatorii **Superbet, Betano, Unibet, MrBit, NetBet și Casa Pariurilor**. Scopul este detectarea de value betting **numai când există dovezi reale**, nu estimări prezentate înșelător ca avantaje de profit. Nu promite rezultate perfecte, probabilități exacte sau profit.
 

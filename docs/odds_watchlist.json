@@ -1,9 +1,16 @@
 {
-  "generated_at": "2026-11-06T17:36:50+00:00",
+  "generated_at": "2026-11-06T18:31:23.620585+00:00",
   "provider": "The Odds API v4",
   "region": "uk",
   "live_ro_supported": false,
   "status": "no_verified_opportunities",
-  "recommendation": "NO BET: model uncalibrated and Romanian bookmaker odds not confirmed. Prior outlier signals were quarantined.",
+  "scan_state": "historical_cache_reaudit_no_api_requests",
+  "value_blockers": [
+    "romanian_operator_feed_not_verified",
+    "market_line_and_settlement_not_verified",
+    "model_calibration_not_prospectively_validated",
+    "positive_edge_after_uncertainty_not_demonstrated"
+  ],
+  "recommendation": "Nu există pariuri value verificate.",
   "items": []
 }

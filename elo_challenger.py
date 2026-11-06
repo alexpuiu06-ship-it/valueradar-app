@@ -11,6 +11,7 @@ from collections import defaultdict
 from datetime import datetime,timezone,date,timedelta
 from pathlib import Path
 import runner
+import calibration
 
 OUT=Path(__file__).resolve().parent/"docs"
 CANDIDATES={
@@ -40,119 +41,80 @@ def logloss(p,y):
  return -math.log(max(1e-8,p[y]))
 def brier(p,y):
  return sum((p[k]-(1. if k==y else 0.))**2 for k in ("home","draw","away"))/3.
-def process(rows,params,upcoming=None):
- """Sequential ratings updated only after all matches of same date are predicted."""
- rows=sorted(rows,key=lambda r:r["date"])
- ratings={}
- games_played=defaultdict(int)
- history={}
- prior_season=None
- for day,generator in groupby(rows,key=lambda r:r["date"]):
-  current=season(day)
-  if prior_season is not None and current!=prior_season:
-   ratings={team:BASE+(rating-BASE)*RETURN_FACTOR for team,rating in ratings.items()}
-  prior_season=current
-  batch=list(generator);pending=[]
-  for m in batch:
-   home=runner.norm(m["home"]);away=runner.norm(m["away"])
-   rh=ratings.get(home,BASE);ra=ratings.get(away,BASE)
-   distribution=probs(rh,ra,params)
-   event=(m["league"],m["date"],home,away)
-   history[event]={"p":distribution,"y":result(m["gh"],m["ga"]),
-    "rating_home":rh,"rating_away":ra,
-    "games_home":games_played[home],"games_away":games_played[away]}
-   score=1. if m["gh"]>m["ga"] else .5 if m["gh"]==m["ga"] else 0.
-   delta=params["k"]*(score-expected_points(distribution))
-   pending.append((home,away,delta))
-  for home,away,delta in pending:
-   ratings[home]=ratings.get(home,BASE)+delta
-   ratings[away]=ratings.get(away,BASE)-delta
-   games_played[home]+=1
-   games_played[away]+=1
- predictions={}
+def process(rows,params,upcoming=None,as_of=None):
+ """Predict a calendar day's matches before updating any result of that day.
+
+ Upcoming can also contain past replay dates: those predictions receive ratings
+ from strictly earlier dates, never the final ratings from the whole dataset.
+ League is part of every rating key; off-season regression applies at prediction.
+ """
+ rows,_=calibration.prepare_history(rows,as_of)
+ results_by_day=defaultdict(list);fixtures_by_day=defaultdict(list)
+ for m in rows:results_by_day[m["date"]].append(m)
  for m in upcoming or []:
-  home=runner.norm(m["home"]);away=runner.norm(m["away"])
-  rh=ratings.get(home,BASE);ra=ratings.get(away,BASE)
-  out=probs(rh,ra,params)
-  predictions[(m["league"],m["date"],home,away)]={
-   "home":m["home"],"away":m["away"],"league":m["league"],"date":m["date"],
-   "probabilities":{k:round(v,5) for k,v in out.items()},
-   "rating_home":round(rh,1),"rating_away":round(ra,1),
-   "games_home":games_played[home],"games_away":games_played[away],
-   "low_sample":min(games_played[home],games_played[away])<8,
-   "rating_difference_including_home_advantage":round(rh-ra+params["home_advantage"],1),
-   "parameters":params,"status":"CHALLENGER_ONLY_not_a_betting_recommendation"}
+  try:
+   if m["league"] not in runner.LEAGUES or not runner.norm(m["home"]) or runner.norm(m["home"])==runner.norm(m["away"]):continue
+   if date.fromisoformat(m["date"]).isoformat()!=m["date"]:continue
+   fixtures_by_day[m["date"]].append(m)
+  except (TypeError,ValueError,KeyError):continue
+ ratings={};games_played=defaultdict(int);history={};predictions={};prior_season={}
+ for day in sorted(set(results_by_day)|set(fixtures_by_day)):
+  batch=results_by_day[day];fixtures=fixtures_by_day[day]
+  for league in {m["league"] for m in batch+fixtures}:
+   current=season(day);previous=prior_season.get(league)
+   if previous is not None and current>previous:
+    factor=RETURN_FACTOR**(current-previous)
+    ratings={team:BASE+(rating-BASE)*factor if team[0]==league else rating for team,rating in ratings.items()}
+   prior_season[league]=current
+  pending=[]
+  tagged=[(False,m) for m in batch]+[(True,m) for m in fixtures]
+  for is_fixture,m in sorted(tagged,key=lambda item:(runner.key(item[1]),item[0])):
+   home=(m["league"],runner.norm(m["home"]));away=(m["league"],runner.norm(m["away"]))
+   rh=ratings.get(home,BASE);ra=ratings.get(away,BASE)
+   distribution=probs(rh,ra,params);event=runner.key(m)
+   if not is_fixture:
+    history[event]={"p":distribution,"y":result(m["gh"],m["ga"]),
+     "rating_home":rh,"rating_away":ra,"games_home":games_played[home],"games_away":games_played[away]}
+    score=1. if m["gh"]>m["ga"] else .5 if m["gh"]==m["ga"] else 0.
+    pending.append((home,away,params["k"]*(score-expected_points(distribution))))
+   else:
+    predictions[event]={
+     "home":m["home"],"away":m["away"],"league":m["league"],"date":m["date"],
+     "probabilities":distribution,"rating_home":round(rh,1),"rating_away":round(ra,1),
+     "games_home":games_played[home],"games_away":games_played[away],
+     "low_sample":min(games_played[home],games_played[away])<8,
+     "rating_difference_including_home_advantage":round(rh-ra+params["home_advantage"],1),
+     "historical_cutoff_exclusive":day,"parameters":params,
+     "formula":"x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
+     "status":"CHALLENGER_ONLY_not_a_betting_recommendation"}
+  for home,away,delta in pending:
+   ratings[home]=ratings.get(home,BASE)+delta;ratings[away]=ratings.get(away,BASE)-delta
+   games_played[home]+=1;games_played[away]+=1
  return history,predictions
-def evaluate(hist,fixtures):
- markets={}
- all_predictions={}
- today=datetime.now(timezone.utc).date().isoformat()
- horizon=(datetime.now(timezone.utc).date()+timedelta(days=30)).isoformat()
- configs={k:[] for k in CANDIDATES}
- for league in runner.LEAGUES:
-  rows=sorted([r for r in hist if r["league"]==league and r.get("gh") is not None and r.get("ga") is not None],key=lambda r:r["date"])
-  upcoming=[f for f in fixtures if f["league"]==league and today<=f["date"]<=horizon]
-  pred_by={}
-  live_by={}
-  for name,params in CANDIDATES.items():
-   pred_by[name],live_by[name]=process(rows,params,upcoming)
-  n=len(rows)
-  val_start=max(70,int(n*.55))
-  holdout_start=max(val_start+1,int(n*.78))
-  for i,m in enumerate(rows):
-   if i<val_start:continue
-   event=(m["league"],m["date"],runner.norm(m["home"]),runner.norm(m["away"]))
-   if any(event not in pred_by[k] for k in CANDIDATES):continue
-   entry={"league":league,"date":m["date"],"y":result(m["gh"],m["ga"]),
-    "split":"validation" if i<holdout_start else "holdout"}
-   for name in CANDIDATES:
-    entry[name]=pred_by[name][event]["p"]
-   if i>=holdout_start:
-    original=runner.pred(rows[:i],m,"goals")
-    entry["current_poisson"]=original["h2h"] if original else None
-   markets.setdefault(league,[]).append(entry)
-  for name in CANDIDATES:
-   for k,record in live_by[name].items():
-    all_predictions.setdefault(name,[]).append(record)
- validation=[]
- for name in CANDIDATES:
-  selected=[e for records in markets.values() for e in records if e["split"]=="validation"]
-  scores=[logloss(e[name],e["y"]) for e in selected]
-  validation.append((sum(scores)/len(scores) if scores else float("inf"),name,len(scores)))
- validation.sort()
- winner=validation[0][1]
- scores_by_league={}
- pair_gains=[]
- for league,records in markets.items():
-  testing=[e for e in records if e["split"]=="holdout" and e.get("current_poisson")]
-  elo_losses=[logloss(e[winner],e["y"]) for e in testing]
-  old_losses=[logloss(e["current_poisson"],e["y"]) for e in testing]
-  diffs=[a-b for a,b in zip(old_losses,elo_losses)]
-  pair_gains+=diffs
-  scores_by_league[league]={"n":len(diffs),
-   "elo_logloss":round(sum(elo_losses)/len(elo_losses),5) if diffs else None,
-   "current_logloss":round(sum(old_losses)/len(old_losses),5) if diffs else None,
-   "mean_gain":round(sum(diffs)/len(diffs),5) if diffs else None}
- n=len(pair_gains)
- gain=sum(pair_gains)/n if n else None
- interval=None
- if n>=3:
-  std=(sum((v-gain)**2 for v in pair_gains)/(n-1))**.5
-  half=1.96*std/math.sqrt(n)
-  interval=[round(gain-half,5),round(gain+half,5)]
- return {"generated_at":datetime.now(timezone.utc).isoformat(),
-   "status":"RESEARCH_ONLY_NOT_PROMOTED",
-   "rating_method":"Davidson three-outcome Elo; points update on result after each match date",
-   "selection":"candidate chosen by validation log-loss, holdout not used for selection",
-   "candidates":CANDIDATES,
-   "best_candidate":winner,
-   "validation_scores":[{"model":name,"logloss":round(score,5),"n":n} for score,name,n in validation],
-   "holdout":{"n":n,"logloss_gain_vs_current":round(gain,5) if gain is not None else None,
-     "approx_95_ci":interval,"by_league":scores_by_league},
-   "limitations":["Elo data starts 2024/25; no player/team sheet or referee inputs",
-     "Team name matching is imperfect","Approximately normal interval assumes independent matches",
-     "No historical odds were used for selection","No profit validation"],
-   "live_research_only":all_predictions.get(winner,[])}
+
+
+def evaluate(hist,fixtures,as_of=None,comparison=None):
+ research=comparison or calibration.compare_1x2(hist,as_of=as_of)
+ selected=research["selected"];winner=selected["elo_candidate"]
+ rows,_=calibration.prepare_history(hist,as_of)
+ now=as_of or datetime.now(timezone.utc);horizon=(now.date()+timedelta(days=30)).isoformat()
+ upcoming=[f for f in fixtures if now.date().isoformat()<=f["date"]<=horizon and runner.future_match(f,now)]
+ live=list(process(rows,CANDIDATES[winner],upcoming,as_of)[1].values())
+ audit=research["holdout"];gain=audit["gains_vs_poisson"]["elo"]
+ by_league={league:{"n":v["n"],"elo_logloss":v["models"]["elo"]["log_loss"],
+   "current_logloss":v["models"]["poisson"]["log_loss"],"mean_gain":v["gains_vs_poisson"]["elo"]["mean"],
+   "approx_95_ci":v["gains_vs_poisson"]["elo"]["approx_95_ci"],
+   "elo_brier":v["models"]["elo"]["brier"],"current_brier":v["models"]["poisson"]["brier"],
+   "elo_ece":v["models"]["elo"]["ece"],"current_ece":v["models"]["poisson"]["ece"]}
+   for league,v in audit["by_league"].items()}
+ return {"generated_at":research["generated_at"],"status":"RESEARCH_ONLY_NOT_PROMOTED",
+   "rating_method":"Davidson three-outcome Elo; updates after all matches of same date; league-isolated ratings",
+   "selection":"Global calendar validation only; separate calibration window; final period used for exploratory reporting only",
+   "candidates":CANDIDATES,"best_candidate":winner,"protocol":research["protocol"],
+   "validation_scores":[{"model":name,**metrics} for name,metrics in research["selection_scores"].items()],
+   "holdout":{"n":audit["n"],"logloss_gain_vs_current":gain["mean_logloss_gain"],
+     "approx_95_ci":gain["approx_95_ci"],"interval_method":gain["method"],"weeks":gain["blocks"],"by_league":by_league},
+   "limitations":research["limitations"],"production_model_changed":False,"live_research_only":live}
 def market_diagnostic(result,prior):
  """Snapshot diagnostic only. It does NOT validate the model or a value edge."""
  if not isinstance(prior,dict):return None

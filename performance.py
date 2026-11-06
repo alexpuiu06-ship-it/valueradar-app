@@ -1,104 +1,204 @@
 #!/usr/bin/env python3
-"""Evaluate historical odds observations against completed outcomes (paper-only)."""
+"""Audit frozen quote observations; no profit until independent evidence exists."""
 from __future__ import annotations
-import json, math, sys
+
+import json
+import math
+import sys
 from collections import defaultdict
 from pathlib import Path
+
+import odds_scanner
 import runner
 
-OUT=Path(__file__).resolve().parent/"docs"
-def read(name,default):
- try:return json.loads((OUT/name).read_text(encoding="utf-8"))
- except (FileNotFoundError,ValueError):return default
-def key(v):
- return (v["league"],v["date"],runner.norm(v["home"]),runner.norm(v["away"]))
-def evaluate(observations,forecast):
- finished={key(x):x for x in forecast if x.get("market")=="h2h" and x.get("settled") and x.get("actual_outcome")}
- grouped=defaultdict(list)
- for r in observations:
-  try:
-   if not all(f in r for f in ("league","date","home","away","outcome","bookmaker_id","odds","observed_at")):continue
-   if not 1.01<float(r["odds"])<100:continue
-   grouped[key(r)].append(r)
-  except (ValueError,TypeError,KeyError):continue
- selected=[];signal_count=0;unverified_flags=0;all_observations=sum(len(v) for v in grouped.values())
- for event,records in grouped.items():
-  records.sort(key=lambda x:x["observed_at"])
-  first=records[0]["observed_at"]
-  # First-scanned quotes only. Never retrospectively select the highest price
-  # across all snapshots. Multiple quotes in one scan are comparable.
-  first_batch=[r for r in records if r["observed_at"]==first]
-  raw_flags=[r for r in first_batch if r.get("estimated_ev",0)>=.05 and not r.get("model_low_sample",True)]
-  if raw_flags:unverified_flags+=1
-  # An indicative statistical difference is NOT a tradable signal.
-  # Fail closed unless source bookmaker and model are independently verified.
-  qualified=[r for r in raw_flags if r.get("verified_ro_offer",False) and
-    r.get("ready_to_bet",False) and r.get("model_is_validated",False)]
-  if not qualified:continue
-  choice=max(qualified,key=lambda x:(x["estimated_ev"],x["odds"]))
-  signal_count+=1
-  settled=finished.get(event)
-  if not settled:continue
-  payoff=(choice["odds"]-1) if settled["actual_outcome"]==choice["outcome"] else -1
-  # Last observed price at the same bookmaker before settlement; not a guaranteed closing line.
-  same=[x for x in records if x.get("bookmaker_id")==choice["bookmaker_id"] and x["outcome"]==choice["outcome"]]
-  later=same[-1] if same else choice
-  selected.append({"event":event,"outcome":choice["outcome"],"bookmaker_id":choice["bookmaker_id"],
-    "price":choice["odds"],"model_probability":choice["model_probability"],
-    "estimated_ev":choice["estimated_ev"],"payoff":payoff,
-    "last_seen_price":later["odds"],"price_change":round(choice["odds"]/later["odds"]-1,5),
-    "has_multiple_prices":len(same)>1})
- values=[s["payoff"] for s in selected]
- roi=sum(values)/len(values) if values else None
- stderr=None;bounds=None
- if len(values)>2:
-  avg=roi
-  sd=math.sqrt(sum((v-avg)**2 for v in values)/(len(values)-1))
-  stderr=sd/math.sqrt(len(values))
-  bounds=[round(avg-1.96*stderr,5),round(avg+1.96*stderr,5)]
- changes=[s["price_change"] for s in selected if s["has_multiple_prices"]]
- return {"status":"paper_only_not_validated","observations":all_observations,
-  "distinct_events":len(grouped),"unverified_model_price_differences":unverified_flags,
-  "initial_positive_ev_signals":signal_count,
-  "signals_settled":len(selected),"hypothetical_roi":round(roi,5) if roi is not None else None,
-  "approx_95_roi_interval":bounds,
-  "mean_price_change_vs_last_seen":round(sum(changes)/len(changes),5) if changes else None,
-  "price_change_count":len(changes),"model_is_verified":False,
-  "quotes_are_verified_romania":False,
-  "notice":"Paper results are not executable bets, the bookmaker may not be accessible in Romania, and these are not verified closing-line prices."}
+OUT = Path(__file__).resolve().parent / "docs"
+
+
+def read(name, default):
+    try:
+        return json.loads((OUT / name).read_text(encoding="utf-8"))
+    except (OSError, ValueError, TypeError):
+        return default
+
+
+def key(value):
+    identity = (value["league"], value["date"], runner.norm(value["home"]), runner.norm(value["away"]))
+    hash(identity)  # Reject nested/unhashable identifiers from malformed JSON.
+    return identity
+
+
+def proper_scores(probabilities, outcome):
+    return {
+        "log_loss": -math.log(max(1e-8, probabilities[outcome])),
+        "brier": sum((probabilities[k] - float(k == outcome)) ** 2 for k in odds_scanner.OUTCOMES) / 3,
+    }
+
+
+def evaluate(observations, forecast):
+    """Compare complete first scans, while keeping all betting gates closed.
+
+    Three input booleans cannot establish a local price, settlement contract,
+    validated model, or positive lower confidence bound. No supported verification
+    implementation currently exists, so simulated ROI is deliberately unavailable.
+    """
+    snapshots, reasons = odds_scanner.coherent_snapshots(observations)
+    finished = {}
+    actual_by_event = {}
+    conflicting_results = set()
+    conflicting_forecasts = set()
+    for entry in forecast if isinstance(forecast, list) else []:
+        if not isinstance(entry, dict) or entry.get("market") != "h2h" or entry.get("settled") is not True:
+            continue
+        actual = entry.get("actual_outcome")
+        if actual not in odds_scanner.OUTCOMES:
+            continue
+        try:
+            event = key(entry)
+        except (KeyError, TypeError):
+            continue
+        if event in actual_by_event and actual_by_event[event] != actual:
+            conflicting_results.add(event)
+            reasons["conflicting_settlement"] += 1
+        actual_by_event[event] = actual
+        pipeline = entry.get("pipeline_version", "legacy_unversioned")
+        if not isinstance(pipeline, str):
+            continue
+        identity = (event, pipeline)
+        if identity in conflicting_forecasts:
+            continue
+        if identity in finished and finished[identity] != entry:
+            # A first prediction within one pipeline must be immutable. Separate
+            # pipeline versions are legitimate and never replace one another.
+            reasons["conflicting_forecast_within_pipeline"] += 1
+            conflicting_forecasts.add(identity)
+            finished[identity] = None
+        else:
+            finished[identity] = entry
+    unverified_events = set()
+    scored = []
+    all_observations = sum(len(rows) for scans in snapshots.values() for books in scans.values() for rows in books.values())
+    evaluation_scans = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
+    for event, scans in snapshots.items():
+        for stamp, books in scans.items():
+            for book, rows in books.items():
+                for row in rows:
+                    pipeline = row.get("model_pipeline_version")
+                    evaluation_scans[(event, pipeline)][stamp][book].append(row)
+    for (event, _pipeline), scans in evaluation_scans.items():
+        first = min(scans)
+        first_batch = [row for rows in scans[first].values() for row in rows]
+        raw_flags = [row for row in first_batch
+                     if odds_scanner.finite_number(row.get("estimated_ev"), .05, 1000)
+                     and row.get("model_low_sample") is False]
+        if raw_flags:
+            unverified_events.add(event)
+        # Observational market benchmark, independent of any betting gate.
+        consensus = odds_scanner.cross_book_consensus(first_batch)
+        if not consensus["items"]:
+            reasons["first_scan_without_complete_consensus"] += 1
+            continue
+        pipelines = {row.get("model_pipeline_version") for row in first_batch}
+        if len(pipelines) != 1 or None in pipelines:
+            reasons["missing_or_mixed_model_pipeline_version"] += 1
+            continue
+        pipeline = next(iter(pipelines))
+        settled = finished.get((event, pipeline))
+        if not settled or event in conflicting_results:
+            reasons["no_unambiguous_prospective_result_for_pipeline"] += 1
+            continue
+        # Old observations cannot acquire kickoff/rule provenance from later
+        # results. The paired model score comes from the frozen journal entry,
+        # never a reconstructed current forecast or a newer quote-model version.
+        frozen_probs = settled.get("probabilities")
+        if not odds_scanner.valid_probabilities(frozen_probs):
+            reasons["invalid_frozen_probabilities"] += 1
+            continue
+        created = odds_scanner.dt(settled.get("created_at"))
+        settled_at = odds_scanner.dt(settled.get("settled_at"))
+        frozen_start = odds_scanner.dt(settled.get("kickoff_utc"))
+        starts = {odds_scanner.dt(row.get("commence_time")) for row in first_batch}
+        model_dates = {odds_scanner.dt(row.get("model_generated_at")) for row in first_batch}
+        quote_dates = [odds_scanner.dt(row.get("quote_timestamp")) for row in first_batch]
+        if (len(starts) != 1 or None in starts or len(model_dates) != 1 or None in model_dates
+                or any(value is None for value in quote_dates)):
+            reasons["missing_pre_match_provenance"] += 1
+            continue
+        start, model_date = next(iter(starts)), next(iter(model_dates))
+        if not (created and settled_at and frozen_start == start and created <= first < start <= settled_at
+                and model_date <= first and runner.prospective_eligible(settled)):
+            reasons["non_prospective_or_mismatched_timestamps"] += 1
+            continue
+        if not all(row.get("settlement_rules_status") == "verified"
+                   and (row.get("settlement_rule") or row.get("settlement_rules")) == "90_minutes_plus_stoppage"
+                   and isinstance(row.get("settlement_evidence"), str) and row["settlement_evidence"].strip()
+                   for row in first_batch):
+            reasons["settlement_rules_not_verified"] += 1
+            continue
+        diagnostic = consensus["items"][0]
+        market = diagnostic["market_consensus_no_vig"]
+        actual = settled["actual_outcome"]
+        scored.append((proper_scores(frozen_probs, actual), proper_scores(market, actual), pipeline))
+    n = len(scored)
+    def summarize(points):
+        count = len(points)
+        return {"n": count,
+                "model_log_loss": round(sum(model["log_loss"] for model, market, pipeline in points) / count, 5) if count else None,
+                "market_log_loss": round(sum(market["log_loss"] for model, market, pipeline in points) / count, 5) if count else None,
+                "model_brier": round(sum(model["brier"] for model, market, pipeline in points) / count, 5) if count else None,
+                "market_brier": round(sum(market["brier"] for model, market, pipeline in points) / count, 5) if count else None}
+    versions = sorted({pipeline for _, _, pipeline in scored})
+    benchmark = {
+        "status": "multiple_pipeline_versions_separate" if len(versions) > 1 else "observational_international_only" if n else "insufficient_provenance_or_results",
+        "selection": "first stored scan per event; at least 3 complete distinct bookmaker IDs; median no-vig; same verified settlement rule",
+        "model_score_source": "immutable prospective journal probabilities from matching pipeline_version",
+        **summarize(scored if len(versions) <= 1 else []),
+        "n": n,
+        "by_pipeline_version": {pipeline: summarize([row for row in scored if row[2] == pipeline]) for pipeline in versions},
+        "mixed_versions_pooled": False,
+        "notice": "International quoted snapshots are not executable RO prices; source rules and bookmaker independence remain unverified.",
+    }
+    return {
+        "status": "paper_only_not_validated", "observations": all_observations,
+        "distinct_events": len(snapshots), "unverified_model_price_differences": len(unverified_events),
+        "initial_positive_ev_signals": 0, "signals_settled": 0,
+        "hypothetical_roi": None, "approx_95_roi_interval": None,
+        "mean_price_change_vs_last_seen": None, "price_change_count": 0,
+        "model_is_verified": False, "quotes_are_verified_romania": False,
+        "value_blockers": odds_scanner.value_blockers(), "rejection_counts": dict(reasons),
+        "market_baseline": benchmark,
+        "notice": "Nu există pariuri value verificate. Diferențele de preț sunt diagnostice; ROI este indisponibil fără dovezi independente.",
+    }
+
+
 def selftest():
- event={"league":"Premier League","date":"2026-11-07","home":"Arsenal","away":"Chelsea"}
- x={**event,"outcome":"home","bookmaker_id":"test","odds":2.1,
-    "estimated_ev":.08,"model_probability":.51,"model_low_sample":False,
-    "observed_at":"2026-11-06T15:00:00Z",
-    "verified_ro_offer":True,"ready_to_bet":True,"model_is_validated":True}
- completed={**event,"market":"h2h","settled":True,"actual_outcome":"home"}
- a=evaluate([x],[completed])
- assert a["signals_settled"]==1 and abs(a["hypothetical_roi"]-1.1)<.00001
- x["model_low_sample"]=True
- assert evaluate([x],[completed])["signals_settled"]==0
- x["model_low_sample"]=False
- x["verified_ro_offer"]=False
- assert evaluate([x],[completed])["signals_settled"]==0
- assert evaluate([x],[completed])["unverified_model_price_differences"]==1
- print("Paper-tracking tests passed")
+    event = {"league": "Premier League", "date": "2026-11-07", "home": "Arsenal", "away": "Chelsea"}
+    # Even forged verification flags must not turn an observation into profit.
+    observation = {**event, "outcome": "home", "bookmaker_id": "test", "odds": 2.1,
+                   "estimated_ev": .08, "model_probability": .51, "model_low_sample": False,
+                   "observed_at": "2026-11-06T15:00:00Z", "verified_ro_offer": True,
+                   "ready_to_bet": True, "model_is_validated": True}
+    completed = {**event, "market": "h2h", "settled": True, "actual_outcome": "home"}
+    result = evaluate([observation], [completed])
+    assert result["signals_settled"] == 0 and result["hypothetical_roi"] is None
+    assert result["unverified_model_price_differences"] == 1
+    print("Paper-tracking tests passed")
+
+
 def run():
- OUT.mkdir(parents=True,exist_ok=True)
- observations=read("odds_observations.json",[])
- d=evaluate(observations,read("forecast_log.json",[]))
- # Recompute diagnostic consensus from cached derived observations,
- # without spending credits. Last observations are not live quotes.
- try:
-  import odds_scanner
-  audit=odds_scanner.cross_book_consensus(observations)
-  source=read("odds_status.json",{})
-  (OUT/"odds_diagnostics.json").write_text(json.dumps({
-    "data_timestamp":source.get("checked_at"),"source":"stored_derived_observations",
-    "note":"Data can be stale. Consensus is a plausibility check, not a fair-odds guarantee.",
-    **audit},indent=2,ensure_ascii=False),encoding="utf8")
- except Exception as exc:
-  print("Diagnostic cache not refreshed:",type(exc).__name__)
- (OUT/"market_audit.json").write_text(json.dumps(d,indent=2,ensure_ascii=False),encoding="utf8")
- print("Market audit:",d["observations"],"observations,",d["signals_settled"],"settled paper signals")
-if __name__=="__main__":
- (selftest() if "--self-test" in sys.argv else run())
+    OUT.mkdir(parents=True, exist_ok=True)
+    observations = read("odds_observations.json", [])
+    result = evaluate(observations, read("forecast_log.json", []))
+    # A cache refresh never advances the original observation timestamp.
+    audit = odds_scanner.cross_book_consensus(observations)
+    diagnostic = {
+        "source": "stored_derived_observations",
+        "note": "Historical snapshots; refreshing this audit does not refresh the quotes.",
+        **audit,
+    }
+    (OUT / "odds_diagnostics.json").write_text(json.dumps(diagnostic, indent=2, ensure_ascii=False, allow_nan=False), encoding="utf-8")
+    (OUT / "market_audit.json").write_text(json.dumps(result, indent=2, ensure_ascii=False, allow_nan=False), encoding="utf-8")
+    print("Market audit:", result["observations"], "observations,", result["signals_settled"], "verified signals")
+
+
+if __name__ == "__main__":
+    selftest() if "--self-test" in sys.argv else run()

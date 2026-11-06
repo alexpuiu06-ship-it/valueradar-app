@@ -5,44 +5,41 @@ on:
     branches: [main]
     paths:
       - "model_lab.py"
+      - "calibration.py"
+      - "elo_challenger.py"
       - "runner.py"
       - ".github/workflows/model_lab.yml"
   schedule:
     - cron: "41 5 * * 0"
 permissions:
-  contents: write
+  contents: read
 concurrency:
-  group: valueradar-model-lab
-  cancel-in-progress: true
+  group: valueradar-production-writer
+  cancel-in-progress: false
 jobs:
   compare:
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Retine revizia initiala
+        id: source
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Teste model
+      - name: Testeaza cercetarea si separarea cronologica
+        run: python -m unittest discover -s tests -v
+      - name: Compara variantele si calibratorul pe date reale
         run: |
-          python -m py_compile runner.py model_lab.py
-          python runner.py --self-test
-          python model_lab.py --self-test
-      - name: Compara modele cu date istorice reale
-        run: python model_lab.py
-      - name: Salveaza raportul fara conflict cu alte actualizari
-        run: |
-          set -euo pipefail
-          git config user.name "valueradar-bot"
-          git config user.email "valueradar-bot@users.noreply.github.com"
-          cp docs/model_lab.json /tmp/valueradar_model_lab.json
-          for attempt in 1 2 3; do
-            git fetch origin main
-            git reset --hard origin/main
-            cp /tmp/valueradar_model_lab.json docs/model_lab.json
-            git add docs/model_lab.json
-            if git diff --cached --quiet; then break; fi
-            git commit -m "Update model comparison report [skip ci]"
-            if git push origin main; then break; fi
-            if [ "$attempt" = "3" ]; then exit 1; fi
-          done
+          python model_lab.py
+          python calibration.py
+      - name: Salveaza numai rapoartele laboratorului din revizia initiala
+        env:
+          SOURCE_SHA: ${{ steps.source.outputs.sha }}
+        run: python scripts/publish_generated.py lab --expected-sha "$SOURCE_SHA"

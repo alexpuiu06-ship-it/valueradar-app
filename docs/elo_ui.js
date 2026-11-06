@@ -1,68 +1,54 @@
-/* ValueRadar Elo research comparison. Only display; never change betting choices. */
-(function(){
-'use strict';
-var root=document.getElementById('validation');
-if(!root)return;
-var panel=document.createElement('section');
-panel.className='panel';
-panel.style.marginTop='17px';
-panel.innerHTML=[
- '<h2>Model alternativ Elo — comparație 1X2</h2>',
- '<p class="meta">Elo urmărește nivelul relativ al echipelor, cu avantaj de teren și actualizare după rezultate. Este un candidat testat separat, NU model aprobat pentru pariuri.</p>',
- '<div id="elo-summary" class="meta">Se încarcă cercetarea Elo…</div>',
- '<div class="controls"><select id="elo-match" aria-label="Alege meciul Elo"><option value="">Aștept meciurile…</option></select></div>',
- '<div id="elo-compare" class="missing">Selectează un meci pentru a compara metodele.</div>',
- '<p class="meta">Când modelele diferă mult, nu presupunem că varianta care oferă cea mai mare cotă teoretică este cea bună. Alegem doar după rezultate din testele istorice și prospective.</p>'
-].join('');
-root.insertAdjacentElement('afterend',panel);
-var report=null;
-function el(id){return document.getElementById(id);}
-function safe(v){return String(v==null?'':v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');}
-function p(x){return x==null||!Number.isFinite(Number(x))?'—':(Number(x)*100).toFixed(1)+'%';}
-function x3(v){return ['home','draw','away'].map(function(k){return (k==='home'?'1':k==='draw'?'X':'2')+': '+p(v&&v[k]);}).join(' · ');}
-async function readReport(){
- try{var r=await fetch('./elo_challenger.json?rev='+Date.now(),{cache:'no-store'});
-  if(!r.ok)throw Error('Raportul Elo nu a fost publicat.');
-  report=await r.json();render();}catch(e){el('elo-summary').textContent=String(e.message);}
-}
-function render(){
- if(!report)return;
- var audit=report.holdout||{},market=report.market_diagnostic;
- var ci=audit.approx_95_ci||[];
- var hasZero=ci.length===2&&ci[0]<=0&&ci[1]>=0;
- var label=hasZero?'Avantajul pe testul final este neconcludent.':'Intervalul aproximativ sugerează o diferență, dar nu dovedește profit.';
- var text='Model ales pe validare: '+safe(report.best_candidate)+' · Test final: '+safe(audit.n||0)+
- ' meciuri · Îmbunătățire log-loss vs Poisson: '+safe(audit.logloss_gain_vs_current)+' · Interval aproximativ: '+
- (ci.length===2?safe(ci[0]+' … '+ci[1]):'insuficient')+'. '+label;
- if(market&&market.n){
-  text+=' Compararea cu o fotografie a cotelor: '+safe(market.n)+' meciuri, abatere maximă medie '+safe(market.mean_largest_gap_pp_current)+
- ' pp pentru modelul actual și '+safe(market.mean_largest_gap_pp_elo)+' pp pentru Elo.';
- }
- el('elo-summary').textContent=text;
- var games=Array.isArray(report.live_research_only)?report.live_research_only:[];
- var input=el('elo-match'),old=input.value;
- input.innerHTML=games.slice(0,250).map(function(x,i){return '<option value="'+i+'">'+
-  safe(x.date+' · '+x.league+' · '+x.home+' — '+x.away)+'</option>';}).join('');
- if(Array.from(input.options).some(function(x){return x.value===old;}))input.value=old;
- renderMatch();
-}
-function renderMatch(){
- if(!report)return;
- var i=Number(el('elo-match').value),games=report.live_research_only||[],x=games[i];
- if(!x){el('elo-compare').textContent='Nu există un meci pentru comparație.';return;}
- var current=(window.DATA&&window.DATA.fixtures||[]).find(function(f){
-  return f.league===x.league&&f.date===x.date&&f.home===x.home&&f.away===x.away;});
- var old=current&&current.markets&&current.markets.goals&&current.markets.goals.h2h;
- el('elo-compare').innerHTML='<b>'+safe(x.home)+' — '+safe(x.away)+'</b>'+
- '<div><b>Model actual 1X2:</b> '+x3(old)+'</div>'+
- '<div><b>Candidat Elo 1X2:</b> '+x3(x.probabilities)+'</div>'+
- '<div class="meta">Rating Elo gazde: '+safe(x.rating_home)+' ('+safe(x.games_home)+' meciuri) · oaspeți: '+
- safe(x.rating_away)+' ('+safe(x.games_away)+' meciuri) · avantaj teren inclus în diferență de '+
- safe(x.rating_difference_including_home_advantage)+' puncte Elo.</div>'+
- '<div class="meta">'+(x.low_sample?'Eșantion Elo redus. ':'')+
- 'Ambele estimări sunt experimentale. Nu este recomandare de pariere.</div>';
-}
-el('elo-match').addEventListener('change',renderMatch);
-readReport();
-setInterval(readReport,3600*1000);
-})();
+/* Elo remains a research candidate, never an executable betting signal. */
+(function () {
+  'use strict';
+  const { el, esc, fmt } = window.VR;
+  const panel = document.createElement('section');
+  panel.className = 'panel';
+  panel.innerHTML = '<h2>Model alternativ Elo — comparație 1X2</h2><p class="meta">Elo actualizează nivelul relativ după rezultatele din fiecare zi. Selecția candidatului precedă testul final.</p><div id="elo-summary">Se încarcă cercetarea Elo…</div><div class="controls"><select id="elo-match" aria-label="Alege meciul Elo" disabled><option value="">Aștept meciurile…</option></select></div><div id="elo-compare" class="missing">Comparația necesită date proaspete din ambele modele.</div>';
+  el('validation').insertAdjacentElement('afterend', panel);
+  let report = null, generation = 0;
+  const games = new Map();
+  async function readReport() {
+    const current = ++generation;
+    report = null; renderMatchList();
+    el('elo-summary').textContent = 'Se verifică raportul istoric Elo…';
+    try {
+      const data = await VR.fetchJSON('./elo_challenger.json');
+      if (current !== generation) return;
+      if (!data || !data.holdout || !Array.isArray(data.live_research_only) || !VR.freshness(data.generated_at, Infinity).fresh) throw Error('Raport sau timestamp invalid.');
+      report = data;
+      const holdout = report.holdout;
+      el('elo-summary').textContent = 'Candidat ales pe validare: ' + (report.best_candidate || 'date insuficiente') + ' · N test final: ' + (holdout.n || 0) +
+        ' · Câștig log-loss față de Poisson: ' + fmt(holdout.logloss_gain_vs_current, 5) + ' · Interval aproximativ 95%: ' + VR.interval(holdout.approx_95_ci) + '. ' +
+        VR.intervalVerdict(holdout.approx_95_ci) + ' Raport istoric: ' + VR.dateTime(report.generated_at) + '. Nu dovedește profit.';
+      renderMatchList();
+    } catch (error) { if (current === generation) el('elo-summary').textContent = 'Raport Elo indisponibil: ' + error.message; }
+  }
+  function renderMatchList() {
+    const select = el('elo-match'), old = select.value;
+    games.clear();
+    // A valid historical score does not make an old live forecast fresh.
+    if (report && VR.freshness(report.generated_at).fresh) for (const f of VR.liveFixtures()) {
+      const match = report.live_research_only.find(x => VR.fixtureId(x) === VR.fixtureId(f));
+      if (match && VR.distribution(match.probabilities)) games.set(VR.fixtureId(f), { research: match, current: f });
+    }
+    select.innerHTML = '<option value="">Alege un meci…</option>' + Array.from(games.entries()).map(([id, pair]) => '<option value="' + esc(id) + '">' + esc(pair.current.date + ' · ' + pair.current.home + ' — ' + pair.current.away) + '</option>').join('');
+    if (games.has(old)) select.value = old;
+    select.disabled = games.size === 0;
+    renderMatch();
+  }
+  function renderMatch() {
+    const pair = games.get(el('elo-match').value);
+    if (!pair || !window.DATA || !VR.freshness(window.DATA.generated_at).fresh || !VR.upcoming(pair.current)) {
+      el('elo-compare').textContent = 'Selectează un meci cu date proaspete din ambele modele. Un raport istoric nu reprezintă o predicție actuală.'; return;
+    }
+    const x = pair.research, p = pair.current.markets.goals;
+    el('elo-compare').innerHTML = '<b>' + esc(x.home) + ' — ' + esc(x.away) + '</b><div>Poisson actual: ' + esc(VR.x3(p && p.h2h)) + '</div><div>Candidat Elo: ' + esc(VR.x3(x.probabilities)) +
+      '</div><div class="meta">Rating gazde ' + fmt(x.rating_home, 1) + ' (' + esc(x.games_home) + ' meciuri); oaspeți ' + fmt(x.rating_away, 1) + ' (' + esc(x.games_away) + ' meciuri). ' +
+      (x.low_sample ? 'Eșantion Elo redus. ' : '') + 'Avantaj teren inclus: diferență ' + fmt(x.rating_difference_including_home_advantage, 1) + ' puncte. Ambele metode sunt experimentale; nu este un semnal de pariere.</div>';
+  }
+  el('elo-match').addEventListener('change', renderMatch);
+  window.addEventListener('valueradar:datachanged', renderMatchList);
+  window.addEventListener('valueradar:refresh', readReport);
+  readReport(); setInterval(readReport, 3600e3);
+}());

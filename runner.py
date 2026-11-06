@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ValueRadar: experimental forecasts from public data; never bookmaker scraping."""
 from __future__ import annotations
-import csv, io, json, math, re, sys, unicodedata, urllib.request
+import csv, hashlib, io, json, math, re, sys, tempfile, unicodedata, urllib.request
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
@@ -10,6 +10,7 @@ from pathlib import Path
 
 BASE=Path(__file__).resolve().parent
 OUT=BASE/"docs"
+PIPELINE_VERSION="validated_identity_v2"
 OM="https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data"
 OF="https://raw.githubusercontent.com/openfootball/football.json/master"
 LEAGUES={
@@ -20,10 +21,40 @@ LEAGUES={
  "Ligue 1":("FRA_1_ligue-1","fr.1")}
 MARKETS={"yellow":("yh","ya",4.5,35),"corners":("ch","ca",9.5,35),
          "goals":("gh","ga",2.5,70),"fouls":("fh","fa",23.5,35)}
+# Explicit identities observed in the two source families. No fuzzy club matching.
 ALIASES={"manutd":"manchesterunited","mancity":"manchestercity",
- "spurs":"tottenhamhotspur","nottmforest":"nottinghamforest",
- "wolves":"wolverhamptonwanderers","inter":"internazionale",
- "psg":"parissaintgermain"}
+ "spurs":"tottenhamhotspur","tottenham":"tottenhamhotspur",
+ "nottmforest":"nottinghamforest","wolves":"wolverhamptonwanderers",
+ "wolverhampton":"wolverhamptonwanderers","inter":"internazionale",
+ "internazionalemilano":"internazionale","intermilan":"internazionale",
+ "psg":"parissaintgermain","parissg":"parissaintgermain",
+ "brightonhovealbion":"brighton","brightonandhovealbion":"brighton",
+ "ipswichtown":"ipswich","leedsunited":"leeds","newcastleunited":"newcastle",
+ "westham":"westhamunited","leicester":"leicestercity",
+ "athletic":"athleticbilbao","athleticclub":"athleticbilbao",
+ "atleticodemadrid":"atleticomadrid","caosasuna":"osasuna",
+ "cdleganes":"leganes","rcceltadevigo":"celta","celtavigo":"celta",
+ "deportivoalaves":"alaves","levanteud":"levante",
+ "rayovallecanodemadrid":"rayovallecano","rcdeportivo":"deportivolacoruna",
+ "rcdespanyoldebarcelona":"espanyol","rcdmallorca":"mallorca",
+ "realbetisbalompie":"realbetis","realsociedaddefutbol":"realsociedad",
+ "rracing":"racingdesantander","udlaspalmas":"laspalmas",
+ "acffiorentina":"fiorentina","acmilan":"milan","acmonza":"monza",
+ "acpisa1909":"pisa","asroma":"roma","atalantabc":"atalanta",
+ "bologna1909":"bologna","como1907":"como","genoacfc":"genoa",
+ "parma1913":"parma","sscnapoli":"napoli","sslazio":"lazio",
+ "uscremonese":"cremonese","uslecce":"lecce","ussassuolo":"sassuolo",
+ "bayernmunich":"bayernmunchen","tsg1899hoffenheim":"tsghoffenheim",
+ "borussiamgladbach":"borussiamonchengladbach","monchengladbach":"borussiamonchengladbach",
+ "ajauxerre":"auxerre","angers":"angerssco","monaco":"asmonaco",
+ "saintetienne":"assaintetienne","stetienne":"assaintetienne",
+ "troyes":"estactroyes","havreathletic":"lehavreac","lehavre":"lehavreac",
+ "lille":"losclille","lilleosc":"losclille","nice":"ogcnice",
+ "olympiquemarseille":"olympiquedemarseille","marseille":"olympiquedemarseille",
+ "lyon":"olympiquelyonnais","racingdelens":"rclens","lens":"rclens",
+ "strasbourg":"rcstrasbourgalsace","stadebrestois":"stadebrestois29",
+ "brest":"stadebrestois29","reims":"stadedereims","rennes":"staderennais",
+ "staderennais1901":"staderennais"}
 def norm(x):
  x=unicodedata.normalize("NFD",str(x).lower())
  x="".join(c for c in x if unicodedata.category(c)!="Mn")
@@ -31,24 +62,38 @@ def norm(x):
  x=re.sub("[^a-z0-9]","",x)
  return ALIASES.get(x,x)
 def number(x):
+ # These fields are counts: fractions, booleans, NaN and infinity are not data.
+ if isinstance(x,bool):return None
  try:
   n=float(x)
-  return n if math.isfinite(n) and n>=0 else None
+  return n if math.isfinite(n) and n>=0 and n.is_integer() else None
  except (ValueError,TypeError): return None
 def key(m):
  return (m["league"],m["date"],norm(m["home"]),norm(m["away"]))
 def get_text(url):
- request=urllib.request.Request(url,headers={"User-Agent":"ValueRadar-research/0.6"})
+ request=urllib.request.Request(url,headers={"User-Agent":"ValueRadar-research/1.0"})
  with urllib.request.urlopen(request,timeout=11) as res:
-  return res.read(1800000).decode("utf-8-sig")
-def tasks():
+  content=res.read(1800001)
+  if len(content)>1800000:raise ValueError("Source exceeds size limit")
+  return content.decode("utf-8-sig")
+def tasks(at=None):
+ at=at or datetime.now(timezone.utc)
+ year=at.year if at.month>=7 else at.year-1
+ code=f"{year%100:02d}{(year+1)%100:02d}"
  for league,(slug,short) in LEAGUES.items():
-  yield league,"results",f"{OM}/{slug}/results_2627.csv"
-  yield league,"fixtures",f"{OM}/{slug}/fixtures_2627.csv"
-  for season in ("2024-25","2025-26"):
-   yield league,"historical",f"{OF}/{season}/{short}.json"
+  yield league,"results",f"{OM}/{slug}/results_{code}.csv"
+  yield league,"fixtures",f"{OM}/{slug}/fixtures_{code}.csv"
+  for start in (year-2,year-1):
+   yield league,"historical",f"{OF}/{start}-{(start+1)%100:02d}/{short}.json"
+def timestamp(value):
+ try:
+  d=datetime.fromisoformat(str(value).replace("Z","+00:00"))
+  return d.astimezone(timezone.utc) if d.tzinfo else None
+ except (ValueError,TypeError):return None
 def fixture_kickoff(m):
- """Upstream fixture times are documented as fixed UTC+01:00."""
+ """Fixed UTC+01:00 per open-matchday DATA_DICTIONARY.md, not Europe/Paris DST."""
+ if m.get("kickoff_utc"):
+  return timestamp(m["kickoff_utc"])
  try:
   value=str(m.get("time",""))
   if not re.fullmatch(r"\d{2}:\d{2}",value): return None
@@ -57,57 +102,138 @@ def fixture_kickoff(m):
  except (ValueError,TypeError,KeyError): return None
 def future_match(m,at):
  kickoff=fixture_kickoff(m)
- return kickoff.astimezone(timezone.utc)>at if kickoff else m["date"]>at.date().isoformat()
+ try:
+  # Unknown same-day time is never treated as an upcoming pre-match offer.
+  return kickoff.astimezone(timezone.utc)>at if kickoff else m["date"]>at.date().isoformat()
+ except (ValueError,TypeError,KeyError):return False
 def local_kickoff(m):
  kickoff=fixture_kickoff(m)
  return kickoff.astimezone(ZoneInfo("Europe/Bucharest")).strftime("%H:%M") if kickoff else None
-def load_all():
- result,fixture,report={}, {}, []
- jobs=list(tasks())
+def local_fixture(m):
+ kickoff=fixture_kickoff(m)
+ return {**m,"time_ro":local_kickoff(m),
+   "date_ro":kickoff.astimezone(ZoneInfo("Europe/Bucharest")).date().isoformat() if kickoff else None,
+   "kickoff_utc":kickoff.astimezone(timezone.utc).isoformat() if kickoff else None,
+   "time_convention":"open-matchday_fixed_UTC+01:00"}
+def clean_history(rows,at=None):
+ """Deterministic deduplication. Conflicting observations are quarantined in full."""
+ at=at or datetime.now(timezone.utc)
+ accepted={};conflicts=set();rejected=defaultdict(int);duplicates=0
+ counts={c for h,a,_,_ in MARKETS.values() for c in (h,a)}
+ for row in rows:
+  try:
+   date=str(row["date"])
+   if datetime.strptime(date,"%Y-%m-%d").date().isoformat()!=date:raise ValueError
+   k=key(row)
+   if row["league"] not in LEAGUES or not isinstance(row["home"],str) or not isinstance(row["away"],str) or not k[2] or not k[3] or k[2]==k[3]:raise ValueError
+  except (ValueError,TypeError,KeyError):
+   rejected["invalid_identity_or_date"]+=1;continue
+  if date>at.date().isoformat():
+   rejected["future_result"]+=1;continue
+  if any(row.get(c) is not None and number(row[c]) is None for c in counts):
+   rejected["invalid_count"]+=1;continue
+  if row.get("gh") is None or row.get("ga") is None:
+   rejected["missing_full_time_score"]+=1;continue
+  if date==at.date().isoformat():
+   kickoff=fixture_kickoff(row)
+   if not kickoff or kickoff+timedelta(hours=2)>at:
+    rejected["result_not_provably_completed"]+=1;continue
+  row={**row,**{c:number(row[c]) for c in counts if row.get(c) is not None}}
+  if k in conflicts:
+   rejected["conflicting_duplicate"]+=1;continue
+  if k in accepted:
+   old=accepted[k]
+   if any(old.get(c) is not None and row.get(c) is not None and old[c]!=row[c] for c in counts) or (fixture_kickoff(old) and fixture_kickoff(row) and fixture_kickoff(old)!=fixture_kickoff(row)):
+    del accepted[k];conflicts.add(k);rejected["conflicting_duplicate"]+=2;continue
+   duplicates+=1
+   for c in counts:
+    if old.get(c) is None and row.get(c) is not None:old[c]=row[c]
+   old["source_ids"]=sorted(set(old.get("source_ids",[])+row.get("source_ids",[])))
+  else:
+   accepted[k]=dict(row)
+ return sorted(accepted.values(),key=lambda m:key(m)),{
+  "accepted":len(accepted),"duplicates_merged":duplicates,
+  "conflicting_events_quarantined":len(conflicts),"rejected":dict(sorted(rejected.items()))}
+def source_season(url):
+ match=re.search(r"/(20\d{2})-\d{2}/",url)
+ if match:return int(match.group(1))
+ match=re.search(r"_(\d{2})\d{2}\.csv$",url)
+ return 2000+int(match.group(1)) if match else None
+def load_all(at=None):
+ now=at or datetime.now(timezone.utc)
+ raw_results=[];fixture={};report=[];downloaded={}
+ jobs=list(tasks(now))
  with ThreadPoolExecutor(max_workers=6) as pool:
   pending={pool.submit(get_text,url):(league,kind,url) for league,kind,url in jobs}
   for future in as_completed(pending):
-   league,kind,url=pending[future]
-   try:
-    content=future.result()
-    rows=list(csv.DictReader(io.StringIO(content))) if url.endswith(".csv") else json.loads(content).get("matches",[])
-    for r in rows:
-     if kind=="historical":
-      date=r.get("date"); home=r.get("team1"); away=r.get("team2")
-      score=r.get("score")
-      if isinstance(score,dict): score=score.get("ft")
-      if not isinstance(score,list) or len(score)!=2: continue
-      values={"gh":number(score[0]),"ga":number(score[1])}
-     else:
-      date=r.get("date"); home=r.get("home"); away=r.get("away")
-      values={"gh":number(r.get("ft_home")),"ga":number(r.get("ft_away")),
-       "yh":number(r.get("home_yellow")),"ya":number(r.get("away_yellow")),
-       "ch":number(r.get("home_corners")),"ca":number(r.get("away_corners")),
-       "fh":number(r.get("home_fouls")),"fa":number(r.get("away_fouls"))}
-     try: datetime.strptime(str(date),"%Y-%m-%d")
-     except ValueError: continue
-     if not home or not away: continue
-     m={"league":league,"date":date,"home":home,"away":away}
-     k=key(m)
-     if kind=="fixtures":
-      fixture[k]={**m,"time":r.get("time","")}
-     elif values.get("gh") is not None and values.get("ga") is not None:
-      old=result.get(k)
-      # Preserve recent stats when multiple sources cover the same match.
-      if old:
-       for field,v in values.items():
-        if v is not None and old.get(field) is None: old[field]=v
-      else:
-       result[k]={**m,**{f:v for f,v in values.items() if v is not None}}
-    report.append({"league":league,"kind":kind,"ok":True,"rows":len(rows)})
-   except Exception as exc:
-    report.append({"league":league,"kind":kind,"ok":False,"error":str(exc)[:120]})
- now=datetime.now(timezone.utc)
- seen=set(result)
- upcoming=[{**m,"time_ro":local_kickoff(m)} for k,m in fixture.items() if future_match(m,now) and k not in seen]
- # Exclude matches already kicked off (including today's).
- return sorted(result.values(),key=lambda x:x["date"]),sorted(upcoming,key=lambda x:x["date"]),sorted(report,key=lambda x:(x["league"],x["kind"]))
+   job=pending[future]
+   try:downloaded[job]=(future.result(),None)
+   except Exception as exc:downloaded[job]=(None,type(exc).__name__)
+ # Process sources in declared order, independent of download completion order.
+ for league,kind,url in jobs:
+  content,error=downloaded[(league,kind,url)]
+  if error:
+   report.append({"league":league,"kind":kind,"ok":False,"source_url":url,"error":error});continue
+  season_start=source_season(url);rejects=defaultdict(int);accepted=0
+  family="OpenFootball football.json" if kind=="historical" else "open-matchday"
+  source_id=f"{family}:{season_start}-{(season_start+1)%100:02d}"
+  try:
+   if url.endswith(".csv"):
+    reader=csv.DictReader(io.StringIO(content))
+    required={"date","home","away"}|({"ft_home","ft_away"} if kind=="results" else {"time"})
+    if not required.issubset(reader.fieldnames or []):raise ValueError("Invalid source schema")
+    rows=list(reader)
+   else:
+    payload=json.loads(content)
+    rows=payload.get("matches")
+    if not isinstance(rows,list):raise ValueError("Invalid source schema")
+   for r in rows:
+    if not isinstance(r,dict):rejects["invalid_row"]+=1;continue
+    if kind=="historical":
+     date=r.get("date");home=r.get("team1");away=r.get("team2")
+     score=r.get("score")
+     if isinstance(score,dict):score=score.get("ft")
+     if not isinstance(score,list) or len(score)!=2:rejects["missing_full_time_score"]+=1;continue
+     values={"gh":number(score[0]),"ga":number(score[1])}
+    else:
+     date=r.get("date");home=r.get("home");away=r.get("away")
+     fields={"gh":"ft_home","ga":"ft_away","yh":"home_yellow","ya":"away_yellow",
+       "ch":"home_corners","ca":"away_corners","fh":"home_fouls","fa":"away_fouls"}
+     values={field:number(r.get(column)) for field,column in fields.items()}
+     if any(r.get(column) not in (None,"") and number(r[column]) is None for column in fields.values()):
+      rejects["invalid_count"]+=1;continue
+    try:
+     day=datetime.strptime(str(date),"%Y-%m-%d").date()
+     if day.isoformat()!=date:raise ValueError
+    except (ValueError,TypeError):rejects["invalid_date"]+=1;continue
+    if not f"{season_start}-07-01"<=date<f"{season_start+1}-07-01":rejects["wrong_season"]+=1;continue
+    if not isinstance(home,str) or not isinstance(away,str) or not norm(home) or not norm(away) or norm(home)==norm(away):
+     rejects["invalid_identity"]+=1;continue
+    m={"league":league,"date":date,"home":home,"away":away,"season":f"{season_start}-{(season_start+1)%100:02d}","source_ids":[source_id]}
+    if kind!="historical":m["time"]=r.get("time","")
+    k=key(m)
+    if kind=="fixtures":
+     if k in fixture and fixture[k].get("time")!=m.get("time"):
+      rejects["conflicting_fixture_time"]+=1
+      fixture[k]["time"]=""
+     elif k not in fixture:fixture[k]=m
+     accepted+=1
+    elif values["gh"] is not None and values["ga"] is not None:
+     raw_results.append({**m,**{c:v for c,v in values.items() if v is not None}});accepted+=1
+    else:rejects["missing_full_time_score"]+=1
+   report.append({"league":league,"kind":kind,"ok":True,"rows":len(rows),"accepted_rows":accepted,
+     "rejected":dict(rejects),"source_id":source_id,"source_url":url,
+     "content_sha256":hashlib.sha256(content.encode("utf-8")).hexdigest(),"fetched_at":now.isoformat()})
+  except (ValueError,TypeError,KeyError) as exc:
+   report.append({"league":league,"kind":kind,"ok":False,"source_url":url,"error":type(exc).__name__})
+ hist,integrity=clean_history(raw_results,now)
+ seen={key(r) for r in hist}
+ upcoming=[local_fixture(m) for k,m in fixture.items() if future_match(m,now) and k not in seen]
+ report.append({"league":"ALL","kind":"integrity","ok":not integrity["conflicting_events_quarantined"],**integrity})
+ return hist,sorted(upcoming,key=key),sorted(report,key=lambda x:(x["league"],x["kind"]))
 def wmean(rows,col,date,half_life_days=185):
+ if isinstance(half_life_days,bool) or not math.isfinite(half_life_days) or half_life_days<=0:
+  raise ValueError("half_life_days must be finite and positive")
  sw=0.; sy=0.
  for m in rows:
   age=max(0,(date-datetime.fromisoformat(m["date"]).date()).days)
@@ -115,12 +241,15 @@ def wmean(rows,col,date,half_life_days=185):
   sw+=w; sy+=w*m[col]
  return sy/max(.001,sw),sw
 def h2h_distribution(lamh,lama):
- """Independent Poisson 1X2 distribution, normalized (finite truncation)."""
+ """Independent Poisson 1X2 with negligible-tail truncation and normalized output."""
  if lamh is None or lama is None:return None
+ if any(isinstance(v,bool) or not isinstance(v,(int,float)) or not math.isfinite(v) or v<0 for v in (lamh,lama)):
+  raise ValueError("Goal intensities must be finite and nonnegative")
+ if max(lamh,lama)>1000:raise ValueError("Goal intensities exceed numerical safety limit")
  def mass(lam):
-  out=[math.exp(-lam)]
-  for k in range(1,25):out.append(out[-1]*lam/k)
-  return out
+  if lam==0:return [1.]
+  limit=max(25,int(lam+12*math.sqrt(lam)+20))
+  return [math.exp(-lam+k*math.log(lam)-math.lgamma(k+1)) for k in range(limit)]
  h,a=mass(lamh),mass(lama)
  ph=pd=pa=0.
  for i,hi in enumerate(h):
@@ -130,12 +259,28 @@ def h2h_distribution(lamh,lama):
    else:pa+=hi*aj
  z=ph+pd+pa
  if z<=0:return None
- return {"home":round(ph/z,5),"draw":round(pd/z,5),"away":round(pa/z,5)}
+ values={"home":round(ph/z,5),"draw":round(pd/z,5),"away":round(pa/z,5)}
+ largest=max(values,key=values.get)
+ values[largest]=round(1-sum(v for k,v in values.items() if k!=largest),5)
+ return values
+
+def market_rejection(hist,match,market):
+ h,a,_,minimum=MARKETS[market]
+ rows=[r for r in hist if r["league"]==match["league"] and r["date"]<match["date"]
+   and number(r.get(h)) is not None and number(r.get(a)) is not None]
+ nh=sum(norm(r["home"])==norm(match["home"]) for r in rows)
+ na=sum(norm(r["away"])==norm(match["away"]) for r in rows)
+ details={"n_league":len(rows),"n_home":nh,"n_away":na,"minimum_league":minimum,"minimum_team":3}
+ if len(rows)<minimum:return {"code":"insufficient_league_history","message":"Istoric insuficient în ligă pentru această piață.",**details}
+ if min(nh,na)<3:return {"code":"insufficient_team_history","message":"Istoric insuficient acasă/deplasare pentru cel puțin o echipă.",**details}
+ return {"code":"invalid_league_mean","message":"Media ligii nu permite o estimare validă.",**details}
 
 def pred(hist,match,market,half_life_days=185,prior_weight=7,opponent_effect=True):
+ if any(isinstance(v,bool) or not isinstance(v,(int,float)) or not math.isfinite(v) for v in (half_life_days,prior_weight)) or half_life_days<=0 or prior_weight<0:
+  raise ValueError("Model decay must be positive and prior nonnegative, both finite")
  homecol,awaycol,line,minimum=MARKETS[market]
  relevant=[m for m in hist if m["league"]==match["league"] and m["date"]<match["date"]
-  and m.get(homecol) is not None and m.get(awaycol) is not None]
+  and number(m.get(homecol)) is not None and number(m.get(awaycol)) is not None]
  if len(relevant)<minimum: return None
  homeid,awayid=norm(match["home"]),norm(match["away"])
  home=[r for r in relevant if norm(r["home"])==homeid]
@@ -168,10 +313,22 @@ def pred(hist,match,market,half_life_days=185,prior_weight=7,opponent_effect=Tru
  explanation={
    "method_version":"weighted_opponent_model_v1" if half_life_days==185 and prior_weight==7 and opponent_effect else "research_variant",
    "opponent_effect":bool(opponent_effect),
+   "pipeline_version":PIPELINE_VERSION,
    "status":"arithmetic_trace_not_causal_explanation",
-   "source_families":(["OpenFootball football.json (historic goals)",
-                       "open-matchday (current season goals)"] if market=="goals" else
-                       ["open-matchday (current season match statistics)"]),
+   "source_families":sorted({v.split(":")[0] for r in relevant for v in r.get("source_ids",["unspecified_history"])}),
+   "source_ids":sorted({v for r in relevant for v in r.get("source_ids",["unspecified_history"])}),
+   "first_observation_date":min(r["date"] for r in relevant),
+   "last_observation_date":max(r["date"] for r in relevant),
+   "formulas":{
+    "recency":"weight = 2 ** (-age_days / half_life_days)",
+    "regularization":"shrunk = (weighted_mean * sum_weights + prior_pseudogames * league_mean) / (sum_weights + prior_pseudogames)",
+    "combination":"lambda = sqrt(team_attack_shrunk * opponent_conceded_shrunk)" if opponent_effect else "lambda = team_attack_shrunk",
+    "clipping":"lambda bounded to [0.05, 2.4 * league_mean]",
+    "h2h":"sum independent Poisson score probabilities for home>away, equal, home<away; normalize",
+    "total":"P(over line) = 1 - CDF(floor(line))"},
+   "calibration_status":"unvalidated",
+   "uncertainty":{"status":"not_quantified","probability_interval":None,
+    "message":"Nu există un interval validat pentru probabilitatea individuală. Eșantionul, sursele și ipotezele modelului adaugă incertitudine; intervalele de scor din test nu sunt intervale pentru acest meci."},
    "historical_cutoff_exclusive":match["date"],
    "half_life_days":HALF_LIFE_DAYS,"prior_pseudogames":PRIOR_WEIGHT,
    "league_home_mean":round(baseh,4),"league_away_mean":round(basea,4),
@@ -201,14 +358,26 @@ def pred(hist,match,market,half_life_days=185,prior_weight=7,opponent_effect=Tru
  }
  return {"line":line,"over":round(p,5),"under":round(1-p,5),
   "mean":round(mu,2),"n_league":len(relevant),"n_home":len(home),
-  "n_away":len(away),"small_sample":min(len(home),len(away))<8 or len(relevant)<100,
+  "n_away":len(away),"small_sample":min(len(home),len(away))<8 or min(home_effective,away_effective)<3 or len(relevant)<150,
   "status":"experimental",
-  "quality":"very_low" if min(len(home),len(away))<8 or len(relevant)<150 else "unverified",
+  "quality":"very_low" if min(len(home),len(away))<8 or min(home_effective,away_effective)<3 or len(relevant)<150 else "unverified",
   "h2h":h2h_distribution(lamh,lama) if market=="goals" else None,
   "explanation":explanation}
 def over_tail(mu,line,dispersion=1):
- k=max(.5,mu/(dispersion-1)) if dispersion>1.07 else float("inf")
+ if any(isinstance(v,bool) or not isinstance(v,(int,float)) or not math.isfinite(v) for v in (mu,line,dispersion)) or mu<0 or line<0 or dispersion<1:
+  raise ValueError("Mean and line must be finite nonnegative; dispersion must be finite >= 1")
+ if mu==0:return 0.
+ if line>100000 or mu>100000:raise ValueError("Count parameters exceed numerical safety limit")
+ k=mu/(dispersion-1) if dispersion>1.07 else float("inf")
  term=(k/(k+mu))**k if math.isfinite(k) else math.exp(-mu)
+ if term<1e-290:
+  # Starting a recurrence at exp(-mu)==0 loses the entire probability mass.
+  # Log PMFs retain mass around the mode for large finite means.
+  def logpmf(n):
+   if math.isfinite(k):
+    return math.lgamma(n+k)-math.lgamma(k)-math.lgamma(n+1)+k*math.log(k/(k+mu))+n*math.log(mu/(k+mu))
+   return -mu+n*math.log(mu)-math.lgamma(n+1)
+  return max(0.,min(1.,1-math.fsum(math.exp(logpmf(n)) for n in range(int(math.floor(line))+1))))
  s=term
  for n in range(1,int(math.floor(line))+1):
   term*= ((n-1+k)/n)*mu/(k+mu) if math.isfinite(k) else mu/n
@@ -242,7 +411,7 @@ def validation(hist,market):
  err=1.96*sd/(len(d)**.5)
  bins=[]
  for lower in range(0,10,2):
-  bucket=[(p,y) for p,b,y in preds if lower/10<=p<min(1.,(lower+2)/10+1e-8)]
+  bucket=[(p,y) for p,b,y in preds if min(int(p*5),4)==lower//2]
   if bucket:
    bins.append({"range":f"{lower*10}-{(lower+2)*10}%",
     "n":len(bucket),"predicted":round(sum(p for p,y in bucket)/len(bucket),4),
@@ -286,58 +455,126 @@ def validation_h2h(hist):
  "improvement_approx_95_range":[round(avg-1.96*sd/math.sqrt(len(d)),5),round(avg+1.96*sd/math.sqrt(len(d)),5)],
  "per_league":league_counts}
 
+def write_json_atomic(path,value):
+ """A failed serialization or interrupted write must not destroy the last good file."""
+ temporary=None
+ try:
+  with tempfile.NamedTemporaryFile(mode="w",encoding="utf-8",dir=path.parent,prefix=".valueradar-",delete=False) as f:
+   temporary=Path(f.name)
+   json.dump(value,f,ensure_ascii=False,indent=2,allow_nan=False)
+   f.write("\n")
+  temporary.replace(path)
+ finally:
+  if temporary is not None and temporary.exists():temporary.unlink()
+def prospective_eligible(entry,played=None):
+ created=timestamp(entry.get("created_at"))
+ if not created:return False
+ kickoff=fixture_kickoff(entry) or (fixture_kickoff(played) if played else None)
+ if kickoff:return created<kickoff.astimezone(timezone.utc)
+ # Legacy records without time: only creation before the earliest possible
+ # kickoff on that fixed-offset date proves they preceded the match.
+ try:
+  earliest=datetime.fromisoformat(entry["date"]).replace(tzinfo=timezone(timedelta(hours=1))).astimezone(timezone.utc)
+  return created<earliest
+ except (ValueError,KeyError,TypeError):return False
+def valid_forecast_record(entry):
+ try:
+  required=("league","date","home","away","market","created_at","settled")
+  if not isinstance(entry,dict) or not all(k in entry for k in required):return False
+  if entry["league"] not in LEAGUES or not isinstance(entry["home"],str) or not isinstance(entry["away"],str):return False
+  if not norm(entry["home"]) or not norm(entry["away"]) or norm(entry["home"])==norm(entry["away"]):return False
+  if datetime.strptime(entry["date"],"%Y-%m-%d").date().isoformat()!=entry["date"]:return False
+  if not isinstance(entry["settled"],bool) or timestamp(entry["created_at"]) is None:return False
+  def probability(v):return not isinstance(v,bool) and isinstance(v,(int,float)) and math.isfinite(v) and 0<=v<=1
+  if entry["market"]=="h2h":
+   p=entry.get("probabilities")
+   if not isinstance(p,dict) or set(p)!={"home","draw","away"} or not all(probability(v) for v in p.values()) or abs(sum(p.values())-1)>.00002:return False
+   if entry["settled"] and entry.get("actual_outcome") not in p:return False
+  elif entry["market"] in MARKETS:
+   line=entry.get("line")
+   if isinstance(line,bool) or not isinstance(line,(int,float)) or not math.isfinite(line) or line<0 or line%1!=.5:return False
+   if not probability(entry.get("p_over")):return False
+   if entry["settled"] and entry.get("actual_over") not in (0,1):return False
+  else:return False
+  return True
+ except (ValueError,TypeError,KeyError):return False
 def prospective(hist,fixtures,run_at):
- """Write once, settle later; never rewrite the original forecast."""
+ """Append first forecasts, settle later. Never silently reset or truncate evidence."""
  path=OUT/"forecast_log.json"
  try:
-  log=json.loads(path.read_text()) if path.exists() else []
-  if not isinstance(log,list):log=[]
- except Exception:log=[]
+  log=json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+ except (OSError,ValueError) as exc:
+  raise RuntimeError("Forecast journal is unreadable; refusing to replace it") from exc
+ if not isinstance(log,list) or any(not valid_forecast_record(r) for r in log):
+  raise RuntimeError("Forecast journal schema is invalid; refusing to replace it")
  def logkey(x):
-  return (x["league"],x["date"],norm(x["home"]),norm(x["away"]),x["market"])
+  return (*key(x),x["market"],x.get("line") if x["market"]!="h2h" else None,x.get("pipeline_version","legacy_unversioned"))
  known={logkey(r) for r in log}
- now=datetime.now(timezone.utc)
+ now=timestamp(run_at)
+ if now is None:raise ValueError("run_at must contain an explicit timezone")
  for f in fixtures:
-  if not future_match(f,now):continue
+  kickoff=fixture_kickoff(f)
+  # New journal records require an explicit kickoff. Unknown times remain
+  # visible as research but cannot provide prospective timing evidence.
+  if kickoff is None or not future_match(f,now):continue
+  base={k:f[k] for k in ("league","date","home","away")}
+  base.update({"created_at":run_at,"settled":False,"kickoff_utc":kickoff.astimezone(timezone.utc).isoformat(),
+    "forecast_schema_version":2,"pipeline_version":PIPELINE_VERSION,"calibration_status":"unvalidated"})
   for market,p in f["markets"].items():
    if p is None:continue
-   entry={k:f[k] for k in ("league","date","home","away")}
-   entry.update({"market":market,"line":p["line"],"p_over":p["over"],"created_at":run_at,"settled":False})
-   if logkey(entry) not in known: log.append(entry);known.add(logkey(entry))
+   entry={**base,"market":market,"line":p["line"],"p_over":p["over"],
+     "method_version":p.get("explanation",{}).get("method_version","unknown"),
+     "historical_cutoff_exclusive":p.get("explanation",{}).get("historical_cutoff_exclusive",f["date"])}
+   if logkey(entry) not in known:log.append(entry);known.add(logkey(entry))
   gp=f["markets"].get("goals")
   if gp and gp.get("h2h"):
-   entry={k:f[k] for k in ("league","date","home","away")}
-   entry.update({"market":"h2h","probabilities":gp["h2h"],"created_at":run_at,"settled":False})
+   entry={**base,"market":"h2h","probabilities":dict(gp["h2h"]),
+     "method_version":gp.get("explanation",{}).get("method_version","unknown"),
+     "historical_cutoff_exclusive":f["date"]}
    if logkey(entry) not in known:log.append(entry);known.add(logkey(entry))
- outcomes={key(r):r for r in hist}
+ valid_outcomes,_=clean_history(hist,now)
+ outcomes={key(r):r for r in valid_outcomes}
  for r in log:
   if r.get("settled"):continue
-  played=outcomes.get(tuple(logkey(r)[:4]))
+  played=outcomes.get(key(r))
   if not played:continue
+  if not prospective_eligible(r,played):
+   r["evaluation_exclusion"]="creation_not_provably_before_kickoff"
+   continue
   if r["market"]=="h2h":
-   if played.get("gh") is None or played.get("ga") is None:continue
-   y="home" if played["gh"]>played["ga"] else "away" if played["gh"]<played["ga"] else "draw"
-   r["actual_outcome"]=y
+   if number(played.get("gh")) is None or number(played.get("ga")) is None:continue
+   r["actual_outcome"]="home" if played["gh"]>played["ga"] else "away" if played["gh"]<played["ga"] else "draw"
   else:
    h,a,_,_=MARKETS.get(r["market"],(None,None,None,None))
-   if h is None or played.get(h) is None or played.get(a) is None:continue
+   if h is None or number(played.get(h)) is None or number(played.get(a)) is None:continue
    r["actual_total"]=played[h]+played[a]
    r["actual_over"]=int(r["actual_total"]>r["line"])
-  r["settled"]=True
-  r["settled_at"]=run_at
- log=sorted(log,key=lambda r:(r["date"],r["league"],r["home"],r["market"]))[-5000:]
- path.write_text(json.dumps(log,ensure_ascii=False,indent=2),encoding="utf-8")
+  r["settled"]=True;r["settled_at"]=run_at
+ # Append order is part of the audit trail; retaining the full evidence avoids
+ # outcome-dependent expiry of successful or unsuccessful predictions.
+ if any(not valid_forecast_record(r) for r in log):raise ValueError("Generated forecast journal contains invalid probabilities or settlement data")
+ write_json_atomic(path,log)
  scores={}
  for market in list(MARKETS)+["h2h"]:
-  done=[r for r in log if r.get("settled") and r["market"]==market]
+  settled=[r for r in log if r.get("settled") and r["market"]==market]
+  done=[];seen=set()
+  for r in settled:
+   k=logkey(r)
+   if k in seen or not prospective_eligible(r,outcomes.get(key(r))):continue
+   seen.add(k);done.append(r)
   if market=="h2h":
    def error(r):
-    return sum((r["probabilities"][k]-(1 if r["actual_outcome"]==k else 0))**2 for k in ("home","draw","away"))/3
+    return sum((r["probabilities"][k]-float(r["actual_outcome"]==k))**2 for k in ("home","draw","away"))/3
   else:
-   def error(r):
-    return (r["p_over"]-r["actual_over"])**2
-  scores[market]={"n":len(done),"brier":round(sum(error(r) for r in done)/len(done),5) if done else None}
+   def error(r):return (r["p_over"]-r["actual_over"])**2
+  scores[market]={"n":len(done),"brier":round(sum(error(r) for r in done)/len(done),5) if done else None,
+   "excluded_nonprospective_or_duplicate":len(settled)-len(done),
+   "by_pipeline_version":{version:{"n":sum(r.get("pipeline_version","legacy_unversioned")==version for r in done),
+     "brier":round(sum(error(r) for r in done if r.get("pipeline_version","legacy_unversioned")==version)/sum(r.get("pipeline_version","legacy_unversioned")==version for r in done),5)}
+    for version in sorted({r.get("pipeline_version","legacy_unversioned") for r in done})},
+   "notice":"Mixed versions are descriptive only; use by_pipeline_version for version-specific evaluation."}
  return scores,len(log)
+
 def run():
  OUT.mkdir(parents=True,exist_ok=True)
  hist,fixtures,report=load_all()
@@ -346,26 +583,31 @@ def run():
   return 2
  today=datetime.now(timezone.utc).date()
  upcoming=[m for m in fixtures if m["date"] <= (today+timedelta(days=30)).isoformat()]
- enriched=[{**m,"markets":{k:pred(hist,m,k) for k in MARKETS}} for m in upcoming]
+ enriched=[]
+ for m in upcoming:
+  markets={k:pred(hist,m,k) for k in MARKETS}
+  enriched.append({**m,"markets":markets,"market_rejections":{k:market_rejection(hist,m,k) for k,p in markets.items() if p is None}})
  stamp=datetime.now(timezone.utc).isoformat()
  prospective_report,count=prospective(hist,enriched,stamp)
  audit={lg:{market:sum(r["league"]==lg and r.get(h) is not None and r.get(a) is not None for r in hist)
   for market,(h,a,_,_) in MARKETS.items()} for lg in LEAGUES}
  freshness={lg:{market:max((r["date"] for r in hist if r["league"]==lg and r.get(h) is not None and r.get(a) is not None),default=None)
   for market,(h,a,_,_) in MARKETS.items()} for lg in LEAGUES}
- payload={"version":"0.9","generated_at":stamp,
+ payload={"version":"1.0","pipeline_version":PIPELINE_VERSION,"generated_at":stamp,
   "methodology":{"version":"weighted_opponent_model_v1",
    "approach":"Time-decayed team and opponent rates, shrunk toward league means, with geometric combination.",
    "prior_pseudogames":7,"half_life_days":185,
    "limitations":"No referees, lineup, tactical events, or validated ROI.",
    "details":"See ANALYSIS_METHODOLOGY.md"},"history_rows":len(hist),
-  "fixture_rows":len(fixtures),"source_success":sum(r["ok"] for r in report),
-  "source_total":len(report),"source_report":report,"data_audit":audit,
+  "fixture_rows":len(fixtures),"source_success":sum(r["ok"] for r in report if r["kind"]!="integrity"),
+  "source_total":sum(r["kind"]!="integrity" for r in report),
+  "source_report":[r for r in report if r["kind"]!="integrity"],
+  "data_integrity":next((r for r in report if r["kind"]=="integrity"),{}),"data_audit":audit,
   "last_stat_date":freshness,
   "backtest":{**{m:validation(hist,m) for m in MARKETS},"h2h":validation_h2h(hist)},
   "prospective":prospective_report,"prospective_predictions_recorded":count,
   "fixtures":enriched,"message":"Experimental model. International odds monitored separately; no verified Romanian bookmaker prices or validated value bets."}
- (OUT/"latest.json").write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8")
+ write_json_atomic(OUT/"latest.json",payload)
  print(f"Published {len(enriched)} forecasts, {len(hist)} historical matches")
  return 0
 def selftest():

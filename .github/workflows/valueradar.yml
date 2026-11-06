@@ -1,99 +1,117 @@
 name: ValueRadar / actualizare date
 on:
   workflow_dispatch:
+    inputs:
+      scan_odds:
+        description: "Interogheaza cotele internationale (consuma credite API)"
+        type: boolean
+        required: false
+        default: false
   push:
     branches: [main]
     paths:
-      - "runner.py"
-      - "odds_scanner.py"
-      - "performance.py"
-      - "docs/index.html"
-      - "docs/odds_ui.js"
-      - "docs/model_lab_ui.js"
-      - "docs/elo_ui.js"
+      - "*.py"
+      - "scripts/**"
+      - "docs/*.html"
+      - "docs/*.js"
       - ".github/workflows/valueradar.yml"
   schedule:
     - cron: "23 */4 * * *"
     - cron: "13 8,16 * * *"
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: read
 concurrency:
-  group: valueradar-refresh
-  # An older stuck Pages deployment must not block newer code.
-  cancel-in-progress: true
+  # Shared by every writer; do not cancel during journal save or Pages deploy.
+  group: valueradar-production-writer
+  cancel-in-progress: false
 jobs:
   analyze:
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    outputs:
+      saved_sha: ${{ steps.save.outputs.saved_sha }}
+      generated_at: ${{ steps.validated.outputs.generated_at }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Retine revizia exacta a codului si jurnalului
+        id: source
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Verificare modele
-        run: python runner.py --self-test
-      - name: Verifica sintaxa si testele de integrare
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verificari inainte de import
         run: |
-          python -m py_compile runner.py odds_scanner.py performance.py
-          node --check docs/odds_ui.js
-          node --check docs/model_lab_ui.js
-          node --check docs/elo_ui.js
-          python odds_scanner.py --self-test
-          python performance.py --self-test
+          python scripts/check_syntax.py
+          python -m unittest discover -s tests -v
+          cp docs/forecast_log.json "$RUNNER_TEMP/forecast_log_before.json"
       - name: Importa rezultate si calculeaza predictii
         run: python runner.py
-      - name: Interogheaza cotele reale (doar 2 ori pe zi sau manual)
-        if: ${{ github.event_name == 'workflow_dispatch' || github.event.schedule == '13 8,16 * * *' }}
+      - name: Interogheaza cotele reale numai la programare sau cerere explicita
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.scan_odds) || github.event.schedule == '13 8,16 * * *' }}
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           ODDS_REGION: uk
         run: python odds_scanner.py
-      - name: Auditeaza retrospectiv observatiile cotelor
-        run: python performance.py
-      - name: Pastreaza jurnalul si analizele
+      - name: Auditeaza observatiile si valideaza fisierele generate
+        id: validated
         run: |
-          set -euo pipefail
-          git config user.name "valueradar-bot"
-          git config user.email "valueradar-bot@users.noreply.github.com"
-          tmp="$(mktemp -d)"
-          trap 'rm -rf "$tmp"' EXIT
-          cp docs/*.json "$tmp/"
-          # Discard only the old local git snapshot, NOT generated outputs.
-          # The repository may have been edited while today's API collection ran.
-          for attempt in 1 2 3; do
-            git fetch origin main
-            git reset --hard origin/main
-            cp "$tmp/"*.json docs/
-            git add docs/*.json
-            if git diff --cached --quiet; then
-              echo "No changed data files to commit"
-              break
-            fi
-            git commit -m "Refresh data and audit [skip ci]"
-            if git push origin main; then
-              echo "Data committed on attempt $attempt"
-              break
-            fi
-            if [ "$attempt" = "3" ]; then
-              echo "Data save conflict unresolved" >&2
-              exit 1
-            fi
-          done
-      - name: Pregateste fisierele site-ului
+          python performance.py
+          python scripts/validate_outputs.py --original-log "$RUNNER_TEMP/forecast_log_before.json"
+      - name: Salveaza exclusiv fisierele detinute, numai daca main nu s-a schimbat
+        id: save
+        env:
+          SOURCE_SHA: ${{ steps.source.outputs.sha }}
+        run: python scripts/publish_generated.py refresh --expected-sha "$SOURCE_SHA"
+      - name: Pregateste publicarea din aceeasi revizie verificata
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs
   deploy:
     needs: analyze
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Publica dashboardul
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.analyze.outputs.saved_sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refuza publicarea unui snapshot depasit de alt commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          SAVED_SHA: ${{ needs.analyze.outputs.saved_sha }}
+        run: |
+          set -euo pipefail
+          current_sha="$(gh api "repos/$REPOSITORY/git/ref/heads/main" --jq '.object.sha')"
+          if [ "$current_sha" != "$SAVED_SHA" ]; then
+            echo "main advanced after analysis; refuse stale deployment" >&2
+            exit 1
+          fi
+      - name: Publica dashboardul si asteapta confirmarea GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-# Dashboard ValueRadar: deploy from docs/, not from Jekyll root.
+        with:
+          timeout: 600000
+      - name: Verifica snapshotul servit de site-ul public
+        env:
+          SITE_URL: ${{ steps.deployment.outputs.page_url }}
+          EXPECTED_GENERATED_AT: ${{ needs.analyze.outputs.generated_at }}
+        run: python scripts/verify_live_site.py

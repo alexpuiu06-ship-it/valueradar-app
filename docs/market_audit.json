@@ -11,5 +11,27 @@
   "price_change_count": 0,
   "model_is_verified": false,
   "quotes_are_verified_romania": false,
-  "notice": "Paper results are not executable bets, the bookmaker may not be accessible in Romania, and these are not verified closing-line prices."
+  "value_blockers": [
+    "romanian_operator_feed_not_verified",
+    "market_line_and_settlement_not_verified",
+    "model_calibration_not_prospectively_validated",
+    "positive_edge_after_uncertainty_not_demonstrated"
+  ],
+  "rejection_counts": {
+    "missing_or_mixed_model_pipeline_version": 59
+  },
+  "market_baseline": {
+    "status": "insufficient_provenance_or_results",
+    "selection": "first stored scan per event; at least 3 complete distinct bookmaker IDs; median no-vig; same verified settlement rule",
+    "model_score_source": "immutable prospective journal probabilities from matching pipeline_version",
+    "n": 0,
+    "model_log_loss": null,
+    "market_log_loss": null,
+    "model_brier": null,
+    "market_brier": null,
+    "by_pipeline_version": {},
+    "mixed_versions_pooled": false,
+    "notice": "International quoted snapshots are not executable RO prices; source rules and bookmaker independence remain unverified."
+  },
+  "notice": "Nu există pariuri value verificate. Diferențele de preț sunt diagnostice; ROI este indisponibil fără dovezi independente."
 }

@@ -1,38 +1,92 @@
 name: ValueRadar / teste de siguranta
 on:
   push:
-    branches: [main]
-    paths:
-      - "runner.py"
-      - "odds_scanner.py"
-      - "performance.py"
-      - "docs/odds_ui.js"
-      - "docs/model_lab_ui.js"
-      - "docs/elo_ui.js"
-      - "model_lab.py"
-      - ".github/workflows/check.yml"
+  pull_request:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: valueradar-check-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  smoke-test:
+  unit-and-workflows:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Verifica sintaxa Python
-        run: python -m py_compile runner.py odds_scanner.py performance.py model_lab.py
-      - name: Verifica sintaxa dashboardului
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verifica toate modulele si JavaScript inclus in HTML
+        run: python scripts/check_syntax.py
+      - name: Teste de regresie fara API platit
         run: |
-          node --check docs/odds_ui.js
-          node --check docs/model_lab_ui.js
-          node --check docs/elo_ui.js
-      - name: Testeaza modelul si comparatia de cote fara API
-        run: |
+          python -m unittest discover -s tests -v
           python runner.py --self-test
           python odds_scanner.py --self-test
           python performance.py --self-test
           python model_lab.py --self-test
+          python elo_challenger.py --self-test
+      - name: Verifica sintaxa si expresiile GitHub Actions
+        run: bash scripts/lint_workflows.sh
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Testeaza interfata desktop si mobil, erori si date vechi
+        run: npm test
+      - name: Pastreaza dovezile E2E
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-report
+          path: |
+            work/playwright-report/
+            work/test-results/
+          if-no-files-found: ignore
+          retention-days: 14
+  live-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pastreaza jurnalul initial pentru controlul imutabilitatii
+        run: cp docs/forecast_log.json "$RUNNER_TEMP/forecast_log_before.json"
+      - name: Exercita importul real si pipeline-ul fara cote, publicare sau scriere in repository
+        run: |
+          python runner.py
+          python performance.py
+          python calibration.py
+          python scripts/validate_outputs.py --original-log "$RUNNER_TEMP/forecast_log_before.json"
+      - name: Pastreaza rapoartele reale pentru verificare
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-data-report
+          path: |
+            docs/latest.json
+            docs/calibration_report.json
+            docs/market_audit.json
+            docs/odds_diagnostics.json
+          retention-days: 14
