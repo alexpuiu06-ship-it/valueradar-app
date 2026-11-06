@@ -75,11 +75,30 @@ function renderOdds(){
 function renderAudit(){
  var e=el('market-review');
  if(!audit){e.textContent='Jurnalul de cote nu este încă disponibil.';return;}
- e.innerHTML='Cote comparate în istoric: <b>'+esc(audit.observations||0)+'</b> · '+
- 'Semnale înregistrate prospectiv: <b>'+esc(audit.initial_positive_ev_signals||0)+'</b> · '+
- 'Semnale cu rezultat final: <b>'+esc(audit.signals_settled||0)+'</b>'+
- '<div class="meta">Aceasta este o simulare pe hârtie. Nu măsoară pariuri executate la cotele din România. '+
- 'Un ROI nu este relevant fără suficient istoric, verificarea cotelor și controlul incertitudinii.</div>';
+ e.innerHTML='Comparații de cote în istoric: <b>'+esc(audit.observations||0)+'</b> · '+
+ 'Diferențe matematice NEVALIDATE: <b>'+esc(audit.unverified_model_price_differences||0)+'</b> · '+
+ 'Semnale de pariere confirmate: <b>'+esc(audit.initial_positive_ev_signals||0)+'</b> · '+
+ 'Semnale decontate: <b>'+esc(audit.signals_settled||0)+'</b>'+
+ '<div class="meta">Fără cote confirmate la operatori români și validarea performanței, nu calculăm profit ipotetic din aceste diferențe.</div>';
+ if(!checks || !Array.isArray(checks.items)){
+  e.innerHTML+='<p class="meta">Așteptăm diagnosticul dintre model și consensul cotelor.</p>';return;
+ }
+ var timestamp=checks.data_timestamp||checks.generated_at||source&&source.checked_at;
+ var checked=timestamp?new Date(timestamp).toLocaleString('ro-RO'):'necunoscut';
+ var rows=checks.items.slice(0,8).map(function(x){
+  var p=x.model_probabilities||{},market=x.market_consensus_no_vig||{};
+  var scores=['home','draw','away'].map(function(k){return esc(({home:'1',draw:'X',away:'2'})[k])+': '+
+    pct(p[k])+' model / '+pct(market[k])+' piață';}).join(' · ');
+  return '<tr style="border-bottom:1px solid #e2ebee">'+
+   '<td style="padding:8px">'+esc(x.league)+' · '+esc(x.home)+' — '+esc(x.away)+'</td>'+
+   '<td style="padding:8px">'+esc(x.books)+'</td>'+
+   '<td style="padding:8px">'+esc(x.max_model_consensus_gap_pp)+' pp</td>'+
+   '<td style="padding:8px">'+scores+'</td></tr>';
+ }).join('');
+ e.innerHTML+='<h3 style="font-size:15px;margin:17px 0 8px">Cele mai mari neconcordanțe model–piață</h3>'+
+  '<p class="meta">Fotografie a pieței din '+esc(checked)+'. Comparația elimină marja fiecărei case, dar consensul nu este adevărul și nici rezultatul final al meciului.</p>'+
+  '<div style="overflow:auto"><table style="width:100%;font-size:12px;text-align:left"><thead><tr><th>Meci</th><th>Case</th><th>Abaterea maximă</th><th>Probabilități 1X2</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
+  '<p class="meta">Diferență mare = analiză în carantină, NU oportunitate value. Datele nu se actualizează între scanările furnizorului.</p>';
 }
 function renderMatches(){
  var fixtures=matches();if(!fixtures.length)return;
