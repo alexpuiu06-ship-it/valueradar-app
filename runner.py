@@ -246,6 +246,7 @@ def validation_h2h(hist):
  "per_league":league_counts}
 
 def prospective(hist,fixtures,run_at):
+ """Write once, settle later; never rewrite the original forecast."""
  path=OUT/"forecast_log.json"
  try:
   log=json.loads(path.read_text()) if path.exists() else []
@@ -261,22 +262,41 @@ def prospective(hist,fixtures,run_at):
    if p is None:continue
    entry={k:f[k] for k in ("league","date","home","away")}
    entry.update({"market":market,"line":p["line"],"p_over":p["over"],"created_at":run_at,"settled":False})
-   if logkey(entry) not in known: log.append(entry); known.add(logkey(entry))
+   if logkey(entry) not in known: log.append(entry);known.add(logkey(entry))
+  gp=f["markets"].get("goals")
+  if gp and gp.get("h2h"):
+   entry={k:f[k] for k in ("league","date","home","away")}
+   entry.update({"market":"h2h","probabilities":gp["h2h"],"created_at":run_at,"settled":False})
+   if logkey(entry) not in known:log.append(entry);known.add(logkey(entry))
  outcomes={key(r):r for r in hist}
  for r in log:
   if r.get("settled"):continue
   played=outcomes.get(tuple(logkey(r)[:4]))
   if not played:continue
-  h,a,_,_=MARKETS[r["market"]]
-  if played.get(h) is None or played.get(a) is None:continue
-  r["actual_total"]=played[h]+played[a]
-  r["actual_over"]=int(r["actual_total"]>r["line"])
+  if r["market"]=="h2h":
+   if played.get("gh") is None or played.get("ga") is None:continue
+   y="home" if played["gh"]>played["ga"] else "away" if played["gh"]<played["ga"] else "draw"
+   r["actual_outcome"]=y
+  else:
+   h,a,_,_=MARKETS.get(r["market"],(None,None,None,None))
+   if h is None or played.get(h) is None or played.get(a) is None:continue
+   r["actual_total"]=played[h]+played[a]
+   r["actual_over"]=int(r["actual_total"]>r["line"])
   r["settled"]=True
   r["settled_at"]=run_at
- log=sorted(log,key=lambda r:(r["date"],r["league"],r["home"],r["market"]))[-3500:]
+ log=sorted(log,key=lambda r:(r["date"],r["league"],r["home"],r["market"]))[-5000:]
  path.write_text(json.dumps(log,ensure_ascii=False,indent=2),encoding="utf-8")
- return {market:{"n":len(ss),"brier":round(sum((r["p_over"]-r["actual_over"])**2 for r in ss)/len(ss),5) if ss else None}
-  for market in MARKETS for ss in [[r for r in log if r.get("settled") and r["market"]==market]]},len(log)
+ scores={}
+ for market in list(MARKETS)+["h2h"]:
+  done=[r for r in log if r.get("settled") and r["market"]==market]
+  if market=="h2h":
+   def error(r):
+    return sum((r["probabilities"][k]-(1 if r["actual_outcome"]==k else 0))**2 for k in ("home","draw","away"))/3
+  else:
+   def error(r):
+    return (r["p_over"]-r["actual_over"])**2
+  scores[market]={"n":len(done),"brier":round(sum(error(r) for r in done)/len(done),5) if done else None}
+ return scores,len(log)
 def run():
  OUT.mkdir(parents=True,exist_ok=True)
  hist,fixtures,report=load_all()
