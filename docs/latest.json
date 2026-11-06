@@ -1,6 +1,6 @@
 {
   "version": "0.6",
-  "generated_at": "2026-11-06T17:36:38.235939+00:00",
+  "generated_at": "2026-11-06T17:41:04.887207+00:00",
   "history_rows": 3935,
   "fixture_rows": 1300,
   "source_success": 20,
@@ -401,72 +401,6 @@
   "prospective_predictions_recorded": 1000,
   "fixtures": [
     {
-      "league": "Serie A",
-      "date": "2026-11-06",
-      "home": "Venezia",
-      "away": "Udinese",
-      "time": "20:45",
-      "time_ro": "21:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.18838,
-          "under": 0.81162,
-          "mean": 2.99,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.43847,
-          "under": 0.56153,
-          "mean": 9.24,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.51109,
-          "under": 0.48891,
-          "mean": 2.72,
-          "n_league": 850,
-          "n_home": 23,
-          "n_away": 42,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.33319,
-            "draw": 0.25605,
-            "away": 0.41076
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.28324,
-          "under": 0.71676,
-          "mean": 20.54,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
       "league": "Premier League",
       "date": "2026-11-06",
       "home": "Everton",
@@ -599,6 +533,72 @@
       }
     },
     {
+      "league": "Serie A",
+      "date": "2026-11-06",
+      "home": "Venezia",
+      "away": "Udinese",
+      "time": "20:45",
+      "time_ro": "21:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.18838,
+          "under": 0.81162,
+          "mean": 2.99,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.43847,
+          "under": 0.56153,
+          "mean": 9.24,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.51109,
+          "under": 0.48891,
+          "mean": 2.72,
+          "n_league": 850,
+          "n_home": 23,
+          "n_away": 42,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.33319,
+            "draw": 0.25605,
+            "away": 0.41076
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.28324,
+          "under": 0.71676,
+          "mean": 20.54,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
       "league": "Bundesliga",
       "date": "2026-11-06",
       "home": "Hamburger SV",
@@ -722,270 +722,6 @@
           "mean": 24.95,
           "n_league": 81,
           "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-07",
-      "home": "Cagliari",
-      "away": "Frosinone",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.27178,
-          "under": 0.72822,
-          "mean": 3.47,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.57513,
-          "under": 0.42487,
-          "mean": 10.51,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.52027,
-          "under": 0.47973,
-          "mean": 2.76,
-          "n_league": 850,
-          "n_home": 42,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.37308,
-            "draw": 0.25507,
-            "away": 0.37185
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.39272,
-          "under": 0.60728,
-          "mean": 22.24,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-07",
-      "home": "Torino",
-      "away": "Lecce",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.1417,
-          "under": 0.8583,
-          "mean": 2.68,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.42502,
-          "under": 0.57498,
-          "mean": 9.12,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.55329,
-          "under": 0.44671,
-          "mean": 2.9,
-          "n_league": 850,
-          "n_home": 42,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.40486,
-            "draw": 0.24735,
-            "away": 0.34778
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.30855,
-          "under": 0.69145,
-          "mean": 20.95,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-07",
-      "home": "Parma",
-      "away": "Bologna",
-      "time": "18:00",
-      "time_ro": "19:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.23532,
-          "under": 0.76468,
-          "mean": 3.26,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.39766,
-          "under": 0.60234,
-          "mean": 8.88,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.46548,
-          "under": 0.53452,
-          "mean": 2.54,
-          "n_league": 850,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.32026,
-            "draw": 0.26619,
-            "away": 0.41355
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.5055,
-          "under": 0.4945,
-          "mean": 23.92,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-07",
-      "home": "Roma",
-      "away": "Sassuolo",
-      "time": "20:45",
-      "time_ro": "21:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.22521,
-          "under": 0.77479,
-          "mean": 3.2,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.51808,
-          "under": 0.48192,
-          "mean": 9.97,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.59813,
-          "under": 0.40187,
-          "mean": 3.1,
-          "n_league": 850,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.52184,
-            "draw": 0.22631,
-            "away": 0.25185
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.33009,
-          "under": 0.66991,
-          "mean": 21.29,
-          "n_league": 100,
-          "n_home": 5,
           "n_away": 5,
           "small_sample": true,
           "status": "experimental",
@@ -1523,6 +1259,270 @@
       }
     },
     {
+      "league": "Serie A",
+      "date": "2026-11-07",
+      "home": "Cagliari",
+      "away": "Frosinone",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.27178,
+          "under": 0.72822,
+          "mean": 3.47,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.57513,
+          "under": 0.42487,
+          "mean": 10.51,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.52027,
+          "under": 0.47973,
+          "mean": 2.76,
+          "n_league": 850,
+          "n_home": 42,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.37308,
+            "draw": 0.25507,
+            "away": 0.37185
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.39272,
+          "under": 0.60728,
+          "mean": 22.24,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-07",
+      "home": "Torino",
+      "away": "Lecce",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.1417,
+          "under": 0.8583,
+          "mean": 2.68,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.42502,
+          "under": 0.57498,
+          "mean": 9.12,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.55329,
+          "under": 0.44671,
+          "mean": 2.9,
+          "n_league": 850,
+          "n_home": 42,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.40486,
+            "draw": 0.24735,
+            "away": 0.34778
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.30855,
+          "under": 0.69145,
+          "mean": 20.95,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-07",
+      "home": "Parma",
+      "away": "Bologna",
+      "time": "18:00",
+      "time_ro": "19:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.23532,
+          "under": 0.76468,
+          "mean": 3.26,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.39766,
+          "under": 0.60234,
+          "mean": 8.88,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.46548,
+          "under": 0.53452,
+          "mean": 2.54,
+          "n_league": 850,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.32026,
+            "draw": 0.26619,
+            "away": 0.41355
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.5055,
+          "under": 0.4945,
+          "mean": 23.92,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-07",
+      "home": "Roma",
+      "away": "Sassuolo",
+      "time": "20:45",
+      "time_ro": "21:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.22521,
+          "under": 0.77479,
+          "mean": 3.2,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.51808,
+          "under": 0.48192,
+          "mean": 9.97,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.59813,
+          "under": 0.40187,
+          "mean": 3.1,
+          "n_league": 850,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.52184,
+            "draw": 0.22631,
+            "away": 0.25185
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.33009,
+          "under": 0.66991,
+          "mean": 21.29,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
       "league": "Bundesliga",
       "date": "2026-11-07",
       "home": "1. FSV Mainz 05",
@@ -1977,336 +1977,6 @@
           "n_league": 81,
           "n_home": 3,
           "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-08",
-      "home": "Napoli",
-      "away": "Lazio",
-      "time": "12:30",
-      "time_ro": "13:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.24246,
-          "under": 0.75754,
-          "mean": 3.3,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.49332,
-          "under": 0.50668,
-          "mean": 9.74,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.56107,
-          "under": 0.43893,
-          "mean": 2.93,
-          "n_league": 850,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.32565,
-            "draw": 0.24441,
-            "away": 0.42994
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.34161,
-          "under": 0.65839,
-          "mean": 21.47,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-08",
-      "home": "Genoa",
-      "away": "Milan",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.24486,
-          "under": 0.75514,
-          "mean": 3.32,
-          "n_league": 100,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.48499,
-          "under": 0.51501,
-          "mean": 9.67,
-          "n_league": 100,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.48903,
-          "under": 0.51097,
-          "mean": 2.63,
-          "n_league": 850,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.35448,
-            "draw": 0.26201,
-            "away": 0.3835
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.34231,
-          "under": 0.65769,
-          "mean": 21.48,
-          "n_league": 100,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-08",
-      "home": "Monza",
-      "away": "Atalanta",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.2239,
-          "under": 0.7761,
-          "mean": 3.2,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.43484,
-          "under": 0.56516,
-          "mean": 9.21,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.60122,
-          "under": 0.39878,
-          "mean": 3.11,
-          "n_league": 850,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.44092,
-            "draw": 0.23572,
-            "away": 0.32336
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.32112,
-          "under": 0.67888,
-          "mean": 21.15,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-08",
-      "home": "Internazionale",
-      "away": "Como",
-      "time": "18:00",
-      "time_ro": "19:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.18935,
-          "under": 0.81065,
-          "mean": 2.99,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.50089,
-          "under": 0.49911,
-          "mean": 9.81,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.613,
-          "under": 0.387,
-          "mean": 3.17,
-          "n_league": 850,
-          "n_home": 5,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.4195,
-            "draw": 0.23477,
-            "away": 0.34573
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.31436,
-          "under": 0.68564,
-          "mean": 21.04,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-08",
-      "home": "Fiorentina",
-      "away": "Juventus",
-      "time": "20:45",
-      "time_ro": "21:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.22327,
-          "under": 0.77673,
-          "mean": 3.19,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.55497,
-          "under": 0.44503,
-          "mean": 10.32,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.50395,
-          "under": 0.49605,
-          "mean": 2.69,
-          "n_league": 850,
-          "n_home": 5,
-          "n_away": 42,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.31581,
-            "draw": 0.25651,
-            "away": 0.42768
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.37873,
-          "under": 0.62127,
-          "mean": 22.03,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
@@ -2965,6 +2635,336 @@
           "under": 0.53127,
           "mean": 23.34,
           "n_league": 109,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-08",
+      "home": "Napoli",
+      "away": "Lazio",
+      "time": "12:30",
+      "time_ro": "13:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.24246,
+          "under": 0.75754,
+          "mean": 3.3,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.49332,
+          "under": 0.50668,
+          "mean": 9.74,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.56107,
+          "under": 0.43893,
+          "mean": 2.93,
+          "n_league": 850,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.32565,
+            "draw": 0.24441,
+            "away": 0.42994
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.34161,
+          "under": 0.65839,
+          "mean": 21.47,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-08",
+      "home": "Genoa",
+      "away": "Milan",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.24486,
+          "under": 0.75514,
+          "mean": 3.32,
+          "n_league": 100,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.48499,
+          "under": 0.51501,
+          "mean": 9.67,
+          "n_league": 100,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.48903,
+          "under": 0.51097,
+          "mean": 2.63,
+          "n_league": 850,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.35448,
+            "draw": 0.26201,
+            "away": 0.3835
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.34231,
+          "under": 0.65769,
+          "mean": 21.48,
+          "n_league": 100,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-08",
+      "home": "Monza",
+      "away": "Atalanta",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.2239,
+          "under": 0.7761,
+          "mean": 3.2,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.43484,
+          "under": 0.56516,
+          "mean": 9.21,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.60122,
+          "under": 0.39878,
+          "mean": 3.11,
+          "n_league": 850,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.44092,
+            "draw": 0.23572,
+            "away": 0.32336
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.32112,
+          "under": 0.67888,
+          "mean": 21.15,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-08",
+      "home": "Internazionale",
+      "away": "Como",
+      "time": "18:00",
+      "time_ro": "19:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.18935,
+          "under": 0.81065,
+          "mean": 2.99,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.50089,
+          "under": 0.49911,
+          "mean": 9.81,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.613,
+          "under": 0.387,
+          "mean": 3.17,
+          "n_league": 850,
+          "n_home": 5,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.4195,
+            "draw": 0.23477,
+            "away": 0.34573
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.31436,
+          "under": 0.68564,
+          "mean": 21.04,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-08",
+      "home": "Fiorentina",
+      "away": "Juventus",
+      "time": "20:45",
+      "time_ro": "21:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.22327,
+          "under": 0.77673,
+          "mean": 3.19,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.55497,
+          "under": 0.44503,
+          "mean": 10.32,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.50395,
+          "under": 0.49605,
+          "mean": 2.69,
+          "n_league": 850,
+          "n_home": 5,
+          "n_away": 42,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.31581,
+            "draw": 0.25651,
+            "away": 0.42768
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.37873,
+          "under": 0.62127,
+          "mean": 22.03,
+          "n_league": 100,
           "n_home": 5,
           "n_away": 5,
           "small_sample": true,
@@ -3767,270 +3767,6 @@
       }
     },
     {
-      "league": "Serie A",
-      "date": "2026-11-21",
-      "home": "Como",
-      "away": "Cagliari",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.19448,
-          "under": 0.80552,
-          "mean": 3.02,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.48425,
-          "under": 0.51575,
-          "mean": 9.66,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.45894,
-          "under": 0.54106,
-          "mean": 2.51,
-          "n_league": 850,
-          "n_home": 4,
-          "n_away": 43,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.47366,
-            "draw": 0.2614,
-            "away": 0.26494
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.29884,
-          "under": 0.70116,
-          "mean": 20.8,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-21",
-      "home": "Lazio",
-      "away": "Lecce",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.22334,
-          "under": 0.77666,
-          "mean": 3.19,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.43269,
-          "under": 0.56731,
-          "mean": 9.19,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.54318,
-          "under": 0.45682,
-          "mean": 2.85,
-          "n_league": 850,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.46151,
-            "draw": 0.24515,
-            "away": 0.29334
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.38499,
-          "under": 0.61501,
-          "mean": 22.12,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-21",
-      "home": "Parma",
-      "away": "Roma",
-      "time": "18:00",
-      "time_ro": "19:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.25471,
-          "under": 0.74529,
-          "mean": 3.37,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.42878,
-          "under": 0.57122,
-          "mean": 9.16,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.5155,
-          "under": 0.4845,
-          "mean": 2.74,
-          "n_league": 850,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.29346,
-            "draw": 0.25152,
-            "away": 0.45502
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.40103,
-          "under": 0.59897,
-          "mean": 22.37,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-21",
-      "home": "Napoli",
-      "away": "Torino",
-      "time": "20:45",
-      "time_ro": "21:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.20683,
-          "under": 0.79317,
-          "mean": 3.1,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.48509,
-          "under": 0.51491,
-          "mean": 9.67,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.5246,
-          "under": 0.4754,
-          "mean": 2.78,
-          "n_league": 850,
-          "n_home": 4,
-          "n_away": 43,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.4462,
-            "draw": 0.25053,
-            "away": 0.30327
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.36602,
-          "under": 0.63398,
-          "mean": 21.84,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
       "league": "Premier League",
       "date": "2026-11-21",
       "home": "Man City",
@@ -4748,6 +4484,270 @@
           "mean": 24.46,
           "n_league": 109,
           "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-21",
+      "home": "Como",
+      "away": "Cagliari",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.19448,
+          "under": 0.80552,
+          "mean": 3.02,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.48425,
+          "under": 0.51575,
+          "mean": 9.66,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.45894,
+          "under": 0.54106,
+          "mean": 2.51,
+          "n_league": 850,
+          "n_home": 4,
+          "n_away": 43,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.47366,
+            "draw": 0.2614,
+            "away": 0.26494
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.29884,
+          "under": 0.70116,
+          "mean": 20.8,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-21",
+      "home": "Lazio",
+      "away": "Lecce",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.22334,
+          "under": 0.77666,
+          "mean": 3.19,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.43269,
+          "under": 0.56731,
+          "mean": 9.19,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.54318,
+          "under": 0.45682,
+          "mean": 2.85,
+          "n_league": 850,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.46151,
+            "draw": 0.24515,
+            "away": 0.29334
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.38499,
+          "under": 0.61501,
+          "mean": 22.12,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-21",
+      "home": "Parma",
+      "away": "Roma",
+      "time": "18:00",
+      "time_ro": "19:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.25471,
+          "under": 0.74529,
+          "mean": 3.37,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.42878,
+          "under": 0.57122,
+          "mean": 9.16,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.5155,
+          "under": 0.4845,
+          "mean": 2.74,
+          "n_league": 850,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.29346,
+            "draw": 0.25152,
+            "away": 0.45502
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.40103,
+          "under": 0.59897,
+          "mean": 22.37,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-21",
+      "home": "Napoli",
+      "away": "Torino",
+      "time": "20:45",
+      "time_ro": "21:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.20683,
+          "under": 0.79317,
+          "mean": 3.1,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.48509,
+          "under": 0.51491,
+          "mean": 9.67,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.5246,
+          "under": 0.4754,
+          "mean": 2.78,
+          "n_league": 850,
+          "n_home": 4,
+          "n_away": 43,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.4462,
+            "draw": 0.25053,
+            "away": 0.30327
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.36602,
+          "under": 0.63398,
+          "mean": 21.84,
+          "n_league": 100,
+          "n_home": 4,
           "n_away": 5,
           "small_sample": true,
           "status": "experimental",
@@ -5483,336 +5483,6 @@
       }
     },
     {
-      "league": "Serie A",
-      "date": "2026-11-22",
-      "home": "Juventus",
-      "away": "Venezia",
-      "time": "12:30",
-      "time_ro": "13:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.24845,
-          "under": 0.75155,
-          "mean": 3.34,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.52623,
-          "under": 0.47377,
-          "mean": 10.05,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.48008,
-          "under": 0.51992,
-          "mean": 2.59,
-          "n_league": 850,
-          "n_home": 43,
-          "n_away": 24,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.50671,
-            "draw": 0.25153,
-            "away": 0.24176
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.3579,
-          "under": 0.6421,
-          "mean": 21.72,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-22",
-      "home": "Bologna",
-      "away": "Udinese",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.26022,
-          "under": 0.73978,
-          "mean": 3.4,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.47015,
-          "under": 0.52985,
-          "mean": 9.53,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.5416,
-          "under": 0.4584,
-          "mean": 2.85,
-          "n_league": 850,
-          "n_home": 5,
-          "n_away": 42,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.37995,
-            "draw": 0.25039,
-            "away": 0.36966
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.41334,
-          "under": 0.58666,
-          "mean": 22.55,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-22",
-      "home": "Sassuolo",
-      "away": "Genoa",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.28368,
-          "under": 0.71632,
-          "mean": 3.53,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.40373,
-          "under": 0.59627,
-          "mean": 8.93,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.57887,
-          "under": 0.42113,
-          "mean": 3.01,
-          "n_league": 850,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.38864,
-            "draw": 0.24251,
-            "away": 0.36885
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.40295,
-          "under": 0.59705,
-          "mean": 22.39,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-22",
-      "home": "Milan",
-      "away": "Frosinone",
-      "time": "18:00",
-      "time_ro": "19:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.23768,
-          "under": 0.76232,
-          "mean": 3.28,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.49173,
-          "under": 0.50827,
-          "mean": 9.73,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.62045,
-          "under": 0.37955,
-          "mean": 3.2,
-          "n_league": 850,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.44588,
-            "draw": 0.23168,
-            "away": 0.32244
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.37496,
-          "under": 0.62504,
-          "mean": 21.97,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-22",
-      "home": "Atalanta",
-      "away": "Internazionale",
-      "time": "20:45",
-      "time_ro": "21:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.18637,
-          "under": 0.81363,
-          "mean": 2.97,
-          "n_league": 100,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.50849,
-          "under": 0.49151,
-          "mean": 9.88,
-          "n_league": 100,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.57616,
-          "under": 0.42384,
-          "mean": 3.0,
-          "n_league": 850,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.36262,
-            "draw": 0.24296,
-            "away": 0.39442
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.27762,
-          "under": 0.72238,
-          "mean": 20.45,
-          "n_league": 100,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
       "league": "Premier League",
       "date": "2026-11-22",
       "home": "Hull",
@@ -6209,6 +5879,336 @@
       }
     },
     {
+      "league": "Serie A",
+      "date": "2026-11-22",
+      "home": "Juventus",
+      "away": "Venezia",
+      "time": "12:30",
+      "time_ro": "13:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.24845,
+          "under": 0.75155,
+          "mean": 3.34,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.52623,
+          "under": 0.47377,
+          "mean": 10.05,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.48008,
+          "under": 0.51992,
+          "mean": 2.59,
+          "n_league": 850,
+          "n_home": 43,
+          "n_away": 24,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.50671,
+            "draw": 0.25153,
+            "away": 0.24176
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.3579,
+          "under": 0.6421,
+          "mean": 21.72,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-22",
+      "home": "Bologna",
+      "away": "Udinese",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.26022,
+          "under": 0.73978,
+          "mean": 3.4,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.47015,
+          "under": 0.52985,
+          "mean": 9.53,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.5416,
+          "under": 0.4584,
+          "mean": 2.85,
+          "n_league": 850,
+          "n_home": 5,
+          "n_away": 42,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.37995,
+            "draw": 0.25039,
+            "away": 0.36966
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.41334,
+          "under": 0.58666,
+          "mean": 22.55,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-22",
+      "home": "Sassuolo",
+      "away": "Genoa",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.28368,
+          "under": 0.71632,
+          "mean": 3.53,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.40373,
+          "under": 0.59627,
+          "mean": 8.93,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.57887,
+          "under": 0.42113,
+          "mean": 3.01,
+          "n_league": 850,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.38864,
+            "draw": 0.24251,
+            "away": 0.36885
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.40295,
+          "under": 0.59705,
+          "mean": 22.39,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-22",
+      "home": "Milan",
+      "away": "Frosinone",
+      "time": "18:00",
+      "time_ro": "19:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.23768,
+          "under": 0.76232,
+          "mean": 3.28,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.49173,
+          "under": 0.50827,
+          "mean": 9.73,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.62045,
+          "under": 0.37955,
+          "mean": 3.2,
+          "n_league": 850,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.44588,
+            "draw": 0.23168,
+            "away": 0.32244
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.37496,
+          "under": 0.62504,
+          "mean": 21.97,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-22",
+      "home": "Atalanta",
+      "away": "Internazionale",
+      "time": "20:45",
+      "time_ro": "21:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.18637,
+          "under": 0.81363,
+          "mean": 2.97,
+          "n_league": 100,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.50849,
+          "under": 0.49151,
+          "mean": 9.88,
+          "n_league": 100,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.57616,
+          "under": 0.42384,
+          "mean": 3.0,
+          "n_league": 850,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.36262,
+            "draw": 0.24296,
+            "away": 0.39442
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.27762,
+          "under": 0.72238,
+          "mean": 20.45,
+          "n_league": 100,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
       "league": "Bundesliga",
       "date": "2026-11-22",
       "home": "FC Augsburg",
@@ -6539,72 +6539,6 @@
       }
     },
     {
-      "league": "Serie A",
-      "date": "2026-11-23",
-      "home": "Monza",
-      "away": "Fiorentina",
-      "time": "20:45",
-      "time_ro": "21:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.26557,
-          "under": 0.73443,
-          "mean": 3.43,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.38547,
-          "under": 0.61453,
-          "mean": 8.77,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.63563,
-          "under": 0.36437,
-          "mean": 3.28,
-          "n_league": 850,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.41829,
-            "draw": 0.23048,
-            "away": 0.35124
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.37944,
-          "under": 0.62056,
-          "mean": 22.04,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
       "league": "Premier League",
       "date": "2026-11-23",
       "home": "Brentford",
@@ -6738,19 +6672,19 @@
     },
     {
       "league": "Serie A",
-      "date": "2026-11-27",
-      "home": "Venezia",
-      "away": "Bologna",
+      "date": "2026-11-23",
+      "home": "Monza",
+      "away": "Fiorentina",
       "time": "20:45",
       "time_ro": "21:45",
       "markets": {
         "yellow": {
           "line": 4.5,
-          "over": 0.21371,
-          "under": 0.78629,
-          "mean": 3.14,
+          "over": 0.26557,
+          "under": 0.73443,
+          "mean": 3.43,
           "n_league": 100,
-          "n_home": 5,
+          "n_home": 4,
           "n_away": 5,
           "small_sample": true,
           "status": "experimental",
@@ -6759,11 +6693,11 @@
         },
         "corners": {
           "line": 9.5,
-          "over": 0.42262,
-          "under": 0.57738,
-          "mean": 9.1,
+          "over": 0.38547,
+          "under": 0.61453,
+          "mean": 8.77,
           "n_league": 100,
-          "n_home": 5,
+          "n_home": 4,
           "n_away": 5,
           "small_sample": true,
           "status": "experimental",
@@ -6772,28 +6706,28 @@
         },
         "goals": {
           "line": 2.5,
-          "over": 0.48989,
-          "under": 0.51011,
-          "mean": 2.63,
+          "over": 0.63563,
+          "under": 0.36437,
+          "mean": 3.28,
           "n_league": 850,
-          "n_home": 23,
+          "n_home": 4,
           "n_away": 5,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
           "h2h": {
-            "home": 0.29971,
-            "draw": 0.25834,
-            "away": 0.44195
+            "home": 0.41829,
+            "draw": 0.23048,
+            "away": 0.35124
           }
         },
         "fouls": {
           "line": 23.5,
-          "over": 0.36886,
-          "under": 0.63114,
-          "mean": 21.88,
+          "over": 0.37944,
+          "under": 0.62056,
+          "mean": 22.04,
           "n_league": 100,
-          "n_home": 5,
+          "n_home": 4,
           "n_away": 5,
           "small_sample": true,
           "status": "experimental",
@@ -6861,6 +6795,72 @@
           "n_league": 90,
           "n_home": 4,
           "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-27",
+      "home": "Venezia",
+      "away": "Bologna",
+      "time": "20:45",
+      "time_ro": "21:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.21371,
+          "under": 0.78629,
+          "mean": 3.14,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.42262,
+          "under": 0.57738,
+          "mean": 9.1,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.48989,
+          "under": 0.51011,
+          "mean": 2.63,
+          "n_league": 850,
+          "n_home": 23,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.29971,
+            "draw": 0.25834,
+            "away": 0.44195
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.36886,
+          "under": 0.63114,
+          "mean": 21.88,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
@@ -6991,6 +6991,204 @@
           "under": 0.41502,
           "mean": 24.96,
           "n_league": 81,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-28",
+      "home": "Leeds",
+      "away": "Coventry",
+      "time": "16:00",
+      "time_ro": "17:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.34904,
+          "under": 0.65096,
+          "mean": 3.89,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.44594,
+          "under": 0.55406,
+          "mean": 9.25,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.48158,
+          "under": 0.51842,
+          "mean": 2.6,
+          "n_league": 850,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.48606,
+            "draw": 0.25462,
+            "away": 0.25932
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.45348,
+          "under": 0.54652,
+          "mean": 23.11,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-28",
+      "home": "Man Utd",
+      "away": "Brentford",
+      "time": "16:00",
+      "time_ro": "17:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.42232,
+          "under": 0.57768,
+          "mean": 4.26,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.46133,
+          "under": 0.53867,
+          "mean": 9.37,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.5524,
+          "under": 0.4476,
+          "mean": 2.89,
+          "n_league": 850,
+          "n_home": 42,
+          "n_away": 42,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.43314,
+            "draw": 0.24593,
+            "away": 0.32093
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.50393,
+          "under": 0.49607,
+          "mean": 23.75,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-28",
+      "home": "Ipswich",
+      "away": "Aston Villa",
+      "time": "18:30",
+      "time_ro": "19:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.3915,
+          "under": 0.6085,
+          "mean": 4.1,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.41504,
+          "under": 0.58496,
+          "mean": 9.02,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.50157,
+          "under": 0.49843,
+          "mean": 2.68,
+          "n_league": 850,
+          "n_home": 4,
+          "n_away": 42,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.42392,
+            "draw": 0.25731,
+            "away": 0.31877
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.41371,
+          "under": 0.58629,
+          "mean": 22.61,
+          "n_league": 90,
           "n_home": 4,
           "n_away": 4,
           "small_sample": true,
@@ -7190,204 +7388,6 @@
           "mean": 21.95,
           "n_league": 100,
           "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-28",
-      "home": "Leeds",
-      "away": "Coventry",
-      "time": "16:00",
-      "time_ro": "17:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.34904,
-          "under": 0.65096,
-          "mean": 3.89,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.44594,
-          "under": 0.55406,
-          "mean": 9.25,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.48158,
-          "under": 0.51842,
-          "mean": 2.6,
-          "n_league": 850,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.48606,
-            "draw": 0.25462,
-            "away": 0.25932
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.45348,
-          "under": 0.54652,
-          "mean": 23.11,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-28",
-      "home": "Man Utd",
-      "away": "Brentford",
-      "time": "16:00",
-      "time_ro": "17:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.42232,
-          "under": 0.57768,
-          "mean": 4.26,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.46133,
-          "under": 0.53867,
-          "mean": 9.37,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.5524,
-          "under": 0.4476,
-          "mean": 2.89,
-          "n_league": 850,
-          "n_home": 42,
-          "n_away": 42,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.43314,
-            "draw": 0.24593,
-            "away": 0.32093
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.50393,
-          "under": 0.49607,
-          "mean": 23.75,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-28",
-      "home": "Ipswich",
-      "away": "Aston Villa",
-      "time": "18:30",
-      "time_ro": "19:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.3915,
-          "under": 0.6085,
-          "mean": 4.1,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.41504,
-          "under": 0.58496,
-          "mean": 9.02,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.50157,
-          "under": 0.49843,
-          "mean": 2.68,
-          "n_league": 850,
-          "n_home": 4,
-          "n_away": 42,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.42392,
-            "draw": 0.25731,
-            "away": 0.31877
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.41371,
-          "under": 0.58629,
-          "mean": 22.61,
-          "n_league": 90,
-          "n_home": 4,
           "n_away": 4,
           "small_sample": true,
           "status": "experimental",
@@ -8049,270 +8049,6 @@
           "n_league": 81,
           "n_home": 3,
           "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-29",
-      "home": "Udinese",
-      "away": "Fiorentina",
-      "time": "12:30",
-      "time_ro": "13:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.25123,
-          "under": 0.74877,
-          "mean": 3.35,
-          "n_league": 100,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.43588,
-          "under": 0.56412,
-          "mean": 9.22,
-          "n_league": 100,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.55189,
-          "under": 0.44811,
-          "mean": 2.89,
-          "n_league": 850,
-          "n_home": 43,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.33381,
-            "draw": 0.24695,
-            "away": 0.41923
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.38042,
-          "under": 0.61958,
-          "mean": 22.06,
-          "n_league": 100,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-29",
-      "home": "Sassuolo",
-      "away": "Napoli",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.25546,
-          "under": 0.74454,
-          "mean": 3.38,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.47294,
-          "under": 0.52706,
-          "mean": 9.56,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.6029,
-          "under": 0.3971,
-          "mean": 3.12,
-          "n_league": 850,
-          "n_home": 5,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.35385,
-            "draw": 0.23719,
-            "away": 0.40896
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.31683,
-          "under": 0.68317,
-          "mean": 21.08,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-29",
-      "home": "Roma",
-      "away": "Monza",
-      "time": "18:00",
-      "time_ro": "19:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.25434,
-          "under": 0.74566,
-          "mean": 3.37,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.46552,
-          "under": 0.53448,
-          "mean": 9.49,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.61487,
-          "under": 0.38513,
-          "mean": 3.18,
-          "n_league": 850,
-          "n_home": 5,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.52492,
-            "draw": 0.22283,
-            "away": 0.25224
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.35209,
-          "under": 0.64791,
-          "mean": 21.63,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-29",
-      "home": "Como",
-      "away": "Juventus",
-      "time": "20:45",
-      "time_ro": "21:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.20706,
-          "under": 0.79294,
-          "mean": 3.1,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.52691,
-          "under": 0.47309,
-          "mean": 10.05,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.42616,
-          "under": 0.57384,
-          "mean": 2.38,
-          "n_league": 850,
-          "n_home": 4,
-          "n_away": 42,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.39742,
-            "draw": 0.27675,
-            "away": 0.32583
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.29648,
-          "under": 0.70352,
-          "mean": 20.76,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 5,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
@@ -9369,6 +9105,270 @@
           "n_league": 109,
           "n_home": 6,
           "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-29",
+      "home": "Udinese",
+      "away": "Fiorentina",
+      "time": "12:30",
+      "time_ro": "13:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.25123,
+          "under": 0.74877,
+          "mean": 3.35,
+          "n_league": 100,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.43588,
+          "under": 0.56412,
+          "mean": 9.22,
+          "n_league": 100,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.55189,
+          "under": 0.44811,
+          "mean": 2.89,
+          "n_league": 850,
+          "n_home": 43,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.33381,
+            "draw": 0.24695,
+            "away": 0.41923
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.38042,
+          "under": 0.61958,
+          "mean": 22.06,
+          "n_league": 100,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-29",
+      "home": "Sassuolo",
+      "away": "Napoli",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.25546,
+          "under": 0.74454,
+          "mean": 3.38,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.47294,
+          "under": 0.52706,
+          "mean": 9.56,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.6029,
+          "under": 0.3971,
+          "mean": 3.12,
+          "n_league": 850,
+          "n_home": 5,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.35385,
+            "draw": 0.23719,
+            "away": 0.40896
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.31683,
+          "under": 0.68317,
+          "mean": 21.08,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-29",
+      "home": "Roma",
+      "away": "Monza",
+      "time": "18:00",
+      "time_ro": "19:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.25434,
+          "under": 0.74566,
+          "mean": 3.37,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.46552,
+          "under": 0.53448,
+          "mean": 9.49,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.61487,
+          "under": 0.38513,
+          "mean": 3.18,
+          "n_league": 850,
+          "n_home": 5,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.52492,
+            "draw": 0.22283,
+            "away": 0.25224
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.35209,
+          "under": 0.64791,
+          "mean": 21.63,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-29",
+      "home": "Como",
+      "away": "Juventus",
+      "time": "20:45",
+      "time_ro": "21:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.20706,
+          "under": 0.79294,
+          "mean": 3.1,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.52691,
+          "under": 0.47309,
+          "mean": 10.05,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.42616,
+          "under": 0.57384,
+          "mean": 2.38,
+          "n_league": 850,
+          "n_home": 4,
+          "n_away": 42,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.39742,
+            "draw": 0.27675,
+            "away": 0.32583
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.29648,
+          "under": 0.70352,
+          "mean": 20.76,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 5,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
@@ -10763,204 +10763,6 @@
       }
     },
     {
-      "league": "Serie A",
-      "date": "2026-12-05",
-      "home": "Monza",
-      "away": "Como",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.21645,
-          "under": 0.78355,
-          "mean": 3.15,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.49512,
-          "under": 0.50488,
-          "mean": 9.76,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.59316,
-          "under": 0.40684,
-          "mean": 3.07,
-          "n_league": 850,
-          "n_home": 4,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.35616,
-            "draw": 0.23927,
-            "away": 0.40458
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.32966,
-          "under": 0.67034,
-          "mean": 21.28,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 6,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-12-05",
-      "home": "Frosinone",
-      "away": "Internazionale",
-      "time": "18:00",
-      "time_ro": "19:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.27633,
-          "under": 0.72367,
-          "mean": 3.49,
-          "n_league": 100,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.54532,
-          "under": 0.45468,
-          "mean": 10.23,
-          "n_league": 100,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.56528,
-          "under": 0.43472,
-          "mean": 2.95,
-          "n_league": 850,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.44375,
-            "draw": 0.2425,
-            "away": 0.31375
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.38887,
-          "under": 0.61113,
-          "mean": 22.18,
-          "n_league": 100,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-12-05",
-      "home": "Napoli",
-      "away": "Lecce",
-      "time": "20:45",
-      "time_ro": "21:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.18504,
-          "under": 0.81496,
-          "mean": 2.97,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.4771,
-          "under": 0.5229,
-          "mean": 9.59,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.55157,
-          "under": 0.44843,
-          "mean": 2.89,
-          "n_league": 850,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.44577,
-            "draw": 0.24506,
-            "away": 0.30917
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.34527,
-          "under": 0.65473,
-          "mean": 21.52,
-          "n_league": 100,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
       "league": "Premier League",
       "date": "2026-12-05",
       "home": "Chelsea",
@@ -11415,6 +11217,204 @@
           "n_league": 90,
           "n_home": 5,
           "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-12-05",
+      "home": "Monza",
+      "away": "Como",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.21645,
+          "under": 0.78355,
+          "mean": 3.15,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.49512,
+          "under": 0.50488,
+          "mean": 9.76,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.59316,
+          "under": 0.40684,
+          "mean": 3.07,
+          "n_league": 850,
+          "n_home": 4,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.35616,
+            "draw": 0.23927,
+            "away": 0.40458
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.32966,
+          "under": 0.67034,
+          "mean": 21.28,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-12-05",
+      "home": "Frosinone",
+      "away": "Internazionale",
+      "time": "18:00",
+      "time_ro": "19:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.27633,
+          "under": 0.72367,
+          "mean": 3.49,
+          "n_league": 100,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.54532,
+          "under": 0.45468,
+          "mean": 10.23,
+          "n_league": 100,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.56528,
+          "under": 0.43472,
+          "mean": 2.95,
+          "n_league": 850,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.44375,
+            "draw": 0.2425,
+            "away": 0.31375
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.38887,
+          "under": 0.61113,
+          "mean": 22.18,
+          "n_league": 100,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-12-05",
+      "home": "Napoli",
+      "away": "Lecce",
+      "time": "20:45",
+      "time_ro": "21:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.18504,
+          "under": 0.81496,
+          "mean": 2.97,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.4771,
+          "under": 0.5229,
+          "mean": 9.59,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.55157,
+          "under": 0.44843,
+          "mean": 2.89,
+          "n_league": 850,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.44577,
+            "draw": 0.24506,
+            "away": 0.30917
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.34527,
+          "under": 0.65473,
+          "mean": 21.52,
+          "n_league": 100,
+          "n_home": 4,
+          "n_away": 5,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
@@ -12141,270 +12141,6 @@
           "n_league": 81,
           "n_home": 4,
           "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-12-06",
-      "home": "Genoa",
-      "away": "Torino",
-      "time": "12:30",
-      "time_ro": "13:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.23681,
-          "under": 0.76319,
-          "mean": 3.27,
-          "n_league": 100,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.5121,
-          "under": 0.4879,
-          "mean": 9.92,
-          "n_league": 100,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.48695,
-          "under": 0.51305,
-          "mean": 2.62,
-          "n_league": 850,
-          "n_home": 6,
-          "n_away": 43,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.4109,
-            "draw": 0.26141,
-            "away": 0.32769
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.35712,
-          "under": 0.64288,
-          "mean": 21.7,
-          "n_league": 100,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-12-06",
-      "home": "Lazio",
-      "away": "Atalanta",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.24953,
-          "under": 0.75047,
-          "mean": 3.34,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.4468,
-          "under": 0.5532,
-          "mean": 9.32,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.55564,
-          "under": 0.44436,
-          "mean": 2.91,
-          "n_league": 850,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.46747,
-            "draw": 0.24201,
-            "away": 0.29052
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.33928,
-          "under": 0.66072,
-          "mean": 21.43,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-12-06",
-      "home": "Juventus",
-      "away": "Udinese",
-      "time": "18:00",
-      "time_ro": "19:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.211,
-          "under": 0.789,
-          "mean": 3.12,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.49848,
-          "under": 0.50152,
-          "mean": 9.79,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.5134,
-          "under": 0.4866,
-          "mean": 2.73,
-          "n_league": 850,
-          "n_home": 43,
-          "n_away": 42,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.45157,
-            "draw": 0.25233,
-            "away": 0.2961
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.34563,
-          "under": 0.65437,
-          "mean": 21.53,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-12-06",
-      "home": "Milan",
-      "away": "Parma",
-      "time": "20:45",
-      "time_ro": "21:45",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.15625,
-          "under": 0.84375,
-          "mean": 2.78,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.43224,
-          "under": 0.56776,
-          "mean": 9.19,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.57272,
-          "under": 0.42728,
-          "mean": 2.98,
-          "n_league": 850,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.46498,
-            "draw": 0.23897,
-            "away": 0.29605
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.33163,
-          "under": 0.66837,
-          "mean": 21.31,
-          "n_league": 100,
-          "n_home": 5,
-          "n_away": 5,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
@@ -13263,6 +12999,270 @@
           "n_league": 109,
           "n_home": 5,
           "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-12-06",
+      "home": "Genoa",
+      "away": "Torino",
+      "time": "12:30",
+      "time_ro": "13:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.23681,
+          "under": 0.76319,
+          "mean": 3.27,
+          "n_league": 100,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.5121,
+          "under": 0.4879,
+          "mean": 9.92,
+          "n_league": 100,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.48695,
+          "under": 0.51305,
+          "mean": 2.62,
+          "n_league": 850,
+          "n_home": 6,
+          "n_away": 43,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.4109,
+            "draw": 0.26141,
+            "away": 0.32769
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.35712,
+          "under": 0.64288,
+          "mean": 21.7,
+          "n_league": 100,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-12-06",
+      "home": "Lazio",
+      "away": "Atalanta",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.24953,
+          "under": 0.75047,
+          "mean": 3.34,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.4468,
+          "under": 0.5532,
+          "mean": 9.32,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.55564,
+          "under": 0.44436,
+          "mean": 2.91,
+          "n_league": 850,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.46747,
+            "draw": 0.24201,
+            "away": 0.29052
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.33928,
+          "under": 0.66072,
+          "mean": 21.43,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-12-06",
+      "home": "Juventus",
+      "away": "Udinese",
+      "time": "18:00",
+      "time_ro": "19:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.211,
+          "under": 0.789,
+          "mean": 3.12,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.49848,
+          "under": 0.50152,
+          "mean": 9.79,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.5134,
+          "under": 0.4866,
+          "mean": 2.73,
+          "n_league": 850,
+          "n_home": 43,
+          "n_away": 42,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.45157,
+            "draw": 0.25233,
+            "away": 0.2961
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.34563,
+          "under": 0.65437,
+          "mean": 21.53,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-12-06",
+      "home": "Milan",
+      "away": "Parma",
+      "time": "20:45",
+      "time_ro": "21:45",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.15625,
+          "under": 0.84375,
+          "mean": 2.78,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.43224,
+          "under": 0.56776,
+          "mean": 9.19,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.57272,
+          "under": 0.42728,
+          "mean": 2.98,
+          "n_league": 850,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.46498,
+            "draw": 0.23897,
+            "away": 0.29605
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.33163,
+          "under": 0.66837,
+          "mean": 21.31,
+          "n_league": 100,
+          "n_home": 5,
+          "n_away": 5,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
