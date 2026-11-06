@@ -5,6 +5,7 @@ import csv, io, json, math, re, sys, unicodedata, urllib.request
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 BASE=Path(__file__).resolve().parent
@@ -46,6 +47,20 @@ def tasks():
   yield league,"fixtures",f"{OM}/{slug}/fixtures_2627.csv"
   for season in ("2024-25","2025-26"):
    yield league,"historical",f"{OF}/{season}/{short}.json"
+def fixture_kickoff(m):
+ """Upstream fixture times are documented as fixed UTC+01:00."""
+ try:
+  value=str(m.get("time",""))
+  if not re.fullmatch(r"\d{2}:\d{2}",value): return None
+  naive=datetime.strptime(m["date"]+"T"+value,"%Y-%m-%dT%H:%M")
+  return naive.replace(tzinfo=timezone(timedelta(hours=1)))
+ except (ValueError,TypeError,KeyError): return None
+def future_match(m,at):
+ kickoff=fixture_kickoff(m)
+ return kickoff.astimezone(timezone.utc)>at if kickoff else m["date"]>at.date().isoformat()
+def local_kickoff(m):
+ kickoff=fixture_kickoff(m)
+ return kickoff.astimezone(ZoneInfo("Europe/Bucharest")).strftime("%H:%M") if kickoff else None
 def load_all():
  result,fixture,report={}, {}, []
  jobs=list(tasks())
@@ -87,10 +102,10 @@ def load_all():
     report.append({"league":league,"kind":kind,"ok":True,"rows":len(rows)})
    except Exception as exc:
     report.append({"league":league,"kind":kind,"ok":False,"error":str(exc)[:120]})
- now=datetime.now(timezone.utc).date().isoformat()
+ now=datetime.now(timezone.utc)
  seen=set(result)
- upcoming=[m for k,m in fixture.items() if m["date"]>=now and k not in seen]
- # Do not predict past events just because today's fixtures have already kicked off.
+ upcoming=[{**m,"time_ro":local_kickoff(m)} for k,m in fixture.items() if future_match(m,now) and k not in seen]
+ # Exclude matches already kicked off (including today's).
  return sorted(result.values(),key=lambda x:x["date"]),sorted(upcoming,key=lambda x:x["date"]),sorted(report,key=lambda x:(x["league"],x["kind"]))
 def wmean(rows,col,date):
  sw=0.; sy=0.
@@ -129,7 +144,8 @@ def pred(hist,match,market):
  return {"line":line,"over":round(p,5),"under":round(1-p,5),
   "mean":round(mu,2),"n_league":len(relevant),"n_home":len(home),
   "n_away":len(away),"small_sample":min(len(home),len(away))<8 or len(relevant)<100,
-  "status":"experimental"}
+  "status":"experimental",
+  "quality":"very_low" if min(len(home),len(away))<8 or len(relevant)<150 else "unverified"}
 def over_tail(mu,line,dispersion=1):
  k=max(.5,mu/(dispersion-1)) if dispersion>1.07 else float("inf")
  term=(k/(k+mu))**k if math.isfinite(k) else math.exp(-mu)
@@ -139,22 +155,47 @@ def over_tail(mu,line,dispersion=1):
   s+=term
  return max(0.,min(1.,1.-s))
 def validation(hist,market):
- h,a,line,minimum=MARKETS[market]; preds=[]
+ h,a,line,minimum=MARKETS[market]
+ preds=[]; per_league={}
  for lg in LEAGUES:
   rows=[r for r in hist if r["league"]==lg and r.get(h) is not None and r.get(a) is not None]
   rows.sort(key=lambda r:r["date"])
   start=max(minimum,int(len(rows)*.75))
+  for_league=[]
   for i in range(start,len(rows)):
    p=pred(rows[:i],rows[i],market)
    if p is None:continue
    y=int(rows[i][h]+rows[i][a]>line)
-   older=rows[max(0,i-50):i]
+   older=[r for r in rows[max(0,i-50):i] if r["date"]<rows[i]["date"]]
    baseline=(2.5+sum(int(v[h]+v[a]>line) for v in older))/(5+len(older))
-   preds.append((p["over"],baseline,y))
- if len(preds)<20:return {"n":len(preds),"status":"insufficient"}
- return {"n":len(preds),"status":"experimental",
-  "brier":round(sum((p-y)**2 for p,b,y in preds)/len(preds),5),
-  "baseline_brier":round(sum((b-y)**2 for p,b,y in preds)/len(preds),5)}
+   for_league.append((p["over"],baseline,y))
+  per_league[lg]=len(for_league)
+  preds.extend(for_league)
+ if len(preds)<20:return {"n":len(preds),"status":"insufficient","per_league":per_league}
+ def brier(p,y):return (p-y)**2
+ def logloss(p,y):
+  p=max(.00001,min(.99999,p))
+  return -(y*math.log(p)+(1-y)*math.log(1-p))
+ d=[brier(b,y)-brier(p,y) for p,b,y in preds]
+ improvement=sum(d)/len(d)
+ sd=(sum((x-improvement)**2 for x in d)/max(1,len(d)-1))**.5
+ err=1.96*sd/(len(d)**.5)
+ bins=[]
+ for lower in range(0,10,2):
+  bucket=[(p,y) for p,b,y in preds if lower/10<=p<min(1.,(lower+2)/10+1e-8)]
+  if bucket:
+   bins.append({"range":f"{lower*10}-{(lower+2)*10}%",
+    "n":len(bucket),"predicted":round(sum(p for p,y in bucket)/len(bucket),4),
+    "observed":round(sum(y for p,y in bucket)/len(bucket),4)})
+ ece=sum(x["n"]*abs(x["predicted"]-x["observed"]) for x in bins)/len(preds)
+ return {"n":len(preds),"status":"preliminary" if len(preds)<300 else "experimental",
+  "brier":round(sum(brier(p,y) for p,b,y in preds)/len(preds),5),
+  "baseline_brier":round(sum(brier(b,y) for p,b,y in preds)/len(preds),5),
+  "log_loss":round(sum(logloss(p,y) for p,b,y in preds)/len(preds),5),
+  "baseline_log_loss":round(sum(logloss(b,y) for p,b,y in preds)/len(preds),5),
+  "brier_improvement":round(improvement,5),
+  "improvement_approx_95_range":[round(improvement-err,5),round(improvement+err,5)],
+  "ece":round(ece,4),"bins":bins,"per_league":per_league}
 def prospective(hist,fixtures,run_at):
  path=OUT/"forecast_log.json"
  try:
@@ -164,9 +205,9 @@ def prospective(hist,fixtures,run_at):
  def logkey(x):
   return (x["league"],x["date"],norm(x["home"]),norm(x["away"]),x["market"])
  known={logkey(r) for r in log}
- today=datetime.now(timezone.utc).date().isoformat()
+ now=datetime.now(timezone.utc)
  for f in fixtures:
-  if f["date"]<=today:continue
+  if not future_match(f,now):continue
   for market,p in f["markets"].items():
    if p is None:continue
    entry={k:f[k] for k in ("league","date","home","away")}
@@ -200,9 +241,12 @@ def run():
  prospective_report,count=prospective(hist,enriched,stamp)
  audit={lg:{market:sum(r["league"]==lg and r.get(h) is not None and r.get(a) is not None for r in hist)
   for market,(h,a,_,_) in MARKETS.items()} for lg in LEAGUES}
+ freshness={lg:{market:max((r["date"] for r in hist if r["league"]==lg and r.get(h) is not None and r.get(a) is not None),default=None)
+  for market,(h,a,_,_) in MARKETS.items()} for lg in LEAGUES}
  payload={"version":"0.6","generated_at":stamp,"history_rows":len(hist),
   "fixture_rows":len(fixtures),"source_success":sum(r["ok"] for r in report),
   "source_total":len(report),"source_report":report,"data_audit":audit,
+  "last_stat_date":freshness,
   "backtest":{m:validation(hist,m) for m in MARKETS},
   "prospective":prospective_report,"prospective_predictions_recorded":count,
   "fixtures":enriched,"message":"EXPERIMENTAL model; no bookmaker odds feed and no validated value bets."}
@@ -214,6 +258,8 @@ def selftest():
  assert norm("Arsenal FC")=="arsenal"
  assert norm("Man Utd")=="manchesterunited"
  assert number("") is None
+ assert local_kickoff({"date":"2026-11-06","time":"21:00"})=="22:00"
+ assert not future_match({"date":"2026-11-05","time":"23:59"},datetime(2026,11,6,18,tzinfo=timezone.utc))
  assert pred([],{"league":"Ligue 1","date":"2026-11-10","home":"A","away":"B"},"goals") is None
  print("Self-tests passed.")
 if __name__=="__main__":
