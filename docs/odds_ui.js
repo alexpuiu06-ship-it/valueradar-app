@@ -27,9 +27,14 @@ panel.innerHTML=[
 '</div><div class="missing" id="manual-result">Alege meciul, selecția și cota.</div></section>'
 ].join('');
 host.insertAdjacentElement('afterend',panel);
-var source=null,watch=null;
+var review=document.createElement('section');
+review.className='panel';
+review.style.marginTop='16px';
+review.innerHTML='<h2>Evaluarea prețurilor și a avantajului estimat</h2><div id="market-review" class="meta">Se încarcă jurnalul cotelor…</div>';
+panel.appendChild(review);
+var source=null,watch=null,audit=null;
 async function loadJson(path){try{var r=await fetch(path+'?v='+Date.now(),{cache:'no-store'});return r.ok?await r.json():null;}catch(e){return null;}}
-async function reload(){var a=await Promise.all([loadJson('./odds_status.json'),loadJson('./odds_watchlist.json')]);source=a[0];watch=a[1];renderOdds();renderMatches();}
+async function reload(){var a=await Promise.all([loadJson('./odds_status.json'),loadJson('./odds_watchlist.json'),loadJson('./market_audit.json')]);source=a[0];watch=a[1];audit=a[2];renderOdds();renderMatches();renderAudit();}
 function renderOdds(){
  if(!source){el('odds-status').textContent='Nu există date despre scanner; nu se afișează prețuri fictive.';return;}
  var labels={needs_api_key:'Scanner instalat, lipsește cheia API.',connected:'Cote internaționale primite.',partial:'Date parțiale de la furnizor.',no_events:'Nu există evenimente în feed.',api_error:'Eroare de API.',budget_guard:'Limită de credit atinsă.',missing_fixtures:'Lipsesc meciurile de comparat.'};
@@ -47,6 +52,15 @@ function renderOdds(){
   ' @ '+esc(v.odds)+' · P(model) '+pct(v.model_probability)+' · EV orientativ '+pct(v.estimated_ev)+
   '</div><div class="meta">Nu este ofertă RO confirmată; diferență nevalidată.</div></div>';
  }).join('');
+}
+function renderAudit(){
+ var e=el('market-review');
+ if(!audit){e.textContent='Jurnalul de cote nu este încă disponibil.';return;}
+ e.innerHTML='Cote comparate în istoric: <b>'+esc(audit.observations||0)+'</b> · '+
+ 'Semnale înregistrate prospectiv: <b>'+esc(audit.initial_positive_ev_signals||0)+'</b> · '+
+ 'Semnale cu rezultat final: <b>'+esc(audit.signals_settled||0)+'</b>'+
+ '<div class="meta">Aceasta este o simulare pe hârtie. Nu măsoară pariuri executate la cotele din România. '+
+ 'Un ROI nu este relevant fără suficient istoric, verificarea cotelor și controlul incertitudinii.</div>';
 }
 function renderMatches(){
  var fixtures=matches();if(!fixtures.length)return;
