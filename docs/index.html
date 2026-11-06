@@ -19,7 +19,7 @@ button{background:#116f66;color:white;border:0;cursor:pointer}button:hover{backg
 footer{margin-top:22px;padding-bottom:30px;font-size:12px;color:#667b84}
 @media(max-width:650px){.summary{grid-template-columns:repeat(2,1fr)}}
 </style></head><body><div class="wrap"><header>
-<div><h1>◉ ValueRadar</h1><div class="sub">Analiză statistică autonomă • v0.8 • Cele cinci ligi mari</div></div>
+<div><h1>◉ ValueRadar</h1><div class="sub">Analiză statistică autonomă • v0.9 • Cele cinci ligi mari</div></div>
 <button id="refresh" type="button">Reîncarcă datele</button></header>
 <div class="notice"><b>Proiect experimental, nu sistem de pariuri validat.</b> Probabilitățile sunt estimări, nu certitudini. Nu avem acces la cotele actuale Superbet, Betano, Unibet, MrBit, NetBet și Casa Pariurilor; prin urmare <b>nu identificăm încă pariuri value reale</b>.</div>
 <div class="summary">
@@ -31,7 +31,7 @@ footer{margin-top:22px;padding-bottom:30px;font-size:12px;color:#667b84}
 <div class="panel" id="message">Aștept prima actualizare automată…</div>
 <div class="controls">
 <select id="league"><option value="all">Toate ligile</option><option>Premier League</option><option>La Liga</option><option>Serie A</option><option>Bundesliga</option><option>Ligue 1</option></select>
-<select id="market"><option value="yellow">Cartonașe galbene</option><option value="corners">Cornere</option><option value="goals">Goluri</option><option value="fouls">Faulturi</option></select>
+<select id="market"><option value="h2h">Rezultat final 1X2</option><option value="yellow">Cartonașe galbene</option><option value="corners">Cornere</option><option value="goals">Goluri</option><option value="fouls">Faulturi</option></select>
 </div>
 <div id="fixtures" class="grid"></div>
 <div class="panel" style="margin-top:18px" id="validation">Măsurarea predicțiilor va apărea după import.</div>
@@ -50,6 +50,41 @@ async function load(){
   document.getElementById('message').textContent='Nu există încă o analiză publicată. Verifică tabul Actions și prima execuție. Detalii: '+err.message;
  }
 }
+function fmtValue(x){return Number.isFinite(Number(x))?Number(x).toFixed(2):'—';}
+function explanationView(p,market){
+ if(!p||!p.explanation)return '';
+ var e=p.explanation;
+ var rows=[
+  ['Media ligii (gazde)',e.league_home_mean],
+  ['Media ligii (oaspeți)',e.league_away_mean],
+  ['Echipa gazdă: statistică proprie, brută',e.home_team_for_mean_raw],
+  ['Oaspeții: statistică încasată de la gazde, brută',e.away_opponent_concedes_to_home_raw],
+  ['Oaspeții: statistică proprie, brută',e.away_team_for_mean_raw],
+  ['Gazdele: statistică încasată de la oaspeți, brută',e.home_opponent_concedes_to_away_raw],
+  ['Estimare gazde după regularizare',e.predicted_home_mean],
+  ['Estimare oaspeți după regularizare',e.predicted_away_mean],
+  ['Total estimat',e.predicted_total_mean],
+  ['Total mediu al ligii',e.league_total_mean],
+  ['Diferență gazde vs liga',e.home_shift_vs_league],
+  ['Diferență oaspeți vs liga',e.away_shift_vs_league],
+  ['Dispersie folosită',e.dispersion]
+ ];
+ var html=rows.map(function(r){return '<tr><td>'+esc(r[0])+'</td><td style="text-align:right">'+fmtValue(r[1])+'</td></tr>';}).join('');
+ var modelInfo=market==='h2h'?'1X2 folosește două distribuții Poisson independente pentru golurile celor două echipe.':
+ 'Pentru total, modelul folosește '+esc(e.count_distribution==='negative_binomial'?'binomiala negativă':'distribuția Poisson')+'.';
+ return '<details style="margin-top:12px;border-top:1px solid #e2ebed;padding-top:10px">'+
+  '<summary style="cursor:pointer;font-weight:650;color:#116f66">Cum a calculat ValueRadar?</summary>'+
+  '<p class="meta">Model: '+esc(e.method_version)+' · Date strict anterioare datei '+esc(e.historical_cutoff_exclusive)+'.</p>'+
+  '<p class="meta">Meciurile mai vechi primesc pondere descrescătoare (înjumătățire la '+esc(e.half_life_days)+
+  ' zile). Când istoricul este mic, media echipei este apropiată de media ligii prin '+esc(e.prior_pseudogames)+
+  ' pseudo-meciuri. Valorile atacului și apărării adversarului sunt combinate prin media geometrică.</p>'+
+  '<div style="overflow:auto"><table style="width:100%;font-size:12px"><tbody>'+html+'</tbody></table></div>'+
+  '<p class="meta">'+modelInfo+' Eșantion echipă gazdă: '+esc(p.n_home)+' partide, echipă oaspete: '+esc(p.n_away)+
+  '. Valori efective recență: '+fmtValue(e.home_team_effective_matches)+' / '+fmtValue(e.away_team_effective_matches)+'.</p>'+
+  '<p class="meta"><b>Nu intră în acest calcul:</b> arbitru, formații confirmate, accidentări, context tactic sau un model calibrat pe cotele operatorilor din România.</p>'+
+  '<p class="meta">Acestea sunt etapele aritmetice reale ale modelului, nu explicații cauzale demonstrate. <a href="https://github.com/alexpuiu06-ship-it/valueradar-app/blob/main/ANALYSIS_METHODOLOGY.md">Documentația formulei</a></p>'+
+  '</details>';
+}
 function render(){
  if(!DATA)return;
  var now=Date.now(),updated=Date.parse(DATA.generated_at);
@@ -64,9 +99,12 @@ function render(){
  var mk=document.getElementById('market').value;
  var items=(DATA.fixtures||[]).filter(x=>lg==='all'||x.league===lg);
  document.getElementById('fixtures').innerHTML=items.length?items.map(function(f){
-  var p=(f.markets||{})[mk];
+  var p=(f.markets||{})[mk==="h2h"?"goals":mk];
   var quality=p&&p.quality==='very_low'?'<div class="missing"><b>Încredere foarte scăzută.</b> Procent orientativ, fără validare pentru pariere.</div>':'<div class="missing">Precizie neconfirmată față de piața de pariuri.</div>';
-  var middle=p?'<div class="metrics"><span class="pill">Peste '+esc(p.line)+': '+pct(p.over)+'</span><span class="pill alt">Sub: '+pct(p.under)+'</span><span class="pill alt">Medie: '+esc(p.mean)+'</span></div><p class="meta">Observații: ligă '+esc(p.n_league)+' · gazde '+esc(p.n_home)+' · oaspeți '+esc(p.n_away)+'</p>'+quality:
+  var measures=mk==="h2h"?
+   (p&&p.h2h?'<div class="metrics"><span class="pill">1: '+pct(p.h2h.home)+'</span><span class="pill alt">X: '+pct(p.h2h.draw)+'</span><span class="pill alt">2: '+pct(p.h2h.away)+'</span></div>':''):
+   (p?'<div class="metrics"><span class="pill">Peste '+esc(p.line)+': '+pct(p.over)+'</span><span class="pill alt">Sub: '+pct(p.under)+'</span><span class="pill alt">Medie: '+esc(p.mean)+'</span></div>':'');
+  var middle=p?measures+'<p class="meta">Observații: ligă '+esc(p.n_league)+' · gazde '+esc(p.n_home)+' · oaspeți '+esc(p.n_away)+'</p>'+quality+explanationView(p,mk):
   '<div class="missing">Date insuficiente pentru această piață.</div>';
   return '<article class="card"><div class="league">'+esc(f.league)+' · '+esc(f.date)+' · '+(f.time_ro?'ora României '+esc(f.time_ro):'ora necunoscută')+'</div><h2>'+esc(f.home)+' — '+esc(f.away)+'</h2>'+middle+'</article>'
  }).join(''):'<div class="panel">Nu sunt meciuri disponibile în această perioadă.</div>';
@@ -74,7 +112,8 @@ function render(){
  var pr=(DATA.prospective||{})[mk]||{};
  var enough=Number(bt.n||0)>=20;
  var lastData=DATA.last_stat_date||{};
- var dataDates=lg==='all'?Object.values(lastData).map(x=>x[mk]).filter(Boolean):[lastData[lg]&&lastData[lg][mk]].filter(Boolean);
+ var dateKey=mk==="h2h"?"goals":mk;
+ var dataDates=lg==='all'?Object.values(lastData).map(x=>x[dateKey]).filter(Boolean):[lastData[lg]&&lastData[lg][dateKey]].filter(Boolean);
  var freshest=dataDates.length?dataDates.sort().at(-1):'necunoscută';
  var range=bt.improvement_approx_95_range||[];
  var uncertain=range.length===2&&range[0]<=0&&range[1]>=0;
