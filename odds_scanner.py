@@ -465,7 +465,10 @@ def fetch_scan():
    errors.append({"league": league, "error": "Unexpected odds payload"})
    continue
   raw_events += len(results)
-  one, count, found_books = build_observations(results, fixtures, league, now, generated.isoformat(), latest.get("pipeline_version"))
+  # Receipt time, not scan start: a quote can update or a match can start
+  # while the request is in flight. Never backdate prospective evidence.
+  received_at = datetime.now(timezone.utc)
+  one, count, found_books = build_observations(results, fixtures, league, received_at, generated.isoformat(), latest.get("pipeline_version"))
   matched += count
   offers.extend(one)
   books.update(found_books)
@@ -486,7 +489,7 @@ def fetch_scan():
   combined = [r for r in combined if isinstance(r, dict) and r.get("observed_at", "") in keep]
  write_json("odds_observations.json", combined)
  consensus = cross_book_consensus(offers)
- write_json("odds_diagnostics.json", {"generated_at": now.isoformat(), **consensus})
+ write_json("odds_diagnostics.json", {"generated_at": datetime.now(timezone.utc).isoformat(), **consensus})
  state = "connected" if offers and not errors else "partial" if offers else "api_error" if errors else "no_valid_quotes" if raw_events else "no_events"
  close_watchlist(state)
  source_dates = [r["quote_timestamp"] for r in offers]
