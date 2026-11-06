@@ -142,10 +142,10 @@ def pred(hist,match,market,half_life_days=185,prior_weight=7,opponent_effect=Tru
  away=[r for r in relevant if norm(r["away"])==awayid]
  if min(len(home),len(away))<3: return None
  date=datetime.fromisoformat(match["date"]).date()
- baseh,_=wmean(relevant,homecol,date,HALF_LIFE_DAYS); basea,_=wmean(relevant,awaycol,date,HALF_LIFE_DAYS)
- if baseh<=0 or basea<=0: return None
  PRIOR_WEIGHT=prior_weight
  HALF_LIFE_DAYS=half_life_days
+ baseh,_=wmean(relevant,homecol,date,HALF_LIFE_DAYS); basea,_=wmean(relevant,awaycol,date,HALF_LIFE_DAYS)
+ if baseh<=0 or basea<=0: return None
  def shrunk(rows,col,avg):
   m,n=wmean(rows,col,date,HALF_LIFE_DAYS)
   return (m*n+PRIOR_WEIGHT*avg)/(n+PRIOR_WEIGHT)
