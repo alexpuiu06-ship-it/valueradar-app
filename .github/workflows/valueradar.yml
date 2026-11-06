@@ -19,7 +19,8 @@ permissions:
   id-token: write
 concurrency:
   group: valueradar-refresh
-  cancel-in-progress: false
+  # An older stuck Pages deployment must not block newer code.
+  cancel-in-progress: true
 jobs:
   analyze:
     runs-on: ubuntu-latest
