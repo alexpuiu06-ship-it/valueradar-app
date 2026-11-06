@@ -50,14 +50,33 @@ jobs:
         run: python performance.py
       - name: Pastreaza jurnalul si analizele
         run: |
+          set -euo pipefail
           git config user.name "valueradar-bot"
           git config user.email "valueradar-bot@users.noreply.github.com"
-          git add docs/*.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Update forecasts and odds audit [skip ci]"
-            git pull --rebase origin main
-            git push origin main
-          fi
+          tmp="$(mktemp -d)"
+          trap 'rm -rf "$tmp"' EXIT
+          cp docs/*.json "$tmp/"
+          # Discard only the old local git snapshot, NOT generated outputs.
+          # The repository may have been edited while today's API collection ran.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp "$tmp/"*.json docs/
+            git add docs/*.json
+            if git diff --cached --quiet; then
+              echo "No changed data files to commit"
+              break
+            fi
+            git commit -m "Refresh data and audit [skip ci]"
+            if git push origin main; then
+              echo "Data committed on attempt $attempt"
+              break
+            fi
+            if [ "$attempt" = "3" ]; then
+              echo "Data save conflict unresolved" >&2
+              exit 1
+            fi
+          done
       - name: Pregateste fisierele site-ului
         uses: actions/upload-pages-artifact@v3
         with:
