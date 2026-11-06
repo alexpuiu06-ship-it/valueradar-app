@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T20:26:37.728232+00:00",
+  "generated_at": "2026-11-06T20:45:41.708093+00:00",
   "status": "RESEARCH_ONLY_NOT_PROMOTED",
   "protocol": {
     "version": "global_date_expanding_origin_v2",
@@ -20,7 +20,7 @@
       "duplicate_copy": 0
     },
     "input_sha256": "748e17d279274cbd07e42d3a3a316fc971297323ca0ce95b7962a764c809f80d",
-    "as_of": "2026-11-06T20:26:37.728232+00:00",
+    "as_of": "2026-11-06T20:45:41.708093+00:00",
     "today_results_excluded": true,
     "model_pipeline_version": "validated_identity_v2",
     "split_rule": "global unique dates: first 55% training, next 15% selection, next 10% calibration, last 20% evaluation",
