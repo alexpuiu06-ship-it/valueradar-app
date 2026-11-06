@@ -48,6 +48,18 @@ def observations(stamp=NOW, verified_rules=False):
 
 
 class OddsIdentityTests(unittest.TestCase):
+    def test_observed_provider_city_and_santander_names_are_exact_odds_aliases(self):
+        pairs=(("Nottingham","Nott'm Forest"),("Bilbao","Athletic Club"),("Racing Santander","R. Racing Club"))
+        for short,full in pairs:
+            with self.subTest(short=short):
+                self.assertEqual(odds.canonical(short),odds.canonical(full))
+                for suffix in (" U21"," Women"," II"):
+                    self.assertNotEqual(odds.canonical(short+suffix),odds.canonical(full))
+        self.assertNotEqual(odds.canonical("Nottingham"),odds.canonical("Notts County"))
+        self.assertNotEqual(odds.canonical("Racing Santander"),odds.canonical("Racing Ferrol"))
+        # Unqualified Deportivo could also refer to another club; do not guess.
+        self.assertNotEqual(odds.canonical("Deportivo"),odds.canonical("RC Deportivo"))
+
     def test_exact_known_alias_and_kickoff(self):
         f = fixture()
         self.assertIs(odds.match_event(event(), [f], NOW), f)

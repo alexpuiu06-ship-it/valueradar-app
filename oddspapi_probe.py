@@ -144,8 +144,15 @@ def assess(payload,selected,fixtures,league,definition,at):
               "delivery_freshness_verified":False,"price_change_age_buckets":{},"rejection":None}
         result[name]=diag
         if not isinstance(book,dict):diag["rejection"]="absent_or_invalid_book";continue
+        markets=book.get("markets")
+        market=markets.get(market_id) if isinstance(markets,dict) else None
+        diag["structure"]={"book_active":book.get("bookmakerIsActive") if isinstance(book.get("bookmakerIsActive"),bool) else None,
+          "book_suspended":book.get("suspended") if isinstance(book.get("suspended"),bool) else None,
+          "markets_received":len(markets) if isinstance(markets,dict) else 0,
+          "active_markets_received":sum(m.get("marketActive") is True for m in markets.values() if isinstance(m,dict)) if isinstance(markets,dict) else 0,
+          "full_time_1x2_present":isinstance(market,dict),
+          "full_time_1x2_active":market.get("marketActive") if isinstance(market,dict) and isinstance(market.get("marketActive"),bool) else None}
         if book.get("bookmakerIsActive") is not True or book.get("suspended") is not False:diag["rejection"]="book_inactive_or_suspended";continue
-        market=book.get("markets",{}).get(market_id) if isinstance(book.get("markets"),dict) else None
         if not isinstance(market,dict) or market.get("marketActive") is not True:diag["rejection"]="missing_or_inactive_full_time_1x2";continue
         outcomes=market.get("outcomes");prices=[];ages=Counter()
         if not isinstance(outcomes,dict) or set(outcomes)!=set(sides.values()):diag["rejection"]="incomplete_or_extra_outcomes";continue
@@ -205,6 +212,7 @@ def run(authenticated=False,league="Premier League",output=REPORT):
             report["tournament_catalog_checks"]=catalog
             definition=market_definition(request("/markets",{"language":"en"}))
             report["full_time_1x2_catalog_verified"]=True
+            report["full_time_1x2_market_id"]=definition[0]
             for name in leagues:
                 row={"league":name,"status":"catalog_not_confirmed","received_at":None}
                 report["leagues"].append(row)
@@ -218,7 +226,9 @@ def run(authenticated=False,league="Premier League",output=REPORT):
                 payload=request("/odds",{"fixtureId":selected["fixtureId"],"bookmakers":",".join(BOOKS),"oddsFormat":"decimal","language":"en","verbosity":3})
                 received=datetime.now(timezone.utc);row["received_at"]=received.isoformat()
                 row["books"]=assess(payload,selected,latest["fixtures"],name,definition,received)
-                row["status"]="structural_markets_only_freshness_unverified"
+                complete=sum(d["complete_active_markets"] for d in row["books"].values())
+                row["status"]=("structural_markets_only_freshness_unverified" if complete==len(BOOKS) else
+                  "partial_structural_markets_freshness_unverified" if complete else "no_complete_active_markets")
             report["account_after"]=account_summary(request("/account",{}))
             complete=all(row.get("books") and all(d["complete_active_markets"] for d in row["books"].values()) for row in report["leagues"])
             report["status"]="diagnostic_only_freshness_unverified" if complete else "incomplete_quote_validation"

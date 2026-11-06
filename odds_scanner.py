@@ -50,6 +50,7 @@ ALIASES={
  # and exact kickoff; these aliases affect odds matching only.
  "coventrycity":"coventry","hullcity":"hull","betis":"realbetis",
  "paderborn07":"paderborn",
+ "nottingham":"nottinghamforest","bilbao":"athleticbilbao","racingsantander":"racingdesantander",
  "realbetisbalompie":"realbetis","realbetis":"realbetis",
  "athletic":"athleticbilbao","borussiamgladbach":"monchengladbach"
 }
