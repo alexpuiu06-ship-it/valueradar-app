@@ -52,3 +52,5 @@ jobs:
       - name: Publica dashboardul
         id: deployment
         uses: actions/deploy-pages@v4
+
+# Dashboard ValueRadar: deploy from docs/, not from Jekyll root.
