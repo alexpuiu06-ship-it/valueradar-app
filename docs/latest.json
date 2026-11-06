@@ -1,6 +1,6 @@
 {
   "version": "0.6",
-  "generated_at": "2026-11-06T17:31:42.892064+00:00",
+  "generated_at": "2026-11-06T17:32:31.728391+00:00",
   "history_rows": 3935,
   "fixture_rows": 1300,
   "source_success": 20,
@@ -401,72 +401,6 @@
   "prospective_predictions_recorded": 1000,
   "fixtures": [
     {
-      "league": "Premier League",
-      "date": "2026-11-06",
-      "home": "Everton",
-      "away": "Coventry",
-      "time": "21:00",
-      "time_ro": "22:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.35836,
-          "under": 0.64164,
-          "mean": 3.93,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.44118,
-          "under": 0.55882,
-          "mean": 9.22,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.49368,
-          "under": 0.50632,
-          "mean": 2.65,
-          "n_league": 850,
-          "n_home": 42,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.45352,
-            "draw": 0.25631,
-            "away": 0.29016
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.44257,
-          "under": 0.55743,
-          "mean": 22.97,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
       "league": "La Liga",
       "date": "2026-11-06",
       "home": "Sevilla FC",
@@ -525,6 +459,72 @@
           "n_league": 109,
           "n_home": 5,
           "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-06",
+      "home": "Everton",
+      "away": "Coventry",
+      "time": "21:00",
+      "time_ro": "22:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.35836,
+          "under": 0.64164,
+          "mean": 3.93,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.44118,
+          "under": 0.55882,
+          "mean": 9.22,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.49368,
+          "under": 0.50632,
+          "mean": 2.65,
+          "n_league": 850,
+          "n_home": 42,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.45352,
+            "draw": 0.25631,
+            "away": 0.29016
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.44257,
+          "under": 0.55743,
+          "mean": 22.97,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
@@ -723,270 +723,6 @@
           "n_league": 81,
           "n_home": 4,
           "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-07",
-      "home": "Leeds",
-      "away": "Spurs",
-      "time": "13:30",
-      "time_ro": "14:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.41991,
-          "under": 0.58009,
-          "mean": 4.25,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.46939,
-          "under": 0.53061,
-          "mean": 9.43,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.47347,
-          "under": 0.52653,
-          "mean": 2.57,
-          "n_league": 850,
-          "n_home": 4,
-          "n_away": 42,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.44167,
-            "draw": 0.26202,
-            "away": 0.29631
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.52732,
-          "under": 0.47268,
-          "mean": 24.05,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-07",
-      "home": "Arsenal",
-      "away": "Hull",
-      "time": "16:00",
-      "time_ro": "17:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.42455,
-          "under": 0.57545,
-          "mean": 4.27,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.53529,
-          "under": 0.46471,
-          "mean": 9.95,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.48461,
-          "under": 0.51539,
-          "mean": 2.61,
-          "n_league": 850,
-          "n_home": 42,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.52215,
-            "draw": 0.24772,
-            "away": 0.23012
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.46347,
-          "under": 0.53653,
-          "mean": 23.24,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-07",
-      "home": "Fulham",
-      "away": "Newcastle",
-      "time": "16:00",
-      "time_ro": "17:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.33984,
-          "under": 0.66016,
-          "mean": 3.84,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.56579,
-          "under": 0.43421,
-          "mean": 10.19,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.549,
-          "under": 0.451,
-          "mean": 2.88,
-          "n_league": 850,
-          "n_home": 42,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.4409,
-            "draw": 0.246,
-            "away": 0.31309
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.35438,
-          "under": 0.64562,
-          "mean": 21.85,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-07",
-      "home": "Nott'm Forest",
-      "away": "Man City",
-      "time": "18:30",
-      "time_ro": "19:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.37842,
-          "under": 0.62158,
-          "mean": 4.04,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.52662,
-          "under": 0.47338,
-          "mean": 9.88,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.43745,
-          "under": 0.56255,
-          "mean": 2.43,
-          "n_league": 850,
-          "n_home": 42,
-          "n_away": 42,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.32019,
-            "draw": 0.2734,
-            "away": 0.40641
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.59833,
-          "under": 0.40167,
-          "mean": 24.98,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
@@ -1251,6 +987,270 @@
           "n_league": 109,
           "n_home": 6,
           "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-07",
+      "home": "Leeds",
+      "away": "Spurs",
+      "time": "13:30",
+      "time_ro": "14:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.41991,
+          "under": 0.58009,
+          "mean": 4.25,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.46939,
+          "under": 0.53061,
+          "mean": 9.43,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.47347,
+          "under": 0.52653,
+          "mean": 2.57,
+          "n_league": 850,
+          "n_home": 4,
+          "n_away": 42,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.44167,
+            "draw": 0.26202,
+            "away": 0.29631
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.52732,
+          "under": 0.47268,
+          "mean": 24.05,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-07",
+      "home": "Arsenal",
+      "away": "Hull",
+      "time": "16:00",
+      "time_ro": "17:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.42455,
+          "under": 0.57545,
+          "mean": 4.27,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.53529,
+          "under": 0.46471,
+          "mean": 9.95,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.48461,
+          "under": 0.51539,
+          "mean": 2.61,
+          "n_league": 850,
+          "n_home": 42,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.52215,
+            "draw": 0.24772,
+            "away": 0.23012
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.46347,
+          "under": 0.53653,
+          "mean": 23.24,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-07",
+      "home": "Fulham",
+      "away": "Newcastle",
+      "time": "16:00",
+      "time_ro": "17:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.33984,
+          "under": 0.66016,
+          "mean": 3.84,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.56579,
+          "under": 0.43421,
+          "mean": 10.19,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.549,
+          "under": 0.451,
+          "mean": 2.88,
+          "n_league": 850,
+          "n_home": 42,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.4409,
+            "draw": 0.246,
+            "away": 0.31309
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.35438,
+          "under": 0.64562,
+          "mean": 21.85,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-07",
+      "home": "Nott'm Forest",
+      "away": "Man City",
+      "time": "18:30",
+      "time_ro": "19:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.37842,
+          "under": 0.62158,
+          "mean": 4.04,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.52662,
+          "under": 0.47338,
+          "mean": 9.88,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.43745,
+          "under": 0.56255,
+          "mean": 2.43,
+          "n_league": 850,
+          "n_home": 42,
+          "n_away": 42,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.32019,
+            "draw": 0.2734,
+            "away": 0.40641
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.59833,
+          "under": 0.40167,
+          "mean": 24.98,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
@@ -1985,336 +1985,6 @@
       }
     },
     {
-      "league": "Premier League",
-      "date": "2026-11-08",
-      "home": "Brighton",
-      "away": "Brentford",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.41794,
-          "under": 0.58206,
-          "mean": 4.24,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.4739,
-          "under": 0.5261,
-          "mean": 9.47,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.54044,
-          "under": 0.45956,
-          "mean": 2.84,
-          "n_league": 850,
-          "n_home": 4,
-          "n_away": 42,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.53297,
-            "draw": 0.23476,
-            "away": 0.23227
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.48371,
-          "under": 0.51629,
-          "mean": 23.49,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-08",
-      "home": "Crystal Palace",
-      "away": "Liverpool",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.44122,
-          "under": 0.55878,
-          "mean": 4.36,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.48457,
-          "under": 0.51543,
-          "mean": 9.55,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.55037,
-          "under": 0.44963,
-          "mean": 2.88,
-          "n_league": 850,
-          "n_home": 42,
-          "n_away": 42,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.35362,
-            "draw": 0.24819,
-            "away": 0.39819
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.44135,
-          "under": 0.55865,
-          "mean": 22.96,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-08",
-      "home": "Ipswich",
-      "away": "Bournemouth",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.38574,
-          "under": 0.61426,
-          "mean": 4.07,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.41145,
-          "under": 0.58855,
-          "mean": 8.99,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.55067,
-          "under": 0.44933,
-          "mean": 2.89,
-          "n_league": 850,
-          "n_home": 4,
-          "n_away": 42,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.41882,
-            "draw": 0.24723,
-            "away": 0.33395
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.48774,
-          "under": 0.51226,
-          "mean": 23.54,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-08",
-      "home": "Sunderland",
-      "away": "Chelsea",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.39805,
-          "under": 0.60195,
-          "mean": 4.14,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.51277,
-          "under": 0.48723,
-          "mean": 9.77,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.47513,
-          "under": 0.52487,
-          "mean": 2.57,
-          "n_league": 850,
-          "n_home": 23,
-          "n_away": 42,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.37774,
-            "draw": 0.26537,
-            "away": 0.3569
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.46819,
-          "under": 0.53181,
-          "mean": 23.29,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-08",
-      "home": "Man Utd",
-      "away": "Aston Villa",
-      "time": "17:30",
-      "time_ro": "18:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.43057,
-          "under": 0.56943,
-          "mean": 4.31,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.49378,
-          "under": 0.50622,
-          "mean": 9.62,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.54519,
-          "under": 0.45481,
-          "mean": 2.86,
-          "n_league": 850,
-          "n_home": 42,
-          "n_away": 42,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.4381,
-            "draw": 0.24701,
-            "away": 0.31489
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.48773,
-          "under": 0.51227,
-          "mean": 23.54,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
       "league": "La Liga",
       "date": "2026-11-08",
       "home": "Elche CF",
@@ -2637,6 +2307,336 @@
           "n_league": 109,
           "n_home": 5,
           "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-08",
+      "home": "Brighton",
+      "away": "Brentford",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.41794,
+          "under": 0.58206,
+          "mean": 4.24,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.4739,
+          "under": 0.5261,
+          "mean": 9.47,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.54044,
+          "under": 0.45956,
+          "mean": 2.84,
+          "n_league": 850,
+          "n_home": 4,
+          "n_away": 42,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.53297,
+            "draw": 0.23476,
+            "away": 0.23227
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.48371,
+          "under": 0.51629,
+          "mean": 23.49,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-08",
+      "home": "Crystal Palace",
+      "away": "Liverpool",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.44122,
+          "under": 0.55878,
+          "mean": 4.36,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.48457,
+          "under": 0.51543,
+          "mean": 9.55,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.55037,
+          "under": 0.44963,
+          "mean": 2.88,
+          "n_league": 850,
+          "n_home": 42,
+          "n_away": 42,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.35362,
+            "draw": 0.24819,
+            "away": 0.39819
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.44135,
+          "under": 0.55865,
+          "mean": 22.96,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-08",
+      "home": "Ipswich",
+      "away": "Bournemouth",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.38574,
+          "under": 0.61426,
+          "mean": 4.07,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.41145,
+          "under": 0.58855,
+          "mean": 8.99,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.55067,
+          "under": 0.44933,
+          "mean": 2.89,
+          "n_league": 850,
+          "n_home": 4,
+          "n_away": 42,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.41882,
+            "draw": 0.24723,
+            "away": 0.33395
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.48774,
+          "under": 0.51226,
+          "mean": 23.54,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-08",
+      "home": "Sunderland",
+      "away": "Chelsea",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.39805,
+          "under": 0.60195,
+          "mean": 4.14,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.51277,
+          "under": 0.48723,
+          "mean": 9.77,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.47513,
+          "under": 0.52487,
+          "mean": 2.57,
+          "n_league": 850,
+          "n_home": 23,
+          "n_away": 42,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.37774,
+            "draw": 0.26537,
+            "away": 0.3569
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.46819,
+          "under": 0.53181,
+          "mean": 23.29,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-08",
+      "home": "Man Utd",
+      "away": "Aston Villa",
+      "time": "17:30",
+      "time_ro": "18:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.43057,
+          "under": 0.56943,
+          "mean": 4.31,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.49378,
+          "under": 0.50622,
+          "mean": 9.62,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.54519,
+          "under": 0.45481,
+          "mean": 2.86,
+          "n_league": 850,
+          "n_home": 42,
+          "n_away": 42,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.4381,
+            "draw": 0.24701,
+            "away": 0.31489
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.48773,
+          "under": 0.51227,
+          "mean": 23.54,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
@@ -3767,6 +3767,270 @@
       }
     },
     {
+      "league": "La Liga",
+      "date": "2026-11-21",
+      "home": "Deportivo Alavés",
+      "away": "RC Deportivo",
+      "time": "14:00",
+      "time_ro": "15:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.43345,
+          "under": 0.56655,
+          "mean": 4.32,
+          "n_league": 109,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.48034,
+          "under": 0.51966,
+          "mean": 9.65,
+          "n_league": 109,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.52538,
+          "under": 0.47462,
+          "mean": 2.78,
+          "n_league": 859,
+          "n_home": 43,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.44889,
+            "draw": 0.2501,
+            "away": 0.30101
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.54747,
+          "under": 0.45253,
+          "mean": 24.45,
+          "n_league": 109,
+          "n_home": 6,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "La Liga",
+      "date": "2026-11-21",
+      "home": "Rayo Vallecano",
+      "away": "Valencia CF",
+      "time": "16:15",
+      "time_ro": "17:15",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.45448,
+          "under": 0.54552,
+          "mean": 4.43,
+          "n_league": 109,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.47727,
+          "under": 0.52273,
+          "mean": 9.62,
+          "n_league": 109,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.5266,
+          "under": 0.4734,
+          "mean": 2.78,
+          "n_league": 859,
+          "n_home": 5,
+          "n_away": 42,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.46426,
+            "draw": 0.24819,
+            "away": 0.28755
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.54105,
+          "under": 0.45895,
+          "mean": 24.35,
+          "n_league": 109,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "La Liga",
+      "date": "2026-11-21",
+      "home": "Sevilla FC",
+      "away": "Real Betis",
+      "time": "18:30",
+      "time_ro": "19:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.34206,
+          "under": 0.65794,
+          "mean": 3.85,
+          "n_league": 109,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.45734,
+          "under": 0.54266,
+          "mean": 9.43,
+          "n_league": 109,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.4942,
+          "under": 0.5058,
+          "mean": 2.65,
+          "n_league": 859,
+          "n_home": 43,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.42446,
+            "draw": 0.25889,
+            "away": 0.31664
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.47638,
+          "under": 0.52362,
+          "mean": 23.44,
+          "n_league": 109,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "La Liga",
+      "date": "2026-11-21",
+      "home": "Real Madrid",
+      "away": "Celta",
+      "time": "21:00",
+      "time_ro": "22:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.43769,
+          "under": 0.56231,
+          "mean": 4.34,
+          "n_league": 109,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.47035,
+          "under": 0.52965,
+          "mean": 9.55,
+          "n_league": 109,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.49672,
+          "under": 0.50328,
+          "mean": 2.66,
+          "n_league": 859,
+          "n_home": 42,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.57921,
+            "draw": 0.23252,
+            "away": 0.18827
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.54863,
+          "under": 0.45137,
+          "mean": 24.46,
+          "n_league": 109,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
       "league": "Premier League",
       "date": "2026-11-21",
       "home": "Man City",
@@ -4219,270 +4483,6 @@
           "under": 0.47477,
           "mean": 24.02,
           "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "La Liga",
-      "date": "2026-11-21",
-      "home": "Deportivo Alavés",
-      "away": "RC Deportivo",
-      "time": "14:00",
-      "time_ro": "15:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.43345,
-          "under": 0.56655,
-          "mean": 4.32,
-          "n_league": 109,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.48034,
-          "under": 0.51966,
-          "mean": 9.65,
-          "n_league": 109,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.52538,
-          "under": 0.47462,
-          "mean": 2.78,
-          "n_league": 859,
-          "n_home": 43,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.44889,
-            "draw": 0.2501,
-            "away": 0.30101
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.54747,
-          "under": 0.45253,
-          "mean": 24.45,
-          "n_league": 109,
-          "n_home": 6,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "La Liga",
-      "date": "2026-11-21",
-      "home": "Rayo Vallecano",
-      "away": "Valencia CF",
-      "time": "16:15",
-      "time_ro": "17:15",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.45448,
-          "under": 0.54552,
-          "mean": 4.43,
-          "n_league": 109,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.47727,
-          "under": 0.52273,
-          "mean": 9.62,
-          "n_league": 109,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.5266,
-          "under": 0.4734,
-          "mean": 2.78,
-          "n_league": 859,
-          "n_home": 5,
-          "n_away": 42,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.46426,
-            "draw": 0.24819,
-            "away": 0.28755
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.54105,
-          "under": 0.45895,
-          "mean": 24.35,
-          "n_league": 109,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "La Liga",
-      "date": "2026-11-21",
-      "home": "Sevilla FC",
-      "away": "Real Betis",
-      "time": "18:30",
-      "time_ro": "19:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.34206,
-          "under": 0.65794,
-          "mean": 3.85,
-          "n_league": 109,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.45734,
-          "under": 0.54266,
-          "mean": 9.43,
-          "n_league": 109,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.4942,
-          "under": 0.5058,
-          "mean": 2.65,
-          "n_league": 859,
-          "n_home": 43,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.42446,
-            "draw": 0.25889,
-            "away": 0.31664
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.47638,
-          "under": 0.52362,
-          "mean": 23.44,
-          "n_league": 109,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "La Liga",
-      "date": "2026-11-21",
-      "home": "Real Madrid",
-      "away": "Celta",
-      "time": "21:00",
-      "time_ro": "22:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.43769,
-          "under": 0.56231,
-          "mean": 4.34,
-          "n_league": 109,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.47035,
-          "under": 0.52965,
-          "mean": 9.55,
-          "n_league": 109,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.49672,
-          "under": 0.50328,
-          "mean": 2.66,
-          "n_league": 859,
-          "n_home": 42,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.57921,
-            "draw": 0.23252,
-            "away": 0.18827
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.54863,
-          "under": 0.45137,
-          "mean": 24.46,
-          "n_league": 109,
           "n_home": 5,
           "n_away": 5,
           "small_sample": true,
@@ -5483,138 +5483,6 @@
       }
     },
     {
-      "league": "Premier League",
-      "date": "2026-11-22",
-      "home": "Hull",
-      "away": "Brighton",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.26402,
-          "under": 0.73598,
-          "mean": 3.44,
-          "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.48614,
-          "under": 0.51386,
-          "mean": 9.56,
-          "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.52429,
-          "under": 0.47571,
-          "mean": 2.77,
-          "n_league": 850,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.38913,
-            "draw": 0.254,
-            "away": 0.35687
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.38354,
-          "under": 0.61646,
-          "mean": 22.23,
-          "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-22",
-      "home": "Liverpool",
-      "away": "Man Utd",
-      "time": "17:30",
-      "time_ro": "18:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.43246,
-          "under": 0.56754,
-          "mean": 4.32,
-          "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.50977,
-          "under": 0.49023,
-          "mean": 9.74,
-          "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.49357,
-          "under": 0.50643,
-          "mean": 2.65,
-          "n_league": 850,
-          "n_home": 43,
-          "n_away": 43,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.4355,
-            "draw": 0.25813,
-            "away": 0.30636
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.45295,
-          "under": 0.54705,
-          "mean": 23.1,
-          "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
       "league": "La Liga",
       "date": "2026-11-22",
       "home": "FC Barcelona",
@@ -5871,6 +5739,138 @@
           "n_league": 109,
           "n_home": 6,
           "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-22",
+      "home": "Hull",
+      "away": "Brighton",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.26402,
+          "under": 0.73598,
+          "mean": 3.44,
+          "n_league": 90,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.48614,
+          "under": 0.51386,
+          "mean": 9.56,
+          "n_league": 90,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.52429,
+          "under": 0.47571,
+          "mean": 2.77,
+          "n_league": 850,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.38913,
+            "draw": 0.254,
+            "away": 0.35687
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.38354,
+          "under": 0.61646,
+          "mean": 22.23,
+          "n_league": 90,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-22",
+      "home": "Liverpool",
+      "away": "Man Utd",
+      "time": "17:30",
+      "time_ro": "18:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.43246,
+          "under": 0.56754,
+          "mean": 4.32,
+          "n_league": 90,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.50977,
+          "under": 0.49023,
+          "mean": 9.74,
+          "n_league": 90,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.49357,
+          "under": 0.50643,
+          "mean": 2.65,
+          "n_league": 850,
+          "n_home": 43,
+          "n_away": 43,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.4355,
+            "draw": 0.25813,
+            "away": 0.30636
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.45295,
+          "under": 0.54705,
+          "mean": 23.1,
+          "n_league": 90,
+          "n_home": 5,
+          "n_away": 5,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
@@ -6539,72 +6539,6 @@
       }
     },
     {
-      "league": "Premier League",
-      "date": "2026-11-23",
-      "home": "Brentford",
-      "away": "Everton",
-      "time": "21:00",
-      "time_ro": "22:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.38195,
-          "under": 0.61805,
-          "mean": 4.06,
-          "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.58286,
-          "under": 0.41714,
-          "mean": 10.33,
-          "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.47551,
-          "under": 0.52449,
-          "mean": 2.58,
-          "n_league": 850,
-          "n_home": 43,
-          "n_away": 43,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.45881,
-            "draw": 0.25967,
-            "away": 0.28152
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.45859,
-          "under": 0.54141,
-          "mean": 23.17,
-          "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
       "league": "La Liga",
       "date": "2026-11-23",
       "home": "Levante UD",
@@ -6663,6 +6597,72 @@
           "n_league": 109,
           "n_home": 5,
           "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-23",
+      "home": "Brentford",
+      "away": "Everton",
+      "time": "21:00",
+      "time_ro": "22:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.38195,
+          "under": 0.61805,
+          "mean": 4.06,
+          "n_league": 90,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.58286,
+          "under": 0.41714,
+          "mean": 10.33,
+          "n_league": 90,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.47551,
+          "under": 0.52449,
+          "mean": 2.58,
+          "n_league": 850,
+          "n_home": 43,
+          "n_away": 43,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.45881,
+            "draw": 0.25967,
+            "away": 0.28152
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.45859,
+          "under": 0.54141,
+          "mean": 23.17,
+          "n_league": 90,
+          "n_home": 5,
+          "n_away": 5,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
@@ -8057,402 +8057,6 @@
       }
     },
     {
-      "league": "Premier League",
-      "date": "2026-11-29",
-      "home": "Everton",
-      "away": "Liverpool",
-      "time": "13:00",
-      "time_ro": "14:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.44049,
-          "under": 0.55951,
-          "mean": 4.36,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.43713,
-          "under": 0.56287,
-          "mean": 9.19,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.54085,
-          "under": 0.45915,
-          "mean": 2.84,
-          "n_league": 850,
-          "n_home": 42,
-          "n_away": 42,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.38407,
-            "draw": 0.25051,
-            "away": 0.36542
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.42852,
-          "under": 0.57148,
-          "mean": 22.79,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-29",
-      "home": "Brighton",
-      "away": "Newcastle",
-      "time": "15:05",
-      "time_ro": "16:05",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.39079,
-          "under": 0.60921,
-          "mean": 4.1,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.55336,
-          "under": 0.44664,
-          "mean": 10.09,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.56788,
-          "under": 0.43212,
-          "mean": 2.96,
-          "n_league": 850,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.54649,
-            "draw": 0.22709,
-            "away": 0.22642
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.44701,
-          "under": 0.55299,
-          "mean": 23.03,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-29",
-      "home": "Crystal Palace",
-      "away": "Hull",
-      "time": "15:05",
-      "time_ro": "16:05",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.42274,
-          "under": 0.57726,
-          "mean": 4.26,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.54123,
-          "under": 0.45877,
-          "mean": 9.99,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.50099,
-          "under": 0.49901,
-          "mean": 2.68,
-          "n_league": 850,
-          "n_home": 42,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.38956,
-            "draw": 0.25914,
-            "away": 0.3513
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.39302,
-          "under": 0.60698,
-          "mean": 22.35,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-29",
-      "home": "Fulham",
-      "away": "Bournemouth",
-      "time": "15:05",
-      "time_ro": "16:05",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.36385,
-          "under": 0.63615,
-          "mean": 3.96,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.51457,
-          "under": 0.48543,
-          "mean": 9.78,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.56192,
-          "under": 0.43808,
-          "mean": 2.93,
-          "n_league": 850,
-          "n_home": 42,
-          "n_away": 42,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.4244,
-            "draw": 0.2446,
-            "away": 0.331
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.45031,
-          "under": 0.54969,
-          "mean": 23.07,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-29",
-      "home": "Sunderland",
-      "away": "Spurs",
-      "time": "15:05",
-      "time_ro": "16:05",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.40226,
-          "under": 0.59774,
-          "mean": 4.16,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.48099,
-          "under": 0.51901,
-          "mean": 9.52,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.43547,
-          "under": 0.56453,
-          "mean": 2.42,
-          "n_league": 850,
-          "n_home": 23,
-          "n_away": 42,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.38311,
-            "draw": 0.27497,
-            "away": 0.34192
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.57157,
-          "under": 0.42843,
-          "mean": 24.62,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-29",
-      "home": "Arsenal",
-      "away": "Man City",
-      "time": "17:30",
-      "time_ro": "18:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.4272,
-          "under": 0.5728,
-          "mean": 4.29,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.51829,
-          "under": 0.48171,
-          "mean": 9.81,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.49327,
-          "under": 0.50673,
-          "mean": 2.65,
-          "n_league": 850,
-          "n_home": 42,
-          "n_away": 42,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.44438,
-            "draw": 0.25737,
-            "away": 0.29825
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.59204,
-          "under": 0.40796,
-          "mean": 24.9,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 4,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
       "league": "La Liga",
       "date": "2026-11-29",
       "home": "Celta",
@@ -9105,6 +8709,402 @@
           "n_league": 109,
           "n_home": 6,
           "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-29",
+      "home": "Everton",
+      "away": "Liverpool",
+      "time": "13:00",
+      "time_ro": "14:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.44049,
+          "under": 0.55951,
+          "mean": 4.36,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.43713,
+          "under": 0.56287,
+          "mean": 9.19,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.54085,
+          "under": 0.45915,
+          "mean": 2.84,
+          "n_league": 850,
+          "n_home": 42,
+          "n_away": 42,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.38407,
+            "draw": 0.25051,
+            "away": 0.36542
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.42852,
+          "under": 0.57148,
+          "mean": 22.79,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-29",
+      "home": "Brighton",
+      "away": "Newcastle",
+      "time": "15:05",
+      "time_ro": "16:05",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.39079,
+          "under": 0.60921,
+          "mean": 4.1,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.55336,
+          "under": 0.44664,
+          "mean": 10.09,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.56788,
+          "under": 0.43212,
+          "mean": 2.96,
+          "n_league": 850,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.54649,
+            "draw": 0.22709,
+            "away": 0.22642
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.44701,
+          "under": 0.55299,
+          "mean": 23.03,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-29",
+      "home": "Crystal Palace",
+      "away": "Hull",
+      "time": "15:05",
+      "time_ro": "16:05",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.42274,
+          "under": 0.57726,
+          "mean": 4.26,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.54123,
+          "under": 0.45877,
+          "mean": 9.99,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.50099,
+          "under": 0.49901,
+          "mean": 2.68,
+          "n_league": 850,
+          "n_home": 42,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.38956,
+            "draw": 0.25914,
+            "away": 0.3513
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.39302,
+          "under": 0.60698,
+          "mean": 22.35,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-29",
+      "home": "Fulham",
+      "away": "Bournemouth",
+      "time": "15:05",
+      "time_ro": "16:05",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.36385,
+          "under": 0.63615,
+          "mean": 3.96,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.51457,
+          "under": 0.48543,
+          "mean": 9.78,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.56192,
+          "under": 0.43808,
+          "mean": 2.93,
+          "n_league": 850,
+          "n_home": 42,
+          "n_away": 42,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.4244,
+            "draw": 0.2446,
+            "away": 0.331
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.45031,
+          "under": 0.54969,
+          "mean": 23.07,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-29",
+      "home": "Sunderland",
+      "away": "Spurs",
+      "time": "15:05",
+      "time_ro": "16:05",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.40226,
+          "under": 0.59774,
+          "mean": 4.16,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.48099,
+          "under": 0.51901,
+          "mean": 9.52,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.43547,
+          "under": 0.56453,
+          "mean": 2.42,
+          "n_league": 850,
+          "n_home": 23,
+          "n_away": 42,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.38311,
+            "draw": 0.27497,
+            "away": 0.34192
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.57157,
+          "under": 0.42843,
+          "mean": 24.62,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-29",
+      "home": "Arsenal",
+      "away": "Man City",
+      "time": "17:30",
+      "time_ro": "18:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.4272,
+          "under": 0.5728,
+          "mean": 4.29,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.51829,
+          "under": 0.48171,
+          "mean": 9.81,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.49327,
+          "under": 0.50673,
+          "mean": 2.65,
+          "n_league": 850,
+          "n_home": 42,
+          "n_away": 42,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.44438,
+            "draw": 0.25737,
+            "away": 0.29825
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.59204,
+          "under": 0.40796,
+          "mean": 24.9,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 4,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
@@ -12149,204 +12149,6 @@
       }
     },
     {
-      "league": "Premier League",
-      "date": "2026-12-06",
-      "home": "Everton",
-      "away": "Fulham",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.36007,
-          "under": 0.63993,
-          "mean": 3.94,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.47755,
-          "under": 0.52245,
-          "mean": 9.5,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.46313,
-          "under": 0.53687,
-          "mean": 2.53,
-          "n_league": 850,
-          "n_home": 42,
-          "n_away": 43,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.42573,
-            "draw": 0.26584,
-            "away": 0.30843
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.38351,
-          "under": 0.61649,
-          "mean": 22.22,
-          "n_league": 90,
-          "n_home": 4,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-12-06",
-      "home": "Newcastle",
-      "away": "Sunderland",
-      "time": "15:00",
-      "time_ro": "16:00",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.44841,
-          "under": 0.55159,
-          "mean": 4.4,
-          "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.44859,
-          "under": 0.55141,
-          "mean": 9.27,
-          "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.52666,
-          "under": 0.47334,
-          "mean": 2.78,
-          "n_league": 850,
-          "n_home": 5,
-          "n_away": 24,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": {
-            "home": 0.45148,
-            "draw": 0.24958,
-            "away": 0.29894
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.53305,
-          "under": 0.46695,
-          "mean": 24.12,
-          "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-12-06",
-      "home": "Spurs",
-      "away": "Arsenal",
-      "time": "17:30",
-      "time_ro": "18:30",
-      "markets": {
-        "yellow": {
-          "line": 4.5,
-          "over": 0.38029,
-          "under": 0.61971,
-          "mean": 4.05,
-          "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "corners": {
-          "line": 9.5,
-          "over": 0.57371,
-          "under": 0.42629,
-          "mean": 10.26,
-          "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        },
-        "goals": {
-          "line": 2.5,
-          "over": 0.48232,
-          "under": 0.51768,
-          "mean": 2.6,
-          "n_league": 850,
-          "n_home": 43,
-          "n_away": 43,
-          "small_sample": false,
-          "status": "experimental",
-          "quality": "unverified",
-          "h2h": {
-            "home": 0.32856,
-            "draw": 0.26258,
-            "away": 0.40886
-          }
-        },
-        "fouls": {
-          "line": 23.5,
-          "over": 0.49146,
-          "under": 0.50854,
-          "mean": 23.59,
-          "n_league": 90,
-          "n_home": 5,
-          "n_away": 5,
-          "small_sample": true,
-          "status": "experimental",
-          "quality": "very_low",
-          "h2h": null
-        }
-      }
-    },
-    {
       "league": "La Liga",
       "date": "2026-12-06",
       "home": "Athletic Club",
@@ -12999,6 +12801,204 @@
           "n_league": 109,
           "n_home": 5,
           "n_away": 6,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-12-06",
+      "home": "Everton",
+      "away": "Fulham",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.36007,
+          "under": 0.63993,
+          "mean": 3.94,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.47755,
+          "under": 0.52245,
+          "mean": 9.5,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.46313,
+          "under": 0.53687,
+          "mean": 2.53,
+          "n_league": 850,
+          "n_home": 42,
+          "n_away": 43,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.42573,
+            "draw": 0.26584,
+            "away": 0.30843
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.38351,
+          "under": 0.61649,
+          "mean": 22.22,
+          "n_league": 90,
+          "n_home": 4,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-12-06",
+      "home": "Newcastle",
+      "away": "Sunderland",
+      "time": "15:00",
+      "time_ro": "16:00",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.44841,
+          "under": 0.55159,
+          "mean": 4.4,
+          "n_league": 90,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.44859,
+          "under": 0.55141,
+          "mean": 9.27,
+          "n_league": 90,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.52666,
+          "under": 0.47334,
+          "mean": 2.78,
+          "n_league": 850,
+          "n_home": 5,
+          "n_away": 24,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": {
+            "home": 0.45148,
+            "draw": 0.24958,
+            "away": 0.29894
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.53305,
+          "under": 0.46695,
+          "mean": 24.12,
+          "n_league": 90,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-12-06",
+      "home": "Spurs",
+      "away": "Arsenal",
+      "time": "17:30",
+      "time_ro": "18:30",
+      "markets": {
+        "yellow": {
+          "line": 4.5,
+          "over": 0.38029,
+          "under": 0.61971,
+          "mean": 4.05,
+          "n_league": 90,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "corners": {
+          "line": 9.5,
+          "over": 0.57371,
+          "under": 0.42629,
+          "mean": 10.26,
+          "n_league": 90,
+          "n_home": 5,
+          "n_away": 5,
+          "small_sample": true,
+          "status": "experimental",
+          "quality": "very_low",
+          "h2h": null
+        },
+        "goals": {
+          "line": 2.5,
+          "over": 0.48232,
+          "under": 0.51768,
+          "mean": 2.6,
+          "n_league": 850,
+          "n_home": 43,
+          "n_away": 43,
+          "small_sample": false,
+          "status": "experimental",
+          "quality": "unverified",
+          "h2h": {
+            "home": 0.32856,
+            "draw": 0.26258,
+            "away": 0.40886
+          }
+        },
+        "fouls": {
+          "line": 23.5,
+          "over": 0.49146,
+          "under": 0.50854,
+          "mean": 23.59,
+          "n_league": 90,
+          "n_home": 5,
+          "n_away": 5,
           "small_sample": true,
           "status": "experimental",
           "quality": "very_low",
