@@ -37,8 +37,11 @@ def fetch(path,params,key):
     try:
         request=urllib.request.Request(url,headers={"User-Agent":"ValueRadar-provider-evaluation/1.0"})
         with urllib.request.build_opener(NoRedirect()).open(request,timeout=15) as response:
-            raw=response.read(5000001)
-            if len(raw)>5000000:return None,"response_size_limit"
+            # The unfiltered global market dictionary is considerably larger
+            # than a fixture response. Both have explicit memory/network bounds.
+            limit=32*1024*1024 if path=="/markets" else 5000000
+            raw=response.read(limit+1)
+            if len(raw)>limit:return None,"response_size_limit"
             return json.loads(raw.decode("utf-8")),None
     except urllib.error.HTTPError as exc:return None,f"http_{exc.code}"
     except Exception as exc:return None,type(exc).__name__
@@ -183,7 +186,9 @@ def run(authenticated=False,league="Premier League",output=REPORT):
             report["metered_requests_attempted"]+=1
         if last_request is not None:time.sleep(max(0,1.05-(time.monotonic()-last_request)))
         data,error=fetch(path,params,key);last_request=time.monotonic()
-        if error:raise ProbeError(error)
+        if error:
+            report["failed_endpoint"]=path
+            raise ProbeError(error)
         return data
     status=0 if not authenticated else 2
     if key:

@@ -191,5 +191,16 @@ class OddsPapiTests(unittest.TestCase):
         self.assertNotIn(SECRET,error)
         with self.assertRaises(ValueError):probe.NoRedirect().redirect_request(None,None,None,None,None,None)
 
+    def test_global_catalog_has_a_larger_explicit_bound_than_odds_payloads(self):
+        response=MagicMock();response.__enter__.return_value=response
+        response.read.return_value=json.dumps(catalog()).encode()+b" "*5000001
+        opener=MagicMock();opener.open.return_value=response
+        with patch.object(probe.urllib.request,"build_opener",return_value=opener):
+            data,error=probe.fetch("/markets",{},SECRET)
+            self.assertIsNone(error);self.assertEqual(data,catalog())
+            response.read.assert_called_with(32*1024*1024+1)
+            data,error=probe.fetch("/odds",{},SECRET)
+            self.assertIsNone(data);self.assertEqual(error,"response_size_limit")
+
 
 if __name__=="__main__":unittest.main()
