@@ -8,6 +8,7 @@ on:
       - "odds_scanner.py"
       - "performance.py"
       - "docs/index.html"
+      - "docs/odds_ui.js"
       - ".github/workflows/valueradar.yml"
   schedule:
     - cron: "23 */4 * * *"
