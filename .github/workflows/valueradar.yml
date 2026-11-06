@@ -6,6 +6,7 @@ on:
     paths:
       - "runner.py"
       - "odds_scanner.py"
+      - "performance.py"
       - "docs/index.html"
       - ".github/workflows/valueradar.yml"
   schedule:
@@ -31,9 +32,10 @@ jobs:
         run: python runner.py --self-test
       - name: Verifica sintaxa si testele de integrare
         run: |
-          python -m py_compile runner.py odds_scanner.py
+          python -m py_compile runner.py odds_scanner.py performance.py
           node --check docs/odds_ui.js
           python odds_scanner.py --self-test
+          python performance.py --self-test
       - name: Importa rezultate si calculeaza predictii
         run: python runner.py
       - name: Interogheaza cotele reale (doar 2 ori pe zi sau manual)
@@ -42,6 +44,8 @@ jobs:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           ODDS_REGION: uk
         run: python odds_scanner.py
+      - name: Auditeaza retrospectiv observatiile cotelor
+        run: python performance.py
       - name: Pastreaza jurnalul si analizele
         run: |
           git config user.name "valueradar-bot"
