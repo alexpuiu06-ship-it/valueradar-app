@@ -17,9 +17,10 @@ import performance
 import calibration
 import model_lab
 import elo_challenger
+import ro_feed_probe
 
 
-def execute(research=False,scan_odds=False,imported=None,run_at=None):
+def execute(research=False,scan_odds=False,imported=None,run_at=None,probe_ro=False):
     at=run_at or datetime.now(timezone.utc)
     data=imported if imported is not None else runner.load_all(at)
     code=runner.run(imported=data,run_at=at)
@@ -30,6 +31,8 @@ def execute(research=False,scan_odds=False,imported=None,run_at=None):
     else:
         odds_scanner.close_watchlist("no_scan_requested")
     performance.run()
+    if probe_ro:
+        ro_feed_probe.monitor(output=runner.OUT/"ro_feed_status.json")
     if research:
         hist,fixtures,_=data
         observations=json.loads((runner.OUT/"odds_observations.json").read_text())
@@ -44,17 +47,23 @@ def execute(research=False,scan_odds=False,imported=None,run_at=None):
     sources=sorted((r.get("source_url"),r.get("content_sha256")) for r in data[2] if r.get("source_url"))
     revision=subprocess.run(["git","rev-parse","HEAD"],cwd=ROOT,text=True,capture_output=True,check=True).stdout.strip()
     latest["pipeline_execution"]={"source_commit":revision,"research_refreshed":research,
-      "odds_scan_requested":scan_odds,"single_import":True,
+      "odds_scan_requested":scan_odds,"ro_probe_requested":probe_ro,"single_import":True,
       "sources_sha256":hashlib.sha256(json.dumps(sources,separators=(",",":")).encode()).hexdigest()}
     runner.write_json_atomic(runner.OUT/"latest.json",latest)
-    print("Coherent pipeline completed; research:",research,"odds scan:",scan_odds)
+    print("Coherent pipeline completed; research:",research,"odds scan:",scan_odds,"RO diagnostic:",probe_ro)
     return 0
 
 
-if __name__=="__main__":
+def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--research",action="store_true")
     parser.add_argument("--scan-odds",action="store_true")
-    args=parser.parse_args()
-    sys.exit(execute(args.research or os.getenv("REFRESH_RESEARCH")=="true",
-                     args.scan_odds or os.getenv("SCAN_ODDS")=="true"))
+    parser.add_argument("--probe-ro",action="store_true",help="Run the bounded RO aggregate diagnostic; never enables value selections")
+    args=parser.parse_args(argv)
+    return execute(args.research or os.getenv("REFRESH_RESEARCH")=="true",
+                   args.scan_odds or os.getenv("SCAN_ODDS")=="true",
+                   probe_ro=args.probe_ro or os.getenv("PROBE_RO")=="true")
+
+
+if __name__=="__main__":
+    sys.exit(main())

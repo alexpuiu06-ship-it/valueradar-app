@@ -7,6 +7,21 @@ oricărei integrări în `main`.
 
 ## Continuare operațională
 
+Etapa feed RO verifică acum cheia PropLine reală și toate cele cinci ligi.
+Aliasurile exacte Coventry City, Betis, Hull City și Paderborn corectează
+identificări observate fără a schimba modelul. Duplicate canonice, selecții
+alternative, nume invalide și modele fără distribuție validă nu mai intră în
+numărătorile probei. Cererea extinsă pentru diagnostic nu relaxează acceptarea
+locală de 120 secunde. Conflictul Auxerre–Paris rămâne respins.
+
+Monitorul zilnic și panoul nou afișează doar agregate istorice, cu erori,
+timestamp și acoperire parțială explicite. Nu se publică prețurile brute,
+nu se cumpără abonamente și nu se deblochează value sau ROI. Rezultatele
+reale, limitele licențelor și alternativele sunt în
+[PROVIDER_ALTERNATIVES.md](PROVIDER_ALTERNATIVES.md).
+Validare locală a acestei etape: **145 teste Python și 52 teste browser**,
+sintaxă Python/JS și actionlint. CI verifică separat și importul real.
+
 Primul PR a fost integrat în main și publicat cu succes prin rularea
 [42274190705](https://github.com/alexpuiu06-ship-it/valueradar-app/actions/runs/42274190705).
 Un al doilea lot elimină înlocuirea accidentală a rulărilor în așteptare:

@@ -9,6 +9,11 @@
       <p id="odds-list"><b>Nu există pariuri value verificate.</b></p>
       <p class="meta">Cotele internaționale nu confirmă oferte Superbet RO, Betano RO, Unibet RO, MrBit RO, NetBet RO ori Casa Pariurilor. Nicio selecție nu este recomandare de pariere.</p>
     </section>
+    <section class="panel" id="ro-feed-module"><h2>Probe de acoperire RO — Superbet și NetBet</h2>
+      <div id="ro-feed-status" class="meta" role="status">Se încarcă diagnosticul RO…</div>
+      <div id="ro-feed-coverage"></div>
+      <p class="meta">Fotografii de diagnostic, fără cote afișate. Numerele arată verificări tehnice la momentul probei, nu oferte actuale confirmate la operator. Absența din răspunsul filtrat nu dovedește lipsa acoperirii furnizorului. Nu există pariuri value verificate.</p>
+    </section>
     <section class="panel" id="manual-module"><h2>Compară manual o cotă de la o casă din România</h2>
       <p class="meta">Comparație aritmetică orientativă. Alegerea unui operator nu verifică oferta. Piața 1X2 trebuie să fie rezultatul la 90 de minute plus prelungirile arbitrului, fără reprize suplimentare.</p>
       <div class="controls">
@@ -23,17 +28,55 @@
     </section>
     <section class="panel"><h2>Evaluarea prețurilor și a avantajului estimat</h2><div id="market-review" class="meta">Se încarcă jurnalul cotelor…</div></section>`;
   el('message').insertAdjacentElement('afterend', panel);
-  let source = null, audit = null, checks = null, generation = 0;
+  let source = null, audit = null, checks = null, roCoverage = null, generation = 0;
   const manualGames = new Map();
   async function safeRead(path) { try { return await VR.fetchJSON(path); } catch (_) { return null; } }
   async function reload() {
     const current = ++generation;
-    source = audit = checks = null;
-    renderOdds(); renderAudit();
-    const results = await Promise.all([safeRead('./odds_status.json'), safeRead('./market_audit.json'), safeRead('./odds_diagnostics.json')]);
+    source = audit = checks = roCoverage = null;
+    renderOdds(); renderAudit(); renderRO();
+    const results = await Promise.all([safeRead('./odds_status.json'), safeRead('./market_audit.json'), safeRead('./odds_diagnostics.json'), safeRead('./ro_feed_status.json')]);
     if (current !== generation) return;
-    [source, audit, checks] = results;
-    renderOdds(); renderAudit();
+    [source, audit, checks, roCoverage] = results;
+    renderOdds(); renderAudit(); renderRO();
+  }
+  function renderRO() {
+    const status = el('ro-feed-status'), table = el('ro-feed-coverage'), report = roCoverage;
+    table.replaceChildren();
+    const stamp = report && VR.freshness(report.generated_at, 24);
+    const leagues = ['Premier League', 'La Liga', 'Serie A', 'Bundesliga', 'Ligue 1'];
+    const valid = report && report.schema_version === 1 && report.provider === 'PropLine' &&
+      report.verified_value === false && report.operator_prices_independently_verified === false && report.raw_odds_saved === false &&
+      report.max_quote_age_seconds === 120 && Array.isArray(report.leagues) && report.leagues.length === 5 &&
+      new Set(report.leagues.map(row => row && row.league)).size === 5 && report.leagues.every(row => row && leagues.includes(row.league)) &&
+      Number.isFinite(Date.parse(report.generated_at)) && Date.parse(report.generated_at) <= Date.now() + 5 * 60e3;
+    if (!valid) { status.textContent = 'Diagnosticul RO este indisponibil sau invalid. Nu se confirmă oferte ori semnale value.'; return; }
+    status.textContent = 'Ultima probă: ' + VR.dateTime(report.generated_at) + '. ' +
+      (stamp.fresh ? 'Fotografie istorică; verificare zilnică programată.' : 'Diagnosticul are peste 24 de ore sau un timestamp invalid; acoperirea actuală este necunoscută.') +
+      ' Pragul local de prospețime al fiecărei cote: 120 secunde la primirea răspunsului.';
+    const reasons = { stale_market_timestamp: 'timestamp de piață vechi', stale_selection_timestamp: 'selecție veche',
+      fixture_identity_or_kickoff_not_matched: 'identitate sau oră diferită', unsupported_selection_identity: 'selecție neidentificată',
+      already_started: 'meci început', model_history_not_current: 'istoric al modelului neactualizat' };
+    const states = { needs_api_key: 'cheie neconfigurată', provider_error: 'eroare de furnizor', stale_analysis: 'model vechi',
+      invalid_schema: 'format invalid', diagnostic_error: 'eroare de diagnostic' };
+    const count = value => Number.isSafeInteger(value) && value >= 0;
+    const rows = report.leagues.map(row => {
+      const quality = row.quality;
+      const cells = ['superbet_ro', 'netbet_ro'].map(book => {
+        const diag = quality && quality.book_diagnostics && quality.book_diagnostics[book];
+        if (!diag || !count(diag.received_blocks) || !count(diag.complete_recent_markets) || !count(diag.matched_current_model_markets) ||
+            diag.matched_current_model_markets > diag.complete_recent_markets || diag.complete_recent_markets > diag.received_blocks) return '<td>—</td>';
+        return '<td>' + esc(diag.complete_recent_markets) + ' / ' + esc(diag.matched_current_model_markets) +
+          (diag.received_blocks === 0 ? '<br><span class="meta">absent din răspuns</span>' : '') + '</td>';
+      }).join('');
+      const details = quality && quality.rejection_counts && typeof quality.rejection_counts === 'object' ?
+        Object.entries(quality.rejection_counts).filter(([, n]) => count(n) && n > 0).map(([reason, n]) => (reasons[reason] || reason) + ': ' + n).join('; ') : '';
+      return '<tr><td>' + esc(row.league) + '<br><span class="meta">' + esc(VR.dateTime(row.received_at)) +
+        ' · filtru livrare: ' + esc(row.requested_max_delivery_age_seconds) + ' s</span></td>' + cells +
+        '<td>' + esc(states[row.status] || details || 'Nicio respingere raportată în această probă.') + '</td></tr>';
+    }).join('');
+    table.innerHTML = '<p class="meta">Fiecare celulă: piețe 1X2 complete și recente / potrivite cu modelul. Aceste numere nu măsoară toată oferta operatorului.</p>' +
+      '<div class="table-scroll"><table><thead><tr><th>Ligă · probă</th><th>Superbet RO</th><th>NetBet RO</th><th>Respingere / eroare</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
   }
   function renderOdds() {
     el('odds-list').textContent = 'Nu există pariuri value verificate. Lipsesc cotele RO confirmate și validarea prospectivă a modelului.';

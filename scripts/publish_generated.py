@@ -16,11 +16,12 @@ OUTPUTS = {
         "docs/odds_status.json", "docs/odds_watchlist.json",
         "docs/odds_observations.json", "docs/odds_diagnostics.json",
         "docs/market_audit.json", "docs/model_lab.json", "docs/calibration_report.json",
-        "docs/elo_challenger.json",
+        "docs/elo_challenger.json", "docs/ro_feed_status.json",
     ),
     "lab": ("docs/model_lab.json", "docs/calibration_report.json"),
     "elo": ("docs/elo_challenger.json",),
 }
+OPTIONAL_OUTPUTS = frozenset({"docs/ro_feed_status.json"})
 
 
 def git(*args, capture=True):
@@ -36,7 +37,9 @@ def publish(kind, expected_sha, output_file=None):
     git("fetch", "origin", "main", capture=False)
     if git("rev-parse", "FETCH_HEAD").strip() != expected_sha:
         raise RuntimeError("main advanced during calculation; rerun on current main instead of overwriting data")
-    paths = OUTPUTS[kind]
+    # Older checkouts and isolated test fixtures may predate optional monitors.
+    # A tracked monitor deletion still fails the dirty-file guard below.
+    paths = tuple(path for path in OUTPUTS[kind] if path not in OPTIONAL_OUTPUTS or Path(path).is_file())
     missing = [path for path in paths if not Path(path).is_file()]
     if missing:
         raise RuntimeError("Missing generated outputs: " + ", ".join(missing))

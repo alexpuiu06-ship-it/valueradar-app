@@ -52,6 +52,95 @@ class OddsIdentityTests(unittest.TestCase):
         f = fixture()
         self.assertIs(odds.match_event(event(), [f], NOW), f)
 
+    def test_observed_coventry_city_alias_matches_exact_model_fixture(self):
+        # Identity and kickoff observed in repository program/provider metadata.
+        current_fixture = {"league": "Premier League", "date": "2026-11-21", "time": "16:00",
+                           "kickoff_utc": "2026-11-21T15:00:00+00:00",
+                           "home": "Coventry", "away": "Crystal Palace"}
+        current_event = {"sport_key": "soccer_epl", "home_team": "Coventry City",
+                         "away_team": "Crystal Palace", "commence_time": "2026-11-21T15:00:00Z"}
+        original = deepcopy(current_fixture)
+        self.assertIs(odds.match_event(current_event, [current_fixture], NOW), current_fixture)
+        self.assertEqual(current_fixture, original)
+        self.assertNotEqual(runner.norm("Coventry City"), runner.norm("Coventry"))
+
+    def test_observed_betis_alias_matches_exact_model_fixture(self):
+        current_fixture = {"league": "La Liga", "date": "2026-11-08", "time": "14:00",
+                           "kickoff_utc": "2026-11-08T13:00:00+00:00",
+                           "home": "Elche CF", "away": "Real Betis"}
+        current_event = {"sport_key": "soccer_spain_la_liga", "home_team": "Elche",
+                         "away_team": "Betis", "commence_time": "2026-11-08T13:00:00Z"}
+        original = deepcopy(current_fixture)
+        self.assertIs(odds.match_event(current_event, [current_fixture], NOW), current_fixture)
+        self.assertEqual(current_fixture, original)
+        self.assertNotEqual(runner.norm("Betis"), runner.norm("Real Betis"))
+
+    def test_observed_hull_city_selection_alias_matches_hull_event(self):
+        # The provider event names Hull; the observed away selection names Hull City.
+        current_fixture = fixture()
+        current_fixture["away"] = "Hull"
+        current_event = event()
+        current_event["away_team"] = "Hull"
+        current_event["bookmakers"][0]["markets"][0]["outcomes"][2]["name"] = "Hull City"
+        original = deepcopy(current_fixture)
+        self.assertIs(odds.match_event(current_event, [current_fixture], NOW), current_fixture)
+        self.assertIsNotNone(odds.parse_h2h(current_event["bookmakers"][0], current_event, NOW))
+        self.assertEqual(current_fixture, original)
+        self.assertNotEqual(runner.norm("Hull City"), runner.norm("Hull"))
+
+    def test_hull_city_alias_does_not_match_reserves_or_similar_clubs(self):
+        for other in ("Hull City U21", "Hull City Women", "Hull United", "Hull Cit"):
+            with self.subTest(other=other):
+                self.assertNotEqual(odds.canonical(other), odds.canonical("Hull"))
+                current = event()
+                current["away_team"] = "Hull"
+                current["bookmakers"][0]["markets"][0]["outcomes"][2]["name"] = other
+                self.assertIsNone(odds.parse_h2h(current["bookmakers"][0], current, NOW))
+
+    def test_observed_paderborn_selection_alias_matches_first_team_fixture(self):
+        current_fixture = fixture()
+        current_fixture.update(league="Bundesliga", home="SC Paderborn 07", away="Eintracht Frankfurt",
+                               time="15:30", kickoff_utc="2026-11-07T14:30:00+00:00")
+        current_event = event()
+        current_event.update(sport_key="soccer_germany_bundesliga", home_team="SC Paderborn 07",
+                             away_team="Eintracht Frankfurt", commence_time="2026-11-07T14:30:00Z")
+        outcomes = current_event["bookmakers"][0]["markets"][0]["outcomes"]
+        outcomes[0]["name"] = "Paderborn"
+        outcomes[2]["name"] = "Eintracht Frankfurt"
+        original = deepcopy(current_fixture)
+        self.assertIs(odds.match_event(current_event, [current_fixture], NOW), current_fixture)
+        self.assertIsNotNone(odds.parse_h2h(current_event["bookmakers"][0], current_event, NOW))
+        self.assertEqual(odds.canonical("Paderborn 07"), odds.canonical("SC Paderborn 07"))
+        self.assertEqual(current_fixture, original)
+        self.assertNotEqual(runner.norm("SC Paderborn 07"), runner.norm("Paderborn"))
+
+    def test_paderborn_alias_does_not_match_reserves_women_or_similar_clubs(self):
+        for other in ("SC Paderborn 07 II", "Paderborn U21", "SC Paderborn 07 Women", "Paderbornn"):
+            with self.subTest(other=other):
+                self.assertNotEqual(odds.canonical(other), odds.canonical("Paderborn"))
+                current = event()
+                current["home_team"] = "SC Paderborn 07"
+                current["bookmakers"][0]["markets"][0]["outcomes"][0]["name"] = other
+                self.assertIsNone(odds.parse_h2h(current["bookmakers"][0], current, NOW))
+
+    def test_observed_auxerre_paris_start_disagreement_remains_rejected(self):
+        current_fixture = {"league": "Ligue 1", "date": "2026-11-07", "time": "17:15",
+                           "kickoff_utc": "2026-11-07T16:15:00+00:00",
+                           "home": "AJ Auxerre", "away": "Paris FC"}
+        current_event = {"sport_key": "soccer_france_ligue_one", "home_team": "Auxerre",
+                         "away_team": "Paris", "commence_time": "2026-11-07T18:00:00Z"}
+        self.assertEqual(odds.canonical(current_event["home_team"]), odds.canonical(current_fixture["home"]))
+        self.assertEqual(odds.canonical(current_event["away_team"]), odds.canonical(current_fixture["away"]))
+        self.assertIsNone(odds.match_event(current_event, [current_fixture], NOW))
+
+    def test_observed_aliases_do_not_match_reserves_or_similar_clubs(self):
+        for other in ("Coventry United", "Coventry City U21", "Coventry City Women", "Coventry Cit"):
+            with self.subTest(other=other):
+                self.assertNotEqual(odds.canonical(other), odds.canonical("Coventry"))
+        for other in ("Betis Deportivo", "Real Betis U21", "Betiss", "Real Betis Women"):
+            with self.subTest(other=other):
+                self.assertNotEqual(odds.canonical(other), odds.canonical("Real Betis"))
+
     def test_similar_spelling_does_not_establish_identity(self):
         current = event()
         current["home_team"] = "Arsenall"

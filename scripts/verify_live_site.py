@@ -33,6 +33,7 @@ def verify(url, expected, attempts=6):
 def verify_assets(url,docs,attempts=6):
     """Verify the actual HTML and scripts, not only a newer JSON on an old page."""
     names=("index.html","common.js","dashboard.js","odds_ui.js","model_lab_ui.js","elo_ui.js")
+    if (docs/"ro_feed_status.json").is_file():names+=("ro_feed_status.json",)
     expected={name:hashlib.sha256((docs/name).read_bytes()).hexdigest() for name in names}
     for attempt in range(attempts):
         try:
@@ -42,7 +43,7 @@ def verify_assets(url,docs,attempts=6):
                 with urllib.request.urlopen(request,timeout=15) as response:
                     if hashlib.sha256(response.read(3000000)).hexdigest()!=digest:
                         raise ValueError("Stale public asset: "+name)
-            print("Public HTML and all five scripts match the saved source revision")
+            print("Public HTML, scripts and available RO report match the saved source revision")
             return
         except (OSError,ValueError):
             if attempt+1<attempts:time.sleep(5)

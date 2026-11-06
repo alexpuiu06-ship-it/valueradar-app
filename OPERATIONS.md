@@ -17,10 +17,24 @@ calibrarea și Elo, apoi se publică alături de modelul operațional. Workflow-
 separate de cercetare sunt doar pentru rulări manuale și artefacte descărcabile;
 nu scriu în repository și nu pot înlocui o publicare aflată în așteptare.
 
-O rulare manuală are două opțiuni, implicit dezactivate:
+O rulare manuală are trei opțiuni, implicit dezactivate:
 
 - refresh_research: recalculează și publică rapoartele, fără credite de cote.
 - scan_odds: solicită cote, în limita bugetului existent; nu cumpără credite.
+- probe_ro: verifică diagnosticul de acoperire Superbet RO/NetBet RO, cel mult
+  cinci cereri gratuite. Nu salvează prețuri și nu activează recomandări.
+
+Diagnosticul RO rulează separat zilnic la **06:37 UTC**, prin același writer
+de producție. PROPLINE_API_KEY este transmisă numai acestei probe sau unei
+rulări manuale care o cere explicit. Un răspuns parțial ori o eroare de furnizor
+produce un status vizibil, fără a bloca actualizarea modelului. Un raport cu
+prețuri brute, numărători inconsistente sau indicatori de value confirmați
+este refuzat înainte de publicare. Nu există retry automat care să consume
+cereri în buclă.
+
+Panoul RO arată fotografii istorice, cu momentul fiecărei probe și pragul de
+120 secunde aplicat atunci. Un diagnostic mai vechi de 24 ore este marcat
+explicit. Verificarea zilnică nu este un serviciu de cote în timp real.
 
 Publicarea verifică timestamp-ul datelor servite și amprenta HTML-ului și a
 celor cinci scripturi. Un răspuns HTTP 200 cu fișiere vechi nu este succes.

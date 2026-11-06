@@ -6,6 +6,7 @@ import json
 import math
 import os
 from pathlib import Path
+import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -113,6 +114,64 @@ def validate_safety(watch, audit):
             "Evidence gate must remain closed")
 
 
+def validate_ro_monitor(report):
+    """A coverage observation has no capability to publish prices or unlock value."""
+    top={"schema_version","provider","generated_at","max_quote_age_seconds","requested_books",
+         "operator_prices_independently_verified","verified_value","raw_odds_saved",
+         "authenticated_requests","source_run","leagues"}
+    require(isinstance(report,dict) and not set(report)-top,"Unexpected RO monitor fields")
+    require(report.get("schema_version")==1 and report.get("provider")=="PropLine","Unknown RO monitor schema")
+    require(all(report.get(k) is False for k in ("verified_value","operator_prices_independently_verified","raw_odds_saved")),
+            "RO monitor must remain aggregate and unverified")
+    require(report.get("max_quote_age_seconds")==120,"RO acceptance age cannot be relaxed")
+    books={"superbet_ro","netbet_ro"}
+    require(report.get("requested_books")==["superbet_ro","netbet_ro"],"Unknown RO bookmaker scope")
+    generated=stamp(report.get("generated_at"))
+    require(generated<=datetime.now(timezone.utc)+timedelta(minutes=5),"Future RO observation")
+    def count(value):return isinstance(value,int) and not isinstance(value,bool) and 0<=value<10**10
+    requests=report.get("authenticated_requests")
+    require(requests is None or count(requests) and requests<=5,"RO pass exceeds five requests")
+    def counts(values,keys=None):
+        require(isinstance(values,dict) and all(isinstance(k,str) and count(v) for k,v in values.items()),"Invalid RO counters")
+        if keys is not None:require(not set(values)-keys,"Unknown RO counter key")
+    rows=report.get("leagues")
+    require(isinstance(rows,list) and len(rows)==5,"RO monitor requires all five league statuses")
+    seen=set()
+    for row in rows:
+        allowed={"league","status","received_at","analysis_generated_at","requested_max_delivery_age_seconds","quality","quota","error"}
+        require(isinstance(row,dict) and not set(row)-allowed,"Unexpected RO league fields")
+        league=row.get("league")
+        require(league in runner.LEAGUES and league not in seen,"Duplicate or unknown RO league")
+        seen.add(league)
+        require(row.get("requested_max_delivery_age_seconds") in (120,3600),"Unknown RO delivery filter")
+        require(row.get("status") in {"diagnostic_only","incomplete_quote_validation","needs_api_key","provider_error",
+                "stale_analysis","invalid_schema","diagnostic_error"},"Unknown RO diagnostic state")
+        for field in ("received_at","analysis_generated_at"):
+            if row.get(field) is not None:require(stamp(row[field])<=generated+timedelta(minutes=5),"Future RO source timestamp")
+        if "error" in row:require(isinstance(row["error"],str) and re.fullmatch(r"[A-Za-z_][A-Za-z_0-9]{0,79}",row["error"]),"Unsafe RO error text")
+        counts(row.get("quota",{}),{"x-daily-limit","x-daily-used","x-daily-remaining"})
+        quality=row.get("quality")
+        if quality is None:continue
+        quality_fields={"events_received","books_received","complete_recent_markets","matched_current_model_markets",
+                        "book_diagnostics","rejection_counts","book_status_scope"}
+        require(isinstance(quality,dict) and set(quality)==quality_fields,"RO report contains unsupported data")
+        require(count(quality["events_received"]),"Invalid RO event count")
+        for field in ("books_received","complete_recent_markets","matched_current_model_markets"):counts(quality[field],books)
+        counts(quality["rejection_counts"])
+        require(isinstance(quality["book_status_scope"],str),"Missing RO scope explanation")
+        diagnostics=quality["book_diagnostics"]
+        require(isinstance(diagnostics,dict) and set(diagnostics)==books,"Missing RO bookmaker diagnostics")
+        for book,diag in diagnostics.items():
+            require(isinstance(diag,dict) and set(diag)=={"status","received_blocks","complete_recent_markets","matched_current_model_markets","rejection_counts"},"Unexpected RO book fields")
+            require(diag["status"] in {"absent","received_but_rejected","complete_markets_without_model_match","partially_matched","matched_current_model"},"Unknown RO book state")
+            for field in ("received_blocks","complete_recent_markets","matched_current_model_markets"):require(count(diag[field]),"Invalid RO book count")
+            require(diag["received_blocks"]==quality["books_received"].get(book,0) and
+                    diag["complete_recent_markets"]==quality["complete_recent_markets"].get(book,0) and
+                    diag["matched_current_model_markets"]==quality["matched_current_model_markets"].get(book,0),"Inconsistent RO counters")
+            require(diag["matched_current_model_markets"]<=diag["complete_recent_markets"]<=diag["received_blocks"],"Impossible RO counts")
+            counts(diag["rejection_counts"])
+
+
 def read(path):
     def bad_constant(value):
         raise ValueError("Non-finite JSON number: " + value)
@@ -129,6 +188,7 @@ def main():
     counts = validate_latest(data, datetime.now(timezone.utc))
     validate_log(read(args.docs / "forecast_log.json"), original)
     validate_safety(read(args.docs / "odds_watchlist.json"), read(args.docs / "market_audit.json"))
+    if (args.docs/"ro_feed_status.json").exists():validate_ro_monitor(read(args.docs/"ro_feed_status.json"))
     for path in args.docs.glob("*.json"):
         read(path)
     if os.environ.get("GITHUB_OUTPUT"):
