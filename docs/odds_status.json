@@ -1,5 +1,6 @@
 {
-  "status": "needs_api_key",
+  "status": "connected",
+  "checked_at": "2026-11-06T17:36:50.266265+00:00",
   "provider": "The Odds API v4",
   "region": "uk",
   "market": "h2h",
@@ -12,5 +13,36 @@
     "NetBet RO",
     "Casa Pariurilor"
   ],
-  "message": "Scanner implementat. Necesită ODDS_API_KEY în GitHub Actions Secrets. Până atunci nu există cote automate."
+  "note": "Only international data is monitored until exact Romanian bookmaker feeds are verified.",
+  "api_events": 96,
+  "matched_games": 62,
+  "books_responding": [
+    "betfair_ex_uk",
+    "betfair_sb_uk",
+    "betfred_uk",
+    "betway",
+    "boylesports",
+    "casumo",
+    "coral",
+    "grosvenor",
+    "ladbrokes_uk",
+    "leovegas",
+    "livescorebet",
+    "matchbook",
+    "paddypower",
+    "skybet",
+    "smarkets",
+    "sport888",
+    "unibet_uk",
+    "virginbet",
+    "williamhill"
+  ],
+  "evaluated_prices": 2394,
+  "watchlist_count": 60,
+  "new_observations": 2394,
+  "total_historical_observations": 2200,
+  "spent_this_month": 5,
+  "provider_remaining": 495,
+  "errors": [],
+  "message": "Real provider data; matched prices are NOT confirmed Romanian bookmaker quotes."
 }

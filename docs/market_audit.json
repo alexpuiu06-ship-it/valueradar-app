@@ -1,8 +1,8 @@
 {
   "status": "paper_only_not_validated",
-  "observations": 0,
-  "distinct_events": 0,
-  "initial_positive_ev_signals": 0,
+  "observations": 2200,
+  "distinct_events": 59,
+  "initial_positive_ev_signals": 27,
   "signals_settled": 0,
   "hypothetical_roi": null,
   "approx_95_roi_interval": null,
