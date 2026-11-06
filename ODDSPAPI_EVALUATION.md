@@ -77,6 +77,30 @@ cheia sa. Rapoartele agregate sunt păstrate ca artefacte pentru verificare.
 
 ## Următorul pas
 
+### Diagnostic separat pentru scoruri finale
+
+Opțiunea manuală `OddsPapi scores` verifică cel mult cinci meciuri cu
+predicții 1X2 arhivate înainte de start, din versiunea curentă a pipeline-ului.
+Nu scrie rezultate în aplicație și nu decontează predicții. Folosește cel
+mult 12 cereri contorizate și două verificări necontorizate ale contului;
+refuză orice plan care nu confirmă limita gratuită de 250 și păstrează zece
+cereri în rezervă. Nu are programare automată sau retry.
+
+Potrivirea cere aceeași ligă, echipe în aceeași ordine și kickoff la cel mult
+60 secunde. Starea trebuie să fie explicit `Finished` sau `Ended`, împreună
+cu un cod terminal; documentația celor două endpoint-uri diferă asupra
+codurilor numerice, deci un număr singur nu este dovadă. Identitatea și starea
+sunt reverificate după citirea scorului. Dublurile sunt respinse integral.
+
+Ghidul oficial de fotbal definește `scores.periods.fulltime` ca scorul la 90
+minute. `result` poate include prelungiri și nu este substituit. Cheile
+numerice din exemplul vechi al endpoint-ului nu au semnificație documentată
+suficient și sunt respinse. Un meci recent, un scor invalid ori fără dovadă
+de final rămâne incomplet. Rapoartele conțin cel mult cinci observații despre
+meciurile arhivate, nu feedul brut, cote sau informații de cont. Validarea
+parțială nu primește status de validare completă. Nu confirmă reguli de
+decontare ale operatorilor sau profit.
+
 PropLine rămâne monitorizat gratuit, cu acoperire parțială declarată. Nici
 PropLine, nici eșantionul OddsPapi nu justifică un feed RO complet sau un semnal
 value. Înaintea unei alternative plătite sunt necesare o probă pe piețele și
@@ -93,3 +117,6 @@ casele exacte, prețul total cu taxe și dreptul de afișare/păstrare a datelor
 - [Cote și semnificația câmpurilor](https://oddspapi.io/en/docs/get-odds)
 - [Tarife](https://oddspapi.io/en/pricing)
 - [Termeni](https://oddspapi.io/en/legal/terms)
+- [Scoruri](https://oddspapi.io/en/docs/get-scores)
+- [Identitate și stare individuală](https://oddspapi.io/en/docs/get-fixture)
+- [Ghid oficial fotbal: fulltime și result](https://oddspapi.io/blog/football-data-api-betting-predictions/)

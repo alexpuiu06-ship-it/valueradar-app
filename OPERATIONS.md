@@ -52,6 +52,14 @@ una, plus verificările necontorizate ale contului. Nu rulează automat și nu
 este integrată în scannerul de producție. Cheia este transmisă numai pasului
 furnizorului selectat, iar rapoartele nu conțin cote sau identificatori de cont.
 
+Opțiunea `OddsPapi scores` din același workflow verifică separat scoruri la
+90 de minute pentru cel mult cinci meciuri arhivate care așteaptă rezultate.
+Plafonul este tot 12 cereri contorizate, numai din planul gratuit de 250,
+cu rezervă de zece. Nu se execută automat și nu introduce rezultate în
+producție. Un raport poate conține până la cinci observații despre aceste
+meciuri; stările, identitățile și semnificația perioadei trebuie demonstrate.
+Lipsurile sau ambiguitățile păstrează validarea incompletă.
+
 Publicarea verifică timestamp-ul datelor servite și amprenta HTML-ului și a
 celor cinci scripturi. Un răspuns HTTP 200 cu fișiere vechi nu este succes.
 Dacă main se schimbă în timpul calculului, salvarea este refuzată; o nouă
