@@ -19,7 +19,7 @@ button{background:#116f66;color:white;border:0;cursor:pointer}button:hover{backg
 footer{margin-top:22px;padding-bottom:30px;font-size:12px;color:#667b84}
 @media(max-width:650px){.summary{grid-template-columns:repeat(2,1fr)}}
 </style></head><body><div class="wrap"><header>
-<div><h1>◉ ValueRadar</h1><div class="sub">Analiză statistică autonomă • v0.6 • Cele cinci ligi mari</div></div>
+<div><h1>◉ ValueRadar</h1><div class="sub">Analiză statistică autonomă • v0.7 • Cele cinci ligi mari</div></div>
 <button id="refresh" type="button">Reîncarcă datele</button></header>
 <div class="notice"><b>Proiect experimental, nu sistem de pariuri validat.</b> Probabilitățile sunt estimări, nu certitudini. Nu avem acces la cotele actuale Superbet, Betano, Unibet, MrBit, NetBet și Casa Pariurilor; prin urmare <b>nu identificăm încă pariuri value reale</b>.</div>
 <div class="summary">
@@ -39,7 +39,7 @@ footer{margin-top:22px;padding-bottom:30px;font-size:12px;color:#667b84}
 </div><script>
 var DATA=null;
 function esc(v){return String(v==null?'':v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')}
-function pct(x){return Number.isFinite(Number(x))?(100*Number(x)).toFixed(1)+'%':'—'}
+function pct(x){return x!==null&&x!==undefined&&Number.isFinite(Number(x))?'≈'+Math.round(100*Number(x))+'%':'—'}
 async function load(){
  document.getElementById('message').textContent='Se verifică actualizarea…';
  try{
@@ -65,15 +65,27 @@ function render(){
  var items=(DATA.fixtures||[]).filter(x=>lg==='all'||x.league===lg);
  document.getElementById('fixtures').innerHTML=items.length?items.map(function(f){
   var p=(f.markets||{})[mk];
-  var middle=p?'<div class="metrics"><span class="pill">Peste '+esc(p.line)+': '+pct(p.over)+'</span><span class="pill alt">Sub: '+pct(p.under)+'</span><span class="pill alt">Medie: '+esc(p.mean)+'</span></div><p class="meta">Observații: ligă '+esc(p.n_league)+' · gazde '+esc(p.n_home)+' · oaspeți '+esc(p.n_away)+(p.small_sample?' · eșantion redus':'')+'</p>':
+  var quality=p&&p.quality==='very_low'?'<div class="missing"><b>Încredere foarte scăzută.</b> Procent orientativ, fără validare pentru pariere.</div>':'<div class="missing">Precizie neconfirmată față de piața de pariuri.</div>';
+  var middle=p?'<div class="metrics"><span class="pill">Peste '+esc(p.line)+': '+pct(p.over)+'</span><span class="pill alt">Sub: '+pct(p.under)+'</span><span class="pill alt">Medie: '+esc(p.mean)+'</span></div><p class="meta">Observații: ligă '+esc(p.n_league)+' · gazde '+esc(p.n_home)+' · oaspeți '+esc(p.n_away)+'</p>'+quality:
   '<div class="missing">Date insuficiente pentru această piață.</div>';
-  return '<article class="card"><div class="league">'+esc(f.league)+' · '+esc(f.date)+' · ora indicativă '+esc(f.time||'nepublicată')+'</div><h2>'+esc(f.home)+' — '+esc(f.away)+'</h2>'+middle+'</article>'
+  return '<article class="card"><div class="league">'+esc(f.league)+' · '+esc(f.date)+' · '+(f.time_ro?'ora României '+esc(f.time_ro):'ora necunoscută')+'</div><h2>'+esc(f.home)+' — '+esc(f.away)+'</h2>'+middle+'</article>'
  }).join(''):'<div class="panel">Nu sunt meciuri disponibile în această perioadă.</div>';
  var bt=(DATA.backtest||{})[mk]||{};
  var pr=(DATA.prospective||{})[mk]||{};
- var note=bt.status==='experimental'?'Test cronologic: '+esc(bt.n)+' predicții; Brier model '+esc(bt.brier)+' față de reper '+esc(bt.baseline_brier)+'.':
- 'Nu există încă suficiente rezultate pentru o evaluare statistică.';
- document.getElementById('validation').innerHTML='<h2>Validare statistică</h2><p>'+note+'</p><div class="meta">Prospectiv: '+esc(pr.n||0)+' rezultate decontate; Brier: '+esc(pr.brier??'—')+'. Scor mai mic = mai bun. Acest test nu demonstrează profit.</div>';
+ var enough=Number(bt.n||0)>=20;
+ var lastData=DATA.last_stat_date||{};
+ var dataDates=lg==='all'?Object.values(lastData).map(x=>x[mk]).filter(Boolean):[lastData[lg]&&lastData[lg][mk]].filter(Boolean);
+ var freshest=dataDates.length?dataDates.sort().at(-1):'necunoscută';
+ var range=bt.improvement_approx_95_range||[];
+ var uncertain=range.length===2&&range[0]<=0&&range[1]>=0;
+ var note=enough? 'Test cronologic: '+esc(bt.n)+' predicții; Brier model '+esc(bt.brier)+' vs. reper '+esc(bt.baseline_brier)+'; log-loss '+esc(bt.log_loss)+'. '+
+ (uncertain?'Diferența față de reper nu este concludentă în intervalul aproximativ analizat.':'Diferența observată necesită confirmare prospectivă.') :
+ 'Nu există suficiente rezultate pentru evaluare.';
+ var bins=(bt.bins||[]).map(x=>'<tr><td>'+esc(x.range)+'</td><td>'+esc(x.n)+'</td><td>'+pct(x.predicted)+'</td><td>'+pct(x.observed)+'</td></tr>').join('');
+ document.getElementById('validation').innerHTML='<h2>Calibrare și validare</h2><p>'+note+'</p>'+
+ '<p class="meta">Ultima partidă cu statistici pentru piața selectată: '+esc(freshest)+'. Testul istoric este exploratoriu, nu demonstrează o cotă value.</p>'+
+ (bins?'<div style="overflow:auto"><table style="width:100%;text-align:left;border-collapse:collapse"><thead><tr><th>Probabilitate estimată</th><th>Meciuri</th><th>Medie estimată</th><th>Frecvență observată</th></tr></thead><tbody>'+bins+'</tbody></table></div>':'')+
+ '<p class="meta">Predicții prospective decontate: '+esc(pr.n||0)+'; Brier '+esc(pr.brier??'—')+'. Scor mai mic = mai bun. Nu există comparație cu cote reale de bookmaker.</p>';
 }
 document.getElementById('refresh').addEventListener('click',load);
 document.getElementById('league').addEventListener('change',render);
