@@ -307,6 +307,30 @@ class ScanGuardsTests(unittest.TestCase):
         rows = json.loads((self.out / "odds_observations.json").read_text())
         self.assertTrue(all(row["model_generated_at"] == NOW.isoformat() for row in rows))
 
+    def test_quote_observation_uses_receipt_time_after_request_latency(self):
+        response_at=NOW+timedelta(seconds=10)
+        current=event()
+        current["bookmakers"][0]["last_update"]=(NOW+timedelta(seconds=5)).isoformat()
+        def response(*args):
+            self.clock.now.return_value=response_at
+            return [current],{"x-requests-last":"1","x-requests-remaining":"494"},None
+        with patch.object(odds,"get_json",side_effect=response):
+            odds.fetch_scan()
+        status=self.assert_closed()
+        self.assertEqual(status["evaluated_prices"],3)
+        observations=json.loads((self.out/"odds_observations.json").read_text())
+        self.assertTrue(all(row["observed_at"]==response_at.isoformat() for row in observations))
+        self.assertTrue(all(odds.dt(row["quote_timestamp"])<=odds.dt(row["observed_at"]) for row in observations))
+
+    def test_match_started_during_request_is_not_recorded_as_pre_match(self):
+        def response(*args):
+            self.clock.now.return_value=NOW+timedelta(days=2)
+            return [event()],{"x-requests-last":"1","x-requests-remaining":"494"},None
+        with patch.object(odds,"get_json",side_effect=response):
+            odds.fetch_scan()
+        self.assertEqual(self.assert_closed()["evaluated_prices"],0)
+        self.assertEqual(json.loads((self.out/"odds_observations.json").read_text()),[])
+
 
 class EvidenceTests(unittest.TestCase):
     def test_forged_flags_never_enable_profit(self):
