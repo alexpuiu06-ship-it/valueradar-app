@@ -44,6 +44,15 @@ function renderOdds(){
  '. Prețuri comparate: '+(source.evaluated_prices||0)+
  '. Credite folosite: '+(source.spent_this_month==null?'—':source.spent_this_month)+
  '. Verificat: '+(source.checked_at?new Date(source.checked_at).toLocaleString('ro-RO'):'—')+'.';
+ if(source.status==='needs_api_key'){
+  var help=document.createElement('a');
+  help.href='https://github.com/alexpuiu06-ship-it/valueradar-app/blob/main/ACTIVARE_FARA_PROGRAMARE.md';
+  help.target='_blank';
+  help.rel='noopener noreferrer';
+  help.textContent=' Instrucțiuni de activare, fără programare.';
+  el('odds-status').appendChild(help);
+ }
+ 
  var items=watch&&Array.isArray(watch.items)?watch.items:[];
  if(!source.checked_at||Date.now()-Date.parse(source.checked_at)>4*3600*1000){el('odds-list').textContent='Nu sunt cote suficient de recente pentru o comparație actuală.';return;}
  if(!items.length){el('odds-list').textContent='Nicio discrepanță de preț recentă în lista de monitorizare.';return;}
