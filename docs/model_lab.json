@@ -1,0 +1,314 @@
+{
+  "generated_at": "2026-11-06T17:49:41.854963+00:00",
+  "status": "research_only_no_model_promoted",
+  "model_selection": "choose by validation log-loss only; final holdout remains untouched",
+  "variants": {
+    "current_v1": {
+      "half_life_days": 185,
+      "prior_weight": 7,
+      "opponent_effect": true
+    },
+    "recent_90d": {
+      "half_life_days": 90,
+      "prior_weight": 7,
+      "opponent_effect": true
+    },
+    "regularized_15": {
+      "half_life_days": 185,
+      "prior_weight": 15,
+      "opponent_effect": true
+    },
+    "team_only": {
+      "half_life_days": 185,
+      "prior_weight": 7,
+      "opponent_effect": false
+    }
+  },
+  "markets": {
+    "h2h": {
+      "historical_examples": {
+        "Premier League": 850,
+        "La Liga": 859,
+        "Serie A": 850,
+        "Bundesliga": 684,
+        "Ligue 1": 692
+      },
+      "selected_on_validation": "team_only",
+      "validation": {
+        "current_v1": {
+          "n": 906,
+          "brier": 0.20625,
+          "log_loss": 1.03198
+        },
+        "recent_90d": {
+          "n": 906,
+          "brier": 0.20796,
+          "log_loss": 1.03903
+        },
+        "regularized_15": {
+          "n": 906,
+          "brier": 0.20857,
+          "log_loss": 1.04149
+        },
+        "team_only": {
+          "n": 906,
+          "brier": 0.2046,
+          "log_loss": 1.02503
+        }
+      },
+      "holdout": {
+        "current_v1": {
+          "n": 685,
+          "brier": 0.207,
+          "log_loss": 1.03439
+        },
+        "recent_90d": {
+          "n": 685,
+          "brier": 0.2092,
+          "log_loss": 1.04327
+        },
+        "regularized_15": {
+          "n": 685,
+          "brier": 0.20944,
+          "log_loss": 1.04455
+        },
+        "team_only": {
+          "n": 685,
+          "brier": 0.20528,
+          "log_loss": 1.02656
+        }
+      },
+      "holdout_logloss_gain_vs_current": 0.00783,
+      "approval": "NOT_APPROVED_no_significance_or_prospective_validation",
+      "note": "Selection used validation only, and results are not betting ROI. Missing markets may have very small samples."
+    },
+    "yellow": {
+      "historical_examples": {
+        "Premier League": 90,
+        "La Liga": 109,
+        "Serie A": 100,
+        "Bundesliga": 72,
+        "Ligue 1": 81
+      },
+      "selected_on_validation": "regularized_15",
+      "validation": {
+        "current_v1": {
+          "n": 53,
+          "brier": 0.24735,
+          "log_loss": 0.69208
+        },
+        "recent_90d": {
+          "n": 53,
+          "brier": 0.24682,
+          "log_loss": 0.69027
+        },
+        "regularized_15": {
+          "n": 53,
+          "brier": 0.24281,
+          "log_loss": 0.68031
+        },
+        "team_only": {
+          "n": 53,
+          "brier": 0.24573,
+          "log_loss": 0.69053
+        }
+      },
+      "holdout": {
+        "current_v1": {
+          "n": 98,
+          "brier": 0.22393,
+          "log_loss": 0.63991
+        },
+        "recent_90d": {
+          "n": 98,
+          "brier": 0.22433,
+          "log_loss": 0.64078
+        },
+        "regularized_15": {
+          "n": 98,
+          "brier": 0.22644,
+          "log_loss": 0.64522
+        },
+        "team_only": {
+          "n": 98,
+          "brier": 0.22476,
+          "log_loss": 0.64197
+        }
+      },
+      "holdout_logloss_gain_vs_current": -0.00531,
+      "approval": "NOT_APPROVED_no_significance_or_prospective_validation",
+      "note": "Selection used validation only, and results are not betting ROI. Missing markets may have very small samples."
+    },
+    "corners": {
+      "historical_examples": {
+        "Premier League": 90,
+        "La Liga": 109,
+        "Serie A": 100,
+        "Bundesliga": 72,
+        "Ligue 1": 81
+      },
+      "selected_on_validation": "team_only",
+      "validation": {
+        "current_v1": {
+          "n": 53,
+          "brier": 0.24355,
+          "log_loss": 0.67998
+        },
+        "recent_90d": {
+          "n": 53,
+          "brier": 0.24394,
+          "log_loss": 0.68079
+        },
+        "regularized_15": {
+          "n": 53,
+          "brier": 0.24686,
+          "log_loss": 0.68673
+        },
+        "team_only": {
+          "n": 53,
+          "brier": 0.23611,
+          "log_loss": 0.66449
+        }
+      },
+      "holdout": {
+        "current_v1": {
+          "n": 98,
+          "brier": 0.24594,
+          "log_loss": 0.68488
+        },
+        "recent_90d": {
+          "n": 98,
+          "brier": 0.2459,
+          "log_loss": 0.68481
+        },
+        "regularized_15": {
+          "n": 98,
+          "brier": 0.24498,
+          "log_loss": 0.68298
+        },
+        "team_only": {
+          "n": 98,
+          "brier": 0.24764,
+          "log_loss": 0.68839
+        }
+      },
+      "holdout_logloss_gain_vs_current": -0.00351,
+      "approval": "NOT_APPROVED_no_significance_or_prospective_validation",
+      "note": "Selection used validation only, and results are not betting ROI. Missing markets may have very small samples."
+    },
+    "goals": {
+      "historical_examples": {
+        "Premier League": 850,
+        "La Liga": 859,
+        "Serie A": 850,
+        "Bundesliga": 684,
+        "Ligue 1": 692
+      },
+      "selected_on_validation": "team_only",
+      "validation": {
+        "current_v1": {
+          "n": 906,
+          "brier": 0.2493,
+          "log_loss": 0.69181
+        },
+        "recent_90d": {
+          "n": 906,
+          "brier": 0.25027,
+          "log_loss": 0.69378
+        },
+        "regularized_15": {
+          "n": 906,
+          "brier": 0.24876,
+          "log_loss": 0.69067
+        },
+        "team_only": {
+          "n": 906,
+          "brier": 0.24862,
+          "log_loss": 0.69043
+        }
+      },
+      "holdout": {
+        "current_v1": {
+          "n": 685,
+          "brier": 0.23941,
+          "log_loss": 0.67164
+        },
+        "recent_90d": {
+          "n": 685,
+          "brier": 0.24001,
+          "log_loss": 0.67286
+        },
+        "regularized_15": {
+          "n": 685,
+          "brier": 0.24011,
+          "log_loss": 0.67311
+        },
+        "team_only": {
+          "n": 685,
+          "brier": 0.23798,
+          "log_loss": 0.66817
+        }
+      },
+      "holdout_logloss_gain_vs_current": 0.00347,
+      "approval": "NOT_APPROVED_no_significance_or_prospective_validation",
+      "note": "Selection used validation only, and results are not betting ROI. Missing markets may have very small samples."
+    },
+    "fouls": {
+      "historical_examples": {
+        "Premier League": 90,
+        "La Liga": 109,
+        "Serie A": 100,
+        "Bundesliga": 72,
+        "Ligue 1": 81
+      },
+      "selected_on_validation": "recent_90d",
+      "validation": {
+        "current_v1": {
+          "n": 53,
+          "brier": 0.23682,
+          "log_loss": 0.66681
+        },
+        "recent_90d": {
+          "n": 53,
+          "brier": 0.23671,
+          "log_loss": 0.66653
+        },
+        "regularized_15": {
+          "n": 53,
+          "brier": 0.2374,
+          "log_loss": 0.66775
+        },
+        "team_only": {
+          "n": 53,
+          "brier": 0.23955,
+          "log_loss": 0.67275
+        }
+      },
+      "holdout": {
+        "current_v1": {
+          "n": 98,
+          "brier": 0.22587,
+          "log_loss": 0.64346
+        },
+        "recent_90d": {
+          "n": 98,
+          "brier": 0.22646,
+          "log_loss": 0.64469
+        },
+        "regularized_15": {
+          "n": 98,
+          "brier": 0.23027,
+          "log_loss": 0.65284
+        },
+        "team_only": {
+          "n": 98,
+          "brier": 0.23168,
+          "log_loss": 0.65553
+        }
+      },
+      "holdout_logloss_gain_vs_current": -0.00123,
+      "approval": "NOT_APPROVED_no_significance_or_prospective_validation",
+      "note": "Selection used validation only, and results are not betting ROI. Missing markets may have very small samples."
+    }
+  }
+}
