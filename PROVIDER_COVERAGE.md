@@ -1,5 +1,10 @@
 # Acoperirea cotelor — verificare 6 noiembrie 2026
 
+Pentru alternativele evaluate în plafonul de £49/lună și pilotul gratuit
+Superbet RO/NetBet RO, consultați [PROVIDER_ALTERNATIVES.md](PROVIDER_ALTERNATIVES.md).
+Tabelul de mai jos descrie integrarea The Odds API existentă; pilotul nou
+nu este încă un feed de cote autentificat ori verificat.
+
 Integrarea instalată folosește **The Odds API v4**, regiunea `uk`, piața `h2h`.
 Lista publică a furnizorului identifică `betano_uk` drept Betano (UK),
 `unibet_uk` în regiunea UK și `netbet_fr` în regiunea Franța. Aceste identificări

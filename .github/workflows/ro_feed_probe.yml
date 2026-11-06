@@ -1,0 +1,42 @@
+name: ValueRadar / evaluare gratuita feed RO
+on:
+  workflow_dispatch:
+    inputs:
+      authenticated:
+        description: "Verifica o singura liga cu PROPLINE_API_KEY (o cerere gratuita)"
+        type: boolean
+        default: false
+      league:
+        description: "Liga pentru test"
+        type: choice
+        options: [Premier League, La Liga, Serie A, Bundesliga, Ligue 1]
+        default: Premier League
+permissions:
+  contents: read
+concurrency:
+  group: valueradar-ro-feed-probe
+  cancel-in-progress: false
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Evalueaza metadatele publice sau o singura cerere autentificata
+        env:
+          PROPLINE_API_KEY: ${{ inputs.authenticated && secrets.PROPLINE_API_KEY || '' }}
+          AUTHENTICATED_PROBE: ${{ inputs.authenticated }}
+          PROBE_LEAGUE: ${{ inputs.league }}
+        run: python ro_feed_probe.py
+      - name: Pastreaza doar diagnosticul agregat, fara cote brute
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ro-feed-preflight
+          path: work/ro_feed_preflight.json
+          retention-days: 14
