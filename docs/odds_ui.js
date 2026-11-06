@@ -21,6 +21,7 @@ panel.innerHTML=[
 '<div class="controls">',
 '<select id="manual-match" aria-label="Meci"><option value="">Se încarcă meciurile…</option></select>',
 '<select id="manual-book" aria-label="Bookmaker"><option>Superbet</option><option>Betano</option><option>Unibet</option><option>MrBit</option><option>NetBet</option><option>Casa Pariurilor</option></select>',
+'<select id="manual-market" aria-label="Piața"><option value="h2h">Rezultat 1X2</option><option value="goals">Total goluri 2,5</option><option value="yellow">Total galbene 4,5</option><option value="corners">Total cornere 9,5</option><option value="fouls">Total faulturi 23,5</option></select>',
 '<select id="manual-outcome" aria-label="Selecția"><option value="home">1 — Gazde</option><option value="draw">X — Egal</option><option value="away">2 — Oaspeți</option></select>',
 '<input id="manual-price" type="number" step=".01" min="1.01" max="100" placeholder="Cota, ex. 1.95" aria-label="Cota"/>',
 '<button id="manual-compare" type="button">Compară</button>',
@@ -68,14 +69,26 @@ function renderMatches(){
  input.innerHTML=fixtures.slice(0,100).map(function(f,i){return '<option value="'+i+'">'+esc(f.date+' · '+f.home+' — '+f.away)+'</option>';}).join('');
  if(Array.from(input.options).some(function(o){return o.value===old;}))input.value=old;
 }
+function updateOutcomes(){
+ var e=el('manual-outcome'),isH2h=el('manual-market').value==='h2h';
+ e.innerHTML=isH2h?'<option value="home">1 — Gazde</option><option value="draw">X — Egal</option><option value="away">2 — Oaspeți</option>':
+ '<option value="over">Peste linie</option><option value="under">Sub linie</option>';
+}
+el('manual-market').addEventListener('change',updateOutcomes);
 el('manual-compare').addEventListener('click',function(){
  var f=matches()[Number(el('manual-match').value)],odd=Number(el('manual-price').value),outcome=el('manual-outcome').value,book=el('manual-book').value;
  if(!f||!Number.isFinite(odd)||odd<=1.01||odd>100){el('manual-result').textContent='Selectează meciul și introdu o cotă validă între 1,02 și 100.';return;}
- var model=(f.markets||{}).goals;
- if(!model||!model.h2h){el('manual-result').textContent='Nu avem probabilități 1X2 pentru acest meci.';return;}
- var p=Number(model.h2h[outcome]),ev=p*odd-1,limit=1/odd;
- el('manual-result').innerHTML='<b>'+esc(book)+' · '+esc(f.home)+' — '+esc(f.away)+'</b><div>Probabilitate model: '+pct(p)+' · Prag cotă: '+pct(limit)+
- ' · EV matematic: '+pct(ev)+'</div><div class="meta">Model încă nevalidat; cotă introdusă manual și neverificată. Acesta nu este un pariu value confirmat.</div>';
+ var market=el('manual-market').value;
+ var model=(f.markets||{})[market==='h2h'?'goals':market];
+ if(!model||(market==='h2h'&&!model.h2h)){
+   el('manual-result').textContent='Nu avem suficiente statistici pentru această piață.';
+   return;
+ }
+ var p=Number(market==='h2h'?model.h2h[outcome]:model[outcome]),ev=p*odd-1,limit=1/odd;
+ var line=market==='h2h'?'':(' · Linia obligatorie: '+model.line);
+ el('manual-result').innerHTML='<b>'+esc(book)+' · '+esc(f.home)+' — '+esc(f.away)+'</b>'+line+
+ '<div>Probabilitate model: '+pct(p)+' · Prag cotă: '+pct(limit)+
+ ' · EV matematic: '+pct(ev)+'</div><div class="meta">Cota trebuie să fie pentru exact aceeași piață și linie, cu aceleași reguli de decontare. Modelul este nevalidat, iar cota este introdusă manual. Nu este o recomandare de pariere.</div>';
 });
 reload();setInterval(reload,15*60*1000);setTimeout(renderMatches,3000);
 })();
