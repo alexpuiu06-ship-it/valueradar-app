@@ -131,6 +131,21 @@ recomandările value și calculul ROI din observații sunt blocate, inclusiv
 când un JSON declară booleeni de tip „verificat”. Lista publică este goală.
 Vezi [PROVIDER_COVERAGE.md](PROVIDER_COVERAGE.md).
 
+## 7c. Protecția operațională a prospețimii
+
+Ora rulării nu este data ultimei partide din istoric. Pentru analizele curente,
+se verifică separat sursa rezultatelor din sezonul curent și vechimea
+statisticilor fiecărei ligi/piețe. O sursă curentă lipsă sau un istoric mai
+vechi de 21 de zile blochează afișarea probabilităților curente și comparația
+cu cote. Datele lipsă nu sunt înlocuite cu rezultate fictive, nici vara.
+Pragul de 21 de zile este o regulă conservatoare de funcționare, nu un prag
+optimizat pe rezultate. Formula istorică și scorurile de cercetare nu se schimbă.
+
+Importul de producție și rapoartele recalculate folosesc aceeași fotografie
+capturată, iar publicarea verifică atât JSON-ul, cât și HTML-ul/scripturile
+servite. Dublurile canonice din jurnal opresc salvarea înaintea oricărei
+modificări. Vezi [OPERATIONS.md](OPERATIONS.md).
+
 ## 8. Registrul problemelor
 
 | Prioritate | Problemă | Criteriu de rezolvare |

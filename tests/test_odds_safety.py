@@ -21,7 +21,8 @@ def fixture():
     return {"league": "Premier League", "date": "2026-11-07", "time": "16:00",
             "home": "Arsenal", "away": "Chelsea", "markets": {"goals": {
                 "h2h": {"home": .5, "draw": .25, "away": .25}, "n_home": 20, "n_away": 20,
-                "small_sample": False, "explanation": {"pipeline_version": runner.PIPELINE_VERSION}}}}
+                "small_sample": False, "explanation": {"pipeline_version": runner.PIPELINE_VERSION,
+                    "last_observation_date": "2026-11-04"}}}}
 
 
 def event():
@@ -255,6 +256,18 @@ class ScanGuardsTests(unittest.TestCase):
         with patch.object(odds, "get_json") as request:
             odds.fetch_scan()
         request.assert_not_called()
+
+    def test_new_execution_with_stale_or_blocked_history_never_spends_credit(self):
+        for blocked in (False,True):
+            current=fixture()
+            if blocked:current["markets"]["goals"]["availability"]={"comparison_allowed":False}
+            else:current["markets"]["goals"]["explanation"]["last_observation_date"]="2026-05-24"
+            self.write("latest.json",{"generated_at":NOW.isoformat(),"fixtures":[current]})
+            with patch.object(odds,"get_json") as request:
+                odds.fetch_scan()
+            request.assert_not_called()
+            self.assertEqual(self.assert_closed()["status"],"missing_fixtures")
+            self.assertEqual(json.loads((self.out/"odds_budget.json").read_text())["spent"],5)
 
     def test_budget_and_reserve_stop_before_api(self):
         for spent, remaining in ((399, 495), (5, 70)):

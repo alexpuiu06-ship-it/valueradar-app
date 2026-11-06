@@ -196,7 +196,7 @@ def analyze_fixture(e, f, now, model_generated_at=None, model_pipeline_version=N
  markets = f.get("markets", {}) if isinstance(f, dict) else {}
  model = (markets.get("goals") or {}) if isinstance(markets, dict) else {}
  probs = model.get("h2h") if isinstance(model, dict) else None
- if not valid_probabilities(probs):
+ if not valid_probabilities(probs) or not runner.comparison_allowed(model,now):
   return [], 0, 0
  sample_sizes = [model.get("n_home"), model.get("n_away")]
  sample_ok = not bool(model.get("small_sample")) and all(finite_number(value, 8, 1000000) for value in sample_sizes)
@@ -410,11 +410,11 @@ def fetch_scan():
   kickoff = runner.fixture_kickoff(f)
   markets = f.get("markets")
   goals = markets.get("goals") if isinstance(markets, dict) else None
-  if kickoff and kickoff > now and isinstance(goals, dict) and valid_probabilities(goals.get("h2h")):
+  if kickoff and kickoff > now and isinstance(goals, dict) and valid_probabilities(goals.get("h2h")) and runner.comparison_allowed(goals,now):
    eligible.append(f)
  fixtures = eligible
  if not fixtures:
-  status("missing_fixtures", message="Nu există meciuri viitoare cu oră și probabilități valide.")
+  status("missing_fixtures", message="Nu există meciuri viitoare cu oră, probabilități valide și istoric recent verificabil.")
   return 0
  budget = budget_state(read_json("odds_budget.json", None), now)
  if budget is None:
@@ -503,7 +503,8 @@ def fetch_scan():
 def selftest():
  now = datetime(2026, 11, 6, 17, tzinfo=timezone.utc)
  fixture = {"league": "Premier League", "date": "2026-11-07", "time": "16:00", "home": "Arsenal", "away": "Chelsea",
-  "markets": {"goals": {"h2h": {"home": .5, "draw": .25, "away": .25}, "n_home": 20, "n_away": 20, "small_sample": False}}}
+  "markets": {"goals": {"h2h": {"home": .5, "draw": .25, "away": .25}, "n_home": 20, "n_away": 20, "small_sample": False,
+    "explanation": {"last_observation_date": "2026-11-04"}}}}
  event = {"home_team": "Arsenal FC", "away_team": "Chelsea", "commence_time": "2026-11-07T15:00:00Z", "bookmakers": [
   {"key": "test", "title": "Test source", "last_update": "2026-11-06T16:50:00Z", "markets": [{"key": "h2h", "outcomes": [
    {"name": "Arsenal FC", "price": 2.15}, {"name": "Draw", "price": 3.4}, {"name": "Chelsea", "price": 3.5}]}]}]}

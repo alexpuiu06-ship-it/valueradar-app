@@ -26,7 +26,7 @@
           '</td><td>' + fmt(alternative.log_loss, 5) + '</td><td>' + esc(VR.interval(result.holdout_approx_95_gain_interval)) + '</td><td>' + esc(VR.intervalVerdict(result.holdout_approx_95_gain_interval)) + '</td></tr>';
       }).join('');
       el('model-lab-report').innerHTML = '<div class="table-scroll"><table><thead><tr><th>Piață</th><th>N final</th><th>Ales pe validare</th><th>Log-loss actual</th><th>Log-loss candidat</th><th>Interval 95% câștig</th><th>Interpretare</th></tr></thead><tbody>' + rows +
-        '</tbody></table></div><p class="meta">Raport istoric: ' + esc(VR.dateTime(data.generated_at)) + '. Câștig pozitiv favorizează candidatul. Scor mai mic este mai bun; rezultatele nu reprezintă ROI. Istoricul a fost analizat anterior: evaluarea rămâne exploratorie, nu un test confirmatoriu pe date complet noi.</p>';
+        '</tbody></table></div><p class="meta">Raport istoric: ' + esc(VR.dateTime(data.generated_at)) + '. Versiunea datelor: ' + esc(data.protocol && data.protocol.model_pipeline_version || data.input_audit && data.input_audit.model_pipeline_version || 'necunoscută') + '. Câștig pozitiv favorizează candidatul. Scor mai mic este mai bun; rezultatele nu reprezintă ROI. Istoricul a fost analizat anterior: evaluarea rămâne exploratorie, nu un test confirmatoriu pe date complet noi.</p>';
     } catch (error) { if (current === generation) el('model-lab-report').textContent = 'Laborator indisponibil: ' + error.message; }
   }
   function metricsRows(records) {
@@ -52,7 +52,7 @@
       const leagueRows = Object.entries(holdout.by_league || {}).map(([league, group]) => '<details><summary>' + esc(league) + ' · N=' + esc(group.n || 0) + '</summary>' + metricsTable(group.models) + calibrationBins(group.models) + '</details>').join('');
       const gains = Object.entries(holdout.gains_vs_poisson || {}).map(([name, score]) => '<li>' + esc(models[name] || name) + ': câștig log-loss ' + fmt(score.mean_logloss_gain, 5) +
         ', interval 95% ' + esc(VR.interval(score.approx_95_ci)) + ' pe ' + esc(score.blocks || 0) + ' blocuri. ' + esc(VR.intervalVerdict(score.approx_95_ci)) + '</li>').join('');
-      el('calibration-report').innerHTML = '<p>Modelul operațional rămâne experimental. Calibrarea candidaților este cercetare, fără promovare automată.</p><p class="missing">Istoricul a fost analizat anterior. Acesta este un studiu exploratoriu, nu o dovadă confirmatorie pe un set complet nou.</p>' + metricsTable(holdout.models) + calibrationBins(holdout.models) +
+      el('calibration-report').innerHTML = '<p>Versiunea raportului: ' + esc(protocol.model_pipeline_version || 'necunoscută') + '. Modelul operațional rămâne experimental. Calibrarea candidaților este cercetare, fără promovare automată.</p><p class="missing">Istoricul a fost analizat anterior. Acesta este un studiu exploratoriu, nu o dovadă confirmatorie pe un set complet nou.</p>' + metricsTable(holdout.models) + calibrationBins(holdout.models) +
         '<p class="meta">Elo ales: ' + esc(selected.elo_candidate) + '; pondere Poisson în ensemble: ' + fmt(selected.ensemble_poisson_weight) +
         '. Temperaturile: ' + esc(JSON.stringify(selected.temperatures || {})) + '. ECE măsoară abaterea în grupe și depinde de eșantion; nu este eroarea exactă a unui meci.</p>' +
         '<p class="meta">Validare din ' + esc(dates.validation_start) + '; calibrare din ' + esc(dates.calibration_start) + '; test final din ' + esc(dates.holdout_start) +

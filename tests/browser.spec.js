@@ -229,3 +229,47 @@ test('mobile and desktop layout has no document-level horizontal overflow', asyn
   const widths = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
   expect(widths.scroll).toBeLessThanOrEqual(widths.client + 1);
 });
+
+
+test('minute timer preserves open explanations and completed manual comparison', async ({ page }) => {
+  await open(page); await ready(page);
+  const details = page.locator('#fixtures .explanation').first();
+  await details.locator('summary').click();
+  await page.locator('#manual-match').selectOption(id(upcomingFixture));
+  await page.locator('#manual-price').fill('2.10');
+  await page.locator('#manual-compare').click();
+  const result = await page.locator('#manual-result').textContent();
+  await page.clock.fastForward(61000);
+  await expect(details).toHaveAttribute('open', '');
+  await expect(page.locator('#manual-result')).toHaveText(result);
+});
+
+test('fresh execution with old underlying history blocks cards and manual comparison', async ({ page }) => {
+  const data = clone(original);
+  for (const f of data.fixtures) for (const p of Object.values(f.markets)) if (p) {
+    p.explanation.last_observation_date = '2026-05-24';
+    p.availability = { comparison_allowed: false, message: 'Istoric vechi; comparație blocată.' };
+  }
+  data.source_report = [{ league: upcomingFixture.league, kind: 'results', ok: false }];
+  data.source_success = data.source_total - 1;
+  await open(page, data); await ready(page);
+  await expect(page.locator('#fixtures .pill')).toHaveCount(0);
+  await expect(page.locator('#fixtures .card').first()).toContainText('Istoric vechi');
+  await page.locator('#data-health summary').click();
+  await expect(page.locator('#data-health')).toContainText('rezultate curente');
+  await page.locator('#manual-match').selectOption(id(upcomingFixture));
+  await page.locator('#manual-price').fill('2.10');
+  await page.locator('#manual-compare').click();
+  await expect(page.locator('#manual-result')).toContainText('blocată');
+  await expect(page.locator('#manual-result')).not.toContainText('Estimare model');
+});
+
+test('Elo from a different data pipeline cannot be paired with current forecasts', async ({ page }) => {
+  const report = clone(read('elo_challenger.json'));
+  report.protocol.model_pipeline_version = 'different_pipeline_test_only';
+  await page.route('**/elo_challenger.json?*', route => route.fulfill({ json: report }));
+  await open(page); await ready(page);
+  await expect(page.locator('#elo-summary')).toContainText('different_pipeline_test_only');
+  await expect(page.locator('#elo-match')).toBeDisabled();
+  await expect(page.locator('#elo-compare')).toContainText('aceeași versiune');
+});

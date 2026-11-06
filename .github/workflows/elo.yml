@@ -1,42 +1,27 @@
-name: ValueRadar / model Elo candidat
+name: ValueRadar / model Elo candidat (artefacte)
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "elo_challenger.py"
-      - "calibration.py"
-      - "runner.py"
-      - ".github/workflows/elo.yml"
-  schedule:
-    - cron: "17 6 * * 0"
 permissions:
   contents: read
 concurrency:
-  group: valueradar-production-writer
-  cancel-in-progress: false
+  group: valueradar-research-independent-elo-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  audit:
-    if: ${{ github.ref == 'refs/heads/main' }}
+  research:
     runs-on: ubuntu-latest
     timeout-minutes: 25
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
-      - name: Retine revizia initiala
-        id: source
-        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Testeaza modelele si izolarea holdoutului
-        run: python -m unittest discover -s tests -v
-      - name: Compara Elo cu Poisson pe date reale
+      - name: Cercetare independenta fara salvare sau publicare
         run: python elo_challenger.py
-      - name: Salveaza exclusiv raportul Elo din revizia initiala
-        env:
-          SOURCE_SHA: ${{ steps.source.outputs.sha }}
-        run: python scripts/publish_generated.py elo --expected-sha "$SOURCE_SHA"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: independent-elo
+          path: |
+            docs/elo_challenger.json
+          retention-days: 14

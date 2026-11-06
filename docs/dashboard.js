@@ -4,13 +4,16 @@ window.DATA = null;
 (function () {
   const { el, esc, pct, fmt } = window.VR;
   let generation = 0;
+  let renderedState = null;
   function announce() { window.dispatchEvent(new Event('valueradar:datachanged')); }
   function clearData(message) {
     window.DATA = null;
+    renderedState = null;
     for (const id of ['history', 'upcoming', 'sources', 'sync']) el(id).textContent = '—';
     el('message').textContent = message;
     el('fixtures').textContent = 'Analizele sunt ascunse până la verificarea unor date proaspete.';
     el('validation').textContent = 'Validarea nu este disponibilă fără un set de date verificabil.';
+    el('data-health').textContent = 'Starea datelor este indisponibilă până la o încărcare reușită.';
     announce();
   }
   async function load() {
@@ -65,19 +68,34 @@ window.DATA = null;
     if (!data) return;
     if (!VR.freshness(data.generated_at).fresh) { clearData('Datele nu mai sunt proaspete; comparațiile sunt blocate.'); return; }
     const fixtures = VR.liveFixtures(), league = el('league').value, market = el('market').value;
+    const state = JSON.stringify([data.generated_at, league, market, fixtures.map(VR.fixtureId), new Date().toISOString().slice(0, 10)]);
+    if (state === renderedState) return false;
+    renderedState = state;
     el('history').textContent = data.history_rows || 0;
     el('upcoming').textContent = fixtures.length;
     el('sources').textContent = (data.source_success || 0) + '/' + (data.source_total || 0);
     el('sync').textContent = VR.dateTime(data.generated_at);
     el('message').textContent = 'Model experimental. ' + (data.prospective_predictions_recorded || 0) + ' predicții arhivate prospectiv. Nu există pariuri value verificate.' +
       (data.source_success < data.source_total ? ' Atenție: unele surse au eșuat; verifică istoricul real al pieței.' : '');
+    const failures = (data.source_report || []).filter(x => x.ok !== true);
+    const marketNames = { goals: 'Goluri / 1X2', yellow: 'Galbene', corners: 'Cornere', fouls: 'Faulturi' };
+    const healthRows = Object.entries(data.last_stat_date || {}).map(([name, dates]) => '<tr><td>' + esc(name) + '</td>' +
+      Object.entries(marketNames).map(([key, label]) => {
+        const health = data.data_health && data.data_health[name] && data.data_health[name][key];
+        return '<td>' + esc(dates[key] || 'fără date') + (health && !health.comparison_allowed ? '<br><b>Comparație blocată</b>' : '') + '</td>';
+      }).join('') + '</tr>').join('');
+    el('data-health').innerHTML = '<details><summary>Starea datelor pe ligi și piețe</summary><p>O rulare recentă nu garantează statistici recente. Istoricul de peste 21 de zile sau lipsa sursei curente blochează comparațiile. Este o regulă conservatoare, nu un prag validat statistic.</p>' +
+      (failures.length ? '<p class="missing">Surse indisponibile: ' + esc(failures.map(x => x.league + ' · ' + ({results:'rezultate curente', fixtures:'program', historical:'istoric'}[x.kind] || x.kind)).join('; ')) + '.</p>' : '<p>Toate sursele au răspuns la ultima verificare.</p>') +
+      '<div class="table-scroll"><table><thead><tr><th>Ligă</th>' + Object.values(marketNames).map(x => '<th>' + esc(x) + '</th>').join('') +
+      '</tr></thead><tbody>' + healthRows + '</tbody></table></div></details>';
     const items = fixtures.filter(f => league === 'all' || f.league === league);
     el('fixtures').innerHTML = items.length ? items.map(f => {
       const key = market === 'h2h' ? 'goals' : market, p = f.markets[key];
-      const valid = p && (market === 'h2h' ? VR.distribution(p.h2h) : VR.probability(p.over) && VR.probability(p.under) && Math.abs(p.over + p.under - 1) <= .0001);
+      const valid = VR.marketAvailable(p) && (market === 'h2h' ? VR.distribution(p.h2h) : VR.probability(p.over) && VR.probability(p.under) && Math.abs(p.over + p.under - 1) <= .0001);
       const kickoff = VR.kickoff(f), dateLabel = Number.isFinite(kickoff) ? VR.dateTime(new Date(kickoff).toISOString()) : f.date + ' · ora necunoscută';
       const rejection = f.market_rejections && f.market_rejections[key];
-      let body = '<div class="missing">' + esc(rejection && rejection.message || (p ? 'Probabilități invalide; analiza a fost blocată.' : 'Date insuficiente pentru această piață.')) + '</div>';
+      let body = '<div class="missing">' + esc(p && !VR.marketAvailable(p) ? p.availability && p.availability.message || 'Comparație blocată: istoricul este vechi sau nu poate fi verificat.' : rejection && rejection.message || (p ? 'Probabilități invalide; analiza a fost blocată.' : 'Date insuficiente pentru această piață.')) +
+        (rejection ? '<p>Observații disponibile: ligă ' + esc(rejection.n_league) + ' (minim ' + esc(rejection.minimum_league) + '); gazde ' + esc(rejection.n_home) + ', oaspeți ' + esc(rejection.n_away) + ' (minim ' + esc(rejection.minimum_team) + ' fiecare).</p>' : '') + '</div>';
       if (valid) {
         const measures = market === 'h2h' ? VR.x3(p.h2h) : 'Peste ' + p.line + ': ' + pct(p.over) + ' · Sub: ' + pct(p.under) + ' · Medie: ' + fmt(p.mean);
         body = '<div class="metrics"><span class="pill">' + esc(measures) + '</span></div><p class="meta">Observații: ligă ' + esc(p.n_league) + ' · gazde ' + esc(p.n_home) + ' · oaspeți ' + esc(p.n_away) + '</p>' +
@@ -102,11 +120,12 @@ window.DATA = null;
       '<p class="meta" id="prospective-current">Versiunea curentă ' + esc(version || 'neidentificată') + ': predicții prospective decontate ' + esc(currentCount) + '; Brier ' +
       fmt(currentCount ? currentProspective.brier : null, 5) + '. Alte versiuni în jurnal: ' + esc(otherCount) + ' decontări. Agregatul tuturor versiunilor este doar descriptiv și nu validează modelul corectat. ' +
       'Scor mai mic = mai bun. Testul retrospectiv este exploratoriu și nu demonstrează profit sau eroarea exactă a unui meci.</p>';
+    return true;
   }
   el('refresh').addEventListener('click', () => { load(); window.dispatchEvent(new Event('valueradar:refresh')); });
   el('league').addEventListener('change', render);
   el('market').addEventListener('change', render);
-  setInterval(() => { render(); announce(); }, 60e3);
+  setInterval(() => { if (render()) announce(); }, 60e3);
   setInterval(load, 15 * 60e3);
   load();
 }());

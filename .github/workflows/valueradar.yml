@@ -7,6 +7,11 @@ on:
         type: boolean
         required: false
         default: false
+      refresh_research:
+        description: "Recalculeaza si publica toate rapoartele de cercetare"
+        type: boolean
+        required: false
+        default: false
   push:
     branches: [main]
     paths:
@@ -15,9 +20,12 @@ on:
       - "docs/*.html"
       - "docs/*.js"
       - ".github/workflows/valueradar.yml"
+      - ".github/workflows/model_lab.yml"
+      - ".github/workflows/elo.yml"
   schedule:
     - cron: "23 */4 * * *"
     - cron: "13 8,16 * * *"
+    - cron: "41 5 * * 0"
 permissions:
   contents: read
 concurrency:
@@ -28,7 +36,7 @@ jobs:
   analyze:
     if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     permissions:
       contents: write
     outputs:
@@ -52,18 +60,16 @@ jobs:
           python scripts/check_syntax.py
           python -m unittest discover -s tests -v
           cp docs/forecast_log.json "$RUNNER_TEMP/forecast_log_before.json"
-      - name: Importa rezultate si calculeaza predictii
-        run: python runner.py
-      - name: Interogheaza cotele reale numai la programare sau cerere explicita
-        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.scan_odds) || github.event.schedule == '13 8,16 * * *' }}
+      - name: Import unic, analize si rapoarte coerente
         env:
-          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          REFRESH_RESEARCH: ${{ github.event_name == 'push' || inputs.refresh_research || github.event.schedule == '41 5 * * 0' }}
+          SCAN_ODDS: ${{ (github.event_name == 'workflow_dispatch' && inputs.scan_odds) || github.event.schedule == '13 8,16 * * *' }}
+          ODDS_API_KEY: ${{ ((github.event_name == 'workflow_dispatch' && inputs.scan_odds) || github.event.schedule == '13 8,16 * * *') && secrets.ODDS_API_KEY || '' }}
           ODDS_REGION: uk
-        run: python odds_scanner.py
+        run: python scripts/run_pipeline.py
       - name: Auditeaza observatiile si valideaza fisierele generate
         id: validated
         run: |
-          python performance.py
           python scripts/validate_outputs.py --original-log "$RUNNER_TEMP/forecast_log_before.json"
       - name: Salveaza exclusiv fisierele detinute, numai daca main nu s-a schimbat
         id: save

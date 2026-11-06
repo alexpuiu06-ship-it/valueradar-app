@@ -6,6 +6,10 @@ Secțiunile de mai jos păstrează starea inițială a predării. Pipeline-ul no
 `validated_identity_v2` corectează identități/date și arhivează predicții
 separate de cele vechi; nu promovează automat Elo sau un model calibrat.
 
+Pentru continuarea operațională citiți și [OPERATIONS.md](OPERATIONS.md).
+Primul PR a fost integrat și publicat; corecțiile suplimentare unifică
+producția într-un singur writer și blochează istoricul vechi sau ambiguu.
+
 ## Scopul proprietarului
 Utilizatorul nu programează. Dorește un **produs practic, sigur și ușor de folosit** pentru cele cinci ligi majore europene, care să compare estimări pentru 1X2, goluri, galbene, cornere și faulturi cu cote de la operatorii **Superbet, Betano, Unibet, MrBit, NetBet și Casa Pariurilor**. Scopul este detectarea de value betting **numai când există dovezi reale**, nu estimări prezentate înșelător ca avantaje de profit. Nu promite rezultate perfecte, probabilități exacte sau profit.
 
