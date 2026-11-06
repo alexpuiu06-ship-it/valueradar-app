@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "pipeline_version": "validated_identity_v2",
-  "generated_at": "2026-11-06T18:30:29.348576+00:00",
+  "generated_at": "2026-11-06T18:49:48.604506+00:00",
   "methodology": {
     "version": "weighted_opponent_model_v1",
     "approach": "Time-decayed team and opponent rates, shrunk toward league means, with geometric combination.",
@@ -25,8 +25,7 @@
       "source_id": "open-matchday:2026-27",
       "source_url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/GER_1_bundesliga/fixtures_2627.csv",
       "content_sha256": "900f5ea1de340cdf9e3ef96469edc56db38bdf526ecc3871bd7b3a0bca2c9238",
-      "fetched_at": "2026-11-06T18:19:50.963577+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "Bundesliga",
@@ -38,8 +37,7 @@
       "source_id": "OpenFootball football.json:2024-25",
       "source_url": "https://raw.githubusercontent.com/openfootball/football.json/master/2024-25/de.1.json",
       "content_sha256": "f473d6595e6c29ebedc08b09177aed6a6b2ff0fa8378b82f51dea469139f44c3",
-      "fetched_at": "2026-11-06T18:19:50.987706+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "Bundesliga",
@@ -51,8 +49,7 @@
       "source_id": "OpenFootball football.json:2025-26",
       "source_url": "https://raw.githubusercontent.com/openfootball/football.json/master/2025-26/de.1.json",
       "content_sha256": "17d0999db6281e6365823acdbce41a4f01dd469eac63e1f897e4e47c02906672",
-      "fetched_at": "2026-11-06T18:19:51.005269+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "Bundesliga",
@@ -64,8 +61,7 @@
       "source_id": "open-matchday:2026-27",
       "source_url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/GER_1_bundesliga/results_2627.csv",
       "content_sha256": "2c909fb395de750f97b4820d9b8c9d065f9eb8928dcd3681826b2afeef3417b7",
-      "fetched_at": "2026-11-06T18:19:50.951620+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "La Liga",
@@ -77,8 +73,7 @@
       "source_id": "open-matchday:2026-27",
       "source_url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/ESP_1_la-liga/fixtures_2627.csv",
       "content_sha256": "c9997c7725e7339fcebd96be48b1f9d6da68e531ef8557364be3e8f15f7678fc",
-      "fetched_at": "2026-11-06T18:19:50.763142+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "La Liga",
@@ -92,8 +87,7 @@
       "source_id": "OpenFootball football.json:2024-25",
       "source_url": "https://raw.githubusercontent.com/openfootball/football.json/master/2024-25/es.1.json",
       "content_sha256": "da5bfa1b3634e1039d9e71aec50bdc847f8761189e3de235a4e730e0dc64ca38",
-      "fetched_at": "2026-11-06T18:19:50.840756+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "La Liga",
@@ -105,8 +99,7 @@
       "source_id": "OpenFootball football.json:2025-26",
       "source_url": "https://raw.githubusercontent.com/openfootball/football.json/master/2025-26/es.1.json",
       "content_sha256": "b40397d8e62c640138548d57a1a9f76150549213d2a07fcbbb90ed0eabc6ccea",
-      "fetched_at": "2026-11-06T18:19:50.828280+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "La Liga",
@@ -118,8 +111,7 @@
       "source_id": "open-matchday:2026-27",
       "source_url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/ESP_1_la-liga/results_2627.csv",
       "content_sha256": "5ac9cc05960267eb0a4eeaba62c5d68996c1b53a019fd05cd4679e66320f3a1d",
-      "fetched_at": "2026-11-06T18:19:50.704105+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "Ligue 1",
@@ -131,8 +123,7 @@
       "source_id": "open-matchday:2026-27",
       "source_url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/FRA_1_ligue-1/fixtures_2627.csv",
       "content_sha256": "9c3ee1726a191d453cf25eb84ba0a28cdbd799a45beb8eeb95c09e11fb1e794e",
-      "fetched_at": "2026-11-06T18:19:51.058035+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "Ligue 1",
@@ -144,8 +135,7 @@
       "source_id": "OpenFootball football.json:2024-25",
       "source_url": "https://raw.githubusercontent.com/openfootball/football.json/master/2024-25/fr.1.json",
       "content_sha256": "90e9974afe6597452622387ad218f6b0011a5f91f1b426f05152f5b9c105e355",
-      "fetched_at": "2026-11-06T18:19:51.107896+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "Ligue 1",
@@ -159,8 +149,7 @@
       "source_id": "OpenFootball football.json:2025-26",
       "source_url": "https://raw.githubusercontent.com/openfootball/football.json/master/2025-26/fr.1.json",
       "content_sha256": "3e9403445dd96f4bb7f740de22d4ea7e3ea7d640777a12eab621ae4d4dbf3bc7",
-      "fetched_at": "2026-11-06T18:19:51.114518+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "Ligue 1",
@@ -172,8 +161,7 @@
       "source_id": "open-matchday:2026-27",
       "source_url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/FRA_1_ligue-1/results_2627.csv",
       "content_sha256": "6c49f054a463ef46b5040e92d73e8b14597f8221ee074cb9cb9bf4a2a0c11d9c",
-      "fetched_at": "2026-11-06T18:19:51.039055+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "Premier League",
@@ -185,8 +173,7 @@
       "source_id": "open-matchday:2026-27",
       "source_url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/ENG_1_premier-league/fixtures_2627.csv",
       "content_sha256": "1715a1a0cc543ebcf9f1fd4ff840a3e153665d5ea33da1b4c53f42fc601b0497",
-      "fetched_at": "2026-11-06T18:19:50.780333+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "Premier League",
@@ -198,8 +185,7 @@
       "source_id": "OpenFootball football.json:2024-25",
       "source_url": "https://raw.githubusercontent.com/openfootball/football.json/master/2024-25/en.1.json",
       "content_sha256": "c3d18f552d83382cd4b6b21127adbbfe38e7f8618ddc979fb5404f2df07d0a75",
-      "fetched_at": "2026-11-06T18:19:50.794981+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "Premier League",
@@ -211,8 +197,7 @@
       "source_id": "OpenFootball football.json:2025-26",
       "source_url": "https://raw.githubusercontent.com/openfootball/football.json/master/2025-26/en.1.json",
       "content_sha256": "d6070bdf731546ccf97767f062e8af4bd26dd309dee69f6092025bf9c78f43c1",
-      "fetched_at": "2026-11-06T18:19:50.804519+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "Premier League",
@@ -224,8 +209,7 @@
       "source_id": "open-matchday:2026-27",
       "source_url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/ENG_1_premier-league/results_2627.csv",
       "content_sha256": "1ca8a921822bdfc9d98b11d7cc1690cc9a16b09e0b7b6f96f4d49f7749db6f4d",
-      "fetched_at": "2026-11-06T18:19:50.699459+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "Serie A",
@@ -237,8 +221,7 @@
       "source_id": "open-matchday:2026-27",
       "source_url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/ITA_1_serie-a/fixtures_2627.csv",
       "content_sha256": "f5e9b5af4f9d0f0ec6fd11be52ec824650982fa5f01a4501284da2f75d259375",
-      "fetched_at": "2026-11-06T18:19:50.887929+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "Serie A",
@@ -252,8 +235,7 @@
       "source_id": "OpenFootball football.json:2024-25",
       "source_url": "https://raw.githubusercontent.com/openfootball/football.json/master/2024-25/it.1.json",
       "content_sha256": "7d9bb936de3ccaeec54d57371512a58a5eeb21277e7d5f0882911a834d22b659",
-      "fetched_at": "2026-11-06T18:19:50.978798+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "Serie A",
@@ -265,8 +247,7 @@
       "source_id": "OpenFootball football.json:2025-26",
       "source_url": "https://raw.githubusercontent.com/openfootball/football.json/master/2025-26/it.1.json",
       "content_sha256": "28f7773dea86345aeb0cbb4aff2f90231033f7ed855219e70fdd1cf45d4d7e7f",
-      "fetched_at": "2026-11-06T18:19:50.955941+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     },
     {
       "league": "Serie A",
@@ -278,8 +259,7 @@
       "source_id": "open-matchday:2026-27",
       "source_url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/ITA_1_serie-a/results_2627.csv",
       "content_sha256": "ce0330b6bbeee56a4c4dbeb01dc12560aaef345a7c75ecb31b5d174d79397bef",
-      "fetched_at": "2026-11-06T18:19:50.895120+00:00",
-      "source_snapshot_read_at": "2026-11-06T18:24:38.520184+00:00"
+      "fetched_at": "2026-11-06T18:49:45.440652+00:00"
     }
   ],
   "data_integrity": {
@@ -64780,10 +64760,5 @@
       "market_rejections": {}
     }
   ],
-  "message": "Experimental model. International odds monitored separately; no verified Romanian bookmaker prices or validated value bets.",
-  "audit_execution": {
-    "mode": "replay_of_real_captured_sources",
-    "snapshot_manifest_captured_at": "2026-11-06T18:19:50.699459+00:00",
-    "note": "Model inputs replayed from captured public source contents without newline normalization; fetched_at identifies original network retrieval."
-  }
+  "message": "Experimental model. International odds monitored separately; no verified Romanian bookmaker prices or validated value bets."
 }
