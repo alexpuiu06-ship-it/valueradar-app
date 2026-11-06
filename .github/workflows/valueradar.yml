@@ -29,8 +29,11 @@ jobs:
           python-version: "3.12"
       - name: Verificare modele
         run: python runner.py --self-test
-      - name: Verifica integrarea de cote
-        run: python odds_scanner.py --self-test
+      - name: Verifica sintaxa si testele de integrare
+        run: |
+          python -m py_compile runner.py odds_scanner.py
+          node --check docs/odds_ui.js
+          python odds_scanner.py --self-test
       - name: Importa rezultate si calculeaza predictii
         run: python runner.py
       - name: Interogheaza cotele reale (doar 2 ori pe zi sau manual)
