@@ -2,6 +2,7 @@
 from copy import deepcopy
 from datetime import datetime,timedelta,timezone
 import json
+import hashlib
 from pathlib import Path
 import tempfile
 import unittest
@@ -50,7 +51,7 @@ class SettlementTests(unittest.TestCase):
         partial=self.log()
         self.assertEqual(sum(r["settled"] for r in partial),2)
         self.assertEqual(self.report()["counts"],{"settled_with_evidence":2,"awaiting_statistics":3})
-        sources=[{"ok":True,"source_id":"synthetic-test-source","content_sha256":"a"*64,"fetched_at":FINISHED.isoformat()}]
+        sources=[{"ok":True,"league":"Premier League","kind":"results","source_id":"synthetic-test-source","content_sha256":"a"*64,"fetched_at":FINISHED.isoformat()}]
         scores,_=runner.prospective([full_result()],[],(FINISHED+timedelta(hours=1)).isoformat(),sources)
         complete=self.log()
         validate_log(complete,frozen)
@@ -94,6 +95,9 @@ class SettlementTests(unittest.TestCase):
         self.assertEqual(len(settlement.eligible_forecasts(original,report,at.isoformat())),3)
         self.assertFalse(any(r["market"]=="h2h" for r in settlement.eligible_forecasts(original,report,at.isoformat())))
         self.assertEqual(settlement.eligible_forecasts(original,report,CREATED.isoformat()),[])
+        older=deepcopy(report);older["schema_version"]=1
+        older["excluded_settled_ids"]=[settlement.forecast_id(row,legacy=True) for row in original if row["market"] in ("h2h","goals")]
+        self.assertEqual(len(settlement.eligible_forecasts(original,older,at.isoformat())),3)
 
     def test_archived_valid_settlements_survive_a_later_missing_result_feed(self):
         self.freeze()
@@ -147,6 +151,35 @@ class SettlementTests(unittest.TestCase):
         frozen=self.freeze()[0];played=full_result();played["kickoff_utc"]="2026-11-07T15:00:59Z"
         self.assertEqual(settlement.completion_floor(frozen,played),datetime(2026,11,7,17,0,59,tzinfo=timezone.utc))
         self.assertEqual(settlement.state(frozen,played,datetime(2026,11,7,17,0,30,tzinfo=timezone.utc)),"in_progress")
+
+    def test_source_fingerprint_excludes_other_leagues_fixtures_and_failed_imports(self):
+        self.freeze()
+        source={"source_id":"synthetic-test-source","content_sha256":"a"*64,"fetched_at":FINISHED.isoformat(),"ok":True,"league":"Premier League","kind":"results"}
+        reports=[source,{**source,"league":"La Liga"},{**source,"kind":"fixtures"},{**source,"ok":False}]
+        runner.prospective([full_result()],[],FINISHED.isoformat(),reports)
+        for row in self.log():
+            self.assertEqual(row["settlement_evidence"]["source_snapshots"],[{k:v for k,v in source.items() if k!="ok"}])
+
+    def test_future_alias_changes_cannot_invalidate_an_immutable_result_fingerprint(self):
+        self.freeze();runner.prospective([full_result()],[],FINISHED.isoformat())
+        row=self.log()[0];identity=settlement.forecast_id(row)
+        with patch.dict(runner.ALIASES,{"arsenal":"synthetic_future_alias"}):
+            self.assertTrue(settlement.evidence_valid(row))
+            self.assertEqual(settlement.forecast_id(row),identity)
+
+    def test_older_evidence_schema_remains_readable_without_rewriting_the_journal(self):
+        self.freeze();runner.prospective([full_result()],[],FINISHED.isoformat())
+        records=self.log()
+        for row in records:
+            proof=row["settlement_evidence"];proof["schema_version"]=1
+            fingerprint={"identity":runner.key(row),"market":row["market"],"actual_home":proof["actual_home"],
+                         "actual_away":proof["actual_away"],"source_kickoff_utc":proof["source_kickoff_utc"]}
+            proof["result_sha256"]=hashlib.sha256(json.dumps(fingerprint,sort_keys=True).encode()).hexdigest()
+        (self.out/"forecast_log.json").write_text(json.dumps(records))
+        scores,_=runner.prospective([full_result()],[],(FINISHED+timedelta(days=1)).isoformat())
+        self.assertEqual(self.log(),records)
+        self.assertTrue(all(row["n"]==1 for row in scores.values()))
+        self.assertEqual(self.report()["schema_version"],2)
 
     def test_audit_contract_rejects_profit_flags_inconsistent_groups_and_price_fields(self):
         self.freeze();report=self.report();settlement.validate_report(report)
