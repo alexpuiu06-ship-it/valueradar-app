@@ -34,15 +34,20 @@ async function render(){
    var score=original&&original.log_loss!=null?Number(original.log_loss).toFixed(3):'—';
    var altScore=alternative&&alternative.log_loss!=null?Number(alternative.log_loss).toFixed(3):'—';
    var gain=v.holdout_logloss_gain_vs_current;
+   var bounds=v.holdout_approx_95_gain_interval;
+   var interval=bounds&&bounds.length===2?'['+Number(bounds[0]).toFixed(4)+', '+Number(bounds[1]).toFixed(4)+']':'—';
+   var uncertain=bounds&&bounds.length===2&&bounds[0]<=0&&bounds[1]>=0;
+   var verdict=!bounds?'Prea puține date':uncertain?'Neconcludent':'Semnal statistic preliminar';
    return '<tr><td>'+safe(names[k]||k)+'</td><td>'+safe(n)+'</td><td>'+safe(label)+'</td>'+
-    '<td>'+safe(score)+'</td><td>'+safe(altScore)+'</td><td>'+safe(gain==null?'—':Number(gain).toFixed(4))+'</td></tr>';
+    '<td>'+safe(score)+'</td><td>'+safe(altScore)+'</td><td>'+safe(gain==null?'—':Number(gain).toFixed(4))+'</td>'+
+    '<td>'+safe(interval)+'</td><td>'+safe(verdict)+'</td></tr>';
   }).join('');
   var when=data.generated_at?new Date(data.generated_at).toLocaleString('ro-RO'):'neconfirmată';
   el.innerHTML='<div style="overflow:auto"><table style="width:100%;font-size:12px;text-align:left;border-collapse:collapse"><thead><tr>'+
-   '<th>Piață</th><th>Teste finale</th><th>Variantă aleasă la validare</th><th>Log-loss actual</th><th>Log-loss challenger</th><th>Diferență</th>'+
+   '<th>Piață</th><th>Teste finale</th><th>Variantă aleasă la validare</th><th>Log-loss actual</th><th>Log-loss challenger</th><th>Diferență</th><th>Interval aprox. 95%</th><th>Interpretare</th>'+
    '</tr></thead><tbody>'+rows+'</tbody></table></div>'+
    '<p class="meta">Raport generat: '+safe(when)+
-   '. Diferența pozitivă favorizează challengerul, negativă favorizează modelul actual. Rezultatele sunt exploratorii și nicio variantă nu este aprobată automat.</p>';
+   '. Diferența pozitivă favorizează challengerul, negativă favorizează modelul actual. Intervalele sunt aproximative și nu corectează dependențele dintre meciuri. Nicio variantă nu este aprobată automat.</p>';
  }catch(error){el.textContent='Laboratorul nu are încă un raport publicat: '+error.message;}
 }
 render();
