@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T17:49:41.854963+00:00",
+  "generated_at": "2026-11-06T17:53:24.459604+00:00",
   "status": "research_only_no_model_promoted",
   "model_selection": "choose by validation log-loss only; final holdout remains untouched",
   "variants": {
@@ -78,7 +78,33 @@
           "log_loss": 1.02656
         }
       },
-      "holdout_logloss_gain_vs_current": 0.00783,
+      "holdout_logloss_gain_vs_current": 0.00782,
+      "holdout_approx_95_gain_interval": [
+        0.00041,
+        0.01523
+      ],
+      "holdout_gain_by_league": {
+        "Premier League": {
+          "n": 157,
+          "mean_logloss_gain": 0.00078
+        },
+        "La Liga": {
+          "n": 152,
+          "mean_logloss_gain": 0.01128
+        },
+        "Serie A": {
+          "n": 126,
+          "mean_logloss_gain": -0.00434
+        },
+        "Bundesliga": {
+          "n": 129,
+          "mean_logloss_gain": 0.02506
+        },
+        "Ligue 1": {
+          "n": 121,
+          "mean_logloss_gain": 0.00692
+        }
+      },
       "approval": "NOT_APPROVED_no_significance_or_prospective_validation",
       "note": "Selection used validation only, and results are not betting ROI. Missing markets may have very small samples."
     },
@@ -135,7 +161,33 @@
           "log_loss": 0.64197
         }
       },
-      "holdout_logloss_gain_vs_current": -0.00531,
+      "holdout_logloss_gain_vs_current": -0.0053,
+      "holdout_approx_95_gain_interval": [
+        -0.01363,
+        0.00303
+      ],
+      "holdout_gain_by_league": {
+        "Premier League": {
+          "n": 20,
+          "mean_logloss_gain": -0.00925
+        },
+        "La Liga": {
+          "n": 24,
+          "mean_logloss_gain": -0.00885
+        },
+        "Serie A": {
+          "n": 22,
+          "mean_logloss_gain": -0.00187
+        },
+        "Bundesliga": {
+          "n": 15,
+          "mean_logloss_gain": -0.01074
+        },
+        "Ligue 1": {
+          "n": 17,
+          "mean_logloss_gain": 0.00468
+        }
+      },
       "approval": "NOT_APPROVED_no_significance_or_prospective_validation",
       "note": "Selection used validation only, and results are not betting ROI. Missing markets may have very small samples."
     },
@@ -192,7 +244,33 @@
           "log_loss": 0.68839
         }
       },
-      "holdout_logloss_gain_vs_current": -0.00351,
+      "holdout_logloss_gain_vs_current": -0.00352,
+      "holdout_approx_95_gain_interval": [
+        -0.0278,
+        0.02076
+      ],
+      "holdout_gain_by_league": {
+        "Premier League": {
+          "n": 20,
+          "mean_logloss_gain": 0.03336
+        },
+        "La Liga": {
+          "n": 24,
+          "mean_logloss_gain": -0.02167
+        },
+        "Serie A": {
+          "n": 22,
+          "mean_logloss_gain": -0.00663
+        },
+        "Bundesliga": {
+          "n": 15,
+          "mean_logloss_gain": -0.02881
+        },
+        "Ligue 1": {
+          "n": 17,
+          "mean_logloss_gain": 0.00507
+        }
+      },
       "approval": "NOT_APPROVED_no_significance_or_prospective_validation",
       "note": "Selection used validation only, and results are not betting ROI. Missing markets may have very small samples."
     },
@@ -250,6 +328,32 @@
         }
       },
       "holdout_logloss_gain_vs_current": 0.00347,
+      "holdout_approx_95_gain_interval": [
+        -0.00649,
+        0.01343
+      ],
+      "holdout_gain_by_league": {
+        "Premier League": {
+          "n": 157,
+          "mean_logloss_gain": 0.00348
+        },
+        "La Liga": {
+          "n": 152,
+          "mean_logloss_gain": 0.00481
+        },
+        "Serie A": {
+          "n": 126,
+          "mean_logloss_gain": -0.01367
+        },
+        "Bundesliga": {
+          "n": 129,
+          "mean_logloss_gain": 0.01095
+        },
+        "Ligue 1": {
+          "n": 121,
+          "mean_logloss_gain": 0.01163
+        }
+      },
       "approval": "NOT_APPROVED_no_significance_or_prospective_validation",
       "note": "Selection used validation only, and results are not betting ROI. Missing markets may have very small samples."
     },
@@ -307,6 +411,32 @@
         }
       },
       "holdout_logloss_gain_vs_current": -0.00123,
+      "holdout_approx_95_gain_interval": [
+        -0.00428,
+        0.00182
+      ],
+      "holdout_gain_by_league": {
+        "Premier League": {
+          "n": 20,
+          "mean_logloss_gain": -0.00178
+        },
+        "La Liga": {
+          "n": 24,
+          "mean_logloss_gain": -0.00054
+        },
+        "Serie A": {
+          "n": 22,
+          "mean_logloss_gain": -0.00715
+        },
+        "Bundesliga": {
+          "n": 15,
+          "mean_logloss_gain": -0.00262
+        },
+        "Ligue 1": {
+          "n": 17,
+          "mean_logloss_gain": 0.00735
+        }
+      },
       "approval": "NOT_APPROVED_no_significance_or_prospective_validation",
       "note": "Selection used validation only, and results are not betting ROI. Missing markets may have very small samples."
     }
