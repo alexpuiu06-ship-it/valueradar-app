@@ -11,6 +11,10 @@ on:
         type: choice
         options: [All leagues, Premier League, La Liga, Serie A, Bundesliga, Ligue 1]
         default: Premier League
+      inspect_stale:
+        description: "Inspecteaza ultima ora pentru diagnostic; cotele acceptate raman la 120 secunde"
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -37,6 +41,7 @@ jobs:
           PROPLINE_API_KEY: ${{ inputs.authenticated && secrets.PROPLINE_API_KEY || '' }}
           AUTHENTICATED_PROBE: ${{ inputs.authenticated }}
           PROBE_LEAGUE: ${{ matrix.league }}
+          INSPECT_STALE: ${{ inputs.inspect_stale }}
         run: python ro_feed_probe.py
       - name: Pastreaza doar diagnosticul agregat, fara cote brute
         if: ${{ always() }}

@@ -30,6 +30,22 @@ def response():
 
 
 class ProbeTests(unittest.TestCase):
+    def test_inspecting_older_delivery_never_relaxes_accepted_quote_age(self):
+        with tempfile.TemporaryDirectory() as folder,patch.dict("os.environ",{"PROPLINE_API_KEY":"test-only"}):
+            root=Path(folder)
+            (root/"latest.json").write_text(json.dumps({"generated_at":NOW.isoformat(),"fixtures":[fixture()]}))
+            payload=response()
+            for book in payload["bookmakers"]:book["markets"][0]["last_update"]=(NOW-timedelta(minutes=10)).isoformat()
+            clock=MagicMock();clock.now.return_value=NOW
+            with patch.object(runner,"OUT",root),patch.object(probe,"datetime",clock),patch.object(probe,"fetch",return_value=([payload],{},None)) as network:
+                output=root/"report.json"
+                self.assertEqual(probe.run(authenticated=True,output=output,inspect_stale=True),2)
+            self.assertIn("max_age=3600",network.call_args.args[0])
+            report=json.loads(output.read_text())
+            self.assertEqual(report["max_quote_age_seconds"],120)
+            self.assertEqual(report["requested_max_delivery_age_seconds"],3600)
+            self.assertEqual(report["quality"]["complete_recent_markets"],{})
+            self.assertEqual(report["quality"]["rejection_counts"]["stale_market_timestamp"],2)
     def test_unknown_selection_examples_are_bounded_names_without_prices(self):
         data=[]
         for i in range(5):
@@ -237,7 +253,10 @@ class ProbeTests(unittest.TestCase):
             self.assertEqual(len(lines),1)
             self.assertTrue(lines[0].startswith("RO_FEED_DIAGNOSTIC "))
             summary=json.loads(lines[0].removeprefix("RO_FEED_DIAGNOSTIC "))
-            self.assertEqual(set(summary),{"league","status","quality","quota"})
+            self.assertEqual(set(summary),{"league","status","received_at","analysis_generated_at",
+              "max_quote_age_seconds","requested_max_delivery_age_seconds","quality","quota"})
+            self.assertEqual(summary["received_at"],report["received_at"])
+            self.assertEqual(summary["max_quote_age_seconds"],120)
             self.assertEqual(summary["quota"],{"x-daily-remaining":999})
 
     def test_network_error_does_not_expose_key_and_redirect_cannot_forward_it(self):

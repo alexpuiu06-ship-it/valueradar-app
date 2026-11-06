@@ -48,7 +48,7 @@ ALIASES={
  "stetienne":"saintetienne","saintetienne":"saintetienne",
  # Observed provider spellings verified against the model fixture identity
  # and exact kickoff; these aliases affect odds matching only.
- "coventrycity":"coventry","betis":"realbetis",
+ "coventrycity":"coventry","hullcity":"hull","betis":"realbetis",
  "realbetisbalompie":"realbetis","realbetis":"realbetis",
  "athletic":"athleticbilbao","borussiamgladbach":"monchengladbach"
 }

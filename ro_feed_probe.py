@@ -194,10 +194,12 @@ def assess(payload,fixtures,league,at):
       "raw_odds_saved":False,"operator_prices_independently_verified":False,"verified_value":False}
 
 
-def run(authenticated=False,league="Premier League",output=REPORT):
+def run(authenticated=False,league="Premier League",output=REPORT,inspect_stale=False):
     if league not in odds.SPORTS:raise ValueError("Unsupported league")
+    request_max_age=3600 if inspect_stale else MAX_QUOTE_AGE_SECONDS
     report={"provider":"PropLine","league":league,"checked_at":datetime.now(timezone.utc).isoformat(),"mode":"authenticated" if authenticated else "public_health",
       "received_at":None,"analysis_generated_at":None,"model_pipeline_version":None,"max_quote_age_seconds":MAX_QUOTE_AGE_SECONDS,
+      "requested_max_delivery_age_seconds":request_max_age,
       "requested_books":list(BOOKS),"publisher_declared_jurisdiction":"RO",
       "operator_prices_independently_verified":False,"verified_value":False,
       "value_blockers":odds.value_blockers(),"raw_odds_saved":False}
@@ -221,7 +223,7 @@ def run(authenticated=False,league="Premier League",output=REPORT):
             if not generated or not 0<=(at-generated).total_seconds()<=12*3600 or not isinstance(latest.get("fixtures"),list):
                 report.update(status="stale_analysis");status=2
             else:
-                query=urllib.parse.urlencode({"markets":"h2h","bookmakers":",".join(BOOKS),"max_age":MAX_QUOTE_AGE_SECONDS})
+                query=urllib.parse.urlencode({"markets":"h2h","bookmakers":",".join(BOOKS),"max_age":request_max_age})
                 data,headers,error=fetch(f"/sports/{odds.SPORTS[league]}/odds?{query}",key)
                 received_at=datetime.now(timezone.utc)
                 report["received_at"]=received_at.isoformat() if not error else None
@@ -239,7 +241,9 @@ def run(authenticated=False,league="Premier League",output=REPORT):
     runner.write_json_atomic(output,report)
     # A fixed whitelist is safe to copy from CI logs; never log payloads,
     # request headers, credentials or exception text from the provider.
-    summary={"league":league,"status":report["status"],"quality":report.get("quality"),"quota":report.get("daily_quota_headers",{})}
+    summary={"league":league,"status":report["status"],"received_at":report["received_at"],
+      "analysis_generated_at":report["analysis_generated_at"],"max_quote_age_seconds":MAX_QUOTE_AGE_SECONDS,
+      "requested_max_delivery_age_seconds":request_max_age,"quality":report.get("quality"),"quota":report.get("daily_quota_headers",{})}
     print("RO_FEED_DIAGNOSTIC "+json.dumps(summary,ensure_ascii=False,allow_nan=False))
     return status
 
@@ -247,6 +251,8 @@ def run(authenticated=False,league="Premier League",output=REPORT):
 if __name__=="__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--authenticated",action="store_true")
+    parser.add_argument("--inspect-stale",action="store_true",help="Inspect up to 1 hour delivery history; accepted quote age remains 120 seconds")
     parser.add_argument("--league",choices=odds.SPORTS,default=os.getenv("PROBE_LEAGUE","Premier League"))
     args=parser.parse_args()
-    raise SystemExit(run(args.authenticated or os.getenv("AUTHENTICATED_PROBE")=="true",args.league))
+    raise SystemExit(run(args.authenticated or os.getenv("AUTHENTICATED_PROBE")=="true",args.league,
+                         inspect_stale=args.inspect_stale or os.getenv("INSPECT_STALE")=="true"))

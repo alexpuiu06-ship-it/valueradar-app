@@ -75,6 +75,28 @@ class OddsIdentityTests(unittest.TestCase):
         self.assertEqual(current_fixture, original)
         self.assertNotEqual(runner.norm("Betis"), runner.norm("Real Betis"))
 
+    def test_observed_hull_city_selection_alias_matches_hull_event(self):
+        # The provider event names Hull; the observed away selection names Hull City.
+        current_fixture = fixture()
+        current_fixture["away"] = "Hull"
+        current_event = event()
+        current_event["away_team"] = "Hull"
+        current_event["bookmakers"][0]["markets"][0]["outcomes"][2]["name"] = "Hull City"
+        original = deepcopy(current_fixture)
+        self.assertIs(odds.match_event(current_event, [current_fixture], NOW), current_fixture)
+        self.assertIsNotNone(odds.parse_h2h(current_event["bookmakers"][0], current_event, NOW))
+        self.assertEqual(current_fixture, original)
+        self.assertNotEqual(runner.norm("Hull City"), runner.norm("Hull"))
+
+    def test_hull_city_alias_does_not_match_reserves_or_similar_clubs(self):
+        for other in ("Hull City U21", "Hull City Women", "Hull United", "Hull Cit"):
+            with self.subTest(other=other):
+                self.assertNotEqual(odds.canonical(other), odds.canonical("Hull"))
+                current = event()
+                current["away_team"] = "Hull"
+                current["bookmakers"][0]["markets"][0]["outcomes"][2]["name"] = other
+                self.assertIsNone(odds.parse_h2h(current["bookmakers"][0], current, NOW))
+
     def test_observed_aliases_do_not_match_reserves_or_similar_clubs(self):
         for other in ("Coventry United", "Coventry City U21", "Coventry City Women", "Coventry Cit"):
             with self.subTest(other=other):
