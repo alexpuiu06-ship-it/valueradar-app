@@ -114,6 +114,24 @@ def wmean(rows,col,date):
   w=2**(-age/185)
   sw+=w; sy+=w*m[col]
  return sy/max(.001,sw),sw
+def h2h_distribution(lamh,lama):
+ """Independent Poisson 1X2 distribution, normalized (finite truncation)."""
+ if lamh is None or lama is None:return None
+ def mass(lam):
+  out=[math.exp(-lam)]
+  for k in range(1,25):out.append(out[-1]*lam/k)
+  return out
+ h,a=mass(lamh),mass(lama)
+ ph=pd=pa=0.
+ for i,hi in enumerate(h):
+  for j,aj in enumerate(a):
+   if i>j:ph+=hi*aj
+   elif i==j:pd+=hi*aj
+   else:pa+=hi*aj
+ z=ph+pd+pa
+ if z<=0:return None
+ return {"home":round(ph/z,5),"draw":round(pd/z,5),"away":round(pa/z,5)}
+
 def pred(hist,match,market):
  homecol,awaycol,line,minimum=MARKETS[market]
  relevant=[m for m in hist if m["league"]==match["league"] and m["date"]<match["date"]
@@ -145,7 +163,8 @@ def pred(hist,match,market):
   "mean":round(mu,2),"n_league":len(relevant),"n_home":len(home),
   "n_away":len(away),"small_sample":min(len(home),len(away))<8 or len(relevant)<100,
   "status":"experimental",
-  "quality":"very_low" if min(len(home),len(away))<8 or len(relevant)<150 else "unverified"}
+  "quality":"very_low" if min(len(home),len(away))<8 or len(relevant)<150 else "unverified",
+  "h2h":h2h_distribution(lamh,lama) if market=="goals" else None}
 def over_tail(mu,line,dispersion=1):
  k=max(.5,mu/(dispersion-1)) if dispersion>1.07 else float("inf")
  term=(k/(k+mu))**k if math.isfinite(k) else math.exp(-mu)
@@ -196,6 +215,36 @@ def validation(hist,market):
   "brier_improvement":round(improvement,5),
   "improvement_approx_95_range":[round(improvement-err,5),round(improvement+err,5)],
   "ece":round(ece,4),"bins":bins,"per_league":per_league}
+def validation_h2h(hist):
+ rows_by={lg:sorted([r for r in hist if r["league"]==lg and r.get("gh") is not None and r.get("ga") is not None],key=lambda r:r["date"]) for lg in LEAGUES}
+ test=[]; league_counts={}
+ for lg,rows in rows_by.items():
+  start=max(70,int(len(rows)*.75)); results=[]
+  for i in range(start,len(rows)):
+   p=pred(rows[:i],rows[i],"goals")
+   if not p or not p.get("h2h"):continue
+   probs=p["h2h"]; outcome="home" if rows[i]["gh"]>rows[i]["ga"] else "away" if rows[i]["gh"]<rows[i]["ga"] else "draw"
+   older=[r for r in rows[max(0,i-80):i] if r["date"]<rows[i]["date"]]
+   counts={"home":3,"draw":3,"away":3}
+   for r in older:
+    o="home" if r["gh"]>r["ga"] else "away" if r["gh"]<r["ga"] else "draw"
+    counts[o]+=1
+   denom=sum(counts.values())
+   baseline={k:v/denom for k,v in counts.items()}
+   results.append((probs,baseline,outcome))
+  league_counts[lg]=len(results);test.extend(results)
+ def brier(p,y):return sum((p[k]-(1 if k==y else 0))**2 for k in ("home","draw","away"))/3
+ def logloss(p,y):return -math.log(max(.00001,p[y]))
+ if len(test)<20:return {"n":len(test),"status":"insufficient","per_league":league_counts}
+ d=[brier(base,y)-brier(p,y) for p,base,y in test]
+ avg=sum(d)/len(d);sd=(sum((v-avg)**2 for v in d)/max(1,len(d)-1))**.5
+ return {"n":len(test),"status":"unverified", "brier":round(sum(brier(p,y) for p,base,y in test)/len(test),5),
+ "baseline_brier":round(sum(brier(base,y) for p,base,y in test)/len(test),5),
+ "log_loss":round(sum(logloss(p,y) for p,base,y in test)/len(test),5),
+ "baseline_log_loss":round(sum(logloss(base,y) for p,base,y in test)/len(test),5),
+ "improvement_approx_95_range":[round(avg-1.96*sd/math.sqrt(len(d)),5),round(avg+1.96*sd/math.sqrt(len(d)),5)],
+ "per_league":league_counts}
+
 def prospective(hist,fixtures,run_at):
  path=OUT/"forecast_log.json"
  try:
@@ -247,7 +296,7 @@ def run():
   "fixture_rows":len(fixtures),"source_success":sum(r["ok"] for r in report),
   "source_total":len(report),"source_report":report,"data_audit":audit,
   "last_stat_date":freshness,
-  "backtest":{m:validation(hist,m) for m in MARKETS},
+  "backtest":{**{m:validation(hist,m) for m in MARKETS},"h2h":validation_h2h(hist)},
   "prospective":prospective_report,"prospective_predictions_recorded":count,
   "fixtures":enriched,"message":"EXPERIMENTAL model; no bookmaker odds feed and no validated value bets."}
  (OUT/"latest.json").write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8")
@@ -257,6 +306,8 @@ def selftest():
  assert abs(over_tail(1.,0.5)-(1-math.exp(-1)))<1e-8
  assert norm("Arsenal FC")=="arsenal"
  assert norm("Man Utd")=="manchesterunited"
+ assert abs(sum(h2h_distribution(1.3,1.1).values())-1)<0.0001
+ assert h2h_distribution(2.5,.6)["home"] > h2h_distribution(.6,2.5)["home"]
  assert number("") is None
  assert local_kickoff({"date":"2026-11-06","time":"21:00"})=="22:00"
  assert not future_match({"date":"2026-11-05","time":"23:59"},datetime(2026,11,6,18,tzinfo=timezone.utc))
