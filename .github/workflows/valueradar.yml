@@ -10,6 +10,7 @@ on:
       - "docs/index.html"
       - "docs/odds_ui.js"
       - "docs/model_lab_ui.js"
+      - "docs/elo_ui.js"
       - ".github/workflows/valueradar.yml"
   schedule:
     - cron: "23 */4 * * *"
@@ -38,6 +39,7 @@ jobs:
           python -m py_compile runner.py odds_scanner.py performance.py
           node --check docs/odds_ui.js
           node --check docs/model_lab_ui.js
+          node --check docs/elo_ui.js
           python odds_scanner.py --self-test
           python performance.py --self-test
       - name: Importa rezultate si calculeaza predictii
