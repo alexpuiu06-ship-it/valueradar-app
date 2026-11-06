@@ -50,6 +50,31 @@ Integrarea de producție rămâne separată până când proba autentificată
 confirmă acoperirea și regulile. Acordul de buget nu transformă o listare
 comercială într-o ofertă verificată și nu deblochează semnale value.
 
+## Prima probă autentificată
+
+La 6 noiembrie 2026 cheia a fost confirmată de API, cu plan gratuit de
+1.000 cereri/zi și 999 rămase după prima cerere. Răspunsul Premier League
+conținea 17 piețe NetBet RO complete și recente, dintre care 15 potrivite
+cu modelul curent. Superbet RO nu a fost confirmat în acel răspuns, deci
+proba a fost marcată incompletă; nu s-au deblocat recomandări sau ROI.
+
+Aceste numere descriu fotografia inițială, înaintea verificării celorlalte
+ligi și a revizuirii suplimentare a numărătorilor. Nu sunt o promisiune de
+acoperire permanentă. Filtrul de 120 de secunde elimină piețele prea vechi;
+statistica globală „bookmaker proaspăt” nu dovedește existența unui 1X2
+proaspăt pentru fiecare ligă.
+
+Workflow-ul permite și „All leagues”: cinci joburi seriale, cel mult o cerere
+per ligă, cu rapoarte separate. Un rezultat incomplet rămâne vizibil chiar
+când alte ligi trec verificările. Nicio cotă brută și nicio cheie nu sunt
+salvate în aceste rapoarte.
+
+Pentru alternativa OddsPapi, documentația limitează bulk-ul la trei ligi și
+un singur bookmaker per cerere. Toate cele cinci ligi și două case înseamnă
+patru cereri per scanare. O scanare pe zi folosește 124 într-o lună de
+31 de zile; două folosesc 248 și nu lasă rezervă adecvată pentru metadata,
+erori sau repetări. Planul gratuit trebuie bugetat cu această limitare.
+
 ## Drepturi și limite
 
 PropLine permite afișarea valorilor/insighturilor individuale în produs,

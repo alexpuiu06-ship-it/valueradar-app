@@ -17,6 +17,7 @@ import runner
 
 API="https://api.prop-line.com/v1"
 BOOKS=("superbet_ro","netbet_ro")
+MAX_QUOTE_AGE_SECONDS=120
 REPORT=Path(__file__).resolve().parent/"work"/"ro_feed_preflight.json"
 
 
@@ -63,62 +64,134 @@ def summarize_health(payload):
 
 def assess(payload,fixtures,league,at):
     if not isinstance(payload,list):raise ValueError("Expected the documented bulk odds array")
-    rejected=Counter();by_book=Counter();matches=Counter();seen=set()
+    if league not in odds.SPORTS or at.tzinfo is None:raise ValueError("Expected a supported league and explicit timezone")
+    rejected=Counter();by_book=Counter();matches=Counter();received=Counter()
+    book_rejections={name:Counter() for name in BOOKS}
+    candidates=[f for f in fixtures if isinstance(f,dict) and f.get("league")==league
+      and all(isinstance(f.get(k),str) and f[k] for k in ("date","home","away"))] if isinstance(fixtures,list) else []
+
+    def event_books(event):
+        books=event.get("bookmakers",[]) if isinstance(event,dict) else []
+        return [b["key"] for b in books if isinstance(b,dict) and b.get("key") in BOOKS] if isinstance(books,list) else []
+
+    def reject(reason,name=None,affected=()):
+        rejected[reason]+=1
+        for book in (name,) if name else set(affected):book_rejections[book][reason]+=1
+
+    def event_identity(event):
+        if not isinstance(event,dict) or any(not isinstance(event.get(k),str) or not event[k].strip()
+          for k in ("id","home_team","away_team","commence_time")):return None
+        home,away=odds.canonical(event["home_team"]),odds.canonical(event["away_team"])
+        start=odds.dt(event["commence_time"])
+        if not home or not away or home==away or not start:return None
+        # Provider IDs and spelling are not independent football events.
+        return (event.get("sport_key"),home,away,start)
+
     event_ids=Counter(e.get("id") for e in payload if isinstance(e,dict) and isinstance(e.get("id"),str))
-    for event in payload:
-        if not isinstance(event,dict):rejected["invalid_event"]+=1;continue
-        if any(not isinstance(event.get(k),str) or not event[k] for k in ("id","home_team","away_team","commence_time")):
-            rejected["invalid_identity"]+=1;continue
-        if event_ids[event["id"]]!=1:rejected["duplicate_event_id"]+=1;continue
+    canonical_ids=Counter(identity for event in payload if (identity:=event_identity(event)) is not None
+      and isinstance(identity[0],str))
+    mapped={}
+    fixture_counts=Counter()
+    for index,event in enumerate(payload):
+        if event_identity(event) is None:continue
+        fixture=odds.match_event(event,candidates,at)
+        if fixture is not None:mapped[index]=fixture;fixture_counts[runner.key(fixture)]+=1
+    samples={}
+    for index,event in enumerate(payload):
+        affected=event_books(event);received.update(affected)
+        if not isinstance(event,dict):reject("invalid_event");continue
+        identity=event_identity(event)
+        if identity is None:reject("invalid_identity_or_kickoff",affected=affected);continue
+        if event_ids[event["id"]]!=1:reject("duplicate_event_id",affected=affected);continue
         if event.get("sport_key")!=odds.SPORTS[league] or event.get("live") is not False or event.get("is_outright") is not False:
-            rejected["not_explicitly_pre_match_football"]+=1;continue
-        identity=(event.get("id"),event.get("home_team"),event.get("away_team"),event.get("commence_time"))
-        if identity in seen:rejected["duplicate_event"]+=1;continue
-        seen.add(identity)
-        start=odds.dt(event.get("commence_time"))
-        if not start or start<=at:rejected["unknown_or_started"]+=1;continue
+            reject("not_explicitly_pre_match_football",affected=affected);continue
+        fixture=mapped.get(index)
+        if canonical_ids[identity]>1 or (fixture is not None and fixture_counts[runner.key(fixture)]>1):
+            reject("duplicate_canonical_event",affected=affected);continue
+        start=identity[3]
+        if start<=at:reject("already_started",affected=affected);continue
         books=event.get("bookmakers")
-        if not isinstance(books,list):rejected["invalid_books"]+=1;continue
+        if not isinstance(books,list):reject("invalid_books");continue
         counts=Counter(b.get("key") for b in books if isinstance(b,dict) and isinstance(b.get("key"),str))
-        fixture=odds.match_event(event,[f for f in fixtures if isinstance(f,dict) and f.get("league")==league],at)
         for book in books:
             if not isinstance(book,dict) or book.get("key") not in BOOKS:continue
             name=book["key"]
-            if counts[name]!=1:rejected["duplicate_book"]+=1;continue
-            if book.get("pregame_only") is True:rejected["frozen_book"]+=1;continue
+            if counts[name]!=1:reject("duplicate_book",name);continue
+            if book.get("pregame_only") is True:reject("frozen_book",name);continue
             markets=book.get("markets")
             choices=[m for m in markets if isinstance(m,dict) and m.get("key")=="h2h"] if isinstance(markets,list) else []
-            if len(choices)!=1:rejected["missing_or_duplicate_h2h"]+=1;continue
+            if len(choices)!=1:reject("missing_or_duplicate_h2h",name);continue
             market=choices[0]
             updated=odds.dt(market.get("last_update"))
-            if not updated or not 0<=(at-updated).total_seconds()<=120:
-                rejected["market_not_recent"]+=1;continue
+            if not updated:
+                reject("missing_market_timestamp" if market.get("last_update") is None else "invalid_market_timestamp",name);continue
+            age=(at-updated).total_seconds()
+            if not 0<=age<=MAX_QUOTE_AGE_SECONDS:
+                reject("future_market_timestamp" if age<0 else "stale_market_timestamp",name);continue
             if market.get("period") is not None or market.get("team") is not None or market.get("suspended_at") is not None or market.get("line_type","main")!="main":
-                rejected["period_line_or_suspension"]+=1;continue
+                reject("period_line_or_suspension",name);continue
             outcomes=market.get("outcomes")
             if not isinstance(outcomes,list) or len(outcomes)!=3:
-                rejected["incomplete_h2h"]+=1;continue
+                reject("incomplete_h2h",name);continue
             target=copy.deepcopy(market)
             normalized={"key":name,"markets":[target]}
+            invalid=None;selection_ids=set()
             try:
                 for value in target["outcomes"]:
+                    if not isinstance(value,dict):invalid="invalid_selection_shape";break
+                    if not isinstance(value.get("name"),str) or not value["name"].strip():invalid="invalid_selection_name";break
+                    side="draw" if value["name"].casefold() in ("draw","tie","x") else (
+                      "home" if odds.canonical(value["name"])==identity[1] else "away" if odds.canonical(value["name"])==identity[2] else None)
+                    if side is None:invalid="unsupported_selection_identity";break
+                    if side in selection_ids:invalid="duplicate_selection_identity";break
+                    selection_ids.add(side)
+                    if value.get("line_type") not in (None,"main") or value.get("point") is not None:
+                        invalid="unsupported_selection_line";break
                     seen_at=odds.dt(value.get("last_seen_at"))
-                    if not seen_at or not 0<=(at-seen_at).total_seconds()<=120:raise ValueError
-                    value["price"]=american_decimal(value.get("price"))
-                if odds.parse_h2h(normalized,event,at) is None:raise ValueError
-            except (ValueError,TypeError,AttributeError):
-                rejected["invalid_prices_or_selection_freshness"]+=1;continue
+                    if not seen_at:
+                        invalid="missing_selection_timestamp" if value.get("last_seen_at") is None else "invalid_selection_timestamp";break
+                    age=(at-seen_at).total_seconds()
+                    if not 0<=age<=MAX_QUOTE_AGE_SECONDS:
+                        invalid="future_selection_timestamp" if age<0 else "stale_selection_timestamp";break
+                    try:value["price"]=american_decimal(value.get("price"))
+                    except (ValueError,TypeError,OverflowError):invalid="invalid_american_price";break
+                if invalid is None and odds.parse_h2h(normalized,event,at) is None:invalid="invalid_h2h_prices_or_margin"
+            except (ValueError,TypeError,AttributeError,OverflowError):invalid="invalid_h2h_market"
+            if invalid:reject(invalid,name);continue
             by_book[name]+=1
-            if fixture and runner.comparison_allowed((fixture.get("markets",{}).get("goals")),at):matches[name]+=1
+            if fixture is None:
+                reject("fixture_identity_or_kickoff_not_matched",name)
+                # A maximum of three identity-only examples diagnoses aliases or
+                # schedule differences without exporting prices or a feed corpus.
+                if identity not in samples and len(samples)<3:
+                    same_pair=[f for f in candidates if odds.canonical(f["home"])==identity[1] and odds.canonical(f["away"])==identity[2]]
+                    samples[identity]={"provider_event_id":event["id"][:120],"home":event["home_team"][:120],"away":event["away_team"][:120],
+                      "commence_time":start.isoformat(),"candidate_kickoffs_utc":sorted({t.astimezone(timezone.utc).isoformat() for f in same_pair if (t:=runner.fixture_kickoff(f)) is not None})[:2]}
+                continue
+            model=fixture.get("markets",{}).get("goals") if isinstance(fixture.get("markets"),dict) else None
+            if not isinstance(model,dict) or not odds.valid_probabilities(model.get("h2h")):
+                reject("invalid_or_missing_model_h2h",name);continue
+            if not runner.comparison_allowed(model,at):reject("model_history_not_current",name);continue
+            matches[name]+=1
+    diagnostics={}
+    for name in BOOKS:
+        status=("absent" if not received[name] else "received_but_rejected" if not by_book[name] else
+          "complete_markets_without_model_match" if not matches[name] else "partially_matched" if matches[name]<by_book[name] else "matched_current_model")
+        diagnostics[name]={"status":status,"received_blocks":received[name],"complete_recent_markets":by_book[name],
+          "matched_current_model_markets":matches[name],"rejection_counts":dict(book_rejections[name])}
     return {"events_received":len(payload),"complete_recent_markets":dict(by_book),
       "matched_current_model_markets":dict(matches),"rejection_counts":dict(rejected),
+      "books_received":{name:received[name] for name in BOOKS},"book_diagnostics":diagnostics,
+      "book_status_scope":"Presence in this filtered response only; absence does not establish provider coverage or account entitlement.",
+      "unmatched_fixture_samples":list(samples.values()),"sample_policy":"At most three event identities/kickoffs; no prices or raw response retained.",
       "price_format":"documented_American_converted_to_decimal",
       "raw_odds_saved":False,"operator_prices_independently_verified":False,"verified_value":False}
 
 
 def run(authenticated=False,league="Premier League",output=REPORT):
     if league not in odds.SPORTS:raise ValueError("Unsupported league")
-    report={"provider":"PropLine","checked_at":datetime.now(timezone.utc).isoformat(),"mode":"authenticated" if authenticated else "public_health",
+    report={"provider":"PropLine","league":league,"checked_at":datetime.now(timezone.utc).isoformat(),"mode":"authenticated" if authenticated else "public_health",
+      "received_at":None,"analysis_generated_at":None,"model_pipeline_version":None,"max_quote_age_seconds":MAX_QUOTE_AGE_SECONDS,
       "requested_books":list(BOOKS),"publisher_declared_jurisdiction":"RO",
       "operator_prices_independently_verified":False,"verified_value":False,
       "value_blockers":odds.value_blockers(),"raw_odds_saved":False}
@@ -137,24 +210,31 @@ def run(authenticated=False,league="Premier League",output=REPORT):
             except (OSError,ValueError):latest={}
             if not isinstance(latest,dict):latest={}
             generated=odds.dt(latest.get("generated_at"));at=datetime.now(timezone.utc)
+            report["analysis_generated_at"]=generated.isoformat() if generated else None
+            report["model_pipeline_version"]=latest.get("pipeline_version") if isinstance(latest.get("pipeline_version"),str) else None
             if not generated or not 0<=(at-generated).total_seconds()<=12*3600 or not isinstance(latest.get("fixtures"),list):
                 report.update(status="stale_analysis");status=2
             else:
-                query=urllib.parse.urlencode({"markets":"h2h","bookmakers":",".join(BOOKS),"max_age":120})
+                query=urllib.parse.urlencode({"markets":"h2h","bookmakers":",".join(BOOKS),"max_age":MAX_QUOTE_AGE_SECONDS})
                 data,headers,error=fetch(f"/sports/{odds.SPORTS[league]}/odds?{query}",key)
+                received_at=datetime.now(timezone.utc)
+                report["received_at"]=received_at.isoformat() if not error else None
                 report["authenticated_requests"]=1
                 report["daily_quota_headers"]={k.lower():int(v) for k,v in headers.items() if k.lower() in ("x-daily-limit","x-daily-used","x-daily-remaining") and str(v).isdigit() and len(str(v))<=10}
                 if error:report.update(status="provider_error",error=error);status=2
                 else:
                     try:
-                        report["quality"]=assess(data,latest.get("fixtures",[]),league,datetime.now(timezone.utc))
+                        report["quality"]=assess(data,latest.get("fixtures",[]),league,received_at)
                         complete=all(report["quality"]["matched_current_model_markets"].get(book,0)>0 for book in BOOKS)
                         report["status"]="diagnostic_only" if complete else "incomplete_quote_validation"
                         if not complete:status=2
                     except ValueError:report.update(status="invalid_schema");status=2
     output.parent.mkdir(parents=True,exist_ok=True)
     runner.write_json_atomic(output,report)
-    print("RO feed evaluation:",report["status"],"; verified value: false; raw odds saved: false")
+    # A fixed whitelist is safe to copy from CI logs; never log payloads,
+    # request headers, credentials or exception text from the provider.
+    summary={"league":league,"status":report["status"],"quality":report.get("quality"),"quota":report.get("daily_quota_headers",{})}
+    print("RO_FEED_DIAGNOSTIC "+json.dumps(summary,ensure_ascii=False,allow_nan=False))
     return status
 
 
