@@ -4,6 +4,13 @@ Aplicația publică este la https://alexpuiu06-ship-it.github.io/valueradar-app/
 Probabilitățile rămân experimentale. Nicio selecție value nu este confirmată,
 iar cotele internaționale nu sunt oferte românești verificate.
 
+**Regimul ales de proprietar este momentan monitorizarea gratuită.** PropLine
+continuă verificarea zilnică de cel mult cinci cereri gratuite; OddsPapi nu
+are programare automată. Evaluarea comercială și solicitarea de demo sunt
+amânate. Plafonul de £49/lună discutat anterior nu este o instrucțiune de
+achiziție în acest regim. Nu sunt necesare alte configurări din partea
+proprietarului pentru continuarea monitorizării existente.
+
 ## Actualizarea automată
 
 Un singur workflow de producție, „ValueRadar / actualizare date”, importă,

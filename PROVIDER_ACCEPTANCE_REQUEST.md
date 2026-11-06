@@ -1,14 +1,18 @@
-# Solicitare de demo și ofertă RO — pregătită, netrimisă
+# Solicitare de demo și ofertă RO — amânată, netrimisă
+
+**Proprietarul a ales să rămânem momentan cu monitorizarea gratuită.**
+Acest mesaj este păstrat doar ca model pentru o eventuală reluare a evaluării
+comerciale. Nu trebuie trimis și nu există un pas comercial activ în așteptarea
+proprietarului. Monitorizarea gratuită deja configurată continuă automat.
 
 Cele două variante gratuite au fost testate. PropLine are acoperire observată
 parțială; eșantionul OddsPapi nu a confirmat piețe acceptabile. Următorul pas
 comercial cere dovezi de la furnizor, nu relaxarea verificărilor aplicației.
 
-Bugetul acceptat rămâne £49/lună pentru două case. Nu se cere încă o aprobare
-pentru același buget și nu s-a făcut nicio achiziție. Documentația comercială
+Plafonul discutat anterior a fost £49/lună pentru două case; alegerea actuală
+amână orice achiziție și contact comercial. Documentația comercială
 nu confirmă încă prețul total cu taxe, drepturile necesare și un demo RO.
-Trimiterea e-mailului nu este disponibilă prin instrumentele acestei sesiuni.
-Mesajul de mai jos poate fi trimis din contul proprietarului.
+Textul de mai jos este arhivat, fără instrucțiune de trimitere.
 
 **Către:** hello@odds-api.io  
 **Subiect:** ValueRadar: RO coverage demo, public-app licence and Solo monthly quote
