@@ -1,45 +1,29 @@
-name: ValueRadar / laborator de modele
+name: ValueRadar / laborator de modele (artefacte)
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "model_lab.py"
-      - "calibration.py"
-      - "elo_challenger.py"
-      - "runner.py"
-      - ".github/workflows/model_lab.yml"
-  schedule:
-    - cron: "41 5 * * 0"
 permissions:
   contents: read
 concurrency:
-  group: valueradar-production-writer
-  cancel-in-progress: false
+  group: valueradar-research-independent-model-lab-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  compare:
-    if: ${{ github.ref == 'refs/heads/main' }}
+  research:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    permissions:
-      contents: write
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
-      - name: Retine revizia initiala
-        id: source
-        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Testeaza cercetarea si separarea cronologica
-        run: python -m unittest discover -s tests -v
-      - name: Compara variantele si calibratorul pe date reale
-        run: |
-          python model_lab.py
-          python calibration.py
-      - name: Salveaza numai rapoartele laboratorului din revizia initiala
-        env:
-          SOURCE_SHA: ${{ steps.source.outputs.sha }}
-        run: python scripts/publish_generated.py lab --expected-sha "$SOURCE_SHA"
+      - name: Cercetare independenta fara salvare sau publicare
+        run: python scripts/run_pipeline.py --research
+      - uses: actions/upload-artifact@v4
+        with:
+          name: independent-model-lab
+          path: |
+            docs/model_lab.json
+            docs/calibration_report.json
+            docs/elo_challenger.json
+          retention-days: 14

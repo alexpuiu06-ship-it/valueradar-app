@@ -49,6 +49,17 @@
     return Number.isFinite(kickoff) ? kickoff > Date.now() : /^\d{4}-\d{2}-\d{2}$/.test(fixture.date || '') && fixture.date > new Date().toISOString().slice(0, 10);
   };
   VR.fixtureId = fixture => JSON.stringify([fixture.league, fixture.date, fixture.home, fixture.away]);
+  VR.marketAvailable = prediction => {
+    if (!prediction || !prediction.explanation) return false;
+    if (prediction.availability != null && prediction.availability.comparison_allowed !== true) return false;
+    const day = prediction.explanation.last_observation_date;
+    const stamp = VR.timestamp(String(day) + 'T00:00:00Z');
+    const today = Date.parse(new Date().toISOString().slice(0, 10) + 'T00:00:00Z');
+    const age = (today - stamp) / 86400e3;
+    return Number.isFinite(age) && age >= 0 && age <= 21;
+  };
+  VR.researchMatches = report => !!(window.DATA && report && report.protocol &&
+    report.protocol.model_pipeline_version === window.DATA.pipeline_version);
   VR.liveFixtures = () => window.DATA && VR.freshness(window.DATA.generated_at).fresh && Array.isArray(window.DATA.fixtures) ? window.DATA.fixtures.filter(VR.upcoming) : [];
   VR.x3 = distribution => VR.distribution(distribution) ? ['home', 'draw', 'away'].map((k, i) => ['1', 'X', '2'][i] + ': ' + VR.pct(distribution[k])).join(' · ') : 'Probabilități indisponibile sau invalide';
   VR.interval = value => Array.isArray(value) && value.length === 2 && value.every(VR.isNumber) ? '[' + value.map(x => VR.fmt(x, 4)).join(', ') + ']' : 'insuficient';

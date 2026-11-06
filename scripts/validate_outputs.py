@@ -45,6 +45,8 @@ def validate_log(log, original=None):
         key = log_id(row)
         require(None not in key[:5] and key not in current, "Duplicate or incomplete journal identity")
         current[key] = row
+    canonical=[runner.forecast_identity(row) for row in log]
+    require(len(set(canonical))==len(canonical), "Duplicate canonical forecast identity")
     old_keys = set()
     for before in original or []:
         key = log_id(before)

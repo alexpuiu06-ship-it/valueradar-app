@@ -20,7 +20,8 @@
       const holdout = report.holdout;
       el('elo-summary').textContent = 'Candidat ales pe validare: ' + (report.best_candidate || 'date insuficiente') + ' · N test final: ' + (holdout.n || 0) +
         ' · Câștig log-loss față de Poisson: ' + fmt(holdout.logloss_gain_vs_current, 5) + ' · Interval aproximativ 95%: ' + VR.interval(holdout.approx_95_ci) + '. ' +
-        VR.intervalVerdict(holdout.approx_95_ci) + ' Raport istoric: ' + VR.dateTime(report.generated_at) + '. Nu dovedește profit.';
+        VR.intervalVerdict(holdout.approx_95_ci) + ' Raport istoric: ' + VR.dateTime(report.generated_at) + '. Versiune: ' +
+        (report.protocol && report.protocol.model_pipeline_version || 'necunoscută') + '. Nu dovedește profit.';
       renderMatchList();
     } catch (error) { if (current === generation) el('elo-summary').textContent = 'Raport Elo indisponibil: ' + error.message; }
   }
@@ -28,9 +29,9 @@
     const select = el('elo-match'), old = select.value;
     games.clear();
     // A valid historical score does not make an old live forecast fresh.
-    if (report && VR.freshness(report.generated_at).fresh) for (const f of VR.liveFixtures()) {
+    if (report && VR.researchMatches(report) && VR.freshness(report.generated_at).fresh) for (const f of VR.liveFixtures()) {
       const match = report.live_research_only.find(x => VR.fixtureId(x) === VR.fixtureId(f));
-      if (match && VR.distribution(match.probabilities)) games.set(VR.fixtureId(f), { research: match, current: f });
+      if (match && VR.distribution(match.probabilities) && VR.marketAvailable(f.markets.goals)) games.set(VR.fixtureId(f), { research: match, current: f });
     }
     select.innerHTML = '<option value="">Alege un meci…</option>' + Array.from(games.entries()).map(([id, pair]) => '<option value="' + esc(id) + '">' + esc(pair.current.date + ' · ' + pair.current.home + ' — ' + pair.current.away) + '</option>').join('');
     if (games.has(old)) select.value = old;
@@ -39,8 +40,8 @@
   }
   function renderMatch() {
     const pair = games.get(el('elo-match').value);
-    if (!pair || !window.DATA || !VR.freshness(window.DATA.generated_at).fresh || !VR.upcoming(pair.current)) {
-      el('elo-compare').textContent = 'Selectează un meci cu date proaspete din ambele modele. Un raport istoric nu reprezintă o predicție actuală.'; return;
+    if (!pair || !window.DATA || !VR.researchMatches(report) || !VR.freshness(window.DATA.generated_at).fresh || !VR.upcoming(pair.current) || !VR.marketAvailable(pair.current.markets.goals)) {
+      el('elo-compare').textContent = 'Selectează un meci cu date proaspete din ambele modele și aceeași versiune a datelor. Un raport istoric nu reprezintă o predicție actuală.'; return;
     }
     const x = pair.research, p = pair.current.markets.goals;
     el('elo-compare').innerHTML = '<b>' + esc(x.home) + ' — ' + esc(x.away) + '</b><div>Poisson actual: ' + esc(VR.x3(p && p.h2h)) + '</div><div>Candidat Elo: ' + esc(VR.x3(x.probabilities)) +

@@ -95,6 +95,9 @@
     }
     if (!Number.isFinite(odd) || odd < 1.02 || odd > 100) { el('manual-result').textContent = 'Introdu o cotă validă între 1,02 și 100.'; return; }
     const market = el('manual-market').value, outcome = el('manual-outcome').value, model = fixture.markets[market === 'h2h' ? 'goals' : market];
+    if (!VR.marketAvailable(model)) {
+      el('manual-result').textContent = 'Comparație blocată: ' + (model && model.availability && model.availability.message || 'Istoricul statistic este vechi sau nu poate fi verificat.'); return;
+    }
     const valid = model && (market === 'h2h' ? VR.distribution(model.h2h) : VR.probability(model.over) && VR.probability(model.under) && Math.abs(model.over + model.under - 1) <= .0001 && VR.isNumber(model.line));
     if (!valid) { el('manual-result').textContent = 'Comparație blocată: statistici insuficiente sau probabilități invalide pentru această piață.'; return; }
     const p = market === 'h2h' ? model.h2h[outcome] : model[outcome];

@@ -5,6 +5,28 @@ value verificate și nu se calculează ROI din diferențe nevalidate. Lucrul
 este pregătit pe `codex/robust-analysis-audit`, pentru verificare înaintea
 oricărei integrări în `main`.
 
+## Continuare operațională
+
+Primul PR a fost integrat în main și publicat cu succes prin rularea
+[42274190705](https://github.com/alexpuiu06-ship-it/valueradar-app/actions/runs/42274190705).
+Un al doilea lot elimină înlocuirea accidentală a rulărilor în așteptare:
+un singur workflow importă, salvează și publică toate rapoartele. Cercetarea
+separată produce doar artefacte. Verificarea publicării compară și amprentele
+HTML-ului și ale celor cinci scripturi.
+
+Istoricul prea vechi sau sursa curentă indisponibilă blochează comparațiile,
+chiar dacă analiza are timestamp recent. Duplicate canonice în jurnal opresc
+salvarea fără a alege arbitrar o predicție. Verificarea periodică din UI
+păstrează explicațiile deschise și comparația manuală încă valabilă, iar
+predicțiile Elo din altă versiune nu se combină cu modelul curent.
+
+Validare locală a continuării: **105 teste Python, 46 teste browser**, sintaxă,
+actionlint și pipeline real cu un singur import; **20/20 surse, 3.935 rezultate,
+200 meciuri/800 estimări**, 2.000 înregistrări prospective păstrate. Regulile
+operaționale și programarea actualizărilor sunt în [OPERATIONS.md](OPERATIONS.md).
+Secțiunile următoare păstrează măsurătorile auditului inițial și starea de la
+momentul primei predări pentru review.
+
 ## Date și corecții
 
 Au fost citite integral documentele de predare/metodologie, toate cele cinci

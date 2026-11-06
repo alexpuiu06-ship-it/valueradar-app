@@ -498,6 +498,40 @@ def valid_forecast_record(entry):
   else:return False
   return True
  except (ValueError,TypeError,KeyError):return False
+MAX_HISTORY_AGE_DAYS=21
+
+def market_availability(hist,league,market,at,report):
+ """Operational freshness rule, separate from retrospective model arithmetic."""
+ h,a,_,_=MARKETS[market]
+ rows=[r for r in hist if r["league"]==league and number(r.get(h)) is not None and number(r.get(a)) is not None and r["date"]<=at.date().isoformat()]
+ last=max((r["date"] for r in rows),default=None)
+ age=(at.date()-datetime.fromisoformat(last).date()).days if last else None
+ sources=[r for r in report if r.get("league")==league and r.get("kind")=="results"]
+ failed=not sources or any(r.get("ok") is not True for r in sources)
+ code="current_results_source_unavailable" if failed else "missing_history" if last is None else "history_too_old" if age>MAX_HISTORY_AGE_DAYS else "available"
+ messages={"available":"Istoric recent disponibil; precizia modelului rămâne nevalidată.",
+  "current_results_source_unavailable":"Sursa rezultatelor curente nu este disponibilă. Comparația este blocată.",
+  "missing_history":"Nu există observații pentru această piață.",
+  "history_too_old":"Istoricul are peste 21 de zile. Așteptăm rezultate recente, inclusiv după pauza dintre sezoane."}
+ return {"status":code,"comparison_allowed":code=="available","message":messages[code],
+  "last_observation_date":last,"history_age_days":age,"max_history_age_days":MAX_HISTORY_AGE_DAYS,
+  "evaluated_at":at.isoformat(),"policy":"operational_guard_v1_not_statistically_validated"}
+
+def comparison_allowed(prediction,at):
+ """A recent execution timestamp cannot make old observations recent."""
+ if not isinstance(prediction,dict):return False
+ availability=prediction.get("availability")
+ if availability is not None and (not isinstance(availability,dict) or availability.get("comparison_allowed") is not True):return False
+ explanation=prediction.get("explanation")
+ if not isinstance(explanation,dict):return False
+ try:
+  day=datetime.strptime(explanation["last_observation_date"],"%Y-%m-%d").date()
+  return 0<=(at.astimezone(timezone.utc).date()-day).days<=MAX_HISTORY_AGE_DAYS
+ except (KeyError,ValueError,TypeError):return False
+
+def forecast_identity(entry):
+ return (*key(entry),entry["market"],entry.get("line") if entry["market"]!="h2h" else None,entry.get("pipeline_version","legacy_unversioned"))
+
 def prospective(hist,fixtures,run_at):
  """Append first forecasts, settle later. Never silently reset or truncate evidence."""
  path=OUT/"forecast_log.json"
@@ -507,9 +541,9 @@ def prospective(hist,fixtures,run_at):
   raise RuntimeError("Forecast journal is unreadable; refusing to replace it") from exc
  if not isinstance(log,list) or any(not valid_forecast_record(r) for r in log):
   raise RuntimeError("Forecast journal schema is invalid; refusing to replace it")
- def logkey(x):
-  return (*key(x),x["market"],x.get("line") if x["market"]!="h2h" else None,x.get("pipeline_version","legacy_unversioned"))
+ logkey=forecast_identity
  known={logkey(r) for r in log}
+ if len(known)!=len(log):raise RuntimeError("Forecast journal has duplicate canonical identities; refusing to choose or rewrite evidence")
  now=timestamp(run_at)
  if now is None:raise ValueError("run_at must contain an explicit timezone")
  for f in fixtures:
@@ -521,13 +555,13 @@ def prospective(hist,fixtures,run_at):
   base.update({"created_at":run_at,"settled":False,"kickoff_utc":kickoff.astimezone(timezone.utc).isoformat(),
     "forecast_schema_version":2,"pipeline_version":PIPELINE_VERSION,"calibration_status":"unvalidated"})
   for market,p in f["markets"].items():
-   if p is None:continue
+   if p is None or p.get("availability",{}).get("comparison_allowed") is False:continue
    entry={**base,"market":market,"line":p["line"],"p_over":p["over"],
      "method_version":p.get("explanation",{}).get("method_version","unknown"),
      "historical_cutoff_exclusive":p.get("explanation",{}).get("historical_cutoff_exclusive",f["date"])}
    if logkey(entry) not in known:log.append(entry);known.add(logkey(entry))
   gp=f["markets"].get("goals")
-  if gp and gp.get("h2h"):
+  if gp and gp.get("h2h") and gp.get("availability",{}).get("comparison_allowed") is not False:
    entry={**base,"market":"h2h","probabilities":dict(gp["h2h"]),
      "method_version":gp.get("explanation",{}).get("method_version","unknown"),
      "historical_cutoff_exclusive":f["date"]}
@@ -575,19 +609,28 @@ def prospective(hist,fixtures,run_at):
    "notice":"Mixed versions are descriptive only; use by_pipeline_version for version-specific evaluation."}
  return scores,len(log)
 
-def run():
+def run(imported=None,run_at=None):
  OUT.mkdir(parents=True,exist_ok=True)
- hist,fixtures,report=load_all()
+ at=run_at or datetime.now(timezone.utc)
+ if isinstance(at,str):at=timestamp(at)
+ if at is None or at.tzinfo is None:raise ValueError("run_at requires a timezone")
+ at=at.astimezone(timezone.utc)
+ hist,fixtures,report=imported if imported is not None else load_all(at)
  if len(hist)<100 or not fixtures:
   print("Insufficient data; preserving existing dashboard.",file=sys.stderr)
   return 2
- today=datetime.now(timezone.utc).date()
- upcoming=[m for m in fixtures if m["date"] <= (today+timedelta(days=30)).isoformat()]
+ today=at.date()
+ upcoming=[m for m in fixtures if future_match(m,at) and m["date"] <= (today+timedelta(days=30)).isoformat()]
+ health={lg:{mk:market_availability(hist,lg,mk,at,report) for mk in MARKETS} for lg in LEAGUES}
  enriched=[]
  for m in upcoming:
   markets={k:pred(hist,m,k) for k in MARKETS}
+  for mk,p in markets.items():
+   if p is not None:
+    p["availability"]=health[m["league"]][mk]
+    if not p["availability"]["comparison_allowed"]:p["quality"]="very_low"
   enriched.append({**m,"markets":markets,"market_rejections":{k:market_rejection(hist,m,k) for k,p in markets.items() if p is None}})
- stamp=datetime.now(timezone.utc).isoformat()
+ stamp=max(at,datetime.now(timezone.utc)).isoformat()
  prospective_report,count=prospective(hist,enriched,stamp)
  audit={lg:{market:sum(r["league"]==lg and r.get(h) is not None and r.get(a) is not None for r in hist)
   for market,(h,a,_,_) in MARKETS.items()} for lg in LEAGUES}
@@ -603,7 +646,7 @@ def run():
   "source_total":sum(r["kind"]!="integrity" for r in report),
   "source_report":[r for r in report if r["kind"]!="integrity"],
   "data_integrity":next((r for r in report if r["kind"]=="integrity"),{}),"data_audit":audit,
-  "last_stat_date":freshness,
+  "last_stat_date":freshness,"data_health":health,
   "backtest":{**{m:validation(hist,m) for m in MARKETS},"h2h":validation_h2h(hist)},
   "prospective":prospective_report,"prospective_predictions_recorded":count,
   "fixtures":enriched,"message":"Experimental model. International odds monitored separately; no verified Romanian bookmaker prices or validated value bets."}

@@ -14,6 +14,7 @@ calibrarea, fără promovare automată în producție.
 - [Protocolul comparației și limitele evaluării](RESEARCH_PROTOCOL.md)
 - [Acoperirea reală a operatorilor RO](PROVIDER_COVERAGE.md)
 - [Raportul auditului și verificările](AUDIT_REPORT.md)
+- [Funcționarea și publicarea](OPERATIONS.md)
 
 ## Cum îl activezi
 1. GitHub → repository → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
@@ -23,9 +24,10 @@ calibrarea, fără promovare automată în producție.
 Actualizare la aproximativ patru ore, în limita disponibilității GitHub Actions și a surselor.
 
 Workflow-ul de teste rulează și pe branch-uri/PR-uri, cu import real, teste
-Python și browser, fără cheia de cote și fără publicare. Numai workflow-urile
-de producție de pe `main` pot salva rapoarte și publica. Acestea folosesc un
-singur grup de concurență și refuză să suprascrie un `main` modificat între timp.
+Python și browser, fără cheia de cote și fără publicare. Un singur workflow
+de producție salvează și publică toate rapoartele împreună; refuză să
+suprascrie un main modificat între timp. Rulările separate de cercetare
+produc doar artefacte, fără să modifice repository-ul sau site-ul.
 
 ## Verificare locală
 
