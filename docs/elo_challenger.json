@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T19:34:01.777128+00:00",
+  "generated_at": "2026-11-06T20:26:37.728232+00:00",
   "status": "RESEARCH_ONLY_NOT_PROMOTED",
   "rating_method": "Davidson three-outcome Elo; updates after all matches of same date; league-isolated ratings",
   "selection": "Global calendar validation only; separate calibration window; final period used for exploratory reporting only",
@@ -49,7 +49,7 @@
       "duplicate_copy": 0
     },
     "input_sha256": "748e17d279274cbd07e42d3a3a316fc971297323ca0ce95b7962a764c809f80d",
-    "as_of": "2026-11-06T19:34:01.777128+00:00",
+    "as_of": "2026-11-06T20:26:37.728232+00:00",
     "today_results_excluded": true,
     "model_pipeline_version": "validated_identity_v2",
     "split_rule": "global unique dates: first 55% training, next 15% selection, next 10% calibration, last 20% evaluation",
@@ -191,110 +191,6 @@
   ],
   "production_model_changed": false,
   "live_research_only": [
-    {
-      "home": "Sevilla FC",
-      "away": "Deportivo Alavés",
-      "league": "La Liga",
-      "date": "2026-11-06",
-      "probabilities": {
-        "home": 0.5028520677083321,
-        "draw": 0.25934967855772256,
-        "away": 0.2377982537339452
-      },
-      "rating_home": 1496.3,
-      "rating_away": 1457.3,
-      "games_home": 86,
-      "games_away": 86,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 104.1,
-      "historical_cutoff_exclusive": "2026-11-06",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Toulouse FC",
-      "away": "RC Strasbourg Alsace",
-      "league": "Ligue 1",
-      "date": "2026-11-06",
-      "probabilities": {
-        "home": 0.4152442824320747,
-        "draw": 0.2707994041592151,
-        "away": 0.3139563134087102
-      },
-      "rating_home": 1505.6,
-      "rating_away": 1531.8,
-      "games_home": 76,
-      "games_away": 77,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 38.9,
-      "historical_cutoff_exclusive": "2026-11-06",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Everton",
-      "away": "Coventry",
-      "league": "Premier League",
-      "date": "2026-11-06",
-      "probabilities": {
-        "home": 0.5182685855634405,
-        "draw": 0.2563366174901739,
-        "away": 0.2253947969463856
-      },
-      "rating_home": 1515.7,
-      "rating_away": 1465.0,
-      "games_home": 85,
-      "games_away": 9,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 115.7,
-      "historical_cutoff_exclusive": "2026-11-06",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Venezia",
-      "away": "Udinese",
-      "league": "Serie A",
-      "date": "2026-11-06",
-      "probabilities": {
-        "home": 0.38322742736015025,
-        "draw": 0.2724434778899446,
-        "away": 0.3443290947499051
-      },
-      "rating_home": 1360.4,
-      "rating_away": 1410.6,
-      "games_home": 47,
-      "games_away": 85,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 14.9,
-      "historical_cutoff_exclusive": "2026-11-06",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
     {
       "home": "1. FSV Mainz 05",
       "away": "FC Bayern München",
@@ -5367,13 +5263,13 @@
     }
   ],
   "market_diagnostic": {
-    "n": 85,
+    "n": 82,
     "source": "Previously stored international bookmaker no-vig consensus snapshots",
     "snapshot_timestamp": "2026-11-06T19:31:24.133507+00:00",
     "status": "descriptive_diagnostic_not_outcome_validation",
-    "mean_largest_gap_pp_current": 11.67,
-    "mean_largest_gap_pp_elo": 6.17,
-    "large_10pp_current": 45,
+    "mean_largest_gap_pp_current": 11.84,
+    "mean_largest_gap_pp_elo": 6.29,
+    "large_10pp_current": 44,
     "large_10pp_elo": 12,
     "events": [
       {
@@ -6581,34 +6477,6 @@
         "elo_low_sample": false
       },
       {
-        "league": "Serie A",
-        "date": "2026-11-06",
-        "home": "Venezia",
-        "away": "Udinese",
-        "books": 19,
-        "poisson_largest_gap_pp": 10.1,
-        "elo_largest_gap_pp": 3.46,
-        "improvement_pp": 6.64,
-        "market_no_vig": {
-          "home": 0.40589,
-          "draw": 0.28436,
-          "away": 0.30975
-        },
-        "poisson": {
-          "home": 0.33319,
-          "draw": 0.25605,
-          "away": 0.41076
-        },
-        "elo": {
-          "home": 0.38322742736015025,
-          "draw": 0.2724434778899446,
-          "away": 0.3443290947499051
-        },
-        "rating_home": 1360.4,
-        "rating_away": 1410.6,
-        "elo_low_sample": false
-      },
-      {
         "league": "Premier League",
         "date": "2026-11-07",
         "home": "Leeds",
@@ -6886,34 +6754,6 @@
         },
         "rating_home": 1738.5,
         "rating_away": 1673.6,
-        "elo_low_sample": false
-      },
-      {
-        "league": "La Liga",
-        "date": "2026-11-06",
-        "home": "Sevilla FC",
-        "away": "Deportivo Alavés",
-        "books": 18,
-        "poisson_largest_gap_pp": 6.88,
-        "elo_largest_gap_pp": 3.15,
-        "improvement_pp": 3.73,
-        "market_no_vig": {
-          "home": 0.49405,
-          "draw": 0.29083,
-          "away": 0.21513
-        },
-        "poisson": {
-          "home": 0.46546,
-          "draw": 0.25058,
-          "away": 0.28396
-        },
-        "elo": {
-          "home": 0.5028520677083321,
-          "draw": 0.25934967855772256,
-          "away": 0.2377982537339452
-        },
-        "rating_home": 1496.3,
-        "rating_away": 1457.3,
         "elo_low_sample": false
       },
       {
@@ -7334,34 +7174,6 @@
         },
         "rating_home": 1594.2,
         "rating_away": 1570.7,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Ligue 1",
-        "date": "2026-11-06",
-        "home": "Toulouse FC",
-        "away": "RC Strasbourg Alsace",
-        "books": 18,
-        "poisson_largest_gap_pp": 4.03,
-        "elo_largest_gap_pp": 1.61,
-        "improvement_pp": 2.42,
-        "market_no_vig": {
-          "home": 0.43131,
-          "draw": 0.26557,
-          "away": 0.30312
-        },
-        "poisson": {
-          "home": 0.41165,
-          "draw": 0.24492,
-          "away": 0.34343
-        },
-        "elo": {
-          "home": 0.4152442824320747,
-          "draw": 0.2707994041592151,
-          "away": 0.3139563134087102
-        },
-        "rating_home": 1505.6,
-        "rating_away": 1531.8,
         "elo_low_sample": false
       },
       {
