@@ -40,6 +40,8 @@ def experiment(hist):
  for market in MARKETS:
   h,a,limit,minimum=runner.MARKETS["goals" if market=="h2h" else market]
   val_records=defaultdict(list);test_records=defaultdict(list)
+  holdout_differences=defaultdict(list)
+  league_differences=defaultdict(lambda:defaultdict(list))
   availability={}
   for league in runner.LEAGUES:
    rows=[r for r in hist if r["league"]==league and r.get(h) is not None and r.get(a) is not None]
@@ -57,6 +59,12 @@ def experiment(hist):
     y=actual(m,market)
     target=val_records if i<split_test else test_records
     for name,prob in predictions.items():target[name].append((prob,y))
+    if i>=split_test:
+     base_loss=logloss(predictions["current_v1"],y)
+     for name,prob in predictions.items():
+      gain=base_loss-logloss(prob,y)
+      holdout_differences[name].append(gain)
+      league_differences[league][name].append(gain)
   def summarize(group):
    return {name:{"n":len(points),"brier":round(sum(brier(p,y) for p,y in points)/len(points),5) if points else None,
     "log_loss":round(sum(logloss(p,y) for p,y in points)/len(points),5) if points else None}
@@ -66,13 +74,23 @@ def experiment(hist):
   # We do NOT choose the winner using the holdout.
   contenders=[(metrics["log_loss"],name) for name,metrics in val.items() if metrics["n"]>=20]
   chosen=min(contenders)[1] if contenders else None
-  improvement=None
+  improvement=None;gain_interval=None;league_gains={}
   if chosen and chosen in test and test[chosen]["n"]>=20 and test.get("current_v1",{}).get("log_loss") is not None:
-   improvement=round(test["current_v1"]["log_loss"]-test[chosen]["log_loss"],5)
+   differences=holdout_differences[chosen]
+   improvement=round(sum(differences)/len(differences),5)
+   if len(differences)>=3:
+    standard_dev=math.sqrt(sum((d-improvement)**2 for d in differences)/(len(differences)-1))
+    margin=1.96*standard_dev/math.sqrt(len(differences))
+    gain_interval=[round(improvement-margin,5),round(improvement+margin,5)]
+   league_gains={league:{"n":len(group[chosen]),
+     "mean_logloss_gain":round(sum(group[chosen])/len(group[chosen]),5)}
+     for league,group in league_differences.items() if chosen in group and group[chosen]}
   output["markets"][market]={
    "historical_examples":availability,"selected_on_validation":chosen,
    "validation":val,"holdout":test,
    "holdout_logloss_gain_vs_current":improvement,
+   "holdout_approx_95_gain_interval":gain_interval,
+   "holdout_gain_by_league":league_gains,
    "approval":"NOT_APPROVED_no_significance_or_prospective_validation",
    "note":"Selection used validation only, and results are not betting ROI. Missing markets may have very small samples."
   }
@@ -90,6 +108,7 @@ def selftest():
  x=experiment(hist)
  assert set(x["markets"])==set(MARKETS)
  assert x["markets"]["h2h"]["approval"].startswith("NOT_APPROVED")
+ assert "holdout_approx_95_gain_interval" in x["markets"]["h2h"]
  print("Model lab tests passed")
 def run():
  OUT.mkdir(parents=True,exist_ok=True)
