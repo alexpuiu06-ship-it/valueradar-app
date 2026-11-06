@@ -1,0 +1,9 @@
+{
+  "generated_at": null,
+  "provider": "The Odds API v4",
+  "region": "uk",
+  "live_ro_supported": false,
+  "status": "awaiting_key",
+  "recommendation": "NO BET: odds feed not yet configured, model unvalidated.",
+  "items": []
+}
