@@ -1,140 +1,113 @@
-/* Optional ValueRadar real odds module, no secrets in client browser */
-(function(){
-'use strict';
-function el(id){return document.getElementById(id);}
-function esc(x){return String(x==null?'':x).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');}
-function pct(x){return x==null||!Number.isFinite(Number(x))?'—':(Number(x)*100).toFixed(1)+'%';}
-function matches(){return window.DATA&&Array.isArray(window.DATA.fixtures)?window.DATA.fixtures:[];}
-var host=el('message');
-if(!host)return;
-var panel=document.createElement('div');
-panel.innerHTML=[
-'<section class="panel" id="odds-module" style="margin-top:16px">',
-'<h2>Scanner cote reale — 1X2 pre-match</h2>',
-'<div id="odds-status" class="missing">Verific statusul feedului…</div>',
-'<div id="odds-list" style="margin-top:10px"></div>',
-'<p class="meta">Cotele internaționale nu sunt identice cu ofertele Superbet.ro, Betano.ro, Unibet.ro, MrBit, NetBet România ori Casa Pariurilor. Nicio selecție nu este recomandare de pariere.</p>',
-'</section>',
-'<section class="panel" id="manual-module" style="margin-top:16px">',
-'<h2>Compară manual o cotă de la o casă din România</h2>',
-'<p class="meta">Fără abonament: selectezi meciul și introduci cota afișată la casa de pariuri. Sistemul nu plasează pariuri.</p>',
-'<div class="controls">',
-'<select id="manual-match" aria-label="Meci"><option value="">Se încarcă meciurile…</option></select>',
-'<select id="manual-book" aria-label="Bookmaker"><option>Superbet</option><option>Betano</option><option>Unibet</option><option>MrBit</option><option>NetBet</option><option>Casa Pariurilor</option></select>',
-'<select id="manual-market" aria-label="Piața"><option value="h2h">Rezultat 1X2</option><option value="goals">Total goluri 2,5</option><option value="yellow">Total galbene 4,5</option><option value="corners">Total cornere 9,5</option><option value="fouls">Total faulturi 23,5</option></select>',
-'<select id="manual-outcome" aria-label="Selecția"><option value="home">1 — Gazde</option><option value="draw">X — Egal</option><option value="away">2 — Oaspeți</option></select>',
-'<input id="manual-price" type="number" step=".01" min="1.01" max="100" placeholder="Cota, ex. 1.95" aria-label="Cota"/>',
-'<button id="manual-compare" type="button">Compară</button>',
-'</div><div class="missing" id="manual-result">Alege meciul, selecția și cota.</div></section>'
-].join('');
-host.insertAdjacentElement('afterend',panel);
-var review=document.createElement('section');
-review.className='panel';
-review.style.marginTop='16px';
-review.innerHTML='<h2>Evaluarea prețurilor și a avantajului estimat</h2><div id="market-review" class="meta">Se încarcă jurnalul cotelor…</div>';
-panel.appendChild(review);
-var source=null,watch=null,audit=null,checks=null;
-async function loadJson(path){try{var r=await fetch(path+'?v='+Date.now(),{cache:'no-store'});return r.ok?await r.json():null;}catch(e){return null;}}
-async function reload(){var a=await Promise.all([loadJson('./odds_status.json'),loadJson('./odds_watchlist.json'),loadJson('./market_audit.json'),loadJson('./odds_diagnostics.json')]);source=a[0];watch=a[1];audit=a[2];checks=a[3];renderOdds();renderMatches();renderAudit();}
-function renderOdds(){
- if(!source){el('odds-status').textContent='Nu există date despre scanner; nu se afișează prețuri fictive.';return;}
- var labels={needs_api_key:'Scanner instalat, lipsește cheia API.',connected:'Cote internaționale primite.',partial:'Date parțiale de la furnizor.',no_events:'Nu există evenimente în feed.',api_error:'Eroare de API.',budget_guard:'Limită de credit atinsă.',missing_fixtures:'Lipsesc meciurile de comparat.'};
- el('odds-status').textContent=(labels[source.status]||('Stare: '+source.status))+
- ' Meciuri potrivite: '+(source.matched_games||0)+
- '. Prețuri comparate: '+(source.evaluated_prices||0)+
- '. Credite folosite: '+(source.spent_this_month==null?'—':source.spent_this_month)+
- '. Verificat: '+(source.checked_at?new Date(source.checked_at).toLocaleString('ro-RO'):'—')+'.';
- if(source.status==='needs_api_key'){
-  var help=document.createElement('a');
-  help.href='https://github.com/alexpuiu06-ship-it/valueradar-app/blob/main/ACTIVARE_FARA_PROGRAMARE.md';
-  help.target='_blank';
-  help.rel='noopener noreferrer';
-  help.textContent=' Instrucțiuni de activare, fără programare.';
-  el('odds-status').appendChild(help);
- }
- 
- // Security boundary: no model-only discrepancy is allowed to appear as a bet.
- // Older watchlist files with exaggerated 'EV' are intentionally ignored.
- var items=(watch&&watch.status==='verified_ro_opportunities'&&watch.live_ro_supported===true&&
-   Array.isArray(watch.items))?watch.items:[];
- if(!source.checked_at||Date.now()-Date.parse(source.checked_at)>4*3600*1000){el('odds-list').textContent='Nu sunt cote suficient de recente pentru o comparație actuală.';return;}
- if(!items.length){
-   var invalid=checks&&checks.large_model_disagreements;
-   el('odds-list').textContent='Nu există pariuri value verificate. '+
-    (invalid!=null?'Am izolat '+invalid+' meciuri cu diferențe mari între model și piață. ':'')+
-    'Cotele reale sunt monitorizate pentru diagnostic, nu pentru recomandări.';
-   return;
- }
- el('odds-list').innerHTML=items.slice(0,12).map(function(v){
-  return '<div style="padding:10px 0;border-bottom:1px solid #e1eaed"><b>'+esc(v.home)+' — '+esc(v.away)+'</b> · '+esc(v.league)+
-  '<div>'+esc(v.bookmaker)+' (internațional) · '+esc(({home:'1',draw:'X',away:'2'})[v.outcome])+
-  ' @ '+esc(v.odds)+' · P(model) '+pct(v.model_probability)+' · EV orientativ '+pct(v.estimated_ev)+
-  '</div><div class="meta">Nu este ofertă RO confirmată; diferență nevalidată.</div></div>';
- }).join('');
-}
-function renderAudit(){
- var e=el('market-review');
- if(!audit){e.textContent='Jurnalul de cote nu este încă disponibil.';return;}
- e.innerHTML='Comparații de cote în istoric: <b>'+esc(audit.observations||0)+'</b> · '+
- 'Diferențe matematice NEVALIDATE: <b>'+esc(audit.unverified_model_price_differences||0)+'</b> · '+
- 'Semnale de pariere confirmate: <b>'+esc(audit.initial_positive_ev_signals||0)+'</b> · '+
- 'Semnale decontate: <b>'+esc(audit.signals_settled||0)+'</b>'+
- '<div class="meta">Fără cote confirmate la operatori români și validarea performanței, nu calculăm profit ipotetic din aceste diferențe.</div>';
- if(!checks || !Array.isArray(checks.items)){
-  e.innerHTML+='<p class="meta">Așteptăm diagnosticul dintre model și consensul cotelor.</p>';return;
- }
- var timestamp=checks.data_timestamp||checks.generated_at||source&&source.checked_at;
- var checked=timestamp?new Date(timestamp).toLocaleString('ro-RO'):'necunoscut';
- var rows=checks.items.slice(0,8).map(function(x){
-  var p=x.model_probabilities||{},market=x.market_consensus_no_vig||{};
-  var scores=['home','draw','away'].map(function(k){return esc(({home:'1',draw:'X',away:'2'})[k])+': '+
-    pct(p[k])+' model / '+pct(market[k])+' piață';}).join(' · ');
-  return '<tr style="border-bottom:1px solid #e2ebee">'+
-   '<td style="padding:8px">'+esc(x.league)+' · '+esc(x.home)+' — '+esc(x.away)+'</td>'+
-   '<td style="padding:8px">'+esc(x.books)+'</td>'+
-   '<td style="padding:8px">'+esc(x.max_model_consensus_gap_pp)+' pp</td>'+
-   '<td style="padding:8px">'+scores+'</td></tr>';
- }).join('');
- e.innerHTML+='<h3 style="font-size:15px;margin:17px 0 8px">Cele mai mari neconcordanțe model–piață</h3>'+
-  '<p class="meta">Fotografie a pieței din '+esc(checked)+'. Comparația elimină marja fiecărei case, dar consensul nu este adevărul și nici rezultatul final al meciului.</p>'+
-  '<div style="overflow:auto"><table style="width:100%;font-size:12px;text-align:left"><thead><tr><th>Meci</th><th>Case</th><th>Abaterea maximă</th><th>Probabilități 1X2</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
-  '<p class="meta">Diferență mare = analiză în carantină, NU oportunitate value. Datele nu se actualizează între scanările furnizorului.</p>';
-}
-function renderMatches(){
- var fixtures=matches();if(!fixtures.length)return;
- var input=el('manual-match'),old=input.value;
- input.innerHTML=fixtures.slice(0,100).map(function(f,i){return '<option value="'+i+'">'+esc(f.date+' · '+f.home+' — '+f.away)+'</option>';}).join('');
- if(Array.from(input.options).some(function(o){return o.value===old;}))input.value=old;
-}
-function updateOutcomes(){
- var e=el('manual-outcome'),isH2h=el('manual-market').value==='h2h';
- e.innerHTML=isH2h?'<option value="home">1 — Gazde</option><option value="draw">X — Egal</option><option value="away">2 — Oaspeți</option>':
- '<option value="over">Peste linie</option><option value="under">Sub linie</option>';
-}
-el('manual-market').addEventListener('change',updateOutcomes);
-el('manual-compare').addEventListener('click',function(){
- var f=matches()[Number(el('manual-match').value)],odd=Number(el('manual-price').value),outcome=el('manual-outcome').value,book=el('manual-book').value;
- if(!f||!Number.isFinite(odd)||odd<=1.01||odd>100){el('manual-result').textContent='Selectează meciul și introdu o cotă validă între 1,02 și 100.';return;}
- var market=el('manual-market').value;
- var model=(f.markets||{})[market==='h2h'?'goals':market];
- if(!model||(market==='h2h'&&!model.h2h)){
-   el('manual-result').textContent='Nu avem suficiente statistici pentru această piață.';
-   return;
- }
- var p=Number(market==='h2h'?model.h2h[outcome]:model[outcome]),limit=1/odd;
- if(!Number.isFinite(p)||p<=0||p>=1){
-   el('manual-result').textContent='Probabilitatea modelului este invalidă; comparația a fost blocată.';return;
- }
- var difference=Math.abs(p-limit);
- var line=market==='h2h'?'':(' · Linia obligatorie: '+model.line);
- var warnings=[];
- if(model.small_sample||model.quality==='very_low')warnings.push('Eșantion statistic prea mic');
- if(difference>=.10)warnings.push('Diferență de cel puțin 10 puncte procentuale față de pragul cotei');
- if(!warnings.length)warnings.push('Model nevalidat pe cote reale de la acest operator');
- el('manual-result').innerHTML='<b>'+esc(book)+' · '+esc(f.home)+' — '+esc(f.away)+'</b>'+line+
- '<div>Estimare model: '+pct(p)+' · Prag matematic al cotei: '+pct(limit)+'</div>'+
- '<div class="meta"><b>Nu este un semnal de pariere.</b> '+esc(warnings.join('; '))+
- '. Nu afișăm EV drept oportunitate până la validarea predicțiilor și a cotelor oferite efectiv.</div>';
-});
-reload();setInterval(reload,15*60*1000);setTimeout(renderMatches,3000);
-})();
+/* Quotes are diagnostic observations. This client has no verified-value capability. */
+(function () {
+  'use strict';
+  const { el, esc, pct } = window.VR;
+  const panel = document.createElement('div');
+  panel.innerHTML = `
+    <section class="panel" id="odds-module"><h2>Scanner cote reale — 1X2 pre-match</h2>
+      <div id="odds-status" class="missing" role="status">Verific statusul feedului…</div>
+      <p id="odds-list"><b>Nu există pariuri value verificate.</b></p>
+      <p class="meta">Cotele internaționale nu confirmă oferte Superbet RO, Betano RO, Unibet RO, MrBit RO, NetBet RO ori Casa Pariurilor. Nicio selecție nu este recomandare de pariere.</p>
+    </section>
+    <section class="panel" id="manual-module"><h2>Compară manual o cotă de la o casă din România</h2>
+      <p class="meta">Comparație aritmetică orientativă. Alegerea unui operator nu verifică oferta. Piața 1X2 trebuie să fie rezultatul la 90 de minute plus prelungirile arbitrului, fără reprize suplimentare.</p>
+      <div class="controls">
+        <select id="manual-match" aria-label="Meci"><option value="">Aștept date proaspete…</option></select>
+        <select id="manual-book" aria-label="Bookmaker"><option>Superbet</option><option>Betano</option><option>Unibet</option><option>MrBit</option><option>NetBet</option><option>Casa Pariurilor</option></select>
+        <select id="manual-market" aria-label="Piața"><option value="h2h">Rezultat 1X2</option><option value="goals">Total goluri 2,5</option><option value="yellow">Total galbene 4,5</option><option value="corners">Total cornere 9,5</option><option value="fouls">Total faulturi 23,5</option></select>
+        <select id="manual-outcome" aria-label="Selecția"><option value="home">1 — Gazde</option><option value="draw">X — Egal</option><option value="away">2 — Oaspeți</option></select>
+        <input id="manual-price" type="number" step=".01" min="1.02" max="100" placeholder="Cota, ex. 1.95" aria-label="Cota">
+        <button id="manual-compare" type="button" disabled>Compară</button>
+      </div><p id="manual-line" class="meta">Aceeași piață, aceeași linie și aceleași reguli sunt obligatorii.</p>
+      <div class="missing" id="manual-result" role="status" aria-live="polite">Alege meciul, selecția și cota.</div>
+    </section>
+    <section class="panel"><h2>Evaluarea prețurilor și a avantajului estimat</h2><div id="market-review" class="meta">Se încarcă jurnalul cotelor…</div></section>`;
+  el('message').insertAdjacentElement('afterend', panel);
+  let source = null, audit = null, checks = null, generation = 0;
+  const manualGames = new Map();
+  async function safeRead(path) { try { return await VR.fetchJSON(path); } catch (_) { return null; } }
+  async function reload() {
+    const current = ++generation;
+    source = audit = checks = null;
+    renderOdds(); renderAudit();
+    const results = await Promise.all([safeRead('./odds_status.json'), safeRead('./market_audit.json'), safeRead('./odds_diagnostics.json')]);
+    if (current !== generation) return;
+    [source, audit, checks] = results;
+    renderOdds(); renderAudit();
+  }
+  function renderOdds() {
+    el('odds-list').textContent = 'Nu există pariuri value verificate. Lipsesc cotele RO confirmate și validarea prospectivă a modelului.';
+    if (!source) { el('odds-status').textContent = 'Statusul feedului este indisponibil sau cererea a expirat. Cotele nu pot fi verificate.'; return; }
+    const labels = { needs_api_key: 'Scannerul nu a efectuat cereri: lipsește cheia API.', connected: 'Cote internaționale primite.', partial: 'Feed internațional parțial.', no_events: 'Niciun eveniment în feed.', no_valid_quotes: 'Nicio cotă acceptată: evenimentele au fost respinse la verificare.', api_error: 'Eroare de API.', budget_guard: 'Protecție de buget: nu s-au solicitat cote.', missing_fixtures: 'Lipsesc meciurile.', stale_model: 'Model prea vechi pentru compararea cotelor.', budget_invalid: 'Buget invalid: nu s-au solicitat cote.' };
+    // An attempt timestamp proves only that the scanner ran, never price freshness.
+    const stamp = source.data_timestamp || source.last_successful_quote_at;
+    const fresh = VR.freshness(stamp, 2);
+    const prefix = labels[source.status] || 'Starea feedului: ' + String(source.status || 'necunoscută');
+    el('odds-status').textContent = prefix + ' Ultima încercare: ' + VR.dateTime(source.attempted_at || source.checked_at) +
+      '. Timestamp cote acceptate: ' + VR.dateTime(stamp) + '. ' + (!fresh.fresh ? 'Cotele sunt vechi, lipsesc sau au un timestamp invalid; nu sunt o comparație actuală. ' : '') +
+      'Meciuri potrivite: ' + (source.matched_games || 0) + '. Prețuri comparate: ' + (source.evaluated_prices || 0) + '. Credite rezervate conservator în luna curentă: ' + (source.spent_this_month == null ? 'necunoscut' : source.spent_this_month) + '.';
+  }
+  function renderAudit() {
+    const review = el('market-review');
+    if (!audit) { review.textContent = 'Jurnalul de cote nu este disponibil. Nu există pariuri value verificate.'; return; }
+    review.innerHTML = 'Comparații istorice: <b>' + esc(audit.observations || 0) + '</b> · Diferențe matematice nevalidate: <b>' +
+      esc(audit.unverified_model_price_differences || 0) + '</b>.<p>Nu există pariuri value verificate. Profitul și ROI nu sunt validate și nu se afișează.</p>';
+    if (!checks || !Array.isArray(checks.items)) { review.innerHTML += '<p class="meta">Diagnosticul consensului este indisponibil.</p>'; return; }
+    const stamp = checks.data_timestamp || checks.generated_at;
+    const fresh = VR.freshness(stamp, 2);
+    const rows = checks.items.slice(0, 8).map(row => '<tr><td>' + esc(row.league) + ' · ' + esc(row.home) + ' — ' + esc(row.away) + '</td><td>' +
+      esc(row.books) + '</td><td>' + esc(row.max_model_consensus_gap_pp) + ' pp</td><td>' + esc(VR.x3(row.model_probabilities)) + '<br>' + esc(VR.x3(row.market_consensus_no_vig)) + '</td></tr>').join('');
+    review.innerHTML += '<h3>Diferențe model–piață în observațiile salvate</h3><p class="meta">Fotografie istorică: ' + esc(VR.dateTime(stamp)) +
+      '. ' + (fresh.fresh ? '' : '<b>Nu reprezintă cote actuale.</b> ') + 'Probabilitățile modelului provin din scanarea istorică și pot diferi de modelul actualizat. Consensul fără marjă este un reper descriptiv, nu adevărul probabilității.</p>' +
+      '<div class="table-scroll"><table><thead><tr><th>Meci</th><th>Case</th><th>Abatere maximă</th><th>Model / consens 1X2</th></tr></thead><tbody>' + rows +
+      '</tbody></table></div><p class="meta">Diferențele mari sunt motive de carantină. Independența economică a caselor nu este demonstrată. Reguli: 1X2 pre-match; compatibilitatea exactă de decontare cu operatorii RO rămâne neverificată.</p>';
+  }
+  function clearResult() { el('manual-result').textContent = 'Alege meciul, selecția și cota. Comparația nu verifică oferta și nu este un semnal de pariere.'; }
+  function renderMatches() {
+    const select = el('manual-match'), old = select.value;
+    manualGames.clear();
+    for (const fixture of VR.liveFixtures()) if (Number.isFinite(VR.kickoff(fixture))) manualGames.set(VR.fixtureId(fixture), fixture);
+    select.innerHTML = '<option value="">Alege un meci…</option>' + Array.from(manualGames.entries()).map(([id, f]) =>
+      '<option value="' + esc(id) + '">' + esc(VR.dateTime(new Date(VR.kickoff(f)).toISOString()) + ' · ' + f.home + ' — ' + f.away) + '</option>').join('');
+    if (manualGames.has(old)) select.value = old;
+    const enabled = manualGames.size > 0;
+    for (const id of ['manual-match', 'manual-market', 'manual-outcome', 'manual-book', 'manual-price', 'manual-compare']) el(id).disabled = !enabled;
+    if (!enabled) el('manual-result').textContent = 'Comparație blocată: lipsesc meciuri viitoare cu oră verificabilă și date proaspete.';
+    else clearResult();
+    updateLine();
+  }
+  function updateLine() {
+    const f = manualGames.get(el('manual-match').value), market = el('manual-market').value;
+    const p = f && f.markets[market === 'h2h' ? 'goals' : market];
+    el('manual-line').textContent = market === 'h2h' ? 'Regulă obligatorie: rezultat la 90 de minute plus timpul adițional, fără reprize suplimentare.' :
+      'Linia obligatorie a modelului: ' + (p && VR.isNumber(p.line) ? p.line : 'indisponibilă') + '. Verifică aceleași reguli de numărare și de decontare la operator.';
+  }
+  function updateOutcomes() {
+    el('manual-outcome').innerHTML = el('manual-market').value === 'h2h' ? '<option value="home">1 — Gazde</option><option value="draw">X — Egal</option><option value="away">2 — Oaspeți</option>' : '<option value="over">Peste linie</option><option value="under">Sub linie</option>';
+    updateLine(); clearResult();
+  }
+  for (const id of ['manual-match', 'manual-book', 'manual-outcome', 'manual-price']) el(id).addEventListener('change', () => { updateLine(); clearResult(); });
+  el('manual-market').addEventListener('change', updateOutcomes);
+  el('manual-compare').addEventListener('click', () => {
+    const id = el('manual-match').value, fixture = manualGames.get(id), odd = Number(el('manual-price').value);
+    if (!window.DATA || !VR.freshness(window.DATA.generated_at).fresh || !fixture || !VR.upcoming(fixture) || !Number.isFinite(VR.kickoff(fixture))) {
+      el('manual-result').textContent = 'Comparație blocată: selectează explicit un meci viitor, cu date proaspete.'; return;
+    }
+    if (!Number.isFinite(odd) || odd < 1.02 || odd > 100) { el('manual-result').textContent = 'Introdu o cotă validă între 1,02 și 100.'; return; }
+    const market = el('manual-market').value, outcome = el('manual-outcome').value, model = fixture.markets[market === 'h2h' ? 'goals' : market];
+    const valid = model && (market === 'h2h' ? VR.distribution(model.h2h) : VR.probability(model.over) && VR.probability(model.under) && Math.abs(model.over + model.under - 1) <= .0001 && VR.isNumber(model.line));
+    if (!valid) { el('manual-result').textContent = 'Comparație blocată: statistici insuficiente sau probabilități invalide pentru această piață.'; return; }
+    const p = market === 'h2h' ? model.h2h[outcome] : model[outcome];
+    if (!VR.probability(p) || p <= 0 || p >= 1) { el('manual-result').textContent = 'Probabilitate invalidă; comparația a fost blocată.'; return; }
+    const warnings = ['Oferta, timestamp-ul și regulile operatorului sunt neverificate', 'model fără calibrare prospectivă demonstrată'];
+    if (model.small_sample || model.quality === 'very_low') warnings.push('eșantion statistic redus');
+    if (Math.abs(p - 1 / odd) >= .10) warnings.push('diferență de cel puțin 10 puncte procentuale: carantină');
+    el('manual-result').innerHTML = '<b>' + esc(el('manual-book').value) + ' · ' + esc(fixture.home) + ' — ' + esc(fixture.away) + '</b><div>Estimare model: ' + pct(p) +
+      ' · Prag matematic 1/cotă: ' + pct(1 / odd) + '</div><div class="meta"><b>Nu este un semnal de pariere.</b> ' + esc(warnings.join('; ')) +
+      '. Nu există un interval validat pentru eroarea probabilității acestui meci. Nu afișăm EV drept oportunitate de profit.</div>';
+  });
+  window.addEventListener('valueradar:datachanged', renderMatches);
+  window.addEventListener('valueradar:refresh', reload);
+  renderMatches(); reload();
+  setInterval(reload, 15 * 60e3);
+}());

@@ -1,6 +1,12 @@
-# ValueRadar — Auditul modelului (6 noiembrie 2026)
+# ValueRadar — Auditul inițial al modelului (6 noiembrie 2026)
 
-**Status: experimental, fără dovezi de avantaj profitabil.** Fără cote live și fără model de arbitri sau de formații confirmate.
+**Status: experimental, fără dovezi de avantaj profitabil.** Fără cote live RO confirmate și fără model de arbitri sau de formații confirmate.
+
+Acest fișier păstrează măsurătorile inițiale. Pentru auditul ulterior, cu
+identități corectate, comparație Elo/calibrare, bootstrap pe săptămâni și teste
+de integrare, consultați [AUDIT_REPORT.md](AUDIT_REPORT.md). Eșantioanele și
+frontierele diferă; nu comparați direct scorurile din cele două rapoarte ca
+dovadă de progres al modelului.
 
 ## Date observate în prima execuție
 - 3.935 meciuri istorice pentru goluri și rezultate, în cele cinci ligi.

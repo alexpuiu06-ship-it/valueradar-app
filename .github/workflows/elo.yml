@@ -5,43 +5,38 @@ on:
     branches: [main]
     paths:
       - "elo_challenger.py"
+      - "calibration.py"
+      - "runner.py"
       - ".github/workflows/elo.yml"
   schedule:
     - cron: "17 6 * * 0"
 permissions:
-  contents: write
+  contents: read
 concurrency:
-  group: valueradar-elo-challenger
-  cancel-in-progress: true
+  group: valueradar-production-writer
+  cancel-in-progress: false
 jobs:
   audit:
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Retine revizia initiala
+        id: source
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Verifica sintaxa si calculul Elo
-        run: |
-          python -m py_compile runner.py elo_challenger.py
-          python runner.py --self-test
-          python elo_challenger.py --self-test
-      - name: Compara Elo cu modelul actual pe date reale
+      - name: Testeaza modelele si izolarea holdoutului
+        run: python -m unittest discover -s tests -v
+      - name: Compara Elo cu Poisson pe date reale
         run: python elo_challenger.py
-      - name: Salveaza doar raportul de cercetare
-        run: |
-          set -euo pipefail
-          git config user.name "valueradar-bot"
-          git config user.email "valueradar-bot@users.noreply.github.com"
-          cp docs/elo_challenger.json /tmp/valueradar_elo.json
-          for attempt in 1 2 3; do
-            git fetch origin main
-            git reset --hard origin/main
-            cp /tmp/valueradar_elo.json docs/elo_challenger.json
-            git add docs/elo_challenger.json
-            if git diff --cached --quiet; then break; fi
-            git commit -m "Save independent Elo research report [skip ci]"
-            if git push origin main; then break; fi
-            if [ "$attempt" = "3" ]; then exit 1; fi
-          done
+      - name: Salveaza exclusiv raportul Elo din revizia initiala
+        env:
+          SOURCE_SHA: ${{ steps.source.outputs.sha }}
+        run: python scripts/publish_generated.py elo --expected-sha "$SOURCE_SHA"
