@@ -42,7 +42,13 @@ ALIASES={
  "bayernmunchen":"bayernmunich","bayernmunich":"bayernmunich",
  "athleticclub":"athleticbilbao","athleticbilbao":"athleticbilbao",
  "deportivoalaves":"alaves","alaves":"alaves",
- "atleticodemadrid":"atleticomadrid","atleticomadrid":"atleticomadrid"
+ "atleticodemadrid":"atleticomadrid","atleticomadrid":"atleticomadrid",
+ "brightonhovealbion":"brighton","wolverhampton":"wolves",
+ "asmonaco":"monaco","monacofc":"monaco","olympiquedemarseille":"marseille",
+ "olympiquemarseille":"marseille","stadebrestois":"brest",
+ "stetienne":"saintetienne","saintetienne":"saintetienne",
+ "realbetisbalompie":"realbetis","realbetis":"realbetis",
+ "athletic":"athleticbilbao","borussiamgladbach":"monchengladbach"
 }
 def canonical(name):
  text=runner.norm(name)
