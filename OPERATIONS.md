@@ -100,6 +100,12 @@ aceasta este o regulă operațională, nu confirmarea independentă a finalului.
 
 La decontare se adaugă valorile observate, amprenta lor, sursele și amprentele
 fișierelor sursă disponibile. Predicția și timestamp-ul inițial rămân intacte.
+În dovezile noi (schema 2), amprentele folosesc identitatea literală arhivată,
+astfel încât un alias nou
+nu invalidează dovezile vechi. Fișierele sursă sunt selectate și după ligă și
+tipul rezultatului; un identificator comun al familiei nu include alte ligi
+sau fișiere de program în dovada meciului.
+Dovezile și rapoartele din schema 1 rămân citibile, fără rescrierea arhivei.
 O corecție ulterioară a rezultatului exclude scorul afectat și este raportată;
 decontarea inițială nu este rescrisă. Dovada arhivată validă rămâne evaluabilă
 dacă sursa lipsește într-o rulare ulterioară, în absența unui conflict cunoscut.

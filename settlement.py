@@ -34,7 +34,7 @@ def completion_floor(entry,played=None):
 
 def evidence_valid(entry):
     proof=entry.get("settlement_evidence")
-    if not isinstance(proof,dict) or proof.get("schema_version")!=1:return False
+    if not isinstance(proof,dict) or proof.get("schema_version") not in (1,2):return False
     if proof.get("kind")!="observed_public_result_not_operator_verification":return False
     if proof.get("observed_at")!=entry.get("settled_at"):return False
     values=runner.number(proof.get("actual_home")),runner.number(proof.get("actual_away"))
@@ -43,7 +43,8 @@ def evidence_valid(entry):
     if start is not None and runner.timestamp(start) is None:return False
     frozen=runner.fixture_kickoff(entry)
     if frozen and start and abs((frozen-runner.timestamp(start)).total_seconds())>60:return False
-    fingerprint={"identity":runner.key(entry),"market":entry["market"],"actual_home":values[0],"actual_away":values[1],"source_kickoff_utc":start}
+    identity=tuple(entry[k] for k in ("league","date","home","away")) if proof["schema_version"]==2 else runner.key(entry)
+    fingerprint={"identity":identity,"market":entry["market"],"actual_home":values[0],"actual_away":values[1],"source_kickoff_utc":start}
     digest=hashlib.sha256(json.dumps(fingerprint,sort_keys=True).encode()).hexdigest()
     if proof.get("result_sha256")!=digest:return False
     if entry["market"]=="h2h":
@@ -94,11 +95,12 @@ def freeze_result(entry,played,at,source_report=()):
     stamp=at.astimezone(timezone.utc).isoformat()
     source_ids=sorted({v for v in played.get("source_ids",[]) if isinstance(v,str)})
     source_start=runner.fixture_kickoff(played)
-    fingerprint={"identity":runner.key(played),"market":entry["market"],"actual_home":home,"actual_away":away,
+    fingerprint={"identity":tuple(entry[k] for k in ("league","date","home","away")),"market":entry["market"],"actual_home":home,"actual_away":away,
                  "source_kickoff_utc":source_start.astimezone(timezone.utc).isoformat() if source_start else None}
-    snapshots=[{k:source[k] for k in ("source_id","content_sha256","fetched_at") if k in source}
-               for source in source_report if source.get("source_id") in source_ids and source.get("ok") is True]
-    entry.update(settled=True,settled_at=stamp,settlement_evidence={"schema_version":1,
+    snapshots=[{k:source[k] for k in ("league","kind","source_id","content_sha256","fetched_at") if k in source}
+               for source in source_report if source.get("source_id") in source_ids and source.get("ok") is True
+               and source.get("league")==played["league"] and source.get("kind") in ("results","historical")]
+    entry.update(settled=True,settled_at=stamp,settlement_evidence={"schema_version":2,
       "kind":"observed_public_result_not_operator_verification","observed_at":stamp,
       "actual_home":home,"actual_away":away,"result_sha256":hashlib.sha256(json.dumps(fingerprint,sort_keys=True).encode()).hexdigest(),
       "source_kickoff_utc":fingerprint["source_kickoff_utc"],"source_ids":source_ids,"source_snapshots":snapshots})
@@ -121,7 +123,7 @@ def audit(log,outcomes,at,integrity=None):
               "pipeline_version":entry.get("pipeline_version","legacy_unversioned"),"status":status,
               "kickoff_utc":entry.get("kickoff_utc"),"overdue":bool(late)})
     samples.sort(key=lambda row:(row["date"],row["league"],row["home"],row["market"],row["pipeline_version"]))
-    return {"schema_version":1,"generated_at":at.astimezone(timezone.utc).isoformat(),"forecasts":len(log),
+    return {"schema_version":2,"generated_at":at.astimezone(timezone.utc).isoformat(),"forecasts":len(log),
       "unique_fixtures":len(fixtures),"counts":dict(states),"by_pipeline_version":{k:dict(v) for k,v in versions.items()},
       "settled_records":sum(r.get("settled") is True for r in log),"excluded_settled_ids":sorted(excluded),
       "by_market":{k:dict(v) for k,v in markets.items()},"by_league":{k:dict(v) for k,v in leagues.items()},
@@ -132,8 +134,11 @@ def audit(log,outcomes,at,integrity=None):
       "completion_policy":"Result source plus at least two hours after known kickoff; timing guard is not independent final-status or bookmaker-rule verification."}
 
 
-def forecast_id(entry):
-    return hashlib.sha256(json.dumps(runner.forecast_identity(entry),separators=(",",":")).encode()).hexdigest()
+def forecast_id(entry,legacy=False):
+    # Freeze literal journal identity; future name aliases cannot change an
+    # archived fingerprint or a quarantined forecast's identity.
+    identity=runner.forecast_identity(entry) if legacy else tuple(entry[k] for k in ("league","date","home","away","market"))+(entry.get("line") if entry["market"]!="h2h" else None,entry.get("pipeline_version","legacy_unversioned"))
+    return hashlib.sha256(json.dumps(identity,separators=(",",":")).encode()).hexdigest()
 
 
 def validate_report(report,summary=False):
@@ -142,7 +147,7 @@ def validate_report(report,summary=False):
           "result_conflicts_quarantined","samples","verified_value","operator_settlement_verified","counting_policy","completion_policy"}
     if summary:keys.remove("excluded_settled_ids")
     if not isinstance(report,dict) or set(report)!=keys:raise ValueError("Unexpected settlement audit fields")
-    if not isinstance(report,dict) or report.get("schema_version")!=1:raise ValueError("Invalid settlement audit schema")
+    if not isinstance(report,dict) or report.get("schema_version") not in (1,2):raise ValueError("Invalid settlement audit schema")
     if report.get("verified_value") is not False or report.get("operator_settlement_verified") is not False:raise ValueError("Settlement observations cannot verify betting value")
     if runner.timestamp(report.get("generated_at")) is None:raise ValueError("Settlement audit needs a timezone")
     def integer(v):return isinstance(v,int) and not isinstance(v,bool) and v>=0
@@ -178,5 +183,5 @@ def eligible_forecasts(log,report,expected_generated_at):
     except (ValueError,TypeError,KeyError):return []
     if report["generated_at"]!=expected_generated_at:return []
     excluded=set(report["excluded_settled_ids"]);at=runner.timestamp(report["generated_at"])
-    return [row for row in (log if isinstance(log,list) else []) if runner.valid_forecast_record(row) and row.get("settled") is True and forecast_id(row) not in excluded
+    return [row for row in (log if isinstance(log,list) else []) if runner.valid_forecast_record(row) and row.get("settled") is True and forecast_id(row,legacy=report["schema_version"]==1) not in excluded
             and state(row,None,at)=="settled_with_evidence"]
