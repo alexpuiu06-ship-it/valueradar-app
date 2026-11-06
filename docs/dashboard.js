@@ -139,7 +139,7 @@ window.DATA = null;
     el('upcoming').textContent = fixtures.length;
     el('sources').textContent = (data.source_success || 0) + '/' + (data.source_total || 0);
     el('sync').textContent = VR.dateTime(data.generated_at);
-    el('message').textContent = 'Model experimental. ' + (data.prospective_predictions_recorded || 0) + ' predicții arhivate prospectiv. Nu există pariuri value verificate.' +
+    el('message').textContent = 'Model experimental. ' + (data.prospective_predictions_recorded || 0) + ' estimări în jurnal; eligibilitatea pentru evaluare prospectivă se verifică separat. Nu există pariuri value verificate.' +
       (data.source_success < data.source_total ? ' Atenție: unele surse au eșuat; verifică istoricul real al pieței.' : '');
     const failures = (data.source_report || []).filter(x => x.ok !== true);
     const marketNames = { goals: 'Goluri / 1X2', yellow: 'Galbene', corners: 'Cornere', fouls: 'Faulturi' };
