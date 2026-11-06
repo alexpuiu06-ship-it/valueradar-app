@@ -33,9 +33,9 @@ review.className='panel';
 review.style.marginTop='16px';
 review.innerHTML='<h2>Evaluarea prețurilor și a avantajului estimat</h2><div id="market-review" class="meta">Se încarcă jurnalul cotelor…</div>';
 panel.appendChild(review);
-var source=null,watch=null,audit=null;
+var source=null,watch=null,audit=null,checks=null;
 async function loadJson(path){try{var r=await fetch(path+'?v='+Date.now(),{cache:'no-store'});return r.ok?await r.json():null;}catch(e){return null;}}
-async function reload(){var a=await Promise.all([loadJson('./odds_status.json'),loadJson('./odds_watchlist.json'),loadJson('./market_audit.json')]);source=a[0];watch=a[1];audit=a[2];renderOdds();renderMatches();renderAudit();}
+async function reload(){var a=await Promise.all([loadJson('./odds_status.json'),loadJson('./odds_watchlist.json'),loadJson('./market_audit.json'),loadJson('./odds_diagnostics.json')]);source=a[0];watch=a[1];audit=a[2];checks=a[3];renderOdds();renderMatches();renderAudit();}
 function renderOdds(){
  if(!source){el('odds-status').textContent='Nu există date despre scanner; nu se afișează prețuri fictive.';return;}
  var labels={needs_api_key:'Scanner instalat, lipsește cheia API.',connected:'Cote internaționale primite.',partial:'Date parțiale de la furnizor.',no_events:'Nu există evenimente în feed.',api_error:'Eroare de API.',budget_guard:'Limită de credit atinsă.',missing_fixtures:'Lipsesc meciurile de comparat.'};
@@ -53,9 +53,18 @@ function renderOdds(){
   el('odds-status').appendChild(help);
  }
  
- var items=watch&&Array.isArray(watch.items)?watch.items:[];
+ // Security boundary: no model-only discrepancy is allowed to appear as a bet.
+ // Older watchlist files with exaggerated 'EV' are intentionally ignored.
+ var items=(watch&&watch.status==='verified_ro_opportunities'&&watch.live_ro_supported===true&&
+   Array.isArray(watch.items))?watch.items:[];
  if(!source.checked_at||Date.now()-Date.parse(source.checked_at)>4*3600*1000){el('odds-list').textContent='Nu sunt cote suficient de recente pentru o comparație actuală.';return;}
- if(!items.length){el('odds-list').textContent='Nicio discrepanță de preț recentă în lista de monitorizare.';return;}
+ if(!items.length){
+   var invalid=checks&&checks.large_model_disagreements;
+   el('odds-list').textContent='Nu există pariuri value verificate. '+
+    (invalid!=null?'Am izolat '+invalid+' meciuri cu diferențe mari între model și piață. ':'')+
+    'Cotele reale sunt monitorizate pentru diagnostic, nu pentru recomandări.';
+   return;
+ }
  el('odds-list').innerHTML=items.slice(0,12).map(function(v){
   return '<div style="padding:10px 0;border-bottom:1px solid #e1eaed"><b>'+esc(v.home)+' — '+esc(v.away)+'</b> · '+esc(v.league)+
   '<div>'+esc(v.bookmaker)+' (internațional) · '+esc(({home:'1',draw:'X',away:'2'})[v.outcome])+
@@ -93,11 +102,20 @@ el('manual-compare').addEventListener('click',function(){
    el('manual-result').textContent='Nu avem suficiente statistici pentru această piață.';
    return;
  }
- var p=Number(market==='h2h'?model.h2h[outcome]:model[outcome]),ev=p*odd-1,limit=1/odd;
+ var p=Number(market==='h2h'?model.h2h[outcome]:model[outcome]),limit=1/odd;
+ if(!Number.isFinite(p)||p<=0||p>=1){
+   el('manual-result').textContent='Probabilitatea modelului este invalidă; comparația a fost blocată.';return;
+ }
+ var difference=Math.abs(p-limit);
  var line=market==='h2h'?'':(' · Linia obligatorie: '+model.line);
+ var warnings=[];
+ if(model.small_sample||model.quality==='very_low')warnings.push('Eșantion statistic prea mic');
+ if(difference>=.10)warnings.push('Diferență de cel puțin 10 puncte procentuale față de pragul cotei');
+ if(!warnings.length)warnings.push('Model nevalidat pe cote reale de la acest operator');
  el('manual-result').innerHTML='<b>'+esc(book)+' · '+esc(f.home)+' — '+esc(f.away)+'</b>'+line+
- '<div>Probabilitate model: '+pct(p)+' · Prag cotă: '+pct(limit)+
- ' · EV matematic: '+pct(ev)+'</div><div class="meta">Cota trebuie să fie pentru exact aceeași piață și linie, cu aceleași reguli de decontare. Modelul este nevalidat, iar cota este introdusă manual. Nu este o recomandare de pariere.</div>';
+ '<div>Estimare model: '+pct(p)+' · Prag matematic al cotei: '+pct(limit)+'</div>'+
+ '<div class="meta"><b>Nu este un semnal de pariere.</b> '+esc(warnings.join('; '))+
+ '. Nu afișăm EV drept oportunitate până la validarea predicțiilor și a cotelor oferite efectiv.</div>';
 });
 reload();setInterval(reload,15*60*1000);setTimeout(renderMatches,3000);
 })();
