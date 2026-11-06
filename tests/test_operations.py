@@ -132,13 +132,14 @@ class PipelineTests(unittest.TestCase):
         comparison={"generated_at":NOW.isoformat(),"protocol":{}}
         with tempfile.TemporaryDirectory() as folder,ExitStack() as stack:
             out=Path(folder)
-            for name in ("latest","odds_observations","forecast_log","odds_diagnostics"):
+            for name in ("latest","odds_observations","forecast_log","odds_diagnostics","settlement_report"):
                 (out/(name+".json")).write_text("[]" if name in ("odds_observations","forecast_log") else "{}")
             stack.enter_context(patch.object(runner,"OUT",out))
             load=stack.enter_context(patch.object(runner,"load_all",return_value=data))
             baseline=stack.enter_context(patch.object(runner,"run",return_value=0))
             scanner=stack.enter_context(patch.object(odds_scanner,"fetch_scan"))
             monitor=stack.enter_context(patch.object(run_pipeline.ro_feed_probe,"monitor"))
+            operations=stack.enter_context(patch.object(run_pipeline.monitoring,"refresh"))
             stack.enter_context(patch.object(odds_scanner,"close_watchlist"))
             stack.enter_context(patch.object(run_pipeline.performance,"run"))
             cal=stack.enter_context(patch.object(run_pipeline.calibration,"compare_1x2",return_value=comparison))
@@ -148,6 +149,7 @@ class PipelineTests(unittest.TestCase):
             stack.enter_context(patch.object(run_pipeline.subprocess,"run",return_value=SimpleNamespace(stdout="revision")))
             self.assertEqual(run_pipeline.execute(research=True,run_at=NOW,probe_ro=True),0)
             monitor.assert_called_once_with(output=out/"ro_feed_status.json")
+            operations.assert_called_once_with()
             load.assert_called_once_with(NOW)
             baseline.assert_called_once_with(imported=data,run_at=NOW)
             self.assertIs(cal.call_args.args[0],data[0])

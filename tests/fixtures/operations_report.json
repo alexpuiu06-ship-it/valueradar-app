@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-06T23:10:10.196823+00:00",
+  "analysis_generated_at": "2026-11-06T23:09:58.529492+00:00",
+  "pipeline_version": "validated_identity_v2",
+  "verified_value": false,
+  "hypothetical_roi": null,
+  "policy": {
+    "model_expected_interval_hours": 4,
+    "model_warning_after_hours": 6,
+    "ro_expected_interval_hours": 24,
+    "ro_warning_after_hours": 30
+  },
+  "sources": {
+    "successful": 20,
+    "total": 20,
+    "failures": []
+  },
+  "ro_history": {
+    "records": 1,
+    "days_observed": 1,
+    "last_observed_at": "2026-11-06T20:49:10.059937+00:00"
+  },
+  "settlement": {
+    "schema_version": 1,
+    "generated_at": "2026-11-06T23:09:58.529492+00:00",
+    "forecasts": 2000,
+    "unique_fixtures": 200,
+    "counts": {
+      "blocked_creation_evidence": 25,
+      "awaiting_kickoff_evidence": 95,
+      "upcoming": 1855,
+      "awaiting_result": 25
+    },
+    "by_pipeline_version": {
+      "legacy_unversioned": {
+        "blocked_creation_evidence": 25,
+        "awaiting_kickoff_evidence": 95,
+        "upcoming": 880
+      },
+      "validated_identity_v2": {
+        "awaiting_result": 25,
+        "upcoming": 975
+      }
+    },
+    "settled_records": 0,
+    "by_market": {
+      "corners": {
+        "blocked_creation_evidence": 5,
+        "awaiting_kickoff_evidence": 19,
+        "upcoming": 371,
+        "awaiting_result": 5
+      },
+      "fouls": {
+        "blocked_creation_evidence": 5,
+        "awaiting_kickoff_evidence": 19,
+        "upcoming": 371,
+        "awaiting_result": 5
+      },
+      "goals": {
+        "blocked_creation_evidence": 5,
+        "awaiting_kickoff_evidence": 19,
+        "upcoming": 371,
+        "awaiting_result": 5
+      },
+      "h2h": {
+        "blocked_creation_evidence": 5,
+        "awaiting_kickoff_evidence": 19,
+        "upcoming": 371,
+        "awaiting_result": 5
+      },
+      "yellow": {
+        "blocked_creation_evidence": 5,
+        "awaiting_kickoff_evidence": 19,
+        "upcoming": 371,
+        "awaiting_result": 5
+      }
+    },
+    "by_league": {
+      "Bundesliga": {
+        "blocked_creation_evidence": 5,
+        "awaiting_kickoff_evidence": 25,
+        "upcoming": 325,
+        "awaiting_result": 5
+      },
+      "La Liga": {
+        "blocked_creation_evidence": 5,
+        "awaiting_kickoff_evidence": 20,
+        "upcoming": 370,
+        "awaiting_result": 5
+      },
+      "Ligue 1": {
+        "blocked_creation_evidence": 5,
+        "awaiting_kickoff_evidence": 10,
+        "upcoming": 340,
+        "awaiting_result": 5
+      },
+      "Premier League": {
+        "blocked_creation_evidence": 5,
+        "awaiting_kickoff_evidence": 20,
+        "upcoming": 470,
+        "awaiting_result": 5
+      },
+      "Serie A": {
+        "blocked_creation_evidence": 5,
+        "awaiting_kickoff_evidence": 20,
+        "upcoming": 350,
+        "awaiting_result": 5
+      }
+    },
+    "overdue_after_hours": 48,
+    "overdue_forecasts": 0,
+    "ready_but_unsettled": 0,
+    "result_conflicts_quarantined": 0,
+    "samples": [
+      {
+        "league": "Bundesliga",
+        "date": "2026-11-06",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
+        "market": "corners",
+        "pipeline_version": "legacy_unversioned",
+        "status": "blocked_creation_evidence",
+        "kickoff_utc": null,
+        "overdue": false
+      },
+      {
+        "league": "Bundesliga",
+        "date": "2026-11-06",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
+        "market": "corners",
+        "pipeline_version": "validated_identity_v2",
+        "status": "awaiting_result",
+        "kickoff_utc": "2026-11-06T19:30:00+00:00",
+        "overdue": false
+      },
+      {
+        "league": "Bundesliga",
+        "date": "2026-11-06",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
+        "market": "fouls",
+        "pipeline_version": "legacy_unversioned",
+        "status": "blocked_creation_evidence",
+        "kickoff_utc": null,
+        "overdue": false
+      },
+      {
+        "league": "Bundesliga",
+        "date": "2026-11-06",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
+        "market": "fouls",
+        "pipeline_version": "validated_identity_v2",
+        "status": "awaiting_result",
+        "kickoff_utc": "2026-11-06T19:30:00+00:00",
+        "overdue": false
+      },
+      {
+        "league": "Bundesliga",
+        "date": "2026-11-06",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
+        "market": "goals",
+        "pipeline_version": "legacy_unversioned",
+        "status": "blocked_creation_evidence",
+        "kickoff_utc": null,
+        "overdue": false
+      },
+      {
+        "league": "Bundesliga",
+        "date": "2026-11-06",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
+        "market": "goals",
+        "pipeline_version": "validated_identity_v2",
+        "status": "awaiting_result",
+        "kickoff_utc": "2026-11-06T19:30:00+00:00",
+        "overdue": false
+      },
+      {
+        "league": "Bundesliga",
+        "date": "2026-11-06",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
+        "market": "h2h",
+        "pipeline_version": "legacy_unversioned",
+        "status": "blocked_creation_evidence",
+        "kickoff_utc": null,
+        "overdue": false
+      },
+      {
+        "league": "Bundesliga",
+        "date": "2026-11-06",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
+        "market": "h2h",
+        "pipeline_version": "validated_identity_v2",
+        "status": "awaiting_result",
+        "kickoff_utc": "2026-11-06T19:30:00+00:00",
+        "overdue": false
+      },
+      {
+        "league": "Bundesliga",
+        "date": "2026-11-06",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
+        "market": "yellow",
+        "pipeline_version": "legacy_unversioned",
+        "status": "blocked_creation_evidence",
+        "kickoff_utc": null,
+        "overdue": false
+      },
+      {
+        "league": "Bundesliga",
+        "date": "2026-11-06",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
+        "market": "yellow",
+        "pipeline_version": "validated_identity_v2",
+        "status": "awaiting_result",
+        "kickoff_utc": "2026-11-06T19:30:00+00:00",
+        "overdue": false
+      }
+    ],
+    "verified_value": false,
+    "operator_settlement_verified": false,
+    "counting_policy": "Counts are forecasts, including separate markets/pipeline versions; unique_fixtures counts matches.",
+    "completion_policy": "Result source plus at least two hours after known kickoff; timing guard is not independent final-status or bookmaker-rule verification."
+  }
+}

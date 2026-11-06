@@ -114,6 +114,14 @@ actual nu ține locul evaluării pe rezultate.
 
 ## 7b. Jurnalul și barierele cotelor
 
+Decontarea `observed_results_v1` verifică și concordanța orei arhivate cu ora
+rezultatului, plus perioada minimă de două ore după cel mai târziu start
+cunoscut. Se păstrează o dovadă a valorilor observate și a surselor. Acestea
+nu verifică regulile de decontare ale unui operator. Un rezultat corectat
+ulterior intră în carantină pentru scoruri; predicția și decontarea originală
+nu sunt rescrise. Lipsa temporară a sursei nu șterge o dovadă arhivată validă.
+Raportul distinge rezultatele lipsă de statisticile lipsă și de conflicte.
+
 Jurnalul păstrează prima predicție, ora creării și, pentru înregistrările noi,
 startul UTC și versiunea metodei. Nu se trunchiază automat și nu se resetează
 la o eroare de citire. Înregistrările vechi fără dovadă de publicare înaintea

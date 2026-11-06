@@ -91,4 +91,7 @@ jobs:
             docs/model_lab.json
             docs/elo_challenger.json
             docs/forecast_log.json
+            docs/settlement_report.json
+            docs/ro_feed_history.json
+            docs/operations_report.json
           retention-days: 14

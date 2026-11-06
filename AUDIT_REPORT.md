@@ -7,6 +7,25 @@ oricărei integrări în `main`.
 
 ## Continuare operațională
 
+Etapa din 7 noiembrie păstrează un istoric de probe RO pe 90 de zile, fără
+date brute, și adaugă monitorizarea întârzierilor și auditul decontărilor.
+Au fost corectate concordanța orei de start, excluderea rezultatelor revizuite,
+validarea dovezilor și etichetarea arhivelor vechi fără oră cunoscută.
+Verificările cronologice acoperă statistici sosite ulterior, conflicte,
+dispariția temporară a sursei, păstrarea arhivei și separarea versiunilor.
+
+Importul real capturat are 20/20 surse, 3.935 rezultate și 195 analize viitoare.
+Cele 2.000 de înregistrări înghețate sunt păstrate integral. La momentul
+verificării, 25 estimări ale versiunii curente așteaptă rezultate din surse
+care se opresc la 1–2 noiembrie; nu s-au fabricat decontări. Endpointurile
+OpenFootball pentru sezonul curent au fost verificate separat și sunt mai
+vechi, până la 20 septembrie; nu au fost introduse ca remediu al întârzierii.
+
+Validare locală: **186 teste Python, 66 teste browser desktop/mobil**, sintaxă,
+actionlint și pipeline complet pe importul real capturat, cu verificarea
+contractelor și a păstrării jurnalului. Nu s-au făcut cereri de cote pentru
+aceste teste locale.
+
 Etapa alternativei gratuite OddsPapi a verificat cheia, cota contului,
 competițiile, piața exactă și câte un meci real din fiecare ligă. Nicio
 combinație din eșantion nu a trecut toate verificările; nu se deduce lipsa

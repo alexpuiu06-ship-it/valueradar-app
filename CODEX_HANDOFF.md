@@ -7,6 +7,13 @@ Secțiunile de mai jos păstrează starea inițială a predării. Pipeline-ul no
 separate de cele vechi; nu promovează automat Elo sau un model calibrat.
 
 Pentru continuarea operațională citiți și [OPERATIONS.md](OPERATIONS.md).
+Continuarea din 7 noiembrie adaugă istoricul agregat RO pe 90 de zile și un
+raport de decontare cu dovezi, conflicte și întârzieri. Nu se completează
+zile fictive și nu se rescriu predicțiile ori decontările arhivate. Noua
+eligibilitate este aplicată și scorurilor prospective/reperului de piață.
+Sursele curente verificate au rezultate numai până la 1–2 noiembrie; rezultate
+mai noi nu trebuie inventate pentru a produce decontări. Vezi raportul
+operațional și cozile de așteptare din aplicație.
 **Decizia curentă a proprietarului: rămânem momentan cu monitorizarea gratuită.**
 Evaluarea comercială și solicitarea de demo sunt amânate; nu contactați
 furnizorul și nu activați un abonament plătit pe baza plafonului discutat anterior.

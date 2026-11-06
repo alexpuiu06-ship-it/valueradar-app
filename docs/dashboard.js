@@ -5,6 +5,65 @@ window.DATA = null;
   const { el, esc, pct, fmt } = window.VR;
   let generation = 0;
   let renderedState = null;
+  let operations = null;
+  const settlementLabels = { upcoming: 'Așteaptă startul', in_progress: 'Așteaptă încheierea perioadei minime de verificare',
+    awaiting_kickoff_evidence: 'Ora exactă de start nu este arhivată',
+    awaiting_result: 'Așteaptă rezultat disponibil și neconflictual', awaiting_statistics: 'Așteaptă statistici pentru piață',
+    ready_to_settle: 'Rezultat eligibil încă nedecontat', blocked_creation_evidence: 'Momentul predicției nu dovedește pre-match',
+    blocked_kickoff_conflict: 'Conflict între ora arhivată și ora rezultatului', settled_with_evidence: 'Decontate cu dovada rezultatului observat',
+    settled_timing_unverifiable: 'Momentul decontării nu poate fi validat', settled_result_conflict: 'Rezultatul sursei diferă de cel arhivat',
+    settled_evidence_missing: 'Dovada rezultatului lipsește sau este invalidă' };
+  const nonnegative = n => Number.isSafeInteger(n) && n >= 0;
+  function validOperations() {
+    const r = operations, s = r && r.settlement;
+    return !!(r && r.schema_version === 1 && r.verified_value === false && r.hypothetical_roi === null &&
+      VR.freshness(r.generated_at, 24 * 90).valid && !VR.freshness(r.generated_at, 24 * 90).future &&
+      VR.freshness(r.analysis_generated_at, 24 * 90).valid && !VR.freshness(r.analysis_generated_at, 24 * 90).future &&
+      r.policy && r.policy.model_warning_after_hours === 6 && r.policy.ro_warning_after_hours === 30 &&
+      r.sources && nonnegative(r.sources.successful) && nonnegative(r.sources.total) && r.sources.successful <= r.sources.total &&
+      r.ro_history && nonnegative(r.ro_history.records) && nonnegative(r.ro_history.days_observed) && r.ro_history.days_observed <= r.ro_history.records &&
+      (r.ro_history.last_observed_at === null || Number.isFinite(VR.timestamp(r.ro_history.last_observed_at)) && !VR.freshness(r.ro_history.last_observed_at, 24 * 90).future) &&
+      s && s.verified_value === false && s.operator_settlement_verified === false && s.generated_at === r.analysis_generated_at &&
+      s.by_pipeline_version && Array.isArray(s.samples) && s.samples.length <= 10 && s.samples.every(row => row && typeof row.pipeline_version === 'string' && typeof row.home === 'string' && typeof row.away === 'string') && nonnegative(s.overdue_forecasts) &&
+      nonnegative(s.unique_fixtures) && nonnegative(s.forecasts) && s.unique_fixtures <= s.forecasts);
+  }
+  function renderOperationAlerts() {
+    const target = el('operations-alerts');
+    if (!validOperations()) { target.textContent = 'Raportul operațional este indisponibil sau invalid. Starea automatizării nu este confirmată.'; return; }
+    const r = operations, notes = [];
+    const age = (Date.now() - VR.timestamp(r.analysis_generated_at)) / 3600e3;
+    notes.push(age > 6 ? 'Actualizarea modelului este întârziată: peste 6 ore fără o analiză nouă.' : 'Analiză publicată: ' + VR.dateTime(r.analysis_generated_at) + '.');
+    const roTime = VR.timestamp(r.ro_history.last_observed_at);
+    notes.push(!Number.isFinite(roTime) ? 'Lipsește o probă RO în istoricul disponibil.' :
+      (Date.now() - roTime) / 3600e3 > 30 ? 'Monitorizarea RO este întârziată: peste 30 de ore fără o probă nouă.' :
+      'Ultima probă RO: ' + VR.dateTime(r.ro_history.last_observed_at) + '; acoperirea rămâne de verificat.');
+    if (r.sources.successful < r.sources.total) notes.push('Surse indisponibile: ' + (r.sources.total - r.sources.successful) + ' din ' + r.sources.total + '.');
+    if (r.settlement.overdue_forecasts) notes.push(r.settlement.overdue_forecasts + ' estimări așteaptă rezultate/statistici de peste 48 de ore după perioada minimă de verificare.');
+    target.textContent = notes.join(' ');
+  }
+  function renderOperations() {
+    renderOperationAlerts();
+    const target = el('settlement-summary');
+    if (!validOperations()) { target.textContent = 'Decontările nu pot fi verificate fără raportul operațional.'; return; }
+    if (!window.DATA || operations.analysis_generated_at !== DATA.generated_at || operations.pipeline_version !== DATA.pipeline_version) {
+      target.textContent = 'Raportul de decontare nu este asociat cu analiza afișată; numărătorile sunt ascunse.'; return;
+    }
+    const s = operations.settlement, counts = s.by_pipeline_version[DATA.pipeline_version] || {};
+    if (Object.entries(counts).some(([state, n]) => !Object.hasOwn(settlementLabels, state) || !nonnegative(n))) {
+      target.textContent = 'Numărătorile de decontare sunt invalide.'; return;
+    }
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    const rows = Object.entries(counts).map(([state, n]) => '<tr><td>' + esc(settlementLabels[state]) + '</td><td>' + esc(n) + '</td></tr>').join('');
+    const samples = s.samples.filter(row => row.pipeline_version === DATA.pipeline_version).slice(0, 10).map(row => '<tr><td>' +
+      esc(row.league + ' · ' + row.date + ' · ' + row.home + ' — ' + row.away) + '</td><td>' + esc(row.market) + '</td><td>' +
+      esc(settlementLabels[row.status] || 'Stare necunoscută') + '</td></tr>').join('');
+    target.innerHTML = '<p id="settlement-current">Versiunea ' + esc(DATA.pipeline_version) + ': <b>' + esc(counts.settled_with_evidence || 0) +
+      '</b> estimări decontate cu dovadă din <b>' + esc(total) + '</b>. Numărătorile acoperă toate ligile și piețele acestei versiuni.</p>' +
+      '<p class="meta">Jurnalul complet: ' + esc(s.forecasts) + ' estimări din ' + esc(s.unique_fixtures) + ' meciuri distincte. Piețele și versiunile sunt înregistrări separate.</p>' +
+      '<details id="settlement-details"><summary>De ce mai sunt estimări în așteptare?</summary><div class="table-scroll"><table><thead><tr><th>Stare</th><th>Estimări</th></tr></thead><tbody>' + rows +
+      '</tbody></table></div>' + (samples ? '<h3>Exemple din coadă sau carantină</h3><div class="table-scroll"><table><thead><tr><th>Meci</th><th>Piață</th><th>Motiv</th></tr></thead><tbody>' + samples + '</tbody></table></div>' : '') +
+      '<p>Rezultatele conflictuale sunt excluse din scoruri. Predicțiile și decontările deja arhivate rămân neschimbate. Perioada de două ore după start este o protecție operațională, nu o confirmare independentă a finalului meciului.</p></details>';
+  }
   function announce() { window.dispatchEvent(new Event('valueradar:datachanged')); }
   function clearData(message) {
     window.DATA = null;
@@ -14,11 +73,16 @@ window.DATA = null;
     el('fixtures').textContent = 'Analizele sunt ascunse până la verificarea unor date proaspete.';
     el('validation').textContent = 'Validarea nu este disponibilă fără un set de date verificabil.';
     el('data-health').textContent = 'Starea datelor este indisponibilă până la o încărcare reușită.';
+    renderOperations();
     announce();
   }
   async function load() {
     const current = ++generation;
+    operations = null;
     clearData('Se verifică actualizarea…');
+    VR.fetchJSON('./operations_report.json').then(report => {
+      if (current === generation) { operations = report; renderOperations(); }
+    }).catch(() => { if (current === generation) { operations = null; renderOperations(); } });
     try {
       const data = await VR.fetchJSON('./latest.json');
       if (current !== generation) return;
@@ -26,7 +90,7 @@ window.DATA = null;
       const state = VR.freshness(data.generated_at);
       if (!state.fresh) throw Error(!state.valid ? 'Lipsește un timestamp valid cu fus orar.' : state.future ? 'Timestamp-ul datelor este în viitor.' : 'Datele au peste 12 ore.');
       window.DATA = data;
-      render(); announce();
+      render(); renderOperations(); announce();
     } catch (error) {
       if (current === generation) clearData('Comparațiile sunt blocate. ' + error.message + ' Reîncarcă după verificarea fluxului Actions.');
     }
@@ -125,7 +189,7 @@ window.DATA = null;
   el('refresh').addEventListener('click', () => { load(); window.dispatchEvent(new Event('valueradar:refresh')); });
   el('league').addEventListener('change', render);
   el('market').addEventListener('change', render);
-  setInterval(() => { if (render()) announce(); }, 60e3);
+  setInterval(() => { if (render()) announce(); renderOperationAlerts(); }, 60e3);
   setInterval(load, 15 * 60e3);
   load();
 }());

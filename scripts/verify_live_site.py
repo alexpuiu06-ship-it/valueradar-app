@@ -33,7 +33,7 @@ def verify(url, expected, attempts=6):
 def verify_assets(url,docs,attempts=6):
     """Verify the actual HTML and scripts, not only a newer JSON on an old page."""
     names=("index.html","common.js","dashboard.js","odds_ui.js","model_lab_ui.js","elo_ui.js")
-    if (docs/"ro_feed_status.json").is_file():names+=("ro_feed_status.json",)
+    names+=tuple(name for name in ("ro_feed_status.json","ro_feed_history.json","settlement_report.json","operations_report.json") if (docs/name).is_file())
     expected={name:hashlib.sha256((docs/name).read_bytes()).hexdigest() for name in names}
     for attempt in range(attempts):
         try:

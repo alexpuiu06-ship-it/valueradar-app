@@ -189,6 +189,10 @@ def main():
     validate_log(read(args.docs / "forecast_log.json"), original)
     validate_safety(read(args.docs / "odds_watchlist.json"), read(args.docs / "market_audit.json"))
     if (args.docs/"ro_feed_status.json").exists():validate_ro_monitor(read(args.docs/"ro_feed_status.json"))
+    if data.get("pipeline_execution",{}).get("monitoring_schema_version")==1:
+        import monitoring
+        monitoring.validate_bundle(data,read(args.docs/"forecast_log.json"),read(args.docs/"settlement_report.json"),
+          read(args.docs/"ro_feed_history.json"),read(args.docs/"operations_report.json"))
     for path in args.docs.glob("*.json"):
         read(path)
     if os.environ.get("GITHUB_OUTPUT"):
