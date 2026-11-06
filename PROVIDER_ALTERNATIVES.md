@@ -1,8 +1,9 @@
 # Alternative pentru cote RO — verificare 6 noiembrie 2026
 
-Bugetul acceptat de proprietar este cel mult **£49/lună pentru două case**,
-cu preferință pentru un raport preț/calitate mai bun. Niciun abonament nou
-nu a fost cumpărat. Recomandarea este un pilot gratuit înaintea oricărei plăți.
+**Decizia curentă: continuăm momentan numai cu monitorizarea gratuită.**
+Evaluarea comercială și solicitarea de demo sunt amânate. Plafonul anterior
+de **£49/lună pentru două case** rămâne doar o referință pentru o eventuală
+reluare a discuției de către proprietar. Niciun abonament nou nu a fost cumpărat.
 
 | Furnizor | Preț public relevant | Acoperire RO identificată | Ce nu este încă demonstrat |
 |---|---|---|---|
