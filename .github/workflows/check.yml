@@ -7,6 +7,8 @@ on:
       - "odds_scanner.py"
       - "performance.py"
       - "docs/odds_ui.js"
+      - "docs/model_lab_ui.js"
+      - "model_lab.py"
       - ".github/workflows/check.yml"
   workflow_dispatch:
 permissions:
@@ -21,11 +23,14 @@ jobs:
         with:
           python-version: "3.12"
       - name: Verifica sintaxa Python
-        run: python -m py_compile runner.py odds_scanner.py performance.py
+        run: python -m py_compile runner.py odds_scanner.py performance.py model_lab.py
       - name: Verifica sintaxa dashboardului
-        run: node --check docs/odds_ui.js
+        run: |
+          node --check docs/odds_ui.js
+          node --check docs/model_lab_ui.js
       - name: Testeaza modelul si comparatia de cote fara API
         run: |
           python runner.py --self-test
           python odds_scanner.py --self-test
           python performance.py --self-test
+          python model_lab.py --self-test
