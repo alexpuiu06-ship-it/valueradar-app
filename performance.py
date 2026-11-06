@@ -21,14 +21,19 @@ def evaluate(observations,forecast):
    if not 1.01<float(r["odds"])<100:continue
    grouped[key(r)].append(r)
   except (ValueError,TypeError,KeyError):continue
- selected=[];signal_count=0;all_observations=sum(len(v) for v in grouped.values())
+ selected=[];signal_count=0;unverified_flags=0;all_observations=sum(len(v) for v in grouped.values())
  for event,records in grouped.items():
   records.sort(key=lambda x:x["observed_at"])
   first=records[0]["observed_at"]
   # First-scanned quotes only. Never retrospectively select the highest price
   # across all snapshots. Multiple quotes in one scan are comparable.
   first_batch=[r for r in records if r["observed_at"]==first]
-  qualified=[r for r in first_batch if r.get("estimated_ev",0)>=.05 and not r.get("model_low_sample",True)]
+  raw_flags=[r for r in first_batch if r.get("estimated_ev",0)>=.05 and not r.get("model_low_sample",True)]
+  if raw_flags:unverified_flags+=1
+  # An indicative statistical difference is NOT a tradable signal.
+  # Fail closed unless source bookmaker and model are independently verified.
+  qualified=[r for r in raw_flags if r.get("verified_ro_offer",False) and
+    r.get("ready_to_bet",False) and r.get("model_is_validated",False)]
   if not qualified:continue
   choice=max(qualified,key=lambda x:(x["estimated_ev"],x["odds"]))
   signal_count+=1
@@ -53,7 +58,8 @@ def evaluate(observations,forecast):
   bounds=[round(avg-1.96*stderr,5),round(avg+1.96*stderr,5)]
  changes=[s["price_change"] for s in selected if s["has_multiple_prices"]]
  return {"status":"paper_only_not_validated","observations":all_observations,
-  "distinct_events":len(grouped),"initial_positive_ev_signals":signal_count,
+  "distinct_events":len(grouped),"unverified_model_price_differences":unverified_flags,
+  "initial_positive_ev_signals":signal_count,
   "signals_settled":len(selected),"hypothetical_roi":round(roi,5) if roi is not None else None,
   "approx_95_roi_interval":bounds,
   "mean_price_change_vs_last_seen":round(sum(changes)/len(changes),5) if changes else None,
@@ -64,16 +70,34 @@ def selftest():
  event={"league":"Premier League","date":"2026-11-07","home":"Arsenal","away":"Chelsea"}
  x={**event,"outcome":"home","bookmaker_id":"test","odds":2.1,
     "estimated_ev":.08,"model_probability":.51,"model_low_sample":False,
-    "observed_at":"2026-11-06T15:00:00Z"}
+    "observed_at":"2026-11-06T15:00:00Z",
+    "verified_ro_offer":True,"ready_to_bet":True,"model_is_validated":True}
  completed={**event,"market":"h2h","settled":True,"actual_outcome":"home"}
  a=evaluate([x],[completed])
  assert a["signals_settled"]==1 and abs(a["hypothetical_roi"]-1.1)<.00001
  x["model_low_sample"]=True
  assert evaluate([x],[completed])["signals_settled"]==0
+ x["model_low_sample"]=False
+ x["verified_ro_offer"]=False
+ assert evaluate([x],[completed])["signals_settled"]==0
+ assert evaluate([x],[completed])["unverified_model_price_differences"]==1
  print("Paper-tracking tests passed")
 def run():
  OUT.mkdir(parents=True,exist_ok=True)
- d=evaluate(read("odds_observations.json",[]),read("forecast_log.json",[]))
+ observations=read("odds_observations.json",[])
+ d=evaluate(observations,read("forecast_log.json",[]))
+ # Recompute diagnostic consensus from cached derived observations,
+ # without spending credits. Last observations are not live quotes.
+ try:
+  import odds_scanner
+  audit=odds_scanner.cross_book_consensus(observations)
+  source=read("odds_status.json",{})
+  (OUT/"odds_diagnostics.json").write_text(json.dumps({
+    "data_timestamp":source.get("checked_at"),"source":"stored_derived_observations",
+    "note":"Data can be stale. Consensus is a plausibility check, not a fair-odds guarantee.",
+    **audit},indent=2,ensure_ascii=False),encoding="utf8")
+ except Exception as exc:
+  print("Diagnostic cache not refreshed:",type(exc).__name__)
  (OUT/"market_audit.json").write_text(json.dumps(d,indent=2,ensure_ascii=False),encoding="utf8")
  print("Market audit:",d["observations"],"observations,",d["signals_settled"],"settled paper signals")
 if __name__=="__main__":
