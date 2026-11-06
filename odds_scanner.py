@@ -46,6 +46,9 @@ ALIASES={
  "asmonaco":"monaco","monacofc":"monaco","olympiquedemarseille":"marseille",
  "olympiquemarseille":"marseille","stadebrestois":"brest",
  "stetienne":"saintetienne","saintetienne":"saintetienne",
+ # Observed provider spellings verified against the model fixture identity
+ # and exact kickoff; these aliases affect odds matching only.
+ "coventrycity":"coventry","betis":"realbetis",
  "realbetisbalompie":"realbetis","realbetis":"realbetis",
  "athletic":"athleticbilbao","borussiamgladbach":"monchengladbach"
 }

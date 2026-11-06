@@ -30,6 +30,16 @@ def response():
 
 
 class ProbeTests(unittest.TestCase):
+    def test_unknown_selection_examples_are_bounded_names_without_prices(self):
+        data=[]
+        for i in range(5):
+            e=response();e["id"]=str(i)
+            e["commence_time"]=(NOW+timedelta(days=i+1)).isoformat()
+            for book in e["bookmakers"]:book["markets"][0]["outcomes"][0]["name"]="UNSUPPORTED_TEST_TEAM"
+            data.append(e)
+        result=probe.assess(data,[],"Premier League",NOW)
+        self.assertEqual(len(result["unsupported_selection_samples"]),3)
+        self.assertTrue(all(set(x)=={"bookmaker","home","away","selection_name"} for x in result["unsupported_selection_samples"]))
     def test_american_conversion_is_explicit_and_never_guesses_decimal(self):
         self.assertAlmostEqual(probe.american_decimal(-200),1.5)
         self.assertAlmostEqual(probe.american_decimal(250),3.5)

@@ -96,7 +96,7 @@ def assess(payload,fixtures,league,at):
         if event_identity(event) is None:continue
         fixture=odds.match_event(event,candidates,at)
         if fixture is not None:mapped[index]=fixture;fixture_counts[runner.key(fixture)]+=1
-    samples={}
+    samples={};selection_samples=[]
     for index,event in enumerate(payload):
         affected=event_books(event);received.update(affected)
         if not isinstance(event,dict):reject("invalid_event");continue
@@ -142,7 +142,12 @@ def assess(payload,fixtures,league,at):
                     if not isinstance(value.get("name"),str) or not value["name"].strip():invalid="invalid_selection_name";break
                     side="draw" if value["name"].casefold() in ("draw","tie","x") else (
                       "home" if odds.canonical(value["name"])==identity[1] else "away" if odds.canonical(value["name"])==identity[2] else None)
-                    if side is None:invalid="unsupported_selection_identity";break
+                    if side is None:
+                        invalid="unsupported_selection_identity"
+                        if len(selection_samples)<3:
+                            selection_samples.append({"bookmaker":name,"home":event["home_team"][:120],
+                              "away":event["away_team"][:120],"selection_name":value["name"][:120]})
+                        break
                     if side in selection_ids:invalid="duplicate_selection_identity";break
                     selection_ids.add(side)
                     if value.get("line_type") not in (None,"main") or value.get("point") is not None:
@@ -184,6 +189,7 @@ def assess(payload,fixtures,league,at):
       "books_received":{name:received[name] for name in BOOKS},"book_diagnostics":diagnostics,
       "book_status_scope":"Presence in this filtered response only; absence does not establish provider coverage or account entitlement.",
       "unmatched_fixture_samples":list(samples.values()),"sample_policy":"At most three event identities/kickoffs; no prices or raw response retained.",
+      "unsupported_selection_samples":selection_samples,
       "price_format":"documented_American_converted_to_decimal",
       "raw_odds_saved":False,"operator_prices_independently_verified":False,"verified_value":False}
 
