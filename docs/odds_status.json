@@ -1,6 +1,9 @@
 {
   "status": "connected",
-  "checked_at": "2026-11-06T17:36:50.266265+00:00",
+  "checked_at": "2026-11-06T19:31:24.313484+00:00",
+  "attempted_at": "2026-11-06T19:31:24.313484+00:00",
+  "data_timestamp": "2026-11-06T19:31:22+00:00",
+  "last_successful_quote_at": "2026-11-06T19:31:22+00:00",
   "provider": "The Odds API v4",
   "region": "uk",
   "market": "h2h",
@@ -13,9 +16,17 @@
     "NetBet RO",
     "Casa Pariurilor"
   ],
-  "note": "Only international data is monitored until exact Romanian bookmaker feeds are verified.",
+  "value_blockers": [
+    "romanian_operator_feed_not_verified",
+    "market_line_and_settlement_not_verified",
+    "model_calibration_not_prospectively_validated",
+    "positive_edge_after_uncertainty_not_demonstrated"
+  ],
+  "watchlist_count": 0,
+  "budget_accounting": "conservative_request_reservations",
+  "note": "Only international observations; no verified Romanian bookmaker feed.",
   "api_events": 96,
-  "matched_games": 62,
+  "matched_games": 76,
   "books_responding": [
     "betfair_ex_uk",
     "betfair_sb_uk",
@@ -37,12 +48,13 @@
     "virginbet",
     "williamhill"
   ],
-  "evaluated_prices": 2394,
-  "watchlist_count": 60,
-  "new_observations": 2394,
-  "total_historical_observations": 2200,
-  "spent_this_month": 5,
-  "provider_remaining": 495,
+  "evaluated_prices": 2784,
+  "model_disagreements": 40,
+  "events_consensus_checked": 76,
+  "new_observations": 2784,
+  "total_historical_observations": 4984,
+  "spent_this_month": 10,
+  "provider_remaining": 490,
   "errors": [],
-  "message": "Real provider data; matched prices are NOT confirmed Romanian bookmaker quotes."
+  "message": "Observații internaționale; nicio ofertă românească verificată."
 }
