@@ -36,6 +36,14 @@ Panoul RO arată fotografii istorice, cu momentul fiecărei probe și pragul de
 120 secunde aplicat atunci. Un diagnostic mai vechi de 24 ore este marcat
 explicit. Verificarea zilnică nu este un serviciu de cote în timp real.
 
+Același workflow manual de evaluare permite și OddsPapi. Contul gratuit a fost
+testat, însă proba nu a confirmat piețe acceptabile la cele două case RO;
+rezultatele sunt în [ODDSPAPI_EVALUATION.md](ODDSPAPI_EVALUATION.md). O probă
+folosește cel mult 12 cereri contorizate pentru toate ligile sau patru pentru
+una, plus verificările necontorizate ale contului. Nu rulează automat și nu
+este integrată în scannerul de producție. Cheia este transmisă numai pasului
+furnizorului selectat, iar rapoartele nu conțin cote sau identificatori de cont.
+
 Publicarea verifică timestamp-ul datelor servite și amprenta HTML-ului și a
 celor cinci scripturi. Un răspuns HTTP 200 cu fișiere vechi nu este succes.
 Dacă main se schimbă în timpul calculului, salvarea este refuzată; o nouă
