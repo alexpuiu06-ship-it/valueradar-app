@@ -94,7 +94,7 @@ function render(){
  document.getElementById('sync').textContent=Number.isFinite(updated)?new Date(updated).toLocaleString('ro-RO'):'—';
  var stale=Number.isFinite(updated)&&(now-updated>12*3600*1000);
  document.getElementById('message').innerHTML=(stale?'<b>ATENȚIE: datele au peste 12 ore. </b>':'')+
- 'Model experimental. '+esc(DATA.prospective_predictions_recorded||0)+' predicții prospectiv arhivate. Nu există feed de cote live. ';
+ 'Model experimental. '+esc(DATA.prospective_predictions_recorded||0)+' predicții prospectiv arhivate. Cotele internaționale sunt verificate separat; nu există încă oferte românești confirmate. ';
  var lg=document.getElementById('league').value;
  var mk=document.getElementById('market').value;
  var items=(DATA.fixtures||[]).filter(x=>lg==='all'||x.league===lg);
