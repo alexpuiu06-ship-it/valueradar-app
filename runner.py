@@ -169,8 +169,9 @@ def pred(hist,match,market,half_life_days=185,prior_weight=7,opponent_effect=Tru
    "method_version":"weighted_opponent_model_v1" if half_life_days==185 and prior_weight==7 and opponent_effect else "research_variant",
    "opponent_effect":bool(opponent_effect),
    "status":"arithmetic_trace_not_causal_explanation",
-   "source_families":["OpenFootball football.json (historic goals)",
-                      "open-matchday (current season and event summaries)"],
+   "source_families":(["OpenFootball football.json (historic goals)",
+                       "open-matchday (current season goals)"] if market=="goals" else
+                       ["open-matchday (current season match statistics)"]),
    "historical_cutoff_exclusive":match["date"],
    "half_life_days":HALF_LIFE_DAYS,"prior_pseudogames":PRIOR_WEIGHT,
    "league_home_mean":round(baseh,4),"league_away_mean":round(basea,4),
@@ -363,7 +364,7 @@ def run():
   "last_stat_date":freshness,
   "backtest":{**{m:validation(hist,m) for m in MARKETS},"h2h":validation_h2h(hist)},
   "prospective":prospective_report,"prospective_predictions_recorded":count,
-  "fixtures":enriched,"message":"EXPERIMENTAL model; no bookmaker odds feed and no validated value bets."}
+  "fixtures":enriched,"message":"Experimental model. International odds monitored separately; no verified Romanian bookmaker prices or validated value bets."}
  (OUT/"latest.json").write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8")
  print(f"Published {len(enriched)} forecasts, {len(hist)} historical matches")
  return 0
