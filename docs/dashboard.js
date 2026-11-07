@@ -57,10 +57,26 @@ window.DATA = null;
     const samples = s.samples.filter(row => row.pipeline_version === DATA.pipeline_version).slice(0, 10).map(row => '<tr><td>' +
       esc(row.league + ' · ' + row.date + ' · ' + row.home + ' — ' + row.away) + '</td><td>' + esc(row.market) + '</td><td>' +
       esc(settlementLabels[row.status] || 'Stare necunoscută') + '</td></tr>').join('');
+    const source = DATA.pipeline_execution && DATA.pipeline_execution.supplementary_scores;
+    const qualifiedSource = source && source.training_use === false && source.value_enabled === false &&
+      nonnegative(source.eligible_matches) && nonnegative(source.eligible_forecasts) &&
+      source.eligible_matches <= source.eligible_forecasts && source.eligible_forecasts <= (counts.settled_with_evidence || 0);
+    const sourceNote = qualifiedSource && source.eligible_matches > 0 ? '<p id="supplementary-scores">Scoruri OddsPapi la 90 de minute: ' +
+      esc(source.eligible_matches) + ' meciuri, ' + esc(source.eligible_forecasts) +
+      ' estimări evaluate din versiunea curentă. Sunt folosite numai pentru evaluarea predicțiilor arhivate. Eșantionul nu confirmă calibrarea sau profitul; statisticile celorlalte piețe se așteaptă separat.</p>' : '';
+    const probe = source && source.last_probe;
+    const probeStates = { diagnostic_scores_for_review: 'validată în eșantionul verificat', incomplete_scores_validation: 'incompletă',
+      no_pending_completed_matches: 'fără meciuri eligibile în așteptare', probe_blocked: 'blocată', needs_api_key: 'cheie indisponibilă', internal_error: 'eroare internă' };
+    const probeNote = qualifiedSource && probe && Object.hasOwn(probeStates, probe.status) && nonnegative(probe.pending_matches_checked) &&
+      probe.pending_matches_checked <= 5 && nonnegative(probe.qualified_matches) && probe.qualified_matches <= probe.pending_matches_checked &&
+      Number.isFinite(VR.timestamp(probe.checked_at)) && !VR.freshness(probe.checked_at, 24 * 365).future ?
+      '<p id="supplementary-score-probe">Ultima verificare a scorurilor: ' + esc(VR.dateTime(probe.checked_at)) + ' · ' +
+      esc(probeStates[probe.status]) + ' · ' + esc(probe.qualified_matches) + ' din ' + esc(probe.pending_matches_checked) +
+      ' meciuri calificate atunci. Eșantionul nu măsoară acoperirea întregii oferte.</p>' : '';
     target.innerHTML = '<p id="settlement-current">Versiunea ' + esc(DATA.pipeline_version) + ': <b>' + esc(counts.settled_with_evidence || 0) +
       '</b> estimări decontate cu dovadă din <b>' + esc(total) + '</b>. Numărătorile acoperă toate ligile și piețele acestei versiuni.</p>' +
       '<p class="meta">Jurnalul complet: ' + esc(s.forecasts) + ' estimări din ' + esc(s.unique_fixtures) + ' meciuri distincte. Piețele și versiunile sunt înregistrări separate.</p>' +
-      '<details id="settlement-details"><summary>De ce mai sunt estimări în așteptare?</summary><div class="table-scroll"><table><thead><tr><th>Stare</th><th>Estimări</th></tr></thead><tbody>' + rows +
+      sourceNote + probeNote + '<details id="settlement-details"><summary>De ce mai sunt estimări în așteptare?</summary><div class="table-scroll"><table><thead><tr><th>Stare</th><th>Estimări</th></tr></thead><tbody>' + rows +
       '</tbody></table></div>' + (samples ? '<h3>Exemple din coadă sau carantină</h3><div class="table-scroll"><table><thead><tr><th>Meci</th><th>Piață</th><th>Motiv</th></tr></thead><tbody>' + samples + '</tbody></table></div>' : '') +
       '<p>Rezultatele conflictuale sunt excluse din scoruri. Predicțiile și decontările deja arhivate rămân neschimbate. Perioada de două ore după start este o protecție operațională, nu o confirmare independentă a finalului meciului.</p></details>';
   }

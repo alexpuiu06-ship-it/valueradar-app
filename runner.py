@@ -153,7 +153,7 @@ def clean_history(rows,at=None):
    accepted[k]=dict(row)
  return sorted(accepted.values(),key=lambda m:key(m)),{
   "accepted":len(accepted),"duplicates_merged":duplicates,
-  "conflicting_events_quarantined":len(conflicts),"rejected":dict(sorted(rejected.items()))}
+  "conflicting_events_quarantined":len(conflicts),"conflicting_event_keys":[list(k) for k in sorted(conflicts)],"rejected":dict(sorted(rejected.items()))}
 def source_season(url):
  match=re.search(r"/(20\d{2})-\d{2}/",url)
  if match:return int(match.group(1))
@@ -572,6 +572,12 @@ def prospective(hist,fixtures,run_at,source_report=()):
  from settlement import state,freeze_result,audit
  valid_outcomes,outcome_integrity=clean_history(hist,now)
  outcomes={key(r):r for r in valid_outcomes}
+ from score_evidence import archived_results
+ conflicting={tuple(k) for k in outcome_integrity["conflicting_event_keys"]}
+ for row in archived_results(log,now):
+  if key(row) not in outcomes and key(row) not in conflicting:outcomes[key(row)]=row
+ for league,date,home,away in conflicting:
+  outcomes[(league,date,home,away)]={"league":league,"date":date,"home":home,"away":away,"result_conflict":True}
  for r in log:
   if r.get("settled"):continue
   played=outcomes.get(key(r))
@@ -605,7 +611,7 @@ def prospective(hist,fixtures,run_at,source_report=()):
    "notice":"Mixed versions are descriptive only; use by_pipeline_version for version-specific evaluation."}
  return scores,len(log)
 
-def run(imported=None,run_at=None):
+def run(imported=None,run_at=None,settlement_results=()):
  OUT.mkdir(parents=True,exist_ok=True)
  at=run_at or datetime.now(timezone.utc)
  if isinstance(at,str):at=timestamp(at)
@@ -627,7 +633,12 @@ def run(imported=None,run_at=None):
     if not p["availability"]["comparison_allowed"]:p["quality"]="very_low"
   enriched.append({**m,"markets":markets,"market_rejections":{k:market_rejection(hist,m,k) for k,p in markets.items() if p is None}})
  stamp=max(at,datetime.now(timezone.utc)).isoformat()
- prospective_report,count=prospective(hist,enriched,stamp,report)
+ # Supplementary observations are evaluation-only: no training, predictions,
+ # freshness indicators or retrospective holdout ever consume these rows.
+ external_sources=[{"ok":True,"league":row["league"],"kind":"settlement_only","source_id":row["source_ids"][0],
+   "content_sha256":row["settlement_observation"]["observation_sha256"],"fetched_at":row["settlement_observation"]["verified_at"]}
+   for row in settlement_results]
+ prospective_report,count=prospective([*hist,*settlement_results],enriched,stamp,[*report,*external_sources])
  audit={lg:{market:sum(r["league"]==lg and r.get(h) is not None and r.get(a) is not None for r in hist)
   for market,(h,a,_,_) in MARKETS.items()} for lg in LEAGUES}
  freshness={lg:{market:max((r["date"] for r in hist if r["league"]==lg and r.get(h) is not None and r.get(a) is not None),default=None)

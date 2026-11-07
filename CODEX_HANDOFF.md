@@ -17,9 +17,11 @@ operațional și cozile de așteptare din aplicație.
 **Decizia curentă a proprietarului: rămânem momentan cu monitorizarea gratuită.**
 Evaluarea comercială și solicitarea de demo sunt amânate; nu contactați
 furnizorul și nu activați un abonament plătit pe baza plafonului discutat anterior.
-PropLine continuă monitorizarea zilnică, iar OddsPapi rămâne o probă manuală
-în limita planului gratuit. Tema comercială se reia numai dacă proprietarul
-o redeschide.
+PropLine continuă monitorizarea zilnică. Cotele OddsPapi rămân o probă manuală;
+scorurile finale pot fi verificate săptămânal, maximum 12 cereri din planul
+gratuit per rulare, numai pentru evaluarea predicțiilor arhivate. Observațiile
+validate sunt separate de antrenare/calibrare retrospectivă, iar conflictele
+rămân în carantină. Tema comercială se reia numai dacă proprietarul o redeschide.
 Evaluarea reală a surselor RO și limitele observate sunt în
 [PROVIDER_ALTERNATIVES.md](PROVIDER_ALTERNATIVES.md). PROPLINE_API_KEY este
 configurată; probele autentificate au acoperire parțială. Monitorul agregat

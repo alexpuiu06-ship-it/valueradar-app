@@ -364,6 +364,28 @@ test('settlement panel uses recorded counts and separates the current pipeline',
   await expect(page.locator('#odds-list')).toContainText('Nu există pariuri value verificate');
 });
 
+test('supplementary scores explain evaluation scope and cannot claim training or profit validation', async ({ page }) => {
+  const data = clone(original), report = operationsFor(data);
+  const counts = report.settlement.by_pipeline_version[data.pipeline_version];
+  counts.upcoming -= 8; counts.settled_with_evidence = 8;
+  data.pipeline_execution = { ...(data.pipeline_execution || {}), supplementary_scores: {
+    eligible_matches: 4, eligible_forecasts: 8, training_use: false, value_enabled: false,
+    last_probe: { checked_at: data.generated_at, status: 'incomplete_scores_validation', pending_matches_checked: 5, qualified_matches: 4 }
+  } };
+  await page.route('**/operations_report.json?*', route => route.fulfill({ json: report }));
+  await open(page, data); await ready(page);
+  await expect(page.locator('#supplementary-scores')).toContainText('4 meciuri, 8 estimări');
+  await expect(page.locator('#supplementary-scores')).toContainText('numai pentru evaluarea');
+  await expect(page.locator('#supplementary-scores')).toContainText('nu confirmă calibrarea sau profitul');
+  await expect(page.locator('#supplementary-score-probe')).toContainText('incompletă');
+  await expect(page.locator('#supplementary-score-probe')).toContainText('4 din 5 meciuri');
+  await expect(page.locator('#odds-list')).toContainText('Nu există pariuri value verificate');
+  data.pipeline_execution.supplementary_scores.training_use = true;
+  await page.locator('#refresh').click(); await ready(page);
+  await expect(page.locator('#supplementary-scores')).toHaveCount(0);
+  await expect(page.locator('#supplementary-score-probe')).toHaveCount(0);
+});
+
 test('monitoring warns about delayed analyses and probes while keeping the forecast window separate', async ({ page }) => {
   const data = clone(original);
   data.generated_at = new Date(fixedNow - 7 * 3600e3).toISOString();

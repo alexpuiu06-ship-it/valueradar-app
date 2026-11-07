@@ -38,7 +38,7 @@ class ProbeError(Exception):
 
 def fetch(path,params,key):
     # This provider requires a query credential. Never log URL/response/error text.
-    if path not in ("/account","/tournaments","/markets","/fixtures","/odds"):
+    if path not in ("/account","/tournaments","/markets","/fixtures","/fixture","/scores","/odds"):
         return None,"unsupported_endpoint"
     url=API+path+"?"+urllib.parse.urlencode({**params,"apiKey":key})
     try:

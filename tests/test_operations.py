@@ -115,6 +115,19 @@ class PipelineTests(unittest.TestCase):
             run_pipeline.main(["--probe-ro"])
             self.assertTrue(execute.call_args.kwargs["probe_ro"])
 
+    def test_free_scores_are_manual_or_weekly_and_key_is_absent_in_other_runs(self):
+        text=(Path(__file__).resolve().parents[1]/".github/workflows/valueradar.yml").read_text()
+        for name in ("PROBE_SCORES:","ODDSPAPI_API_KEY:"):
+            line=next(line for line in text.splitlines() if name in line)
+            self.assertIn("workflow_dispatch",line)
+            self.assertIn("inputs.probe_scores",line)
+            self.assertIn("41 5 * * 0",line)
+        with patch.object(run_pipeline,"execute",return_value=0) as execute,patch.dict("os.environ",{"PROBE_SCORES":"false"}):
+            run_pipeline.main([])
+            self.assertFalse(execute.call_args.kwargs["probe_scores"])
+            run_pipeline.main(["--probe-scores"])
+            self.assertTrue(execute.call_args.kwargs["probe_scores"])
+
     def test_only_one_workflow_can_publish_repository_outputs(self):
         workflows=Path(__file__).resolve().parents[1]/".github"/"workflows"
         writers=[]
@@ -151,7 +164,7 @@ class PipelineTests(unittest.TestCase):
             monitor.assert_called_once_with(output=out/"ro_feed_status.json")
             operations.assert_called_once_with()
             load.assert_called_once_with(NOW)
-            baseline.assert_called_once_with(imported=data,run_at=NOW)
+            baseline.assert_called_once_with(imported=data,run_at=NOW,settlement_results=[])
             self.assertIs(cal.call_args.args[0],data[0])
             self.assertIs(lab.call_args.args[0],data[0])
             self.assertIs(elo.call_args.kwargs["comparison"],comparison)

@@ -5,7 +5,7 @@ on:
       provider:
         description: "Furnizor gratuit pentru diagnostic, fara cumparare"
         type: choice
-        options: [PropLine, OddsPapi]
+        options: [PropLine, OddsPapi, OddsPapi scores]
         default: PropLine
       authenticated:
         description: "Verifica cu cheia furnizorului (maxim 5 PropLine / 12 OddsPapi cereri gratuite)"
@@ -33,7 +33,7 @@ jobs:
       fail-fast: false
       max-parallel: 1
       matrix:
-        league: ${{ inputs.provider != 'OddsPapi' && inputs.league == 'All leagues' && fromJSON('["Premier League","La Liga","Serie A","Bundesliga","Ligue 1"]') || fromJSON(format('["{0}"]', inputs.league)) }}
+        league: ${{ inputs.provider == 'PropLine' && inputs.league == 'All leagues' && fromJSON('["Premier League","La Liga","Serie A","Bundesliga","Ligue 1"]') || fromJSON(format('["{0}"]', inputs.league)) }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -42,7 +42,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Evalueaza metadatele publice sau o singura cerere autentificata
-        if: ${{ inputs.provider != 'OddsPapi' }}
+        if: ${{ inputs.provider == 'PropLine' }}
         env:
           PROPLINE_API_KEY: ${{ inputs.authenticated && secrets.PROPLINE_API_KEY || '' }}
           AUTHENTICATED_PROBE: ${{ inputs.authenticated }}
@@ -56,6 +56,13 @@ jobs:
           AUTHENTICATED_PROBE: ${{ inputs.authenticated }}
           PROBE_LEAGUE: ${{ matrix.league }}
         run: python oddspapi_probe.py
+      - name: Verifica scoruri finale gratuite pentru estimarile in asteptare
+        if: ${{ inputs.provider == 'OddsPapi scores' }}
+        env:
+          ODDSPAPI_API_KEY: ${{ inputs.authenticated && secrets.ODDSPAPI_API_KEY || '' }}
+          AUTHENTICATED_PROBE: ${{ inputs.authenticated }}
+          PROBE_LEAGUE: ${{ matrix.league }}
+        run: python scores_probe.py
       - name: Pastreaza doar diagnosticul agregat, fara cote brute
         if: ${{ always() }}
         uses: actions/upload-artifact@v4

@@ -154,6 +154,24 @@ capturată, iar publicarea verifică atât JSON-ul, cât și HTML-ul/scripturile
 servite. Dublurile canonice din jurnal opresc salvarea înaintea oricărei
 modificări. Vezi [OPERATIONS.md](OPERATIONS.md).
 
+## 7d. Rezultate suplimentare pentru evaluarea prospectivă
+
+Scorurile OddsPapi pot completa numai rezultatul observat al unei predicții
+deja arhivate în versiunea curentă. Se cer echipe în aceeași ordine, aceeași
+ligă, kickoff la cel mult 60 secunde, stare explicit finală, moment plauzibil
+de final și perioada documentată `fulltime` la 90 minute. Identitatea și
+starea sunt citite din nou după scor. `result`, care poate include prelungiri,
+și perioadele numerice nedocumentate nu sunt substituite.
+
+Rezultatele individuale care trec verificările pot evalua 1X2/goluri, chiar
+dacă alte meciuri ale probei sunt respinse; proba rămâne incompletă. Nu sunt
+date de antrenare, nu schimbă backtestul ori calibrarea retrospectivă și nu
+completează galbene/cornere/faulturi. Dovada este arhivată cu predicția, iar
+o contradicție ulterioară exclude rezultatul din scoruri fără rescrierea
+arhivei. Un eșantion mic și selectat din primele meciuri în așteptare nu
+demonstrează calibrare, avantaj față de piață sau ROI. Nu verifică decontarea
+la operator. Detaliile și bugetul gratuit sunt în [OPERATIONS.md](OPERATIONS.md).
+
 ## 8. Registrul problemelor
 
 | Prioritate | Problemă | Criteriu de rezolvare |
