@@ -9,7 +9,7 @@ import urllib.parse
 import urllib.request
 
 
-def verify(url, expected, attempts=6):
+def verify(url, expected, attempts=18):
     parsed = urllib.parse.urlparse(url)
     if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
         raise ValueError("Expected an HTTPS Pages URL without credentials")
@@ -30,7 +30,7 @@ def verify(url, expected, attempts=6):
             time.sleep(5)
     raise RuntimeError("Pages deployment returned success but the public snapshot could not be verified")
 
-def verify_assets(url,docs,attempts=6):
+def verify_assets(url,docs,attempts=18):
     """Verify the actual HTML and scripts, not only a newer JSON on an old page."""
     names=("index.html","common.js","dashboard.js","odds_ui.js","model_lab_ui.js","elo_ui.js")
     names+=tuple(name for name in ("ro_feed_status.json","ro_feed_history.json","settlement_report.json","operations_report.json") if (docs/name).is_file())

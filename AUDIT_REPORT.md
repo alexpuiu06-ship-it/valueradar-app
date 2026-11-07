@@ -7,6 +7,16 @@ continuările și verificările lor sunt descrise mai jos.
 
 ## Continuare operațională
 
+Testul real de publicare a detectat un răspuns Pages cu fotografia precedentă,
+deși API-ul declarase publicarea terminată. Reluarea exclusivă a jobului de
+publicare a recuperat fotografia corectă, fără cereri suplimentare la furnizori.
+Workflow-ul permite acum propagarea pentru 18 verificări și o singură
+republicare a aceluiași artefact, urmată de control public obligatoriu.
+Eșecul repetat rămâne eșec. **207 teste Python**, actionlint și verificările
+de sintaxă au trecut; testul site-ului public a verificat desktop/mobil,
+25 combinații ligă/piață pe fiecare, comparații manuale, lipsa erorilor și
+afișarea celor opt evaluări cu sursa și limitele declarate.
+
 Verificarea gratuită OddsPapi a identificat rezultate finale la 90 minute
 pentru patru dintre cele cinci meciuri în așteptare. Integrarea suplimentară
 este limitată la evaluarea 1X2/golurilor arhivate, cu dovadă de identitate,

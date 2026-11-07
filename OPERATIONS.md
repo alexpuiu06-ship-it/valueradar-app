@@ -86,6 +86,11 @@ decontările afectate, fără a fi confundate cu o sursă temporar dispărută.
 
 Publicarea verifică timestamp-ul datelor servite și amprenta HTML-ului și a
 celor cinci scripturi. Un răspuns HTTP 200 cu fișiere vechi nu este succes.
+Verificările permit până la 18 încercări, la cinci secunde, pentru propagarea
+Pages. Dacă fotografia sau fișierele tot nu corespund, writer-ul încearcă o
+singură republicare a aceluiași artefact deja validat, apoi repetă obligatoriu
+controlul public. O a doua nepotrivire eșuează rularea. Recuperarea nu reface
+importul, nu modifică jurnalul și nu consumă credite ale furnizorilor.
 Dacă main se schimbă în timpul calculului, salvarea este refuzată; o nouă
 rulare pe ultima revizie este preferabilă suprascrierii jurnalului.
 

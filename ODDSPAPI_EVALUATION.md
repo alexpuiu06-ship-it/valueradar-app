@@ -116,6 +116,12 @@ nu s-a forțat o potrivire. Proba a rămas incompletă, cu încă zece cereri,
 38/250 utilizate și 212 rămase. Metadatele finalului, identitățile participanților,
 reverificarea și amprentele observațiilor au trecut contractele locale.
 
+[Rularea de producție](https://github.com/alexpuiu06-ship-it/valueradar-app/actions/runs/42317213394)
+a calificat aceleași patru meciuri și a evaluat opt predicții arhivate,
+separat pentru 1X2/goluri. A consumat zece cereri: **48/250 utilizate,
+202 rămase** la 03:18 ora României. Republicarea Pages a refolosit artefactul;
+nu a interogat din nou furnizorul. Cotele RO, value și ROI rămân nevalidate.
+
 Writer-ul de producție poate folosi numai observațiile individuale validate
 pentru evaluarea predicțiilor curente 1X2/goluri. Dovada completă este parte
 din decontarea predicției; nu se distribuie un produs separat de scoruri sau
