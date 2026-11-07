@@ -18,7 +18,10 @@ Sumele sunt în moneda furnizorului; nu sunt oferte ferme cu taxe/conversie.
 
 **Actualizare autentificată OddsPapi:** cheia este confirmată, cu acces declarat
 la Superbet RO/Betano RO. Proba unui meci din fiecare ligă nu a găsit un 1X2
-care să treacă toate verificările la ambele case. Au rămas 232/250 cereri.
+care să treacă toate verificările la ambele case. După acea probă de cote
+rămăseseră 232/250 cereri; probele ulterioare de scoruri au lăsat **202/250**
+la ultima verificare din 7 noiembrie, 02:18 ora României. Aceste valori sunt
+fotografii ale contului, nu contoare live.
 Vezi [raportul real și limitele eșantionului](ODDSPAPI_EVALUATION.md).
 
 **Reverificarea alternativei comerciale:** documentația Odds-API.io listează
