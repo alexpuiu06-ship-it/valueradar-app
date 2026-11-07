@@ -1,9 +1,9 @@
 # Audit ValueRadar — 6 noiembrie 2026
 
 **Rezultat:** aplicația păstrează statutul experimental. Nu există pariuri
-value verificate și nu se calculează ROI din diferențe nevalidate. Lucrul
-este pregătit pe `codex/robust-analysis-audit`, pentru verificare înaintea
-oricărei integrări în `main`.
+value verificate și nu se calculează ROI din diferențe nevalidate. Auditul
+inițial din `codex/robust-analysis-audit` a fost integrat și publicat;
+continuările și verificările lor sunt descrise mai jos.
 
 ## Continuare operațională
 
@@ -14,6 +14,9 @@ stare finală, perioadă și momente. Nu intră în datele de antrenare ori în
 calibrarea retrospectivă și nu deblochează value. Dublurile, modificările între
 cereri și rezultatele ulterioare contradictorii sunt excluse. Diagnosticul
 parțial rămâne incomplet. Vezi [ODDSPAPI_EVALUATION.md](ODDSPAPI_EVALUATION.md).
+Validare: **206 teste Python și 68 teste browser desktop/mobil**, sintaxă,
+actionlint și rulare pe importul real capturat. Scorurile suplimentare rămân
+separate de cele 3.935 rânduri ale istoricului folosit la antrenare.
 
 Etapa din 7 noiembrie păstrează un istoric de probe RO pe 90 de zile, fără
 date brute, și adaugă monitorizarea întârzierilor și auditul decontărilor.

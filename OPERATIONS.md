@@ -77,6 +77,12 @@ Dovada externă folosește schema 3; schemele 1 și 2 rămân citibile. Dispari�
 temporară a sursei păstrează dovada arhivată, iar un rezultat principal
 contradictoriu exclude decontarea din evaluare fără să o rescrie. Panoul arată
 numărul de meciuri/estimări evaluate din această sursă și limitele eșantionului.
+Momentul și starea ultimei probe sunt păstrate și la actualizările fără API;
+un diagnostic incomplet sau blocat nu este înlocuit cu o confirmare de succes.
+Scorurile finale din dovezile arhivate pot menține starea „așteaptă statistici”
+fără o cerere nouă. Sursele curente au prioritate la comparația cu arhiva;
+două rezultate curente contradictorii sunt carantinate explicit și exclud
+decontările afectate, fără a fi confundate cu o sursă temporar dispărută.
 
 Publicarea verifică timestamp-ul datelor servite și amprenta HTML-ului și a
 celor cinci scripturi. Un răspuns HTTP 200 cu fișiere vechi nu este succes.

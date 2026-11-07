@@ -26,6 +26,24 @@ def seal(row):
     return result
 
 
+def result_row(row):
+    return {**{k:row[k] for k in ("league","date","home","away","kickoff_utc")},
+      "gh":row["fulltime_home"],"ga":row["fulltime_away"],
+      "source_ids":["OddsPapi:90min:"+row["source_fixture_id"]],"settlement_observation":deepcopy(row)}
+
+
+def archived_results(log):
+    """Keep known scores visible for statistics queues; current sources take priority."""
+    import settlement
+    rows={};conflicts=set()
+    for entry in log:
+        if entry.get("settled") is not True or entry.get("settlement_evidence",{}).get("schema_version")!=3 or not settlement.evidence_valid(entry):continue
+        row=result_row(entry["settlement_evidence"]["external_result"]);key=runner.key(row)
+        if key in rows and any(row[k]!=rows[key][k] for k in ("gh","ga","kickoff_utc")):conflicts.add(key)
+        rows[key]=row
+    return [row for key,row in rows.items() if key not in conflicts]
+
+
 def valid(row,at):
     try:
         if not isinstance(row,dict) or set(row)!=FIELDS or row["validation_version"]!=VERSION:return False
@@ -73,7 +91,5 @@ def results(report,log,at):
         key=runner.key(row)
         if key in keys:conflicts.add(key);continue
         keys.add(key)
-        accepted.append({**{k:row[k] for k in ("league","date","home","away","kickoff_utc")},
-          "gh":row["fulltime_home"],"ga":row["fulltime_away"],
-          "source_ids":["OddsPapi:90min:"+row["source_fixture_id"]],"settlement_observation":deepcopy(row)})
+        accepted.append(result_row(row))
     return [row for row in accepted if runner.key(row) not in conflicts]

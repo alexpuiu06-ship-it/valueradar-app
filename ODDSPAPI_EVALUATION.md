@@ -109,6 +109,13 @@ nu s-a potrivit fără ambiguități. Statusul a rămas incomplet. Consumul a fo
 10 cereri contorizate, de la 18 la 28 utilizate, cu 222/250 rămase după probă.
 Acesta este un eșantion mic, nu o măsură a acoperirii întregului sezon.
 
+[Reverificarea cu dovadă completă](https://github.com/alexpuiu06-ship-it/valueradar-app/actions/runs/42316200928)
+de la **03:07 ora României** a confirmat aceleași patru meciuri. Perechea
+Toulouse–Strasbourg nu a fost identificată în fereastra extinsă de descoperire;
+nu s-a forțat o potrivire. Proba a rămas incompletă, cu încă zece cereri,
+38/250 utilizate și 212 rămase. Metadatele finalului, identitățile participanților,
+reverificarea și amprentele observațiilor au trecut contractele locale.
+
 Writer-ul de producție poate folosi numai observațiile individuale validate
 pentru evaluarea predicțiilor curente 1X2/goluri. Dovada completă este parte
 din decontarea predicției; nu se distribuie un produs separat de scoruri sau

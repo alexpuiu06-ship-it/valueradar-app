@@ -95,10 +95,18 @@ class ScoreEvidenceTests(unittest.TestCase):
             self.assertEqual(audit["counts"],{"awaiting_statistics":3,"settled_with_evidence":2})
             runner.prospective([],[],(NOW+timedelta(hours=1)).isoformat())
             self.assertEqual(json.loads((out/"forecast_log.json").read_text()),after)
+            repeated=json.loads((out/"settlement_report.json").read_text())
+            self.assertEqual(repeated["counts"],{"awaiting_statistics":3,"settled_with_evidence":2})
             changed={**rows[0],"gh":0};changed.pop("settlement_observation")
             scores,_=runner.prospective([changed],[],(NOW+timedelta(hours=2)).isoformat())
             self.assertEqual(json.loads((out/"forecast_log.json").read_text()),after)
             self.assertEqual(scores["h2h"]["n"],0);self.assertEqual(scores["goals"]["n"],0)
+            # Conflicting current sources must also quarantine archived scores,
+            # rather than looking like a temporarily missing result.
+            original_source={**rows[0]};original_source.pop("settlement_observation")
+            scores,_=runner.prospective([original_source,changed],[],(NOW+timedelta(hours=3)).isoformat())
+            self.assertEqual(scores["h2h"]["n"],0);self.assertEqual(scores["goals"]["n"],0)
+            self.assertEqual(json.loads((out/"forecast_log.json").read_text()),after)
 
     def test_external_proof_cannot_be_removed_or_mutated_or_used_for_other_statistics(self):
         rows=evidence.results(report(),[forecast()],NOW);row=rows[0]

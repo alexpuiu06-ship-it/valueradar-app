@@ -29,6 +29,13 @@ def execute(research=False,scan_odds=False,imported=None,run_at=None,probe_ro=Fa
     data=imported if imported is not None else runner.load_all(at)
     extra=[]
     score_status={"requested":False,"training_use":False,"value_enabled":False}
+    try:
+        previous=json.loads((runner.OUT/"latest.json").read_text()).get("pipeline_execution",{}).get("supplementary_scores",{})
+        last_probe=previous.get("last_probe")
+        fields={"checked_at","status","pending_matches_checked","qualified_matches"}
+        if isinstance(last_probe,dict) and fields<=last_probe.keys():
+            score_status["last_probe"]={k:last_probe[k] for k in fields}
+    except (OSError,ValueError,AttributeError):pass
     if probe_scores:
         # The diagnostic never writes docs. Only individually qualified rows
         # enter paper outcomes, even when other candidates were rejected.
@@ -41,6 +48,8 @@ def execute(research=False,scan_odds=False,imported=None,run_at=None,probe_ro=Fa
           pending_matches_checked=report.get("pending_unique_matches",0),rejections=report.get("rejections",{}),
           metered_requests_attempted=report["metered_requests_attempted"],checked_at=report["checked_at"],
           notice="At most five pending matches; qualified 90-minute outcomes only. No training data, operator settlement or value validation.")
+        score_status["last_probe"]={"checked_at":report["checked_at"],"status":report["status"],
+          "pending_matches_checked":report.get("pending_unique_matches",0),"qualified_matches":len(extra)}
     code=runner.run(imported=data,run_at=at,settlement_results=extra)
     if code:
         return code

@@ -71,6 +71,7 @@ def evidence_valid(entry):
 def state(entry,played,at):
     created=runner.timestamp(entry.get("created_at"))
     if not created or created>at or not runner.prospective_eligible(entry):return "blocked_creation_evidence"
+    if played and played.get("result_conflict") is True:return "settled_result_conflict" if entry.get("settled") else "awaiting_result"
     frozen=runner.fixture_kickoff(entry)
     actual=runner.fixture_kickoff(played) if played else None
     if frozen and actual and abs((frozen-actual).total_seconds())>60:return "blocked_kickoff_conflict"
