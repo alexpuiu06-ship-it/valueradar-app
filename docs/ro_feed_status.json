@@ -14,14 +14,14 @@
     {
       "league": "Premier League",
       "status": "incomplete_quote_validation",
-      "received_at": "2026-11-06T23:30:42.716328+00:00",
-      "analysis_generated_at": "2026-11-06T23:30:29.720304+00:00",
+      "received_at": "2026-11-07T13:28:38.503757+00:00",
+      "analysis_generated_at": "2026-11-07T13:28:21.278319+00:00",
       "requested_max_delivery_age_seconds": 120,
       "quality": {
-        "events_received": 0,
+        "events_received": 18,
         "books_received": {
           "superbet_ro": 0,
-          "netbet_ro": 0
+          "netbet_ro": 18
         },
         "complete_recent_markets": {},
         "matched_current_model_markets": {},
@@ -34,43 +34,53 @@
             "rejection_counts": {}
           },
           "netbet_ro": {
-            "status": "absent",
-            "received_blocks": 0,
+            "status": "received_but_rejected",
+            "received_blocks": 18,
             "complete_recent_markets": 0,
             "matched_current_model_markets": 0,
-            "rejection_counts": {}
+            "rejection_counts": {
+              "stale_market_timestamp": 18
+            }
           }
         },
-        "rejection_counts": {},
+        "rejection_counts": {
+          "stale_market_timestamp": 18
+        },
         "book_status_scope": "Presence in this filtered response only; absence does not establish provider coverage or account entitlement."
       },
       "quota": {
         "x-daily-limit": 1000,
-        "x-daily-used": 24,
-        "x-daily-remaining": 976
+        "x-daily-used": 1,
+        "x-daily-remaining": 999
       }
     },
     {
       "league": "La Liga",
       "status": "incomplete_quote_validation",
-      "received_at": "2026-11-06T23:30:44.926795+00:00",
-      "analysis_generated_at": "2026-11-06T23:30:29.720304+00:00",
+      "received_at": "2026-11-07T13:28:39.828524+00:00",
+      "analysis_generated_at": "2026-11-07T13:28:21.278319+00:00",
       "requested_max_delivery_age_seconds": 120,
       "quality": {
-        "events_received": 0,
+        "events_received": 8,
         "books_received": {
-          "superbet_ro": 0,
+          "superbet_ro": 8,
           "netbet_ro": 0
         },
-        "complete_recent_markets": {},
-        "matched_current_model_markets": {},
+        "complete_recent_markets": {
+          "superbet_ro": 6
+        },
+        "matched_current_model_markets": {
+          "superbet_ro": 6
+        },
         "book_diagnostics": {
           "superbet_ro": {
-            "status": "absent",
-            "received_blocks": 0,
-            "complete_recent_markets": 0,
-            "matched_current_model_markets": 0,
-            "rejection_counts": {}
+            "status": "matched_current_model",
+            "received_blocks": 8,
+            "complete_recent_markets": 6,
+            "matched_current_model_markets": 6,
+            "rejection_counts": {
+              "unsupported_selection_identity": 2
+            }
           },
           "netbet_ro": {
             "status": "absent",
@@ -80,36 +90,40 @@
             "rejection_counts": {}
           }
         },
-        "rejection_counts": {},
+        "rejection_counts": {
+          "unsupported_selection_identity": 2
+        },
         "book_status_scope": "Presence in this filtered response only; absence does not establish provider coverage or account entitlement."
       },
       "quota": {
         "x-daily-limit": 1000,
-        "x-daily-used": 25,
-        "x-daily-remaining": 975
+        "x-daily-used": 1,
+        "x-daily-remaining": 999
       }
     },
     {
       "league": "Serie A",
       "status": "incomplete_quote_validation",
-      "received_at": "2026-11-06T23:30:45.442480+00:00",
-      "analysis_generated_at": "2026-11-06T23:30:29.720304+00:00",
+      "received_at": "2026-11-07T13:28:40.013445+00:00",
+      "analysis_generated_at": "2026-11-07T13:28:21.278319+00:00",
       "requested_max_delivery_age_seconds": 120,
       "quality": {
-        "events_received": 0,
+        "events_received": 9,
         "books_received": {
-          "superbet_ro": 0,
+          "superbet_ro": 9,
           "netbet_ro": 0
         },
         "complete_recent_markets": {},
         "matched_current_model_markets": {},
         "book_diagnostics": {
           "superbet_ro": {
-            "status": "absent",
-            "received_blocks": 0,
+            "status": "received_but_rejected",
+            "received_blocks": 9,
             "complete_recent_markets": 0,
             "matched_current_model_markets": 0,
-            "rejection_counts": {}
+            "rejection_counts": {
+              "stale_market_timestamp": 9
+            }
           },
           "netbet_ro": {
             "status": "absent",
@@ -119,59 +133,22 @@
             "rejection_counts": {}
           }
         },
-        "rejection_counts": {},
+        "rejection_counts": {
+          "stale_market_timestamp": 9
+        },
         "book_status_scope": "Presence in this filtered response only; absence does not establish provider coverage or account entitlement."
       },
       "quota": {
         "x-daily-limit": 1000,
-        "x-daily-used": 26,
-        "x-daily-remaining": 974
+        "x-daily-used": 3,
+        "x-daily-remaining": 997
       }
     },
     {
       "league": "Bundesliga",
       "status": "incomplete_quote_validation",
-      "received_at": "2026-11-06T23:30:47.894089+00:00",
-      "analysis_generated_at": "2026-11-06T23:30:29.720304+00:00",
-      "requested_max_delivery_age_seconds": 120,
-      "quality": {
-        "events_received": 0,
-        "books_received": {
-          "superbet_ro": 0,
-          "netbet_ro": 0
-        },
-        "complete_recent_markets": {},
-        "matched_current_model_markets": {},
-        "book_diagnostics": {
-          "superbet_ro": {
-            "status": "absent",
-            "received_blocks": 0,
-            "complete_recent_markets": 0,
-            "matched_current_model_markets": 0,
-            "rejection_counts": {}
-          },
-          "netbet_ro": {
-            "status": "absent",
-            "received_blocks": 0,
-            "complete_recent_markets": 0,
-            "matched_current_model_markets": 0,
-            "rejection_counts": {}
-          }
-        },
-        "rejection_counts": {},
-        "book_status_scope": "Presence in this filtered response only; absence does not establish provider coverage or account entitlement."
-      },
-      "quota": {
-        "x-daily-limit": 1000,
-        "x-daily-used": 27,
-        "x-daily-remaining": 973
-      }
-    },
-    {
-      "league": "Ligue 1",
-      "status": "incomplete_quote_validation",
-      "received_at": "2026-11-06T23:30:50.127851+00:00",
-      "analysis_generated_at": "2026-11-06T23:30:29.720304+00:00",
+      "received_at": "2026-11-07T13:28:40.200789+00:00",
+      "analysis_generated_at": "2026-11-07T13:28:21.278319+00:00",
       "requested_max_delivery_age_seconds": 120,
       "quality": {
         "events_received": 17,
@@ -179,12 +156,8 @@
           "superbet_ro": 0,
           "netbet_ro": 17
         },
-        "complete_recent_markets": {
-          "netbet_ro": 13
-        },
-        "matched_current_model_markets": {
-          "netbet_ro": 13
-        },
+        "complete_recent_markets": {},
+        "matched_current_model_markets": {},
         "book_diagnostics": {
           "superbet_ro": {
             "status": "absent",
@@ -194,28 +167,65 @@
             "rejection_counts": {}
           },
           "netbet_ro": {
-            "status": "matched_current_model",
+            "status": "received_but_rejected",
             "received_blocks": 17,
-            "complete_recent_markets": 13,
-            "matched_current_model_markets": 13,
+            "complete_recent_markets": 0,
+            "matched_current_model_markets": 0,
             "rejection_counts": {
-              "stale_market_timestamp": 1,
-              "unsupported_selection_identity": 3
+              "stale_market_timestamp": 17
             }
           }
         },
         "rejection_counts": {
-          "stale_market_timestamp": 1,
-          "unsupported_selection_identity": 3
+          "stale_market_timestamp": 17
         },
         "book_status_scope": "Presence in this filtered response only; absence does not establish provider coverage or account entitlement."
       },
       "quota": {
         "x-daily-limit": 1000,
-        "x-daily-used": 28,
-        "x-daily-remaining": 972
+        "x-daily-used": 4,
+        "x-daily-remaining": 996
+      }
+    },
+    {
+      "league": "Ligue 1",
+      "status": "incomplete_quote_validation",
+      "received_at": "2026-11-07T13:28:40.370646+00:00",
+      "analysis_generated_at": "2026-11-07T13:28:21.278319+00:00",
+      "requested_max_delivery_age_seconds": 120,
+      "quality": {
+        "events_received": 0,
+        "books_received": {
+          "superbet_ro": 0,
+          "netbet_ro": 0
+        },
+        "complete_recent_markets": {},
+        "matched_current_model_markets": {},
+        "book_diagnostics": {
+          "superbet_ro": {
+            "status": "absent",
+            "received_blocks": 0,
+            "complete_recent_markets": 0,
+            "matched_current_model_markets": 0,
+            "rejection_counts": {}
+          },
+          "netbet_ro": {
+            "status": "absent",
+            "received_blocks": 0,
+            "complete_recent_markets": 0,
+            "matched_current_model_markets": 0,
+            "rejection_counts": {}
+          }
+        },
+        "rejection_counts": {},
+        "book_status_scope": "Presence in this filtered response only; absence does not establish provider coverage or account entitlement."
+      },
+      "quota": {
+        "x-daily-limit": 1000,
+        "x-daily-used": 3,
+        "x-daily-remaining": 997
       }
     }
   ],
-  "generated_at": "2026-11-06T23:30:50.134081+00:00"
+  "generated_at": "2026-11-07T13:28:40.373192+00:00"
 }
