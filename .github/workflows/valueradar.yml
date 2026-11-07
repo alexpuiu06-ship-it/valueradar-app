@@ -138,6 +138,19 @@ jobs:
           SITE_URL: ${{ steps.deployment.outputs.page_url }}
           EXPECTED_GENERATED_AT: ${{ needs.analyze.outputs.generated_at }}
         run: python scripts/verify_live_site.py
+      - name: Refuza si republicarea daca main a avansat in timpul verificarii publice
+        if: ${{ steps.public_check.outcome == 'failure' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          SAVED_SHA: ${{ needs.analyze.outputs.saved_sha }}
+        run: |
+          set -euo pipefail
+          current_sha="$(gh api "repos/$REPOSITORY/git/ref/heads/main" --jq '.object.sha')"
+          if [ "$current_sha" != "$SAVED_SHA" ]; then
+            echo "main advanced during public verification; refuse stale redelivery" >&2
+            exit 1
+          fi
       - name: Republica o singura data acelasi artefact daca Pages serveste fisiere vechi
         if: ${{ steps.public_check.outcome == 'failure' }}
         id: redelivery

@@ -91,6 +91,8 @@ Pages. Dacă fotografia sau fișierele tot nu corespund, writer-ul încearcă o
 singură republicare a aceluiași artefact deja validat, apoi repetă obligatoriu
 controlul public. O a doua nepotrivire eșuează rularea. Recuperarea nu reface
 importul, nu modifică jurnalul și nu consumă credite ale furnizorilor.
+Revizia main este reverificată chiar înaintea republicării; dacă a avansat
+între timp, artefactul depășit este refuzat.
 Dacă main se schimbă în timpul calculului, salvarea este refuzată; o nouă
 rulare pe ultima revizie este preferabilă suprascrierii jurnalului.
 
