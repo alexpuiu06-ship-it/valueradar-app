@@ -19,7 +19,8 @@
   ],
   "rejection_counts": {
     "missing_or_mixed_model_pipeline_version": 59,
-    "no_unambiguous_prospective_result_for_pipeline": 76
+    "no_unambiguous_prospective_result_for_pipeline": 74,
+    "settlement_rules_not_verified": 2
   },
   "market_baseline": {
     "status": "insufficient_provenance_or_results",

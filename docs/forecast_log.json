@@ -8,7 +8,8 @@
     "line": 9.5,
     "p_over": 0.6188,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "Bundesliga",
@@ -19,7 +20,8 @@
     "line": 23.5,
     "p_over": 0.46351,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "Bundesliga",
@@ -30,7 +32,8 @@
     "line": 2.5,
     "p_over": 0.61143,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "Bundesliga",
@@ -44,7 +47,8 @@
       "away": 0.29024
     },
     "created_at": "2026-11-06T17:31:04.635762+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "Bundesliga",
@@ -55,7 +59,8 @@
     "line": 4.5,
     "p_over": 0.3213,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "La Liga",
@@ -66,7 +71,8 @@
     "line": 9.5,
     "p_over": 0.39443,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "La Liga",
@@ -77,7 +83,8 @@
     "line": 23.5,
     "p_over": 0.61852,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "La Liga",
@@ -88,7 +95,8 @@
     "line": 2.5,
     "p_over": 0.51425,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "La Liga",
@@ -102,7 +110,8 @@
       "away": 0.28396
     },
     "created_at": "2026-11-06T17:31:04.635762+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "La Liga",
@@ -113,7 +122,8 @@
     "line": 4.5,
     "p_over": 0.38362,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "Ligue 1",
@@ -182,7 +192,8 @@
     "line": 9.5,
     "p_over": 0.44118,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "Premier League",
@@ -193,7 +204,8 @@
     "line": 23.5,
     "p_over": 0.44257,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "Premier League",
@@ -204,7 +216,8 @@
     "line": 2.5,
     "p_over": 0.49368,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "Premier League",
@@ -218,7 +231,8 @@
       "away": 0.29016
     },
     "created_at": "2026-11-06T17:31:04.635762+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "Premier League",
@@ -229,7 +243,8 @@
     "line": 4.5,
     "p_over": 0.35836,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "Serie A",
@@ -240,7 +255,8 @@
     "line": 9.5,
     "p_over": 0.43847,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "Serie A",
@@ -251,7 +267,8 @@
     "line": 23.5,
     "p_over": 0.28324,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "Serie A",
@@ -262,7 +279,8 @@
     "line": 2.5,
     "p_over": 0.51109,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "Serie A",
@@ -276,7 +294,8 @@
       "away": 0.41076
     },
     "created_at": "2026-11-06T17:31:04.635762+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "Serie A",
@@ -287,7 +306,8 @@
     "line": 4.5,
     "p_over": 0.18838,
     "created_at": "2026-11-06T17:05:58.135614+00:00",
-    "settled": false
+    "settled": false,
+    "evaluation_exclusion": "creation_not_provably_before_kickoff"
   },
   {
     "league": "Bundesliga",
@@ -11639,7 +11659,7 @@
     "home": "Hamburger SV",
     "away": "Borussia Mönchengladbach",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-06T19:30:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -11648,7 +11668,56 @@
     "line": 2.5,
     "p_over": 0.61143,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-06"
+    "historical_cutoff_exclusive": "2026-11-06",
+    "actual_total": 4.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-07T00:19:00.374184+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-07T00:19:00.374184+00:00",
+      "actual_home": 3.0,
+      "actual_away": 1.0,
+      "result_sha256": "6c3bbc8987410edac018d74435232275468993f18bc26fadad39aaa83f8cee99",
+      "source_kickoff_utc": "2026-11-06T19:30:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000003572513304"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Bundesliga",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000003572513304",
+          "content_sha256": "101a81fce1316ba4d376acbcc1934c531865eb6eb1596afdded5f6245bcb45f2",
+          "fetched_at": "2026-11-07T00:18:40.811830+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Bundesliga",
+        "date": "2026-11-06",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
+        "source_fixture_id": "id1000003572513304",
+        "kickoff_utc": "2026-11-06T19:30:00+00:00",
+        "fulltime_home": 3,
+        "fulltime_away": 1,
+        "received_at": "2026-11-07T00:18:38.311426+00:00",
+        "verified_at": "2026-11-07T00:18:40.811830+00:00",
+        "participant_ids": [
+          2676,
+          2527
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-06T19:32:26.301000+00:00",
+        "score_updated_at": "2026-11-06T21:24:49.244698+00:00",
+        "final_time": "2026-11-06T21:23:23.660000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "591d6758d191a77c85e71f2193950add4cfde7160629951da13c3c5d784f8c9f",
+        "observation_sha256": "101a81fce1316ba4d376acbcc1934c531865eb6eb1596afdded5f6245bcb45f2"
+      }
+    }
   },
   {
     "league": "Bundesliga",
@@ -11673,7 +11742,7 @@
     "home": "Hamburger SV",
     "away": "Borussia Mönchengladbach",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-06T19:30:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -11685,7 +11754,55 @@
       "away": 0.29024
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-06"
+    "historical_cutoff_exclusive": "2026-11-06",
+    "actual_outcome": "home",
+    "settled_at": "2026-11-07T00:19:00.374184+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-07T00:19:00.374184+00:00",
+      "actual_home": 3.0,
+      "actual_away": 1.0,
+      "result_sha256": "cf49c3729c19e814b38d0a8c905def621a664e02202c3e617bbeb562a4e0d631",
+      "source_kickoff_utc": "2026-11-06T19:30:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000003572513304"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Bundesliga",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000003572513304",
+          "content_sha256": "101a81fce1316ba4d376acbcc1934c531865eb6eb1596afdded5f6245bcb45f2",
+          "fetched_at": "2026-11-07T00:18:40.811830+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Bundesliga",
+        "date": "2026-11-06",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
+        "source_fixture_id": "id1000003572513304",
+        "kickoff_utc": "2026-11-06T19:30:00+00:00",
+        "fulltime_home": 3,
+        "fulltime_away": 1,
+        "received_at": "2026-11-07T00:18:38.311426+00:00",
+        "verified_at": "2026-11-07T00:18:40.811830+00:00",
+        "participant_ids": [
+          2676,
+          2527
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-06T19:32:26.301000+00:00",
+        "score_updated_at": "2026-11-06T21:24:49.244698+00:00",
+        "final_time": "2026-11-06T21:23:23.660000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "591d6758d191a77c85e71f2193950add4cfde7160629951da13c3c5d784f8c9f",
+        "observation_sha256": "101a81fce1316ba4d376acbcc1934c531865eb6eb1596afdded5f6245bcb45f2"
+      }
+    }
   },
   {
     "league": "Bundesliga",
@@ -14807,7 +14924,7 @@
     "home": "Sevilla FC",
     "away": "Deportivo Alavés",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-06T20:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -14816,7 +14933,56 @@
     "line": 2.5,
     "p_over": 0.51425,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-06"
+    "historical_cutoff_exclusive": "2026-11-06",
+    "actual_total": 0.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-07T00:19:00.374184+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-07T00:19:00.374184+00:00",
+      "actual_home": 0.0,
+      "actual_away": 0.0,
+      "result_sha256": "86fd4d4dec01a61268e4dbd80744d9e4a6fec03cf73c716e3a9978b1ac86c5ae",
+      "source_kickoff_utc": "2026-11-06T20:00:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000000872478700"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000000872478700",
+          "content_sha256": "5fb7973a01175f3a3888dbaf24146a609cb8c66b017aad474ca56bd67c9e6027",
+          "fetched_at": "2026-11-07T00:18:50.309626+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "La Liga",
+        "date": "2026-11-06",
+        "home": "Sevilla FC",
+        "away": "Deportivo Alavés",
+        "source_fixture_id": "id1000000872478700",
+        "kickoff_utc": "2026-11-06T20:00:00+00:00",
+        "fulltime_home": 0,
+        "fulltime_away": 0,
+        "received_at": "2026-11-07T00:18:47.956805+00:00",
+        "verified_at": "2026-11-07T00:18:50.309626+00:00",
+        "participant_ids": [
+          2833,
+          2885
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-06T20:00:48.952000+00:00",
+        "score_updated_at": "2026-11-06T22:00:53.064367+00:00",
+        "final_time": "2026-11-06T21:59:23.407000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "ee3bdea665d248a81d137843f6b8fa2e3a21613ef02331304c318bf061392d7f",
+        "observation_sha256": "5fb7973a01175f3a3888dbaf24146a609cb8c66b017aad474ca56bd67c9e6027"
+      }
+    }
   },
   {
     "league": "La Liga",
@@ -14841,7 +15007,7 @@
     "home": "Sevilla FC",
     "away": "Deportivo Alavés",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-06T20:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -14853,7 +15019,55 @@
       "away": 0.28396
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-06"
+    "historical_cutoff_exclusive": "2026-11-06",
+    "actual_outcome": "draw",
+    "settled_at": "2026-11-07T00:19:00.374184+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-07T00:19:00.374184+00:00",
+      "actual_home": 0.0,
+      "actual_away": 0.0,
+      "result_sha256": "afdaee6fb250838b2ad179d19d3648205b350b76875dc5e4843d7f89fb3a7918",
+      "source_kickoff_utc": "2026-11-06T20:00:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000000872478700"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000000872478700",
+          "content_sha256": "5fb7973a01175f3a3888dbaf24146a609cb8c66b017aad474ca56bd67c9e6027",
+          "fetched_at": "2026-11-07T00:18:50.309626+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "La Liga",
+        "date": "2026-11-06",
+        "home": "Sevilla FC",
+        "away": "Deportivo Alavés",
+        "source_fixture_id": "id1000000872478700",
+        "kickoff_utc": "2026-11-06T20:00:00+00:00",
+        "fulltime_home": 0,
+        "fulltime_away": 0,
+        "received_at": "2026-11-07T00:18:47.956805+00:00",
+        "verified_at": "2026-11-07T00:18:50.309626+00:00",
+        "participant_ids": [
+          2833,
+          2885
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-06T20:00:48.952000+00:00",
+        "score_updated_at": "2026-11-06T22:00:53.064367+00:00",
+        "final_time": "2026-11-06T21:59:23.407000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "ee3bdea665d248a81d137843f6b8fa2e3a21613ef02331304c318bf061392d7f",
+        "observation_sha256": "5fb7973a01175f3a3888dbaf24146a609cb8c66b017aad474ca56bd67c9e6027"
+      }
+    }
   },
   {
     "league": "La Liga",
@@ -21495,7 +21709,7 @@
     "home": "Everton",
     "away": "Coventry",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-06T20:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -21504,7 +21718,56 @@
     "line": 2.5,
     "p_over": 0.49368,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-06"
+    "historical_cutoff_exclusive": "2026-11-06",
+    "actual_total": 4.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-07T00:19:00.374184+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-07T00:19:00.374184+00:00",
+      "actual_home": 3.0,
+      "actual_away": 1.0,
+      "result_sha256": "cf3e7a9a16e3e7e1ac6958154c607b40b3175184ff5e2569b0977b9ffe9e5d1a",
+      "source_kickoff_utc": "2026-11-06T20:00:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000001772221378"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Premier League",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000001772221378",
+          "content_sha256": "4f02908e87ed7ec071900668a73abe14b842d0229ca4c7e66373b2f08d2a3ad3",
+          "fetched_at": "2026-11-07T00:18:54.970323+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Premier League",
+        "date": "2026-11-06",
+        "home": "Everton",
+        "away": "Coventry",
+        "source_fixture_id": "id1000001772221378",
+        "kickoff_utc": "2026-11-06T20:00:00+00:00",
+        "fulltime_home": 3,
+        "fulltime_away": 1,
+        "received_at": "2026-11-07T00:18:52.614140+00:00",
+        "verified_at": "2026-11-07T00:18:54.970323+00:00",
+        "participant_ids": [
+          48,
+          11
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-06T20:00:50.742000+00:00",
+        "score_updated_at": "2026-11-06T21:57:57.426785+00:00",
+        "final_time": "2026-11-06T21:56:24.168000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "7f10ece04259c7ec4246ad0f5bacb209f25c88e1bedd028821f5d89a510685f5",
+        "observation_sha256": "4f02908e87ed7ec071900668a73abe14b842d0229ca4c7e66373b2f08d2a3ad3"
+      }
+    }
   },
   {
     "league": "Premier League",
@@ -21529,7 +21792,7 @@
     "home": "Everton",
     "away": "Coventry",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-06T20:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -21541,7 +21804,55 @@
       "away": 0.29016
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-06"
+    "historical_cutoff_exclusive": "2026-11-06",
+    "actual_outcome": "home",
+    "settled_at": "2026-11-07T00:19:00.374184+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-07T00:19:00.374184+00:00",
+      "actual_home": 3.0,
+      "actual_away": 1.0,
+      "result_sha256": "b7ec6b13ccc61e1b014c976939a548349a9e175d3b86da1008355880be129558",
+      "source_kickoff_utc": "2026-11-06T20:00:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000001772221378"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Premier League",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000001772221378",
+          "content_sha256": "4f02908e87ed7ec071900668a73abe14b842d0229ca4c7e66373b2f08d2a3ad3",
+          "fetched_at": "2026-11-07T00:18:54.970323+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Premier League",
+        "date": "2026-11-06",
+        "home": "Everton",
+        "away": "Coventry",
+        "source_fixture_id": "id1000001772221378",
+        "kickoff_utc": "2026-11-06T20:00:00+00:00",
+        "fulltime_home": 3,
+        "fulltime_away": 1,
+        "received_at": "2026-11-07T00:18:52.614140+00:00",
+        "verified_at": "2026-11-07T00:18:54.970323+00:00",
+        "participant_ids": [
+          48,
+          11
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-06T20:00:50.742000+00:00",
+        "score_updated_at": "2026-11-06T21:57:57.426785+00:00",
+        "final_time": "2026-11-06T21:56:24.168000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "7f10ece04259c7ec4246ad0f5bacb209f25c88e1bedd028821f5d89a510685f5",
+        "observation_sha256": "4f02908e87ed7ec071900668a73abe14b842d0229ca4c7e66373b2f08d2a3ad3"
+      }
+    }
   },
   {
     "league": "Premier League",
@@ -25895,7 +26206,7 @@
     "home": "Venezia",
     "away": "Udinese",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-06T19:45:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -25904,7 +26215,56 @@
     "line": 2.5,
     "p_over": 0.51109,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-06"
+    "historical_cutoff_exclusive": "2026-11-06",
+    "actual_total": 3.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-07T00:19:00.374184+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-07T00:19:00.374184+00:00",
+      "actual_home": 2.0,
+      "actual_away": 1.0,
+      "result_sha256": "026c228b208e21894d8673836fcb455e00252e710424fbca8f956b22489dc39c",
+      "source_kickoff_utc": "2026-11-06T19:45:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000002371945404"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000002371945404",
+          "content_sha256": "7e48b27e3909922dc5df5f61f39c13c5bab765adc41eae720afc38ca195cd01f",
+          "fetched_at": "2026-11-07T00:18:45.503033+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Serie A",
+        "date": "2026-11-06",
+        "home": "Venezia",
+        "away": "Udinese",
+        "source_fixture_id": "id1000002371945404",
+        "kickoff_utc": "2026-11-06T19:45:00+00:00",
+        "fulltime_home": 2,
+        "fulltime_away": 1,
+        "received_at": "2026-11-07T00:18:43.171423+00:00",
+        "verified_at": "2026-11-07T00:18:45.503033+00:00",
+        "participant_ids": [
+          2688,
+          2695
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-06T19:48:31.204000+00:00",
+        "score_updated_at": "2026-11-06T21:42:45.483824+00:00",
+        "final_time": "2026-11-06T21:39:30.207000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "bc8815de55b2ac372632a1f73d80bcb6d2991e56e0b423d82666df6eb32140e4",
+        "observation_sha256": "7e48b27e3909922dc5df5f61f39c13c5bab765adc41eae720afc38ca195cd01f"
+      }
+    }
   },
   {
     "league": "Serie A",
@@ -25929,7 +26289,7 @@
     "home": "Venezia",
     "away": "Udinese",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-06T19:45:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -25941,7 +26301,55 @@
       "away": 0.41076
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-06"
+    "historical_cutoff_exclusive": "2026-11-06",
+    "actual_outcome": "home",
+    "settled_at": "2026-11-07T00:19:00.374184+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-07T00:19:00.374184+00:00",
+      "actual_home": 2.0,
+      "actual_away": 1.0,
+      "result_sha256": "57d2d2c5d3d8b0b942b535fa1eb47bf9e0d7f5cb417eb9385fed319465954685",
+      "source_kickoff_utc": "2026-11-06T19:45:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000002371945404"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000002371945404",
+          "content_sha256": "7e48b27e3909922dc5df5f61f39c13c5bab765adc41eae720afc38ca195cd01f",
+          "fetched_at": "2026-11-07T00:18:45.503033+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Serie A",
+        "date": "2026-11-06",
+        "home": "Venezia",
+        "away": "Udinese",
+        "source_fixture_id": "id1000002371945404",
+        "kickoff_utc": "2026-11-06T19:45:00+00:00",
+        "fulltime_home": 2,
+        "fulltime_away": 1,
+        "received_at": "2026-11-07T00:18:43.171423+00:00",
+        "verified_at": "2026-11-07T00:18:45.503033+00:00",
+        "participant_ids": [
+          2688,
+          2695
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-06T19:48:31.204000+00:00",
+        "score_updated_at": "2026-11-06T21:42:45.483824+00:00",
+        "final_time": "2026-11-06T21:39:30.207000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "bc8815de55b2ac372632a1f73d80bcb6d2991e56e0b423d82666df6eb32140e4",
+        "observation_sha256": "7e48b27e3909922dc5df5f61f39c13c5bab765adc41eae720afc38ca195cd01f"
+      }
+    }
   },
   {
     "league": "Serie A",
