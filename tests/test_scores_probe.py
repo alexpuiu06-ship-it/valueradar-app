@@ -73,6 +73,8 @@ class ScoresProbeTests(unittest.TestCase):
                         {"participant1Id": 2}, {"startTime": (START+timedelta(seconds=61)).isoformat()},
                         {"startTime": START.replace(tzinfo=None).isoformat()}):
             self.assertEqual(probe.match_fixtures([{**first, **changes}], [forecast()]), {})
+        self.assertEqual(probe.match_issue([{**first,"startTime":(START+timedelta(minutes=20)).isoformat()}],forecast()),"kickoff_conflict")
+        self.assertEqual(probe.match_issue([first,first],forecast()),"duplicate_or_ambiguous_identity")
 
     def test_explicit_finished_status_and_completion_time_are_required(self):
         self.assertIsNotNone(probe.terminal_fixture(fixture(), "Premier League", NOW)["end"])

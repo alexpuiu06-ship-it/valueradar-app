@@ -5,8 +5,9 @@ Probabilitățile rămân experimentale. Nicio selecție value nu este confirmat
 iar cotele internaționale nu sunt oferte românești verificate.
 
 **Regimul ales de proprietar este momentan monitorizarea gratuită.** PropLine
-continuă verificarea zilnică de cel mult cinci cereri gratuite; OddsPapi nu
-are programare automată. Evaluarea comercială și solicitarea de demo sunt
+continuă verificarea zilnică de cel mult cinci cereri gratuite. Proba de cote
+OddsPapi rămâne manuală; verificarea scorurilor finale rulează săptămânal,
+tot în planul gratuit. Evaluarea comercială și solicitarea de demo sunt
 amânate. Plafonul de £49/lună discutat anterior nu este o instrucțiune de
 achiziție în acest regim. Nu sunt necesare alte configurări din partea
 proprietarului pentru continuarea monitorizării existente.
@@ -24,12 +25,15 @@ calibrarea și Elo, apoi se publică alături de modelul operațional. Workflow-
 separate de cercetare sunt doar pentru rulări manuale și artefacte descărcabile;
 nu scriu în repository și nu pot înlocui o publicare aflată în așteptare.
 
-O rulare manuală are trei opțiuni, implicit dezactivate:
+O rulare manuală are patru opțiuni, implicit dezactivate:
 
 - refresh_research: recalculează și publică rapoartele, fără credite de cote.
 - scan_odds: solicită cote, în limita bugetului existent; nu cumpără credite.
 - probe_ro: verifică diagnosticul de acoperire Superbet RO/NetBet RO, cel mult
   cinci cereri gratuite. Nu salvează prețuri și nu activează recomandări.
+- probe_scores: verifică cel mult cinci rezultate la 90 minute pentru meciuri
+  arhivate, maximum 12 cereri din contul gratuit OddsPapi. Sunt folosite numai
+  la evaluare, separat de antrenare și istoricul statistic.
 
 Diagnosticul RO rulează separat zilnic la **08:37 ora României iarna / 09:37 vara
 (06:37 UTC)**, prin același writer
@@ -55,10 +59,24 @@ furnizorului selectat, iar rapoartele nu conțin cote sau identificatori de cont
 Opțiunea `OddsPapi scores` din același workflow verifică separat scoruri la
 90 de minute pentru cel mult cinci meciuri arhivate care așteaptă rezultate.
 Plafonul este tot 12 cereri contorizate, numai din planul gratuit de 250,
-cu rezervă de zece. Nu se execută automat și nu introduce rezultate în
-producție. Un raport poate conține până la cinci observații despre aceste
-meciuri; stările, identitățile și semnificația perioadei trebuie demonstrate.
-Lipsurile sau ambiguitățile păstrează validarea incompletă.
+cu rezervă de zece. Proba diagnostică nu scrie în producție. Același control
+rulează în writer-ul unic duminica la **07:41 ora României iarna / 08:41 vara
+(05:41 UTC)** sau prin `probe_scores`. Un cont fără planul gratuit confirmat
+este refuzat; o probă fără meciuri în așteptare nu face cereri. Plafonul
+programat este de cel mult 60 de cereri într-o lună cu cinci duminici, înainte
+de orice probă manuală, iar contul este reverificat înaintea fiecărei probe.
+
+Numai observațiile individuale valide decontează 1X2/goluri în jurnalul
+curent, cu dovada identității, finalului, perioadei `fulltime`, sursei,
+momentelor și amprentelor. O probă parțială rămâne explicit incompletă;
+celelalte meciuri și piețe continuă să aștepte date. Aceste rânduri nu intră
+în antrenare, calibrare retrospectivă sau indicatorii de prospețime a datelor
+statistice. Nu există feed brut public ori prețuri din această sursă.
+
+Dovada externă folosește schema 3; schemele 1 și 2 rămân citibile. Dispariția
+temporară a sursei păstrează dovada arhivată, iar un rezultat principal
+contradictoriu exclude decontarea din evaluare fără să o rescrie. Panoul arată
+numărul de meciuri/estimări evaluate din această sursă și limitele eșantionului.
 
 Publicarea verifică timestamp-ul datelor servite și amprenta HTML-ului și a
 celor cinci scripturi. Un răspuns HTTP 200 cu fișiere vechi nu este succes.

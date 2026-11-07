@@ -7,6 +7,14 @@ oricărei integrări în `main`.
 
 ## Continuare operațională
 
+Verificarea gratuită OddsPapi a identificat rezultate finale la 90 minute
+pentru patru dintre cele cinci meciuri în așteptare. Integrarea suplimentară
+este limitată la evaluarea 1X2/golurilor arhivate, cu dovadă de identitate,
+stare finală, perioadă și momente. Nu intră în datele de antrenare ori în
+calibrarea retrospectivă și nu deblochează value. Dublurile, modificările între
+cereri și rezultatele ulterioare contradictorii sunt excluse. Diagnosticul
+parțial rămâne incomplet. Vezi [ODDSPAPI_EVALUATION.md](ODDSPAPI_EVALUATION.md).
+
 Etapa din 7 noiembrie păstrează un istoric de probe RO pe 90 de zile, fără
 date brute, și adaugă monitorizarea întârzierilor și auditul decontărilor.
 Au fost corectate concordanța orei de start, excluderea rezultatelor revizuite,

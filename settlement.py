@@ -14,6 +14,7 @@ STATES=("upcoming","in_progress","awaiting_kickoff_evidence","awaiting_result","
 
 def counts(entry,played):
     if not played:return None
+    if played.get("settlement_observation") and entry.get("pipeline_version")!=runner.PIPELINE_VERSION:return None
     home,away=("gh","ga") if entry["market"]=="h2h" else runner.MARKETS[entry["market"]][:2]
     values=runner.number(played.get(home)),runner.number(played.get(away))
     return values if None not in values else None
@@ -34,7 +35,7 @@ def completion_floor(entry,played=None):
 
 def evidence_valid(entry):
     proof=entry.get("settlement_evidence")
-    if not isinstance(proof,dict) or proof.get("schema_version") not in (1,2):return False
+    if not isinstance(proof,dict) or proof.get("schema_version") not in (1,2,3):return False
     if proof.get("kind")!="observed_public_result_not_operator_verification":return False
     if proof.get("observed_at")!=entry.get("settled_at"):return False
     values=runner.number(proof.get("actual_home")),runner.number(proof.get("actual_away"))
@@ -43,10 +44,23 @@ def evidence_valid(entry):
     if start is not None and runner.timestamp(start) is None:return False
     frozen=runner.fixture_kickoff(entry)
     if frozen and start and abs((frozen-runner.timestamp(start)).total_seconds())>60:return False
-    identity=tuple(entry[k] for k in ("league","date","home","away")) if proof["schema_version"]==2 else runner.key(entry)
+    identity=runner.key(entry) if proof["schema_version"]==1 else tuple(entry[k] for k in ("league","date","home","away"))
     fingerprint={"identity":identity,"market":entry["market"],"actual_home":values[0],"actual_away":values[1],"source_kickoff_utc":start}
     digest=hashlib.sha256(json.dumps(fingerprint,sort_keys=True).encode()).hexdigest()
     if proof.get("result_sha256")!=digest:return False
+    if proof["schema_version"]==3:
+        import score_evidence
+        observed=proof.get("external_result")
+        at=runner.timestamp(proof.get("observed_at"))
+        if not at or not score_evidence.valid(observed,at) or entry.get("pipeline_version")!=runner.PIPELINE_VERSION:return False
+        if any(observed[k]!=entry[k] for k in ("league","date","home","away")) or start!=observed["kickoff_utc"]:return False
+        if values!=(observed["fulltime_home"],observed["fulltime_away"]) or entry["market"] not in ("h2h","goals"):return False
+        source_id="OddsPapi:90min:"+observed["source_fixture_id"]
+        snapshots=proof.get("source_snapshots")
+        if source_id not in proof.get("source_ids",[]) or not isinstance(snapshots,list) or not any(
+          s.get("source_id")==source_id and s.get("league")==entry["league"] and s.get("kind")=="settlement_only"
+          and s.get("content_sha256")==observed["observation_sha256"] and s.get("fetched_at")==observed["verified_at"]
+          for s in snapshots if isinstance(s,dict)):return False
     if entry["market"]=="h2h":
         actual="home" if values[0]>values[1] else "away" if values[0]<values[1] else "draw"
         return entry.get("actual_outcome")==actual
@@ -89,6 +103,10 @@ def state(entry,played,at):
 
 def freeze_result(entry,played,at,source_report=()):
     if state(entry,played,at)!="ready_to_settle":raise ValueError("Settlement requires an eligible completed result")
+    external=played.get("settlement_observation")
+    if external:
+        import score_evidence
+        if not score_evidence.valid(external,at):raise ValueError("Invalid external result evidence")
     home,away=counts(entry,played)
     if entry["market"]=="h2h":entry["actual_outcome"]="home" if home>away else "away" if home<away else "draw"
     else:entry.update(actual_total=home+away,actual_over=int(home+away>entry["line"]))
@@ -99,11 +117,12 @@ def freeze_result(entry,played,at,source_report=()):
                  "source_kickoff_utc":source_start.astimezone(timezone.utc).isoformat() if source_start else None}
     snapshots=[{k:source[k] for k in ("league","kind","source_id","content_sha256","fetched_at") if k in source}
                for source in source_report if source.get("source_id") in source_ids and source.get("ok") is True
-               and source.get("league")==played["league"] and source.get("kind") in ("results","historical")]
-    entry.update(settled=True,settled_at=stamp,settlement_evidence={"schema_version":2,
+               and source.get("league")==played["league"] and source.get("kind") in ("results","historical","settlement_only")]
+    entry.update(settled=True,settled_at=stamp,settlement_evidence={"schema_version":3 if external else 2,
       "kind":"observed_public_result_not_operator_verification","observed_at":stamp,
       "actual_home":home,"actual_away":away,"result_sha256":hashlib.sha256(json.dumps(fingerprint,sort_keys=True).encode()).hexdigest(),
       "source_kickoff_utc":fingerprint["source_kickoff_utc"],"source_ids":source_ids,"source_snapshots":snapshots})
+    if external:entry["settlement_evidence"]["external_result"]=external
 
 
 def audit(log,outcomes,at,integrity=None):

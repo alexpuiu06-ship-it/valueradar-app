@@ -3,7 +3,6 @@
 from collections import Counter
 from datetime import datetime,timedelta,timezone
 import argparse
-import hashlib
 import json
 import math
 import os
@@ -14,6 +13,7 @@ import time
 import oddspapi_probe as api
 import odds_scanner as odds
 import runner
+import score_evidence
 
 REPORT=Path(__file__).resolve().parent/"work"/"scores_preflight.json"
 MAX_MATCHES=5
@@ -63,6 +63,16 @@ def match_fixtures(payload,candidates):
     return selected
 
 
+def match_issue(payload,frozen):
+    pairs=[]
+    for row in payload:
+        identity=fixture_identity(row,frozen["league"])
+        if identity and identity[1:3]==(odds.canonical(frozen["home"]),odds.canonical(frozen["away"])):pairs.append(identity)
+    if not pairs:return "no_matching_team_pair_in_requested_window"
+    if not any(abs((runner.fixture_kickoff(frozen)-row[3]).total_seconds())<=60 for row in pairs):return "kickoff_conflict"
+    return "duplicate_or_ambiguous_identity"
+
+
 def terminal_fixture(row,league,at):
     identity=fixture_identity(row,league)
     if identity is None:raise api.ProbeError("invalid_result_identity")
@@ -75,7 +85,7 @@ def terminal_fixture(row,league,at):
     if at<max(start,actual or start)+timedelta(hours=2):raise api.ProbeError("completion_guard")
     if end and (end>at or end<max(start,actual or start)+timedelta(minutes=90)):raise api.ProbeError("implausible_final_time")
     return {"identity":identity,"fixture_id":row["fixtureId"],"participant_ids":(row["participant1Id"],row["participant2Id"]),
-            "actual_start":actual,"end":end}
+            "actual_start":actual,"end":end,"status_name":row["statusName"],"status_id":row["statusId"]}
 
 
 def fulltime_score(payload,fixture_id,at):
@@ -96,9 +106,10 @@ def fulltime_score(payload,fixture_id,at):
 def run(authenticated=False,league="All leagues",output=REPORT):
     if league not in ("All leagues",*runner.LEAGUES):raise ValueError("Unsupported league")
     report={"provider":"OddsPapi","purpose":"finished_score_diagnostic_only","checked_at":datetime.now(timezone.utc).isoformat(),
+      "validation_version":score_evidence.VERSION,"scope":"At most five oldest pending h2h matches in the last seven days; not full league coverage.",
       "verified_value":False,"production_settlement_enabled":False,"raw_provider_payload_saved":False,
       "metered_requests_attempted":0,"unmetered_requests_attempted":0,"max_metered_requests":MAX_REQUESTS,
-      "max_matched_fixtures":MAX_MATCHES,"league":league,"observations":[],"rejections":{},"status":"not_requested" if not authenticated else "needs_api_key"}
+      "max_matched_fixtures":MAX_MATCHES,"league":league,"observations":[],"identity_issues":{},"rejections":{},"status":"not_requested" if not authenticated else "needs_api_key"}
     key=os.getenv("ODDSPAPI_API_KEY","").strip() if authenticated else "";last=None;rejected=Counter()
     def request(path,params):
         nonlocal last
@@ -130,15 +141,21 @@ def run(authenticated=False,league="All leagues",output=REPORT):
                 leagues=sorted({r["league"] for r in candidates})
                 catalog=api.verified_tournaments(request("/tournaments",{"sportId":10,"language":"en"}),leagues)
                 if not all(catalog.values()):raise api.ProbeError("tournament_catalog_not_confirmed")
-                first=min(runner.fixture_kickoff(f) for f in candidates)-timedelta(minutes=1)
-                last_start=max(runner.fixture_kickoff(f) for f in candidates)+timedelta(minutes=1)
+                # A wider discovery window can explain kickoff conflicts; it
+                # never relaxes the 60-second acceptance rule.
+                first=min(runner.fixture_kickoff(f) for f in candidates)-timedelta(hours=1)
+                last_start=max(runner.fixture_kickoff(f) for f in candidates)+timedelta(hours=1)
                 payload=request("/fixtures",{"sportId":10,"from":first.isoformat(),"to":last_start.isoformat(),"language":"en"})
                 report["provider_fixtures_received"]=len(payload) if isinstance(payload,list) else None
                 selected=match_fixtures(payload,candidates)
                 report["matched_fixture_identities"]=len(selected)
                 for frozen in candidates:
                     row=selected.get(runner.key(frozen))
-                    if row is None:rejected["missing_or_ambiguous_fixture_match"]+=1;continue
+                    if row is None:
+                        rejected["missing_or_ambiguous_fixture_match"]+=1
+                        issue=match_issue(payload,frozen)
+                        report["identity_issues"][issue]=report["identity_issues"].get(issue,0)+1
+                        continue
                     try:
                         view=terminal_fixture(row,frozen["league"],datetime.now(timezone.utc))
                         scores=request("/scores",{"fixtureId":view["fixture_id"]})
@@ -147,12 +164,16 @@ def run(authenticated=False,league="All leagues",output=REPORT):
                         final_view=terminal_fixture(final,frozen["league"],datetime.now(timezone.utc))
                         if view!=final_view:raise api.ProbeError("fixture_changed_during_score_request")
                         # A bounded per-forecast observation, not a bulk feed dump.
-                        report["observations"].append({"league":frozen["league"],"date":frozen["date"],"home":frozen["home"],"away":frozen["away"],
+                        report["observations"].append(score_evidence.seal({"validation_version":score_evidence.VERSION,
+                          "league":frozen["league"],"date":frozen["date"],"home":frozen["home"],"away":frozen["away"],
                           "source_fixture_id":view["fixture_id"],"kickoff_utc":view["identity"][3].isoformat(),
                           "fulltime_home":values[0],"fulltime_away":values[1],"received_at":received.isoformat(),
+                          "verified_at":datetime.now(timezone.utc).isoformat(),"participant_ids":list(view["participant_ids"]),
+                          "status_name":view["status_name"],"status_id":view["status_id"],
+                          "actual_start":view["actual_start"].isoformat() if view["actual_start"] else None,
                           "score_updated_at":updated.isoformat() if updated else None,"final_time":view["end"].isoformat() if view["end"] else None,
                           "ready_for_review":view["end"] is not None,
-                          "score_sha256":hashlib.sha256(json.dumps({"fixture_id":view["fixture_id"],"period":"fulltime","home":values[0],"away":values[1]},sort_keys=True).encode()).hexdigest()})
+                          "score_sha256":score_evidence.score_digest(view["fixture_id"],*values)}))
                     except api.ProbeError as exc:
                         reason=str(exc)
                         if reason not in SCORE_REASONS:raise

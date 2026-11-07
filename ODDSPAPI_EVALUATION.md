@@ -67,8 +67,9 @@ separată de 32 MiB, iar răspunsurile cu cote rămân limitate la 5 MB.
 Proba completă folosește cel mult **12 cereri contorizate**; o singură ligă
 folosește cel mult patru. Se păstrează rezervă de zece cereri și nu există
 retry automat. Cele trei probe au consumat în total **18/250**, cu **232 rămase**
-confirmate de cont după ultima probă. Nu există programare automată OddsPapi;
-monitorizarea zilnică din aplicație folosește PropLine și plafonul său separat.
+confirmate de cont după acea probă de cote. Monitorizarea zilnică RO folosește
+PropLine și plafonul său separat. Verificarea suplimentară de scoruri de mai
+jos are un consum separat în același cont gratuit OddsPapi.
 
 Workflow-ul existent „evaluare gratuita feed RO” permite alegerea furnizorului.
 Pentru OddsPapi, „All leagues” este un singur job serial, astfel încât cele
@@ -81,10 +82,10 @@ cheia sa. Rapoartele agregate sunt păstrate ca artefacte pentru verificare.
 
 Opțiunea manuală `OddsPapi scores` verifică cel mult cinci meciuri cu
 predicții 1X2 arhivate înainte de start, din versiunea curentă a pipeline-ului.
-Nu scrie rezultate în aplicație și nu decontează predicții. Folosește cel
+Diagnosticul nu scrie în aplicație și nu decontează predicții. Folosește cel
 mult 12 cereri contorizate și două verificări necontorizate ale contului;
 refuză orice plan care nu confirmă limita gratuită de 250 și păstrează zece
-cereri în rezervă. Nu are programare automată sau retry.
+cereri în rezervă. Nu are retry.
 
 Potrivirea cere aceeași ligă, echipe în aceeași ordine și kickoff la cel mult
 60 secunde. Starea trebuie să fie explicit `Finished` sau `Ended`, împreună
@@ -100,6 +101,26 @@ de final rămâne incomplet. Rapoartele conțin cel mult cinci observații despr
 meciurile arhivate, nu feedul brut, cote sau informații de cont. Validarea
 parțială nu primește status de validare completă. Nu confirmă reguli de
 decontare ale operatorilor sau profit.
+
+[Prima probă reală de scoruri](https://github.com/alexpuiu06-ship-it/valueradar-app/actions/runs/42315106673),
+la 7 noiembrie, 01:56–01:57 ora României, a verificat cinci meciuri arhivate.
+Patru au trecut controalele de identitate/final/scor la 90 minute; al cincilea
+nu s-a potrivit fără ambiguități. Statusul a rămas incomplet. Consumul a fost
+10 cereri contorizate, de la 18 la 28 utilizate, cu 222/250 rămase după probă.
+Acesta este un eșantion mic, nu o măsură a acoperirii întregului sezon.
+
+Writer-ul de producție poate folosi numai observațiile individuale validate
+pentru evaluarea predicțiilor curente 1X2/goluri. Dovada completă este parte
+din decontarea predicției; nu se distribuie un produs separat de scoruri sau
+răspunsul furnizorului. Termenii interzic redistribuirea ca produs de sine
+stătător și cer verificarea datelor; această integrare este limitată la
+analiza predicțiilor proprii. Nu se declară verificare independentă la operator.
+
+Verificarea de producție este săptămânală, prin același writer, cel mult
+12 cereri/rulare și 60 într-o lună cu cinci duminici, plus probele manuale
+controlate. Contul gratuit, dreptul la fotbal și rezerva sunt reverificate.
+Nu antrenează modelul și nu completează statistici de cartonașe/cornere/faulturi.
+Regulile, dovezile arhivate și tratarea corecțiilor sunt în [OPERATIONS.md](OPERATIONS.md).
 
 PropLine rămâne monitorizat gratuit, cu acoperire parțială declarată. Nici
 PropLine, nici eșantionul OddsPapi nu justifică un feed RO complet sau un semnal
