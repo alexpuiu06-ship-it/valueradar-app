@@ -111,10 +111,13 @@ class ScoreEvidenceTests(unittest.TestCase):
     def test_external_proof_cannot_be_removed_or_mutated_or_used_for_other_statistics(self):
         rows=evidence.results(report(),[forecast()],NOW);row=rows[0]
         frozen=forecast();settlement.freeze_result(frozen,row,NOW,[source(row)])
-        for change in ("remove","counts","snapshot"):
+        self.assertEqual(evidence.archived_results([frozen],NOW-timedelta(hours=1)),[])
+        self.assertEqual(evidence.archived_results([{**frozen,"settlement_evidence":None}],NOW),[])
+        for change in ("remove","counts","snapshot","source_ids"):
             modified=deepcopy(frozen);proof=modified["settlement_evidence"]
             if change=="remove":proof.pop("external_result")
             elif change=="counts":proof["external_result"]["fulltime_home"]=0
+            elif change=="source_ids":proof["source_ids"]=True
             else:proof["source_snapshots"][0]["content_sha256"]="a"*64
             self.assertFalse(settlement.evidence_valid(modified))
         legacy={**forecast(),"pipeline_version":"legacy"}

@@ -32,13 +32,15 @@ def result_row(row):
       "source_ids":["OddsPapi:90min:"+row["source_fixture_id"]],"settlement_observation":deepcopy(row)}
 
 
-def archived_results(log):
+def archived_results(log,at):
     """Keep known scores visible for statistics queues; current sources take priority."""
     import settlement
     rows={};conflicts=set()
     for entry in log:
-        if entry.get("settled") is not True or entry.get("settlement_evidence",{}).get("schema_version")!=3 or not settlement.evidence_valid(entry):continue
-        row=result_row(entry["settlement_evidence"]["external_result"]);key=runner.key(row)
+        proof=entry.get("settlement_evidence")
+        if entry.get("settled") is not True or not isinstance(proof,dict) or proof.get("schema_version")!=3 or not settlement.evidence_valid(entry):continue
+        if not valid(proof["external_result"],at):continue
+        row=result_row(proof["external_result"]);key=runner.key(row)
         if key in rows and any(row[k]!=rows[key][k] for k in ("gh","ga","kickoff_utc")):conflicts.add(key)
         rows[key]=row
     return [row for key,row in rows.items() if key not in conflicts]

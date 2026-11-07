@@ -574,7 +574,7 @@ def prospective(hist,fixtures,run_at,source_report=()):
  outcomes={key(r):r for r in valid_outcomes}
  from score_evidence import archived_results
  conflicting={tuple(k) for k in outcome_integrity["conflicting_event_keys"]}
- for row in archived_results(log):
+ for row in archived_results(log,now):
   if key(row) not in outcomes and key(row) not in conflicting:outcomes[key(row)]=row
  for league,date,home,away in conflicting:
   outcomes[(league,date,home,away)]={"league":league,"date":date,"home":home,"away":away,"result_conflict":True}

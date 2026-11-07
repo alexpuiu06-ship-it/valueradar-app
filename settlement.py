@@ -57,7 +57,8 @@ def evidence_valid(entry):
         if values!=(observed["fulltime_home"],observed["fulltime_away"]) or entry["market"] not in ("h2h","goals"):return False
         source_id="OddsPapi:90min:"+observed["source_fixture_id"]
         snapshots=proof.get("source_snapshots")
-        if source_id not in proof.get("source_ids",[]) or not isinstance(snapshots,list) or not any(
+        ids=proof.get("source_ids")
+        if not isinstance(ids,list) or source_id not in ids or not isinstance(snapshots,list) or not any(
           s.get("source_id")==source_id and s.get("league")==entry["league"] and s.get("kind")=="settlement_only"
           and s.get("content_sha256")==observed["observation_sha256"] and s.get("fetched_at")==observed["verified_at"]
           for s in snapshots if isinstance(s,dict)):return False
