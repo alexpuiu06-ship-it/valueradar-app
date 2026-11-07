@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T23:37:27.633389+00:00",
+  "generated_at": "2026-11-07T00:16:29.422269+00:00",
   "status": "RESEARCH_ONLY_NOT_PROMOTED",
   "rating_method": "Davidson three-outcome Elo; updates after all matches of same date; league-isolated ratings",
   "selection": "Global calendar validation only; separate calibration window; final period used for exploratory reporting only",
@@ -49,7 +49,7 @@
       "duplicate_copy": 0
     },
     "input_sha256": "748e17d279274cbd07e42d3a3a316fc971297323ca0ce95b7962a764c809f80d",
-    "as_of": "2026-11-06T23:37:27.633389+00:00",
+    "as_of": "2026-11-07T00:16:29.422269+00:00",
     "today_results_excluded": true,
     "model_pipeline_version": "validated_identity_v2",
     "split_rule": "global unique dates: first 55% training, next 15% selection, next 10% calibration, last 20% evaluation",
@@ -5252,6 +5252,58 @@
       "low_sample": false,
       "rating_difference_including_home_advantage": 247.1,
       "historical_cutoff_exclusive": "2026-12-06",
+      "parameters": {
+        "k": 35,
+        "scale": 320,
+        "home_advantage": 65,
+        "draw_strength": 0.75
+      },
+      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
+      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
+    },
+    {
+      "home": "Fiorentina",
+      "away": "Cagliari",
+      "league": "Serie A",
+      "date": "2026-12-07",
+      "probabilities": {
+        "home": 0.44151118614045914,
+        "draw": 0.2684063798305498,
+        "away": 0.2900824340289911
+      },
+      "rating_home": 1470.8,
+      "rating_away": 1477.4,
+      "games_home": 85,
+      "games_away": 85,
+      "low_sample": false,
+      "rating_difference_including_home_advantage": 58.4,
+      "historical_cutoff_exclusive": "2026-12-07",
+      "parameters": {
+        "k": 35,
+        "scale": 320,
+        "home_advantage": 65,
+        "draw_strength": 0.75
+      },
+      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
+      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
+    },
+    {
+      "home": "Venezia",
+      "away": "Sassuolo",
+      "league": "Serie A",
+      "date": "2026-12-07",
+      "probabilities": {
+        "home": 0.3491280839046039,
+        "draw": 0.27256763405041373,
+        "away": 0.3783042820449824
+      },
+      "rating_home": 1360.4,
+      "rating_away": 1436.6,
+      "games_home": 47,
+      "games_away": 48,
+      "low_sample": false,
+      "rating_difference_including_home_advantage": -11.2,
+      "historical_cutoff_exclusive": "2026-12-07",
       "parameters": {
         "k": 35,
         "scale": 320,
