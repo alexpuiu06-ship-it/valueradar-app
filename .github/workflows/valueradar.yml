@@ -98,7 +98,7 @@ jobs:
   deploy:
     needs: analyze
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     permissions:
       contents: read
       pages: write
@@ -132,7 +132,34 @@ jobs:
         with:
           timeout: 600000
       - name: Verifica snapshotul servit de site-ul public
+        id: public_check
+        continue-on-error: true
         env:
           SITE_URL: ${{ steps.deployment.outputs.page_url }}
+          EXPECTED_GENERATED_AT: ${{ needs.analyze.outputs.generated_at }}
+        run: python scripts/verify_live_site.py
+      - name: Refuza si republicarea daca main a avansat in timpul verificarii publice
+        if: ${{ steps.public_check.outcome == 'failure' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          SAVED_SHA: ${{ needs.analyze.outputs.saved_sha }}
+        run: |
+          set -euo pipefail
+          current_sha="$(gh api "repos/$REPOSITORY/git/ref/heads/main" --jq '.object.sha')"
+          if [ "$current_sha" != "$SAVED_SHA" ]; then
+            echo "main advanced during public verification; refuse stale redelivery" >&2
+            exit 1
+          fi
+      - name: Republica o singura data acelasi artefact daca Pages serveste fisiere vechi
+        if: ${{ steps.public_check.outcome == 'failure' }}
+        id: redelivery
+        uses: actions/deploy-pages@v4
+        with:
+          timeout: 600000
+      - name: Verificare finala obligatorie dupa republicare
+        if: ${{ steps.public_check.outcome == 'failure' }}
+        env:
+          SITE_URL: ${{ steps.redelivery.outputs.page_url }}
           EXPECTED_GENERATED_AT: ${{ needs.analyze.outputs.generated_at }}
         run: python scripts/verify_live_site.py

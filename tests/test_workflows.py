@@ -145,6 +145,19 @@ class PagesRecoveryTests(unittest.TestCase):
 
 
 class PublicDeploymentTests(unittest.TestCase):
+    def test_delayed_snapshot_can_propagate_but_a_persistently_old_snapshot_fails(self):
+        class Response:
+            def __init__(self,stamp):self.stamp=stamp
+            def __enter__(self):return self
+            def __exit__(self,*args):pass
+            def read(self):return json.dumps({"generated_at":self.stamp}).encode()
+        with patch.object(verify_live_site.urllib.request,"urlopen",side_effect=[Response("old"),Response("old"),Response("new")]) as network,patch.object(verify_live_site.time,"sleep"):
+            verify_live_site.verify("https://owner.github.io/repo/","new",attempts=3)
+            self.assertEqual(network.call_count,3)
+        with patch.object(verify_live_site.urllib.request,"urlopen",side_effect=lambda *args,**kwargs:Response("old")) as network,patch.object(verify_live_site.time,"sleep"):
+            with self.assertRaises(RuntimeError):verify_live_site.verify("https://owner.github.io/repo/","new",attempts=3)
+            self.assertEqual(network.call_count,3)
+
     def test_http_success_with_old_data_cannot_verify_deployment(self):
         class Response:
             def __enter__(self):
