@@ -1,29 +1,27 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-07T20:19:08.501676+00:00",
+  "generated_at": "2026-11-07T23:42:05.720778+00:00",
   "forecasts": 2010,
   "unique_fixtures": 202,
   "counts": {
     "blocked_creation_evidence": 25,
-    "awaiting_kickoff_evidence": 95,
-    "upcoming": 1770,
+    "awaiting_kickoff_evidence": 215,
+    "upcoming": 1650,
     "awaiting_statistics": 12,
     "settled_with_evidence": 8,
-    "awaiting_result": 85,
-    "in_progress": 15
+    "awaiting_result": 100
   },
   "by_pipeline_version": {
     "legacy_unversioned": {
       "blocked_creation_evidence": 25,
-      "awaiting_kickoff_evidence": 95,
-      "upcoming": 880
+      "awaiting_kickoff_evidence": 215,
+      "upcoming": 760
     },
     "validated_identity_v2": {
       "awaiting_statistics": 12,
       "settled_with_evidence": 8,
-      "awaiting_result": 85,
-      "upcoming": 890,
-      "in_progress": 15
+      "awaiting_result": 100,
+      "upcoming": 890
     }
   },
   "settled_records": 8,
@@ -31,86 +29,78 @@
   "by_market": {
     "corners": {
       "blocked_creation_evidence": 5,
-      "awaiting_kickoff_evidence": 19,
-      "upcoming": 354,
+      "awaiting_kickoff_evidence": 43,
+      "upcoming": 330,
       "awaiting_statistics": 4,
-      "awaiting_result": 17,
-      "in_progress": 3
+      "awaiting_result": 20
     },
     "fouls": {
       "blocked_creation_evidence": 5,
-      "awaiting_kickoff_evidence": 19,
-      "upcoming": 354,
+      "awaiting_kickoff_evidence": 43,
+      "upcoming": 330,
       "awaiting_statistics": 4,
-      "awaiting_result": 17,
-      "in_progress": 3
+      "awaiting_result": 20
     },
     "goals": {
       "blocked_creation_evidence": 5,
-      "awaiting_kickoff_evidence": 19,
-      "upcoming": 354,
+      "awaiting_kickoff_evidence": 43,
+      "upcoming": 330,
       "settled_with_evidence": 4,
-      "awaiting_result": 17,
-      "in_progress": 3
+      "awaiting_result": 20
     },
     "h2h": {
       "blocked_creation_evidence": 5,
-      "awaiting_kickoff_evidence": 19,
-      "upcoming": 354,
+      "awaiting_kickoff_evidence": 43,
+      "upcoming": 330,
       "settled_with_evidence": 4,
-      "awaiting_result": 17,
-      "in_progress": 3
+      "awaiting_result": 20
     },
     "yellow": {
       "blocked_creation_evidence": 5,
-      "awaiting_kickoff_evidence": 19,
-      "upcoming": 354,
+      "awaiting_kickoff_evidence": 43,
+      "upcoming": 330,
       "awaiting_statistics": 4,
-      "awaiting_result": 17,
-      "in_progress": 3
+      "awaiting_result": 20
     }
   },
   "by_league": {
     "Bundesliga": {
       "blocked_creation_evidence": 5,
-      "awaiting_kickoff_evidence": 25,
-      "upcoming": 300,
+      "awaiting_kickoff_evidence": 40,
+      "upcoming": 285,
       "awaiting_statistics": 3,
       "settled_with_evidence": 2,
       "awaiting_result": 25
     },
     "La Liga": {
       "blocked_creation_evidence": 5,
-      "awaiting_kickoff_evidence": 20,
-      "upcoming": 350,
+      "awaiting_kickoff_evidence": 45,
+      "upcoming": 325,
       "awaiting_statistics": 3,
       "settled_with_evidence": 2,
-      "awaiting_result": 15,
-      "in_progress": 5
+      "awaiting_result": 20
     },
     "Ligue 1": {
       "blocked_creation_evidence": 5,
-      "awaiting_kickoff_evidence": 10,
-      "upcoming": 330,
-      "awaiting_result": 10,
-      "in_progress": 5
+      "awaiting_kickoff_evidence": 40,
+      "upcoming": 300,
+      "awaiting_result": 15
     },
     "Premier League": {
       "blocked_creation_evidence": 5,
-      "awaiting_kickoff_evidence": 20,
-      "upcoming": 450,
+      "awaiting_kickoff_evidence": 45,
+      "upcoming": 425,
       "awaiting_statistics": 3,
       "settled_with_evidence": 2,
       "awaiting_result": 20
     },
     "Serie A": {
       "blocked_creation_evidence": 5,
-      "awaiting_kickoff_evidence": 20,
-      "upcoming": 340,
+      "awaiting_kickoff_evidence": 45,
+      "upcoming": 315,
       "awaiting_statistics": 3,
       "settled_with_evidence": 2,
-      "awaiting_result": 15,
-      "in_progress": 5
+      "awaiting_result": 20
     }
   },
   "overdue_after_hours": 48,
