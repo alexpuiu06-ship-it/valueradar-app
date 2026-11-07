@@ -15,6 +15,10 @@ calibrarea, fără promovare automată în producție.
 - [Acoperirea reală a operatorilor RO](PROVIDER_COVERAGE.md)
 - [Raportul auditului și verificările](AUDIT_REPORT.md)
 - [Funcționarea și publicarea](OPERATIONS.md)
+- [Prezentare completă pentru un posibil asociat](PROJECT_BRIEF_RO.md)
+  ([PDF](reports/ValueRadar_Prezentare_Asociat_2026-11-07.pdf))
+- [Bilanțul și închiderea sesiunii din 6–7 noiembrie](SESSION_CLOSE_2026-11-07.md)
+- [Memoria operațională pentru reluarea dezvoltării](CODEX_HANDOFF.md)
 
 ## Cum îl activezi
 1. GitHub → repository → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
