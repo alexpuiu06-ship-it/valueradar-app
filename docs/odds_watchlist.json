@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-07T20:12:47.496199+00:00",
+  "generated_at": "2026-11-07T20:19:20.678859+00:00",
   "provider": "The Odds API v4",
   "region": "uk",
   "live_ro_supported": false,
   "status": "no_verified_opportunities",
-  "scan_state": "connected",
+  "scan_state": "no_scan_requested",
   "value_blockers": [
     "romanian_operator_feed_not_verified",
     "market_line_and_settlement_not_verified",
