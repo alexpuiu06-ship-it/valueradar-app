@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T23:38:32.971402+00:00",
-  "analysis_generated_at": "2026-11-06T23:37:30.827594+00:00",
+  "generated_at": "2026-11-07T00:09:41.749878+00:00",
+  "analysis_generated_at": "2026-11-07T00:09:24.530912+00:00",
   "pipeline_version": "validated_identity_v2",
   "verified_value": false,
   "hypothetical_roi": null,
@@ -23,13 +23,13 @@
   },
   "settlement": {
     "schema_version": 2,
-    "generated_at": "2026-11-06T23:37:30.827594+00:00",
-    "forecasts": 2000,
-    "unique_fixtures": 200,
+    "generated_at": "2026-11-07T00:09:24.530912+00:00",
+    "forecasts": 2010,
+    "unique_fixtures": 202,
     "counts": {
       "blocked_creation_evidence": 25,
       "awaiting_kickoff_evidence": 95,
-      "upcoming": 1855,
+      "upcoming": 1865,
       "awaiting_result": 25
     },
     "by_pipeline_version": {
@@ -40,7 +40,7 @@
       },
       "validated_identity_v2": {
         "awaiting_result": 25,
-        "upcoming": 975
+        "upcoming": 985
       }
     },
     "settled_records": 0,
@@ -48,31 +48,31 @@
       "corners": {
         "blocked_creation_evidence": 5,
         "awaiting_kickoff_evidence": 19,
-        "upcoming": 371,
+        "upcoming": 373,
         "awaiting_result": 5
       },
       "fouls": {
         "blocked_creation_evidence": 5,
         "awaiting_kickoff_evidence": 19,
-        "upcoming": 371,
+        "upcoming": 373,
         "awaiting_result": 5
       },
       "goals": {
         "blocked_creation_evidence": 5,
         "awaiting_kickoff_evidence": 19,
-        "upcoming": 371,
+        "upcoming": 373,
         "awaiting_result": 5
       },
       "h2h": {
         "blocked_creation_evidence": 5,
         "awaiting_kickoff_evidence": 19,
-        "upcoming": 371,
+        "upcoming": 373,
         "awaiting_result": 5
       },
       "yellow": {
         "blocked_creation_evidence": 5,
         "awaiting_kickoff_evidence": 19,
-        "upcoming": 371,
+        "upcoming": 373,
         "awaiting_result": 5
       }
     },
@@ -104,7 +104,7 @@
       "Serie A": {
         "blocked_creation_evidence": 5,
         "awaiting_kickoff_evidence": 20,
-        "upcoming": 350,
+        "upcoming": 360,
         "awaiting_result": 5
       }
     },
