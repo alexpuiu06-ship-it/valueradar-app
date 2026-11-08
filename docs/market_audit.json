@@ -1,8 +1,8 @@
 {
   "status": "paper_only_not_validated",
-  "observations": 5814,
-  "distinct_events": 66,
-  "unverified_model_price_differences": 53,
+  "observations": 5412,
+  "distinct_events": 60,
+  "unverified_model_price_differences": 45,
   "initial_positive_ev_signals": 0,
   "signals_settled": 0,
   "hypothetical_roi": null,
@@ -18,7 +18,7 @@
     "positive_edge_after_uncertainty_not_demonstrated"
   ],
   "rejection_counts": {
-    "no_unambiguous_prospective_result_for_pipeline": 66
+    "no_unambiguous_prospective_result_for_pipeline": 60
   },
   "market_baseline": {
     "status": "insufficient_provenance_or_results",
