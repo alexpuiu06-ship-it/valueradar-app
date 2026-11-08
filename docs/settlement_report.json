@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-08T15:07:07.012119+00:00",
+  "generated_at": "2026-11-08T15:22:11.135961+00:00",
   "forecasts": 2010,
   "unique_fixtures": 202,
   "counts": {
@@ -8,9 +8,9 @@
     "awaiting_result": 165,
     "awaiting_statistics": 44,
     "awaiting_kickoff_evidence": 120,
-    "upcoming": 1600,
+    "upcoming": 1595,
     "settled_with_evidence": 16,
-    "in_progress": 40
+    "in_progress": 45
   },
   "by_pipeline_version": {
     "legacy_unversioned": {
@@ -24,8 +24,8 @@
       "awaiting_statistics": 24,
       "settled_with_evidence": 16,
       "awaiting_result": 90,
-      "in_progress": 40,
-      "upcoming": 840
+      "in_progress": 45,
+      "upcoming": 835
     }
   },
   "settled_records": 16,
@@ -36,42 +36,42 @@
       "awaiting_result": 33,
       "awaiting_statistics": 12,
       "awaiting_kickoff_evidence": 24,
-      "upcoming": 320,
-      "in_progress": 8
+      "upcoming": 319,
+      "in_progress": 9
     },
     "fouls": {
       "blocked_creation_evidence": 5,
       "awaiting_result": 33,
       "awaiting_statistics": 12,
       "awaiting_kickoff_evidence": 24,
-      "upcoming": 320,
-      "in_progress": 8
+      "upcoming": 319,
+      "in_progress": 9
     },
     "goals": {
       "blocked_creation_evidence": 5,
       "awaiting_result": 33,
       "awaiting_statistics": 4,
       "awaiting_kickoff_evidence": 24,
-      "upcoming": 320,
+      "upcoming": 319,
       "settled_with_evidence": 8,
-      "in_progress": 8
+      "in_progress": 9
     },
     "h2h": {
       "blocked_creation_evidence": 5,
       "awaiting_result": 33,
       "awaiting_statistics": 4,
       "awaiting_kickoff_evidence": 24,
-      "upcoming": 320,
+      "upcoming": 319,
       "settled_with_evidence": 8,
-      "in_progress": 8
+      "in_progress": 9
     },
     "yellow": {
       "blocked_creation_evidence": 5,
       "awaiting_result": 33,
       "awaiting_statistics": 12,
       "awaiting_kickoff_evidence": 24,
-      "upcoming": 320,
-      "in_progress": 8
+      "upcoming": 319,
+      "in_progress": 9
     }
   },
   "by_league": {
@@ -89,8 +89,9 @@
       "awaiting_result": 35,
       "awaiting_statistics": 11,
       "awaiting_kickoff_evidence": 25,
-      "upcoming": 320,
-      "settled_with_evidence": 4
+      "upcoming": 315,
+      "settled_with_evidence": 4,
+      "in_progress": 5
     },
     "Ligue 1": {
       "blocked_creation_evidence": 5,
