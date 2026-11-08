@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T00:30:25.749680+00:00",
+  "generated_at": "2026-11-08T12:09:38.315549+00:00",
   "status": "RESEARCH_ONLY_NOT_PROMOTED",
   "rating_method": "Davidson three-outcome Elo; updates after all matches of same date; league-isolated ratings",
   "selection": "Global calendar validation only; separate calibration window; final period used for exploratory reporting only",
@@ -49,7 +49,7 @@
       "duplicate_copy": 0
     },
     "input_sha256": "748e17d279274cbd07e42d3a3a316fc971297323ca0ce95b7962a764c809f80d",
-    "as_of": "2026-11-07T00:30:25.749680+00:00",
+    "as_of": "2026-11-08T12:09:38.315549+00:00",
     "today_results_excluded": true,
     "model_pipeline_version": "validated_identity_v2",
     "split_rule": "global unique dates: first 55% training, next 15% selection, next 10% calibration, last 20% evaluation",
@@ -191,500 +191,6 @@
   ],
   "production_model_changed": false,
   "live_research_only": [
-    {
-      "home": "1. FSV Mainz 05",
-      "away": "FC Bayern München",
-      "league": "Bundesliga",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.1323986711114514,
-        "draw": 0.21966862302094134,
-        "away": 0.6479327058676073
-      },
-      "rating_home": 1486.9,
-      "rating_away": 1772.6,
-      "games_home": 76,
-      "games_away": 76,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": -220.7,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Borussia Dortmund",
-      "away": "SV 07 Elversberg",
-      "league": "Bundesliga",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.6524495660078858,
-        "draw": 0.21802662728339336,
-        "away": 0.1295238067087208
-      },
-      "rating_home": 1685.2,
-      "rating_away": 1525.5,
-      "games_home": 76,
-      "games_away": 8,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 224.7,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "SC Paderborn 07",
-      "away": "Eintracht Frankfurt",
-      "league": "Bundesliga",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.4385491030107713,
-        "draw": 0.26872197961553945,
-        "away": 0.29272891737368917
-      },
-      "rating_home": 1493.3,
-      "rating_away": 1502.1,
-      "games_home": 8,
-      "games_away": 76,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 56.2,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "RB Leipzig",
-      "away": "FC Augsburg",
-      "league": "Bundesliga",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.6023697199423557,
-        "draw": 0.23485099295412912,
-        "away": 0.16277928710351514
-      },
-      "rating_home": 1600.2,
-      "rating_away": 1483.4,
-      "games_home": 76,
-      "games_away": 76,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 181.8,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "VfB Stuttgart",
-      "away": "SV Werder Bremen",
-      "league": "Bundesliga",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.5137169257351302,
-        "draw": 0.25725641755467205,
-        "away": 0.22902665671019776
-      },
-      "rating_home": 1551.5,
-      "rating_away": 1504.3,
-      "games_home": 76,
-      "games_away": 76,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 112.3,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "RCD Espanyol de Barcelona",
-      "away": "RC Deportivo",
-      "league": "La Liga",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.36002854037828225,
-        "draw": 0.2727174838205289,
-        "away": 0.3672539758011888
-      },
-      "rating_home": 1433.6,
-      "rating_away": 1501.3,
-      "games_home": 86,
-      "games_away": 11,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": -2.8,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Málaga CF",
-      "away": "R. Racing Club",
-      "league": "La Liga",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.39594318483498175,
-        "draw": 0.2719622313618667,
-        "away": 0.3320945838031516
-      },
-      "rating_home": 1424.1,
-      "rating_away": 1464.7,
-      "games_home": 11,
-      "games_away": 11,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 24.4,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "CA Osasuna",
-      "away": "Athletic Club",
-      "league": "La Liga",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.34892601786032595,
-        "draw": 0.27256313015340844,
-        "away": 0.3785108519862655
-      },
-      "rating_home": 1425.2,
-      "rating_away": 1501.5,
-      "games_home": 86,
-      "games_away": 85,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": -11.3,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Valencia CF",
-      "away": "Real Madrid",
-      "league": "La Liga",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.1542431863004827,
-        "draw": 0.23095699615364956,
-        "away": 0.6147998175458677
-      },
-      "rating_home": 1476.4,
-      "rating_away": 1733.6,
-      "games_home": 86,
-      "games_away": 86,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": -192.2,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "AJ Auxerre",
-      "away": "Paris FC",
-      "league": "Ligue 1",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.2977915863806009,
-        "draw": 0.2692901314359948,
-        "away": 0.43291828218340433
-      },
-      "rating_home": 1465.4,
-      "rating_away": 1582.4,
-      "games_home": 77,
-      "games_away": 43,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": -52.0,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Paris Saint-Germain",
-      "away": "Estac Troyes",
-      "league": "Ligue 1",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.7445930567702346,
-        "draw": 0.17894952860553123,
-        "away": 0.07645741462423411
-      },
-      "rating_home": 1714.7,
-      "rating_away": 1463.4,
-      "games_home": 77,
-      "games_away": 9,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 316.3,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Arsenal",
-      "away": "Hull",
-      "league": "Premier League",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.7438767025617794,
-        "draw": 0.1792957941106507,
-        "away": 0.0768275033275699
-      },
-      "rating_home": 1743.7,
-      "rating_away": 1493.2,
-      "games_home": 85,
-      "games_away": 9,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 315.5,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Fulham",
-      "away": "Newcastle",
-      "league": "Premier League",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.46317062056767605,
-        "draw": 0.26575276498971906,
-        "away": 0.27107661444260484
-      },
-      "rating_home": 1490.4,
-      "rating_away": 1481.0,
-      "games_home": 85,
-      "games_away": 85,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 74.4,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Leeds",
-      "away": "Spurs",
-      "league": "Premier League",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.5262630439318252,
-        "draw": 0.2546601165808901,
-        "away": 0.2190768394872846
-      },
-      "rating_home": 1526.4,
-      "rating_away": 1469.6,
-      "games_home": 47,
-      "games_away": 85,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 121.8,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Nott'm Forest",
-      "away": "Man City",
-      "league": "Premier League",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.1773431361752379,
-        "draw": 0.24090110914601592,
-        "away": 0.5817557546787463
-      },
-      "rating_home": 1451.0,
-      "rating_away": 1681.1,
-      "games_home": 85,
-      "games_away": 85,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": -165.1,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Cagliari",
-      "away": "Frosinone",
-      "league": "Serie A",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.3372027715361669,
-        "draw": 0.2721922326703328,
-        "away": 0.39060499579350016
-      },
-      "rating_home": 1477.4,
-      "rating_away": 1562.8,
-      "games_home": 85,
-      "games_away": 10,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": -20.4,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Parma",
-      "away": "Bologna",
-      "league": "Serie A",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.31261049737020274,
-        "draw": 0.2706910919993678,
-        "away": 0.41669841063042934
-      },
-      "rating_home": 1444.9,
-      "rating_away": 1549.9,
-      "games_home": 85,
-      "games_away": 85,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": -39.9,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Roma",
-      "away": "Sassuolo",
-      "league": "Serie A",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.7524467300411808,
-        "draw": 0.17510766641780787,
-        "away": 0.0724456035410114
-      },
-      "rating_home": 1696.9,
-      "rating_away": 1436.6,
-      "games_home": 85,
-      "games_away": 48,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 325.3,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Torino",
-      "away": "Lecce",
-      "league": "Serie A",
-      "date": "2026-11-07",
-      "probabilities": {
-        "home": 0.5508762006530868,
-        "draw": 0.2490135341803445,
-        "away": 0.20011026516656857
-      },
-      "rating_home": 1476.1,
-      "rating_away": 1400.4,
-      "games_home": 85,
-      "games_away": 85,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 140.7,
-      "historical_cutoff_exclusive": "2026-11-07",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
     {
       "home": "1. FC Köln",
       "away": "Bayer 04 Leverkusen",
@@ -1273,32 +779,6 @@
       "games_away": 85,
       "low_sample": false,
       "rating_difference_including_home_advantage": -104.9,
-      "historical_cutoff_exclusive": "2026-11-08",
-      "parameters": {
-        "k": 35,
-        "scale": 320,
-        "home_advantage": 65,
-        "draw_strength": 0.75
-      },
-      "formula": "x=10^((rating_home-rating_away+home_advantage)/(2*scale)); P=(x,draw_strength,1/x)/(x+draw_strength+1/x)",
-      "status": "CHALLENGER_ONLY_not_a_betting_recommendation"
-    },
-    {
-      "home": "Napoli",
-      "away": "Lazio",
-      "league": "Serie A",
-      "date": "2026-11-08",
-      "probabilities": {
-        "home": 0.3697251530216146,
-        "draw": 0.2726995930901998,
-        "away": 0.35757525388818556
-      },
-      "rating_home": 1596.2,
-      "rating_away": 1656.5,
-      "games_home": 85,
-      "games_away": 85,
-      "low_sample": false,
-      "rating_difference_including_home_advantage": 4.6,
       "historical_cutoff_exclusive": "2026-11-08",
       "parameters": {
         "k": 35,
@@ -5315,41 +4795,41 @@
     }
   ],
   "market_diagnostic": {
-    "n": 82,
+    "n": 63,
     "source": "Previously stored international bookmaker no-vig consensus snapshots",
-    "snapshot_timestamp": "2026-11-06T19:31:24.133507+00:00",
+    "snapshot_timestamp": "2026-11-07T20:12:47.261924+00:00",
     "status": "descriptive_diagnostic_not_outcome_validation",
-    "mean_largest_gap_pp_current": 11.84,
+    "mean_largest_gap_pp_current": 11.79,
     "mean_largest_gap_pp_elo": 6.29,
-    "large_10pp_current": 44,
-    "large_10pp_elo": 12,
+    "large_10pp_current": 34,
+    "large_10pp_elo": 9,
     "events": [
       {
-        "league": "La Liga",
-        "date": "2026-11-07",
-        "home": "Valencia CF",
-        "away": "Real Madrid",
-        "books": 18,
-        "poisson_largest_gap_pp": 33.32,
-        "elo_largest_gap_pp": 13.2,
-        "improvement_pp": 20.12,
+        "league": "Premier League",
+        "date": "2026-11-22",
+        "home": "Hull",
+        "away": "Brighton",
+        "books": 8,
+        "poisson_largest_gap_pp": 27.66,
+        "elo_largest_gap_pp": 19.79,
+        "improvement_pp": 7.87,
         "market_no_vig": {
-          "home": 0.09919,
-          "draw": 0.15396,
-          "away": 0.74684
+          "home": 0.16247,
+          "draw": 0.21622,
+          "away": 0.62131
         },
         "poisson": {
-          "home": 0.32931,
-          "draw": 0.25707,
-          "away": 0.41362
+          "home": 0.40001,
+          "draw": 0.2553,
+          "away": 0.34469
         },
         "elo": {
-          "home": 0.1542431863004827,
-          "draw": 0.23095699615364956,
-          "away": 0.6147998175458677
+          "home": 0.30645566303610944,
+          "draw": 0.27015596074382603,
+          "away": 0.42338837622006453
         },
-        "rating_home": 1476.4,
-        "rating_away": 1733.6,
+        "rating_home": 1493.2,
+        "rating_away": 1603.1,
         "elo_low_sample": false
       },
       {
@@ -5357,14 +4837,14 @@
         "date": "2026-11-22",
         "home": "Getafe CF",
         "away": "Atlético de Madrid",
-        "books": 4,
-        "poisson_largest_gap_pp": 24.67,
-        "elo_largest_gap_pp": 4.22,
-        "improvement_pp": 20.46,
+        "books": 5,
+        "poisson_largest_gap_pp": 24.78,
+        "elo_largest_gap_pp": 4.24,
+        "improvement_pp": 20.54,
         "market_no_vig": {
-          "home": 0.17529,
-          "draw": 0.25503,
-          "away": 0.56968
+          "home": 0.17514,
+          "draw": 0.25415,
+          "away": 0.5707
         },
         "poisson": {
           "home": 0.40591,
@@ -5381,130 +4861,18 @@
         "elo_low_sample": false
       },
       {
-        "league": "Bundesliga",
-        "date": "2026-11-21",
-        "home": "1. FC Union Berlin",
-        "away": "RB Leipzig",
-        "books": 8,
-        "poisson_largest_gap_pp": 24.49,
-        "elo_largest_gap_pp": 7.68,
-        "improvement_pp": 16.8,
-        "market_no_vig": {
-          "home": 0.21941,
-          "draw": 0.22427,
-          "away": 0.55632
-        },
-        "poisson": {
-          "home": 0.45504,
-          "draw": 0.23351,
-          "away": 0.31145
-        },
-        "elo": {
-          "home": 0.2571649496966982,
-          "draw": 0.26336016394781775,
-          "away": 0.479474886355484
-        },
-        "rating_home": 1448.7,
-        "rating_away": 1600.2,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Serie A",
-        "date": "2026-11-21",
-        "home": "Parma",
-        "away": "Roma",
-        "books": 6,
-        "poisson_largest_gap_pp": 23.77,
-        "elo_largest_gap_pp": 7.69,
-        "improvement_pp": 16.08,
-        "market_no_vig": {
-          "home": 0.12336,
-          "draw": 0.19125,
-          "away": 0.68539
-        },
-        "poisson": {
-          "home": 0.29325,
-          "draw": 0.25906,
-          "away": 0.44769
-        },
-        "elo": {
-          "home": 0.15853372585952324,
-          "draw": 0.23294796532132514,
-          "away": 0.6085183088191516
-        },
-        "rating_home": 1444.9,
-        "rating_away": 1696.9,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Bundesliga",
-        "date": "2026-11-07",
-        "home": "1. FSV Mainz 05",
-        "away": "FC Bayern München",
-        "books": 19,
-        "poisson_largest_gap_pp": 23.6,
-        "elo_largest_gap_pp": 6.66,
-        "improvement_pp": 16.94,
-        "market_no_vig": {
-          "home": 0.13469,
-          "draw": 0.15305,
-          "away": 0.71226
-        },
-        "poisson": {
-          "home": 0.30138,
-          "draw": 0.22233,
-          "away": 0.47628
-        },
-        "elo": {
-          "home": 0.1323986711114514,
-          "draw": 0.21966862302094134,
-          "away": 0.6479327058676073
-        },
-        "rating_home": 1486.9,
-        "rating_away": 1772.6,
-        "elo_low_sample": false
-      },
-      {
-        "league": "La Liga",
-        "date": "2026-11-21",
-        "home": "Real Madrid",
-        "away": "Celta",
-        "books": 5,
-        "poisson_largest_gap_pp": 23.26,
-        "elo_largest_gap_pp": 5.15,
-        "improvement_pp": 18.11,
-        "market_no_vig": {
-          "home": 0.77949,
-          "draw": 0.14271,
-          "away": 0.0778
-        },
-        "poisson": {
-          "home": 0.54691,
-          "draw": 0.23761,
-          "away": 0.21548
-        },
-        "elo": {
-          "home": 0.7279702710012304,
-          "draw": 0.18680754544097883,
-          "away": 0.08522218355779079
-        },
-        "rating_home": 1733.6,
-        "rating_away": 1500.5,
-        "elo_low_sample": false
-      },
-      {
         "league": "Serie A",
         "date": "2026-11-21",
         "home": "Lazio",
         "away": "Lecce",
-        "books": 6,
-        "poisson_largest_gap_pp": 22.87,
-        "elo_largest_gap_pp": 6.89,
-        "improvement_pp": 15.97,
+        "books": 13,
+        "poisson_largest_gap_pp": 23.71,
+        "elo_largest_gap_pp": 6.04,
+        "improvement_pp": 17.67,
         "market_no_vig": {
-          "home": 0.67991,
-          "draw": 0.19288,
-          "away": 0.1272
+          "home": 0.68841,
+          "draw": 0.18772,
+          "away": 0.12387
         },
         "poisson": {
           "home": 0.45126,
@@ -5521,31 +4889,31 @@
         "elo_low_sample": false
       },
       {
-        "league": "Bundesliga",
+        "league": "La Liga",
         "date": "2026-11-21",
-        "home": "Bayer 04 Leverkusen",
-        "away": "SC Paderborn 07",
-        "books": 8,
-        "poisson_largest_gap_pp": 22.19,
-        "elo_largest_gap_pp": 18.04,
-        "improvement_pp": 4.14,
+        "home": "Real Madrid",
+        "away": "Celta",
+        "books": 6,
+        "poisson_largest_gap_pp": 23.02,
+        "elo_largest_gap_pp": 4.91,
+        "improvement_pp": 18.11,
         "market_no_vig": {
-          "home": 0.74612,
-          "draw": 0.15007,
-          "away": 0.10381
+          "home": 0.7771,
+          "draw": 0.14236,
+          "away": 0.08054
         },
         "poisson": {
-          "home": 0.52426,
-          "draw": 0.22527,
-          "away": 0.25046
+          "home": 0.54691,
+          "draw": 0.23761,
+          "away": 0.21548
         },
         "elo": {
-          "home": 0.5656781250381112,
-          "draw": 0.24526726617067954,
-          "away": 0.18905460879120917
+          "home": 0.7279702710012304,
+          "draw": 0.18680754544097883,
+          "away": 0.08522218355779079
         },
-        "rating_home": 1580.6,
-        "rating_away": 1493.3,
+        "rating_home": 1733.6,
+        "rating_away": 1500.5,
         "elo_low_sample": false
       },
       {
@@ -5553,14 +4921,14 @@
         "date": "2026-11-20",
         "home": "FC Bayern München",
         "away": "1. FC Köln",
-        "books": 8,
-        "poisson_largest_gap_pp": 22.1,
-        "elo_largest_gap_pp": 5.56,
-        "improvement_pp": 16.53,
+        "books": 13,
+        "poisson_largest_gap_pp": 22.55,
+        "elo_largest_gap_pp": 5.99,
+        "improvement_pp": 16.56,
         "market_no_vig": {
-          "home": 0.87287,
-          "draw": 0.08249,
-          "away": 0.04464
+          "home": 0.87742,
+          "draw": 0.07824,
+          "away": 0.04434
         },
         "poisson": {
           "home": 0.6519,
@@ -5577,18 +4945,46 @@
         "elo_low_sample": false
       },
       {
+        "league": "Serie A",
+        "date": "2026-11-21",
+        "home": "Parma",
+        "away": "Roma",
+        "books": 8,
+        "poisson_largest_gap_pp": 22.44,
+        "elo_largest_gap_pp": 6.36,
+        "improvement_pp": 16.08,
+        "market_no_vig": {
+          "home": 0.13398,
+          "draw": 0.19389,
+          "away": 0.67214
+        },
+        "poisson": {
+          "home": 0.29325,
+          "draw": 0.25906,
+          "away": 0.44769
+        },
+        "elo": {
+          "home": 0.15853372585952324,
+          "draw": 0.23294796532132514,
+          "away": 0.6085183088191516
+        },
+        "rating_home": 1444.9,
+        "rating_away": 1696.9,
+        "elo_low_sample": false
+      },
+      {
         "league": "Ligue 1",
         "date": "2026-11-21",
         "home": "OGC Nice",
         "away": "Paris Saint-Germain",
-        "books": 8,
-        "poisson_largest_gap_pp": 22.09,
-        "elo_largest_gap_pp": 7.45,
+        "books": 10,
+        "poisson_largest_gap_pp": 21.91,
+        "elo_largest_gap_pp": 7.27,
         "improvement_pp": 14.64,
         "market_no_vig": {
-          "home": 0.16608,
-          "draw": 0.1967,
-          "away": 0.63721
+          "home": 0.16652,
+          "draw": 0.19803,
+          "away": 0.63545
         },
         "poisson": {
           "home": 0.34243,
@@ -5610,13 +5006,13 @@
         "home": "Crystal Palace",
         "away": "Liverpool",
         "books": 19,
-        "poisson_largest_gap_pp": 21.14,
-        "elo_largest_gap_pp": 12.79,
+        "poisson_largest_gap_pp": 21.18,
+        "elo_largest_gap_pp": 12.83,
         "improvement_pp": 8.34,
         "market_no_vig": {
-          "home": 0.17395,
-          "draw": 0.2165,
-          "away": 0.60956
+          "home": 0.17294,
+          "draw": 0.21711,
+          "away": 0.60995
         },
         "poisson": {
           "home": 0.35362,
@@ -5633,46 +5029,18 @@
         "elo_low_sample": false
       },
       {
-        "league": "La Liga",
-        "date": "2026-11-07",
-        "home": "CA Osasuna",
-        "away": "Athletic Club",
-        "books": 18,
-        "poisson_largest_gap_pp": 21.01,
-        "elo_largest_gap_pp": 8.54,
-        "improvement_pp": 12.47,
-        "market_no_vig": {
-          "home": 0.26354,
-          "draw": 0.2772,
-          "away": 0.45925
-        },
-        "poisson": {
-          "home": 0.47367,
-          "draw": 0.25396,
-          "away": 0.27237
-        },
-        "elo": {
-          "home": 0.34892601786032595,
-          "draw": 0.27256313015340844,
-          "away": 0.3785108519862655
-        },
-        "rating_home": 1425.2,
-        "rating_away": 1501.5,
-        "elo_low_sample": false
-      },
-      {
         "league": "Premier League",
         "date": "2026-11-21",
         "home": "Newcastle",
         "away": "Arsenal",
-        "books": 10,
-        "poisson_largest_gap_pp": 20.59,
-        "elo_largest_gap_pp": 3.2,
-        "improvement_pp": 17.39,
+        "books": 11,
+        "poisson_largest_gap_pp": 20.84,
+        "elo_largest_gap_pp": 2.96,
+        "improvement_pp": 17.88,
         "market_no_vig": {
-          "home": 0.18003,
-          "draw": 0.23061,
-          "away": 0.58936
+          "home": 0.1761,
+          "draw": 0.23208,
+          "away": 0.59182
         },
         "poisson": {
           "home": 0.35653,
@@ -5693,14 +5061,14 @@
         "date": "2026-11-21",
         "home": "Spurs",
         "away": "Ipswich",
-        "books": 10,
-        "poisson_largest_gap_pp": 20.38,
-        "elo_largest_gap_pp": 9.49,
+        "books": 11,
+        "poisson_largest_gap_pp": 20.41,
+        "elo_largest_gap_pp": 9.53,
         "improvement_pp": 10.88,
         "market_no_vig": {
-          "home": 0.63136,
-          "draw": 0.21041,
-          "away": 0.15824
+          "home": 0.63173,
+          "draw": 0.20954,
+          "away": 0.15872
         },
         "poisson": {
           "home": 0.42759,
@@ -5722,13 +5090,13 @@
         "home": "Le Mans FC",
         "away": "AS Monaco",
         "books": 18,
-        "poisson_largest_gap_pp": 19.65,
-        "elo_largest_gap_pp": 10.73,
+        "poisson_largest_gap_pp": 20.21,
+        "elo_largest_gap_pp": 11.29,
         "improvement_pp": 8.91,
         "market_no_vig": {
-          "home": 0.22136,
-          "draw": 0.23468,
-          "away": 0.54395
+          "home": 0.21685,
+          "draw": 0.23363,
+          "away": 0.54952
         },
         "poisson": {
           "home": 0.4126,
@@ -5749,14 +5117,14 @@
         "date": "2026-11-21",
         "home": "Como",
         "away": "Cagliari",
-        "books": 6,
-        "poisson_largest_gap_pp": 19.58,
-        "elo_largest_gap_pp": 1.97,
-        "improvement_pp": 17.61,
+        "books": 13,
+        "poisson_largest_gap_pp": 19.7,
+        "elo_largest_gap_pp": 1.81,
+        "improvement_pp": 17.89,
         "market_no_vig": {
-          "home": 0.69798,
-          "draw": 0.183,
-          "away": 0.11902
+          "home": 0.6992,
+          "draw": 0.18456,
+          "away": 0.11624
         },
         "poisson": {
           "home": 0.50222,
@@ -5773,46 +5141,18 @@
         "elo_low_sample": false
       },
       {
-        "league": "La Liga",
-        "date": "2026-11-22",
-        "home": "FC Barcelona",
-        "away": "Villarreal CF",
-        "books": 4,
-        "poisson_largest_gap_pp": 19.5,
-        "elo_largest_gap_pp": 5.21,
-        "improvement_pp": 14.29,
-        "market_no_vig": {
-          "home": 0.7685,
-          "draw": 0.13174,
-          "away": 0.09976
-        },
-        "poisson": {
-          "home": 0.5735,
-          "draw": 0.2159,
-          "away": 0.2106
-        },
-        "elo": {
-          "home": 0.7343943854179363,
-          "draw": 0.1838143472071606,
-          "away": 0.08179126737490293
-        },
-        "rating_home": 1777.8,
-        "rating_away": 1537.7,
-        "elo_low_sample": false
-      },
-      {
         "league": "Bundesliga",
         "date": "2026-11-21",
         "home": "Borussia Mönchengladbach",
         "away": "Borussia Dortmund",
-        "books": 8,
-        "poisson_largest_gap_pp": 19.06,
-        "elo_largest_gap_pp": 6.38,
-        "improvement_pp": 12.68,
+        "books": 13,
+        "poisson_largest_gap_pp": 19.35,
+        "elo_largest_gap_pp": 6.21,
+        "improvement_pp": 13.14,
         "market_no_vig": {
-          "home": 0.2095,
-          "draw": 0.21973,
-          "away": 0.57077
+          "home": 0.20777,
+          "draw": 0.21858,
+          "away": 0.57365
         },
         "poisson": {
           "home": 0.38195,
@@ -5830,45 +5170,17 @@
       },
       {
         "league": "Serie A",
-        "date": "2026-11-07",
-        "home": "Roma",
-        "away": "Sassuolo",
-        "books": 19,
-        "poisson_largest_gap_pp": 19.01,
-        "elo_largest_gap_pp": 3.81,
-        "improvement_pp": 15.19,
-        "market_no_vig": {
-          "home": 0.73007,
-          "draw": 0.15937,
-          "away": 0.11056
-        },
-        "poisson": {
-          "home": 0.54001,
-          "draw": 0.23516,
-          "away": 0.22483
-        },
-        "elo": {
-          "home": 0.7524467300411808,
-          "draw": 0.17510766641780787,
-          "away": 0.0724456035410114
-        },
-        "rating_home": 1696.9,
-        "rating_away": 1436.6,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Serie A",
         "date": "2026-11-22",
         "home": "Milan",
         "away": "Frosinone",
-        "books": 4,
-        "poisson_largest_gap_pp": 18.76,
-        "elo_largest_gap_pp": 8.2,
+        "books": 5,
+        "poisson_largest_gap_pp": 18.58,
+        "elo_largest_gap_pp": 8.02,
         "improvement_pp": 10.56,
         "market_no_vig": {
-          "home": 0.61802,
-          "draw": 0.19386,
-          "away": 0.18811
+          "home": 0.61616,
+          "draw": 0.19472,
+          "away": 0.18912
         },
         "poisson": {
           "home": 0.43038,
@@ -5885,46 +5197,18 @@
         "elo_low_sample": false
       },
       {
-        "league": "Bundesliga",
-        "date": "2026-11-08",
-        "home": "1. FC Köln",
-        "away": "Bayer 04 Leverkusen",
-        "books": 19,
-        "poisson_largest_gap_pp": 18.59,
-        "elo_largest_gap_pp": 2.75,
-        "improvement_pp": 15.84,
-        "market_no_vig": {
-          "home": 0.24956,
-          "draw": 0.23451,
-          "away": 0.51594
-        },
-        "poisson": {
-          "home": 0.43551,
-          "draw": 0.22576,
-          "away": 0.33873
-        },
-        "elo": {
-          "home": 0.24969059834173393,
-          "draw": 0.261908972543835,
-          "away": 0.48840042911443105
-        },
-        "rating_home": 1422.3,
-        "rating_away": 1580.6,
-        "elo_low_sample": false
-      },
-      {
         "league": "La Liga",
         "date": "2026-11-08",
         "home": "Atlético de Madrid",
         "away": "FC Barcelona",
-        "books": 17,
-        "poisson_largest_gap_pp": 17.9,
-        "elo_largest_gap_pp": 10.44,
+        "books": 18,
+        "poisson_largest_gap_pp": 18.24,
+        "elo_largest_gap_pp": 10.78,
         "improvement_pp": 7.46,
         "market_no_vig": {
-          "home": 0.25224,
-          "draw": 0.22278,
-          "away": 0.52498
+          "home": 0.24988,
+          "draw": 0.22174,
+          "away": 0.52838
         },
         "poisson": {
           "home": 0.41366,
@@ -5941,18 +5225,46 @@
         "elo_low_sample": false
       },
       {
+        "league": "La Liga",
+        "date": "2026-11-22",
+        "home": "FC Barcelona",
+        "away": "Villarreal CF",
+        "books": 5,
+        "poisson_largest_gap_pp": 18.03,
+        "elo_largest_gap_pp": 4.67,
+        "improvement_pp": 13.36,
+        "market_no_vig": {
+          "home": 0.75378,
+          "draw": 0.13715,
+          "away": 0.10908
+        },
+        "poisson": {
+          "home": 0.5735,
+          "draw": 0.2159,
+          "away": 0.2106
+        },
+        "elo": {
+          "home": 0.7343943854179363,
+          "draw": 0.1838143472071606,
+          "away": 0.08179126737490293
+        },
+        "rating_home": 1777.8,
+        "rating_away": 1537.7,
+        "elo_low_sample": false
+      },
+      {
         "league": "Serie A",
         "date": "2026-11-22",
         "home": "Juventus",
         "away": "Venezia",
-        "books": 4,
-        "poisson_largest_gap_pp": 17.88,
-        "elo_largest_gap_pp": 5.19,
-        "improvement_pp": 12.69,
+        "books": 5,
+        "poisson_largest_gap_pp": 17.93,
+        "elo_largest_gap_pp": 5.15,
+        "improvement_pp": 12.78,
         "market_no_vig": {
-          "home": 0.68551,
-          "draw": 0.18768,
-          "away": 0.12681
+          "home": 0.686,
+          "draw": 0.18989,
+          "away": 0.1241
         },
         "poisson": {
           "home": 0.50671,
@@ -5973,14 +5285,14 @@
         "date": "2026-11-21",
         "home": "Napoli",
         "away": "Torino",
-        "books": 6,
-        "poisson_largest_gap_pp": 17.1,
-        "elo_largest_gap_pp": 3.3,
+        "books": 7,
+        "poisson_largest_gap_pp": 17.22,
+        "elo_largest_gap_pp": 3.41,
         "improvement_pp": 13.81,
         "market_no_vig": {
-          "home": 0.63919,
-          "draw": 0.20757,
-          "away": 0.15324
+          "home": 0.64033,
+          "draw": 0.20633,
+          "away": 0.15335
         },
         "poisson": {
           "home": 0.46816,
@@ -6001,14 +5313,14 @@
         "date": "2026-11-22",
         "home": "Atalanta",
         "away": "Internazionale",
-        "books": 4,
-        "poisson_largest_gap_pp": 16.43,
-        "elo_largest_gap_pp": 2.97,
-        "improvement_pp": 13.46,
+        "books": 5,
+        "poisson_largest_gap_pp": 16.33,
+        "elo_largest_gap_pp": 3.27,
+        "improvement_pp": 13.06,
         "market_no_vig": {
-          "home": 0.20889,
-          "draw": 0.21546,
-          "away": 0.57565
+          "home": 0.21192,
+          "draw": 0.2134,
+          "away": 0.57468
         },
         "poisson": {
           "home": 0.3383,
@@ -6029,14 +5341,14 @@
         "date": "2026-11-22",
         "home": "Bologna",
         "away": "Udinese",
-        "books": 4,
-        "poisson_largest_gap_pp": 16.19,
-        "elo_largest_gap_pp": 9.2,
-        "improvement_pp": 6.98,
+        "books": 5,
+        "poisson_largest_gap_pp": 16.13,
+        "elo_largest_gap_pp": 9.39,
+        "improvement_pp": 6.75,
         "market_no_vig": {
-          "home": 0.53712,
-          "draw": 0.25587,
-          "away": 0.20701
+          "home": 0.53526,
+          "draw": 0.25722,
+          "away": 0.20752
         },
         "poisson": {
           "home": 0.37604,
@@ -6053,31 +5365,31 @@
         "elo_low_sample": false
       },
       {
-        "league": "Bundesliga",
-        "date": "2026-11-07",
-        "home": "SC Paderborn 07",
-        "away": "Eintracht Frankfurt",
-        "books": 19,
-        "poisson_largest_gap_pp": 15.78,
-        "elo_largest_gap_pp": 14.39,
-        "improvement_pp": 1.39,
+        "league": "La Liga",
+        "date": "2026-11-20",
+        "home": "Athletic Club",
+        "away": "RCD Espanyol de Barcelona",
+        "books": 13,
+        "poisson_largest_gap_pp": 15.17,
+        "elo_largest_gap_pp": 8.92,
+        "improvement_pp": 6.26,
         "market_no_vig": {
-          "home": 0.31462,
-          "draw": 0.24874,
-          "away": 0.43664
+          "home": 0.62999,
+          "draw": 0.21882,
+          "away": 0.1512
         },
         "poisson": {
-          "home": 0.47246,
-          "draw": 0.22856,
-          "away": 0.29898
+          "home": 0.47825,
+          "draw": 0.25458,
+          "away": 0.26717
         },
         "elo": {
-          "home": 0.4385491030107713,
-          "draw": 0.26872197961553945,
-          "away": 0.29272891737368917
+          "home": 0.540835401908113,
+          "draw": 0.251405164740502,
+          "away": 0.20775943335138508
         },
-        "rating_home": 1493.3,
-        "rating_away": 1502.1,
+        "rating_home": 1501.5,
+        "rating_away": 1433.6,
         "elo_low_sample": false
       },
       {
@@ -6085,14 +5397,14 @@
         "date": "2026-11-21",
         "home": "FC Schalke 04",
         "away": "VfB Stuttgart",
-        "books": 8,
-        "poisson_largest_gap_pp": 14.7,
-        "elo_largest_gap_pp": 12.24,
+        "books": 10,
+        "poisson_largest_gap_pp": 14.94,
+        "elo_largest_gap_pp": 12.47,
         "improvement_pp": 2.46,
         "market_no_vig": {
-          "home": 0.24999,
-          "draw": 0.23153,
-          "away": 0.51848
+          "home": 0.24896,
+          "draw": 0.23023,
+          "away": 0.52081
         },
         "poisson": {
           "home": 0.38819,
@@ -6109,74 +5421,18 @@
         "elo_low_sample": false
       },
       {
-        "league": "Premier League",
-        "date": "2026-11-21",
-        "home": "Man City",
-        "away": "Fulham",
-        "books": 10,
-        "poisson_largest_gap_pp": 14.68,
-        "elo_largest_gap_pp": 3.78,
-        "improvement_pp": 10.9,
-        "market_no_vig": {
-          "home": 0.65709,
-          "draw": 0.1962,
-          "away": 0.14671
-        },
-        "poisson": {
-          "home": 0.51032,
-          "draw": 0.24607,
-          "away": 0.24361
-        },
-        "elo": {
-          "home": 0.6859926394732797,
-          "draw": 0.2050474469806282,
-          "away": 0.10895991354609208
-        },
-        "rating_home": 1681.1,
-        "rating_away": 1490.4,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Ligue 1",
-        "date": "2026-11-22",
-        "home": "FC Lorient",
-        "away": "Stade Rennais FC",
-        "books": 6,
-        "poisson_largest_gap_pp": 14.57,
-        "elo_largest_gap_pp": 4.66,
-        "improvement_pp": 9.91,
-        "market_no_vig": {
-          "home": 0.31046,
-          "draw": 0.2687,
-          "away": 0.42085
-        },
-        "poisson": {
-          "home": 0.45616,
-          "draw": 0.2297,
-          "away": 0.31414
-        },
-        "elo": {
-          "home": 0.3530721501862585,
-          "draw": 0.2726428927233152,
-          "away": 0.3742849570904263
-        },
-        "rating_home": 1507.5,
-        "rating_away": 1580.7,
-        "elo_low_sample": false
-      },
-      {
         "league": "Ligue 1",
         "date": "2026-11-21",
         "home": "AS Monaco",
         "away": "AJ Auxerre",
-        "books": 8,
-        "poisson_largest_gap_pp": 14.35,
-        "elo_largest_gap_pp": 6.6,
+        "books": 9,
+        "poisson_largest_gap_pp": 14.03,
+        "elo_largest_gap_pp": 6.28,
         "improvement_pp": 7.75,
         "market_no_vig": {
-          "home": 0.66718,
-          "draw": 0.19069,
-          "away": 0.14213
+          "home": 0.66396,
+          "draw": 0.19346,
+          "away": 0.14257
         },
         "poisson": {
           "home": 0.52369,
@@ -6194,30 +5450,30 @@
       },
       {
         "league": "Premier League",
-        "date": "2026-11-07",
-        "home": "Nott'm Forest",
-        "away": "Man City",
-        "books": 19,
-        "poisson_largest_gap_pp": 13.98,
-        "elo_largest_gap_pp": 3.55,
-        "improvement_pp": 10.43,
+        "date": "2026-11-21",
+        "home": "Man City",
+        "away": "Fulham",
+        "books": 17,
+        "poisson_largest_gap_pp": 13.97,
+        "elo_largest_gap_pp": 4.53,
+        "improvement_pp": 9.44,
         "market_no_vig": {
-          "home": 0.21248,
-          "draw": 0.24129,
-          "away": 0.54622
+          "home": 0.65006,
+          "draw": 0.19569,
+          "away": 0.15425
         },
         "poisson": {
-          "home": 0.32019,
-          "draw": 0.2734,
-          "away": 0.40641
+          "home": 0.51032,
+          "draw": 0.24607,
+          "away": 0.24361
         },
         "elo": {
-          "home": 0.1773431361752379,
-          "draw": 0.24090110914601592,
-          "away": 0.5817557546787463
+          "home": 0.6859926394732797,
+          "draw": 0.2050474469806282,
+          "away": 0.10895991354609208
         },
-        "rating_home": 1451.0,
-        "rating_away": 1681.1,
+        "rating_home": 1681.1,
+        "rating_away": 1490.4,
         "elo_low_sample": false
       },
       {
@@ -6226,13 +5482,13 @@
         "home": "Ipswich",
         "away": "Bournemouth",
         "books": 19,
-        "poisson_largest_gap_pp": 13.84,
-        "elo_largest_gap_pp": 1.64,
-        "improvement_pp": 12.21,
+        "poisson_largest_gap_pp": 13.9,
+        "elo_largest_gap_pp": 1.59,
+        "improvement_pp": 12.31,
         "market_no_vig": {
-          "home": 0.24991,
-          "draw": 0.25526,
-          "away": 0.49483
+          "home": 0.24939,
+          "draw": 0.25285,
+          "away": 0.49775
         },
         "poisson": {
           "home": 0.38836,
@@ -6253,14 +5509,14 @@
         "date": "2026-11-22",
         "home": "Paris FC",
         "away": "Angers SCO",
-        "books": 6,
-        "poisson_largest_gap_pp": 13.55,
-        "elo_largest_gap_pp": 1.29,
-        "improvement_pp": 12.26,
+        "books": 7,
+        "poisson_largest_gap_pp": 13.78,
+        "elo_largest_gap_pp": 1.07,
+        "improvement_pp": 12.7,
         "market_no_vig": {
-          "home": 0.65948,
-          "draw": 0.206,
-          "away": 0.13452
+          "home": 0.66176,
+          "draw": 0.20588,
+          "away": 0.13235
         },
         "poisson": {
           "home": 0.52401,
@@ -6278,17 +5534,45 @@
       },
       {
         "league": "Ligue 1",
+        "date": "2026-11-22",
+        "home": "FC Lorient",
+        "away": "Stade Rennais FC",
+        "books": 7,
+        "poisson_largest_gap_pp": 13.77,
+        "elo_largest_gap_pp": 4.05,
+        "improvement_pp": 9.72,
+        "market_no_vig": {
+          "home": 0.31848,
+          "draw": 0.26673,
+          "away": 0.41478
+        },
+        "poisson": {
+          "home": 0.45616,
+          "draw": 0.2297,
+          "away": 0.31414
+        },
+        "elo": {
+          "home": 0.3530721501862585,
+          "draw": 0.2726428927233152,
+          "away": 0.3742849570904263
+        },
+        "rating_home": 1507.5,
+        "rating_away": 1580.7,
+        "elo_low_sample": false
+      },
+      {
+        "league": "Ligue 1",
         "date": "2026-11-08",
         "home": "Angers SCO",
         "away": "OGC Nice",
         "books": 18,
-        "poisson_largest_gap_pp": 13.03,
-        "elo_largest_gap_pp": 6.87,
-        "improvement_pp": 6.16,
+        "poisson_largest_gap_pp": 12.93,
+        "elo_largest_gap_pp": 6.73,
+        "improvement_pp": 6.19,
         "market_no_vig": {
-          "home": 0.27693,
-          "draw": 0.25972,
-          "away": 0.46335
+          "home": 0.27794,
+          "draw": 0.26008,
+          "away": 0.46197
         },
         "poisson": {
           "home": 0.4072,
@@ -6305,46 +5589,18 @@
         "elo_low_sample": false
       },
       {
-        "league": "Premier League",
-        "date": "2026-11-08",
-        "home": "Sunderland",
-        "away": "Chelsea",
-        "books": 19,
-        "poisson_largest_gap_pp": 12.5,
-        "elo_largest_gap_pp": 9.56,
-        "improvement_pp": 2.94,
-        "market_no_vig": {
-          "home": 0.25426,
-          "draw": 0.26381,
-          "away": 0.48194
-        },
-        "poisson": {
-          "home": 0.37773,
-          "draw": 0.26537,
-          "away": 0.3569
-        },
-        "elo": {
-          "home": 0.3413495019905234,
-          "draw": 0.2723482170266581,
-          "away": 0.38630228098281844
-        },
-        "rating_home": 1456.3,
-        "rating_away": 1538.5,
-        "elo_low_sample": false
-      },
-      {
         "league": "La Liga",
         "date": "2026-11-08",
         "home": "Elche CF",
         "away": "Real Betis",
         "books": 17,
-        "poisson_largest_gap_pp": 12.16,
-        "elo_largest_gap_pp": 4.59,
-        "improvement_pp": 7.57,
+        "poisson_largest_gap_pp": 12.57,
+        "elo_largest_gap_pp": 4.13,
+        "improvement_pp": 8.44,
         "market_no_vig": {
-          "home": 0.28751,
-          "draw": 0.25154,
-          "away": 0.46096
+          "home": 0.28285,
+          "draw": 0.25268,
+          "away": 0.46448
         },
         "poisson": {
           "home": 0.40851,
@@ -6365,14 +5621,14 @@
         "date": "2026-11-23",
         "home": "Monza",
         "away": "Fiorentina",
-        "books": 4,
-        "poisson_largest_gap_pp": 11.57,
-        "elo_largest_gap_pp": 0.79,
-        "improvement_pp": 10.78,
+        "books": 5,
+        "poisson_largest_gap_pp": 12.29,
+        "elo_largest_gap_pp": 1.45,
+        "improvement_pp": 10.84,
         "market_no_vig": {
-          "home": 0.28802,
-          "draw": 0.25948,
-          "away": 0.4525
+          "home": 0.28083,
+          "draw": 0.2539,
+          "away": 0.46527
         },
         "poisson": {
           "home": 0.40371,
@@ -6389,59 +5645,31 @@
         "elo_low_sample": false
       },
       {
-        "league": "Serie A",
+        "league": "Premier League",
         "date": "2026-11-08",
-        "home": "Genoa",
-        "away": "Milan",
+        "home": "Sunderland",
+        "away": "Chelsea",
         "books": 19,
-        "poisson_largest_gap_pp": 11.56,
-        "elo_largest_gap_pp": 5.13,
-        "improvement_pp": 6.43,
+        "poisson_largest_gap_pp": 12.16,
+        "elo_largest_gap_pp": 9.22,
+        "improvement_pp": 2.94,
         "market_no_vig": {
-          "home": 0.20885,
-          "draw": 0.26852,
-          "away": 0.52263
+          "home": 0.25834,
+          "draw": 0.26314,
+          "away": 0.47852
         },
         "poisson": {
-          "home": 0.32445,
-          "draw": 0.26451,
-          "away": 0.41104
+          "home": 0.37773,
+          "draw": 0.26537,
+          "away": 0.3569
         },
         "elo": {
-          "home": 0.26014275562581846,
-          "draw": 0.2639055721337694,
-          "away": 0.4759516722404122
+          "home": 0.3413495019905234,
+          "draw": 0.2723482170266581,
+          "away": 0.38630228098281844
         },
-        "rating_home": 1478.1,
-        "rating_away": 1627.1,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Serie A",
-        "date": "2026-11-07",
-        "home": "Torino",
-        "away": "Lecce",
-        "books": 19,
-        "poisson_largest_gap_pp": 11.41,
-        "elo_largest_gap_pp": 2.85,
-        "improvement_pp": 8.55,
-        "market_no_vig": {
-          "home": 0.52234,
-          "draw": 0.26117,
-          "away": 0.2165
-        },
-        "poisson": {
-          "home": 0.41533,
-          "draw": 0.2541,
-          "away": 0.33057
-        },
-        "elo": {
-          "home": 0.5508762006530868,
-          "draw": 0.2490135341803445,
-          "away": 0.20011026516656857
-        },
-        "rating_home": 1476.1,
-        "rating_away": 1400.4,
+        "rating_home": 1456.3,
+        "rating_away": 1538.5,
         "elo_low_sample": false
       },
       {
@@ -6449,14 +5677,14 @@
         "date": "2026-11-22",
         "home": "Olympique de Marseille",
         "away": "Le Mans FC",
-        "books": 6,
-        "poisson_largest_gap_pp": 11.36,
-        "elo_largest_gap_pp": 5.11,
+        "books": 7,
+        "poisson_largest_gap_pp": 11.53,
+        "elo_largest_gap_pp": 5.28,
         "improvement_pp": 6.25,
         "market_no_vig": {
-          "home": 0.64419,
-          "draw": 0.20283,
-          "away": 0.15298
+          "home": 0.64593,
+          "draw": 0.2007,
+          "away": 0.15337
         },
         "poisson": {
           "home": 0.53059,
@@ -6473,31 +5701,31 @@
         "elo_low_sample": false
       },
       {
-        "league": "La Liga",
-        "date": "2026-11-20",
-        "home": "Athletic Club",
-        "away": "RCD Espanyol de Barcelona",
-        "books": 5,
-        "poisson_largest_gap_pp": 10.94,
-        "elo_largest_gap_pp": 4.68,
-        "improvement_pp": 6.26,
+        "league": "Serie A",
+        "date": "2026-11-08",
+        "home": "Genoa",
+        "away": "Milan",
+        "books": 19,
+        "poisson_largest_gap_pp": 11.45,
+        "elo_largest_gap_pp": 5.02,
+        "improvement_pp": 6.43,
         "market_no_vig": {
-          "home": 0.58766,
-          "draw": 0.23884,
-          "away": 0.1735
+          "home": 0.20993,
+          "draw": 0.27041,
+          "away": 0.51966
         },
         "poisson": {
-          "home": 0.47825,
-          "draw": 0.25458,
-          "away": 0.26717
+          "home": 0.32445,
+          "draw": 0.26451,
+          "away": 0.41104
         },
         "elo": {
-          "home": 0.540835401908113,
-          "draw": 0.251405164740502,
-          "away": 0.20775943335138508
+          "home": 0.26014275562581846,
+          "draw": 0.2639055721337694,
+          "away": 0.4759516722404122
         },
-        "rating_home": 1501.5,
-        "rating_away": 1433.6,
+        "rating_home": 1478.1,
+        "rating_away": 1627.1,
         "elo_low_sample": false
       },
       {
@@ -6506,13 +5734,13 @@
         "home": "Villarreal CF",
         "away": "Getafe CF",
         "books": 18,
-        "poisson_largest_gap_pp": 10.6,
-        "elo_largest_gap_pp": 13.29,
+        "poisson_largest_gap_pp": 10.54,
+        "elo_largest_gap_pp": 13.23,
         "improvement_pp": -2.69,
         "market_no_vig": {
-          "home": 0.6583,
-          "draw": 0.21049,
-          "away": 0.13121
+          "home": 0.65772,
+          "draw": 0.20958,
+          "away": 0.1327
         },
         "poisson": {
           "home": 0.55232,
@@ -6529,102 +5757,18 @@
         "elo_low_sample": false
       },
       {
-        "league": "Premier League",
-        "date": "2026-11-07",
-        "home": "Leeds",
-        "away": "Spurs",
-        "books": 19,
-        "poisson_largest_gap_pp": 10.05,
-        "elo_largest_gap_pp": 18.12,
-        "improvement_pp": -8.07,
-        "market_no_vig": {
-          "home": 0.34504,
-          "draw": 0.28231,
-          "away": 0.37265
-        },
-        "poisson": {
-          "home": 0.44558,
-          "draw": 0.26176,
-          "away": 0.29266
-        },
-        "elo": {
-          "home": 0.5262630439318252,
-          "draw": 0.2546601165808901,
-          "away": 0.2190768394872846
-        },
-        "rating_home": 1526.4,
-        "rating_away": 1469.6,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Ligue 1",
-        "date": "2026-11-08",
-        "home": "Stade Brestois 29",
-        "away": "Olympique Lyonnais",
-        "books": 18,
-        "poisson_largest_gap_pp": 9.41,
-        "elo_largest_gap_pp": 4.47,
-        "improvement_pp": 4.94,
-        "market_no_vig": {
-          "home": 0.34106,
-          "draw": 0.27537,
-          "away": 0.38356
-        },
-        "poisson": {
-          "home": 0.43519,
-          "draw": 0.24742,
-          "away": 0.31739
-        },
-        "elo": {
-          "home": 0.302026266825972,
-          "draw": 0.2697299416542662,
-          "away": 0.4282437915197619
-        },
-        "rating_home": 1482.6,
-        "rating_away": 1596.1,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Serie A",
-        "date": "2026-11-07",
-        "home": "Parma",
-        "away": "Bologna",
-        "books": 19,
-        "poisson_largest_gap_pp": 9.26,
-        "elo_largest_gap_pp": 9.57,
-        "improvement_pp": -0.32,
-        "market_no_vig": {
-          "home": 0.21687,
-          "draw": 0.27082,
-          "away": 0.5123
-        },
-        "poisson": {
-          "home": 0.30946,
-          "draw": 0.26633,
-          "away": 0.42421
-        },
-        "elo": {
-          "home": 0.31261049737020274,
-          "draw": 0.2706910919993678,
-          "away": 0.41669841063042934
-        },
-        "rating_home": 1444.9,
-        "rating_away": 1549.9,
-        "elo_low_sample": false
-      },
-      {
         "league": "Bundesliga",
         "date": "2026-11-08",
         "home": "TSG Hoffenheim",
         "away": "FC Schalke 04",
         "books": 19,
-        "poisson_largest_gap_pp": 9.23,
-        "elo_largest_gap_pp": 6.11,
+        "poisson_largest_gap_pp": 9.89,
+        "elo_largest_gap_pp": 6.77,
         "improvement_pp": 3.13,
         "market_no_vig": {
-          "home": 0.57885,
-          "draw": 0.22022,
-          "away": 0.20093
+          "home": 0.58544,
+          "draw": 0.21736,
+          "away": 0.1972
         },
         "poisson": {
           "home": 0.4865,
@@ -6645,14 +5789,14 @@
         "date": "2026-11-21",
         "home": "Sevilla FC",
         "away": "Real Betis",
-        "books": 5,
-        "poisson_largest_gap_pp": 8.6,
-        "elo_largest_gap_pp": 5.88,
-        "improvement_pp": 2.72,
+        "books": 9,
+        "poisson_largest_gap_pp": 9.31,
+        "elo_largest_gap_pp": 4.84,
+        "improvement_pp": 4.46,
         "market_no_vig": {
-          "home": 0.33568,
-          "draw": 0.27151,
-          "away": 0.39282
+          "home": 0.32861,
+          "draw": 0.26823,
+          "away": 0.40316
         },
         "poisson": {
           "home": 0.4217,
@@ -6669,18 +5813,46 @@
         "elo_low_sample": false
       },
       {
+        "league": "Ligue 1",
+        "date": "2026-11-08",
+        "home": "Stade Brestois 29",
+        "away": "Olympique Lyonnais",
+        "books": 18,
+        "poisson_largest_gap_pp": 9.27,
+        "elo_largest_gap_pp": 4.69,
+        "improvement_pp": 4.57,
+        "market_no_vig": {
+          "home": 0.34251,
+          "draw": 0.27619,
+          "away": 0.3813
+        },
+        "poisson": {
+          "home": 0.43519,
+          "draw": 0.24742,
+          "away": 0.31739
+        },
+        "elo": {
+          "home": 0.302026266825972,
+          "draw": 0.2697299416542662,
+          "away": 0.4282437915197619
+        },
+        "rating_home": 1482.6,
+        "rating_away": 1596.1,
+        "elo_low_sample": false
+      },
+      {
         "league": "Premier League",
         "date": "2026-11-22",
         "home": "Liverpool",
         "away": "Man Utd",
-        "books": 11,
-        "poisson_largest_gap_pp": 8.56,
-        "elo_largest_gap_pp": 2.04,
-        "improvement_pp": 6.52,
+        "books": 12,
+        "poisson_largest_gap_pp": 8.71,
+        "elo_largest_gap_pp": 1.97,
+        "improvement_pp": 6.74,
         "market_no_vig": {
-          "home": 0.52112,
-          "draw": 0.23851,
-          "away": 0.24037
+          "home": 0.52265,
+          "draw": 0.23923,
+          "away": 0.23812
         },
         "poisson": {
           "home": 0.43551,
@@ -6702,13 +5874,13 @@
         "home": "Monza",
         "away": "Atalanta",
         "books": 19,
-        "poisson_largest_gap_pp": 8.55,
-        "elo_largest_gap_pp": 5.03,
-        "improvement_pp": 3.52,
+        "poisson_largest_gap_pp": 8.39,
+        "elo_largest_gap_pp": 5.2,
+        "improvement_pp": 3.19,
         "market_no_vig": {
-          "home": 0.28723,
-          "draw": 0.25531,
-          "away": 0.45746
+          "home": 0.2889,
+          "draw": 0.25729,
+          "away": 0.45382
         },
         "poisson": {
           "home": 0.37275,
@@ -6725,74 +5897,18 @@
         "elo_low_sample": false
       },
       {
-        "league": "Bundesliga",
-        "date": "2026-11-07",
-        "home": "VfB Stuttgart",
-        "away": "SV Werder Bremen",
-        "books": 19,
-        "poisson_largest_gap_pp": 7.91,
-        "elo_largest_gap_pp": 5.59,
-        "improvement_pp": 2.31,
-        "market_no_vig": {
-          "home": 0.56966,
-          "draw": 0.20888,
-          "away": 0.22146
-        },
-        "poisson": {
-          "home": 0.49059,
-          "draw": 0.22601,
-          "away": 0.2834
-        },
-        "elo": {
-          "home": 0.5137169257351302,
-          "draw": 0.25725641755467205,
-          "away": 0.22902665671019776
-        },
-        "rating_home": 1551.5,
-        "rating_away": 1504.3,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Bundesliga",
-        "date": "2026-11-21",
-        "home": "Eintracht Frankfurt",
-        "away": "TSG Hoffenheim",
-        "books": 8,
-        "poisson_largest_gap_pp": 7.79,
-        "elo_largest_gap_pp": 6.96,
-        "improvement_pp": 0.82,
-        "market_no_vig": {
-          "home": 0.39634,
-          "draw": 0.23955,
-          "away": 0.36411
-        },
-        "poisson": {
-          "home": 0.47422,
-          "draw": 0.22195,
-          "away": 0.30383
-        },
-        "elo": {
-          "home": 0.43661678129885345,
-          "draw": 0.26892165795074935,
-          "away": 0.29446156075039726
-        },
-        "rating_home": 1502.1,
-        "rating_away": 1512.3,
-        "elo_low_sample": false
-      },
-      {
         "league": "Serie A",
         "date": "2026-11-08",
         "home": "Internazionale",
         "away": "Como",
         "books": 19,
-        "poisson_largest_gap_pp": 7.7,
-        "elo_largest_gap_pp": 5.1,
-        "improvement_pp": 2.6,
+        "poisson_largest_gap_pp": 7.81,
+        "elo_largest_gap_pp": 4.95,
+        "improvement_pp": 2.86,
         "market_no_vig": {
-          "home": 0.50137,
-          "draw": 0.23671,
-          "away": 0.26192
+          "home": 0.50243,
+          "draw": 0.23713,
+          "away": 0.26043
         },
         "poisson": {
           "home": 0.42433,
@@ -6809,18 +5925,158 @@
         "elo_low_sample": false
       },
       {
+        "league": "Bundesliga",
+        "date": "2026-11-21",
+        "home": "Eintracht Frankfurt",
+        "away": "TSG Hoffenheim",
+        "books": 10,
+        "poisson_largest_gap_pp": 7.73,
+        "elo_largest_gap_pp": 6.9,
+        "improvement_pp": 0.83,
+        "market_no_vig": {
+          "home": 0.39696,
+          "draw": 0.2396,
+          "away": 0.36344
+        },
+        "poisson": {
+          "home": 0.47422,
+          "draw": 0.22195,
+          "away": 0.30383
+        },
+        "elo": {
+          "home": 0.43661678129885345,
+          "draw": 0.26892165795074935,
+          "away": 0.29446156075039726
+        },
+        "rating_home": 1502.1,
+        "rating_away": 1512.3,
+        "elo_low_sample": false
+      },
+      {
+        "league": "Premier League",
+        "date": "2026-11-21",
+        "home": "Coventry",
+        "away": "Crystal Palace",
+        "books": 11,
+        "poisson_largest_gap_pp": 7.67,
+        "elo_largest_gap_pp": 11.56,
+        "improvement_pp": -3.88,
+        "market_no_vig": {
+          "home": 0.38425,
+          "draw": 0.26707,
+          "away": 0.34868
+        },
+        "poisson": {
+          "home": 0.46098,
+          "draw": 0.24585,
+          "away": 0.29317
+        },
+        "elo": {
+          "home": 0.49981689960269676,
+          "draw": 0.25990857010760066,
+          "away": 0.24027453028970266
+        },
+        "rating_home": 1465.0,
+        "rating_away": 1428.2,
+        "elo_low_sample": false
+      },
+      {
+        "league": "Ligue 1",
+        "date": "2026-11-21",
+        "home": "RC Lens",
+        "away": "Toulouse FC",
+        "books": 9,
+        "poisson_largest_gap_pp": 6.47,
+        "elo_largest_gap_pp": 4.45,
+        "improvement_pp": 2.02,
+        "market_no_vig": {
+          "home": 0.52532,
+          "draw": 0.24226,
+          "away": 0.23242
+        },
+        "poisson": {
+          "home": 0.46411,
+          "draw": 0.23874,
+          "away": 0.29715
+        },
+        "elo": {
+          "home": 0.5672423481340727,
+          "draw": 0.244856046074332,
+          "away": 0.18790160579159523
+        },
+        "rating_home": 1594.2,
+        "rating_away": 1505.6,
+        "elo_low_sample": false
+      },
+      {
+        "league": "Premier League",
+        "date": "2026-11-21",
+        "home": "Aston Villa",
+        "away": "Sunderland",
+        "books": 11,
+        "poisson_largest_gap_pp": 6.24,
+        "elo_largest_gap_pp": 5.69,
+        "improvement_pp": 0.55,
+        "market_no_vig": {
+          "home": 0.53946,
+          "draw": 0.24526,
+          "away": 0.21527
+        },
+        "poisson": {
+          "home": 0.48116,
+          "draw": 0.24115,
+          "away": 0.27769
+        },
+        "elo": {
+          "home": 0.5963725906685176,
+          "draw": 0.23666353838229892,
+          "away": 0.1669638709491836
+        },
+        "rating_home": 1568.2,
+        "rating_away": 1456.3,
+        "elo_low_sample": false
+      },
+      {
+        "league": "Ligue 1",
+        "date": "2026-11-20",
+        "home": "Estac Troyes",
+        "away": "Havre Athletic Club",
+        "books": 14,
+        "poisson_largest_gap_pp": 5.95,
+        "elo_largest_gap_pp": 11.82,
+        "improvement_pp": -5.88,
+        "market_no_vig": {
+          "home": 0.44815,
+          "draw": 0.26536,
+          "away": 0.28648
+        },
+        "poisson": {
+          "home": 0.40938,
+          "draw": 0.24467,
+          "away": 0.34595
+        },
+        "elo": {
+          "home": 0.566391355036687,
+          "draw": 0.2450801274919067,
+          "away": 0.18852851747140628
+        },
+        "rating_home": 1463.4,
+        "rating_away": 1375.5,
+        "elo_low_sample": false
+      },
+      {
         "league": "La Liga",
         "date": "2026-11-08",
         "home": "Real Sociedad",
         "away": "Rayo Vallecano",
         "books": 18,
-        "poisson_largest_gap_pp": 6.8,
-        "elo_largest_gap_pp": 9.66,
+        "poisson_largest_gap_pp": 5.9,
+        "elo_largest_gap_pp": 8.76,
         "improvement_pp": -2.86,
         "market_no_vig": {
-          "home": 0.55297,
-          "draw": 0.23331,
-          "away": 0.21371
+          "home": 0.54392,
+          "draw": 0.23201,
+          "away": 0.22406
         },
         "poisson": {
           "home": 0.48496,
@@ -6839,184 +6095,16 @@
       {
         "league": "Ligue 1",
         "date": "2026-11-21",
-        "home": "RC Lens",
-        "away": "Toulouse FC",
-        "books": 8,
-        "poisson_largest_gap_pp": 6.73,
-        "elo_largest_gap_pp": 4.2,
-        "improvement_pp": 2.53,
-        "market_no_vig": {
-          "home": 0.53132,
-          "draw": 0.23882,
-          "away": 0.22986
-        },
-        "poisson": {
-          "home": 0.46411,
-          "draw": 0.23874,
-          "away": 0.29715
-        },
-        "elo": {
-          "home": 0.5672423481340727,
-          "draw": 0.244856046074332,
-          "away": 0.18790160579159523
-        },
-        "rating_home": 1594.2,
-        "rating_away": 1505.6,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Bundesliga",
-        "date": "2026-11-22",
-        "home": "SV Werder Bremen",
-        "away": "Hamburger SV",
-        "books": 6,
-        "poisson_largest_gap_pp": 6.57,
-        "elo_largest_gap_pp": 6.52,
-        "improvement_pp": 0.05,
-        "market_no_vig": {
-          "home": 0.56498,
-          "draw": 0.22596,
-          "away": 0.20906
-        },
-        "poisson": {
-          "home": 0.49928,
-          "draw": 0.22705,
-          "away": 0.27367
-        },
-        "elo": {
-          "home": 0.49982369458761206,
-          "draw": 0.25990733155007745,
-          "away": 0.24026897386231053
-        },
-        "rating_home": 1504.3,
-        "rating_away": 1467.5,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Premier League",
-        "date": "2026-11-21",
-        "home": "Aston Villa",
-        "away": "Sunderland",
-        "books": 10,
-        "poisson_largest_gap_pp": 6.29,
-        "elo_largest_gap_pp": 5.72,
-        "improvement_pp": 0.57,
-        "market_no_vig": {
-          "home": 0.53921,
-          "draw": 0.246,
-          "away": 0.21479
-        },
-        "poisson": {
-          "home": 0.48116,
-          "draw": 0.24115,
-          "away": 0.27769
-        },
-        "elo": {
-          "home": 0.5963725906685176,
-          "draw": 0.23666353838229892,
-          "away": 0.1669638709491836
-        },
-        "rating_home": 1568.2,
-        "rating_away": 1456.3,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Bundesliga",
-        "date": "2026-11-08",
-        "home": "SC Freiburg",
-        "away": "1. FC Union Berlin",
-        "books": 19,
-        "poisson_largest_gap_pp": 6.16,
-        "elo_largest_gap_pp": 3.11,
-        "improvement_pp": 3.05,
-        "market_no_vig": {
-          "home": 0.63242,
-          "draw": 0.21081,
-          "away": 0.15677
-        },
-        "poisson": {
-          "home": 0.5753,
-          "draw": 0.20631,
-          "away": 0.21839
-        },
-        "elo": {
-          "home": 0.6013318108619804,
-          "draw": 0.23516776592685334,
-          "away": 0.16350042321116615
-        },
-        "rating_home": 1564.6,
-        "rating_away": 1448.7,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Ligue 1",
-        "date": "2026-11-20",
-        "home": "Estac Troyes",
-        "away": "Havre Athletic Club",
-        "books": 8,
-        "poisson_largest_gap_pp": 6.13,
-        "elo_largest_gap_pp": 11.97,
-        "improvement_pp": -5.84,
-        "market_no_vig": {
-          "home": 0.44669,
-          "draw": 0.26869,
-          "away": 0.28461
-        },
-        "poisson": {
-          "home": 0.40938,
-          "draw": 0.24467,
-          "away": 0.34595
-        },
-        "elo": {
-          "home": 0.566391355036687,
-          "draw": 0.2450801274919067,
-          "away": 0.18852851747140628
-        },
-        "rating_home": 1463.4,
-        "rating_away": 1375.5,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Serie A",
-        "date": "2026-11-08",
-        "home": "Fiorentina",
-        "away": "Juventus",
-        "books": 18,
-        "poisson_largest_gap_pp": 5.69,
-        "elo_largest_gap_pp": 0.4,
-        "improvement_pp": 5.3,
-        "market_no_vig": {
-          "home": 0.27922,
-          "draw": 0.27018,
-          "away": 0.45059
-        },
-        "poisson": {
-          "home": 0.33616,
-          "draw": 0.26782,
-          "away": 0.39602
-        },
-        "elo": {
-          "home": 0.2785603302341536,
-          "draw": 0.26688015163019585,
-          "away": 0.4545595181356506
-        },
-        "rating_home": 1470.8,
-        "rating_away": 1603.8,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Ligue 1",
-        "date": "2026-11-21",
         "home": "RC Strasbourg Alsace",
         "away": "Stade Brestois 29",
-        "books": 8,
-        "poisson_largest_gap_pp": 5.64,
-        "elo_largest_gap_pp": 9.15,
-        "improvement_pp": -3.51,
+        "books": 9,
+        "poisson_largest_gap_pp": 5.67,
+        "elo_largest_gap_pp": 9.11,
+        "improvement_pp": -3.44,
         "market_no_vig": {
-          "home": 0.42566,
-          "draw": 0.25582,
-          "away": 0.31852
+          "home": 0.42537,
+          "draw": 0.25649,
+          "away": 0.31814
         },
         "poisson": {
           "home": 0.48205,
@@ -7035,57 +6123,57 @@
       {
         "league": "Serie A",
         "date": "2026-11-08",
-        "home": "Napoli",
-        "away": "Lazio",
+        "home": "Fiorentina",
+        "away": "Juventus",
         "books": 19,
-        "poisson_largest_gap_pp": 5.22,
-        "elo_largest_gap_pp": 4.59,
-        "improvement_pp": 0.63,
+        "poisson_largest_gap_pp": 5.56,
+        "elo_largest_gap_pp": 0.61,
+        "improvement_pp": 4.95,
         "market_no_vig": {
-          "home": 0.41562,
-          "draw": 0.26573,
-          "away": 0.31864
+          "home": 0.28052,
+          "draw": 0.27102,
+          "away": 0.44846
         },
         "poisson": {
-          "home": 0.36602,
-          "draw": 0.26314,
-          "away": 0.37084
+          "home": 0.33616,
+          "draw": 0.26782,
+          "away": 0.39602
         },
         "elo": {
-          "home": 0.3697251530216146,
-          "draw": 0.2726995930901998,
-          "away": 0.35757525388818556
+          "home": 0.2785603302341536,
+          "draw": 0.26688015163019585,
+          "away": 0.4545595181356506
         },
-        "rating_home": 1596.2,
-        "rating_away": 1656.5,
+        "rating_home": 1470.8,
+        "rating_away": 1603.8,
         "elo_low_sample": false
       },
       {
-        "league": "Bundesliga",
-        "date": "2026-11-22",
-        "home": "FC Augsburg",
-        "away": "1. FSV Mainz 05",
-        "books": 6,
-        "poisson_largest_gap_pp": 5.2,
-        "elo_largest_gap_pp": 10.91,
-        "improvement_pp": -5.71,
+        "league": "Premier League",
+        "date": "2026-11-23",
+        "home": "Brentford",
+        "away": "Everton",
+        "books": 8,
+        "poisson_largest_gap_pp": 5.52,
+        "elo_largest_gap_pp": 1.6,
+        "improvement_pp": 3.92,
         "market_no_vig": {
-          "home": 0.35939,
-          "draw": 0.24514,
-          "away": 0.39546
+          "home": 0.51399,
+          "draw": 0.24994,
+          "away": 0.23607
         },
         "poisson": {
-          "home": 0.41136,
-          "draw": 0.23174,
-          "away": 0.3569
+          "home": 0.45881,
+          "draw": 0.25967,
+          "away": 0.28152
         },
         "elo": {
-          "home": 0.4456835838791847,
-          "draw": 0.26794237656213576,
-          "away": 0.28637403955867957
+          "home": 0.49796567695690663,
+          "draw": 0.2602438832495979,
+          "away": 0.24179043979349552
         },
-        "rating_home": 1483.4,
-        "rating_away": 1486.9,
+        "rating_home": 1551.1,
+        "rating_away": 1515.7,
         "elo_low_sample": false
       },
       {
@@ -7093,14 +6181,14 @@
         "date": "2026-11-21",
         "home": "Chelsea",
         "away": "Leeds",
-        "books": 10,
-        "poisson_largest_gap_pp": 5.06,
-        "elo_largest_gap_pp": 5.27,
-        "improvement_pp": -0.21,
+        "books": 11,
+        "poisson_largest_gap_pp": 5.11,
+        "elo_largest_gap_pp": 5.26,
+        "improvement_pp": -0.16,
         "market_no_vig": {
-          "home": 0.51942,
-          "draw": 0.25189,
-          "away": 0.22869
+          "home": 0.51935,
+          "draw": 0.25242,
+          "away": 0.22823
         },
         "poisson": {
           "home": 0.47179,
@@ -7117,102 +6205,18 @@
         "elo_low_sample": false
       },
       {
-        "league": "Bundesliga",
-        "date": "2026-11-07",
-        "home": "RB Leipzig",
-        "away": "FC Augsburg",
-        "books": 19,
-        "poisson_largest_gap_pp": 4.89,
-        "elo_largest_gap_pp": 5.1,
-        "improvement_pp": -0.22,
-        "market_no_vig": {
-          "home": 0.64197,
-          "draw": 0.18383,
-          "away": 0.1742
-        },
-        "poisson": {
-          "home": 0.59312,
-          "draw": 0.19702,
-          "away": 0.20986
-        },
-        "elo": {
-          "home": 0.6023697199423557,
-          "draw": 0.23485099295412912,
-          "away": 0.16277928710351514
-        },
-        "rating_home": 1600.2,
-        "rating_away": 1483.4,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Premier League",
-        "date": "2026-11-21",
-        "home": "Bournemouth",
-        "away": "Nott'm Forest",
-        "books": 10,
-        "poisson_largest_gap_pp": 4.37,
-        "elo_largest_gap_pp": 14.07,
-        "improvement_pp": -9.7,
-        "market_no_vig": {
-          "home": 0.47398,
-          "draw": 0.26526,
-          "away": 0.26076
-        },
-        "poisson": {
-          "home": 0.44323,
-          "draw": 0.25232,
-          "away": 0.30445
-        },
-        "elo": {
-          "home": 0.6146715923047822,
-          "draw": 0.23099811148944485,
-          "away": 0.15433029620577288
-        },
-        "rating_home": 1578.1,
-        "rating_away": 1451.0,
-        "elo_low_sample": false
-      },
-      {
-        "league": "Premier League",
-        "date": "2026-11-07",
-        "home": "Fulham",
-        "away": "Newcastle",
-        "books": 19,
-        "poisson_largest_gap_pp": 4.37,
-        "elo_largest_gap_pp": 1.5,
-        "improvement_pp": 2.87,
-        "market_no_vig": {
-          "home": 0.47816,
-          "draw": 0.25957,
-          "away": 0.26227
-        },
-        "poisson": {
-          "home": 0.44163,
-          "draw": 0.25245,
-          "away": 0.30592
-        },
-        "elo": {
-          "home": 0.46317062056767605,
-          "draw": 0.26575276498971906,
-          "away": 0.27107661444260484
-        },
-        "rating_home": 1490.4,
-        "rating_away": 1481.0,
-        "elo_low_sample": false
-      },
-      {
         "league": "Ligue 1",
         "date": "2026-11-08",
         "home": "RC Lens",
         "away": "Olympique de Marseille",
         "books": 18,
-        "poisson_largest_gap_pp": 4.33,
-        "elo_largest_gap_pp": 7.41,
-        "improvement_pp": -3.08,
+        "poisson_largest_gap_pp": 4.94,
+        "elo_largest_gap_pp": 7.94,
+        "improvement_pp": -2.99,
         "market_no_vig": {
-          "home": 0.42434,
-          "draw": 0.24646,
-          "away": 0.3292
+          "home": 0.41827,
+          "draw": 0.24729,
+          "away": 0.33444
         },
         "poisson": {
           "home": 0.46769,
@@ -7233,14 +6237,14 @@
         "date": "2026-11-21",
         "home": "LOSC Lille",
         "away": "Olympique Lyonnais",
-        "books": 8,
-        "poisson_largest_gap_pp": 3.96,
-        "elo_largest_gap_pp": 9.22,
+        "books": 9,
+        "poisson_largest_gap_pp": 3.9,
+        "elo_largest_gap_pp": 9.16,
         "improvement_pp": -5.26,
         "market_no_vig": {
-          "home": 0.4044,
-          "draw": 0.27844,
-          "away": 0.31717
+          "home": 0.40501,
+          "draw": 0.2779,
+          "away": 0.31708
         },
         "poisson": {
           "home": 0.444,
@@ -7261,14 +6265,14 @@
         "date": "2026-11-21",
         "home": "Deportivo Alavés",
         "away": "RC Deportivo",
-        "books": 4,
-        "poisson_largest_gap_pp": 3.91,
-        "elo_largest_gap_pp": 7.47,
+        "books": 9,
+        "poisson_largest_gap_pp": 3.53,
+        "elo_largest_gap_pp": 7.08,
         "improvement_pp": -3.56,
         "market_no_vig": {
-          "home": 0.45914,
-          "draw": 0.27896,
-          "away": 0.26191
+          "home": 0.45633,
+          "draw": 0.27792,
+          "away": 0.26575
         },
         "poisson": {
           "home": 0.44889,
@@ -7285,46 +6289,18 @@
         "elo_low_sample": false
       },
       {
-        "league": "Premier League",
-        "date": "2026-11-23",
-        "home": "Brentford",
-        "away": "Everton",
-        "books": 8,
-        "poisson_largest_gap_pp": 3.78,
-        "elo_largest_gap_pp": 0.62,
-        "improvement_pp": 3.16,
-        "market_no_vig": {
-          "home": 0.49661,
-          "draw": 0.25538,
-          "away": 0.24801
-        },
-        "poisson": {
-          "home": 0.45881,
-          "draw": 0.25967,
-          "away": 0.28152
-        },
-        "elo": {
-          "home": 0.49796567695690663,
-          "draw": 0.2602438832495979,
-          "away": 0.24179043979349552
-        },
-        "rating_home": 1551.1,
-        "rating_away": 1515.7,
-        "elo_low_sample": false
-      },
-      {
         "league": "La Liga",
         "date": "2026-11-22",
         "home": "CA Osasuna",
         "away": "Málaga CF",
-        "books": 4,
-        "poisson_largest_gap_pp": 3.23,
-        "elo_largest_gap_pp": 7.84,
-        "improvement_pp": -4.61,
+        "books": 5,
+        "poisson_largest_gap_pp": 3.25,
+        "elo_largest_gap_pp": 7.95,
+        "improvement_pp": -4.71,
         "market_no_vig": {
-          "home": 0.53032,
-          "draw": 0.25632,
-          "away": 0.21336
+          "home": 0.53144,
+          "draw": 0.25539,
+          "away": 0.21317
         },
         "poisson": {
           "home": 0.50123,
@@ -7341,59 +6317,31 @@
         "elo_low_sample": false
       },
       {
-        "league": "Serie A",
-        "date": "2026-11-22",
-        "home": "Sassuolo",
-        "away": "Genoa",
-        "books": 4,
-        "poisson_largest_gap_pp": 2.96,
-        "elo_largest_gap_pp": 1.2,
-        "improvement_pp": 1.76,
-        "market_no_vig": {
-          "home": 0.39034,
-          "draw": 0.28405,
-          "away": 0.32561
-        },
-        "poisson": {
-          "home": 0.39715,
-          "draw": 0.25442,
-          "away": 0.34843
-        },
-        "elo": {
-          "home": 0.3946599816122397,
-          "draw": 0.2720211883028339,
-          "away": 0.3333188300849264
-        },
-        "rating_home": 1436.6,
-        "rating_away": 1478.1,
-        "elo_low_sample": false
-      },
-      {
-        "league": "La Liga",
-        "date": "2026-11-07",
-        "home": "RCD Espanyol de Barcelona",
-        "away": "RC Deportivo",
+        "league": "Premier League",
+        "date": "2026-11-21",
+        "home": "Bournemouth",
+        "away": "Nott'm Forest",
         "books": 17,
-        "poisson_largest_gap_pp": 2.87,
-        "elo_largest_gap_pp": 6.1,
-        "improvement_pp": -3.24,
+        "poisson_largest_gap_pp": 3.21,
+        "elo_largest_gap_pp": 15.16,
+        "improvement_pp": -11.96,
         "market_no_vig": {
-          "home": 0.40736,
-          "draw": 0.28643,
-          "away": 0.30621
+          "home": 0.46304,
+          "draw": 0.26459,
+          "away": 0.27237
         },
         "poisson": {
-          "home": 0.4128,
-          "draw": 0.25777,
-          "away": 0.32943
+          "home": 0.44323,
+          "draw": 0.25232,
+          "away": 0.30445
         },
         "elo": {
-          "home": 0.36002854037828225,
-          "draw": 0.2727174838205289,
-          "away": 0.3672539758011888
+          "home": 0.6146715923047822,
+          "draw": 0.23099811148944485,
+          "away": 0.15433029620577288
         },
-        "rating_home": 1433.6,
-        "rating_away": 1501.3,
+        "rating_home": 1578.1,
+        "rating_away": 1451.0,
         "elo_low_sample": false
       },
       {
@@ -7401,14 +6349,14 @@
         "date": "2026-11-21",
         "home": "Rayo Vallecano",
         "away": "Valencia CF",
-        "books": 5,
-        "poisson_largest_gap_pp": 2.55,
-        "elo_largest_gap_pp": 3.75,
-        "improvement_pp": -1.2,
+        "books": 11,
+        "poisson_largest_gap_pp": 2.7,
+        "elo_largest_gap_pp": 3.53,
+        "improvement_pp": -0.83,
         "market_no_vig": {
-          "home": 0.47086,
-          "draw": 0.27408,
-          "away": 0.25505
+          "home": 0.47312,
+          "draw": 0.2733,
+          "away": 0.25358
         },
         "poisson": {
           "home": 0.46454,
@@ -7425,74 +6373,18 @@
         "elo_low_sample": false
       },
       {
-        "league": "Serie A",
-        "date": "2026-11-07",
-        "home": "Cagliari",
-        "away": "Frosinone",
-        "books": 19,
-        "poisson_largest_gap_pp": 2.53,
-        "elo_largest_gap_pp": 1.31,
-        "improvement_pp": 1.22,
-        "market_no_vig": {
-          "home": 0.3478,
-          "draw": 0.25908,
-          "away": 0.39312
-        },
-        "poisson": {
-          "home": 0.37308,
-          "draw": 0.25507,
-          "away": 0.37185
-        },
-        "elo": {
-          "home": 0.3372027715361669,
-          "draw": 0.2721922326703328,
-          "away": 0.39060499579350016
-        },
-        "rating_home": 1477.4,
-        "rating_away": 1562.8,
-        "elo_low_sample": false
-      },
-      {
-        "league": "La Liga",
-        "date": "2026-11-23",
-        "home": "Levante UD",
-        "away": "Elche CF",
-        "books": 4,
-        "poisson_largest_gap_pp": 2.32,
-        "elo_largest_gap_pp": 3.04,
-        "improvement_pp": -0.72,
-        "market_no_vig": {
-          "home": 0.43698,
-          "draw": 0.26139,
-          "away": 0.30164
-        },
-        "poisson": {
-          "home": 0.44633,
-          "draw": 0.23816,
-          "away": 0.31551
-        },
-        "elo": {
-          "home": 0.46299638898796874,
-          "draw": 0.26577651497116817,
-          "away": 0.2712270960408631
-        },
-        "rating_home": 1470.9,
-        "rating_away": 1461.6,
-        "elo_low_sample": false
-      },
-      {
         "league": "La Liga",
         "date": "2026-11-08",
         "home": "Celta",
         "away": "Levante UD",
         "books": 18,
-        "poisson_largest_gap_pp": 2.07,
-        "elo_largest_gap_pp": 1.5,
-        "improvement_pp": 0.58,
+        "poisson_largest_gap_pp": 2.69,
+        "elo_largest_gap_pp": 2.01,
+        "improvement_pp": 0.69,
         "market_no_vig": {
-          "home": 0.50515,
-          "draw": 0.26008,
-          "away": 0.23477
+          "home": 0.51025,
+          "draw": 0.2612,
+          "away": 0.22855
         },
         "poisson": {
           "home": 0.49885,
@@ -7509,18 +6401,46 @@
         "elo_low_sample": false
       },
       {
+        "league": "Serie A",
+        "date": "2026-11-22",
+        "home": "Sassuolo",
+        "away": "Genoa",
+        "books": 5,
+        "poisson_largest_gap_pp": 2.41,
+        "elo_largest_gap_pp": 0.65,
+        "improvement_pp": 1.76,
+        "market_no_vig": {
+          "home": 0.39109,
+          "draw": 0.2785,
+          "away": 0.33041
+        },
+        "poisson": {
+          "home": 0.39715,
+          "draw": 0.25442,
+          "away": 0.34843
+        },
+        "elo": {
+          "home": 0.3946599816122397,
+          "draw": 0.2720211883028339,
+          "away": 0.3333188300849264
+        },
+        "rating_home": 1436.6,
+        "rating_away": 1478.1,
+        "elo_low_sample": false
+      },
+      {
         "league": "Ligue 1",
         "date": "2026-11-08",
         "home": "Havre Athletic Club",
         "away": "FC Lorient",
         "books": 18,
-        "poisson_largest_gap_pp": 2.02,
-        "elo_largest_gap_pp": 7.72,
-        "improvement_pp": -5.69,
+        "poisson_largest_gap_pp": 2.06,
+        "elo_largest_gap_pp": 7.19,
+        "improvement_pp": -5.14,
         "market_no_vig": {
-          "home": 0.33872,
-          "draw": 0.28528,
-          "away": 0.376
+          "home": 0.33376,
+          "draw": 0.28496,
+          "away": 0.38128
         },
         "poisson": {
           "home": 0.35432,
@@ -7537,18 +6457,46 @@
         "elo_low_sample": false
       },
       {
+        "league": "La Liga",
+        "date": "2026-11-23",
+        "home": "Levante UD",
+        "away": "Elche CF",
+        "books": 5,
+        "poisson_largest_gap_pp": 2.05,
+        "elo_largest_gap_pp": 3.06,
+        "improvement_pp": -1.01,
+        "market_no_vig": {
+          "home": 0.43942,
+          "draw": 0.25871,
+          "away": 0.30187
+        },
+        "poisson": {
+          "home": 0.44633,
+          "draw": 0.23816,
+          "away": 0.31551
+        },
+        "elo": {
+          "home": 0.46299638898796874,
+          "draw": 0.26577651497116817,
+          "away": 0.2712270960408631
+        },
+        "rating_home": 1470.9,
+        "rating_away": 1461.6,
+        "elo_low_sample": false
+      },
+      {
         "league": "Premier League",
         "date": "2026-11-08",
         "home": "Man Utd",
         "away": "Aston Villa",
-        "books": 18,
-        "poisson_largest_gap_pp": 1.11,
-        "elo_largest_gap_pp": 2.13,
-        "improvement_pp": -1.02,
+        "books": 19,
+        "poisson_largest_gap_pp": 1.46,
+        "elo_largest_gap_pp": 3.04,
+        "improvement_pp": -1.58,
         "market_no_vig": {
-          "home": 0.43465,
-          "draw": 0.25811,
-          "away": 0.30725
+          "home": 0.44378,
+          "draw": 0.25593,
+          "away": 0.30029
         },
         "poisson": {
           "home": 0.4381,
@@ -7570,13 +6518,13 @@
         "home": "Brighton",
         "away": "Brentford",
         "books": 19,
-        "poisson_largest_gap_pp": 0.95,
-        "elo_largest_gap_pp": 2.58,
-        "improvement_pp": -1.63,
+        "poisson_largest_gap_pp": 1.04,
+        "elo_largest_gap_pp": 2.48,
+        "improvement_pp": -1.44,
         "market_no_vig": {
-          "home": 0.4997,
-          "draw": 0.25042,
-          "away": 0.24988
+          "home": 0.5046,
+          "draw": 0.24647,
+          "away": 0.24893
         },
         "poisson": {
           "home": 0.49754,
@@ -7598,13 +6546,13 @@
         "home": "Stade Rennais FC",
         "away": "LOSC Lille",
         "books": 18,
-        "poisson_largest_gap_pp": 0.73,
-        "elo_largest_gap_pp": 5.28,
-        "improvement_pp": -4.55,
+        "poisson_largest_gap_pp": 0.91,
+        "elo_largest_gap_pp": 5.23,
+        "improvement_pp": -4.32,
         "market_no_vig": {
-          "home": 0.43637,
-          "draw": 0.26061,
-          "away": 0.30302
+          "home": 0.43586,
+          "draw": 0.26239,
+          "away": 0.30175
         },
         "poisson": {
           "home": 0.43656,

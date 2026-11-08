@@ -15197,7 +15197,7 @@
     "home": "Málaga CF",
     "away": "R. Racing Club",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-07T13:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -15206,7 +15206,56 @@
     "line": 2.5,
     "p_over": 0.59383,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-07"
+    "historical_cutoff_exclusive": "2026-11-07",
+    "actual_total": 3.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-08T12:10:09.695906+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-08T12:10:09.695906+00:00",
+      "actual_home": 1.0,
+      "actual_away": 2.0,
+      "result_sha256": "b14f6efe28ae92bb0164fb7fe44f071516bb78620c08948a906d25cad3950664",
+      "source_kickoff_utc": "2026-11-07T13:00:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000000872478694"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000000872478694",
+          "content_sha256": "cb1da679d874a47b989c5999d069940d9c6a02e8a71c37b2a8bd9e62650c7c61",
+          "fetched_at": "2026-11-08T12:09:55.252621+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "La Liga",
+        "date": "2026-11-07",
+        "home": "Málaga CF",
+        "away": "R. Racing Club",
+        "source_fixture_id": "id1000000872478694",
+        "kickoff_utc": "2026-11-07T13:00:00+00:00",
+        "fulltime_home": 1,
+        "fulltime_away": 2,
+        "received_at": "2026-11-08T12:09:52.927847+00:00",
+        "verified_at": "2026-11-08T12:09:55.252621+00:00",
+        "participant_ids": [
+          2830,
+          2835
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-07T13:03:38.735000+00:00",
+        "score_updated_at": "2026-11-07T15:00:25.775627+00:00",
+        "final_time": "2026-11-07T14:58:27.074000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "4251f8758b722ed23ec159bb70369634fe841c2946c499b4dc6228efab50e040",
+        "observation_sha256": "cb1da679d874a47b989c5999d069940d9c6a02e8a71c37b2a8bd9e62650c7c61"
+      }
+    }
   },
   {
     "league": "La Liga",
@@ -15231,7 +15280,7 @@
     "home": "Málaga CF",
     "away": "R. Racing Club",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-07T13:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -15243,7 +15292,55 @@
       "away": 0.26614
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-07"
+    "historical_cutoff_exclusive": "2026-11-07",
+    "actual_outcome": "away",
+    "settled_at": "2026-11-08T12:10:09.695906+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-08T12:10:09.695906+00:00",
+      "actual_home": 1.0,
+      "actual_away": 2.0,
+      "result_sha256": "c3e4d3e017399889b9a6167df1182d21eb5a4ae6f8769e20c5f18106c7e587ba",
+      "source_kickoff_utc": "2026-11-07T13:00:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000000872478694"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000000872478694",
+          "content_sha256": "cb1da679d874a47b989c5999d069940d9c6a02e8a71c37b2a8bd9e62650c7c61",
+          "fetched_at": "2026-11-08T12:09:55.252621+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "La Liga",
+        "date": "2026-11-07",
+        "home": "Málaga CF",
+        "away": "R. Racing Club",
+        "source_fixture_id": "id1000000872478694",
+        "kickoff_utc": "2026-11-07T13:00:00+00:00",
+        "fulltime_home": 1,
+        "fulltime_away": 2,
+        "received_at": "2026-11-08T12:09:52.927847+00:00",
+        "verified_at": "2026-11-08T12:09:55.252621+00:00",
+        "participant_ids": [
+          2830,
+          2835
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-07T13:03:38.735000+00:00",
+        "score_updated_at": "2026-11-07T15:00:25.775627+00:00",
+        "final_time": "2026-11-07T14:58:27.074000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "4251f8758b722ed23ec159bb70369634fe841c2946c499b4dc6228efab50e040",
+        "observation_sha256": "cb1da679d874a47b989c5999d069940d9c6a02e8a71c37b2a8bd9e62650c7c61"
+      }
+    }
   },
   {
     "league": "La Liga",
@@ -22070,7 +22167,7 @@
     "home": "Leeds",
     "away": "Spurs",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-07T12:30:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -22079,7 +22176,56 @@
     "line": 2.5,
     "p_over": 0.47286,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-07"
+    "historical_cutoff_exclusive": "2026-11-07",
+    "actual_total": 1.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-08T12:10:09.695906+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-08T12:10:09.695906+00:00",
+      "actual_home": 1.0,
+      "actual_away": 0.0,
+      "result_sha256": "bdfcd29d813e2bc2cab1e0851930f045e9756aa2297e7633e197f2895c3801de",
+      "source_kickoff_utc": "2026-11-07T12:30:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000001772221384"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Premier League",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000001772221384",
+          "content_sha256": "3b54e105d102859ec1249b4775950b37aaa0c856e51465f58a7c135038a4fd61",
+          "fetched_at": "2026-11-08T12:09:50.579684+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Premier League",
+        "date": "2026-11-07",
+        "home": "Leeds",
+        "away": "Spurs",
+        "source_fixture_id": "id1000001772221384",
+        "kickoff_utc": "2026-11-07T12:30:00+00:00",
+        "fulltime_home": 1,
+        "fulltime_away": 0,
+        "received_at": "2026-11-08T12:09:48.224150+00:00",
+        "verified_at": "2026-11-08T12:09:50.579684+00:00",
+        "participant_ids": [
+          34,
+          33
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-07T12:32:27.583000+00:00",
+        "score_updated_at": "2026-11-07T14:30:41.917153+00:00",
+        "final_time": "2026-11-07T14:27:39.013000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "2b003611e531dbbe07949d54b208d40c5f46aace828c99ee001a7c0da43161cc",
+        "observation_sha256": "3b54e105d102859ec1249b4775950b37aaa0c856e51465f58a7c135038a4fd61"
+      }
+    }
   },
   {
     "league": "Premier League",
@@ -22104,7 +22250,7 @@
     "home": "Leeds",
     "away": "Spurs",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-07T12:30:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -22116,7 +22262,55 @@
       "away": 0.29266
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-07"
+    "historical_cutoff_exclusive": "2026-11-07",
+    "actual_outcome": "home",
+    "settled_at": "2026-11-08T12:10:09.695906+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-08T12:10:09.695906+00:00",
+      "actual_home": 1.0,
+      "actual_away": 0.0,
+      "result_sha256": "612e321a428798a3c6e7337574628a34dcaeba568a818a9b61b716f2078bce1a",
+      "source_kickoff_utc": "2026-11-07T12:30:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000001772221384"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Premier League",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000001772221384",
+          "content_sha256": "3b54e105d102859ec1249b4775950b37aaa0c856e51465f58a7c135038a4fd61",
+          "fetched_at": "2026-11-08T12:09:50.579684+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Premier League",
+        "date": "2026-11-07",
+        "home": "Leeds",
+        "away": "Spurs",
+        "source_fixture_id": "id1000001772221384",
+        "kickoff_utc": "2026-11-07T12:30:00+00:00",
+        "fulltime_home": 1,
+        "fulltime_away": 0,
+        "received_at": "2026-11-08T12:09:48.224150+00:00",
+        "verified_at": "2026-11-08T12:09:50.579684+00:00",
+        "participant_ids": [
+          34,
+          33
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-07T12:32:27.583000+00:00",
+        "score_updated_at": "2026-11-07T14:30:41.917153+00:00",
+        "final_time": "2026-11-07T14:27:39.013000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "2b003611e531dbbe07949d54b208d40c5f46aace828c99ee001a7c0da43161cc",
+        "observation_sha256": "3b54e105d102859ec1249b4775950b37aaa0c856e51465f58a7c135038a4fd61"
+      }
+    }
   },
   {
     "league": "Premier League",
@@ -26391,7 +26585,7 @@
     "home": "Cagliari",
     "away": "Frosinone",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-07T14:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -26400,7 +26594,56 @@
     "line": 2.5,
     "p_over": 0.52027,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-07"
+    "historical_cutoff_exclusive": "2026-11-07",
+    "actual_total": 1.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-08T12:10:09.695906+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-08T12:10:09.695906+00:00",
+      "actual_home": 1.0,
+      "actual_away": 0.0,
+      "result_sha256": "0eeab8c5606ee1126554bbf5405ce6466553f3941db16268b0da690a284a1ec9",
+      "source_kickoff_utc": "2026-11-07T14:00:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000002371945386"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000002371945386",
+          "content_sha256": "6e03af57aeb2c644601137e65c4b2148066b6954a3b5fb91006d94aa289d0bd5",
+          "fetched_at": "2026-11-08T12:09:59.901721+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Serie A",
+        "date": "2026-11-07",
+        "home": "Cagliari",
+        "away": "Frosinone",
+        "source_fixture_id": "id1000002371945386",
+        "kickoff_utc": "2026-11-07T14:00:00+00:00",
+        "fulltime_home": 1,
+        "fulltime_away": 0,
+        "received_at": "2026-11-08T12:09:57.575288+00:00",
+        "verified_at": "2026-11-08T12:09:59.901721+00:00",
+        "participant_ids": [
+          2719,
+          2801
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-07T14:03:37.345000+00:00",
+        "score_updated_at": "2026-11-07T15:56:50.886641+00:00",
+        "final_time": "2026-11-07T15:54:20.222000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "be74ee54045947c7a4d6c5410a83078e73dfd54871e353186a27dee083bce46a",
+        "observation_sha256": "6e03af57aeb2c644601137e65c4b2148066b6954a3b5fb91006d94aa289d0bd5"
+      }
+    }
   },
   {
     "league": "Serie A",
@@ -26425,7 +26668,7 @@
     "home": "Cagliari",
     "away": "Frosinone",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-07T14:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -26437,7 +26680,55 @@
       "away": 0.37185
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-07"
+    "historical_cutoff_exclusive": "2026-11-07",
+    "actual_outcome": "home",
+    "settled_at": "2026-11-08T12:10:09.695906+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-08T12:10:09.695906+00:00",
+      "actual_home": 1.0,
+      "actual_away": 0.0,
+      "result_sha256": "4803604bfc24508da8bfd5e23ba19954b9f74da770879fe80787f708399685e9",
+      "source_kickoff_utc": "2026-11-07T14:00:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000002371945386"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000002371945386",
+          "content_sha256": "6e03af57aeb2c644601137e65c4b2148066b6954a3b5fb91006d94aa289d0bd5",
+          "fetched_at": "2026-11-08T12:09:59.901721+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Serie A",
+        "date": "2026-11-07",
+        "home": "Cagliari",
+        "away": "Frosinone",
+        "source_fixture_id": "id1000002371945386",
+        "kickoff_utc": "2026-11-07T14:00:00+00:00",
+        "fulltime_home": 1,
+        "fulltime_away": 0,
+        "received_at": "2026-11-08T12:09:57.575288+00:00",
+        "verified_at": "2026-11-08T12:09:59.901721+00:00",
+        "participant_ids": [
+          2719,
+          2801
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-07T14:03:37.345000+00:00",
+        "score_updated_at": "2026-11-07T15:56:50.886641+00:00",
+        "final_time": "2026-11-07T15:54:20.222000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "be74ee54045947c7a4d6c5410a83078e73dfd54871e353186a27dee083bce46a",
+        "observation_sha256": "6e03af57aeb2c644601137e65c4b2148066b6954a3b5fb91006d94aa289d0bd5"
+      }
+    }
   },
   {
     "league": "Serie A",
@@ -26655,7 +26946,7 @@
     "home": "Torino",
     "away": "Lecce",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-07T14:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -26664,7 +26955,56 @@
     "line": 2.5,
     "p_over": 0.51895,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-07"
+    "historical_cutoff_exclusive": "2026-11-07",
+    "actual_total": 2.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-08T12:10:09.695906+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-08T12:10:09.695906+00:00",
+      "actual_home": 1.0,
+      "actual_away": 1.0,
+      "result_sha256": "6aef5596afaf24d59c5172347bfe192f07c6445264cb8eb24c4b95fcf21d9840",
+      "source_kickoff_utc": "2026-11-07T14:00:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000002371945402"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000002371945402",
+          "content_sha256": "4f7dc694b9e4dce25d6df8a988b5ead9097dc0a812775fb4ff1fbca710c64609",
+          "fetched_at": "2026-11-08T12:10:04.576438+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Serie A",
+        "date": "2026-11-07",
+        "home": "Torino",
+        "away": "Lecce",
+        "source_fixture_id": "id1000002371945402",
+        "kickoff_utc": "2026-11-07T14:00:00+00:00",
+        "fulltime_home": 1,
+        "fulltime_away": 1,
+        "received_at": "2026-11-08T12:10:02.216709+00:00",
+        "verified_at": "2026-11-08T12:10:04.576438+00:00",
+        "participant_ids": [
+          2696,
+          2689
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-07T14:13:25.722000+00:00",
+        "score_updated_at": "2026-11-07T16:12:25.982729+00:00",
+        "final_time": "2026-11-07T16:12:37.220000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "e36c735fdaa9e90fec1b047250a9bd3d746d99cbf6c5fc9bc671861089ca38d7",
+        "observation_sha256": "4f7dc694b9e4dce25d6df8a988b5ead9097dc0a812775fb4ff1fbca710c64609"
+      }
+    }
   },
   {
     "league": "Serie A",
@@ -26689,7 +27029,7 @@
     "home": "Torino",
     "away": "Lecce",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-07T14:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -26701,7 +27041,55 @@
       "away": 0.33057
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-07"
+    "historical_cutoff_exclusive": "2026-11-07",
+    "actual_outcome": "draw",
+    "settled_at": "2026-11-08T12:10:09.695906+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-08T12:10:09.695906+00:00",
+      "actual_home": 1.0,
+      "actual_away": 1.0,
+      "result_sha256": "b894aa99214b38e53516c6d70bd4deb561b1dfee3dfa3117ee8bb0f861fa94a0",
+      "source_kickoff_utc": "2026-11-07T14:00:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000002371945402"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000002371945402",
+          "content_sha256": "4f7dc694b9e4dce25d6df8a988b5ead9097dc0a812775fb4ff1fbca710c64609",
+          "fetched_at": "2026-11-08T12:10:04.576438+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Serie A",
+        "date": "2026-11-07",
+        "home": "Torino",
+        "away": "Lecce",
+        "source_fixture_id": "id1000002371945402",
+        "kickoff_utc": "2026-11-07T14:00:00+00:00",
+        "fulltime_home": 1,
+        "fulltime_away": 1,
+        "received_at": "2026-11-08T12:10:02.216709+00:00",
+        "verified_at": "2026-11-08T12:10:04.576438+00:00",
+        "participant_ids": [
+          2696,
+          2689
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-07T14:13:25.722000+00:00",
+        "score_updated_at": "2026-11-07T16:12:25.982729+00:00",
+        "final_time": "2026-11-07T16:12:37.220000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "e36c735fdaa9e90fec1b047250a9bd3d746d99cbf6c5fc9bc671861089ca38d7",
+        "observation_sha256": "4f7dc694b9e4dce25d6df8a988b5ead9097dc0a812775fb4ff1fbca710c64609"
+      }
+    }
   },
   {
     "league": "Serie A",
