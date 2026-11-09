@@ -1,124 +1,98 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-08T20:36:53.778229+00:00",
-  "forecasts": 2010,
-  "unique_fixtures": 202,
+  "generated_at": "2026-11-09T06:52:29.424438+00:00",
+  "forecasts": 2055,
+  "unique_fixtures": 211,
   "counts": {
     "blocked_creation_evidence": 25,
-    "awaiting_result": 260,
-    "awaiting_statistics": 44,
-    "awaiting_kickoff_evidence": 120,
-    "upcoming": 1530,
-    "settled_with_evidence": 16,
-    "in_progress": 15
+    "settled_with_evidence": 267,
+    "awaiting_statistics": 178,
+    "upcoming": 1575,
+    "blocked_kickoff_conflict": 10
   },
   "by_pipeline_version": {
     "legacy_unversioned": {
       "blocked_creation_evidence": 25,
-      "awaiting_result": 75,
-      "awaiting_statistics": 20,
-      "awaiting_kickoff_evidence": 120,
+      "settled_with_evidence": 129,
+      "awaiting_statistics": 86,
       "upcoming": 760
     },
     "validated_identity_v2": {
-      "awaiting_statistics": 24,
-      "settled_with_evidence": 16,
-      "awaiting_result": 185,
-      "upcoming": 770,
-      "in_progress": 15
+      "awaiting_statistics": 92,
+      "settled_with_evidence": 138,
+      "upcoming": 815,
+      "blocked_kickoff_conflict": 10
     }
   },
-  "settled_records": 16,
+  "settled_records": 267,
   "excluded_settled_ids": [],
   "by_market": {
     "corners": {
       "blocked_creation_evidence": 5,
-      "awaiting_result": 52,
-      "awaiting_statistics": 12,
-      "awaiting_kickoff_evidence": 24,
-      "upcoming": 306,
-      "in_progress": 3
+      "settled_with_evidence": 89,
+      "upcoming": 315,
+      "blocked_kickoff_conflict": 2
     },
     "fouls": {
       "blocked_creation_evidence": 5,
-      "awaiting_result": 52,
-      "awaiting_statistics": 12,
-      "awaiting_kickoff_evidence": 24,
-      "upcoming": 306,
-      "in_progress": 3
+      "awaiting_statistics": 89,
+      "upcoming": 315,
+      "blocked_kickoff_conflict": 2
     },
     "goals": {
       "blocked_creation_evidence": 5,
-      "awaiting_result": 52,
-      "awaiting_statistics": 4,
-      "awaiting_kickoff_evidence": 24,
-      "upcoming": 306,
-      "settled_with_evidence": 8,
-      "in_progress": 3
+      "settled_with_evidence": 89,
+      "upcoming": 315,
+      "blocked_kickoff_conflict": 2
     },
     "h2h": {
       "blocked_creation_evidence": 5,
-      "awaiting_result": 52,
-      "awaiting_statistics": 4,
-      "awaiting_kickoff_evidence": 24,
-      "upcoming": 306,
-      "settled_with_evidence": 8,
-      "in_progress": 3
+      "settled_with_evidence": 89,
+      "upcoming": 315,
+      "blocked_kickoff_conflict": 2
     },
     "yellow": {
       "blocked_creation_evidence": 5,
-      "awaiting_result": 52,
-      "awaiting_statistics": 12,
-      "awaiting_kickoff_evidence": 24,
-      "upcoming": 306,
-      "in_progress": 3
+      "awaiting_statistics": 89,
+      "upcoming": 315,
+      "blocked_kickoff_conflict": 2
     }
   },
   "by_league": {
     "Bundesliga": {
       "blocked_creation_evidence": 5,
-      "awaiting_result": 65,
-      "awaiting_kickoff_evidence": 15,
-      "upcoming": 270,
-      "awaiting_statistics": 3,
-      "settled_with_evidence": 2
+      "settled_with_evidence": 51,
+      "awaiting_statistics": 34,
+      "upcoming": 270
     },
     "La Liga": {
       "blocked_creation_evidence": 5,
-      "awaiting_result": 50,
-      "awaiting_statistics": 11,
-      "awaiting_kickoff_evidence": 25,
-      "upcoming": 300,
-      "settled_with_evidence": 4,
-      "in_progress": 5
+      "settled_with_evidence": 57,
+      "awaiting_statistics": 38,
+      "upcoming": 345
     },
     "Ligue 1": {
       "blocked_creation_evidence": 5,
-      "awaiting_result": 50,
-      "awaiting_kickoff_evidence": 30,
+      "settled_with_evidence": 45,
+      "awaiting_statistics": 30,
       "upcoming": 270,
-      "in_progress": 5
+      "blocked_kickoff_conflict": 10
     },
     "Premier League": {
       "blocked_creation_evidence": 5,
-      "awaiting_result": 55,
-      "awaiting_statistics": 11,
-      "awaiting_kickoff_evidence": 25,
-      "upcoming": 400,
-      "settled_with_evidence": 4
+      "settled_with_evidence": 57,
+      "awaiting_statistics": 38,
+      "upcoming": 400
     },
     "Serie A": {
       "blocked_creation_evidence": 5,
-      "awaiting_statistics": 19,
-      "awaiting_result": 40,
-      "awaiting_kickoff_evidence": 25,
-      "upcoming": 290,
-      "settled_with_evidence": 6,
-      "in_progress": 5
+      "settled_with_evidence": 57,
+      "awaiting_statistics": 38,
+      "upcoming": 290
     }
   },
   "overdue_after_hours": 48,
-  "overdue_forecasts": 0,
+  "overdue_forecasts": 10,
   "ready_but_unsettled": 0,
   "result_conflicts_quarantined": 0,
   "samples": [
@@ -138,17 +112,6 @@
       "date": "2026-11-06",
       "home": "Hamburger SV",
       "away": "Borussia Mönchengladbach",
-      "market": "corners",
-      "pipeline_version": "validated_identity_v2",
-      "status": "awaiting_statistics",
-      "kickoff_utc": "2026-11-06T19:30:00+00:00",
-      "overdue": false
-    },
-    {
-      "league": "Bundesliga",
-      "date": "2026-11-06",
-      "home": "Hamburger SV",
-      "away": "Borussia Mönchengladbach",
       "market": "fouls",
       "pipeline_version": "legacy_unversioned",
       "status": "blocked_creation_evidence",
@@ -164,7 +127,7 @@
       "pipeline_version": "validated_identity_v2",
       "status": "awaiting_statistics",
       "kickoff_utc": "2026-11-06T19:30:00+00:00",
-      "overdue": false
+      "overdue": true
     },
     {
       "league": "Bundesliga",
@@ -208,7 +171,7 @@
       "pipeline_version": "validated_identity_v2",
       "status": "awaiting_statistics",
       "kickoff_utc": "2026-11-06T19:30:00+00:00",
-      "overdue": false
+      "overdue": true
     },
     {
       "league": "La Liga",
@@ -226,11 +189,22 @@
       "date": "2026-11-06",
       "home": "Sevilla FC",
       "away": "Deportivo Alavés",
-      "market": "corners",
+      "market": "fouls",
+      "pipeline_version": "legacy_unversioned",
+      "status": "blocked_creation_evidence",
+      "kickoff_utc": null,
+      "overdue": false
+    },
+    {
+      "league": "La Liga",
+      "date": "2026-11-06",
+      "home": "Sevilla FC",
+      "away": "Deportivo Alavés",
+      "market": "fouls",
       "pipeline_version": "validated_identity_v2",
       "status": "awaiting_statistics",
       "kickoff_utc": "2026-11-06T20:00:00+00:00",
-      "overdue": false
+      "overdue": true
     }
   ],
   "verified_value": false,
