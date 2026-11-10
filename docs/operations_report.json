@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T02:48:16.230971+00:00",
-  "analysis_generated_at": "2026-11-10T02:48:03.167028+00:00",
+  "generated_at": "2026-11-10T12:47:04.744661+00:00",
+  "analysis_generated_at": "2026-11-10T12:46:49.937279+00:00",
   "pipeline_version": "validated_identity_v2",
   "verified_value": false,
   "hypothetical_roi": null,
@@ -23,98 +23,93 @@
   },
   "settlement": {
     "schema_version": 2,
-    "generated_at": "2026-11-10T02:48:03.167028+00:00",
+    "generated_at": "2026-11-10T12:46:49.937279+00:00",
     "forecasts": 2055,
     "unique_fixtures": 211,
     "counts": {
       "blocked_creation_evidence": 25,
-      "settled_with_evidence": 267,
-      "awaiting_statistics": 178,
+      "settled_with_evidence": 215,
       "upcoming": 1575,
-      "blocked_kickoff_conflict": 10
+      "blocked_kickoff_conflict": 240
     },
     "by_pipeline_version": {
       "legacy_unversioned": {
         "blocked_creation_evidence": 25,
-        "settled_with_evidence": 129,
-        "awaiting_statistics": 86,
+        "settled_with_evidence": 215,
         "upcoming": 760
       },
       "validated_identity_v2": {
-        "awaiting_statistics": 92,
-        "settled_with_evidence": 138,
-        "upcoming": 815,
-        "blocked_kickoff_conflict": 10
+        "blocked_kickoff_conflict": 240,
+        "upcoming": 815
       }
     },
-    "settled_records": 267,
+    "settled_records": 353,
     "by_market": {
       "corners": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 89,
+        "settled_with_evidence": 43,
         "upcoming": 315,
-        "blocked_kickoff_conflict": 2
+        "blocked_kickoff_conflict": 48
       },
       "fouls": {
         "blocked_creation_evidence": 5,
-        "awaiting_statistics": 89,
+        "settled_with_evidence": 43,
         "upcoming": 315,
-        "blocked_kickoff_conflict": 2
+        "blocked_kickoff_conflict": 48
       },
       "goals": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 89,
+        "settled_with_evidence": 43,
         "upcoming": 315,
-        "blocked_kickoff_conflict": 2
+        "blocked_kickoff_conflict": 48
       },
       "h2h": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 89,
+        "settled_with_evidence": 43,
         "upcoming": 315,
-        "blocked_kickoff_conflict": 2
+        "blocked_kickoff_conflict": 48
       },
       "yellow": {
         "blocked_creation_evidence": 5,
-        "awaiting_statistics": 89,
+        "settled_with_evidence": 43,
         "upcoming": 315,
-        "blocked_kickoff_conflict": 2
+        "blocked_kickoff_conflict": 48
       }
     },
     "by_league": {
       "Bundesliga": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 51,
-        "awaiting_statistics": 34,
-        "upcoming": 270
+        "settled_with_evidence": 40,
+        "upcoming": 270,
+        "blocked_kickoff_conflict": 45
       },
       "La Liga": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 57,
-        "awaiting_statistics": 38,
-        "upcoming": 345
+        "settled_with_evidence": 45,
+        "upcoming": 345,
+        "blocked_kickoff_conflict": 50
       },
       "Ligue 1": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 45,
-        "awaiting_statistics": 30,
+        "settled_with_evidence": 40,
         "upcoming": 270,
-        "blocked_kickoff_conflict": 10
+        "blocked_kickoff_conflict": 45
       },
       "Premier League": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 57,
-        "awaiting_statistics": 38,
-        "upcoming": 400
+        "settled_with_evidence": 45,
+        "upcoming": 400,
+        "blocked_kickoff_conflict": 50
       },
       "Serie A": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 57,
-        "awaiting_statistics": 38,
-        "upcoming": 290
+        "settled_with_evidence": 45,
+        "upcoming": 290,
+        "blocked_kickoff_conflict": 50
       }
     },
     "overdue_after_hours": 48,
-    "overdue_forecasts": 82,
+    "overdue_forecasts": 0,
     "ready_but_unsettled": 0,
     "result_conflicts_quarantined": 0,
     "samples": [
@@ -134,6 +129,17 @@
         "date": "2026-11-06",
         "home": "Hamburger SV",
         "away": "Borussia Mönchengladbach",
+        "market": "corners",
+        "pipeline_version": "validated_identity_v2",
+        "status": "blocked_kickoff_conflict",
+        "kickoff_utc": "2026-11-06T19:30:00+00:00",
+        "overdue": false
+      },
+      {
+        "league": "Bundesliga",
+        "date": "2026-11-06",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
         "market": "fouls",
         "pipeline_version": "legacy_unversioned",
         "status": "blocked_creation_evidence",
@@ -147,9 +153,9 @@
         "away": "Borussia Mönchengladbach",
         "market": "fouls",
         "pipeline_version": "validated_identity_v2",
-        "status": "awaiting_statistics",
+        "status": "blocked_kickoff_conflict",
         "kickoff_utc": "2026-11-06T19:30:00+00:00",
-        "overdue": true
+        "overdue": false
       },
       {
         "league": "Bundesliga",
@@ -160,6 +166,17 @@
         "pipeline_version": "legacy_unversioned",
         "status": "blocked_creation_evidence",
         "kickoff_utc": null,
+        "overdue": false
+      },
+      {
+        "league": "Bundesliga",
+        "date": "2026-11-06",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
+        "market": "goals",
+        "pipeline_version": "validated_identity_v2",
+        "status": "blocked_kickoff_conflict",
+        "kickoff_utc": "2026-11-06T19:30:00+00:00",
         "overdue": false
       },
       {
@@ -178,6 +195,17 @@
         "date": "2026-11-06",
         "home": "Hamburger SV",
         "away": "Borussia Mönchengladbach",
+        "market": "h2h",
+        "pipeline_version": "validated_identity_v2",
+        "status": "blocked_kickoff_conflict",
+        "kickoff_utc": "2026-11-06T19:30:00+00:00",
+        "overdue": false
+      },
+      {
+        "league": "Bundesliga",
+        "date": "2026-11-06",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
         "market": "yellow",
         "pipeline_version": "legacy_unversioned",
         "status": "blocked_creation_evidence",
@@ -191,42 +219,9 @@
         "away": "Borussia Mönchengladbach",
         "market": "yellow",
         "pipeline_version": "validated_identity_v2",
-        "status": "awaiting_statistics",
+        "status": "blocked_kickoff_conflict",
         "kickoff_utc": "2026-11-06T19:30:00+00:00",
-        "overdue": true
-      },
-      {
-        "league": "La Liga",
-        "date": "2026-11-06",
-        "home": "Sevilla FC",
-        "away": "Deportivo Alavés",
-        "market": "corners",
-        "pipeline_version": "legacy_unversioned",
-        "status": "blocked_creation_evidence",
-        "kickoff_utc": null,
         "overdue": false
-      },
-      {
-        "league": "La Liga",
-        "date": "2026-11-06",
-        "home": "Sevilla FC",
-        "away": "Deportivo Alavés",
-        "market": "fouls",
-        "pipeline_version": "legacy_unversioned",
-        "status": "blocked_creation_evidence",
-        "kickoff_utc": null,
-        "overdue": false
-      },
-      {
-        "league": "La Liga",
-        "date": "2026-11-06",
-        "home": "Sevilla FC",
-        "away": "Deportivo Alavés",
-        "market": "fouls",
-        "pipeline_version": "validated_identity_v2",
-        "status": "awaiting_statistics",
-        "kickoff_utc": "2026-11-06T20:00:00+00:00",
-        "overdue": true
       }
     ],
     "verified_value": false,

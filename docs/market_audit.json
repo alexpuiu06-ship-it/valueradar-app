@@ -18,8 +18,7 @@
     "positive_edge_after_uncertainty_not_demonstrated"
   ],
   "rejection_counts": {
-    "settlement_rules_not_verified": 12,
-    "no_unambiguous_prospective_result_for_pipeline": 85
+    "no_unambiguous_prospective_result_for_pipeline": 97
   },
   "market_baseline": {
     "status": "insufficient_provenance_or_results",
