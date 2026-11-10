@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-09T18:55:56.551289+00:00",
+  "generated_at": "2026-11-10T02:48:03.167028+00:00",
   "forecasts": 2055,
   "unique_fixtures": 211,
   "counts": {
@@ -92,7 +92,7 @@
     }
   },
   "overdue_after_hours": 48,
-  "overdue_forecasts": 54,
+  "overdue_forecasts": 82,
   "ready_but_unsettled": 0,
   "result_conflicts_quarantined": 0,
   "samples": [
