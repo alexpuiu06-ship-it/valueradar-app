@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T12:47:04.744661+00:00",
-  "analysis_generated_at": "2026-11-10T12:46:49.937279+00:00",
+  "generated_at": "2026-11-10T15:11:16.762932+00:00",
+  "analysis_generated_at": "2026-11-10T15:11:02.167221+00:00",
   "pipeline_version": "validated_identity_v2",
   "verified_value": false,
   "hypothetical_roi": null,
@@ -17,13 +17,13 @@
     "failures": []
   },
   "ro_history": {
-    "records": 5,
-    "days_observed": 4,
-    "last_observed_at": "2026-11-09T16:48:36.155876+00:00"
+    "records": 6,
+    "days_observed": 5,
+    "last_observed_at": "2026-11-10T15:11:16.612295+00:00"
   },
   "settlement": {
     "schema_version": 2,
-    "generated_at": "2026-11-10T12:46:49.937279+00:00",
+    "generated_at": "2026-11-10T15:11:02.167221+00:00",
     "forecasts": 2055,
     "unique_fixtures": 211,
     "counts": {
