@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "provider": "PropLine",
-  "generated_at": "2026-11-12T07:25:12.758547+00:00",
+  "generated_at": "2026-11-12T15:32:49.972152+00:00",
   "retention_days": 90,
   "max_records": 512,
   "records": [
@@ -823,6 +823,119 @@
               "rejections": {
                 "stale_market_timestamp": 18
               }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "observed_at": "2026-11-12T15:32:49.838243+00:00",
+      "day_ro": "2026-11-12",
+      "max_quote_age_seconds": 120,
+      "authenticated_requests": 5,
+      "leagues": [
+        {
+          "league": "Premier League",
+          "status": "incomplete_quote_validation",
+          "received_at": "2026-11-12T15:32:49.048248+00:00",
+          "delivery_filter_seconds": 120,
+          "error": null,
+          "books": {
+            "superbet_ro": {
+              "received": 0,
+              "complete": 0,
+              "matched": 0,
+              "rejections": {}
+            },
+            "netbet_ro": {
+              "received": 4,
+              "complete": 4,
+              "matched": 4,
+              "rejections": {}
+            }
+          }
+        },
+        {
+          "league": "La Liga",
+          "status": "incomplete_quote_validation",
+          "received_at": "2026-11-12T15:32:49.257102+00:00",
+          "delivery_filter_seconds": 120,
+          "error": null,
+          "books": {
+            "superbet_ro": {
+              "received": 0,
+              "complete": 0,
+              "matched": 0,
+              "rejections": {}
+            },
+            "netbet_ro": {
+              "received": 0,
+              "complete": 0,
+              "matched": 0,
+              "rejections": {}
+            }
+          }
+        },
+        {
+          "league": "Serie A",
+          "status": "incomplete_quote_validation",
+          "received_at": "2026-11-12T15:32:49.449196+00:00",
+          "delivery_filter_seconds": 120,
+          "error": null,
+          "books": {
+            "superbet_ro": {
+              "received": 0,
+              "complete": 0,
+              "matched": 0,
+              "rejections": {}
+            },
+            "netbet_ro": {
+              "received": 0,
+              "complete": 0,
+              "matched": 0,
+              "rejections": {}
+            }
+          }
+        },
+        {
+          "league": "Bundesliga",
+          "status": "incomplete_quote_validation",
+          "received_at": "2026-11-12T15:32:49.638733+00:00",
+          "delivery_filter_seconds": 120,
+          "error": null,
+          "books": {
+            "superbet_ro": {
+              "received": 0,
+              "complete": 0,
+              "matched": 0,
+              "rejections": {}
+            },
+            "netbet_ro": {
+              "received": 0,
+              "complete": 0,
+              "matched": 0,
+              "rejections": {}
+            }
+          }
+        },
+        {
+          "league": "Ligue 1",
+          "status": "incomplete_quote_validation",
+          "received_at": "2026-11-12T15:32:49.834984+00:00",
+          "delivery_filter_seconds": 120,
+          "error": null,
+          "books": {
+            "superbet_ro": {
+              "received": 0,
+              "complete": 0,
+              "matched": 0,
+              "rejections": {}
+            },
+            "netbet_ro": {
+              "received": 0,
+              "complete": 0,
+              "matched": 0,
+              "rejections": {}
             }
           }
         }
