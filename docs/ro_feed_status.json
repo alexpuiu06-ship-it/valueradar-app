@@ -14,21 +14,17 @@
     {
       "league": "Premier League",
       "status": "incomplete_quote_validation",
-      "received_at": "2026-11-12T15:32:49.048248+00:00",
-      "analysis_generated_at": "2026-11-12T15:32:29.472555+00:00",
+      "received_at": "2026-11-13T14:52:32.812054+00:00",
+      "analysis_generated_at": "2026-11-13T14:52:22.141595+00:00",
       "requested_max_delivery_age_seconds": 120,
       "quality": {
-        "events_received": 4,
+        "events_received": 0,
         "books_received": {
           "superbet_ro": 0,
-          "netbet_ro": 4
+          "netbet_ro": 0
         },
-        "complete_recent_markets": {
-          "netbet_ro": 4
-        },
-        "matched_current_model_markets": {
-          "netbet_ro": 4
-        },
+        "complete_recent_markets": {},
+        "matched_current_model_markets": {},
         "book_diagnostics": {
           "superbet_ro": {
             "status": "absent",
@@ -38,10 +34,10 @@
             "rejection_counts": {}
           },
           "netbet_ro": {
-            "status": "matched_current_model",
-            "received_blocks": 4,
-            "complete_recent_markets": 4,
-            "matched_current_model_markets": 4,
+            "status": "absent",
+            "received_blocks": 0,
+            "complete_recent_markets": 0,
+            "matched_current_model_markets": 0,
             "rejection_counts": {}
           }
         },
@@ -57,8 +53,8 @@
     {
       "league": "La Liga",
       "status": "incomplete_quote_validation",
-      "received_at": "2026-11-12T15:32:49.257102+00:00",
-      "analysis_generated_at": "2026-11-12T15:32:29.472555+00:00",
+      "received_at": "2026-11-13T14:52:33.083964+00:00",
+      "analysis_generated_at": "2026-11-13T14:52:22.141595+00:00",
       "requested_max_delivery_age_seconds": 120,
       "quality": {
         "events_received": 0,
@@ -89,15 +85,15 @@
       },
       "quota": {
         "x-daily-limit": 1000,
-        "x-daily-used": 1,
-        "x-daily-remaining": 999
+        "x-daily-used": 2,
+        "x-daily-remaining": 998
       }
     },
     {
       "league": "Serie A",
       "status": "incomplete_quote_validation",
-      "received_at": "2026-11-12T15:32:49.449196+00:00",
-      "analysis_generated_at": "2026-11-12T15:32:29.472555+00:00",
+      "received_at": "2026-11-13T14:52:34.205446+00:00",
+      "analysis_generated_at": "2026-11-13T14:52:22.141595+00:00",
       "requested_max_delivery_age_seconds": 120,
       "quality": {
         "events_received": 0,
@@ -128,15 +124,15 @@
       },
       "quota": {
         "x-daily-limit": 1000,
-        "x-daily-used": 2,
-        "x-daily-remaining": 998
+        "x-daily-used": 3,
+        "x-daily-remaining": 997
       }
     },
     {
       "league": "Bundesliga",
       "status": "incomplete_quote_validation",
-      "received_at": "2026-11-12T15:32:49.638733+00:00",
-      "analysis_generated_at": "2026-11-12T15:32:29.472555+00:00",
+      "received_at": "2026-11-13T14:52:34.446122+00:00",
+      "analysis_generated_at": "2026-11-13T14:52:22.141595+00:00",
       "requested_max_delivery_age_seconds": 120,
       "quality": {
         "events_received": 0,
@@ -167,15 +163,15 @@
       },
       "quota": {
         "x-daily-limit": 1000,
-        "x-daily-used": 2,
-        "x-daily-remaining": 998
+        "x-daily-used": 3,
+        "x-daily-remaining": 997
       }
     },
     {
       "league": "Ligue 1",
       "status": "incomplete_quote_validation",
-      "received_at": "2026-11-12T15:32:49.834984+00:00",
-      "analysis_generated_at": "2026-11-12T15:32:29.472555+00:00",
+      "received_at": "2026-11-13T14:52:34.680717+00:00",
+      "analysis_generated_at": "2026-11-13T14:52:22.141595+00:00",
       "requested_max_delivery_age_seconds": 120,
       "quality": {
         "events_received": 0,
@@ -206,10 +202,10 @@
       },
       "quota": {
         "x-daily-limit": 1000,
-        "x-daily-used": 2,
-        "x-daily-remaining": 998
+        "x-daily-used": 4,
+        "x-daily-remaining": 996
       }
     }
   ],
-  "generated_at": "2026-11-12T15:32:49.838243+00:00"
+  "generated_at": "2026-11-13T14:52:34.683593+00:00"
 }
