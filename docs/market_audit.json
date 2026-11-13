@@ -1,8 +1,8 @@
 {
   "status": "paper_only_not_validated",
-  "observations": 5928,
+  "observations": 5529,
   "distinct_events": 85,
-  "unverified_model_price_differences": 60,
+  "unverified_model_price_differences": 61,
   "initial_positive_ev_signals": 0,
   "signals_settled": 0,
   "hypothetical_roi": null,
