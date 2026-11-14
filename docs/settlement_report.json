@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-13T19:54:35.750295+00:00",
-  "forecasts": 2280,
-  "unique_fixtures": 256,
+  "generated_at": "2026-11-14T00:55:21.498149+00:00",
+  "forecasts": 2295,
+  "unique_fixtures": 259,
   "counts": {
     "blocked_creation_evidence": 25,
     "settled_with_evidence": 215,
-    "upcoming": 1800,
+    "upcoming": 1815,
     "blocked_kickoff_conflict": 240
   },
   "by_pipeline_version": {
@@ -17,7 +17,7 @@
     },
     "validated_identity_v2": {
       "blocked_kickoff_conflict": 240,
-      "upcoming": 1040
+      "upcoming": 1055
     }
   },
   "settled_records": 353,
@@ -165,31 +165,31 @@
     "corners": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 43,
-      "upcoming": 360,
+      "upcoming": 363,
       "blocked_kickoff_conflict": 48
     },
     "fouls": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 43,
-      "upcoming": 360,
+      "upcoming": 363,
       "blocked_kickoff_conflict": 48
     },
     "goals": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 43,
-      "upcoming": 360,
+      "upcoming": 363,
       "blocked_kickoff_conflict": 48
     },
     "h2h": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 43,
-      "upcoming": 360,
+      "upcoming": 363,
       "blocked_kickoff_conflict": 48
     },
     "yellow": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 43,
-      "upcoming": 360,
+      "upcoming": 363,
       "blocked_kickoff_conflict": 48
     }
   },
@@ -215,13 +215,13 @@
     "Premier League": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 45,
-      "upcoming": 445,
+      "upcoming": 450,
       "blocked_kickoff_conflict": 50
     },
     "Serie A": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 45,
-      "upcoming": 330,
+      "upcoming": 340,
       "blocked_kickoff_conflict": 50
     }
   },
