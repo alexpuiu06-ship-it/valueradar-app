@@ -1,9 +1,9 @@
 {
-  "status": "connected",
-  "checked_at": "2026-11-13T16:15:16.278376+00:00",
-  "attempted_at": "2026-11-13T16:15:16.278376+00:00",
-  "data_timestamp": "2026-11-13T16:15:14+00:00",
-  "last_successful_quote_at": "2026-11-13T16:15:14+00:00",
+  "status": "partial",
+  "checked_at": "2026-11-14T15:00:26.945234+00:00",
+  "attempted_at": "2026-11-14T15:00:26.945234+00:00",
+  "data_timestamp": "2026-11-14T15:00:24+00:00",
+  "last_successful_quote_at": "2026-11-14T15:00:24+00:00",
   "provider": "The Odds API v4",
   "region": "uk",
   "market": "h2h",
@@ -25,9 +25,10 @@
   "watchlist_count": 0,
   "budget_accounting": "conservative_request_reservations",
   "note": "Only international observations; no verified Romanian bookmaker feed.",
-  "api_events": 96,
-  "matched_games": 85,
+  "api_events": 78,
+  "matched_games": 76,
   "books_responding": [
+    "betano_uk",
     "betfair_ex_uk",
     "betfair_sb_uk",
     "betfred_uk",
@@ -40,6 +41,7 @@
     "ladbrokes_uk",
     "leovegas",
     "livescorebet",
+    "matchbook",
     "paddypower",
     "skybet",
     "smarkets",
@@ -48,13 +50,18 @@
     "virginbet",
     "williamhill"
   ],
-  "evaluated_prices": 3180,
-  "model_disagreements": 46,
-  "events_consensus_checked": 85,
-  "new_observations": 3180,
-  "total_historical_observations": 5529,
-  "spent_this_month": 60,
-  "provider_remaining": 440,
-  "errors": [],
+  "evaluated_prices": 3006,
+  "model_disagreements": 41,
+  "events_consensus_checked": 76,
+  "new_observations": 3006,
+  "total_historical_observations": 5439,
+  "spent_this_month": 65,
+  "provider_remaining": 436,
+  "errors": [
+    {
+      "league": "Bundesliga",
+      "error": "API HTTP 502 (verifică abonamentul, cheia și creditul)"
+    }
+  ],
   "message": "Observații internaționale; nicio ofertă românească verificată."
 }
