@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-16T18:26:57.229693+00:00",
-  "analysis_generated_at": "2026-11-16T18:26:42.171397+00:00",
+  "generated_at": "2026-11-16T18:40:59.196894+00:00",
+  "analysis_generated_at": "2026-11-16T18:40:41.847522+00:00",
   "pipeline_version": "validated_identity_v2",
   "verified_value": false,
   "hypothetical_roi": null,
@@ -23,7 +23,7 @@
   },
   "settlement": {
     "schema_version": 2,
-    "generated_at": "2026-11-16T18:26:42.171397+00:00",
+    "generated_at": "2026-11-16T18:40:41.847522+00:00",
     "forecasts": 2295,
     "unique_fixtures": 259,
     "counts": {
