@@ -1,19 +1,21 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-19T17:20:31.967939+00:00",
+  "generated_at": "2026-11-19T23:06:38.204465+00:00",
   "forecasts": 2375,
   "unique_fixtures": 275,
   "counts": {
     "blocked_creation_evidence": 25,
     "settled_with_evidence": 215,
-    "upcoming": 1895,
+    "awaiting_kickoff_evidence": 15,
+    "upcoming": 1880,
     "blocked_kickoff_conflict": 240
   },
   "by_pipeline_version": {
     "legacy_unversioned": {
       "blocked_creation_evidence": 25,
       "settled_with_evidence": 215,
-      "upcoming": 760
+      "awaiting_kickoff_evidence": 15,
+      "upcoming": 745
     },
     "validated_identity_v2": {
       "blocked_kickoff_conflict": 240,
@@ -165,31 +167,36 @@
     "corners": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 43,
-      "upcoming": 379,
+      "awaiting_kickoff_evidence": 3,
+      "upcoming": 376,
       "blocked_kickoff_conflict": 48
     },
     "fouls": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 43,
-      "upcoming": 379,
+      "awaiting_kickoff_evidence": 3,
+      "upcoming": 376,
       "blocked_kickoff_conflict": 48
     },
     "goals": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 43,
-      "upcoming": 379,
+      "awaiting_kickoff_evidence": 3,
+      "upcoming": 376,
       "blocked_kickoff_conflict": 48
     },
     "h2h": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 43,
-      "upcoming": 379,
+      "awaiting_kickoff_evidence": 3,
+      "upcoming": 376,
       "blocked_kickoff_conflict": 48
     },
     "yellow": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 43,
-      "upcoming": 379,
+      "awaiting_kickoff_evidence": 3,
+      "upcoming": 376,
       "blocked_kickoff_conflict": 48
     }
   },
@@ -197,19 +204,22 @@
     "Bundesliga": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 40,
-      "upcoming": 345,
+      "awaiting_kickoff_evidence": 5,
+      "upcoming": 340,
       "blocked_kickoff_conflict": 45
     },
     "La Liga": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 45,
-      "upcoming": 395,
+      "awaiting_kickoff_evidence": 5,
+      "upcoming": 390,
       "blocked_kickoff_conflict": 50
     },
     "Ligue 1": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 40,
-      "upcoming": 315,
+      "awaiting_kickoff_evidence": 5,
+      "upcoming": 310,
       "blocked_kickoff_conflict": 45
     },
     "Premier League": {
