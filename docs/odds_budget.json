@@ -1,8 +1,8 @@
 {
   "month": "2026-11",
-  "spent": 100,
-  "calls": 100,
+  "spent": 105,
+  "calls": 105,
   "limit": 400,
-  "provider_reported_remaining": 401,
+  "provider_reported_remaining": 396,
   "accounting": "conservative_request_reservations"
 }
