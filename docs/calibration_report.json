@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-11-15T12:56:12.422752+00:00",
+  "generated_at": "2026-11-22T13:34:16.411045+00:00",
   "status": "RESEARCH_ONLY_NOT_PROMOTED",
   "protocol": {
     "version": "global_date_expanding_origin_v2",
     "split_dates": {
       "validation_start": "2025-11-02",
-      "calibration_start": "2026-02-07",
+      "calibration_start": "2026-02-08",
       "holdout_start": "2026-04-18"
     },
     "counts_by_split": {
       "training": 2199,
-      "validation": 586,
-      "calibration": 419,
-      "holdout": 779
+      "validation": 606,
+      "calibration": 399,
+      "holdout": 782
     },
-    "input_rows": 3983,
-    "eligible_rows": 3983,
+    "input_rows": 3986,
+    "eligible_rows": 3986,
     "rejected": {
       "duplicate_copy": 0
     },
-    "input_sha256": "425d5d85c3d1e26c5eae5e142823730358aa43ddd16714fdc388123ff2ec1365",
-    "as_of": "2026-11-15T12:56:12.422752+00:00",
+    "input_sha256": "049f502c4ddf3b187b78a2980b7d3d749dbe7e84687729fd2c3b5b17b54fdd26",
+    "as_of": "2026-11-22T13:34:16.411045+00:00",
     "today_results_excluded": true,
     "model_pipeline_version": "validated_identity_v2",
     "split_rule": "global unique dates: first 55% training, next 15% selection, next 10% calibration, last 20% evaluation",
@@ -50,26 +50,26 @@
     "holdout_warning": "History was already inspected in earlier research; this is an exploratory re-analysis, not a fresh confirmatory holdout."
   },
   "common_support_counts": {
-    "validation": 586,
-    "calibration": 419,
-    "holdout": 716
+    "validation": 606,
+    "calibration": 399,
+    "holdout": 719
   },
   "selection_scores": {
     "elo_fast": {
-      "n": 586,
-      "logloss": 1.002605
+      "n": 606,
+      "logloss": 0.997304
     },
     "elo_balanced": {
-      "n": 586,
-      "logloss": 1.008567
+      "n": 606,
+      "logloss": 1.004461
     },
     "elo_conservative": {
-      "n": 586,
-      "logloss": 1.017428
+      "n": 606,
+      "logloss": 1.013786
     },
     "elo_strong_favorites": {
-      "n": 586,
-      "logloss": 1.004035
+      "n": 606,
+      "logloss": 0.999493
     }
   },
   "selected": {
@@ -88,22 +88,22 @@
     }
   },
   "holdout": {
-    "n": 716,
+    "n": 719,
     "models": {
       "poisson": {
-        "n": 716,
-        "log_loss": 1.023542,
-        "brier": 0.204437,
+        "n": 719,
+        "log_loss": 1.024758,
+        "brier": 0.20474,
         "log_loss_approx_95_range": [
-          1.005109,
-          1.044548
+          1.006179,
+          1.046044
         ],
         "brier_approx_95_range": [
-          0.200121,
-          0.209314
+          0.200335,
+          0.209826
         ],
-        "weeks": 17,
-        "ece": 0.039699,
+        "weeks": 18,
+        "ece": 0.039666,
         "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
         "bins": [
           {
@@ -120,67 +120,67 @@
           {
             "outcome": "home",
             "range": "40-60%",
-            "n": 515,
-            "predicted": 0.46568,
-            "observed": 0.51456,
+            "n": 517,
+            "predicted": 0.46558,
+            "observed": 0.51451,
             "observed_approx_95_wilson": [
-              0.47145,
-              0.55746
+              0.47148,
+              0.55732
             ]
           },
           {
             "outcome": "home",
             "range": "60-80%",
-            "n": 8,
-            "predicted": 0.61513,
-            "observed": 0.875,
+            "n": 9,
+            "predicted": 0.61941,
+            "observed": 0.77778,
             "observed_approx_95_wilson": [
-              0.52911,
-              0.97758
+              0.45258,
+              0.93678
             ]
           },
           {
             "outcome": "draw",
             "range": "0-20%",
-            "n": 6,
-            "predicted": 0.19076,
-            "observed": 0.16667,
+            "n": 7,
+            "predicted": 0.18884,
+            "observed": 0.28571,
             "observed_approx_95_wilson": [
-              0.03005,
-              0.56351
+              0.08222,
+              0.64107
             ]
           },
           {
             "outcome": "draw",
             "range": "20-40%",
-            "n": 710,
-            "predicted": 0.24992,
-            "observed": 0.23803,
+            "n": 712,
+            "predicted": 0.24993,
+            "observed": 0.23736,
             "observed_approx_95_wilson": [
-              0.20816,
-              0.27071
+              0.20757,
+              0.26997
             ]
           },
           {
             "outcome": "away",
             "range": "0-20%",
-            "n": 15,
-            "predicted": 0.18667,
+            "n": 16,
+            "predicted": 0.18557,
             "observed": 0.0,
             "observed_approx_95_wilson": [
               0,
-              0.20389
+              0.19361
             ]
           },
           {
             "outcome": "away",
             "range": "20-40%",
-            "n": 646,
-            "predicted": 0.30636,
-            "observed": 0.29567,
+            "n": 648,
+            "predicted": 0.30637,
+            "observed": 0.2963,
             "observed_approx_95_wilson": [
-              0.26177,
-              0.33198
+              0.26242,
+              0.33257
             ]
           },
           {
@@ -197,19 +197,19 @@
         ]
       },
       "elo": {
-        "n": 716,
-        "log_loss": 0.993786,
-        "brier": 0.196952,
+        "n": 719,
+        "log_loss": 0.995424,
+        "brier": 0.197384,
         "log_loss_approx_95_range": [
-          0.95336,
-          1.040918
+          0.956013,
+          1.044272
         ],
         "brier_approx_95_range": [
-          0.18805,
-          0.207183
+          0.188621,
+          0.208781
         ],
-        "weeks": 17,
-        "ece": 0.019989,
+        "weeks": 18,
+        "ece": 0.019705,
         "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
         "bins": [
           {
@@ -237,12 +237,12 @@
           {
             "outcome": "home",
             "range": "40-60%",
-            "n": 309,
-            "predicted": 0.48758,
-            "observed": 0.46926,
+            "n": 311,
+            "predicted": 0.48804,
+            "observed": 0.46945,
             "observed_approx_95_wilson": [
-              0.41433,
-              0.52494
+              0.4147,
+              0.52495
             ]
           },
           {
@@ -259,56 +259,56 @@
           {
             "outcome": "home",
             "range": "80-100%",
-            "n": 9,
-            "predicted": 0.83806,
-            "observed": 0.66667,
+            "n": 10,
+            "predicted": 0.83768,
+            "observed": 0.6,
             "observed_approx_95_wilson": [
-              0.3542,
-              0.87942
+              0.31267,
+              0.83182
             ]
           },
           {
             "outcome": "draw",
             "range": "0-20%",
-            "n": 48,
-            "predicted": 0.17,
-            "observed": 0.125,
+            "n": 49,
+            "predicted": 0.16918,
+            "observed": 0.14286,
             "observed_approx_95_wilson": [
-              0.05857,
-              0.24701
+              0.07096,
+              0.26668
             ]
           },
           {
             "outcome": "draw",
             "range": "20-40%",
-            "n": 668,
-            "predicted": 0.25532,
-            "observed": 0.24551,
+            "n": 670,
+            "predicted": 0.2553,
+            "observed": 0.24478,
             "observed_approx_95_wilson": [
-              0.21439,
-              0.27954
+              0.21373,
+              0.27873
             ]
           },
           {
             "outcome": "away",
             "range": "0-20%",
-            "n": 183,
-            "predicted": 0.13048,
-            "observed": 0.17486,
+            "n": 185,
+            "predicted": 0.13024,
+            "observed": 0.17297,
             "observed_approx_95_wilson": [
-              0.12667,
-              0.23642
+              0.12527,
+              0.23398
             ]
           },
           {
             "outcome": "away",
             "range": "20-40%",
-            "n": 355,
-            "predicted": 0.29218,
-            "observed": 0.28732,
+            "n": 356,
+            "predicted": 0.29194,
+            "observed": 0.28933,
             "observed_approx_95_wilson": [
-              0.24272,
-              0.33648
+              0.24467,
+              0.33848
             ]
           },
           {
@@ -336,19 +336,19 @@
         ]
       },
       "ensemble": {
-        "n": 716,
-        "log_loss": 0.993786,
-        "brier": 0.196952,
+        "n": 719,
+        "log_loss": 0.995424,
+        "brier": 0.197384,
         "log_loss_approx_95_range": [
-          0.95336,
-          1.040918
+          0.956013,
+          1.044272
         ],
         "brier_approx_95_range": [
-          0.18805,
-          0.207183
+          0.188621,
+          0.208781
         ],
-        "weeks": 17,
-        "ece": 0.019989,
+        "weeks": 18,
+        "ece": 0.019705,
         "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
         "bins": [
           {
@@ -376,12 +376,12 @@
           {
             "outcome": "home",
             "range": "40-60%",
-            "n": 309,
-            "predicted": 0.48758,
-            "observed": 0.46926,
+            "n": 311,
+            "predicted": 0.48804,
+            "observed": 0.46945,
             "observed_approx_95_wilson": [
-              0.41433,
-              0.52494
+              0.4147,
+              0.52495
             ]
           },
           {
@@ -398,56 +398,56 @@
           {
             "outcome": "home",
             "range": "80-100%",
-            "n": 9,
-            "predicted": 0.83806,
-            "observed": 0.66667,
+            "n": 10,
+            "predicted": 0.83768,
+            "observed": 0.6,
             "observed_approx_95_wilson": [
-              0.3542,
-              0.87942
+              0.31267,
+              0.83182
             ]
           },
           {
             "outcome": "draw",
             "range": "0-20%",
-            "n": 48,
-            "predicted": 0.17,
-            "observed": 0.125,
+            "n": 49,
+            "predicted": 0.16918,
+            "observed": 0.14286,
             "observed_approx_95_wilson": [
-              0.05857,
-              0.24701
+              0.07096,
+              0.26668
             ]
           },
           {
             "outcome": "draw",
             "range": "20-40%",
-            "n": 668,
-            "predicted": 0.25532,
-            "observed": 0.24551,
+            "n": 670,
+            "predicted": 0.2553,
+            "observed": 0.24478,
             "observed_approx_95_wilson": [
-              0.21439,
-              0.27954
+              0.21373,
+              0.27873
             ]
           },
           {
             "outcome": "away",
             "range": "0-20%",
-            "n": 183,
-            "predicted": 0.13048,
-            "observed": 0.17486,
+            "n": 185,
+            "predicted": 0.13024,
+            "observed": 0.17297,
             "observed_approx_95_wilson": [
-              0.12667,
-              0.23642
+              0.12527,
+              0.23398
             ]
           },
           {
             "outcome": "away",
             "range": "20-40%",
-            "n": 355,
-            "predicted": 0.29218,
-            "observed": 0.28732,
+            "n": 356,
+            "predicted": 0.29194,
+            "observed": 0.28933,
             "observed_approx_95_wilson": [
-              0.24272,
-              0.33648
+              0.24467,
+              0.33848
             ]
           },
           {
@@ -475,19 +475,19 @@
         ]
       },
       "poisson_calibrated": {
-        "n": 716,
-        "log_loss": 1.014694,
-        "brier": 0.20215,
+        "n": 719,
+        "log_loss": 1.016561,
+        "brier": 0.202598,
         "log_loss_approx_95_range": [
-          0.988038,
-          1.04395
+          0.989907,
+          1.046888
         ],
         "brier_approx_95_range": [
-          0.195978,
-          0.209014
+          0.196307,
+          0.209885
         ],
-        "weeks": 17,
-        "ece": 0.044589,
+        "weeks": 18,
+        "ece": 0.043667,
         "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
         "bins": [
           {
@@ -504,67 +504,67 @@
           {
             "outcome": "home",
             "range": "40-60%",
-            "n": 490,
-            "predicted": 0.4935,
-            "observed": 0.4449,
+            "n": 492,
+            "predicted": 0.49348,
+            "observed": 0.44512,
             "observed_approx_95_wilson": [
-              0.40149,
-              0.48916
+              0.4018,
+              0.48929
             ]
           },
           {
             "outcome": "home",
             "range": "60-80%",
-            "n": 87,
-            "predicted": 0.64378,
-            "observed": 0.78161,
+            "n": 88,
+            "predicted": 0.64521,
+            "observed": 0.77273,
             "observed_approx_95_wilson": [
-              0.68391,
-              0.85549
+              0.67486,
+              0.84778
             ]
           },
           {
             "outcome": "draw",
             "range": "0-20%",
-            "n": 169,
-            "predicted": 0.18327,
-            "observed": 0.17751,
+            "n": 170,
+            "predicted": 0.1829,
+            "observed": 0.18235,
             "observed_approx_95_wilson": [
-              0.12727,
-              0.2421
+              0.13154,
+              0.2472
             ]
           },
           {
             "outcome": "draw",
+            "range": "20-40%",
+            "n": 549,
+            "predicted": 0.22589,
+            "observed": 0.25501,
+            "observed_approx_95_wilson": [
+              0.22034,
+              0.29309
+            ]
+          },
+          {
+            "outcome": "away",
+            "range": "0-20%",
+            "n": 76,
+            "predicted": 0.17117,
+            "observed": 0.09211,
+            "observed_approx_95_wilson": [
+              0.04533,
+              0.17813
+            ]
+          },
+          {
+            "outcome": "away",
             "range": "20-40%",
             "n": 547,
-            "predicted": 0.22592,
-            "observed": 0.25594,
-            "observed_approx_95_wilson": [
-              0.22116,
-              0.29413
-            ]
-          },
-          {
-            "outcome": "away",
-            "range": "0-20%",
-            "n": 75,
-            "predicted": 0.17197,
-            "observed": 0.09333,
-            "observed_approx_95_wilson": [
-              0.04595,
-              0.18035
-            ]
-          },
-          {
-            "outcome": "away",
-            "range": "20-40%",
-            "n": 545,
             "predicted": 0.2947,
-            "observed": 0.29908,
+            "observed": 0.29982,
             "observed_approx_95_wilson": [
-              0.26216,
-              0.33882
+              0.26293,
+              0.3395
             ]
           },
           {
@@ -592,19 +592,19 @@
         ]
       },
       "elo_calibrated": {
-        "n": 716,
-        "log_loss": 0.996038,
-        "brier": 0.197633,
+        "n": 719,
+        "log_loss": 0.997381,
+        "brier": 0.198007,
         "log_loss_approx_95_range": [
-          0.961946,
-          1.036525
+          0.963024,
+          1.039671
         ],
         "brier_approx_95_range": [
-          0.189795,
-          0.206589
+          0.190213,
+          0.207941
         ],
-        "weeks": 17,
-        "ece": 0.023887,
+        "weeks": 18,
+        "ece": 0.022937,
         "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
         "bins": [
           {
@@ -632,23 +632,23 @@
           {
             "outcome": "home",
             "range": "40-60%",
-            "n": 321,
-            "predicted": 0.48267,
-            "observed": 0.48598,
+            "n": 323,
+            "predicted": 0.48296,
+            "observed": 0.48607,
             "observed_approx_95_wilson": [
-              0.43179,
-              0.5405
+              0.43205,
+              0.54042
             ]
           },
           {
             "outcome": "home",
             "range": "60-80%",
-            "n": 98,
-            "predicted": 0.66066,
-            "observed": 0.76531,
+            "n": 99,
+            "predicted": 0.66198,
+            "observed": 0.75758,
             "observed_approx_95_wilson": [
-              0.67238,
-              0.83822
+              0.66457,
+              0.83134
             ]
           },
           {
@@ -665,45 +665,45 @@
           {
             "outcome": "draw",
             "range": "0-20%",
-            "n": 21,
-            "predicted": 0.17431,
-            "observed": 0.14286,
+            "n": 22,
+            "predicted": 0.17352,
+            "observed": 0.18182,
             "observed_approx_95_wilson": [
-              0.04981,
-              0.34636
+              0.07307,
+              0.38517
             ]
           },
           {
             "outcome": "draw",
             "range": "20-40%",
-            "n": 695,
-            "predicted": 0.26426,
-            "observed": 0.24029,
+            "n": 697,
+            "predicted": 0.26424,
+            "observed": 0.2396,
             "observed_approx_95_wilson": [
-              0.21001,
-              0.27343
+              0.20939,
+              0.27266
             ]
           },
           {
             "outcome": "away",
             "range": "0-20%",
-            "n": 163,
-            "predicted": 0.14289,
-            "observed": 0.15337,
+            "n": 165,
+            "predicted": 0.14267,
+            "observed": 0.15152,
             "observed_approx_95_wilson": [
-              0.1061,
-              0.21661
+              0.10478,
+              0.21411
             ]
           },
           {
             "outcome": "away",
             "range": "20-40%",
-            "n": 392,
-            "predicted": 0.29737,
-            "observed": 0.28827,
+            "n": 393,
+            "predicted": 0.29718,
+            "observed": 0.29008,
             "observed_approx_95_wilson": [
-              0.24565,
-              0.33499
+              0.24741,
+              0.3368
             ]
           },
           {
@@ -731,19 +731,19 @@
         ]
       },
       "ensemble_calibrated": {
-        "n": 716,
-        "log_loss": 0.996038,
-        "brier": 0.197633,
+        "n": 719,
+        "log_loss": 0.997381,
+        "brier": 0.198007,
         "log_loss_approx_95_range": [
-          0.961946,
-          1.036525
+          0.963024,
+          1.039671
         ],
         "brier_approx_95_range": [
-          0.189795,
-          0.206589
+          0.190213,
+          0.207941
         ],
-        "weeks": 17,
-        "ece": 0.023887,
+        "weeks": 18,
+        "ece": 0.022937,
         "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
         "bins": [
           {
@@ -771,23 +771,23 @@
           {
             "outcome": "home",
             "range": "40-60%",
-            "n": 321,
-            "predicted": 0.48267,
-            "observed": 0.48598,
+            "n": 323,
+            "predicted": 0.48296,
+            "observed": 0.48607,
             "observed_approx_95_wilson": [
-              0.43179,
-              0.5405
+              0.43205,
+              0.54042
             ]
           },
           {
             "outcome": "home",
             "range": "60-80%",
-            "n": 98,
-            "predicted": 0.66066,
-            "observed": 0.76531,
+            "n": 99,
+            "predicted": 0.66198,
+            "observed": 0.75758,
             "observed_approx_95_wilson": [
-              0.67238,
-              0.83822
+              0.66457,
+              0.83134
             ]
           },
           {
@@ -804,45 +804,45 @@
           {
             "outcome": "draw",
             "range": "0-20%",
-            "n": 21,
-            "predicted": 0.17431,
-            "observed": 0.14286,
+            "n": 22,
+            "predicted": 0.17352,
+            "observed": 0.18182,
             "observed_approx_95_wilson": [
-              0.04981,
-              0.34636
+              0.07307,
+              0.38517
             ]
           },
           {
             "outcome": "draw",
             "range": "20-40%",
-            "n": 695,
-            "predicted": 0.26426,
-            "observed": 0.24029,
+            "n": 697,
+            "predicted": 0.26424,
+            "observed": 0.2396,
             "observed_approx_95_wilson": [
-              0.21001,
-              0.27343
+              0.20939,
+              0.27266
             ]
           },
           {
             "outcome": "away",
             "range": "0-20%",
-            "n": 163,
-            "predicted": 0.14289,
-            "observed": 0.15337,
+            "n": 165,
+            "predicted": 0.14267,
+            "observed": 0.15152,
             "observed_approx_95_wilson": [
-              0.1061,
-              0.21661
+              0.10478,
+              0.21411
             ]
           },
           {
             "outcome": "away",
             "range": "20-40%",
-            "n": 392,
-            "predicted": 0.29737,
-            "observed": 0.28827,
+            "n": 393,
+            "predicted": 0.29718,
+            "observed": 0.29008,
             "observed_approx_95_wilson": [
-              0.24565,
-              0.33499
+              0.24741,
+              0.3368
             ]
           },
           {
@@ -870,41 +870,41 @@
         ]
       },
       "league_frequency": {
-        "n": 716,
-        "log_loss": 1.082305,
-        "brier": 0.218629,
+        "n": 719,
+        "log_loss": 1.08239,
+        "brier": 0.218641,
         "log_loss_approx_95_range": [
-          1.063733,
-          1.100458
+          1.064145,
+          1.100918
         ],
         "brier_approx_95_range": [
-          0.214515,
-          0.22271
+          0.214493,
+          0.222875
         ],
-        "weeks": 17,
-        "ece": 0.039901,
+        "weeks": 18,
+        "ece": 0.039422,
         "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
         "bins": [
           {
             "outcome": "home",
             "range": "20-40%",
-            "n": 247,
-            "predicted": 0.3681,
-            "observed": 0.47773,
+            "n": 248,
+            "predicted": 0.3682,
+            "observed": 0.47581,
             "observed_approx_95_wilson": [
-              0.41626,
-              0.53989
+              0.41449,
+              0.53786
             ]
           },
           {
             "outcome": "home",
             "range": "40-60%",
-            "n": 469,
-            "predicted": 0.45675,
-            "observed": 0.42217,
+            "n": 471,
+            "predicted": 0.45686,
+            "observed": 0.42251,
             "observed_approx_95_wilson": [
-              0.37828,
-              0.46733
+              0.3787,
+              0.46757
             ]
           },
           {
@@ -921,23 +921,23 @@
           {
             "outcome": "draw",
             "range": "20-40%",
-            "n": 670,
-            "predicted": 0.26354,
-            "observed": 0.23134,
+            "n": 673,
+            "predicted": 0.2634,
+            "observed": 0.2318,
             "observed_approx_95_wilson": [
-              0.201,
-              0.26475
+              0.20149,
+              0.26515
             ]
           },
           {
             "outcome": "away",
             "range": "20-40%",
-            "n": 673,
-            "predicted": 0.3083,
-            "observed": 0.32244,
+            "n": 676,
+            "predicted": 0.30832,
+            "observed": 0.32249,
             "observed_approx_95_wilson": [
-              0.28822,
-              0.35867
+              0.28834,
+              0.35864
             ]
           },
           {
@@ -1832,22 +1832,22 @@
         }
       },
       "La Liga": {
-        "n": 172,
+        "n": 173,
         "models": {
           "poisson": {
-            "n": 172,
-            "log_loss": 1.01253,
-            "brier": 0.201827,
+            "n": 173,
+            "log_loss": 1.014271,
+            "brier": 0.202252,
             "log_loss_approx_95_range": [
-              0.977661,
-              1.050518
+              0.979684,
+              1.051693
             ],
             "brier_approx_95_range": [
-              0.193634,
-              0.210901
+              0.193986,
+              0.211195
             ],
-            "weeks": 16,
-            "ece": 0.034046,
+            "weeks": 17,
+            "ece": 0.034835,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -1864,12 +1864,12 @@
               {
                 "outcome": "home",
                 "range": "40-60%",
-                "n": 151,
+                "n": 152,
                 "predicted": 0.4753,
-                "observed": 0.49007,
+                "observed": 0.48684,
                 "observed_approx_95_wilson": [
-                  0.41157,
-                  0.56905
+                  0.40869,
+                  0.56564
                 ]
               },
               {
@@ -1886,12 +1886,12 @@
               {
                 "outcome": "draw",
                 "range": "20-40%",
-                "n": 172,
-                "predicted": 0.24979,
-                "observed": 0.23256,
+                "n": 173,
+                "predicted": 0.24982,
+                "observed": 0.23121,
                 "observed_approx_95_wilson": [
-                  0.17569,
-                  0.30112
+                  0.17464,
+                  0.29947
                 ]
               },
               {
@@ -1908,12 +1908,12 @@
               {
                 "outcome": "away",
                 "range": "20-40%",
-                "n": 160,
-                "predicted": 0.28466,
-                "observed": 0.30625,
+                "n": 161,
+                "predicted": 0.28456,
+                "observed": 0.31056,
                 "observed_approx_95_wilson": [
-                  0.24007,
-                  0.38152
+                  0.2442,
+                  0.38575
                 ]
               },
               {
@@ -1930,19 +1930,19 @@
             ]
           },
           "elo": {
-            "n": 172,
-            "log_loss": 0.977008,
-            "brier": 0.191785,
+            "n": 173,
+            "log_loss": 0.980426,
+            "brier": 0.192567,
             "log_loss_approx_95_range": [
-              0.929775,
-              1.02835
+              0.934372,
+              1.031611
             ],
             "brier_approx_95_range": [
-              0.181097,
-              0.203392
+              0.182385,
+              0.203928
             ],
-            "weeks": 16,
-            "ece": 0.03559,
+            "weeks": 17,
+            "ece": 0.035384,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -1970,12 +1970,12 @@
               {
                 "outcome": "home",
                 "range": "40-60%",
-                "n": 87,
-                "predicted": 0.48039,
-                "observed": 0.44828,
+                "n": 88,
+                "predicted": 0.48107,
+                "observed": 0.44318,
                 "observed_approx_95_wilson": [
-                  0.34817,
-                  0.55276
+                  0.34393,
+                  0.54718
                 ]
               },
               {
@@ -2003,12 +2003,12 @@
               {
                 "outcome": "draw",
                 "range": "20-40%",
-                "n": 160,
-                "predicted": 0.258,
-                "observed": 0.25,
+                "n": 161,
+                "predicted": 0.25796,
+                "observed": 0.24845,
                 "observed_approx_95_wilson": [
-                  0.1893,
-                  0.32243
+                  0.18808,
+                  0.32054
                 ]
               },
               {
@@ -2025,12 +2025,12 @@
               {
                 "outcome": "away",
                 "range": "20-40%",
-                "n": 103,
-                "predicted": 0.28698,
-                "observed": 0.27184,
+                "n": 104,
+                "predicted": 0.28622,
+                "observed": 0.27885,
                 "observed_approx_95_wilson": [
-                  0.19529,
-                  0.36481
+                  0.20172,
+                  0.37173
                 ]
               },
               {
@@ -2058,19 +2058,19 @@
             ]
           },
           "ensemble": {
-            "n": 172,
-            "log_loss": 0.977008,
-            "brier": 0.191785,
+            "n": 173,
+            "log_loss": 0.980426,
+            "brier": 0.192567,
             "log_loss_approx_95_range": [
-              0.929775,
-              1.02835
+              0.934372,
+              1.031611
             ],
             "brier_approx_95_range": [
-              0.181097,
-              0.203392
+              0.182385,
+              0.203928
             ],
-            "weeks": 16,
-            "ece": 0.03559,
+            "weeks": 17,
+            "ece": 0.035384,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -2098,12 +2098,12 @@
               {
                 "outcome": "home",
                 "range": "40-60%",
-                "n": 87,
-                "predicted": 0.48039,
-                "observed": 0.44828,
+                "n": 88,
+                "predicted": 0.48107,
+                "observed": 0.44318,
                 "observed_approx_95_wilson": [
-                  0.34817,
-                  0.55276
+                  0.34393,
+                  0.54718
                 ]
               },
               {
@@ -2131,12 +2131,12 @@
               {
                 "outcome": "draw",
                 "range": "20-40%",
-                "n": 160,
-                "predicted": 0.258,
-                "observed": 0.25,
+                "n": 161,
+                "predicted": 0.25796,
+                "observed": 0.24845,
                 "observed_approx_95_wilson": [
-                  0.1893,
-                  0.32243
+                  0.18808,
+                  0.32054
                 ]
               },
               {
@@ -2153,12 +2153,12 @@
               {
                 "outcome": "away",
                 "range": "20-40%",
-                "n": 103,
-                "predicted": 0.28698,
-                "observed": 0.27184,
+                "n": 104,
+                "predicted": 0.28622,
+                "observed": 0.27885,
                 "observed_approx_95_wilson": [
-                  0.19529,
-                  0.36481
+                  0.20172,
+                  0.37173
                 ]
               },
               {
@@ -2186,19 +2186,19 @@
             ]
           },
           "poisson_calibrated": {
-            "n": 172,
-            "log_loss": 1.004276,
-            "brier": 0.200053,
+            "n": 173,
+            "log_loss": 1.006752,
+            "brier": 0.200668,
             "log_loss_approx_95_range": [
-              0.954752,
-              1.057968
+              0.956502,
+              1.059711
             ],
             "brier_approx_95_range": [
-              0.188319,
-              0.212698
+              0.188749,
+              0.213289
             ],
-            "weeks": 16,
-            "ece": 0.100964,
+            "weeks": 17,
+            "ece": 0.102457,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -2215,12 +2215,12 @@
               {
                 "outcome": "home",
                 "range": "40-60%",
-                "n": 129,
-                "predicted": 0.50958,
-                "observed": 0.3876,
+                "n": 130,
+                "predicted": 0.50981,
+                "observed": 0.38462,
                 "observed_approx_95_wilson": [
-                  0.30793,
-                  0.47376
+                  0.30544,
+                  0.47042
                 ]
               },
               {
@@ -2248,12 +2248,12 @@
               {
                 "outcome": "draw",
                 "range": "20-40%",
-                "n": 137,
-                "predicted": 0.22327,
-                "observed": 0.28467,
+                "n": 138,
+                "predicted": 0.22326,
+                "observed": 0.28261,
                 "observed_approx_95_wilson": [
-                  0.21579,
-                  0.3653
+                  0.21416,
+                  0.36283
                 ]
               },
               {
@@ -2270,12 +2270,12 @@
               {
                 "outcome": "away",
                 "range": "20-40%",
-                "n": 135,
-                "predicted": 0.26978,
-                "observed": 0.32593,
+                "n": 136,
+                "predicted": 0.26955,
+                "observed": 0.33088,
                 "observed_approx_95_wilson": [
-                  0.25263,
-                  0.40886
+                  0.2574,
+                  0.41365
                 ]
               },
               {
@@ -2292,19 +2292,19 @@
             ]
           },
           "elo_calibrated": {
-            "n": 172,
-            "log_loss": 0.98277,
-            "brier": 0.193434,
+            "n": 173,
+            "log_loss": 0.98574,
+            "brier": 0.194116,
             "log_loss_approx_95_range": [
-              0.941645,
-              1.028059
+              0.945025,
+              1.030855
             ],
             "brier_approx_95_range": [
-              0.183891,
-              0.203716
+              0.184925,
+              0.204224
             ],
-            "weeks": 16,
-            "ece": 0.038731,
+            "weeks": 17,
+            "ece": 0.036533,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -2332,12 +2332,12 @@
               {
                 "outcome": "home",
                 "range": "40-60%",
-                "n": 88,
-                "predicted": 0.47291,
-                "observed": 0.5,
+                "n": 89,
+                "predicted": 0.47335,
+                "observed": 0.49438,
                 "observed_approx_95_wilson": [
-                  0.39774,
-                  0.60226
+                  0.39291,
+                  0.59632
                 ]
               },
               {
@@ -2365,12 +2365,12 @@
               {
                 "outcome": "draw",
                 "range": "20-40%",
-                "n": 167,
-                "predicted": 0.26626,
-                "observed": 0.23952,
+                "n": 168,
+                "predicted": 0.26625,
+                "observed": 0.2381,
                 "observed_approx_95_wilson": [
-                  0.18111,
-                  0.30964
+                  0.18,
+                  0.3079
                 ]
               },
               {
@@ -2387,12 +2387,12 @@
               {
                 "outcome": "away",
                 "range": "20-40%",
-                "n": 112,
-                "predicted": 0.29638,
-                "observed": 0.27679,
+                "n": 113,
+                "predicted": 0.29574,
+                "observed": 0.28319,
                 "observed_approx_95_wilson": [
-                  0.20238,
-                  0.366
+                  0.20831,
+                  0.37232
                 ]
               },
               {
@@ -2420,19 +2420,19 @@
             ]
           },
           "ensemble_calibrated": {
-            "n": 172,
-            "log_loss": 0.98277,
-            "brier": 0.193434,
+            "n": 173,
+            "log_loss": 0.98574,
+            "brier": 0.194116,
             "log_loss_approx_95_range": [
-              0.941645,
-              1.028059
+              0.945025,
+              1.030855
             ],
             "brier_approx_95_range": [
-              0.183891,
-              0.203716
+              0.184925,
+              0.204224
             ],
-            "weeks": 16,
-            "ece": 0.038731,
+            "weeks": 17,
+            "ece": 0.036533,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -2460,12 +2460,12 @@
               {
                 "outcome": "home",
                 "range": "40-60%",
-                "n": 88,
-                "predicted": 0.47291,
-                "observed": 0.5,
+                "n": 89,
+                "predicted": 0.47335,
+                "observed": 0.49438,
                 "observed_approx_95_wilson": [
-                  0.39774,
-                  0.60226
+                  0.39291,
+                  0.59632
                 ]
               },
               {
@@ -2493,12 +2493,12 @@
               {
                 "outcome": "draw",
                 "range": "20-40%",
-                "n": 167,
-                "predicted": 0.26626,
-                "observed": 0.23952,
+                "n": 168,
+                "predicted": 0.26625,
+                "observed": 0.2381,
                 "observed_approx_95_wilson": [
-                  0.18111,
-                  0.30964
+                  0.18,
+                  0.3079
                 ]
               },
               {
@@ -2515,12 +2515,12 @@
               {
                 "outcome": "away",
                 "range": "20-40%",
-                "n": 112,
-                "predicted": 0.29638,
-                "observed": 0.27679,
+                "n": 113,
+                "predicted": 0.29574,
+                "observed": 0.28319,
                 "observed_approx_95_wilson": [
-                  0.20238,
-                  0.366
+                  0.20831,
+                  0.37232
                 ]
               },
               {
@@ -2548,30 +2548,30 @@
             ]
           },
           "league_frequency": {
-            "n": 172,
-            "log_loss": 1.07082,
-            "brier": 0.21571,
+            "n": 173,
+            "log_loss": 1.070916,
+            "brier": 0.215748,
             "log_loss_approx_95_range": [
-              1.028733,
-              1.117439
+              1.028709,
+              1.118748
             ],
             "brier_approx_95_range": [
-              0.205683,
-              0.226508
+              0.205631,
+              0.22677
             ],
-            "weeks": 16,
-            "ece": 0.028003,
+            "weeks": 17,
+            "ece": 0.02888,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
                 "outcome": "home",
                 "range": "20-40%",
-                "n": 9,
-                "predicted": 0.38702,
-                "observed": 0.55556,
+                "n": 10,
+                "predicted": 0.38764,
+                "observed": 0.5,
                 "observed_approx_95_wilson": [
-                  0.26665,
-                  0.81122
+                  0.23659,
+                  0.76341
                 ]
               },
               {
@@ -2588,23 +2588,23 @@
               {
                 "outcome": "draw",
                 "range": "20-40%",
-                "n": 172,
-                "predicted": 0.2498,
-                "observed": 0.23256,
+                "n": 173,
+                "predicted": 0.24992,
+                "observed": 0.23121,
                 "observed_approx_95_wilson": [
-                  0.17569,
-                  0.30112
+                  0.17464,
+                  0.29947
                 ]
               },
               {
                 "outcome": "away",
                 "range": "20-40%",
-                "n": 172,
-                "predicted": 0.27495,
-                "observed": 0.30814,
+                "n": 173,
+                "predicted": 0.27531,
+                "observed": 0.31214,
                 "observed_approx_95_wilson": [
-                  0.24396,
-                  0.38071
+                  0.2478,
+                  0.38464
                 ]
               }
             ]
@@ -2612,73 +2612,73 @@
         },
         "gains_vs_poisson": {
           "elo": {
-            "n": 172,
-            "mean": 0.035522,
+            "n": 173,
+            "mean": 0.033846,
             "approx_95_ci": [
-              -0.002432,
-              0.078255
+              -0.006309,
+              0.075586
             ],
-            "blocks": 16,
+            "blocks": 17,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
           },
           "ensemble": {
-            "n": 172,
-            "mean": 0.035522,
+            "n": 173,
+            "mean": 0.033846,
             "approx_95_ci": [
-              -0.002432,
-              0.078255
+              -0.006309,
+              0.075586
             ],
-            "blocks": 16,
+            "blocks": 17,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
           },
           "poisson_calibrated": {
-            "n": 172,
-            "mean": 0.008254,
+            "n": 173,
+            "mean": 0.007519,
             "approx_95_ci": [
-              -0.006912,
-              0.023097
+              -0.007654,
+              0.022837
             ],
-            "blocks": 16,
+            "blocks": 17,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
           },
           "elo_calibrated": {
-            "n": 172,
-            "mean": 0.02976,
+            "n": 173,
+            "mean": 0.028531,
             "approx_95_ci": [
-              -0.00277,
-              0.069922
+              -0.006316,
+              0.065459
             ],
-            "blocks": 16,
+            "blocks": 17,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
           },
           "ensemble_calibrated": {
-            "n": 172,
-            "mean": 0.02976,
+            "n": 173,
+            "mean": 0.028531,
             "approx_95_ci": [
-              -0.00277,
-              0.069922
+              -0.006316,
+              0.065459
             ],
-            "blocks": 16,
+            "blocks": 17,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
           },
           "league_frequency": {
-            "n": 172,
-            "mean": -0.05829,
+            "n": 173,
+            "mean": -0.056645,
             "approx_95_ci": [
-              -0.081699,
-              -0.037452
+              -0.079727,
+              -0.035313
             ],
-            "blocks": 16,
+            "blocks": 17,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
@@ -3595,22 +3595,22 @@
         }
       },
       "Bundesliga": {
-        "n": 108,
+        "n": 109,
         "models": {
           "poisson": {
-            "n": 108,
-            "log_loss": 0.995197,
-            "brier": 0.197534,
+            "n": 109,
+            "log_loss": 1.001935,
+            "brier": 0.199185,
             "log_loss_approx_95_range": [
-              0.919878,
-              1.071215
+              0.926907,
+              1.076231
             ],
             "brier_approx_95_range": [
-              0.179489,
-              0.215946
+              0.18114,
+              0.216919
             ],
-            "weeks": 14,
-            "ece": 0.034438,
+            "weeks": 15,
+            "ece": 0.037643,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -3638,23 +3638,23 @@
               {
                 "outcome": "home",
                 "range": "60-80%",
-                "n": 3,
-                "predicted": 0.63252,
-                "observed": 0.66667,
+                "n": 4,
+                "predicted": 0.6378,
+                "observed": 0.5,
                 "observed_approx_95_wilson": [
-                  0.20765,
-                  0.93851
+                  0.15004,
+                  0.84996
                 ]
               },
               {
                 "outcome": "draw",
                 "range": "0-20%",
-                "n": 6,
-                "predicted": 0.19076,
-                "observed": 0.16667,
+                "n": 7,
+                "predicted": 0.18884,
+                "observed": 0.28571,
                 "observed_approx_95_wilson": [
-                  0.03005,
-                  0.56351
+                  0.08222,
+                  0.64107
                 ]
               },
               {
@@ -3671,12 +3671,12 @@
               {
                 "outcome": "away",
                 "range": "0-20%",
-                "n": 3,
-                "predicted": 0.18248,
+                "n": 4,
+                "predicted": 0.17911,
                 "observed": 0.0,
                 "observed_approx_95_wilson": [
                   0,
-                  0.56151
+                  0.4899
                 ]
               },
               {
@@ -3704,19 +3704,19 @@
             ]
           },
           "elo": {
-            "n": 108,
-            "log_loss": 0.990031,
-            "brier": 0.196711,
+            "n": 109,
+            "log_loss": 0.999677,
+            "brier": 0.199354,
             "log_loss_approx_95_range": [
-              0.882238,
-              1.093025
+              0.89319,
+              1.111855
             ],
             "brier_approx_95_range": [
-              0.171054,
-              0.221474
+              0.174247,
+              0.226488
             ],
-            "weeks": 14,
-            "ece": 0.045532,
+            "weeks": 15,
+            "ece": 0.050216,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -3766,23 +3766,23 @@
               {
                 "outcome": "home",
                 "range": "80-100%",
-                "n": 3,
-                "predicted": 0.8483,
-                "observed": 0.66667,
+                "n": 4,
+                "predicted": 0.84478,
+                "observed": 0.5,
                 "observed_approx_95_wilson": [
-                  0.20765,
-                  0.93851
+                  0.15004,
+                  0.84996
                 ]
               },
               {
                 "outcome": "draw",
                 "range": "0-20%",
-                "n": 7,
-                "predicted": 0.15402,
-                "observed": 0.28571,
+                "n": 8,
+                "predicted": 0.151,
+                "observed": 0.375,
                 "observed_approx_95_wilson": [
-                  0.08222,
-                  0.64107
+                  0.13684,
+                  0.69426
                 ]
               },
               {
@@ -3799,12 +3799,12 @@
               {
                 "outcome": "away",
                 "range": "0-20%",
-                "n": 34,
-                "predicted": 0.13121,
-                "observed": 0.17647,
+                "n": 35,
+                "predicted": 0.12849,
+                "observed": 0.17143,
                 "observed_approx_95_wilson": [
-                  0.08349,
-                  0.33514
+                  0.08103,
+                  0.32683
                 ]
               },
               {
@@ -3843,19 +3843,19 @@
             ]
           },
           "ensemble": {
-            "n": 108,
-            "log_loss": 0.990031,
-            "brier": 0.196711,
+            "n": 109,
+            "log_loss": 0.999677,
+            "brier": 0.199354,
             "log_loss_approx_95_range": [
-              0.882238,
-              1.093025
+              0.89319,
+              1.111855
             ],
             "brier_approx_95_range": [
-              0.171054,
-              0.221474
+              0.174247,
+              0.226488
             ],
-            "weeks": 14,
-            "ece": 0.045532,
+            "weeks": 15,
+            "ece": 0.050216,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -3905,23 +3905,23 @@
               {
                 "outcome": "home",
                 "range": "80-100%",
-                "n": 3,
-                "predicted": 0.8483,
-                "observed": 0.66667,
+                "n": 4,
+                "predicted": 0.84478,
+                "observed": 0.5,
                 "observed_approx_95_wilson": [
-                  0.20765,
-                  0.93851
+                  0.15004,
+                  0.84996
                 ]
               },
               {
                 "outcome": "draw",
                 "range": "0-20%",
-                "n": 7,
-                "predicted": 0.15402,
-                "observed": 0.28571,
+                "n": 8,
+                "predicted": 0.151,
+                "observed": 0.375,
                 "observed_approx_95_wilson": [
-                  0.08222,
-                  0.64107
+                  0.13684,
+                  0.69426
                 ]
               },
               {
@@ -3938,12 +3938,12 @@
               {
                 "outcome": "away",
                 "range": "0-20%",
-                "n": 34,
-                "predicted": 0.13121,
-                "observed": 0.17647,
+                "n": 35,
+                "predicted": 0.12849,
+                "observed": 0.17143,
                 "observed_approx_95_wilson": [
-                  0.08349,
-                  0.33514
+                  0.08103,
+                  0.32683
                 ]
               },
               {
@@ -3982,19 +3982,19 @@
             ]
           },
           "poisson_calibrated": {
-            "n": 108,
-            "log_loss": 0.985496,
-            "brier": 0.194804,
+            "n": 109,
+            "log_loss": 0.995958,
+            "brier": 0.197237,
             "log_loss_approx_95_range": [
-              0.879318,
-              1.095493
+              0.891047,
+              1.101222
             ],
             "brier_approx_95_range": [
-              0.16989,
-              0.220716
+              0.172269,
+              0.222351
             ],
-            "weeks": 14,
-            "ece": 0.052879,
+            "weeks": 15,
+            "ece": 0.053075,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -4022,23 +4022,23 @@
               {
                 "outcome": "home",
                 "range": "60-80%",
-                "n": 30,
-                "predicted": 0.64887,
-                "observed": 0.73333,
+                "n": 31,
+                "predicted": 0.65275,
+                "observed": 0.70968,
                 "observed_approx_95_wilson": [
-                  0.55552,
-                  0.85818
+                  0.53407,
+                  0.83904
                 ]
               },
               {
                 "outcome": "draw",
                 "range": "0-20%",
-                "n": 87,
-                "predicted": 0.17953,
-                "observed": 0.22989,
+                "n": 88,
+                "predicted": 0.17885,
+                "observed": 0.23864,
                 "observed_approx_95_wilson": [
-                  0.15403,
-                  0.32858
+                  0.16171,
+                  0.33743
                 ]
               },
               {
@@ -4055,12 +4055,12 @@
               {
                 "outcome": "away",
                 "range": "0-20%",
-                "n": 19,
-                "predicted": 0.17268,
-                "observed": 0.10526,
+                "n": 20,
+                "predicted": 0.16962,
+                "observed": 0.1,
                 "observed_approx_95_wilson": [
-                  0.02936,
-                  0.31395
+                  0.02787,
+                  0.30104
                 ]
               },
               {
@@ -4099,19 +4099,19 @@
             ]
           },
           "elo_calibrated": {
-            "n": 108,
-            "log_loss": 0.991408,
-            "brier": 0.19721,
+            "n": 109,
+            "log_loss": 0.999296,
+            "brier": 0.199498,
             "log_loss_approx_95_range": [
-              0.896681,
-              1.080917
+              0.906565,
+              1.097576
             ],
             "brier_approx_95_range": [
-              0.17451,
-              0.219092
+              0.177211,
+              0.223359
             ],
-            "weeks": 14,
-            "ece": 0.049444,
+            "weeks": 15,
+            "ece": 0.051227,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -4150,12 +4150,12 @@
               {
                 "outcome": "home",
                 "range": "60-80%",
-                "n": 18,
-                "predicted": 0.64016,
-                "observed": 0.66667,
+                "n": 19,
+                "predicted": 0.64813,
+                "observed": 0.63158,
                 "observed_approx_95_wilson": [
-                  0.43749,
-                  0.83721
+                  0.41039,
+                  0.80851
                 ]
               },
               {
@@ -4172,12 +4172,12 @@
               {
                 "outcome": "draw",
                 "range": "0-20%",
-                "n": 4,
-                "predicted": 0.15695,
-                "observed": 0.25,
+                "n": 5,
+                "predicted": 0.15697,
+                "observed": 0.4,
                 "observed_approx_95_wilson": [
-                  0.04559,
-                  0.69936
+                  0.11762,
+                  0.76928
                 ]
               },
               {
@@ -4194,12 +4194,12 @@
               {
                 "outcome": "away",
                 "range": "0-20%",
-                "n": 31,
-                "predicted": 0.14514,
-                "observed": 0.12903,
+                "n": 32,
+                "predicted": 0.14221,
+                "observed": 0.125,
                 "observed_approx_95_wilson": [
-                  0.05134,
-                  0.28853
+                  0.0497,
+                  0.28069
                 ]
               },
               {
@@ -4238,19 +4238,19 @@
             ]
           },
           "ensemble_calibrated": {
-            "n": 108,
-            "log_loss": 0.991408,
-            "brier": 0.19721,
+            "n": 109,
+            "log_loss": 0.999296,
+            "brier": 0.199498,
             "log_loss_approx_95_range": [
-              0.896681,
-              1.080917
+              0.906565,
+              1.097576
             ],
             "brier_approx_95_range": [
-              0.17451,
-              0.219092
+              0.177211,
+              0.223359
             ],
-            "weeks": 14,
-            "ece": 0.049444,
+            "weeks": 15,
+            "ece": 0.051227,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -4289,12 +4289,12 @@
               {
                 "outcome": "home",
                 "range": "60-80%",
-                "n": 18,
-                "predicted": 0.64016,
-                "observed": 0.66667,
+                "n": 19,
+                "predicted": 0.64813,
+                "observed": 0.63158,
                 "observed_approx_95_wilson": [
-                  0.43749,
-                  0.83721
+                  0.41039,
+                  0.80851
                 ]
               },
               {
@@ -4311,12 +4311,12 @@
               {
                 "outcome": "draw",
                 "range": "0-20%",
-                "n": 4,
-                "predicted": 0.15695,
-                "observed": 0.25,
+                "n": 5,
+                "predicted": 0.15697,
+                "observed": 0.4,
                 "observed_approx_95_wilson": [
-                  0.04559,
-                  0.69936
+                  0.11762,
+                  0.76928
                 ]
               },
               {
@@ -4333,12 +4333,12 @@
               {
                 "outcome": "away",
                 "range": "0-20%",
-                "n": 31,
-                "predicted": 0.14514,
-                "observed": 0.12903,
+                "n": 32,
+                "predicted": 0.14221,
+                "observed": 0.125,
                 "observed_approx_95_wilson": [
-                  0.05134,
-                  0.28853
+                  0.0497,
+                  0.28069
                 ]
               },
               {
@@ -4377,19 +4377,19 @@
             ]
           },
           "league_frequency": {
-            "n": 108,
-            "log_loss": 1.056023,
-            "brier": 0.212616,
+            "n": 109,
+            "log_loss": 1.060031,
+            "brier": 0.213478,
             "log_loss_approx_95_range": [
-              1.016859,
-              1.092253
+              1.019805,
+              1.09584
             ],
             "brier_approx_95_range": [
-              0.203808,
-              0.220608
+              0.204231,
+              0.221524
             ],
-            "weeks": 14,
-            "ece": 0.044666,
+            "weeks": 15,
+            "ece": 0.041302,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -4406,34 +4406,34 @@
               {
                 "outcome": "home",
                 "range": "40-60%",
-                "n": 74,
-                "predicted": 0.44868,
-                "observed": 0.48649,
+                "n": 75,
+                "predicted": 0.44914,
+                "observed": 0.48,
                 "observed_approx_95_wilson": [
-                  0.37612,
-                  0.59819
+                  0.37069,
+                  0.59126
                 ]
               },
               {
                 "outcome": "draw",
                 "range": "20-40%",
-                "n": 108,
-                "predicted": 0.24761,
-                "observed": 0.21296,
+                "n": 109,
+                "predicted": 0.2474,
+                "observed": 0.22018,
                 "observed_approx_95_wilson": [
-                  0.14631,
-                  0.29934
+                  0.15266,
+                  0.30676
                 ]
               },
               {
                 "outcome": "away",
                 "range": "20-40%",
-                "n": 108,
-                "predicted": 0.32865,
-                "observed": 0.2963,
+                "n": 109,
+                "predicted": 0.32832,
+                "observed": 0.29358,
                 "observed_approx_95_wilson": [
-                  0.21838,
-                  0.38821
+                  0.21629,
+                  0.38493
                 ]
               }
             ]
@@ -4441,73 +4441,73 @@
         },
         "gains_vs_poisson": {
           "elo": {
-            "n": 108,
-            "mean": 0.005166,
+            "n": 109,
+            "mean": 0.002259,
             "approx_95_ci": [
-              -0.041792,
-              0.051423
+              -0.04779,
+              0.048171
             ],
-            "blocks": 14,
+            "blocks": 15,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
           },
           "ensemble": {
-            "n": 108,
-            "mean": 0.005166,
+            "n": 109,
+            "mean": 0.002259,
             "approx_95_ci": [
-              -0.041792,
-              0.051423
+              -0.04779,
+              0.048171
             ],
-            "blocks": 14,
+            "blocks": 15,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
           },
           "poisson_calibrated": {
-            "n": 108,
-            "mean": 0.009701,
+            "n": 109,
+            "mean": 0.005978,
             "approx_95_ci": [
-              -0.022084,
-              0.040624
+              -0.026206,
+              0.036549
             ],
-            "blocks": 14,
+            "blocks": 15,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
           },
           "elo_calibrated": {
-            "n": 108,
-            "mean": 0.003789,
+            "n": 109,
+            "mean": 0.002639,
             "approx_95_ci": [
-              -0.031017,
-              0.040863
+              -0.034646,
+              0.0393
             ],
-            "blocks": 14,
+            "blocks": 15,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
           },
           "ensemble_calibrated": {
-            "n": 108,
-            "mean": 0.003789,
+            "n": 109,
+            "mean": 0.002639,
             "approx_95_ci": [
-              -0.031017,
-              0.040863
+              -0.034646,
+              0.0393
             ],
-            "blocks": 14,
+            "blocks": 15,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
           },
           "league_frequency": {
-            "n": 108,
-            "mean": -0.060826,
+            "n": 109,
+            "mean": -0.058095,
             "approx_95_ci": [
-              -0.100627,
-              -0.016119
+              -0.09859,
+              -0.015202
             ],
-            "blocks": 14,
+            "blocks": 15,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
@@ -4515,22 +4515,22 @@
         }
       },
       "Ligue 1": {
-        "n": 124,
+        "n": 125,
         "models": {
           "poisson": {
-            "n": 124,
-            "log_loss": 1.045236,
-            "brier": 0.20984,
+            "n": 125,
+            "log_loss": 1.044081,
+            "brier": 0.209586,
             "log_loss_approx_95_range": [
-              0.984901,
-              1.106097
+              0.979879,
+              1.103883
             ],
             "brier_approx_95_range": [
-              0.195611,
-              0.223743
+              0.194161,
+              0.224094
             ],
-            "weeks": 15,
-            "ece": 0.02486,
+            "weeks": 16,
+            "ece": 0.027828,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -4547,12 +4547,12 @@
               {
                 "outcome": "home",
                 "range": "40-60%",
-                "n": 96,
-                "predicted": 0.46067,
-                "observed": 0.47917,
+                "n": 97,
+                "predicted": 0.46011,
+                "observed": 0.48454,
                 "observed_approx_95_wilson": [
-                  0.38197,
-                  0.57796
+                  0.38758,
+                  0.58267
                 ]
               },
               {
@@ -4569,12 +4569,12 @@
               {
                 "outcome": "draw",
                 "range": "20-40%",
-                "n": 124,
-                "predicted": 0.2453,
-                "observed": 0.24194,
+                "n": 125,
+                "predicted": 0.24531,
+                "observed": 0.24,
                 "observed_approx_95_wilson": [
-                  0.17505,
-                  0.32433
+                  0.1736,
+                  0.3219
                 ]
               },
               {
@@ -4591,12 +4591,12 @@
               {
                 "outcome": "away",
                 "range": "20-40%",
-                "n": 116,
-                "predicted": 0.31085,
-                "observed": 0.31034,
+                "n": 117,
+                "predicted": 0.31116,
+                "observed": 0.30769,
                 "observed_approx_95_wilson": [
-                  0.23337,
-                  0.39948
+                  0.23129,
+                  0.39632
                 ]
               },
               {
@@ -4613,19 +4613,19 @@
             ]
           },
           "elo": {
-            "n": 124,
-            "log_loss": 1.034774,
-            "brier": 0.208078,
+            "n": 125,
+            "log_loss": 1.030891,
+            "brier": 0.207133,
             "log_loss_approx_95_range": [
-              0.945494,
-              1.142182
+              0.930743,
+              1.131119
             ],
             "brier_approx_95_range": [
-              0.186992,
-              0.232822
+              0.183936,
+              0.230833
             ],
-            "weeks": 15,
-            "ece": 0.040154,
+            "weeks": 16,
+            "ece": 0.041124,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -4653,12 +4653,12 @@
               {
                 "outcome": "home",
                 "range": "40-60%",
-                "n": 52,
-                "predicted": 0.47888,
-                "observed": 0.5,
+                "n": 53,
+                "predicted": 0.48073,
+                "observed": 0.50943,
                 "observed_approx_95_wilson": [
-                  0.36886,
-                  0.63114
+                  0.37883,
+                  0.63876
                 ]
               },
               {
@@ -4697,23 +4697,23 @@
               {
                 "outcome": "draw",
                 "range": "20-40%",
-                "n": 117,
-                "predicted": 0.25633,
-                "observed": 0.23932,
+                "n": 118,
+                "predicted": 0.25621,
+                "observed": 0.23729,
                 "observed_approx_95_wilson": [
-                  0.17108,
-                  0.32413
+                  0.16958,
+                  0.32156
                 ]
               },
               {
                 "outcome": "away",
                 "range": "0-20%",
-                "n": 32,
-                "predicted": 0.13343,
-                "observed": 0.1875,
+                "n": 33,
+                "predicted": 0.13485,
+                "observed": 0.18182,
                 "observed_approx_95_wilson": [
-                  0.08889,
-                  0.35309
+                  0.08611,
+                  0.34389
                 ]
               },
               {
@@ -4752,19 +4752,19 @@
             ]
           },
           "ensemble": {
-            "n": 124,
-            "log_loss": 1.034774,
-            "brier": 0.208078,
+            "n": 125,
+            "log_loss": 1.030891,
+            "brier": 0.207133,
             "log_loss_approx_95_range": [
-              0.945494,
-              1.142182
+              0.930743,
+              1.131119
             ],
             "brier_approx_95_range": [
-              0.186992,
-              0.232822
+              0.183936,
+              0.230833
             ],
-            "weeks": 15,
-            "ece": 0.040154,
+            "weeks": 16,
+            "ece": 0.041124,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -4792,12 +4792,12 @@
               {
                 "outcome": "home",
                 "range": "40-60%",
-                "n": 52,
-                "predicted": 0.47888,
-                "observed": 0.5,
+                "n": 53,
+                "predicted": 0.48073,
+                "observed": 0.50943,
                 "observed_approx_95_wilson": [
-                  0.36886,
-                  0.63114
+                  0.37883,
+                  0.63876
                 ]
               },
               {
@@ -4836,23 +4836,23 @@
               {
                 "outcome": "draw",
                 "range": "20-40%",
-                "n": 117,
-                "predicted": 0.25633,
-                "observed": 0.23932,
+                "n": 118,
+                "predicted": 0.25621,
+                "observed": 0.23729,
                 "observed_approx_95_wilson": [
-                  0.17108,
-                  0.32413
+                  0.16958,
+                  0.32156
                 ]
               },
               {
                 "outcome": "away",
                 "range": "0-20%",
-                "n": 32,
-                "predicted": 0.13343,
-                "observed": 0.1875,
+                "n": 33,
+                "predicted": 0.13485,
+                "observed": 0.18182,
                 "observed_approx_95_wilson": [
-                  0.08889,
-                  0.35309
+                  0.08611,
+                  0.34389
                 ]
               },
               {
@@ -4891,19 +4891,19 @@
             ]
           },
           "poisson_calibrated": {
-            "n": 124,
-            "log_loss": 1.045,
-            "brier": 0.209703,
+            "n": 125,
+            "log_loss": 1.043267,
+            "brier": 0.20932,
             "log_loss_approx_95_range": [
-              0.958172,
-              1.131429
+              0.951048,
+              1.130113
             ],
             "brier_approx_95_range": [
-              0.188977,
-              0.229346
+              0.187079,
+              0.23036
             ],
-            "weeks": 15,
-            "ece": 0.041227,
+            "weeks": 16,
+            "ece": 0.037894,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -4920,12 +4920,12 @@
               {
                 "outcome": "home",
                 "range": "40-60%",
-                "n": 92,
-                "predicted": 0.49995,
-                "observed": 0.45652,
+                "n": 93,
+                "predicted": 0.49927,
+                "observed": 0.46237,
                 "observed_approx_95_wilson": [
-                  0.35852,
-                  0.558
+                  0.36454,
+                  0.56317
                 ]
               },
               {
@@ -4953,12 +4953,12 @@
               {
                 "outcome": "draw",
                 "range": "20-40%",
-                "n": 98,
-                "predicted": 0.21599,
-                "observed": 0.2551,
+                "n": 99,
+                "predicted": 0.21596,
+                "observed": 0.25253,
                 "observed_approx_95_wilson": [
-                  0.17917,
-                  0.34951
+                  0.17729,
+                  0.34625
                 ]
               },
               {
@@ -4975,12 +4975,12 @@
               {
                 "outcome": "away",
                 "range": "20-40%",
-                "n": 101,
-                "predicted": 0.29434,
-                "observed": 0.30693,
+                "n": 102,
+                "predicted": 0.29489,
+                "observed": 0.30392,
                 "observed_approx_95_wilson": [
-                  0.22543,
-                  0.40258
+                  0.22312,
+                  0.39895
                 ]
               },
               {
@@ -4997,19 +4997,19 @@
             ]
           },
           "elo_calibrated": {
-            "n": 124,
-            "log_loss": 1.032772,
-            "brier": 0.207513,
+            "n": 125,
+            "log_loss": 1.029361,
+            "brier": 0.206684,
             "log_loss_approx_95_range": [
-              0.95408,
-              1.125933
+              0.941029,
+              1.117015
             ],
             "brier_approx_95_range": [
-              0.188995,
-              0.229723
+              0.186158,
+              0.227691
             ],
-            "weeks": 15,
-            "ece": 0.025279,
+            "weeks": 16,
+            "ece": 0.026443,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -5037,12 +5037,12 @@
               {
                 "outcome": "home",
                 "range": "40-60%",
-                "n": 57,
-                "predicted": 0.47959,
-                "observed": 0.49123,
+                "n": 58,
+                "predicted": 0.48072,
+                "observed": 0.5,
                 "observed_approx_95_wilson": [
-                  0.36616,
-                  0.6174
+                  0.37538,
+                  0.62462
                 ]
               },
               {
@@ -5070,23 +5070,23 @@
               {
                 "outcome": "draw",
                 "range": "20-40%",
-                "n": 123,
-                "predicted": 0.26443,
-                "observed": 0.2439,
+                "n": 124,
+                "predicted": 0.26436,
+                "observed": 0.24194,
                 "observed_approx_95_wilson": [
-                  0.17652,
-                  0.32679
+                  0.17505,
+                  0.32433
                 ]
               },
               {
                 "outcome": "away",
                 "range": "0-20%",
-                "n": 29,
-                "predicted": 0.1474,
-                "observed": 0.17241,
+                "n": 30,
+                "predicted": 0.14911,
+                "observed": 0.16667,
                 "observed_approx_95_wilson": [
-                  0.07598,
-                  0.34549
+                  0.07336,
+                  0.33565
                 ]
               },
               {
@@ -5125,19 +5125,19 @@
             ]
           },
           "ensemble_calibrated": {
-            "n": 124,
-            "log_loss": 1.032772,
-            "brier": 0.207513,
+            "n": 125,
+            "log_loss": 1.029361,
+            "brier": 0.206684,
             "log_loss_approx_95_range": [
-              0.95408,
-              1.125933
+              0.941029,
+              1.117015
             ],
             "brier_approx_95_range": [
-              0.188995,
-              0.229723
+              0.186158,
+              0.227691
             ],
-            "weeks": 15,
-            "ece": 0.025279,
+            "weeks": 16,
+            "ece": 0.026443,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -5165,12 +5165,12 @@
               {
                 "outcome": "home",
                 "range": "40-60%",
-                "n": 57,
-                "predicted": 0.47959,
-                "observed": 0.49123,
+                "n": 58,
+                "predicted": 0.48072,
+                "observed": 0.5,
                 "observed_approx_95_wilson": [
-                  0.36616,
-                  0.6174
+                  0.37538,
+                  0.62462
                 ]
               },
               {
@@ -5198,23 +5198,23 @@
               {
                 "outcome": "draw",
                 "range": "20-40%",
-                "n": 123,
-                "predicted": 0.26443,
-                "observed": 0.2439,
+                "n": 124,
+                "predicted": 0.26436,
+                "observed": 0.24194,
                 "observed_approx_95_wilson": [
-                  0.17652,
-                  0.32679
+                  0.17505,
+                  0.32433
                 ]
               },
               {
                 "outcome": "away",
                 "range": "0-20%",
-                "n": 29,
-                "predicted": 0.1474,
-                "observed": 0.17241,
+                "n": 30,
+                "predicted": 0.14911,
+                "observed": 0.16667,
                 "observed_approx_95_wilson": [
-                  0.07598,
-                  0.34549
+                  0.07336,
+                  0.33565
                 ]
               },
               {
@@ -5253,19 +5253,19 @@
             ]
           },
           "league_frequency": {
-            "n": 124,
-            "log_loss": 1.091823,
-            "brier": 0.220833,
+            "n": 125,
+            "log_loss": 1.088908,
+            "brier": 0.220151,
             "log_loss_approx_95_range": [
-              1.042692,
-              1.134486
+              1.035505,
+              1.130796
             ],
             "brier_approx_95_range": [
-              0.209478,
-              0.230415
+              0.207567,
+              0.229403
             ],
-            "weeks": 15,
-            "ece": 0.038178,
+            "weeks": 16,
+            "ece": 0.036195,
             "ece_definition": "equal_width_5_bins_classwise_mean_absolute_gap",
             "bins": [
               {
@@ -5282,34 +5282,34 @@
               {
                 "outcome": "home",
                 "range": "40-60%",
-                "n": 56,
-                "predicted": 0.44041,
-                "observed": 0.41071,
+                "n": 57,
+                "predicted": 0.44116,
+                "observed": 0.42105,
                 "observed_approx_95_wilson": [
-                  0.29167,
-                  0.54123
+                  0.30187,
+                  0.5502
                 ]
               },
               {
                 "outcome": "draw",
                 "range": "20-40%",
-                "n": 124,
-                "predicted": 0.28579,
-                "observed": 0.24194,
+                "n": 125,
+                "predicted": 0.28512,
+                "observed": 0.24,
                 "observed_approx_95_wilson": [
-                  0.17505,
-                  0.32433
+                  0.1736,
+                  0.3219
                 ]
               },
               {
                 "outcome": "away",
                 "range": "20-40%",
-                "n": 124,
-                "predicted": 0.31116,
-                "observed": 0.33065,
+                "n": 125,
+                "predicted": 0.31119,
+                "observed": 0.328,
                 "observed_approx_95_wilson": [
-                  0.25402,
-                  0.41744
+                  0.2519,
+                  0.41436
                 ]
               }
             ]
@@ -5317,73 +5317,73 @@
         },
         "gains_vs_poisson": {
           "elo": {
-            "n": 124,
-            "mean": 0.010462,
+            "n": 125,
+            "mean": 0.01319,
             "approx_95_ci": [
-              -0.049178,
-              0.057892
+              -0.043015,
+              0.064456
             ],
-            "blocks": 15,
+            "blocks": 16,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
           },
           "ensemble": {
-            "n": 124,
-            "mean": 0.010462,
+            "n": 125,
+            "mean": 0.01319,
             "approx_95_ci": [
-              -0.049178,
-              0.057892
+              -0.043015,
+              0.064456
             ],
-            "blocks": 15,
+            "blocks": 16,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
           },
           "poisson_calibrated": {
-            "n": 124,
-            "mean": 0.000236,
+            "n": 125,
+            "mean": 0.000814,
             "approx_95_ci": [
-              -0.025606,
-              0.027197
+              -0.024974,
+              0.029226
             ],
-            "blocks": 15,
+            "blocks": 16,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
           },
           "elo_calibrated": {
-            "n": 124,
-            "mean": 0.012464,
+            "n": 125,
+            "mean": 0.01472,
             "approx_95_ci": [
-              -0.035004,
-              0.052435
+              -0.028949,
+              0.056719
             ],
-            "blocks": 15,
+            "blocks": 16,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
           },
           "ensemble_calibrated": {
-            "n": 124,
-            "mean": 0.012464,
+            "n": 125,
+            "mean": 0.01472,
             "approx_95_ci": [
-              -0.035004,
-              0.052435
+              -0.028949,
+              0.056719
             ],
-            "blocks": 15,
+            "blocks": 16,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
           },
           "league_frequency": {
-            "n": 124,
-            "mean": -0.046587,
+            "n": 125,
+            "mean": -0.044827,
             "approx_95_ci": [
-              -0.076146,
-              -0.016543
+              -0.074987,
+              -0.013964
             ],
-            "blocks": 15,
+            "blocks": 16,
             "method": "paired_ISO_week_cluster_percentile_bootstrap",
             "resamples": 800,
             "seed": 1729
@@ -5393,82 +5393,82 @@
     },
     "gains_vs_poisson": {
       "elo": {
-        "n": 716,
-        "mean": 0.029757,
+        "n": 719,
+        "mean": 0.029334,
         "approx_95_ci": [
-          -0.000627,
-          0.055664
+          -0.00068,
+          0.054087
         ],
-        "blocks": 17,
+        "blocks": 18,
         "method": "paired_ISO_week_cluster_percentile_bootstrap",
         "resamples": 800,
         "seed": 1729,
-        "mean_logloss_gain": 0.029757
+        "mean_logloss_gain": 0.029334
       },
       "ensemble": {
-        "n": 716,
-        "mean": 0.029757,
+        "n": 719,
+        "mean": 0.029334,
         "approx_95_ci": [
-          -0.000627,
-          0.055664
+          -0.00068,
+          0.054087
         ],
-        "blocks": 17,
+        "blocks": 18,
         "method": "paired_ISO_week_cluster_percentile_bootstrap",
         "resamples": 800,
         "seed": 1729,
-        "mean_logloss_gain": 0.029757
+        "mean_logloss_gain": 0.029334
       },
       "poisson_calibrated": {
-        "n": 716,
-        "mean": 0.008849,
+        "n": 719,
+        "mean": 0.008196,
         "approx_95_ci": [
-          0.000266,
-          0.016955
+          -0.000767,
+          0.016207
         ],
-        "blocks": 17,
+        "blocks": 18,
         "method": "paired_ISO_week_cluster_percentile_bootstrap",
         "resamples": 800,
         "seed": 1729,
-        "mean_logloss_gain": 0.008849
+        "mean_logloss_gain": 0.008196
       },
       "elo_calibrated": {
-        "n": 716,
-        "mean": 0.027505,
+        "n": 719,
+        "mean": 0.027376,
         "approx_95_ci": [
-          0.003055,
-          0.048163
+          0.003806,
+          0.046739
         ],
-        "blocks": 17,
+        "blocks": 18,
         "method": "paired_ISO_week_cluster_percentile_bootstrap",
         "resamples": 800,
         "seed": 1729,
-        "mean_logloss_gain": 0.027505
+        "mean_logloss_gain": 0.027376
       },
       "ensemble_calibrated": {
-        "n": 716,
-        "mean": 0.027505,
+        "n": 719,
+        "mean": 0.027376,
         "approx_95_ci": [
-          0.003055,
-          0.048163
+          0.003806,
+          0.046739
         ],
-        "blocks": 17,
+        "blocks": 18,
         "method": "paired_ISO_week_cluster_percentile_bootstrap",
         "resamples": 800,
         "seed": 1729,
-        "mean_logloss_gain": 0.027505
+        "mean_logloss_gain": 0.027376
       },
       "league_frequency": {
-        "n": 716,
-        "mean": -0.058763,
+        "n": 719,
+        "mean": -0.057632,
         "approx_95_ci": [
-          -0.073991,
-          -0.041247
+          -0.074165,
+          -0.03962
         ],
-        "blocks": 17,
+        "blocks": 18,
         "method": "paired_ISO_week_cluster_percentile_bootstrap",
         "resamples": 800,
         "seed": 1729,
-        "mean_logloss_gain": -0.058763
+        "mean_logloss_gain": -0.057632
       }
     }
   },

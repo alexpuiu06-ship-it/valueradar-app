@@ -31101,7 +31101,7 @@
     "home": "Man City",
     "away": "Fulham",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-21T12:30:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -31110,7 +31110,56 @@
     "line": 2.5,
     "p_over": 0.50363,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-21"
+    "historical_cutoff_exclusive": "2026-11-21",
+    "actual_total": 2.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-22T13:34:37.597647+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-22T13:34:37.597647+00:00",
+      "actual_home": 1.0,
+      "actual_away": 1.0,
+      "result_sha256": "9f565d0c2858c6d738b32e7f601d76b228602849ee88ddea46912c27e6471d4d",
+      "source_kickoff_utc": "2026-11-21T12:30:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000001772221406"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Premier League",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000001772221406",
+          "content_sha256": "d8a51e07cd49f000fb8b47f193f15fb6b43c43aee96ab5b33b69abd1a1cc1852",
+          "fetched_at": "2026-11-22T13:34:28.089019+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Premier League",
+        "date": "2026-11-21",
+        "home": "Man City",
+        "away": "Fulham",
+        "source_fixture_id": "id1000001772221406",
+        "kickoff_utc": "2026-11-21T12:30:00+00:00",
+        "fulltime_home": 1,
+        "fulltime_away": 1,
+        "received_at": "2026-11-22T13:34:25.772460+00:00",
+        "verified_at": "2026-11-22T13:34:28.089019+00:00",
+        "participant_ids": [
+          17,
+          43
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-21T12:33:27.190000+00:00",
+        "score_updated_at": "2026-11-21T14:29:07.009642+00:00",
+        "final_time": "2026-11-21T14:24:20.914000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "3443b9d8ab3cf50d8c162a2efe6e3aadbe83ae2c87464e2091c5689b1668b47c",
+        "observation_sha256": "d8a51e07cd49f000fb8b47f193f15fb6b43c43aee96ab5b33b69abd1a1cc1852"
+      }
+    }
   },
   {
     "league": "Premier League",
@@ -31135,7 +31184,7 @@
     "home": "Man City",
     "away": "Fulham",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-21T12:30:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -31147,7 +31196,55 @@
       "away": 0.24361
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-21"
+    "historical_cutoff_exclusive": "2026-11-21",
+    "actual_outcome": "draw",
+    "settled_at": "2026-11-22T13:34:37.597647+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-22T13:34:37.597647+00:00",
+      "actual_home": 1.0,
+      "actual_away": 1.0,
+      "result_sha256": "dc8489210dfe8fb1196f3a7952215601dfdd51e86d05fc03e6397926ce3ed138",
+      "source_kickoff_utc": "2026-11-21T12:30:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000001772221406"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Premier League",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000001772221406",
+          "content_sha256": "d8a51e07cd49f000fb8b47f193f15fb6b43c43aee96ab5b33b69abd1a1cc1852",
+          "fetched_at": "2026-11-22T13:34:28.089019+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Premier League",
+        "date": "2026-11-21",
+        "home": "Man City",
+        "away": "Fulham",
+        "source_fixture_id": "id1000001772221406",
+        "kickoff_utc": "2026-11-21T12:30:00+00:00",
+        "fulltime_home": 1,
+        "fulltime_away": 1,
+        "received_at": "2026-11-22T13:34:25.772460+00:00",
+        "verified_at": "2026-11-22T13:34:28.089019+00:00",
+        "participant_ids": [
+          17,
+          43
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-21T12:33:27.190000+00:00",
+        "score_updated_at": "2026-11-21T14:29:07.009642+00:00",
+        "final_time": "2026-11-21T14:24:20.914000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "3443b9d8ab3cf50d8c162a2efe6e3aadbe83ae2c87464e2091c5689b1668b47c",
+        "observation_sha256": "d8a51e07cd49f000fb8b47f193f15fb6b43c43aee96ab5b33b69abd1a1cc1852"
+      }
+    }
   },
   {
     "league": "Premier League",
@@ -36009,7 +36106,7 @@
     "home": "Como",
     "away": "Cagliari",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-21T14:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -36018,7 +36115,56 @@
     "line": 2.5,
     "p_over": 0.4826,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-21"
+    "historical_cutoff_exclusive": "2026-11-21",
+    "actual_total": 2.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-22T13:34:37.597647+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-22T13:34:37.597647+00:00",
+      "actual_home": 2.0,
+      "actual_away": 0.0,
+      "result_sha256": "c8d57e980ff6c81a4900474727b00bb567a21ad151c85f6a5b9d4a9fb55039b8",
+      "source_kickoff_utc": "2026-11-21T14:00:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000002371945410"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000002371945410",
+          "content_sha256": "f1060308425aff8e4a0168c9dcab640174d3cf4b56a9ba35e5d70c9bb68bcf55",
+          "fetched_at": "2026-11-22T13:34:32.744941+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Serie A",
+        "date": "2026-11-21",
+        "home": "Como",
+        "away": "Cagliari",
+        "source_fixture_id": "id1000002371945410",
+        "kickoff_utc": "2026-11-21T14:00:00+00:00",
+        "fulltime_home": 2,
+        "fulltime_away": 0,
+        "received_at": "2026-11-22T13:34:30.424399+00:00",
+        "verified_at": "2026-11-22T13:34:32.744941+00:00",
+        "participant_ids": [
+          2704,
+          2719
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-21T14:03:18.770000+00:00",
+        "score_updated_at": "2026-11-21T16:04:38.925050+00:00",
+        "final_time": "2026-11-21T15:57:25.058000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "9e0c1f6a5a02b9669f570c5523d115964b514d68b708dc5fff03eab10b2d3a21",
+        "observation_sha256": "f1060308425aff8e4a0168c9dcab640174d3cf4b56a9ba35e5d70c9bb68bcf55"
+      }
+    }
   },
   {
     "league": "Serie A",
@@ -36043,7 +36189,7 @@
     "home": "Como",
     "away": "Cagliari",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-21T14:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -36055,7 +36201,55 @@
       "away": 0.246
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-21"
+    "historical_cutoff_exclusive": "2026-11-21",
+    "actual_outcome": "home",
+    "settled_at": "2026-11-22T13:34:37.597647+00:00",
+    "settlement_evidence": {
+      "schema_version": 3,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-22T13:34:37.597647+00:00",
+      "actual_home": 2.0,
+      "actual_away": 0.0,
+      "result_sha256": "05d2553ea6576c00f57d63333722e4f86f48808e0a23b45b88258eb065182714",
+      "source_kickoff_utc": "2026-11-21T14:00:00+00:00",
+      "source_ids": [
+        "OddsPapi:90min:id1000002371945410"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "settlement_only",
+          "source_id": "OddsPapi:90min:id1000002371945410",
+          "content_sha256": "f1060308425aff8e4a0168c9dcab640174d3cf4b56a9ba35e5d70c9bb68bcf55",
+          "fetched_at": "2026-11-22T13:34:32.744941+00:00"
+        }
+      ],
+      "external_result": {
+        "validation_version": "named_fulltime_rechecked_v1",
+        "league": "Serie A",
+        "date": "2026-11-21",
+        "home": "Como",
+        "away": "Cagliari",
+        "source_fixture_id": "id1000002371945410",
+        "kickoff_utc": "2026-11-21T14:00:00+00:00",
+        "fulltime_home": 2,
+        "fulltime_away": 0,
+        "received_at": "2026-11-22T13:34:30.424399+00:00",
+        "verified_at": "2026-11-22T13:34:32.744941+00:00",
+        "participant_ids": [
+          2704,
+          2719
+        ],
+        "status_name": "Finished",
+        "status_id": 2,
+        "actual_start": "2026-11-21T14:03:18.770000+00:00",
+        "score_updated_at": "2026-11-21T16:04:38.925050+00:00",
+        "final_time": "2026-11-21T15:57:25.058000+00:00",
+        "ready_for_review": true,
+        "score_sha256": "9e0c1f6a5a02b9669f570c5523d115964b514d68b708dc5fff03eab10b2d3a21",
+        "observation_sha256": "f1060308425aff8e4a0168c9dcab640174d3cf4b56a9ba35e5d70c9bb68bcf55"
+      }
+    }
   },
   {
     "league": "Serie A",
