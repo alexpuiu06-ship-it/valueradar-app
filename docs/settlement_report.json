@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-22T16:13:34.237567+00:00",
+  "generated_at": "2026-11-22T16:26:09.138279+00:00",
   "forecasts": 2520,
   "unique_fixtures": 304,
   "counts": {
@@ -8,9 +8,9 @@
     "settled_with_evidence": 401,
     "awaiting_statistics": 124,
     "awaiting_kickoff_evidence": 70,
-    "upcoming": 1630,
+    "upcoming": 1625,
     "blocked_kickoff_conflict": 240,
-    "in_progress": 10,
+    "in_progress": 15,
     "awaiting_result": 20
   },
   "by_pipeline_version": {
@@ -25,8 +25,8 @@
       "blocked_kickoff_conflict": 240,
       "awaiting_statistics": 62,
       "settled_with_evidence": 93,
-      "in_progress": 10,
-      "upcoming": 1095,
+      "in_progress": 15,
+      "upcoming": 1090,
       "awaiting_result": 20
     }
   },
@@ -176,9 +176,9 @@
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 105,
       "awaiting_kickoff_evidence": 14,
-      "upcoming": 326,
+      "upcoming": 325,
       "blocked_kickoff_conflict": 48,
-      "in_progress": 2,
+      "in_progress": 3,
       "awaiting_result": 4
     },
     "fouls": {
@@ -186,27 +186,27 @@
       "settled_with_evidence": 43,
       "awaiting_statistics": 62,
       "awaiting_kickoff_evidence": 14,
-      "upcoming": 326,
+      "upcoming": 325,
       "blocked_kickoff_conflict": 48,
-      "in_progress": 2,
+      "in_progress": 3,
       "awaiting_result": 4
     },
     "goals": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 105,
       "awaiting_kickoff_evidence": 14,
-      "upcoming": 326,
+      "upcoming": 325,
       "blocked_kickoff_conflict": 48,
-      "in_progress": 2,
+      "in_progress": 3,
       "awaiting_result": 4
     },
     "h2h": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 105,
       "awaiting_kickoff_evidence": 14,
-      "upcoming": 326,
+      "upcoming": 325,
       "blocked_kickoff_conflict": 48,
-      "in_progress": 2,
+      "in_progress": 3,
       "awaiting_result": 4
     },
     "yellow": {
@@ -214,9 +214,9 @@
       "settled_with_evidence": 43,
       "awaiting_statistics": 62,
       "awaiting_kickoff_evidence": 14,
-      "upcoming": 326,
+      "upcoming": 325,
       "blocked_kickoff_conflict": 48,
-      "in_progress": 2,
+      "in_progress": 3,
       "awaiting_result": 4
     }
   },
@@ -244,8 +244,9 @@
       "settled_with_evidence": 76,
       "awaiting_statistics": 24,
       "awaiting_kickoff_evidence": 15,
-      "upcoming": 235,
+      "upcoming": 230,
       "blocked_kickoff_conflict": 45,
+      "in_progress": 5,
       "awaiting_result": 5
     },
     "Premier League": {
