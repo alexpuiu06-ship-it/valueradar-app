@@ -1,34 +1,35 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-23T00:57:45.316936+00:00",
+  "generated_at": "2026-11-23T14:55:54.200192+00:00",
   "forecasts": 2520,
   "unique_fixtures": 304,
   "counts": {
     "blocked_creation_evidence": 25,
-    "settled_with_evidence": 441,
-    "awaiting_statistics": 154,
-    "awaiting_kickoff_evidence": 50,
+    "settled_with_evidence": 481,
+    "awaiting_statistics": 180,
+    "settled_result_conflict": 4,
+    "awaiting_kickoff_evidence": 15,
     "upcoming": 1575,
-    "blocked_kickoff_conflict": 240,
-    "awaiting_result": 35
+    "blocked_kickoff_conflict": 240
   },
   "by_pipeline_version": {
     "legacy_unversioned": {
       "blocked_creation_evidence": 25,
-      "settled_with_evidence": 328,
-      "awaiting_statistics": 77,
-      "awaiting_kickoff_evidence": 50,
+      "settled_with_evidence": 348,
+      "awaiting_statistics": 90,
+      "settled_result_conflict": 2,
+      "awaiting_kickoff_evidence": 15,
       "upcoming": 520
     },
     "validated_identity_v2": {
       "blocked_kickoff_conflict": 240,
-      "awaiting_statistics": 77,
-      "settled_with_evidence": 113,
-      "upcoming": 1055,
-      "awaiting_result": 35
+      "awaiting_statistics": 90,
+      "settled_with_evidence": 133,
+      "settled_result_conflict": 2,
+      "upcoming": 1055
     }
   },
-  "settled_records": 579,
+  "settled_records": 623,
   "excluded_settled_ids": [
     "0060a3b647588df737a0d08fec4128c14795d2f23fd3f1c3212ec7155920a557",
     "05ccacaea7da03df0003766d36cd0f0e07b80f30f72a36eff4602f1300dbb21f",
@@ -39,6 +40,7 @@
     "0e8b6e272217f94073201876d7efe566e4688825678bdf09408be8515ed20dc2",
     "155a5edd7f100708b020b4ca0edd2104104a273856359fedd45fc2fb5dbb9152",
     "1661c6e338f1fce847e00ef6a55d6f3745ba240562cdefd8a0aea66ab6112560",
+    "17a4770a53aadb016ca3afe20d953a16665bff18b2c8c6a5ca3ea93b48ba8bc5",
     "1cbd302defb6838eac8adb468d6f2defcf322925bcdd7b553f8f5c7b9526349a",
     "1d36fec735ca3ae8ee252915164c7c3a208d7845b6cca8f2c070e6c25396d92c",
     "1dc80f6c723936c7f99d69143e72d2dd4800694baba2fa9347fe10c01534f175",
@@ -53,6 +55,7 @@
     "2f7a0b5b1eea946da18bfeb15d52ea18222830b58421ca7304f800c707960077",
     "33558923c92ce67d3a5f2c5f5074d9722c6055a50da98a739dfe5fbeb3b97af7",
     "3ced30d1005a0bb2aad1e3c95b050c627d0a562904ffb977ad29f1dd7fb04ab6",
+    "3d071d9413925c8ca050cffcf0443f924903d51555352620a15403caf969216d",
     "3f5bdb6df2cbbddbcb043454e7e64a29f5dcaa95f813c7eb7cd5ad32c779a853",
     "428d4e4e86d9c0bd85eeca7ef2778d3c39c8e412b455e06a02e0b4ed8899eff7",
     "43df2d6d2264a096d33a9065845c0275bf4aba28ee406345e4559135a3c7076f",
@@ -69,6 +72,7 @@
     "50f26d6c2d3072b2ce252bcb3125fa15f632d99b41bc85abbff7075f816889d8",
     "510c5895efc3df6e62ca17484faf720fd1e22048d690eb52d5f78619bcfa5937",
     "51bb6496d7368f4c367e0725458e3b2cb91f6b799eadcfc94340cad3cf6149ea",
+    "55010eeb299f96a9d09a803ceabde447238bc7d7d9b972cff02e401433918fe1",
     "564d48c0d802086cbf2690320485265009264d78f5b58cf2c1295a4e93042cd1",
     "56ee5bf1d61e8f45572b99197ef01f0f21b050097c14edcaad1ce87475d13559",
     "584c03ea6f1693028ef83f09d30f60940d29a9487c0a385ae66e84c568a7e583",
@@ -93,6 +97,7 @@
     "771677b069727ba247e37f9a09e7da384352d02e42e0eed591d0c17e7b85d4ac",
     "7a809636c75fdf922ed1567a33abc935bf22b0ba17b81e2d2d545f9177940e88",
     "7dd6231afbf67979e049c935aa5520c3c3c42353ebcf57765c661fdd5c25787c",
+    "7defa980e6900856fe987dea8def13d625a3b6069e9570d4e9e5591ef4793b7e",
     "819c76ee668a047e4fbbee4c95b84a16fe9c9e0214e8ee64ae3359461b2f9db0",
     "81f4f37b793014d8bee1598786bde15534f2ae22e2baa30737d2b730f96b0cbf",
     "8276fba56a3f593799b8a45c79d8bcc7c47635b7f81495a2f8cceeccca465c23",
@@ -172,95 +177,87 @@
   "by_market": {
     "corners": {
       "blocked_creation_evidence": 5,
-      "settled_with_evidence": 117,
-      "awaiting_statistics": 2,
-      "awaiting_kickoff_evidence": 10,
+      "settled_with_evidence": 133,
+      "awaiting_kickoff_evidence": 3,
       "upcoming": 315,
-      "blocked_kickoff_conflict": 48,
-      "awaiting_result": 7
+      "blocked_kickoff_conflict": 48
     },
     "fouls": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 43,
-      "awaiting_statistics": 76,
-      "awaiting_kickoff_evidence": 10,
+      "awaiting_statistics": 90,
+      "awaiting_kickoff_evidence": 3,
       "upcoming": 315,
-      "blocked_kickoff_conflict": 48,
-      "awaiting_result": 7
+      "blocked_kickoff_conflict": 48
     },
     "goals": {
       "blocked_creation_evidence": 5,
-      "settled_with_evidence": 119,
-      "awaiting_kickoff_evidence": 10,
+      "settled_with_evidence": 131,
+      "settled_result_conflict": 2,
+      "awaiting_kickoff_evidence": 3,
       "upcoming": 315,
-      "blocked_kickoff_conflict": 48,
-      "awaiting_result": 7
+      "blocked_kickoff_conflict": 48
     },
     "h2h": {
       "blocked_creation_evidence": 5,
-      "settled_with_evidence": 119,
-      "awaiting_kickoff_evidence": 10,
+      "settled_with_evidence": 131,
+      "settled_result_conflict": 2,
+      "awaiting_kickoff_evidence": 3,
       "upcoming": 315,
-      "blocked_kickoff_conflict": 48,
-      "awaiting_result": 7
+      "blocked_kickoff_conflict": 48
     },
     "yellow": {
       "blocked_creation_evidence": 5,
       "settled_with_evidence": 43,
-      "awaiting_statistics": 76,
-      "awaiting_kickoff_evidence": 10,
+      "awaiting_statistics": 90,
+      "awaiting_kickoff_evidence": 3,
       "upcoming": 315,
-      "blocked_kickoff_conflict": 48,
-      "awaiting_result": 7
+      "blocked_kickoff_conflict": 48
     }
   },
   "by_league": {
     "Bundesliga": {
       "blocked_creation_evidence": 5,
-      "settled_with_evidence": 92,
-      "awaiting_statistics": 38,
+      "settled_with_evidence": 90,
+      "awaiting_statistics": 36,
+      "settled_result_conflict": 4,
       "upcoming": 270,
       "blocked_kickoff_conflict": 45
     },
     "La Liga": {
       "blocked_creation_evidence": 5,
-      "settled_with_evidence": 87,
-      "awaiting_statistics": 28,
-      "awaiting_kickoff_evidence": 15,
+      "settled_with_evidence": 99,
+      "awaiting_statistics": 36,
+      "awaiting_kickoff_evidence": 5,
       "upcoming": 380,
-      "blocked_kickoff_conflict": 50,
-      "awaiting_result": 10
+      "blocked_kickoff_conflict": 50
     },
     "Ligue 1": {
       "blocked_creation_evidence": 5,
-      "settled_with_evidence": 82,
-      "awaiting_statistics": 28,
-      "awaiting_kickoff_evidence": 10,
+      "settled_with_evidence": 94,
+      "awaiting_statistics": 36,
       "upcoming": 225,
-      "blocked_kickoff_conflict": 45,
-      "awaiting_result": 10
+      "blocked_kickoff_conflict": 45
     },
     "Premier League": {
       "blocked_creation_evidence": 5,
-      "settled_with_evidence": 93,
-      "awaiting_statistics": 32,
-      "awaiting_kickoff_evidence": 10,
+      "settled_with_evidence": 99,
+      "awaiting_statistics": 36,
+      "awaiting_kickoff_evidence": 5,
       "upcoming": 405,
-      "blocked_kickoff_conflict": 50,
-      "awaiting_result": 5
+      "blocked_kickoff_conflict": 50
     },
     "Serie A": {
       "blocked_creation_evidence": 5,
-      "settled_with_evidence": 87,
-      "awaiting_statistics": 28,
-      "awaiting_kickoff_evidence": 15,
+      "settled_with_evidence": 99,
+      "awaiting_statistics": 36,
+      "awaiting_kickoff_evidence": 5,
       "upcoming": 295,
-      "blocked_kickoff_conflict": 50,
-      "awaiting_result": 10
+      "blocked_kickoff_conflict": 50
     }
   },
   "overdue_after_hours": 48,
-  "overdue_forecasts": 12,
+  "overdue_forecasts": 16,
   "ready_but_unsettled": 0,
   "result_conflicts_quarantined": 0,
   "samples": [

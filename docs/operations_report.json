@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-23T00:58:02.847905+00:00",
-  "analysis_generated_at": "2026-11-23T00:57:45.316936+00:00",
+  "generated_at": "2026-11-23T14:56:12.130104+00:00",
+  "analysis_generated_at": "2026-11-23T14:55:54.200192+00:00",
   "pipeline_version": "validated_identity_v2",
   "verified_value": false,
   "hypothetical_roi": null,
@@ -23,127 +23,120 @@
   },
   "settlement": {
     "schema_version": 2,
-    "generated_at": "2026-11-23T00:57:45.316936+00:00",
+    "generated_at": "2026-11-23T14:55:54.200192+00:00",
     "forecasts": 2520,
     "unique_fixtures": 304,
     "counts": {
       "blocked_creation_evidence": 25,
-      "settled_with_evidence": 441,
-      "awaiting_statistics": 154,
-      "awaiting_kickoff_evidence": 50,
+      "settled_with_evidence": 481,
+      "awaiting_statistics": 180,
+      "settled_result_conflict": 4,
+      "awaiting_kickoff_evidence": 15,
       "upcoming": 1575,
-      "blocked_kickoff_conflict": 240,
-      "awaiting_result": 35
+      "blocked_kickoff_conflict": 240
     },
     "by_pipeline_version": {
       "legacy_unversioned": {
         "blocked_creation_evidence": 25,
-        "settled_with_evidence": 328,
-        "awaiting_statistics": 77,
-        "awaiting_kickoff_evidence": 50,
+        "settled_with_evidence": 348,
+        "awaiting_statistics": 90,
+        "settled_result_conflict": 2,
+        "awaiting_kickoff_evidence": 15,
         "upcoming": 520
       },
       "validated_identity_v2": {
         "blocked_kickoff_conflict": 240,
-        "awaiting_statistics": 77,
-        "settled_with_evidence": 113,
-        "upcoming": 1055,
-        "awaiting_result": 35
+        "awaiting_statistics": 90,
+        "settled_with_evidence": 133,
+        "settled_result_conflict": 2,
+        "upcoming": 1055
       }
     },
-    "settled_records": 579,
+    "settled_records": 623,
     "by_market": {
       "corners": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 117,
-        "awaiting_statistics": 2,
-        "awaiting_kickoff_evidence": 10,
+        "settled_with_evidence": 133,
+        "awaiting_kickoff_evidence": 3,
         "upcoming": 315,
-        "blocked_kickoff_conflict": 48,
-        "awaiting_result": 7
+        "blocked_kickoff_conflict": 48
       },
       "fouls": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 43,
-        "awaiting_statistics": 76,
-        "awaiting_kickoff_evidence": 10,
+        "awaiting_statistics": 90,
+        "awaiting_kickoff_evidence": 3,
         "upcoming": 315,
-        "blocked_kickoff_conflict": 48,
-        "awaiting_result": 7
+        "blocked_kickoff_conflict": 48
       },
       "goals": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 119,
-        "awaiting_kickoff_evidence": 10,
+        "settled_with_evidence": 131,
+        "settled_result_conflict": 2,
+        "awaiting_kickoff_evidence": 3,
         "upcoming": 315,
-        "blocked_kickoff_conflict": 48,
-        "awaiting_result": 7
+        "blocked_kickoff_conflict": 48
       },
       "h2h": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 119,
-        "awaiting_kickoff_evidence": 10,
+        "settled_with_evidence": 131,
+        "settled_result_conflict": 2,
+        "awaiting_kickoff_evidence": 3,
         "upcoming": 315,
-        "blocked_kickoff_conflict": 48,
-        "awaiting_result": 7
+        "blocked_kickoff_conflict": 48
       },
       "yellow": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 43,
-        "awaiting_statistics": 76,
-        "awaiting_kickoff_evidence": 10,
+        "awaiting_statistics": 90,
+        "awaiting_kickoff_evidence": 3,
         "upcoming": 315,
-        "blocked_kickoff_conflict": 48,
-        "awaiting_result": 7
+        "blocked_kickoff_conflict": 48
       }
     },
     "by_league": {
       "Bundesliga": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 92,
-        "awaiting_statistics": 38,
+        "settled_with_evidence": 90,
+        "awaiting_statistics": 36,
+        "settled_result_conflict": 4,
         "upcoming": 270,
         "blocked_kickoff_conflict": 45
       },
       "La Liga": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 87,
-        "awaiting_statistics": 28,
-        "awaiting_kickoff_evidence": 15,
+        "settled_with_evidence": 99,
+        "awaiting_statistics": 36,
+        "awaiting_kickoff_evidence": 5,
         "upcoming": 380,
-        "blocked_kickoff_conflict": 50,
-        "awaiting_result": 10
+        "blocked_kickoff_conflict": 50
       },
       "Ligue 1": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 82,
-        "awaiting_statistics": 28,
-        "awaiting_kickoff_evidence": 10,
+        "settled_with_evidence": 94,
+        "awaiting_statistics": 36,
         "upcoming": 225,
-        "blocked_kickoff_conflict": 45,
-        "awaiting_result": 10
+        "blocked_kickoff_conflict": 45
       },
       "Premier League": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 93,
-        "awaiting_statistics": 32,
-        "awaiting_kickoff_evidence": 10,
+        "settled_with_evidence": 99,
+        "awaiting_statistics": 36,
+        "awaiting_kickoff_evidence": 5,
         "upcoming": 405,
-        "blocked_kickoff_conflict": 50,
-        "awaiting_result": 5
+        "blocked_kickoff_conflict": 50
       },
       "Serie A": {
         "blocked_creation_evidence": 5,
-        "settled_with_evidence": 87,
-        "awaiting_statistics": 28,
-        "awaiting_kickoff_evidence": 15,
+        "settled_with_evidence": 99,
+        "awaiting_statistics": 36,
+        "awaiting_kickoff_evidence": 5,
         "upcoming": 295,
-        "blocked_kickoff_conflict": 50,
-        "awaiting_result": 10
+        "blocked_kickoff_conflict": 50
       }
     },
     "overdue_after_hours": 48,
-    "overdue_forecasts": 12,
+    "overdue_forecasts": 16,
     "ready_but_unsettled": 0,
     "result_conflicts_quarantined": 0,
     "samples": [

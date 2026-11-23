@@ -11804,7 +11804,31 @@
     "line": 9.5,
     "p_over": 0.55579,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
-    "settled": false
+    "settled": true,
+    "actual_total": 9.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 1.0,
+      "actual_away": 8.0,
+      "result_sha256": "234adb39f45569e878f03c956264074ead73278daf2f7f1d3b5e9ebeccd951cc",
+      "source_kickoff_utc": "2026-11-22T16:30:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Bundesliga",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "dcb4d7854bb1c8d5835760f8af8e1dc7abffb03b533cc37b1a937487313acdde",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Bundesliga",
@@ -11909,7 +11933,31 @@
     "line": 9.5,
     "p_over": 0.48296,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
-    "settled": false
+    "settled": true,
+    "actual_total": 5.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 4.0,
+      "actual_away": 1.0,
+      "result_sha256": "60a951a48e90f3083982aa5794c1cde93c9ec11bd381dedf4afe748b7fd38a76",
+      "source_kickoff_utc": "2026-11-22T17:30:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "771b767592fd4fc98d4e661c0ea697cd713c301cc23bc10cc6411130a54a51ab",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "La Liga",
@@ -11931,7 +11979,31 @@
     "line": 2.5,
     "p_over": 0.4769,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
-    "settled": false
+    "settled": true,
+    "actual_total": 1.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 1.0,
+      "actual_away": 0.0,
+      "result_sha256": "96f2909153b2ec21dbbfdef5ee79bfe4f97e3acba3a5d613b8dc9412a864dafa",
+      "source_kickoff_utc": "2026-11-22T17:30:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "771b767592fd4fc98d4e661c0ea697cd713c301cc23bc10cc6411130a54a51ab",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "La Liga",
@@ -11945,7 +12017,30 @@
       "away": 0.24562
     },
     "created_at": "2026-11-06T17:31:04.635762+00:00",
-    "settled": false
+    "settled": true,
+    "actual_outcome": "home",
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 1.0,
+      "actual_away": 0.0,
+      "result_sha256": "dbc170ccc483825824f682263be0d12b1c510f25f0f36afb25ae4bf7678030eb",
+      "source_kickoff_utc": "2026-11-22T17:30:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "771b767592fd4fc98d4e661c0ea697cd713c301cc23bc10cc6411130a54a51ab",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "La Liga",
@@ -12096,7 +12191,31 @@
     "line": 9.5,
     "p_over": 0.52561,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
-    "settled": false
+    "settled": true,
+    "actual_total": 9.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 2.0,
+      "actual_away": 7.0,
+      "result_sha256": "58c442864443f0119d771d8d126c4285e5217413c4093a814b22631d02a7b5ba",
+      "source_kickoff_utc": "2026-11-22T20:00:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "771b767592fd4fc98d4e661c0ea697cd713c301cc23bc10cc6411130a54a51ab",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "La Liga",
@@ -12118,7 +12237,31 @@
     "line": 2.5,
     "p_over": 0.44667,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
-    "settled": false
+    "settled": true,
+    "actual_total": 3.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 0.0,
+      "actual_away": 3.0,
+      "result_sha256": "4db9ff0453aefd23d5d32b2352968508f1cc404241a1fe913ef8d1773c4f724e",
+      "source_kickoff_utc": "2026-11-22T20:00:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "771b767592fd4fc98d4e661c0ea697cd713c301cc23bc10cc6411130a54a51ab",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "La Liga",
@@ -12132,7 +12275,30 @@
       "away": 0.32293
     },
     "created_at": "2026-11-06T17:31:04.635762+00:00",
-    "settled": false
+    "settled": true,
+    "actual_outcome": "away",
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 0.0,
+      "actual_away": 3.0,
+      "result_sha256": "cbcf225f744764f4ed29dd4fa19a4b9dde6f1dd9ee94cb3fdde46e442c085ef6",
+      "source_kickoff_utc": "2026-11-22T20:00:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "771b767592fd4fc98d4e661c0ea697cd713c301cc23bc10cc6411130a54a51ab",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "La Liga",
@@ -12283,7 +12449,31 @@
     "line": 9.5,
     "p_over": 0.46218,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
-    "settled": false
+    "settled": true,
+    "actual_total": 12.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 7.0,
+      "actual_away": 5.0,
+      "result_sha256": "06bb11709106a38396a284c5cb27a3bb8fef32b28f0d60255034407a88c09c1e",
+      "source_kickoff_utc": "2026-11-22T16:15:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Ligue 1",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "b8020acfee6189709be794c8644ab89f80323b0aabd5a545f1f04cd3752432b5",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Ligue 1",
@@ -12305,7 +12495,31 @@
     "line": 2.5,
     "p_over": 0.61343,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
-    "settled": false
+    "settled": true,
+    "actual_total": 2.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 1.0,
+      "actual_away": 1.0,
+      "result_sha256": "71b0b27ef2027ce1e928ecf167d9694884308efaeb75bbae2bf35ac79aec240a",
+      "source_kickoff_utc": "2026-11-22T16:15:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Ligue 1",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "b8020acfee6189709be794c8644ab89f80323b0aabd5a545f1f04cd3752432b5",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Ligue 1",
@@ -12319,7 +12533,30 @@
       "away": 0.29062
     },
     "created_at": "2026-11-06T17:31:04.635762+00:00",
-    "settled": false
+    "settled": true,
+    "actual_outcome": "draw",
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 1.0,
+      "actual_away": 1.0,
+      "result_sha256": "ee50d68fb248ae2d53169cdb26a4b90166c33db72f55730aece324d31c0cf8c7",
+      "source_kickoff_utc": "2026-11-22T16:15:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Ligue 1",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "b8020acfee6189709be794c8644ab89f80323b0aabd5a545f1f04cd3752432b5",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Ligue 1",
@@ -12341,7 +12578,31 @@
     "line": 9.5,
     "p_over": 0.37597,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
-    "settled": false
+    "settled": true,
+    "actual_total": 7.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 2.0,
+      "actual_away": 5.0,
+      "result_sha256": "e389a38886c8c040c3a48fd3fcb61e7767883552fad3dee8b79e6d722837bcff",
+      "source_kickoff_utc": "2026-11-22T19:45:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Ligue 1",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "b8020acfee6189709be794c8644ab89f80323b0aabd5a545f1f04cd3752432b5",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Ligue 1",
@@ -12363,7 +12624,31 @@
     "line": 2.5,
     "p_over": 0.60837,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
-    "settled": false
+    "settled": true,
+    "actual_total": 5.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 2.0,
+      "actual_away": 3.0,
+      "result_sha256": "71e8f00f3e9eb7a20eab1545d4dbf83ca73ecff2dd500ebe7c2c238330cf3d80",
+      "source_kickoff_utc": "2026-11-22T19:45:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Ligue 1",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "b8020acfee6189709be794c8644ab89f80323b0aabd5a545f1f04cd3752432b5",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Ligue 1",
@@ -12377,7 +12662,30 @@
       "away": 0.24794
     },
     "created_at": "2026-11-06T17:31:04.635762+00:00",
-    "settled": false
+    "settled": true,
+    "actual_outcome": "away",
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 2.0,
+      "actual_away": 3.0,
+      "result_sha256": "5da8fc0a6a24f9cc3e55b39b2931b8adcc72961c6227dff685ca49351dd4805b",
+      "source_kickoff_utc": "2026-11-22T19:45:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Ligue 1",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "b8020acfee6189709be794c8644ab89f80323b0aabd5a545f1f04cd3752432b5",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Ligue 1",
@@ -12657,7 +12965,31 @@
     "line": 9.5,
     "p_over": 0.50977,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
-    "settled": false
+    "settled": true,
+    "actual_total": 20.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 15.0,
+      "actual_away": 5.0,
+      "result_sha256": "3a888d81f37310e7c00697ea4182959b4af178aef63ec313e4a8e29c5b43a5f5",
+      "source_kickoff_utc": "2026-11-22T16:30:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Premier League",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "dc329cf3a8892a18a3263104ee2ce862f7e39c27e466ef375970b56744da6610",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Premier League",
@@ -12679,7 +13011,31 @@
     "line": 2.5,
     "p_over": 0.49357,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
-    "settled": false
+    "settled": true,
+    "actual_total": 4.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 4.0,
+      "actual_away": 0.0,
+      "result_sha256": "3140ffcc0d73d86fc1b12782954016ef8e3e38ee57c76b6fe47d68de1d14b01b",
+      "source_kickoff_utc": "2026-11-22T16:30:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Premier League",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "dc329cf3a8892a18a3263104ee2ce862f7e39c27e466ef375970b56744da6610",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Premier League",
@@ -12693,7 +13049,30 @@
       "away": 0.30636
     },
     "created_at": "2026-11-06T17:31:04.635762+00:00",
-    "settled": false
+    "settled": true,
+    "actual_outcome": "home",
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 4.0,
+      "actual_away": 0.0,
+      "result_sha256": "8af541584df39c8f929c30afcf85026f5d444a9b261a43d9067f3267bfc01606",
+      "source_kickoff_utc": "2026-11-22T16:30:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Premier League",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "dc329cf3a8892a18a3263104ee2ce862f7e39c27e466ef375970b56744da6610",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Premier League",
@@ -12715,7 +13094,31 @@
     "line": 9.5,
     "p_over": 0.50849,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
-    "settled": false
+    "settled": true,
+    "actual_total": 11.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 5.0,
+      "actual_away": 6.0,
+      "result_sha256": "3ad7c04c502e81f9e3fe0b6283357a9c5d54c714685ac656cf32cf26bea99a3b",
+      "source_kickoff_utc": "2026-11-22T19:45:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "c34cb1a329cc369a77885a5ed2c61ed16326d3d52dc2a0286227cb8e88eb7f79",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Serie A",
@@ -12737,7 +13140,31 @@
     "line": 2.5,
     "p_over": 0.57616,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
-    "settled": false
+    "settled": true,
+    "actual_total": 8.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 4.0,
+      "actual_away": 4.0,
+      "result_sha256": "5984ddb3505949a8c358b8f0ca1b1803a68624cf6aaf399e4432d851fc146a54",
+      "source_kickoff_utc": "2026-11-22T19:45:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "c34cb1a329cc369a77885a5ed2c61ed16326d3d52dc2a0286227cb8e88eb7f79",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Serie A",
@@ -12751,7 +13178,30 @@
       "away": 0.39442
     },
     "created_at": "2026-11-06T17:31:04.635762+00:00",
-    "settled": false
+    "settled": true,
+    "actual_outcome": "draw",
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 4.0,
+      "actual_away": 4.0,
+      "result_sha256": "7bbda9f1ef26812be92e13b797f7e3a3888bd2ed699282a7134779ef3795e0a5",
+      "source_kickoff_utc": "2026-11-22T19:45:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "c34cb1a329cc369a77885a5ed2c61ed16326d3d52dc2a0286227cb8e88eb7f79",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Serie A",
@@ -13031,7 +13481,31 @@
     "line": 9.5,
     "p_over": 0.49173,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
-    "settled": false
+    "settled": true,
+    "actual_total": 11.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 2.0,
+      "actual_away": 9.0,
+      "result_sha256": "c739c78b8ead53ec81c035a415a5e7b4720fe6674d184ec8f9c243c877e6f22a",
+      "source_kickoff_utc": "2026-11-22T17:00:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "c34cb1a329cc369a77885a5ed2c61ed16326d3d52dc2a0286227cb8e88eb7f79",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Serie A",
@@ -13053,7 +13527,31 @@
     "line": 2.5,
     "p_over": 0.62045,
     "created_at": "2026-11-06T16:47:55.955423+00:00",
-    "settled": false
+    "settled": true,
+    "actual_total": 6.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 5.0,
+      "actual_away": 1.0,
+      "result_sha256": "d947f5edf03eb3779e5e715d0a02c3ef144cbe16c109be41b8617ab98ba6a1f9",
+      "source_kickoff_utc": "2026-11-22T17:00:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "c34cb1a329cc369a77885a5ed2c61ed16326d3d52dc2a0286227cb8e88eb7f79",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Serie A",
@@ -13067,7 +13565,30 @@
       "away": 0.32244
     },
     "created_at": "2026-11-06T17:31:04.635762+00:00",
-    "settled": false
+    "settled": true,
+    "actual_outcome": "home",
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 5.0,
+      "actual_away": 1.0,
+      "result_sha256": "632ad216293b7f6965e515d499f6c0aa5e685d0c7ddd3d63e3ac7435fa9f25b5",
+      "source_kickoff_utc": "2026-11-22T17:00:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "c34cb1a329cc369a77885a5ed2c61ed16326d3d52dc2a0286227cb8e88eb7f79",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Serie A",
@@ -22191,7 +22712,7 @@
     "home": "SV Werder Bremen",
     "away": "Hamburger SV",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T16:30:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -22200,7 +22721,31 @@
     "line": 9.5,
     "p_over": 0.55579,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_total": 9.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 1.0,
+      "actual_away": 8.0,
+      "result_sha256": "234adb39f45569e878f03c956264074ead73278daf2f7f1d3b5e9ebeccd951cc",
+      "source_kickoff_utc": "2026-11-22T16:30:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Bundesliga",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "dcb4d7854bb1c8d5835760f8af8e1dc7abffb03b533cc37b1a937487313acdde",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Bundesliga",
@@ -26554,7 +27099,7 @@
     "home": "Getafe CF",
     "away": "Atlético de Madrid",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T20:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -26563,7 +27108,31 @@
     "line": 9.5,
     "p_over": 0.52561,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_total": 9.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 2.0,
+      "actual_away": 7.0,
+      "result_sha256": "58c442864443f0119d771d8d126c4285e5217413c4093a814b22631d02a7b5ba",
+      "source_kickoff_utc": "2026-11-22T20:00:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "771b767592fd4fc98d4e661c0ea697cd713c301cc23bc10cc6411130a54a51ab",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "La Liga",
@@ -26571,7 +27140,7 @@
     "home": "Getafe CF",
     "away": "Atlético de Madrid",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T20:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -26580,7 +27149,31 @@
     "line": 2.5,
     "p_over": 0.44667,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_total": 3.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 0.0,
+      "actual_away": 3.0,
+      "result_sha256": "4db9ff0453aefd23d5d32b2352968508f1cc404241a1fe913ef8d1773c4f724e",
+      "source_kickoff_utc": "2026-11-22T20:00:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "771b767592fd4fc98d4e661c0ea697cd713c301cc23bc10cc6411130a54a51ab",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "La Liga",
@@ -26605,7 +27198,7 @@
     "home": "Getafe CF",
     "away": "Atlético de Madrid",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T20:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -26617,7 +27210,30 @@
       "away": 0.32293
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_outcome": "away",
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 0.0,
+      "actual_away": 3.0,
+      "result_sha256": "cbcf225f744764f4ed29dd4fa19a4b9dde6f1dd9ee94cb3fdde46e442c085ef6",
+      "source_kickoff_utc": "2026-11-22T20:00:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "771b767592fd4fc98d4e661c0ea697cd713c301cc23bc10cc6411130a54a51ab",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "La Liga",
@@ -26642,7 +27258,7 @@
     "home": "CA Osasuna",
     "away": "Málaga CF",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T17:30:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -26651,7 +27267,31 @@
     "line": 9.5,
     "p_over": 0.48296,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_total": 5.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 4.0,
+      "actual_away": 1.0,
+      "result_sha256": "60a951a48e90f3083982aa5794c1cde93c9ec11bd381dedf4afe748b7fd38a76",
+      "source_kickoff_utc": "2026-11-22T17:30:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "771b767592fd4fc98d4e661c0ea697cd713c301cc23bc10cc6411130a54a51ab",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "La Liga",
@@ -26659,7 +27299,7 @@
     "home": "CA Osasuna",
     "away": "Málaga CF",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T17:30:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -26668,7 +27308,31 @@
     "line": 2.5,
     "p_over": 0.4769,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_total": 1.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 1.0,
+      "actual_away": 0.0,
+      "result_sha256": "96f2909153b2ec21dbbfdef5ee79bfe4f97e3acba3a5d613b8dc9412a864dafa",
+      "source_kickoff_utc": "2026-11-22T17:30:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "771b767592fd4fc98d4e661c0ea697cd713c301cc23bc10cc6411130a54a51ab",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "La Liga",
@@ -26693,7 +27357,7 @@
     "home": "CA Osasuna",
     "away": "Málaga CF",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T17:30:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -26705,7 +27369,30 @@
       "away": 0.24562
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_outcome": "home",
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 1.0,
+      "actual_away": 0.0,
+      "result_sha256": "dbc170ccc483825824f682263be0d12b1c510f25f0f36afb25ae4bf7678030eb",
+      "source_kickoff_utc": "2026-11-22T17:30:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "La Liga",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "771b767592fd4fc98d4e661c0ea697cd713c301cc23bc10cc6411130a54a51ab",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "La Liga",
@@ -30980,7 +31667,7 @@
     "home": "FC Lorient",
     "away": "Stade Rennais FC",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T16:15:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -30989,7 +31676,31 @@
     "line": 9.5,
     "p_over": 0.46218,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_total": 12.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 7.0,
+      "actual_away": 5.0,
+      "result_sha256": "06bb11709106a38396a284c5cb27a3bb8fef32b28f0d60255034407a88c09c1e",
+      "source_kickoff_utc": "2026-11-22T16:15:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Ligue 1",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "b8020acfee6189709be794c8644ab89f80323b0aabd5a545f1f04cd3752432b5",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Ligue 1",
@@ -30997,7 +31708,7 @@
     "home": "FC Lorient",
     "away": "Stade Rennais FC",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T16:15:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -31006,7 +31717,31 @@
     "line": 2.5,
     "p_over": 0.61748,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_total": 2.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 1.0,
+      "actual_away": 1.0,
+      "result_sha256": "71b0b27ef2027ce1e928ecf167d9694884308efaeb75bbae2bf35ac79aec240a",
+      "source_kickoff_utc": "2026-11-22T16:15:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Ligue 1",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "b8020acfee6189709be794c8644ab89f80323b0aabd5a545f1f04cd3752432b5",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Ligue 1",
@@ -31031,7 +31766,7 @@
     "home": "FC Lorient",
     "away": "Stade Rennais FC",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T16:15:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -31043,7 +31778,30 @@
       "away": 0.31414
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_outcome": "draw",
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 1.0,
+      "actual_away": 1.0,
+      "result_sha256": "ee50d68fb248ae2d53169cdb26a4b90166c33db72f55730aece324d31c0cf8c7",
+      "source_kickoff_utc": "2026-11-22T16:15:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Ligue 1",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "b8020acfee6189709be794c8644ab89f80323b0aabd5a545f1f04cd3752432b5",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Ligue 1",
@@ -31068,7 +31826,7 @@
     "home": "Olympique de Marseille",
     "away": "Le Mans FC",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T19:45:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -31077,7 +31835,31 @@
     "line": 9.5,
     "p_over": 0.37597,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_total": 7.0,
+    "actual_over": 0,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 2.0,
+      "actual_away": 5.0,
+      "result_sha256": "e389a38886c8c040c3a48fd3fcb61e7767883552fad3dee8b79e6d722837bcff",
+      "source_kickoff_utc": "2026-11-22T19:45:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Ligue 1",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "b8020acfee6189709be794c8644ab89f80323b0aabd5a545f1f04cd3752432b5",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Ligue 1",
@@ -31085,7 +31867,7 @@
     "home": "Olympique de Marseille",
     "away": "Le Mans FC",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T19:45:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -31094,7 +31876,31 @@
     "line": 2.5,
     "p_over": 0.60837,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_total": 5.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 2.0,
+      "actual_away": 3.0,
+      "result_sha256": "71e8f00f3e9eb7a20eab1545d4dbf83ca73ecff2dd500ebe7c2c238330cf3d80",
+      "source_kickoff_utc": "2026-11-22T19:45:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Ligue 1",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "b8020acfee6189709be794c8644ab89f80323b0aabd5a545f1f04cd3752432b5",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Ligue 1",
@@ -31119,7 +31925,7 @@
     "home": "Olympique de Marseille",
     "away": "Le Mans FC",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T19:45:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -31131,7 +31937,30 @@
       "away": 0.24794
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_outcome": "away",
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 2.0,
+      "actual_away": 3.0,
+      "result_sha256": "5da8fc0a6a24f9cc3e55b39b2931b8adcc72961c6227dff685ca49351dd4805b",
+      "source_kickoff_utc": "2026-11-22T19:45:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Ligue 1",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "b8020acfee6189709be794c8644ab89f80323b0aabd5a545f1f04cd3752432b5",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Ligue 1",
@@ -35911,7 +36740,7 @@
     "home": "Liverpool",
     "away": "Man Utd",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T16:30:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -35920,7 +36749,31 @@
     "line": 9.5,
     "p_over": 0.50977,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_total": 20.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 15.0,
+      "actual_away": 5.0,
+      "result_sha256": "3a888d81f37310e7c00697ea4182959b4af178aef63ec313e4a8e29c5b43a5f5",
+      "source_kickoff_utc": "2026-11-22T16:30:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Premier League",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "dc329cf3a8892a18a3263104ee2ce862f7e39c27e466ef375970b56744da6610",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Premier League",
@@ -35928,7 +36781,7 @@
     "home": "Liverpool",
     "away": "Man Utd",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T16:30:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -35937,7 +36790,31 @@
     "line": 2.5,
     "p_over": 0.49357,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_total": 4.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 4.0,
+      "actual_away": 0.0,
+      "result_sha256": "3140ffcc0d73d86fc1b12782954016ef8e3e38ee57c76b6fe47d68de1d14b01b",
+      "source_kickoff_utc": "2026-11-22T16:30:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Premier League",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "dc329cf3a8892a18a3263104ee2ce862f7e39c27e466ef375970b56744da6610",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Premier League",
@@ -35962,7 +36839,7 @@
     "home": "Liverpool",
     "away": "Man Utd",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T16:30:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -35974,7 +36851,30 @@
       "away": 0.30636
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_outcome": "home",
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 4.0,
+      "actual_away": 0.0,
+      "result_sha256": "8af541584df39c8f929c30afcf85026f5d444a9b261a43d9067f3267bfc01606",
+      "source_kickoff_utc": "2026-11-22T16:30:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Premier League",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "dc329cf3a8892a18a3263104ee2ce862f7e39c27e466ef375970b56744da6610",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Premier League",
@@ -41153,7 +42053,7 @@
     "home": "Atalanta",
     "away": "Internazionale",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T19:45:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -41162,7 +42062,31 @@
     "line": 9.5,
     "p_over": 0.50849,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_total": 11.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 5.0,
+      "actual_away": 6.0,
+      "result_sha256": "3ad7c04c502e81f9e3fe0b6283357a9c5d54c714685ac656cf32cf26bea99a3b",
+      "source_kickoff_utc": "2026-11-22T19:45:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "c34cb1a329cc369a77885a5ed2c61ed16326d3d52dc2a0286227cb8e88eb7f79",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Serie A",
@@ -41170,7 +42094,7 @@
     "home": "Atalanta",
     "away": "Internazionale",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T19:45:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -41179,7 +42103,31 @@
     "line": 2.5,
     "p_over": 0.53772,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_total": 8.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 4.0,
+      "actual_away": 4.0,
+      "result_sha256": "5984ddb3505949a8c358b8f0ca1b1803a68624cf6aaf399e4432d851fc146a54",
+      "source_kickoff_utc": "2026-11-22T19:45:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "c34cb1a329cc369a77885a5ed2c61ed16326d3d52dc2a0286227cb8e88eb7f79",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Serie A",
@@ -41204,7 +42152,7 @@
     "home": "Atalanta",
     "away": "Internazionale",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T19:45:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -41216,7 +42164,30 @@
       "away": 0.41138
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_outcome": "draw",
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 4.0,
+      "actual_away": 4.0,
+      "result_sha256": "7bbda9f1ef26812be92e13b797f7e3a3888bd2ed699282a7134779ef3795e0a5",
+      "source_kickoff_utc": "2026-11-22T19:45:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "c34cb1a329cc369a77885a5ed2c61ed16326d3d52dc2a0286227cb8e88eb7f79",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Serie A",
@@ -41559,7 +42530,7 @@
     "home": "Milan",
     "away": "Frosinone",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T17:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -41568,7 +42539,31 @@
     "line": 9.5,
     "p_over": 0.49173,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_total": 11.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 2.0,
+      "actual_away": 9.0,
+      "result_sha256": "c739c78b8ead53ec81c035a415a5e7b4720fe6674d184ec8f9c243c877e6f22a",
+      "source_kickoff_utc": "2026-11-22T17:00:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "c34cb1a329cc369a77885a5ed2c61ed16326d3d52dc2a0286227cb8e88eb7f79",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Serie A",
@@ -41576,7 +42571,7 @@
     "home": "Milan",
     "away": "Frosinone",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T17:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -41585,7 +42580,31 @@
     "line": 2.5,
     "p_over": 0.58726,
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_total": 6.0,
+    "actual_over": 1,
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 5.0,
+      "actual_away": 1.0,
+      "result_sha256": "d947f5edf03eb3779e5e715d0a02c3ef144cbe16c109be41b8617ab98ba6a1f9",
+      "source_kickoff_utc": "2026-11-22T17:00:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "c34cb1a329cc369a77885a5ed2c61ed16326d3d52dc2a0286227cb8e88eb7f79",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Serie A",
@@ -41610,7 +42629,7 @@
     "home": "Milan",
     "away": "Frosinone",
     "created_at": "2026-11-06T18:27:34.786743+00:00",
-    "settled": false,
+    "settled": true,
     "kickoff_utc": "2026-11-22T17:00:00+00:00",
     "forecast_schema_version": 2,
     "pipeline_version": "validated_identity_v2",
@@ -41622,7 +42641,30 @@
       "away": 0.33045
     },
     "method_version": "weighted_opponent_model_v1",
-    "historical_cutoff_exclusive": "2026-11-22"
+    "historical_cutoff_exclusive": "2026-11-22",
+    "actual_outcome": "home",
+    "settled_at": "2026-11-23T14:55:54.200192+00:00",
+    "settlement_evidence": {
+      "schema_version": 2,
+      "kind": "observed_public_result_not_operator_verification",
+      "observed_at": "2026-11-23T14:55:54.200192+00:00",
+      "actual_home": 5.0,
+      "actual_away": 1.0,
+      "result_sha256": "632ad216293b7f6965e515d499f6c0aa5e685d0c7ddd3d63e3ac7435fa9f25b5",
+      "source_kickoff_utc": "2026-11-22T17:00:00+00:00",
+      "source_ids": [
+        "open-matchday:2026-27"
+      ],
+      "source_snapshots": [
+        {
+          "league": "Serie A",
+          "kind": "results",
+          "source_id": "open-matchday:2026-27",
+          "content_sha256": "c34cb1a329cc369a77885a5ed2c61ed16326d3d52dc2a0286227cb8e88eb7f79",
+          "fetched_at": "2026-11-23T14:55:50.558377+00:00"
+        }
+      ]
+    }
   },
   {
     "league": "Serie A",
