@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-23T18:41:13.708837+00:00",
-  "analysis_generated_at": "2026-11-23T18:40:52.457068+00:00",
+  "generated_at": "2026-11-23T20:07:07.702015+00:00",
+  "analysis_generated_at": "2026-11-23T20:06:55.665381+00:00",
   "pipeline_version": "validated_identity_v2",
   "verified_value": false,
   "hypothetical_roi": null,
@@ -23,7 +23,7 @@
   },
   "settlement": {
     "schema_version": 2,
-    "generated_at": "2026-11-23T18:40:52.457068+00:00",
+    "generated_at": "2026-11-23T20:06:55.665381+00:00",
     "forecasts": 2520,
     "unique_fixtures": 304,
     "counts": {
@@ -32,8 +32,9 @@
       "awaiting_statistics": 180,
       "settled_result_conflict": 4,
       "awaiting_kickoff_evidence": 15,
-      "upcoming": 1575,
-      "blocked_kickoff_conflict": 240
+      "upcoming": 1560,
+      "blocked_kickoff_conflict": 240,
+      "in_progress": 15
     },
     "by_pipeline_version": {
       "legacy_unversioned": {
@@ -49,7 +50,8 @@
         "awaiting_statistics": 90,
         "settled_with_evidence": 133,
         "settled_result_conflict": 2,
-        "upcoming": 1055
+        "upcoming": 1040,
+        "in_progress": 15
       }
     },
     "settled_records": 623,
@@ -58,40 +60,45 @@
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 133,
         "awaiting_kickoff_evidence": 3,
-        "upcoming": 315,
-        "blocked_kickoff_conflict": 48
+        "upcoming": 312,
+        "blocked_kickoff_conflict": 48,
+        "in_progress": 3
       },
       "fouls": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 43,
         "awaiting_statistics": 90,
         "awaiting_kickoff_evidence": 3,
-        "upcoming": 315,
-        "blocked_kickoff_conflict": 48
+        "upcoming": 312,
+        "blocked_kickoff_conflict": 48,
+        "in_progress": 3
       },
       "goals": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 131,
         "settled_result_conflict": 2,
         "awaiting_kickoff_evidence": 3,
-        "upcoming": 315,
-        "blocked_kickoff_conflict": 48
+        "upcoming": 312,
+        "blocked_kickoff_conflict": 48,
+        "in_progress": 3
       },
       "h2h": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 131,
         "settled_result_conflict": 2,
         "awaiting_kickoff_evidence": 3,
-        "upcoming": 315,
-        "blocked_kickoff_conflict": 48
+        "upcoming": 312,
+        "blocked_kickoff_conflict": 48,
+        "in_progress": 3
       },
       "yellow": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 43,
         "awaiting_statistics": 90,
         "awaiting_kickoff_evidence": 3,
-        "upcoming": 315,
-        "blocked_kickoff_conflict": 48
+        "upcoming": 312,
+        "blocked_kickoff_conflict": 48,
+        "in_progress": 3
       }
     },
     "by_league": {
@@ -108,8 +115,9 @@
         "settled_with_evidence": 99,
         "awaiting_statistics": 36,
         "awaiting_kickoff_evidence": 5,
-        "upcoming": 380,
-        "blocked_kickoff_conflict": 50
+        "upcoming": 375,
+        "blocked_kickoff_conflict": 50,
+        "in_progress": 5
       },
       "Ligue 1": {
         "blocked_creation_evidence": 5,
@@ -123,20 +131,22 @@
         "settled_with_evidence": 99,
         "awaiting_statistics": 36,
         "awaiting_kickoff_evidence": 5,
-        "upcoming": 405,
-        "blocked_kickoff_conflict": 50
+        "upcoming": 400,
+        "blocked_kickoff_conflict": 50,
+        "in_progress": 5
       },
       "Serie A": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 99,
         "awaiting_statistics": 36,
         "awaiting_kickoff_evidence": 5,
-        "upcoming": 295,
-        "blocked_kickoff_conflict": 50
+        "upcoming": 290,
+        "blocked_kickoff_conflict": 50,
+        "in_progress": 5
       }
     },
     "overdue_after_hours": 48,
-    "overdue_forecasts": 76,
+    "overdue_forecasts": 92,
     "ready_but_unsettled": 0,
     "result_conflicts_quarantined": 0,
     "samples": [
