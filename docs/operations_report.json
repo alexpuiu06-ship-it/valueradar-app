@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-23T14:56:12.130104+00:00",
-  "analysis_generated_at": "2026-11-23T14:55:54.200192+00:00",
+  "generated_at": "2026-11-23T18:41:13.708837+00:00",
+  "analysis_generated_at": "2026-11-23T18:40:52.457068+00:00",
   "pipeline_version": "validated_identity_v2",
   "verified_value": false,
   "hypothetical_roi": null,
@@ -17,13 +17,13 @@
     "failures": []
   },
   "ro_history": {
-    "records": 18,
-    "days_observed": 17,
-    "last_observed_at": "2026-11-22T14:51:41.039862+00:00"
+    "records": 19,
+    "days_observed": 18,
+    "last_observed_at": "2026-11-23T18:41:13.490663+00:00"
   },
   "settlement": {
     "schema_version": 2,
-    "generated_at": "2026-11-23T14:55:54.200192+00:00",
+    "generated_at": "2026-11-23T18:40:52.457068+00:00",
     "forecasts": 2520,
     "unique_fixtures": 304,
     "counts": {
@@ -136,7 +136,7 @@
       }
     },
     "overdue_after_hours": 48,
-    "overdue_forecasts": 16,
+    "overdue_forecasts": 76,
     "ready_but_unsettled": 0,
     "result_conflicts_quarantined": 0,
     "samples": [
