@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-23T20:07:07.702015+00:00",
-  "analysis_generated_at": "2026-11-23T20:06:55.665381+00:00",
+  "generated_at": "2026-11-24T02:58:15.086301+00:00",
+  "analysis_generated_at": "2026-11-24T02:57:58.035300+00:00",
   "pipeline_version": "validated_identity_v2",
   "verified_value": false,
   "hypothetical_roi": null,
@@ -23,7 +23,7 @@
   },
   "settlement": {
     "schema_version": 2,
-    "generated_at": "2026-11-23T20:06:55.665381+00:00",
+    "generated_at": "2026-11-24T02:57:58.035300+00:00",
     "forecasts": 2520,
     "unique_fixtures": 304,
     "counts": {
@@ -31,10 +31,9 @@
       "settled_with_evidence": 481,
       "awaiting_statistics": 180,
       "settled_result_conflict": 4,
-      "awaiting_kickoff_evidence": 15,
+      "awaiting_result": 30,
       "upcoming": 1560,
-      "blocked_kickoff_conflict": 240,
-      "in_progress": 15
+      "blocked_kickoff_conflict": 240
     },
     "by_pipeline_version": {
       "legacy_unversioned": {
@@ -42,7 +41,7 @@
         "settled_with_evidence": 348,
         "awaiting_statistics": 90,
         "settled_result_conflict": 2,
-        "awaiting_kickoff_evidence": 15,
+        "awaiting_result": 15,
         "upcoming": 520
       },
       "validated_identity_v2": {
@@ -51,7 +50,7 @@
         "settled_with_evidence": 133,
         "settled_result_conflict": 2,
         "upcoming": 1040,
-        "in_progress": 15
+        "awaiting_result": 15
       }
     },
     "settled_records": 623,
@@ -59,46 +58,41 @@
       "corners": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 133,
-        "awaiting_kickoff_evidence": 3,
+        "awaiting_result": 6,
         "upcoming": 312,
-        "blocked_kickoff_conflict": 48,
-        "in_progress": 3
+        "blocked_kickoff_conflict": 48
       },
       "fouls": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 43,
         "awaiting_statistics": 90,
-        "awaiting_kickoff_evidence": 3,
+        "awaiting_result": 6,
         "upcoming": 312,
-        "blocked_kickoff_conflict": 48,
-        "in_progress": 3
+        "blocked_kickoff_conflict": 48
       },
       "goals": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 131,
         "settled_result_conflict": 2,
-        "awaiting_kickoff_evidence": 3,
+        "awaiting_result": 6,
         "upcoming": 312,
-        "blocked_kickoff_conflict": 48,
-        "in_progress": 3
+        "blocked_kickoff_conflict": 48
       },
       "h2h": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 131,
         "settled_result_conflict": 2,
-        "awaiting_kickoff_evidence": 3,
+        "awaiting_result": 6,
         "upcoming": 312,
-        "blocked_kickoff_conflict": 48,
-        "in_progress": 3
+        "blocked_kickoff_conflict": 48
       },
       "yellow": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 43,
         "awaiting_statistics": 90,
-        "awaiting_kickoff_evidence": 3,
+        "awaiting_result": 6,
         "upcoming": 312,
-        "blocked_kickoff_conflict": 48,
-        "in_progress": 3
+        "blocked_kickoff_conflict": 48
       }
     },
     "by_league": {
@@ -114,10 +108,9 @@
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 99,
         "awaiting_statistics": 36,
-        "awaiting_kickoff_evidence": 5,
+        "awaiting_result": 10,
         "upcoming": 375,
-        "blocked_kickoff_conflict": 50,
-        "in_progress": 5
+        "blocked_kickoff_conflict": 50
       },
       "Ligue 1": {
         "blocked_creation_evidence": 5,
@@ -130,23 +123,21 @@
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 99,
         "awaiting_statistics": 36,
-        "awaiting_kickoff_evidence": 5,
+        "awaiting_result": 10,
         "upcoming": 400,
-        "blocked_kickoff_conflict": 50,
-        "in_progress": 5
+        "blocked_kickoff_conflict": 50
       },
       "Serie A": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 99,
         "awaiting_statistics": 36,
-        "awaiting_kickoff_evidence": 5,
+        "awaiting_result": 10,
         "upcoming": 290,
-        "blocked_kickoff_conflict": 50,
-        "in_progress": 5
+        "blocked_kickoff_conflict": 50
       }
     },
     "overdue_after_hours": 48,
-    "overdue_forecasts": 92,
+    "overdue_forecasts": 116,
     "ready_but_unsettled": 0,
     "result_conflicts_quarantined": 0,
     "samples": [
