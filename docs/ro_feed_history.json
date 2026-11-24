@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "provider": "PropLine",
-  "generated_at": "2026-11-24T18:12:23.176332+00:00",
+  "generated_at": "2026-11-24T19:29:00.613181+00:00",
   "retention_days": 90,
   "max_records": 512,
   "records": [
