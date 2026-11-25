@@ -14,8 +14,8 @@
     {
       "league": "Premier League",
       "status": "incomplete_quote_validation",
-      "received_at": "2026-11-24T18:12:21.402554+00:00",
-      "analysis_generated_at": "2026-11-24T18:12:10.521980+00:00",
+      "received_at": "2026-11-25T17:34:07.246495+00:00",
+      "analysis_generated_at": "2026-11-25T17:33:57.269141+00:00",
       "requested_max_delivery_age_seconds": 120,
       "quality": {
         "events_received": 0,
@@ -53,8 +53,8 @@
     {
       "league": "La Liga",
       "status": "incomplete_quote_validation",
-      "received_at": "2026-11-24T18:12:22.196677+00:00",
-      "analysis_generated_at": "2026-11-24T18:12:10.521980+00:00",
+      "received_at": "2026-11-25T17:34:07.434565+00:00",
+      "analysis_generated_at": "2026-11-25T17:33:57.269141+00:00",
       "requested_max_delivery_age_seconds": 120,
       "quality": {
         "events_received": 0,
@@ -92,8 +92,8 @@
     {
       "league": "Serie A",
       "status": "incomplete_quote_validation",
-      "received_at": "2026-11-24T18:12:22.455071+00:00",
-      "analysis_generated_at": "2026-11-24T18:12:10.521980+00:00",
+      "received_at": "2026-11-25T17:34:07.642685+00:00",
+      "analysis_generated_at": "2026-11-25T17:33:57.269141+00:00",
       "requested_max_delivery_age_seconds": 120,
       "quality": {
         "events_received": 0,
@@ -131,8 +131,8 @@
     {
       "league": "Bundesliga",
       "status": "incomplete_quote_validation",
-      "received_at": "2026-11-24T18:12:22.690260+00:00",
-      "analysis_generated_at": "2026-11-24T18:12:10.521980+00:00",
+      "received_at": "2026-11-25T17:34:07.836536+00:00",
+      "analysis_generated_at": "2026-11-25T17:33:57.269141+00:00",
       "requested_max_delivery_age_seconds": 120,
       "quality": {
         "events_received": 0,
@@ -170,21 +170,17 @@
     {
       "league": "Ligue 1",
       "status": "incomplete_quote_validation",
-      "received_at": "2026-11-24T18:12:23.011675+00:00",
-      "analysis_generated_at": "2026-11-24T18:12:10.521980+00:00",
+      "received_at": "2026-11-25T17:34:08.004816+00:00",
+      "analysis_generated_at": "2026-11-25T17:33:57.269141+00:00",
       "requested_max_delivery_age_seconds": 120,
       "quality": {
-        "events_received": 18,
+        "events_received": 0,
         "books_received": {
           "superbet_ro": 0,
-          "netbet_ro": 18
+          "netbet_ro": 0
         },
-        "complete_recent_markets": {
-          "netbet_ro": 15
-        },
-        "matched_current_model_markets": {
-          "netbet_ro": 14
-        },
+        "complete_recent_markets": {},
+        "matched_current_model_markets": {},
         "book_diagnostics": {
           "superbet_ro": {
             "status": "absent",
@@ -194,20 +190,14 @@
             "rejection_counts": {}
           },
           "netbet_ro": {
-            "status": "partially_matched",
-            "received_blocks": 18,
-            "complete_recent_markets": 15,
-            "matched_current_model_markets": 14,
-            "rejection_counts": {
-              "fixture_identity_or_kickoff_not_matched": 1,
-              "unsupported_selection_identity": 3
-            }
+            "status": "absent",
+            "received_blocks": 0,
+            "complete_recent_markets": 0,
+            "matched_current_model_markets": 0,
+            "rejection_counts": {}
           }
         },
-        "rejection_counts": {
-          "fixture_identity_or_kickoff_not_matched": 1,
-          "unsupported_selection_identity": 3
-        },
+        "rejection_counts": {},
         "book_status_scope": "Presence in this filtered response only; absence does not establish provider coverage or account entitlement."
       },
       "quota": {
@@ -217,5 +207,5 @@
       }
     }
   ],
-  "generated_at": "2026-11-24T18:12:23.016567+00:00"
+  "generated_at": "2026-11-25T17:34:08.008308+00:00"
 }
