@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-25T18:38:08.564440+00:00",
-  "analysis_generated_at": "2026-11-25T18:37:50.125781+00:00",
+  "generated_at": "2026-11-26T00:32:03.702084+00:00",
+  "analysis_generated_at": "2026-11-26T00:31:47.523603+00:00",
   "pipeline_version": "validated_identity_v2",
   "verified_value": false,
   "hypothetical_roi": null,
@@ -23,14 +23,14 @@
   },
   "settlement": {
     "schema_version": 2,
-    "generated_at": "2026-11-25T18:37:50.125781+00:00",
-    "forecasts": 2520,
-    "unique_fixtures": 304,
+    "generated_at": "2026-11-26T00:31:47.523603+00:00",
+    "forecasts": 2555,
+    "unique_fixtures": 311,
     "counts": {
       "blocked_creation_evidence": 25,
       "settled_with_evidence": 453,
       "settled_result_conflict": 2,
-      "upcoming": 1560,
+      "upcoming": 1595,
       "blocked_kickoff_conflict": 480
     },
     "by_pipeline_version": {
@@ -42,7 +42,7 @@
       },
       "validated_identity_v2": {
         "blocked_kickoff_conflict": 480,
-        "upcoming": 1040
+        "upcoming": 1075
       }
     },
     "settled_records": 728,
@@ -50,33 +50,33 @@
       "corners": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 91,
-        "upcoming": 312,
+        "upcoming": 319,
         "blocked_kickoff_conflict": 96
       },
       "fouls": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 91,
-        "upcoming": 312,
+        "upcoming": 319,
         "blocked_kickoff_conflict": 96
       },
       "goals": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 90,
         "settled_result_conflict": 1,
-        "upcoming": 312,
+        "upcoming": 319,
         "blocked_kickoff_conflict": 96
       },
       "h2h": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 90,
         "settled_result_conflict": 1,
-        "upcoming": 312,
+        "upcoming": 319,
         "blocked_kickoff_conflict": 96
       },
       "yellow": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 91,
-        "upcoming": 312,
+        "upcoming": 319,
         "blocked_kickoff_conflict": 96
       }
     },
@@ -103,7 +103,7 @@
       "Premier League": {
         "blocked_creation_evidence": 5,
         "settled_with_evidence": 95,
-        "upcoming": 400,
+        "upcoming": 435,
         "blocked_kickoff_conflict": 100
       },
       "Serie A": {
