@@ -1,9 +1,9 @@
 {
   "status": "connected",
-  "checked_at": "2026-11-26T18:23:27.161784+00:00",
-  "attempted_at": "2026-11-26T18:23:27.161784+00:00",
-  "data_timestamp": "2026-11-26T18:23:21+00:00",
-  "last_successful_quote_at": "2026-11-26T18:23:21+00:00",
+  "checked_at": "2026-11-27T18:09:08.337117+00:00",
+  "attempted_at": "2026-11-27T18:09:08.337117+00:00",
+  "data_timestamp": "2026-11-27T18:09:07+00:00",
+  "last_successful_quote_at": "2026-11-27T18:09:07+00:00",
   "provider": "The Odds API v4",
   "region": "uk",
   "market": "h2h",
@@ -50,13 +50,13 @@
     "virginbet",
     "williamhill"
   ],
-  "evaluated_prices": 4698,
+  "evaluated_prices": 4677,
   "model_disagreements": 43,
   "events_consensus_checked": 87,
-  "new_observations": 4698,
-  "total_historical_observations": 5568,
-  "spent_this_month": 140,
-  "provider_remaining": 361,
+  "new_observations": 4677,
+  "total_historical_observations": 5619,
+  "spent_this_month": 145,
+  "provider_remaining": 356,
   "errors": [],
   "message": "Observații internaționale; nicio ofertă românească verificată."
 }

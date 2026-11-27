@@ -5,47 +5,48 @@
   "reason_counts": {
     "model_market_disagreement": 43,
     "unverified_model_and_unverified_ro_prices": 41,
-    "model_sample_insufficient": 3
+    "model_sample_insufficient": 3,
+    "extreme_bookmaker_margin": 1
   },
-  "data_timestamp": "2026-11-26T18:23:26.917304+00:00",
+  "data_timestamp": "2026-11-27T18:09:08.026009+00:00",
   "market_events_evaluated": 87,
   "large_model_disagreements": 43,
   "largest_disagreements": [
     {
       "match": "Ligue 1 Stade Brestois 29 — Paris FC",
-      "gap_pp": 15.3
+      "gap_pp": 16.1
     },
     {
       "match": "Ligue 1 Angers SCO — RC Lens",
-      "gap_pp": 14.6
+      "gap_pp": 14.0
     },
     {
       "match": "Ligue 1 Paris Saint-Germain — FC Lorient",
-      "gap_pp": 29.0
+      "gap_pp": 29.8
     },
     {
       "match": "Ligue 1 OGC Nice — Estac Troyes",
-      "gap_pp": 10.7
+      "gap_pp": 10.5
     },
     {
       "match": "Ligue 1 AJ Auxerre — Olympique de Marseille",
-      "gap_pp": 15.8
+      "gap_pp": 13.7
     },
     {
       "match": "Ligue 1 Toulouse FC — Paris Saint-Germain",
-      "gap_pp": 20.2
+      "gap_pp": 20.1
     },
     {
       "match": "Ligue 1 LOSC Lille — AJ Auxerre",
-      "gap_pp": 12.8
+      "gap_pp": 12.9
     },
     {
       "match": "Ligue 1 AS Monaco — Angers SCO",
-      "gap_pp": 18.4
+      "gap_pp": 18.0
     },
     {
       "match": "Ligue 1 RC Lens — Havre Athletic Club",
-      "gap_pp": 14.1
+      "gap_pp": 14.3
     },
     {
       "match": "Ligue 1 Paris FC — Le Mans FC",
@@ -60,20 +61,20 @@
       "away": "FC Barcelona",
       "books": 19,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 35.6,
-      "max_cross_book_spread_pp": 4.7,
+      "max_model_consensus_gap_pp": 35.8,
+      "max_cross_book_spread_pp": 4.3,
       "model_probabilities": {
         "home": 0.34259,
         "draw": 0.24451,
         "away": 0.4129
       },
       "market_consensus_no_vig": {
-        "home": 0.09739,
-        "draw": 0.13325,
-        "away": 0.76936
+        "home": 0.09352,
+        "draw": 0.13524,
+        "away": 0.77123
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -91,20 +92,20 @@
       "away": "FC Bayern München",
       "books": 21,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.534430+00:00",
+      "observed_at": "2026-11-27T18:09:07.889066+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 31.3,
-      "max_cross_book_spread_pp": 4.5,
+      "max_model_consensus_gap_pp": 30.4,
+      "max_cross_book_spread_pp": 2.8,
       "model_probabilities": {
         "home": 0.3329,
         "draw": 0.23059,
         "away": 0.43651
       },
       "market_consensus_no_vig": {
-        "home": 0.1034,
-        "draw": 0.14749,
-        "away": 0.74911
+        "home": 0.10683,
+        "draw": 0.15224,
+        "away": 0.74093
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -120,22 +121,22 @@
       "date": "2026-12-05",
       "home": "Frosinone",
       "away": "Internazionale",
-      "books": 12,
+      "books": 14,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
       "max_model_consensus_gap_pp": 30.3,
-      "max_cross_book_spread_pp": 3.8,
+      "max_cross_book_spread_pp": 2.6,
       "model_probabilities": {
         "home": 0.41802,
         "draw": 0.23731,
         "away": 0.34467
       },
       "market_consensus_no_vig": {
-        "home": 0.16813,
-        "draw": 0.1837,
-        "away": 0.64817
+        "home": 0.1698,
+        "draw": 0.18235,
+        "away": 0.64785
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -151,22 +152,22 @@
       "date": "2026-11-28",
       "home": "Paris Saint-Germain",
       "away": "FC Lorient",
-      "books": 20,
+      "books": 19,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 29.0,
-      "max_cross_book_spread_pp": 4.6,
+      "max_model_consensus_gap_pp": 29.8,
+      "max_cross_book_spread_pp": 5.5,
       "model_probabilities": {
         "home": 0.48548,
         "draw": 0.25298,
         "away": 0.26154
       },
       "market_consensus_no_vig": {
-        "home": 0.77587,
-        "draw": 0.14085,
-        "away": 0.08328
+        "home": 0.78374,
+        "draw": 0.13658,
+        "away": 0.07967
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -184,7 +185,7 @@
       "away": "Celta",
       "books": 13,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
       "max_model_consensus_gap_pp": 28.3,
@@ -195,40 +196,9 @@
         "away": 0.20222
       },
       "market_consensus_no_vig": {
-        "home": 0.85702,
-        "draw": 0.08854,
-        "away": 0.05445
-      },
-      "reason": "model_market_disagreement",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-12-06",
-      "home": "Milan",
-      "away": "Parma",
-      "books": 14,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 27.1,
-      "max_cross_book_spread_pp": 3.5,
-      "model_probabilities": {
-        "home": 0.48292,
-        "draw": 0.2483,
-        "away": 0.26878
-      },
-      "market_consensus_no_vig": {
-        "home": 0.75441,
-        "draw": 0.16157,
-        "away": 0.08402
+        "home": 0.85755,
+        "draw": 0.08821,
+        "away": 0.05424
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -244,22 +214,22 @@
       "date": "2026-12-02",
       "home": "Real Sociedad",
       "away": "Real Madrid",
-      "books": 17,
+      "books": 19,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 27.0,
-      "max_cross_book_spread_pp": 4.7,
+      "max_model_consensus_gap_pp": 28.2,
+      "max_cross_book_spread_pp": 4.0,
       "model_probabilities": {
         "home": 0.36064,
         "draw": 0.25101,
         "away": 0.38835
       },
       "market_consensus_no_vig": {
-        "home": 0.16319,
-        "draw": 0.17862,
-        "away": 0.65819
+        "home": 0.15619,
+        "draw": 0.17384,
+        "away": 0.66998
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -271,26 +241,26 @@
       ]
     },
     {
-      "league": "La Liga",
-      "date": "2026-11-28",
-      "home": "Elche CF",
-      "away": "Atlético de Madrid",
-      "books": 20,
+      "league": "Serie A",
+      "date": "2026-12-06",
+      "home": "Milan",
+      "away": "Parma",
+      "books": 15,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 24.7,
-      "max_cross_book_spread_pp": 3.5,
+      "max_model_consensus_gap_pp": 27.3,
+      "max_cross_book_spread_pp": 4.5,
       "model_probabilities": {
-        "home": 0.33867,
-        "draw": 0.25629,
-        "away": 0.40504
+        "home": 0.48292,
+        "draw": 0.2483,
+        "away": 0.26878
       },
       "market_consensus_no_vig": {
-        "home": 0.14952,
-        "draw": 0.19861,
-        "away": 0.65187
+        "home": 0.75581,
+        "draw": 0.16036,
+        "away": 0.08383
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -308,20 +278,51 @@
       "away": "Deportivo Alavés",
       "books": 20,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 24.1,
-      "max_cross_book_spread_pp": 5.0,
+      "max_model_consensus_gap_pp": 24.8,
+      "max_cross_book_spread_pp": 4.2,
       "model_probabilities": {
         "home": 0.59426,
         "draw": 0.21606,
         "away": 0.18968
       },
       "market_consensus_no_vig": {
-        "home": 0.83522,
-        "draw": 0.10561,
-        "away": 0.05917
+        "home": 0.84197,
+        "draw": 0.10307,
+        "away": 0.05495
+      },
+      "reason": "model_market_disagreement",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "La Liga",
+      "date": "2026-11-28",
+      "home": "Elche CF",
+      "away": "Atlético de Madrid",
+      "books": 20,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 23.9,
+      "max_cross_book_spread_pp": 2.2,
+      "model_probabilities": {
+        "home": 0.33867,
+        "draw": 0.25629,
+        "away": 0.40504
+      },
+      "market_consensus_no_vig": {
+        "home": 0.15422,
+        "draw": 0.20163,
+        "away": 0.64416
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -339,20 +340,51 @@
       "away": "Como",
       "books": 15,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 22.9,
-      "max_cross_book_spread_pp": 3.2,
+      "max_model_consensus_gap_pp": 23.1,
+      "max_cross_book_spread_pp": 2.8,
       "model_probabilities": {
         "home": 0.34703,
         "draw": 0.25083,
         "away": 0.40214
       },
       "market_consensus_no_vig": {
-        "home": 0.15685,
-        "draw": 0.21251,
-        "away": 0.63064
+        "home": 0.15561,
+        "draw": 0.21082,
+        "away": 0.63357
+      },
+      "reason": "model_market_disagreement",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-12-02",
+      "home": "Hull",
+      "away": "Nott'm Forest",
+      "books": 19,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 22.5,
+      "max_cross_book_spread_pp": 3.3,
+      "model_probabilities": {
+        "home": 0.45996,
+        "draw": 0.24935,
+        "away": 0.29069
+      },
+      "market_consensus_no_vig": {
+        "home": 0.23532,
+        "draw": 0.26859,
+        "away": 0.49609
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -370,51 +402,20 @@
       "away": "SC Paderborn 07",
       "books": 19,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.534430+00:00",
+      "observed_at": "2026-11-27T18:09:07.889066+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 22.7,
-      "max_cross_book_spread_pp": 4.9,
+      "max_model_consensus_gap_pp": 22.3,
+      "max_cross_book_spread_pp": 4.8,
       "model_probabilities": {
         "home": 0.65167,
         "draw": 0.18273,
         "away": 0.1656
       },
       "market_consensus_no_vig": {
-        "home": 0.87823,
-        "draw": 0.07758,
-        "away": 0.04419
-      },
-      "reason": "model_market_disagreement",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-12-02",
-      "home": "Hull",
-      "away": "Nott'm Forest",
-      "books": 18,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 22.5,
-      "max_cross_book_spread_pp": 3.3,
-      "model_probabilities": {
-        "home": 0.45996,
-        "draw": 0.24935,
-        "away": 0.29069
-      },
-      "market_consensus_no_vig": {
-        "home": 0.23454,
-        "draw": 0.26955,
-        "away": 0.49591
+        "home": 0.8751,
+        "draw": 0.07948,
+        "away": 0.04542
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -432,19 +433,19 @@
       "away": "Real Madrid",
       "books": 14,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
       "max_model_consensus_gap_pp": 21.8,
-      "max_cross_book_spread_pp": 2.0,
+      "max_cross_book_spread_pp": 2.1,
       "model_probabilities": {
         "home": 0.37908,
         "draw": 0.26502,
         "away": 0.3559
       },
       "market_consensus_no_vig": {
-        "home": 0.20497,
-        "draw": 0.22113,
+        "home": 0.20506,
+        "draw": 0.22106,
         "away": 0.57389
       },
       "reason": "model_market_disagreement",
@@ -463,175 +464,20 @@
       "away": "Athletic Club",
       "books": 20,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 21.2,
-      "max_cross_book_spread_pp": 3.6,
+      "max_model_consensus_gap_pp": 21.3,
+      "max_cross_book_spread_pp": 2.5,
       "model_probabilities": {
         "home": 0.41006,
         "draw": 0.25354,
         "away": 0.3364
       },
       "market_consensus_no_vig": {
-        "home": 0.20146,
-        "draw": 0.25034,
-        "away": 0.5482
-      },
-      "reason": "model_market_disagreement",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-29",
-      "home": "Roma",
-      "away": "Monza",
-      "books": 21,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 20.6,
-      "max_cross_book_spread_pp": 3.6,
-      "model_probabilities": {
-        "home": 0.58355,
-        "draw": 0.21634,
-        "away": 0.20011
-      },
-      "market_consensus_no_vig": {
-        "home": 0.78978,
-        "draw": 0.13243,
-        "away": 0.0778
-      },
-      "reason": "model_market_disagreement",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-12-02",
-      "home": "Brentford",
-      "away": "Arsenal",
-      "books": 18,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 20.4,
-      "max_cross_book_spread_pp": 2.7,
-      "model_probabilities": {
-        "home": 0.42179,
-        "draw": 0.25964,
-        "away": 0.31857
-      },
-      "market_consensus_no_vig": {
-        "home": 0.22327,
-        "draw": 0.25444,
-        "away": 0.52229
-      },
-      "reason": "model_market_disagreement",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-12-05",
-      "home": "Napoli",
-      "away": "Lecce",
-      "books": 15,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 20.4,
-      "max_cross_book_spread_pp": 3.5,
-      "model_probabilities": {
-        "home": 0.49456,
-        "draw": 0.25091,
-        "away": 0.25453
-      },
-      "market_consensus_no_vig": {
-        "home": 0.69903,
-        "draw": 0.18493,
-        "away": 0.11604
-      },
-      "reason": "model_market_disagreement",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-12-04",
-      "home": "Toulouse FC",
-      "away": "Paris Saint-Germain",
-      "books": 15,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 20.2,
-      "max_cross_book_spread_pp": 2.7,
-      "model_probabilities": {
-        "home": 0.32493,
-        "draw": 0.2427,
-        "away": 0.43237
-      },
-      "market_consensus_no_vig": {
-        "home": 0.16688,
-        "draw": 0.19924,
-        "away": 0.63387
-      },
-      "reason": "model_market_disagreement",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-12-06",
-      "home": "Juventus",
-      "away": "Udinese",
-      "books": 15,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 20.2,
-      "max_cross_book_spread_pp": 4.2,
-      "model_probabilities": {
-        "home": 0.4812,
-        "draw": 0.24764,
-        "away": 0.27116
-      },
-      "market_consensus_no_vig": {
-        "home": 0.68331,
-        "draw": 0.19571,
-        "away": 0.12099
+        "home": 0.20087,
+        "draw": 0.24974,
+        "away": 0.54939
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -649,20 +495,175 @@
       "away": "Genoa",
       "books": 21,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 19.9,
-      "max_cross_book_spread_pp": 4.6,
+      "max_model_consensus_gap_pp": 20.6,
+      "max_cross_book_spread_pp": 5.2,
       "model_probabilities": {
         "home": 0.51752,
         "draw": 0.24052,
         "away": 0.24196
       },
       "market_consensus_no_vig": {
-        "home": 0.71656,
-        "draw": 0.17265,
-        "away": 0.11079
+        "home": 0.72356,
+        "draw": 0.17158,
+        "away": 0.10486
+      },
+      "reason": "model_market_disagreement",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-12-05",
+      "home": "Napoli",
+      "away": "Lecce",
+      "books": 15,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 20.4,
+      "max_cross_book_spread_pp": 4.0,
+      "model_probabilities": {
+        "home": 0.49456,
+        "draw": 0.25091,
+        "away": 0.25453
+      },
+      "market_consensus_no_vig": {
+        "home": 0.69851,
+        "draw": 0.1858,
+        "away": 0.11569
+      },
+      "reason": "model_market_disagreement",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-12-02",
+      "home": "Brentford",
+      "away": "Arsenal",
+      "books": 19,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 20.3,
+      "max_cross_book_spread_pp": 2.7,
+      "model_probabilities": {
+        "home": 0.42179,
+        "draw": 0.25964,
+        "away": 0.31857
+      },
+      "market_consensus_no_vig": {
+        "home": 0.22337,
+        "draw": 0.25462,
+        "away": 0.52201
+      },
+      "reason": "model_market_disagreement",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-12-06",
+      "home": "Juventus",
+      "away": "Udinese",
+      "books": 15,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 20.3,
+      "max_cross_book_spread_pp": 3.4,
+      "model_probabilities": {
+        "home": 0.4812,
+        "draw": 0.24764,
+        "away": 0.27116
+      },
+      "market_consensus_no_vig": {
+        "home": 0.68432,
+        "draw": 0.19508,
+        "away": 0.1206
+      },
+      "reason": "model_market_disagreement",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-29",
+      "home": "Roma",
+      "away": "Monza",
+      "books": 21,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 20.2,
+      "max_cross_book_spread_pp": 4.0,
+      "model_probabilities": {
+        "home": 0.58355,
+        "draw": 0.21634,
+        "away": 0.20011
+      },
+      "market_consensus_no_vig": {
+        "home": 0.78514,
+        "draw": 0.13365,
+        "away": 0.08121
+      },
+      "reason": "model_market_disagreement",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-12-04",
+      "home": "Toulouse FC",
+      "away": "Paris Saint-Germain",
+      "books": 14,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 20.1,
+      "max_cross_book_spread_pp": 2.4,
+      "model_probabilities": {
+        "home": 0.32493,
+        "draw": 0.2427,
+        "away": 0.43237
+      },
+      "market_consensus_no_vig": {
+        "home": 0.16725,
+        "draw": 0.19933,
+        "away": 0.63342
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -678,22 +679,22 @@
       "date": "2026-12-05",
       "home": "AS Monaco",
       "away": "Angers SCO",
-      "books": 15,
+      "books": 14,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 18.4,
-      "max_cross_book_spread_pp": 3.4,
+      "max_model_consensus_gap_pp": 18.0,
+      "max_cross_book_spread_pp": 4.5,
       "model_probabilities": {
         "home": 0.53704,
         "draw": 0.23424,
         "away": 0.22872
       },
       "market_consensus_no_vig": {
-        "home": 0.72151,
-        "draw": 0.17103,
-        "away": 0.10747
+        "home": 0.71752,
+        "draw": 0.17494,
+        "away": 0.10754
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -709,22 +710,22 @@
       "date": "2026-11-29",
       "home": "Everton",
       "away": "Liverpool",
-      "books": 21,
+      "books": 20,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 17.2,
-      "max_cross_book_spread_pp": 3.3,
+      "max_model_consensus_gap_pp": 17.8,
+      "max_cross_book_spread_pp": 2.8,
       "model_probabilities": {
         "home": 0.39032,
         "draw": 0.24735,
         "away": 0.36233
       },
       "market_consensus_no_vig": {
-        "home": 0.21868,
-        "draw": 0.24933,
-        "away": 0.53199
+        "home": 0.2128,
+        "draw": 0.24664,
+        "away": 0.54056
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -742,20 +743,20 @@
       "away": "Málaga CF",
       "books": 13,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 17.2,
-      "max_cross_book_spread_pp": 3.2,
+      "max_model_consensus_gap_pp": 17.3,
+      "max_cross_book_spread_pp": 2.6,
       "model_probabilities": {
         "home": 0.46986,
         "draw": 0.26607,
         "away": 0.26407
       },
       "market_consensus_no_vig": {
-        "home": 0.64149,
-        "draw": 0.21203,
-        "away": 0.14648
+        "home": 0.64245,
+        "draw": 0.21195,
+        "away": 0.1456
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -773,10 +774,10 @@
       "away": "Borussia Dortmund",
       "books": 17,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.534430+00:00",
+      "observed_at": "2026-11-27T18:09:07.889066+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 16.5,
+      "max_model_consensus_gap_pp": 16.4,
       "max_cross_book_spread_pp": 4.0,
       "model_probabilities": {
         "home": 0.35818,
@@ -784,102 +785,9 @@
         "away": 0.37591
       },
       "market_consensus_no_vig": {
-        "home": 0.21916,
-        "draw": 0.23961,
-        "away": 0.54123
-      },
-      "reason": "model_market_disagreement",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "La Liga",
-      "date": "2026-12-02",
-      "home": "FC Barcelona",
-      "away": "Atlético de Madrid",
-      "books": 17,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 15.9,
-      "max_cross_book_spread_pp": 4.7,
-      "model_probabilities": {
-        "home": 0.52042,
-        "draw": 0.22779,
-        "away": 0.25179
-      },
-      "market_consensus_no_vig": {
-        "home": 0.67902,
-        "draw": 0.16961,
-        "away": 0.15137
-      },
-      "reason": "model_market_disagreement",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-11-29",
-      "home": "AJ Auxerre",
-      "away": "Olympique de Marseille",
-      "books": 20,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 15.8,
-      "max_cross_book_spread_pp": 2.4,
-      "model_probabilities": {
-        "home": 0.39371,
-        "draw": 0.25895,
-        "away": 0.34734
-      },
-      "market_consensus_no_vig": {
-        "home": 0.25023,
-        "draw": 0.24442,
-        "away": 0.50535
-      },
-      "reason": "model_market_disagreement",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Bundesliga",
-      "date": "2026-11-29",
-      "home": "SC Freiburg",
-      "away": "RB Leipzig",
-      "books": 21,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.534430+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 15.5,
-      "max_cross_book_spread_pp": 3.0,
-      "model_probabilities": {
-        "home": 0.50624,
-        "draw": 0.2177,
-        "away": 0.27606
-      },
-      "market_consensus_no_vig": {
-        "home": 0.35082,
-        "draw": 0.24691,
-        "away": 0.40227
+        "home": 0.22155,
+        "draw": 0.23818,
+        "away": 0.54027
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -895,22 +803,22 @@
       "date": "2026-11-27",
       "home": "Stade Brestois 29",
       "away": "Paris FC",
-      "books": 20,
+      "books": 19,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 15.3,
-      "max_cross_book_spread_pp": 3.6,
+      "max_model_consensus_gap_pp": 16.1,
+      "max_cross_book_spread_pp": 2.2,
       "model_probabilities": {
         "home": 0.43978,
         "draw": 0.25253,
         "away": 0.30769
       },
       "market_consensus_no_vig": {
-        "home": 0.28637,
-        "draw": 0.27708,
-        "away": 0.43654
+        "home": 0.27866,
+        "draw": 0.2764,
+        "away": 0.44494
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -926,12 +834,12 @@
       "date": "2026-12-06",
       "home": "Estac Troyes",
       "away": "Olympique Lyonnais",
-      "books": 15,
+      "books": 14,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 15.3,
+      "max_model_consensus_gap_pp": 15.2,
       "max_cross_book_spread_pp": 3.4,
       "model_probabilities": {
         "home": 0.39413,
@@ -939,9 +847,40 @@
         "away": 0.3525
       },
       "market_consensus_no_vig": {
-        "home": 0.24067,
-        "draw": 0.26006,
-        "away": 0.49926
+        "home": 0.24233,
+        "draw": 0.25949,
+        "away": 0.49818
+      },
+      "reason": "model_market_disagreement",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "La Liga",
+      "date": "2026-12-02",
+      "home": "FC Barcelona",
+      "away": "Atlético de Madrid",
+      "books": 19,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 15.2,
+      "max_cross_book_spread_pp": 4.4,
+      "model_probabilities": {
+        "home": 0.52042,
+        "draw": 0.22779,
+        "away": 0.25179
+      },
+      "market_consensus_no_vig": {
+        "home": 0.6721,
+        "draw": 0.17108,
+        "away": 0.15682
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -959,10 +898,10 @@
       "away": "Cagliari",
       "books": 14,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 15.0,
+      "max_model_consensus_gap_pp": 15.1,
       "max_cross_book_spread_pp": 2.7,
       "model_probabilities": {
         "home": 0.42589,
@@ -970,102 +909,9 @@
         "away": 0.31587
       },
       "market_consensus_no_vig": {
-        "home": 0.57573,
-        "draw": 0.23363,
-        "away": 0.19064
-      },
-      "reason": "model_market_disagreement",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-11-28",
-      "home": "Angers SCO",
-      "away": "RC Lens",
-      "books": 20,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 14.6,
-      "max_cross_book_spread_pp": 2.3,
-      "model_probabilities": {
-        "home": 0.33273,
-        "draw": 0.25145,
-        "away": 0.41582
-      },
-      "market_consensus_no_vig": {
-        "home": 0.20414,
-        "draw": 0.23417,
-        "away": 0.56169
-      },
-      "reason": "model_market_disagreement",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-30",
-      "home": "Cagliari",
-      "away": "Milan",
-      "books": 20,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 14.6,
-      "max_cross_book_spread_pp": 3.0,
-      "model_probabilities": {
-        "home": 0.32653,
-        "draw": 0.27253,
-        "away": 0.40094
-      },
-      "market_consensus_no_vig": {
-        "home": 0.20187,
-        "draw": 0.25095,
-        "away": 0.54719
-      },
-      "reason": "model_market_disagreement",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-12-05",
-      "home": "Paris FC",
-      "away": "Le Mans FC",
-      "books": 15,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 14.4,
-      "max_cross_book_spread_pp": 3.3,
-      "model_probabilities": {
-        "home": 0.51021,
-        "draw": 0.22681,
-        "away": 0.26298
-      },
-      "market_consensus_no_vig": {
-        "home": 0.65468,
-        "draw": 0.2023,
-        "away": 0.14302
+        "home": 0.57649,
+        "draw": 0.23282,
+        "away": 0.19068
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -1081,22 +927,53 @@
       "date": "2026-12-02",
       "home": "Liverpool",
       "away": "Sunderland",
-      "books": 18,
+      "books": 19,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 14.4,
-      "max_cross_book_spread_pp": 2.5,
+      "max_model_consensus_gap_pp": 15.0,
+      "max_cross_book_spread_pp": 3.4,
       "model_probabilities": {
         "home": 0.51,
         "draw": 0.24304,
         "away": 0.24696
       },
       "market_consensus_no_vig": {
-        "home": 0.65449,
-        "draw": 0.20058,
-        "away": 0.14493
+        "home": 0.65976,
+        "draw": 0.19623,
+        "away": 0.144
+      },
+      "reason": "model_market_disagreement",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-29",
+      "home": "SC Freiburg",
+      "away": "RB Leipzig",
+      "books": 21,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.889066+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 14.9,
+      "max_cross_book_spread_pp": 2.4,
+      "model_probabilities": {
+        "home": 0.50624,
+        "draw": 0.2177,
+        "away": 0.27606
+      },
+      "market_consensus_no_vig": {
+        "home": 0.35686,
+        "draw": 0.24319,
+        "away": 0.39995
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -1114,20 +991,20 @@
       "away": "Napoli",
       "books": 21,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 14.4,
-      "max_cross_book_spread_pp": 3.2,
+      "max_model_consensus_gap_pp": 14.7,
+      "max_cross_book_spread_pp": 2.4,
       "model_probabilities": {
         "home": 0.33002,
         "draw": 0.24806,
         "away": 0.42192
       },
       "market_consensus_no_vig": {
-        "home": 0.20787,
-        "draw": 0.22613,
-        "away": 0.566
+        "home": 0.20589,
+        "draw": 0.2255,
+        "away": 0.5686
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -1139,26 +1016,26 @@
       ]
     },
     {
-      "league": "Ligue 1",
-      "date": "2026-12-05",
-      "home": "RC Lens",
-      "away": "Havre Athletic Club",
-      "books": 15,
+      "league": "Serie A",
+      "date": "2026-11-30",
+      "home": "Cagliari",
+      "away": "Milan",
+      "books": 20,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 14.1,
-      "max_cross_book_spread_pp": 2.4,
+      "max_model_consensus_gap_pp": 14.6,
+      "max_cross_book_spread_pp": 3.1,
       "model_probabilities": {
-        "home": 0.50293,
-        "draw": 0.23561,
-        "away": 0.26146
+        "home": 0.32653,
+        "draw": 0.27253,
+        "away": 0.40094
       },
       "market_consensus_no_vig": {
-        "home": 0.64424,
-        "draw": 0.20386,
-        "away": 0.1519
+        "home": 0.19952,
+        "draw": 0.25374,
+        "away": 0.54674
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -1174,22 +1051,22 @@
       "date": "2026-11-29",
       "home": "Sunderland",
       "away": "Spurs",
-      "books": 21,
+      "books": 20,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 13.9,
-      "max_cross_book_spread_pp": 2.6,
+      "max_model_consensus_gap_pp": 14.5,
+      "max_cross_book_spread_pp": 2.8,
       "model_probabilities": {
         "home": 0.39825,
         "draw": 0.27875,
         "away": 0.323
       },
       "market_consensus_no_vig": {
-        "home": 0.26016,
-        "draw": 0.2781,
-        "away": 0.46174
+        "home": 0.25478,
+        "draw": 0.2775,
+        "away": 0.46772
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -1201,26 +1078,119 @@
       ]
     },
     {
-      "league": "Premier League",
-      "date": "2026-11-28",
-      "home": "Ipswich",
-      "away": "Aston Villa",
-      "books": 21,
+      "league": "Ligue 1",
+      "date": "2026-12-05",
+      "home": "Paris FC",
+      "away": "Le Mans FC",
+      "books": 14,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 13.0,
-      "max_cross_book_spread_pp": 2.4,
+      "max_model_consensus_gap_pp": 14.4,
+      "max_cross_book_spread_pp": 3.6,
       "model_probabilities": {
-        "home": 0.39347,
-        "draw": 0.24952,
-        "away": 0.35701
+        "home": 0.51021,
+        "draw": 0.22681,
+        "away": 0.26298
       },
       "market_consensus_no_vig": {
-        "home": 0.2668,
-        "draw": 0.24573,
-        "away": 0.48747
+        "home": 0.6538,
+        "draw": 0.20329,
+        "away": 0.14291
+      },
+      "reason": "model_market_disagreement",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-12-05",
+      "home": "RC Lens",
+      "away": "Havre Athletic Club",
+      "books": 14,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 14.3,
+      "max_cross_book_spread_pp": 2.1,
+      "model_probabilities": {
+        "home": 0.50293,
+        "draw": 0.23561,
+        "away": 0.26146
+      },
+      "market_consensus_no_vig": {
+        "home": 0.64637,
+        "draw": 0.20302,
+        "away": 0.15061
+      },
+      "reason": "model_market_disagreement",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-11-28",
+      "home": "Angers SCO",
+      "away": "RC Lens",
+      "books": 19,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 14.0,
+      "max_cross_book_spread_pp": 2.3,
+      "model_probabilities": {
+        "home": 0.33273,
+        "draw": 0.25145,
+        "away": 0.41582
+      },
+      "market_consensus_no_vig": {
+        "home": 0.20753,
+        "draw": 0.23693,
+        "away": 0.55554
+      },
+      "reason": "model_market_disagreement",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-11-29",
+      "home": "AJ Auxerre",
+      "away": "Olympique de Marseille",
+      "books": 19,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 13.7,
+      "max_cross_book_spread_pp": 2.7,
+      "model_probabilities": {
+        "home": 0.39371,
+        "draw": 0.25895,
+        "away": 0.34734
+      },
+      "market_consensus_no_vig": {
+        "home": 0.26682,
+        "draw": 0.2493,
+        "away": 0.48388
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -1236,12 +1206,12 @@
       "date": "2026-12-05",
       "home": "LOSC Lille",
       "away": "AJ Auxerre",
-      "books": 15,
+      "books": 14,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 12.8,
+      "max_model_consensus_gap_pp": 12.9,
       "max_cross_book_spread_pp": 2.4,
       "model_probabilities": {
         "home": 0.49084,
@@ -1249,40 +1219,9 @@
         "away": 0.26607
       },
       "market_consensus_no_vig": {
-        "home": 0.61901,
-        "draw": 0.22517,
-        "away": 0.15582
-      },
-      "reason": "model_market_disagreement",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-28",
-      "home": "Leeds",
-      "away": "Coventry",
-      "books": 21,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 12.6,
-      "max_cross_book_spread_pp": 2.9,
-      "model_probabilities": {
-        "home": 0.51455,
-        "draw": 0.2488,
-        "away": 0.23665
-      },
-      "market_consensus_no_vig": {
-        "home": 0.64044,
-        "draw": 0.2067,
-        "away": 0.15286
+        "home": 0.62,
+        "draw": 0.22478,
+        "away": 0.15522
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -1300,20 +1239,20 @@
       "away": "Parma",
       "books": 21,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 12.0,
-      "max_cross_book_spread_pp": 3.1,
+      "max_model_consensus_gap_pp": 12.5,
+      "max_cross_book_spread_pp": 2.8,
       "model_probabilities": {
         "home": 0.51264,
         "draw": 0.24241,
         "away": 0.24495
       },
       "market_consensus_no_vig": {
-        "home": 0.63299,
-        "draw": 0.19529,
-        "away": 0.17173
+        "home": 0.63721,
+        "draw": 0.19033,
+        "away": 0.17246
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -1326,25 +1265,56 @@
     },
     {
       "league": "Premier League",
-      "date": "2026-11-29",
-      "home": "Crystal Palace",
-      "away": "Hull",
-      "books": 21,
+      "date": "2026-11-28",
+      "home": "Leeds",
+      "away": "Coventry",
+      "books": 20,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 11.0,
-      "max_cross_book_spread_pp": 1.9,
+      "max_model_consensus_gap_pp": 12.4,
+      "max_cross_book_spread_pp": 2.6,
       "model_probabilities": {
-        "home": 0.39404,
-        "draw": 0.26122,
-        "away": 0.34474
+        "home": 0.51455,
+        "draw": 0.2488,
+        "away": 0.23665
       },
       "market_consensus_no_vig": {
-        "home": 0.50411,
-        "draw": 0.25141,
-        "away": 0.24448
+        "home": 0.63834,
+        "draw": 0.21321,
+        "away": 0.14845
+      },
+      "reason": "model_market_disagreement",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-28",
+      "home": "Ipswich",
+      "away": "Aston Villa",
+      "books": 20,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 11.9,
+      "max_cross_book_spread_pp": 2.8,
+      "model_probabilities": {
+        "home": 0.39347,
+        "draw": 0.24952,
+        "away": 0.35701
+      },
+      "market_consensus_no_vig": {
+        "home": 0.27426,
+        "draw": 0.24954,
+        "away": 0.4762
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -1360,22 +1330,53 @@
       "date": "2026-11-28",
       "home": "OGC Nice",
       "away": "Estac Troyes",
-      "books": 20,
+      "books": 19,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 10.7,
-      "max_cross_book_spread_pp": 2.0,
+      "max_model_consensus_gap_pp": 10.5,
+      "max_cross_book_spread_pp": 2.2,
       "model_probabilities": {
         "home": 0.45643,
         "draw": 0.25435,
         "away": 0.28922
       },
       "market_consensus_no_vig": {
-        "home": 0.56323,
-        "draw": 0.23587,
-        "away": 0.2009
+        "home": 0.56146,
+        "draw": 0.23776,
+        "away": 0.20078
+      },
+      "reason": "model_market_disagreement",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-29",
+      "home": "Crystal Palace",
+      "away": "Hull",
+      "books": 20,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 10.5,
+      "max_cross_book_spread_pp": 2.4,
+      "model_probabilities": {
+        "home": 0.39404,
+        "draw": 0.26122,
+        "away": 0.34474
+      },
+      "market_consensus_no_vig": {
+        "home": 0.4987,
+        "draw": 0.25517,
+        "away": 0.24613
       },
       "reason": "model_market_disagreement",
       "verified_value": false,
@@ -1391,9 +1392,9 @@
       "date": "2026-12-02",
       "home": "Man City",
       "away": "Leeds",
-      "books": 18,
+      "books": 19,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
       "max_model_consensus_gap_pp": 9.6,
@@ -1404,9 +1405,40 @@
         "away": 0.25734
       },
       "market_consensus_no_vig": {
-        "home": 0.59778,
-        "draw": 0.21678,
-        "away": 0.18544
+        "home": 0.59757,
+        "draw": 0.21809,
+        "away": 0.18435
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "La Liga",
+      "date": "2026-12-06",
+      "home": "Atlético de Madrid",
+      "away": "Real Betis",
+      "books": 14,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 9.4,
+      "max_cross_book_spread_pp": 3.8,
+      "model_probabilities": {
+        "home": 0.48905,
+        "draw": 0.24627,
+        "away": 0.26468
+      },
+      "market_consensus_no_vig": {
+        "home": 0.58322,
+        "draw": 0.219,
+        "away": 0.19778
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -1422,22 +1454,22 @@
       "date": "2026-11-28",
       "home": "Le Mans FC",
       "away": "LOSC Lille",
-      "books": 20,
+      "books": 19,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 9.5,
-      "max_cross_book_spread_pp": 2.1,
+      "max_model_consensus_gap_pp": 9.3,
+      "max_cross_book_spread_pp": 2.0,
       "model_probabilities": {
         "home": 0.35242,
         "draw": 0.25345,
         "away": 0.39413
       },
       "market_consensus_no_vig": {
-        "home": 0.25737,
-        "draw": 0.27888,
-        "away": 0.46375
+        "home": 0.25926,
+        "draw": 0.28036,
+        "away": 0.46038
       },
       "reason": "model_sample_insufficient",
       "verified_value": false,
@@ -1453,22 +1485,22 @@
       "date": "2026-11-29",
       "home": "Olympique Lyonnais",
       "away": "AS Monaco",
-      "books": 20,
+      "books": 19,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 9.4,
-      "max_cross_book_spread_pp": 3.2,
+      "max_model_consensus_gap_pp": 9.2,
+      "max_cross_book_spread_pp": 2.8,
       "model_probabilities": {
         "home": 0.4931,
         "draw": 0.23661,
         "away": 0.27029
       },
       "market_consensus_no_vig": {
-        "home": 0.39947,
-        "draw": 0.28111,
-        "away": 0.31941
+        "home": 0.40123,
+        "draw": 0.28161,
+        "away": 0.31716
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -1484,12 +1516,12 @@
       "date": "2026-12-02",
       "home": "Chelsea",
       "away": "Crystal Palace",
-      "books": 18,
+      "books": 19,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 9.2,
+      "max_model_consensus_gap_pp": 9.1,
       "max_cross_book_spread_pp": 2.2,
       "model_probabilities": {
         "home": 0.48334,
@@ -1497,11 +1529,42 @@
         "away": 0.28096
       },
       "market_consensus_no_vig": {
-        "home": 0.57524,
-        "draw": 0.21904,
-        "away": 0.20572
+        "home": 0.57393,
+        "draw": 0.21945,
+        "away": 0.20662
       },
       "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-11-28",
+      "home": "SC Paderborn 07",
+      "away": "FC Schalke 04",
+      "books": 21,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.889066+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 9.1,
+      "max_cross_book_spread_pp": 1.8,
+      "model_probabilities": {
+        "home": 0.4673,
+        "draw": 0.23887,
+        "away": 0.29383
+      },
+      "market_consensus_no_vig": {
+        "home": 0.3759,
+        "draw": 0.27429,
+        "away": 0.34981
+      },
+      "reason": "model_sample_insufficient",
       "verified_value": false,
       "value_blockers": [
         "romanian_operator_feed_not_verified",
@@ -1515,22 +1578,22 @@
       "date": "2026-12-03",
       "home": "Spurs",
       "away": "Fulham",
-      "books": 15,
+      "books": 17,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 9.0,
-      "max_cross_book_spread_pp": 2.2,
+      "max_model_consensus_gap_pp": 8.7,
+      "max_cross_book_spread_pp": 2.3,
       "model_probabilities": {
         "home": 0.42458,
         "draw": 0.26452,
         "away": 0.3109
       },
       "market_consensus_no_vig": {
-        "home": 0.5143,
-        "draw": 0.25435,
-        "away": 0.23135
+        "home": 0.51164,
+        "draw": 0.255,
+        "away": 0.23336
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -1548,82 +1611,20 @@
       "away": "Villarreal CF",
       "books": 20,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
       "max_model_consensus_gap_pp": 8.6,
-      "max_cross_book_spread_pp": 2.2,
+      "max_cross_book_spread_pp": 3.1,
       "model_probabilities": {
         "home": 0.4341,
         "draw": 0.25262,
         "away": 0.31328
       },
       "market_consensus_no_vig": {
-        "home": 0.34812,
-        "draw": 0.27132,
-        "away": 0.38056
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-29",
-      "home": "Brighton",
-      "away": "Newcastle",
-      "books": 21,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 8.4,
-      "max_cross_book_spread_pp": 2.5,
-      "model_probabilities": {
-        "home": 0.52259,
-        "draw": 0.24088,
-        "away": 0.23653
-      },
-      "market_consensus_no_vig": {
-        "home": 0.60678,
-        "draw": 0.2161,
-        "away": 0.17711
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "La Liga",
-      "date": "2026-12-06",
-      "home": "Atlético de Madrid",
-      "away": "Real Betis",
-      "books": 13,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 8.4,
-      "max_cross_book_spread_pp": 2.6,
-      "model_probabilities": {
-        "home": 0.48905,
-        "draw": 0.24627,
-        "away": 0.26468
-      },
-      "market_consensus_no_vig": {
-        "home": 0.5734,
-        "draw": 0.2214,
-        "away": 0.2052
+        "home": 0.34805,
+        "draw": 0.27178,
+        "away": 0.38016
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -1639,22 +1640,84 @@
       "date": "2026-12-02",
       "home": "Newcastle",
       "away": "Man Utd",
-      "books": 18,
+      "books": 19,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
       "max_model_consensus_gap_pp": 8.1,
-      "max_cross_book_spread_pp": 2.7,
+      "max_cross_book_spread_pp": 2.8,
       "model_probabilities": {
         "home": 0.45263,
         "draw": 0.24448,
         "away": 0.30289
       },
       "market_consensus_no_vig": {
-        "home": 0.37171,
-        "draw": 0.24847,
-        "away": 0.37982
+        "home": 0.37142,
+        "draw": 0.24895,
+        "away": 0.37962
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-29",
+      "home": "Fulham",
+      "away": "Bournemouth",
+      "books": 20,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 8.0,
+      "max_cross_book_spread_pp": 2.9,
+      "model_probabilities": {
+        "home": 0.42084,
+        "draw": 0.24555,
+        "away": 0.33361
+      },
+      "market_consensus_no_vig": {
+        "home": 0.34072,
+        "draw": 0.27401,
+        "away": 0.38527
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-29",
+      "home": "Brighton",
+      "away": "Newcastle",
+      "books": 20,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 8.0,
+      "max_cross_book_spread_pp": 2.8,
+      "model_probabilities": {
+        "home": 0.52259,
+        "draw": 0.24088,
+        "away": 0.23653
+      },
+      "market_consensus_no_vig": {
+        "home": 0.60273,
+        "draw": 0.21141,
+        "away": 0.18587
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -1672,7 +1735,7 @@
       "away": "TSG Hoffenheim",
       "books": 19,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.534430+00:00",
+      "observed_at": "2026-11-27T18:09:07.889066+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
       "max_model_consensus_gap_pp": 8.0,
@@ -1683,9 +1746,9 @@
         "away": 0.25424
       },
       "market_consensus_no_vig": {
-        "home": 0.44962,
-        "draw": 0.2458,
-        "away": 0.30458
+        "home": 0.44965,
+        "draw": 0.24582,
+        "away": 0.30453
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -1703,7 +1766,7 @@
       "away": "Atalanta",
       "books": 15,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
       "max_model_consensus_gap_pp": 7.7,
@@ -1728,243 +1791,26 @@
       ]
     },
     {
-      "league": "Bundesliga",
-      "date": "2026-11-28",
-      "home": "SC Paderborn 07",
-      "away": "FC Schalke 04",
-      "books": 21,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.534430+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 7.6,
-      "max_cross_book_spread_pp": 2.2,
-      "model_probabilities": {
-        "home": 0.4673,
-        "draw": 0.23887,
-        "away": 0.29383
-      },
-      "market_consensus_no_vig": {
-        "home": 0.39093,
-        "draw": 0.27262,
-        "away": 0.33645
-      },
-      "reason": "model_sample_insufficient",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
       "league": "La Liga",
       "date": "2026-11-28",
       "home": "Real Betis",
       "away": "Rayo Vallecano",
       "books": 20,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
       "max_model_consensus_gap_pp": 7.3,
-      "max_cross_book_spread_pp": 3.9,
+      "max_cross_book_spread_pp": 2.9,
       "model_probabilities": {
         "home": 0.51998,
         "draw": 0.23823,
         "away": 0.24179
       },
       "market_consensus_no_vig": {
-        "home": 0.59312,
-        "draw": 0.2196,
-        "away": 0.18729
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-11-29",
-      "home": "Toulouse FC",
-      "away": "Stade Rennais FC",
-      "books": 20,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 7.0,
-      "max_cross_book_spread_pp": 2.8,
-      "model_probabilities": {
-        "home": 0.44372,
-        "draw": 0.23407,
-        "away": 0.32221
-      },
-      "market_consensus_no_vig": {
-        "home": 0.37372,
-        "draw": 0.26339,
-        "away": 0.36289
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-12-04",
-      "home": "Bologna",
-      "away": "Roma",
-      "books": 15,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 6.8,
-      "max_cross_book_spread_pp": 3.2,
-      "model_probabilities": {
-        "home": 0.308,
-        "draw": 0.24912,
-        "away": 0.44288
-      },
-      "market_consensus_no_vig": {
-        "home": 0.23981,
-        "draw": 0.24965,
-        "away": 0.51054
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-29",
-      "home": "Fulham",
-      "away": "Bournemouth",
-      "books": 21,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 6.5,
-      "max_cross_book_spread_pp": 2.2,
-      "model_probabilities": {
-        "home": 0.42084,
-        "draw": 0.24555,
-        "away": 0.33361
-      },
-      "market_consensus_no_vig": {
-        "home": 0.35628,
-        "draw": 0.27319,
-        "away": 0.37053
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "La Liga",
-      "date": "2026-12-04",
-      "home": "Deportivo Alavés",
-      "away": "RCD Espanyol de Barcelona",
-      "books": 14,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 6.0,
-      "max_cross_book_spread_pp": 2.0,
-      "model_probabilities": {
-        "home": 0.4471,
-        "draw": 0.25632,
-        "away": 0.29658
-      },
-      "market_consensus_no_vig": {
-        "home": 0.48961,
-        "draw": 0.27367,
-        "away": 0.23672
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Bundesliga",
-      "date": "2026-12-05",
-      "home": "FC Augsburg",
-      "away": "1. FC Köln",
-      "books": 18,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.534430+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 5.6,
-      "max_cross_book_spread_pp": 2.8,
-      "model_probabilities": {
-        "home": 0.49773,
-        "draw": 0.23,
-        "away": 0.27227
-      },
-      "market_consensus_no_vig": {
-        "home": 0.44217,
-        "draw": 0.2418,
-        "away": 0.31604
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-11-28",
-      "home": "Havre Athletic Club",
-      "away": "RC Strasbourg Alsace",
-      "books": 20,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 5.5,
-      "max_cross_book_spread_pp": 2.5,
-      "model_probabilities": {
-        "home": 0.36218,
-        "draw": 0.24472,
-        "away": 0.3931
-      },
-      "market_consensus_no_vig": {
-        "home": 0.30675,
-        "draw": 0.26454,
-        "away": 0.42871
+        "home": 0.59257,
+        "draw": 0.21977,
+        "away": 0.18766
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -1982,20 +1828,144 @@
       "away": "Atalanta",
       "books": 21,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 5.5,
-      "max_cross_book_spread_pp": 2.4,
+      "max_model_consensus_gap_pp": 7.0,
+      "max_cross_book_spread_pp": 3.3,
       "model_probabilities": {
         "home": 0.30549,
         "draw": 0.25762,
         "away": 0.43689
       },
       "market_consensus_no_vig": {
-        "home": 0.25902,
-        "draw": 0.24874,
-        "away": 0.49224
+        "home": 0.2458,
+        "draw": 0.24686,
+        "away": 0.50735
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-12-04",
+      "home": "Bologna",
+      "away": "Roma",
+      "books": 17,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 6.7,
+      "max_cross_book_spread_pp": 3.0,
+      "model_probabilities": {
+        "home": 0.308,
+        "draw": 0.24912,
+        "away": 0.44288
+      },
+      "market_consensus_no_vig": {
+        "home": 0.24066,
+        "draw": 0.24953,
+        "away": 0.50981
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-11-29",
+      "home": "Toulouse FC",
+      "away": "Stade Rennais FC",
+      "books": 19,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 6.5,
+      "max_cross_book_spread_pp": 2.9,
+      "model_probabilities": {
+        "home": 0.44372,
+        "draw": 0.23407,
+        "away": 0.32221
+      },
+      "market_consensus_no_vig": {
+        "home": 0.37875,
+        "draw": 0.26214,
+        "away": 0.35911
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "La Liga",
+      "date": "2026-12-04",
+      "home": "Deportivo Alavés",
+      "away": "RCD Espanyol de Barcelona",
+      "books": 14,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 6.0,
+      "max_cross_book_spread_pp": 2.0,
+      "model_probabilities": {
+        "home": 0.4471,
+        "draw": 0.25632,
+        "away": 0.29658
+      },
+      "market_consensus_no_vig": {
+        "home": 0.49028,
+        "draw": 0.27268,
+        "away": 0.23704
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-11-28",
+      "home": "Havre Athletic Club",
+      "away": "RC Strasbourg Alsace",
+      "books": 19,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 5.5,
+      "max_cross_book_spread_pp": 2.6,
+      "model_probabilities": {
+        "home": 0.36218,
+        "draw": 0.24472,
+        "away": 0.3931
+      },
+      "market_consensus_no_vig": {
+        "home": 0.30691,
+        "draw": 0.2655,
+        "away": 0.42759
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -2011,12 +1981,12 @@
       "date": "2026-12-02",
       "home": "Bournemouth",
       "away": "Brighton",
-      "books": 18,
+      "books": 19,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 5.4,
+      "max_model_consensus_gap_pp": 5.5,
       "max_cross_book_spread_pp": 2.3,
       "model_probabilities": {
         "home": 0.44181,
@@ -2024,9 +1994,40 @@
         "away": 0.30065
       },
       "market_consensus_no_vig": {
-        "home": 0.3876,
-        "draw": 0.2673,
-        "away": 0.3451
+        "home": 0.38675,
+        "draw": 0.26743,
+        "away": 0.34582
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Bundesliga",
+      "date": "2026-12-05",
+      "home": "FC Augsburg",
+      "away": "1. FC Köln",
+      "books": 18,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.889066+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 5.4,
+      "max_cross_book_spread_pp": 2.7,
+      "model_probabilities": {
+        "home": 0.49773,
+        "draw": 0.23,
+        "away": 0.27227
+      },
+      "market_consensus_no_vig": {
+        "home": 0.44409,
+        "draw": 0.24199,
+        "away": 0.31392
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -2042,22 +2043,22 @@
       "date": "2026-12-05",
       "home": "RC Strasbourg Alsace",
       "away": "FC Lorient",
-      "books": 15,
+      "books": 13,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 5.3,
-      "max_cross_book_spread_pp": 3.1,
+      "max_model_consensus_gap_pp": 5.2,
+      "max_cross_book_spread_pp": 4.6,
       "model_probabilities": {
         "home": 0.42446,
         "draw": 0.25523,
         "away": 0.32031
       },
       "market_consensus_no_vig": {
-        "home": 0.45541,
-        "draw": 0.27703,
-        "away": 0.26756
+        "home": 0.45573,
+        "draw": 0.2762,
+        "away": 0.26807
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -2073,12 +2074,12 @@
       "date": "2026-12-01",
       "home": "Coventry",
       "away": "Ipswich",
-      "books": 18,
+      "books": 19,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 5.1,
+      "max_model_consensus_gap_pp": 5.0,
       "max_cross_book_spread_pp": 2.7,
       "model_probabilities": {
         "home": 0.47066,
@@ -2086,9 +2087,9 @@
         "away": 0.29808
       },
       "market_consensus_no_vig": {
-        "home": 0.4195,
-        "draw": 0.26263,
-        "away": 0.31787
+        "home": 0.4206,
+        "draw": 0.26239,
+        "away": 0.31701
       },
       "reason": "model_sample_insufficient",
       "verified_value": false,
@@ -2106,51 +2107,20 @@
       "away": "Fiorentina",
       "books": 21,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 5.1,
-      "max_cross_book_spread_pp": 2.6,
+      "max_model_consensus_gap_pp": 5.0,
+      "max_cross_book_spread_pp": 3.3,
       "model_probabilities": {
         "home": 0.35721,
         "draw": 0.25429,
         "away": 0.3885
       },
       "market_consensus_no_vig": {
-        "home": 0.30618,
-        "draw": 0.26845,
-        "away": 0.42537
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "La Liga",
-      "date": "2026-12-05",
-      "home": "Villarreal CF",
-      "away": "Real Sociedad",
-      "books": 14,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 5.0,
-      "max_cross_book_spread_pp": 2.5,
-      "model_probabilities": {
-        "home": 0.5011,
-        "draw": 0.22871,
-        "away": 0.27019
-      },
-      "market_consensus_no_vig": {
-        "home": 0.55105,
-        "draw": 0.22014,
-        "away": 0.22881
+        "home": 0.30689,
+        "draw": 0.26907,
+        "away": 0.42404
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -2168,82 +2138,20 @@
       "away": "Torino",
       "books": 15,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 4.7,
-      "max_cross_book_spread_pp": 1.9,
+      "max_model_consensus_gap_pp": 5.0,
+      "max_cross_book_spread_pp": 1.7,
       "model_probabilities": {
         "home": 0.40482,
         "draw": 0.26322,
         "away": 0.33196
       },
       "market_consensus_no_vig": {
-        "home": 0.41627,
-        "draw": 0.2992,
-        "away": 0.28453
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Ligue 1",
-      "date": "2026-12-06",
-      "home": "Stade Rennais FC",
-      "away": "Stade Brestois 29",
-      "books": 15,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 4.3,
-      "max_cross_book_spread_pp": 2.1,
-      "model_probabilities": {
-        "home": 0.48757,
-        "draw": 0.24182,
-        "away": 0.27061
-      },
-      "market_consensus_no_vig": {
-        "home": 0.53106,
-        "draw": 0.24157,
-        "away": 0.22737
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-11-28",
-      "home": "Torino",
-      "away": "Lazio",
-      "books": 21,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 4.2,
-      "max_cross_book_spread_pp": 2.9,
-      "model_probabilities": {
-        "home": 0.31394,
-        "draw": 0.2564,
-        "away": 0.42966
-      },
-      "market_consensus_no_vig": {
-        "home": 0.27168,
-        "draw": 0.27641,
-        "away": 0.45191
+        "home": 0.41869,
+        "draw": 0.29974,
+        "away": 0.28157
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -2256,25 +2164,25 @@
     },
     {
       "league": "La Liga",
-      "date": "2026-12-06",
-      "home": "Getafe CF",
-      "away": "Valencia CF",
+      "date": "2026-12-05",
+      "home": "Villarreal CF",
+      "away": "Real Sociedad",
       "books": 14,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 4.1,
-      "max_cross_book_spread_pp": 1.6,
+      "max_model_consensus_gap_pp": 4.9,
+      "max_cross_book_spread_pp": 2.6,
       "model_probabilities": {
-        "home": 0.41645,
-        "draw": 0.27448,
-        "away": 0.30907
+        "home": 0.5011,
+        "draw": 0.22871,
+        "away": 0.27019
       },
       "market_consensus_no_vig": {
-        "home": 0.39613,
-        "draw": 0.31553,
-        "away": 0.28834
+        "home": 0.55044,
+        "draw": 0.2199,
+        "away": 0.22967
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -2292,20 +2200,51 @@
       "away": "FC Augsburg",
       "books": 21,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.534430+00:00",
+      "observed_at": "2026-11-27T18:09:07.889066+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 4.1,
-      "max_cross_book_spread_pp": 2.7,
+      "max_model_consensus_gap_pp": 4.5,
+      "max_cross_book_spread_pp": 2.5,
       "model_probabilities": {
         "home": 0.51008,
         "draw": 0.21258,
         "away": 0.27734
       },
       "market_consensus_no_vig": {
-        "home": 0.55063,
-        "draw": 0.2114,
-        "away": 0.23797
+        "home": 0.5552,
+        "draw": 0.21074,
+        "away": 0.23406
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Ligue 1",
+      "date": "2026-12-06",
+      "home": "Stade Rennais FC",
+      "away": "Stade Brestois 29",
+      "books": 13,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 4.4,
+      "max_cross_book_spread_pp": 1.6,
+      "model_probabilities": {
+        "home": 0.48757,
+        "draw": 0.24182,
+        "away": 0.27061
+      },
+      "market_consensus_no_vig": {
+        "home": 0.53134,
+        "draw": 0.24189,
+        "away": 0.22677
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -2318,118 +2257,25 @@
     },
     {
       "league": "La Liga",
-      "date": "2026-11-29",
-      "home": "Valencia CF",
-      "away": "CA Osasuna",
-      "books": 20,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 3.8,
-      "max_cross_book_spread_pp": 2.0,
-      "model_probabilities": {
-        "home": 0.44536,
-        "draw": 0.25266,
-        "away": 0.30198
-      },
-      "market_consensus_no_vig": {
-        "home": 0.43928,
-        "draw": 0.29079,
-        "away": 0.26993
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Serie A",
-      "date": "2026-12-07",
-      "home": "Venezia",
-      "away": "Sassuolo",
+      "date": "2026-12-06",
+      "home": "Getafe CF",
+      "away": "Valencia CF",
       "books": 14,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 3.5,
-      "max_cross_book_spread_pp": 4.4,
+      "max_model_consensus_gap_pp": 4.1,
+      "max_cross_book_spread_pp": 4.2,
       "model_probabilities": {
-        "home": 0.40111,
-        "draw": 0.25948,
-        "away": 0.33941
+        "home": 0.41645,
+        "draw": 0.27448,
+        "away": 0.30907
       },
       "market_consensus_no_vig": {
-        "home": 0.42915,
-        "draw": 0.26612,
-        "away": 0.30473
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Bundesliga",
-      "date": "2026-11-28",
-      "home": "VfB Stuttgart",
-      "away": "Eintracht Frankfurt",
-      "books": 21,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.534430+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 3.5,
-      "max_cross_book_spread_pp": 2.9,
-      "model_probabilities": {
-        "home": 0.50737,
-        "draw": 0.21994,
-        "away": 0.27269
-      },
-      "market_consensus_no_vig": {
-        "home": 0.54286,
-        "draw": 0.21008,
-        "away": 0.24706
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "La Liga",
-      "date": "2026-12-05",
-      "home": "Rayo Vallecano",
-      "away": "Levante UD",
-      "books": 14,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 3.2,
-      "max_cross_book_spread_pp": 2.5,
-      "model_probabilities": {
-        "home": 0.4866,
-        "draw": 0.25787,
-        "away": 0.25553
-      },
-      "market_consensus_no_vig": {
-        "home": 0.51873,
-        "draw": 0.24837,
-        "away": 0.2329
+        "home": 0.39522,
+        "draw": 0.31523,
+        "away": 0.28955
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -2447,20 +2293,20 @@
       "away": "Bologna",
       "books": 21,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 3.2,
-      "max_cross_book_spread_pp": 2.8,
+      "max_model_consensus_gap_pp": 4.1,
+      "max_cross_book_spread_pp": 2.7,
       "model_probabilities": {
         "home": 0.31204,
         "draw": 0.25688,
         "away": 0.43108
       },
       "market_consensus_no_vig": {
-        "home": 0.28561,
-        "draw": 0.28874,
-        "away": 0.42565
+        "home": 0.31681,
+        "draw": 0.29305,
+        "away": 0.39015
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -2474,148 +2320,24 @@
     {
       "league": "La Liga",
       "date": "2026-11-29",
-      "home": "Real Sociedad",
-      "away": "Sevilla FC",
+      "home": "Valencia CF",
+      "away": "CA Osasuna",
       "books": 20,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 2.7,
-      "max_cross_book_spread_pp": 1.9,
+      "max_model_consensus_gap_pp": 3.8,
+      "max_cross_book_spread_pp": 2.6,
       "model_probabilities": {
-        "home": 0.4701,
-        "draw": 0.23686,
-        "away": 0.29304
+        "home": 0.44536,
+        "draw": 0.25266,
+        "away": 0.30198
       },
       "market_consensus_no_vig": {
-        "home": 0.44401,
-        "draw": 0.26343,
-        "away": 0.29256
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "La Liga",
-      "date": "2026-11-30",
-      "home": "RCD Espanyol de Barcelona",
-      "away": "Getafe CF",
-      "books": 19,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 2.3,
-      "max_cross_book_spread_pp": 2.7,
-      "model_probabilities": {
-        "home": 0.46991,
-        "draw": 0.27503,
-        "away": 0.25506
-      },
-      "market_consensus_no_vig": {
-        "home": 0.46087,
-        "draw": 0.29765,
-        "away": 0.24148
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-27",
-      "home": "Nott'm Forest",
-      "away": "Chelsea",
-      "books": 21,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 2.2,
-      "max_cross_book_spread_pp": 3.1,
-      "model_probabilities": {
-        "home": 0.40411,
-        "draw": 0.26753,
-        "away": 0.32836
-      },
-      "market_consensus_no_vig": {
-        "home": 0.3822,
-        "draw": 0.27981,
-        "away": 0.338
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "La Liga",
-      "date": "2026-12-06",
-      "home": "CA Osasuna",
-      "away": "Elche CF",
-      "books": 14,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.848786+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 2.1,
-      "max_cross_book_spread_pp": 2.3,
-      "model_probabilities": {
-        "home": 0.44377,
-        "draw": 0.25973,
-        "away": 0.2965
-      },
-      "market_consensus_no_vig": {
-        "home": 0.45509,
-        "draw": 0.26964,
-        "away": 0.27527
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-12-02",
-      "home": "Aston Villa",
-      "away": "Everton",
-      "books": 18,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 1.8,
-      "max_cross_book_spread_pp": 2.7,
-      "model_probabilities": {
-        "home": 0.45386,
-        "draw": 0.26062,
-        "away": 0.28552
-      },
-      "market_consensus_no_vig": {
-        "home": 0.47183,
-        "draw": 0.26071,
-        "away": 0.26745
+        "home": 0.43798,
+        "draw": 0.29095,
+        "away": 0.27107
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -2633,20 +2355,299 @@
       "away": "Juventus",
       "books": 21,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.253048+00:00",
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 1.7,
-      "max_cross_book_spread_pp": 2.7,
+      "max_model_consensus_gap_pp": 3.8,
+      "max_cross_book_spread_pp": 2.9,
       "model_probabilities": {
         "home": 0.44098,
         "draw": 0.26687,
         "away": 0.29215
       },
       "market_consensus_no_vig": {
-        "home": 0.4569,
-        "draw": 0.26762,
-        "away": 0.27548
+        "home": 0.47723,
+        "draw": 0.26824,
+        "away": 0.25453
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-12-07",
+      "home": "Venezia",
+      "away": "Sassuolo",
+      "books": 14,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 3.5,
+      "max_cross_book_spread_pp": 3.1,
+      "model_probabilities": {
+        "home": 0.40111,
+        "draw": 0.25948,
+        "away": 0.33941
+      },
+      "market_consensus_no_vig": {
+        "home": 0.43029,
+        "draw": 0.26562,
+        "away": 0.30409
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Serie A",
+      "date": "2026-11-28",
+      "home": "Torino",
+      "away": "Lazio",
+      "books": 21,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.789788+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 3.1,
+      "max_cross_book_spread_pp": 2.5,
+      "model_probabilities": {
+        "home": 0.31394,
+        "draw": 0.2564,
+        "away": 0.42966
+      },
+      "market_consensus_no_vig": {
+        "home": 0.28259,
+        "draw": 0.27547,
+        "away": 0.44194
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "La Liga",
+      "date": "2026-12-05",
+      "home": "Rayo Vallecano",
+      "away": "Levante UD",
+      "books": 14,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 2.9,
+      "max_cross_book_spread_pp": 1.7,
+      "model_probabilities": {
+        "home": 0.4866,
+        "draw": 0.25787,
+        "away": 0.25553
+      },
+      "market_consensus_no_vig": {
+        "home": 0.51573,
+        "draw": 0.24793,
+        "away": 0.23633
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "La Liga",
+      "date": "2026-11-29",
+      "home": "Real Sociedad",
+      "away": "Sevilla FC",
+      "books": 20,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 2.8,
+      "max_cross_book_spread_pp": 1.9,
+      "model_probabilities": {
+        "home": 0.4701,
+        "draw": 0.23686,
+        "away": 0.29304
+      },
+      "market_consensus_no_vig": {
+        "home": 0.44217,
+        "draw": 0.26361,
+        "away": 0.29422
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "La Liga",
+      "date": "2026-11-30",
+      "home": "RCD Espanyol de Barcelona",
+      "away": "Getafe CF",
+      "books": 19,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 2.3,
+      "max_cross_book_spread_pp": 2.6,
+      "model_probabilities": {
+        "home": 0.46991,
+        "draw": 0.27503,
+        "away": 0.25506
+      },
+      "market_consensus_no_vig": {
+        "home": 0.46244,
+        "draw": 0.29798,
+        "away": 0.23958
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "La Liga",
+      "date": "2026-12-06",
+      "home": "CA Osasuna",
+      "away": "Elche CF",
+      "books": 14,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.686395+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 2.1,
+      "max_cross_book_spread_pp": 3.1,
+      "model_probabilities": {
+        "home": 0.44377,
+        "draw": 0.25973,
+        "away": 0.2965
+      },
+      "market_consensus_no_vig": {
+        "home": 0.45533,
+        "draw": 0.26899,
+        "away": 0.27568
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-12-02",
+      "home": "Aston Villa",
+      "away": "Everton",
+      "books": 19,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 2.0,
+      "max_cross_book_spread_pp": 2.7,
+      "model_probabilities": {
+        "home": 0.45386,
+        "draw": 0.26062,
+        "away": 0.28552
+      },
+      "market_consensus_no_vig": {
+        "home": 0.47358,
+        "draw": 0.2605,
+        "away": 0.26591
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-28",
+      "home": "Man Utd",
+      "away": "Brentford",
+      "books": 20,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 1.8,
+      "max_cross_book_spread_pp": 3.1,
+      "model_probabilities": {
+        "home": 0.44858,
+        "draw": 0.23997,
+        "away": 0.31145
+      },
+      "market_consensus_no_vig": {
+        "home": 0.43046,
+        "draw": 0.25286,
+        "away": 0.31668
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-29",
+      "home": "Arsenal",
+      "away": "Man City",
+      "books": 19,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 1.6,
+      "max_cross_book_spread_pp": 2.5,
+      "model_probabilities": {
+        "home": 0.468,
+        "draw": 0.25442,
+        "away": 0.27758
+      },
+      "market_consensus_no_vig": {
+        "home": 0.48037,
+        "draw": 0.25839,
+        "away": 0.26124
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -2664,20 +2665,20 @@
       "away": "OGC Nice",
       "books": 14,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:26.917304+00:00",
+      "observed_at": "2026-11-27T18:09:08.026009+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 1.6,
-      "max_cross_book_spread_pp": 2.0,
+      "max_model_consensus_gap_pp": 1.4,
+      "max_cross_book_spread_pp": 2.1,
       "model_probabilities": {
         "home": 0.49549,
         "draw": 0.22896,
         "away": 0.27555
       },
       "market_consensus_no_vig": {
-        "home": 0.48842,
-        "draw": 0.24447,
-        "away": 0.26711
+        "home": 0.49111,
+        "draw": 0.24275,
+        "away": 0.26614
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
@@ -2689,57 +2690,57 @@
       ]
     },
     {
-      "league": "Premier League",
+      "league": "Bundesliga",
       "date": "2026-11-28",
-      "home": "Man Utd",
-      "away": "Brentford",
+      "home": "VfB Stuttgart",
+      "away": "Eintracht Frankfurt",
       "books": 21,
       "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
-      "historical_snapshot_only": true,
-      "source_timestamps_complete": true,
-      "max_model_consensus_gap_pp": 1.5,
-      "max_cross_book_spread_pp": 2.5,
-      "model_probabilities": {
-        "home": 0.44858,
-        "draw": 0.23997,
-        "away": 0.31145
-      },
-      "market_consensus_no_vig": {
-        "home": 0.45051,
-        "draw": 0.25312,
-        "away": 0.29636
-      },
-      "reason": "unverified_model_and_unverified_ro_prices",
-      "verified_value": false,
-      "value_blockers": [
-        "romanian_operator_feed_not_verified",
-        "market_line_and_settlement_not_verified",
-        "model_calibration_not_prospectively_validated",
-        "positive_edge_after_uncertainty_not_demonstrated"
-      ]
-    },
-    {
-      "league": "Premier League",
-      "date": "2026-11-29",
-      "home": "Arsenal",
-      "away": "Man City",
-      "books": 20,
-      "bookmaker_independence_verified": false,
-      "observed_at": "2026-11-26T18:23:25.450477+00:00",
+      "observed_at": "2026-11-27T18:09:07.889066+00:00",
       "historical_snapshot_only": true,
       "source_timestamps_complete": true,
       "max_model_consensus_gap_pp": 1.2,
-      "max_cross_book_spread_pp": 2.2,
+      "max_cross_book_spread_pp": 4.3,
       "model_probabilities": {
-        "home": 0.468,
-        "draw": 0.25442,
-        "away": 0.27758
+        "home": 0.50737,
+        "draw": 0.21994,
+        "away": 0.27269
       },
       "market_consensus_no_vig": {
-        "home": 0.47933,
-        "draw": 0.25553,
-        "away": 0.26514
+        "home": 0.51963,
+        "draw": 0.21575,
+        "away": 0.26462
+      },
+      "reason": "unverified_model_and_unverified_ro_prices",
+      "verified_value": false,
+      "value_blockers": [
+        "romanian_operator_feed_not_verified",
+        "market_line_and_settlement_not_verified",
+        "model_calibration_not_prospectively_validated",
+        "positive_edge_after_uncertainty_not_demonstrated"
+      ]
+    },
+    {
+      "league": "Premier League",
+      "date": "2026-11-27",
+      "home": "Nott'm Forest",
+      "away": "Chelsea",
+      "books": 20,
+      "bookmaker_independence_verified": false,
+      "observed_at": "2026-11-27T18:09:07.470128+00:00",
+      "historical_snapshot_only": true,
+      "source_timestamps_complete": true,
+      "max_model_consensus_gap_pp": 1.1,
+      "max_cross_book_spread_pp": 2.1,
+      "model_probabilities": {
+        "home": 0.40411,
+        "draw": 0.26753,
+        "away": 0.32836
+      },
+      "market_consensus_no_vig": {
+        "home": 0.39294,
+        "draw": 0.27518,
+        "away": 0.33188
       },
       "reason": "unverified_model_and_unverified_ro_prices",
       "verified_value": false,
